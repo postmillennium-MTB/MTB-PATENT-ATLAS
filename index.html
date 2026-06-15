@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="bellingham">
+<html lang="en" data-theme="wmbc">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,26 +13,33 @@
   --font-body:'Barlow',system-ui,sans-serif;
   --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
 }
-[data-theme="bellingham"]{
+[data-theme="wmbc"]{
   --bg:#F2F5F1; --surface:#FFFFFF; --ink:#16261C; --ink-soft:#4b5f53;
   --spine:#4F7A5E; --primary:#2D6A4F; --accent:#8AB17D; --deep:#1B4332;
   --chip-bg:#E3ECE4; --card-border:#D8E2D9;
   --st-active:#2D6A4F; --st-expired:#7d8a80; --st-pending:#A9762B; --st-lit:#B5532A;
   --lit-solid:1;
 }
-[data-theme="frontrange"]{
+[data-theme="comba"]{
   --bg:#F5F1EA; --surface:#FDFBF7; --ink:#3A352F; --ink-soft:#6E6259;
   --spine:#8C7B6B; --primary:#6E5C49; --accent:#C19A6B; --deep:#4A423A;
   --chip-bg:#EAE2D6; --card-border:#DDD3C4;
   --st-active:#5C7148; --st-expired:#8C8377; --st-pending:#A9762B; --st-lit:#9C4A2F;
   --lit-solid:1;
 }
-[data-theme="cambr"]{
+[data-theme="camba"]{
   --bg:#FFFFFF; --surface:#F7F7F7; --ink:#282728; --ink-soft:#5a585a;
   --spine:#C5050C; --primary:#C5050C; --accent:#9B0000; --deep:#282728;
   --chip-bg:#EFEFEF; --card-border:#E2E2E2;
   --st-active:#1f7a33; --st-expired:#8a8a8a; --st-pending:#A9762B; --st-lit:#C5050C;
-  --lit-solid:0; /* outlined litigated pill in CAMBR */
+  --lit-solid:0; /* outlined litigated pill in CAMBA */
+}
+[data-theme="cambr"]{
+  --bg:#F7F8FA; --surface:#FFFFFF; --ink:#0B162A; --ink-soft:#4a566b;
+  --spine:#C83803; --primary:#0B162A; --accent:#C83803; --deep:#0B162A;
+  --chip-bg:#E8EBF0; --card-border:#DCE0E6;
+  --st-active:#1f7a33; --st-expired:#8a8f99; --st-pending:#C83803; --st-lit:#A52A1A;
+  --lit-solid:1;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -50,9 +57,10 @@ h1{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,6vw,46px
 .swatch{width:34px;height:24px;border-radius:6px;border:2px solid rgba(255,255,255,.45);padding:0;position:relative}
 .swatch.on{border-color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.35)}
 .swatch:focus-visible{outline:2px solid #fff;outline-offset:2px}
-.sw-bell{background:linear-gradient(135deg,#2D6A4F 55%,#8AB17D 55%)}
-.sw-fr{background:linear-gradient(135deg,#6E5C49 55%,#C19A6B 55%)}
-.sw-cambr{background:linear-gradient(135deg,#C5050C 55%,#fff 55%)}
+.sw-wmbc{background:linear-gradient(135deg,#2D6A4F 55%,#8AB17D 55%)}
+.sw-comba{background:linear-gradient(135deg,#6E5C49 55%,#C19A6B 55%)}
+.sw-camba{background:linear-gradient(135deg,#C5050C 55%,#fff 55%)}
+.sw-cambr{background:linear-gradient(135deg,#0B162A 55%,#C83803 55%)}
 .swatch .tip{position:absolute;top:110%;left:50%;transform:translateX(-50%);background:#000;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s}
 .swatch:hover .tip{opacity:1}
 
@@ -77,6 +85,14 @@ h1{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,6vw,46px
 .chip{flex:0 0 auto;border:1px solid var(--card-border);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;min-height:34px;transition:background .12s,color .12s}
 .chip.on{background:var(--primary);border-color:var(--primary);color:#fff}
 .chip:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.chip-info{font-size:10px;opacity:.6;margin-left:3px;pointer-events:none}
+/* Desktop: show thin scrollbar on hover; support mouse-wheel scroll */
+@media(hover:hover){
+  .frow:hover{scrollbar-width:thin;scrollbar-color:var(--spine) transparent}
+  .frow:hover::-webkit-scrollbar{display:block;height:3px}
+  .frow:hover::-webkit-scrollbar-thumb{background:var(--spine);border-radius:3px}
+  .frow:hover::-webkit-scrollbar-track{background:transparent}
+}
 .fmeta{max-width:880px;margin:2px auto 0;padding:0 16px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink-soft)}
 .clearbtn{background:none;border:none;color:var(--primary);font-size:12px;font-weight:600;text-decoration:underline;padding:4px}
 
@@ -105,7 +121,7 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .pill.pending{background:var(--st-pending)}
 .pill.unknown{background:var(--ink-soft)}
 .pill.litigated{background:var(--st-lit)}
-[data-theme="cambr"] .pill.litigated{background:#fff;color:var(--st-lit);border:1.5px solid var(--st-lit)}
+[data-theme="camba"] .pill.litigated{background:#fff;color:var(--st-lit);border:1.5px solid var(--st-lit)}
 .pill.badge{background:transparent;color:var(--primary);border:1px solid var(--primary)}
 .conf{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.05em;color:var(--st-pending);margin-top:5px}
 .conf.low{color:var(--st-lit)}
@@ -119,6 +135,8 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .meta div b{display:block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
 .countdown{color:var(--st-active);font-weight:600}
 .gp{display:inline-block;margin-top:10px;font-size:13px;font-weight:600}
+.gp-secondary{display:block;font-size:12.5px;font-weight:500;margin-top:5px;opacity:.85}
+.gp-trans{display:block;font-family:var(--font-mono);font-size:11px;color:var(--ink-soft);margin-top:6px;padding:4px 7px;border-left:2px solid var(--accent);letter-spacing:.02em}
 .gp-list{margin-top:10px}
 .gp-list summary{font-size:13px;font-weight:600;color:var(--primary);cursor:pointer;padding:4px 0;list-style:none}
 .gp-list summary::-webkit-details-marker{display:none}
@@ -131,9 +149,30 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 footer{background:var(--deep);color:#fff;padding:22px 16px;font-size:12.5px}
 footer .hwrap p{opacity:.8;max-width:640px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+/* Mobile first — default styles target small screens */
+/* ≥640px: slightly more padding in cards */
 @media(min-width:640px){
   .chead{padding:14px 18px}
   .cbody{padding:0 18px 16px}
+  h1{letter-spacing:.02em}
+}
+/* Iframe/embed safety — prevent horizontal bleed at any width */
+html,body{overflow-x:hidden;max-width:100%}
+/* Tap targets ≥44px on all interactive elements */
+.chip{min-height:44px;min-width:44px}
+.chead{min-height:52px}
+.swatch{min-width:40px;min-height:36px}
+/* Filter label hide on very small screens to save chip space */
+@media(max-width:360px){.flabel{display:none}.frow{padding:3px 8px}}
+/* Readable card body on small screens */
+@media(max-width:480px){
+  h1{font-size:26px}
+  .cbody p,.why{font-size:13.5px}
+  .meta{gap:10px}
+  .gp,.gp-secondary{font-size:12.5px}
+  .bars{height:44px}
+  .blabel{font-size:8px}
+  .pill{font-size:9px;padding:2px 6px}
 }
 </style>
 </head>
@@ -143,11 +182,12 @@ footer .hwrap p{opacity:.8;max-width:640px}
   <div class="hwrap">
     <div class="eyebrow">RedFoxRun Interactive</div>
     <h1>MTB Patent Atlas</h1>
-    <p class="sub">45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.</p>
+    <p class="sub">45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use. Eight categories from suspension to bike transport.</p>
     <div class="themes" role="group" aria-label="Color scheme">
       <span>Theme</span>
-      <button class="swatch sw-bell on" data-set="bellingham" aria-label="Bellingham theme"><span class="tip">Bellingham</span></button>
-      <button class="swatch sw-fr" data-set="frontrange" aria-label="Front Range theme"><span class="tip">Front Range</span></button>
+      <button class="swatch sw-wmbc on" data-set="wmbc" aria-label="WMBC theme"><span class="tip">WMBC</span></button>
+      <button class="swatch sw-comba" data-set="comba" aria-label="COMBA theme"><span class="tip">COMBA</span></button>
+      <button class="swatch sw-camba" data-set="camba" aria-label="CAMBA theme"><span class="tip">CAMBA</span></button>
       <button class="swatch sw-cambr" data-set="cambr" aria-label="CAMBR theme"><span class="tip">CAMBR</span></button>
     </div>
     <div class="scrubber">
@@ -162,7 +202,8 @@ footer .hwrap p{opacity:.8;max-width:640px}
   <div class="frow" id="rowCat"><span class="flabel">Category</span></div>
   <div class="frow" id="rowStatus"><span class="flabel">Status</span></div>
   <div class="frow" id="rowBadge"><span class="flabel">Story</span></div>
-  <div class="frow" id="rowWho"><span class="flabel">People</span></div>
+  <div class="frow" id="rowInv"><span class="flabel">Inventors</span></div>
+  <div class="frow" id="rowBrand"><span class="flabel">Brands</span></div>
   <div class="fmeta">
     <span id="resultCount"></span>
     <button class="clearbtn" id="clearAll" hidden>Clear filters</button>
@@ -189,13 +230,34 @@ pt: patent type — omit for utility (default). design | trademark
 */
 const CATS = {
   susp:"Rear Suspension", fork:"Forks & Damping", drive:"Drivetrain",
-  wheel:"Wheels & Tires", comp:"Components", emtb:"E-MTB & Electronics", frame:"Frame & Standards"
+  wheel:"Wheels & Tires", comp:"Components", emtb:"E-MTB & Electronics",
+  frame:"Frame & Standards", transport:"Bike Transport"
 };
 const BADGES = {
   licensor:"Inventor-licensor", acquired:"Patent acquired", givenaway:"Given away",
-  litigated:"Litigated", priorart:"Prior-art surprise"
+  litigated:"Litigated",
+  priorart:"Prior Art"
 };
-const PEOPLE = ["Dave Weagle","Canfield","Horst Leitner","Joe Breeze","Paul Turner","SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","Jo Klieber","DT Swiss","Rohloff","Lapierre","David Earle","Wayne Lumpkin","Öhlins","Hope","Wolf Tooth","Porsche"];
+const BADGE_TIPS = {
+  priorart:"An earlier invention that predates or limits this patent — sometimes unknown to the patent office, sometimes filed intentionally to show historical context.",
+  licensor:"The inventor retained ownership and licensed the technology to manufacturers rather than selling it outright.",
+  acquired:"The patent was bought from its original inventor or assignee.",
+  givenaway:"The patent was published as a free open standard, or the rights were deliberately not exercised.",
+  litigated:"This patent was the subject of legal action — infringement suits, IPR challenges, or licensing disputes."
+};
+const INVENTORS = [
+  {label:"Canfield (Lance & Chris)", key:"Canfield"},
+  {label:"Dave Weagle",  key:"Dave Weagle"},
+  {label:"Horst Leitner",key:"Horst Leitner"},
+  {label:"Joe Breeze",   key:"Joe Breeze"},
+  {label:"Paul Turner",  key:"Paul Turner"},
+  {label:"Jo Klieber",   key:"Jo Klieber"},
+  {label:"David Earle",  key:"David Earle"},
+  {label:"Wayne Lumpkin",key:"Wayne Lumpkin"},
+  {label:"Gavin Vos",    key:"Gavin Vos"},
+  {label:"Cal Phillips", key:"Cal Phillips"},
+];
+const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff"];
 
 const D = [
 /* ---- Rear Suspension ---- */
@@ -315,9 +377,15 @@ const D = [
 {y:2000,g:2002,t:"Brain inertia-valve damper",a:"Specialized (w/ Fox)",num:null,cat:"fork",st:"expired",exp:2022,b:["acquired"],who:["Specialized","Fox"],conf:"m",
  s:"A brass-mass inertia valve that keeps the shock firm until a bump physically opens it — terrain-activated damping with no electronics.",
  w:"Specialized's other great suspension patent play after FSR; still on World-Cup-winning Epics two decades later."},
-{y:2015,g:2018,t:"Live Valve electronic suspension",a:"Fox",num:null,cat:"fork",st:"active",exp:2035,b:[],who:["Fox"],conf:"v",
- s:"Accelerometer-driven solenoid damping that opens and firms the suspension in milliseconds, patented across sensors, logic and valve hardware.",
+{y:2004,g:2007,t:"Fox fork architecture portfolio",a:"Fox Factory",num:"7163222",nums:["7163222","7708296","8033368","8459418","8672106","8727366","9194456","10180171"],cat:"fork",st:"active",exp:2027,b:[],who:["Fox"],conf:"v",
+ s:"The eight-patent foundation listed on every premium Fox fork — damper internals, air-spring architecture and chassis design spanning filings from the mid-2000s through the 2010s. Numbers published on Fox's own virtual patent marking page (35 U.S.C. § 287).",
+ w:"The quiet IP moat under the 32, 34, 36, 38 and 40. The oldest patents in this cluster are reaching expiry now — the next 'patent cliff' to watch in suspension."},
+{y:2015,g:2018,t:"Live Valve electronic suspension",a:"Fox Factory",num:"9033122",nums:["7128192","9033122","9452654","9663181","10047817","10060499","10160511"],cat:"fork",st:"active",exp:2035,b:[],who:["Fox"],conf:"v",
+ s:"Accelerometer-driven solenoid damping that opens and firms the suspension in milliseconds — seven patents covering sensors, control logic and valve hardware, all listed on Fox's virtual patent marking page.",
  w:"The opening move in the electronic suspension patent race."},
+{y:2017,g:2020,t:"GRIP2 damper (US 10,578,184)",a:"Fox Factory",num:"10578184",cat:"fork",st:"active",exp:2037,b:[],who:["Fox"],conf:"v",
+ s:"The four-way-adjustable damper architecture with VVC (Variable Valve Control) — the patented cartridge inside Fox's gravity-oriented Factory forks since 2018, listed against GRIP2-equipped models on Fox's patent page.",
+ w:"Damper cartridges are where modern fork competition actually happens; GRIP2's patent is the fence around Fox's flagship feel."},
 {y:2013,g:null,t:"Fox wireless dropper / integration applications",a:"Fox",num:null,cat:"fork",st:"pending",exp:null,b:[],who:["Fox"],conf:"v",
  s:"A decade of filings: wireless droppers with stepped or infinite travel, GPS-triggered drops, voice control, and Live Valve integration.",
  w:"Patent applications as a window into the automated bike Fox is building toward."},
@@ -556,9 +624,15 @@ const D = [
 {y:1990,g:1992,t:"Early hydraulic disc brake",a:"Hope Technology (Barnoldswick, England)",num:null,cat:"comp",st:"expired",exp:2012,j:"GB",b:[],who:["Hope"],conf:"m",
  s:"Two ex-Rolls-Royce aerospace engineers, unimpressed by cantilevers, built a hydraulic disc caliper in 1989 and exhibited their entire stock — 14 bikes' worth — at Interbike 1992.",
  w:"Hayes gets credit for the first mass-market MTB disc, but Hope was machining theirs in Lancashire years earlier. Aerospace tolerances meet British weather."},
-{y:2014,g:2016,t:"Vibrocore foam-core vibration damping",a:"Spank Industries",num:null,cat:"comp",st:"active",exp:2034,b:[],who:[],conf:"l",
- s:"A biodegradable foam of precisely controlled density injected into alloy bars and rims, shifting resonant frequency above the harmful 12–25Hz band instead of fighting amplitude. Patented per Spank; number unverified.",
- w:"Same enemy as the Fox and Rimpact tuned mass dampers — hand-arm vibration — attacked with materials science instead of suspended weights."},
+{y:2014,g:2016,t:"Vibrocore foam-core vibration damping",a:"Gavin Vos / Spank Industries",num:null,cat:"comp",st:"active",exp:2034,b:[],who:["Gavin Vos"],conf:"l",
+ s:"A biodegradable foam of precisely controlled density injected into alloy bars and rims, shifting resonant frequency above the harmful 12–25Hz band instead of fighting amplitude. Invented by Spank founder Gavin Vos — a South African surfer, BMX racer and ex-Marine who built his own bar and rim factories (Anvil, Fratelli) in Taichung. Patented per Spank; number unverified.",
+ w:"Same enemy as the Fox and Rimpact tuned mass dampers — hand-arm vibration — attacked with materials science instead of suspended weights. Vos is the second South African inventor in the atlas, alongside Dr. Christopher Leatt."},
+{y:2004,g:2006,t:"Leatt-Brace cervical spine protection",a:"Dr. Christopher Leatt / Leatt Corporation (South Africa)",num:null,cat:"comp",st:"active",exp:null,j:"ZA",b:["licensor"],who:["Leatt"],conf:"m",
+ s:"A neck brace creating an alternative load path that redirects helmet impact forces away from the cervical spine — developed by Dr. Christopher Leatt, a physician, after witnessing a fatal neck injury at a motorcycle race in 2001. Leatt holds 30+ international patents spanning the brace mechanism and the later 360° Turbine helmet technology (energy-absorbing discs reducing rotational acceleration).",
+ w:"The atlas's first medical-degree inventor. Leatt built an entire protection company on patented biomechanics — and 360° Turbine is the in-house answer to the same rotational-impact problem MIPS licenses to everyone else."},
+{y:1996,g:1998,t:"MIPS — Multi-directional Impact Protection System",a:"Peter Halldin & Hans von Holst / MIPS AB (Sweden)",num:null,cat:"comp",st:"active",exp:null,j:"SE",b:["licensor"],who:["MIPS"],conf:"m",
+ s:"A low-friction liner letting the helmet slide 10–15mm relative to the head during angled impacts, reducing rotational forces transmitted to the brain. Born from research at KTH Royal Institute of Technology and the Karolinska Institute in Stockholm; first patents date to the mid-1990s, with a large continuing portfolio.",
+ w:"The most successful licensing model in cycling safety — the yellow dot sits in essentially every premium helmet lineup. MIPS never made a helmet; it patented a layer and licensed the physics."},
 /* ---- E-MTB & Electronics ---- */
 {y:2010,g:2013,t:"Bosch mid-drive motor platform",a:"Bosch",num:null,cat:"emtb",st:"active",exp:2033,b:[],who:["Bosch"],conf:"v",
  s:"The Performance Line family, backed by roughly 65 bicycle-related filings a year spanning motors, batteries, sensors and connectivity.",
@@ -628,6 +702,9 @@ const D = [
 {y:2012,g:2014,t:"Flip-chip geometry adjustment",a:"Multiple assignees",num:null,cat:"frame",st:"active",exp:null,b:[],who:[],conf:"l",
  s:"Eccentric inserts at shock or linkage mounts toggling geometry between settings; various brands hold variants.",
  w:"A crowded micro-patent space where everyone owns a slightly different chip."},
+{y:2000,g:2000,t:"ISIS Drive — the open-source BB standard",a:"Industry consortium (Truvativ, Race Face, Bontrager, et al.)",num:null,cat:"frame",st:"expired",exp:null,b:["givenaway"],who:[],conf:"v",
+ s:"An eight-spline crank-interface standard published around 2000 with no patent — any manufacturer could implement it freely. Popular from roughly 2001 to 2008 before Shimano's external-bearing Hollowtech II and press-fit BB shells made the design obsolete.",
+ w:"The fourth open-standard node in the atlas, alongside Boost, Triple Triangle and Forward Geometry. ISIS built momentum because it was free; its eventual decline shows the other edge of that bet — without a controlling IP owner, quality fragmentation and orphaned tooling can erode adoption faster than any competitor's patent would have."},
 {y:2019,g:2021,t:"Serviceability hardware (grease ports, bearing shields)",a:"Santa Cruz et al.",num:null,cat:"frame",st:"active",exp:null,b:[],who:["Santa Cruz"],conf:"l",
  s:"Lower-link grease ports, sealed pivot architectures and lifetime-bearing programs with assorted filings.",
  w:"Unsexy patents that decide whether your bike survives a Pacific Northwest winter."},
@@ -642,7 +719,30 @@ const D = [
  w:"The third 'un-patent' alongside Boost and Triple Triangle — arguably the most influential MTB idea of the 2010s, and nobody owned it. Geometry numbers can't really be fenced; Nicolai's Geometron pushed the same direction even further, also unpatented."},
 {y:1989,g:1989,t:"Triple Triangle — the trademark, not the patent",a:"GT Bicycles",num:null,cat:"frame",st:"expired",exp:null,b:["priorart"],who:["GT"],conf:"v",
  s:"GT's signature seatstay-past-the-seat-tube frame design is protected as a registered trademark (Triple Triangle®) and trade dress — research shows no utility patent on the mechanism.",
- w:"The second 'un-patent' in the atlas alongside Boost: one of cycling's most recognizable frame identities, built on branding rather than utility claims."}
+ w:"The second 'un-patent' in the atlas alongside Boost: one of cycling's most recognizable frame identities, built on branding rather than utility claims."},
+
+/* ---- Bike Transport ---- */
+{y:1995,g:1998,t:"QuikRack — Fast-loading protective bicycle rack (US 5,833,074)",a:"Cal M. Phillips (licensed to 1UP USA)",num:"5833074",cat:"transport",st:"expired",exp:2016,b:["licensor","priorart"],who:["Cal Phillips","1UP USA"],conf:"v",
+ s:"The original no-frame-contact tray rack — bikes held by tires, a swinging arm over each wheel, mounted to a standard hitch receiver. Invented and patented by Cal Phillips; 1UP USA licensed the design rather than buying it outright. Its 2016 expiry triggered an immediate wave of tray-style competitors including RockyMounts GuideRail and Quik'R'Stuff.",
+ w:"The MTBR forum confirmed the licensing model explicitly: 'The patent was apparently licensed by 1UP from the inventor, Cal Phillips.' Cal retained ownership for 20+ years, then launched his own competing brand (QuikrStuff / Mach2) the moment the market opened up. The Weagle licensor model, in rack form."},
+{y:2015,g:2017,t:"Mach2 rack portfolio — Cal Phillips / QuikrStuff",a:"Cal M. Phillips / QuikrStuff",num:"9956922",nums:["CA2956005","9902222","9956922","10005329","10011237","10059276","10065568","10071695","10086769","10099525","10106100","10124740","10150424","10167887"],cat:"transport",st:"active",exp:2037,b:["licensor"],who:["Cal Phillips","QuikrStuff"],conf:"v",
+ s:"Fourteen patents covering the Mach2 design — 13 US grants plus Canada Patent 2,956,005 (Carrier for a two-wheeled vehicle). Titles span the full mechanical stack: captive pin hitch retention, tray assemblies with automatic position locks, sliding pawl ratchet bars, adjustable retention arms, and beam-joining apparatus. US 6,620,081 (exercise stand, notice of infringement filed) is a 16th Phillips patent adjacent to this family. Cal Phillips holds 19 additional bicycle-related patents beyond these 15 listed.",
+ w:"The inventor who licensed his original idea to 1UP for 20 years, watched the patent expire, then filed 14 new patents and launched his own brand to sell directly. Total confirmed bicycle-related IP: 35+ patents. By patent count, Cal Phillips is the most prolific individual inventor in the Bike Transport category — and one of the most prolific in the atlas overall."},
+{y:2018,g:2021,t:"1UP USA independent rack patents",a:"1UP USA (Binghamton, NY)",num:"11142133",nums:["11142133","10603968"],cat:"transport",st:"active",exp:2039,b:[],who:["1UP USA"],conf:"v",
+ s:"Two patents 1UP USA holds independently of the Cal Phillips Mach2 family: US 11,142,133 — adjustable arm hooks for clamping bicycle tires; US 10,603,968 — locking adjustable hitch receiver tensioning assembly. Filed after the original QuikRack patent expired.",
+ w:"The licensee filing their own IP in the category once the original opened up. 1UP's independent patents protect the refinements they developed over two decades of manufacturing — not the concept, but the execution."},
+{y:2019,g:2021,t:"Lolo bike rack portfolio",a:"Lolo (Portland, OR)",num:"11518317",nums:["11518317","11590555"],cat:"transport",st:"active",exp:2041,b:[],who:["Lolo"],conf:"v",
+ s:"Two confirmed US patents: 11,518,317 and 11,590,555. A third number cited by Lolo (17,214,670) matches the format of a US patent application serial number rather than a granted patent — held pending verification of whether it resolved to a grant and what number it received.",
+ w:"Portland-made rack competing in the premium tray space. The application-vs-grant distinction on the third number is a useful teaching point: 'patent pending' and 'patented' are meaningfully different claims, and distinguishing them is part of what this atlas exists to do."},
+{y:2015,g:2018,t:"Kuat FlatLock, foot pedal & OneTap rack patents",a:"Kuat Racks (Boulder, CO)",num:null,cat:"transport",st:"active",exp:2038,b:[],who:["Kuat"],conf:"m",
+ s:"Kuat confirms multiple patented features across its lineup: the FlatLock™ hitch cam (wobble-free receiver fit), the foot pedal fold mechanism (NV 2.0, Piston family), and the OneTap hydro-pneumatic loading levers (Piston Pro X). FastFit wheel-size adjustment and EasyClip tray tabs are listed as patent-pending. Kuat maintains a patents page at kuat.com/pages/patents.",
+ w:"Premium rack engineering at its most detail-focused — Kuat patents the mechanisms other brands treat as commodity hardware. Patent numbers need a Google Patents assignee search to verify; the Kashima-coated struts on the Piston Pro X are the Fox suspension callback for bike racks."},
+{y:2018,g:2020,t:"Saris MHS Modular Hitch System",a:"Saris (Madison, WI)",num:null,cat:"transport",st:"active",exp:2040,b:[],who:["Saris"],conf:"l",
+ s:"Saris lists 'patents issued and pending' across the MHS Modular Hitch System — a future-proof base interface accepting interchangeable bike carriers, cargo, and accessory trays. Made in Madison, Wisconsin, from local materials.",
+ w:"Modularity as patent strategy: Saris protects the interface rather than specific rack configurations, so every new accessory extends the moat. Numbers unverified pending USPTO search. Wisconsin's fourth appearance in this atlas after Gehl, Hayes, and the University of Wisconsin geometry formula patent."},
+{y:2010,g:2014,t:"Thule hitch rack portfolio",a:"Thule Group (Sweden)",num:null,cat:"transport",st:"active",exp:2034,j:"SE",b:[],who:["Thule"],conf:"l",
+ s:"Thule's HitchSwitch lever (tilt with or without bikes loaded), AutoAttach tool-free installation, and SnugTite Stinger anti-wobble positioning are described as proprietary across the T2 Pro line. Thule is Swedish — patents likely filed with PRV and/or EPO. No patent page or specific numbers found in product literature.",
+ w:"The world's largest rack company whose IP is the hardest to pin down. Either very quietly protected or relying on trade dress and manufacturing scale. Needs a PRV/Espacenet search to resolve."}
 ];
 
 /* ======== ERAS ======== */
@@ -660,7 +760,7 @@ const ERAS = [
 ];
 
 /* ======== STATE ======== */
-const state = { cat:new Set(), st:new Set(), badge:new Set(), who:new Set() };
+const state = { cat:new Set(), st:new Set(), badge:new Set(), inv:new Set(), brand:new Set() };
 
 /* ======== HELPERS ======== */
 const $ = s => document.querySelector(s);
@@ -683,8 +783,13 @@ function chip(label,set,key,row){
 }
 Object.entries(CATS).forEach(([k,v])=>chip(v,state.cat,k,$("#rowCat")));
 [["active","Active"],["expired","Expired"],["pending","Pending"]].forEach(([k,v])=>chip(v,state.st,k,$("#rowStatus")));
-Object.entries(BADGES).forEach(([k,v])=>chip(v,state.badge,k,$("#rowBadge")));
-PEOPLE.forEach(p=>chip(p,state.who,p,$("#rowWho")));
+Object.entries(BADGES).forEach(([k,v])=>{
+  const b=chip(v,state.badge,k,$("#rowBadge"));
+  if(BADGE_TIPS[k]){ b.title=BADGE_TIPS[k]; b.setAttribute("aria-description",BADGE_TIPS[k]); }
+  if(k==="priorart"){ const info=document.createElement("span"); info.className="chip-info"; info.setAttribute("aria-hidden","true"); info.textContent="ⓘ"; b.appendChild(info); }
+});
+INVENTORS.forEach(({label,key})=>chip(label,state.inv,key,$("#rowInv")));
+BRANDS.forEach(b=>chip(b,state.brand,b,$("#rowBrand")));
 
 $("#clearAll").onclick=()=>{
   Object.values(state).forEach(s=>s.clear());
@@ -701,16 +806,43 @@ document.querySelectorAll(".swatch").forEach(s=>{
   };
 });
 
-/* ======== FILTER LOGIC ======== */
+// Mouse-wheel horizontal scroll on filter rows
+document.querySelectorAll(".frow").forEach(row=>{
+  row.addEventListener("wheel",e=>{
+    if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){
+      row.scrollLeft+=e.deltaY; e.preventDefault();
+    }
+  },{passive:false});
+});
 function passes(d){
   if(state.cat.size && !state.cat.has(d.cat)) return false;
   if(state.st.size && !state.st.has(d.st)) return false;
   if(state.badge.size && ![...state.badge].some(b=>d.b.includes(b))) return false;
-  if(state.who.size && ![...state.who].some(w=>d.who.includes(w))) return false;
+  const allWho=new Set([...state.inv,...state.brand]);
+  if(allWho.size && !d.who.some(w=>allWho.has(w))) return false;
   return true;
 }
 
 /* ======== RENDER ======== */
+const NATOFFICE = {
+  DE:{full:"German Patent Office (DPMA)",  url:"https://depatisnet.dpma.de/"},
+  GB:{full:"UK Intellectual Property Office", url:"https://www.ipo.gov.uk/p-ipsum.htm"},
+  FR:{full:"INPI (French Patent Office)",  url:"https://www.inpi.fr/"},
+  SE:{full:"Swedish Patent Office (PRV)",  url:"https://www.prv.se/en/patents/"},
+  AU:{full:"IP Australia (AusPat)",        url:"https://pericles.ipaustralia.gov.au/ols/auspat/quickSearch.do"},
+  EP:{full:"EPO Espacenet",               url:"https://worldwide.espacenet.com/patent/search"},
+  CA:{full:"Canadian Patent Database (CIPO)", url:"https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en"},
+};
+const NON_ENGLISH_JUR = new Set(["DE","FR","SE","ES","JP"]);
+const JUR_LANG = {DE:"German",FR:"French",SE:"Swedish",ES:"Spanish",JP:"Japanese"};
+
+// num is all-digits → US patent; country-prefixed (AU2013...) → use directly
+function patentUrl(num,jur){
+  if(!num) return null;
+  if(/^[A-Z]{2}/.test(num)) return `https://patents.google.com/patent/${num}`;
+  return `https://patents.google.com/patent/US${num}`;
+}
+
 function cardHTML(d){
   const conf=confLabel(d.conf);
   const jur=d.j??"US";
@@ -726,31 +858,40 @@ function cardHTML(d){
   ].join("");
   const cd=d.st==="active"&&d.exp?(d.exp-NOW>0?`<span class="countdown">~${d.exp-NOW} yrs remaining</span>`:`<span class="countdown">expiring</span>`):(d.exp?`est. ${d.exp}`:"—");
   function numLink(n){
-    const isDesign=n.startsWith("D");
-    const digits=isDesign?n.slice(1):n;
-    const url=`https://patents.google.com/patent/US${isDesign?"D":""}${digits}`;
-    const label=isDesign?`US D${digits}`:`US ${digits.replace(/(\d{1,2})(\d{3})(\d{3})$/,"$1,$2,$3")}`;
+    const url=patentUrl(n,"US");
+    const isCountry=/^[A-Z]{2}\d/.test(n);
+    const isD=n.startsWith("D")&&!isCountry;
+    let label;
+    if(isCountry){
+      const cc=n.slice(0,2), digits=n.slice(2);
+      label=`${cc} ${digits.replace(/(\d{1,3})(\d{3})(\d{3})$/,"$1,$2,$3")}`;
+    } else if(isD){
+      label=`US D${n.slice(1)}`;
+    } else {
+      label=`US ${n.replace(/(\d{1,2})(\d{3})(\d{3})$/,"$1,$2,$3")}`;
+    }
     return {url,label};
   }
+  const q=encodeURIComponent('bicycle '+(d.a.split(/[\/→(]/)[0].trim())+' '+d.t.replace(/\(.*?\)/g,'').split('—')[0].trim());
+  const nat=NATOFFICE[jur];
+  const needsTrans=NON_ENGLISH_JUR.has(jur);
+  const transNote=needsTrans?`<span class="gp-trans">Patent text in ${JUR_LANG[jur]||jur} — machine translation available via Google Patents or Espacenet</span>`:"";
   let gp;
   if(d.nums&&d.nums.length>1){
-    const links=d.nums.map(n=>{const {url,label}=numLink(n);return `<a class="gp gp-li" href="${url}" target="_blank" rel="noopener">${label} →</a>`;}).join("");
+    const links=d.nums.map(n=>{const{url,label}=numLink(n);return `<a class="gp gp-li" href="${url}" target="_blank" rel="noopener">${label} →</a>`;}).join("");
     gp=`<details class="gp-list"><summary>All ${d.nums.length} patents on Google Patents ▾</summary><div class="gp-links">${links}</div></details>`;
   } else if(d.num){
-    let url,label;
-    if(jur==="US"&&pt==="design"){
-      url=`https://patents.google.com/patent/USD${d.num}`;
-      label=`View US D${d.num} on Google Patents →`;
-    } else if(jur==="US"){
-      url=`https://patents.google.com/patent/US${d.num}`;
-      label=`View US ${d.num.replace(/(\d{1,2})(\d{3})(\d{3})$/,"$1,$2,$3")} on Google Patents →`;
-    } else {
-      url=`https://patents.google.com/patent/${d.num}`;
-      label=`View ${d.num} on Google Patents →`;
-    }
-    gp=`<a class="gp" href="${url}" target="_blank" rel="noopener">${label}</a>`;
+    const url=patentUrl(d.num,jur);
+    const isD=pt==="design";
+    const raw=isD?`D${d.num}`:d.num;
+    const pretty=/^[A-Z]{2}/.test(raw)?raw:`US ${raw.replace(/(\d{1,2})(\d{3})(\d{3})$/,"$1,$2,$3")}`;
+    gp=`<a class="gp" href="${url}" target="_blank" rel="noopener">View ${pretty} on Google Patents →</a>${transNote}`;
+  } else if(jur!=="US"){
+    const espUrl=`https://worldwide.espacenet.com/patent/search?q=${q}`;
+    const natLink=nat?`<a class="gp gp-secondary" href="${nat.url}" target="_blank" rel="noopener">Search ${nat.full} →</a>`:"";
+    gp=`<a class="gp" href="${espUrl}" target="_blank" rel="noopener">Search on Espacenet (worldwide) →</a>${natLink}${transNote}`;
   } else {
-    gp=`<a class="gp" href="https://patents.google.com/?q=${encodeURIComponent('bicycle '+(d.a.split(/[\/→(]/)[0].trim())+' '+d.t.replace(/\(.*?\)/g,'').split('—')[0].trim())}" target="_blank" rel="noopener">Search related patents on Google Patents →</a>`;
+    gp=`<a class="gp" href="https://patents.google.com/?q=${q}" target="_blank" rel="noopener">Search related patents on Google Patents →</a>`;
   }
   return `<article class="card ${d.st==='pending'?'pending-card':''}" data-y="${d.y}">
     <button class="chead" aria-expanded="false">
