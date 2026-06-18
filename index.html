@@ -32,7 +32,7 @@
   --spine:#C5050C; --primary:#C5050C; --accent:#9B0000; --deep:#282728;
   --chip-bg:#EFEFEF; --card-border:#E2E2E2;
   --st-active:#1f7a33; --st-expired:#8a8a8a; --st-pending:#A9762B; --st-lit:#C5050C;
-  --lit-solid:0; /* outlined litigated pill in CAMBA */
+  --lit-solid:0;
 }
 [data-theme="cambr"]{
   --bg:#F7F8FA; --surface:#FFFFFF; --ink:#0B162A; --ink-soft:#4a566b;
@@ -45,7 +45,6 @@
 body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:var(--primary)}
 button{font-family:inherit;cursor:pointer}
-
 /* ---------- Header ---------- */
 header{background:var(--deep);color:#fff;padding:18px 16px 14px}
 .hwrap{max-width:880px;margin:0 auto}
@@ -63,10 +62,15 @@ h1{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,6vw,46px
 .sw-cambr{background:linear-gradient(135deg,#0B162A 55%,#C83803 55%)}
 .swatch .tip{position:absolute;top:110%;left:50%;transform:translateX(-50%);background:#000;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s}
 .swatch:hover .tip{opacity:1}
-
-/* ---------- Scrubber (signature) ---------- */
+/* ---------- Scrubber ---------- */
 .scrubber{margin-top:14px}
-.scrub-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:4px}
+/* NEW: label row holds scrub-label + step-btn side by side */
+.scrub-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.scrub-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+/* NEW: year-bracket step toggle */
+.step-btn{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.42);color:#fff;border-radius:6px;padding:3px 10px;cursor:pointer;transition:background .15s,border-color .15s;white-space:nowrap}
+.step-btn:hover{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.7)}
+.step-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .bars{display:flex;align-items:flex-end;gap:3px;height:56px}
 .bar{flex:1;background:rgba(255,255,255,.32);border:none;border-radius:3px 3px 0 0;min-width:8px;position:relative;transition:background .15s}
 .bar:hover,.bar:focus-visible{background:rgba(255,255,255,.85)}
@@ -75,7 +79,13 @@ h1{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,6vw,46px
 .bar .bcount{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:9px;opacity:0;padding-bottom:2px}
 .bar:hover .bcount{opacity:.9}
 .bars-foot{height:16px}
-
+/* ---------- Search (NEW) ---------- */
+.search-row{border-bottom:1px solid var(--card-border);padding:6px 0 5px;background:var(--bg)}
+.search-wrap{max-width:880px;margin:0 auto;padding:0 16px}
+.search-inp{width:100%;background:var(--surface);border:1.5px solid var(--card-border);border-radius:999px;padding:8px 14px 8px 36px;font-size:13px;font-family:var(--font-body);color:var(--ink);outline:none;transition:border-color .15s;min-height:38px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:14px 50%}
+.search-inp:focus{border-color:var(--primary)}
+.search-inp::placeholder{color:var(--ink-soft);opacity:.7}
+.search-inp::-webkit-search-cancel-button{cursor:pointer}
 /* ---------- Filters ---------- */
 .filters{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--card-border);padding:8px 0}
 .frow{max-width:880px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:3px 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -86,7 +96,6 @@ h1{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,6vw,46px
 .chip.on{background:var(--primary);border-color:var(--primary);color:#fff}
 .chip:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 .chip-info{font-size:10px;opacity:.6;margin-left:3px;pointer-events:none}
-/* Desktop: show thin scrollbar on hover; support mouse-wheel scroll */
 @media(hover:hover){
   .frow:hover{scrollbar-width:thin;scrollbar-color:var(--spine) transparent}
   .frow:hover::-webkit-scrollbar{display:block;height:3px}
@@ -95,7 +104,6 @@ h1{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,6vw,46px
 }
 .fmeta{max-width:880px;margin:2px auto 0;padding:0 16px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink-soft)}
 .clearbtn{background:none;border:none;color:var(--primary);font-size:12px;font-weight:600;text-decoration:underline;padding:4px}
-
 /* ---------- Timeline ---------- */
 main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .era{margin-top:8px}
@@ -149,22 +157,16 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 footer{background:var(--deep);color:#fff;padding:22px 16px;font-size:12.5px}
 footer .hwrap p{opacity:.8;max-width:640px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
-/* Mobile first — default styles target small screens */
-/* ≥640px: slightly more padding in cards */
 @media(min-width:640px){
   .chead{padding:14px 18px}
   .cbody{padding:0 18px 16px}
   h1{letter-spacing:.02em}
 }
-/* Iframe/embed safety — prevent horizontal bleed at any width */
 html,body{overflow-x:hidden;max-width:100%}
-/* Tap targets ≥44px on all interactive elements */
 .chip{min-height:44px;min-width:44px}
 .chead{min-height:52px}
 .swatch{min-width:40px;min-height:36px}
-/* Filter label hide on very small screens to save chip space */
 @media(max-width:360px){.flabel{display:none}.frow{padding:3px 8px}}
-/* Readable card body on small screens */
 @media(max-width:480px){
   h1{font-size:26px}
   .cbody p,.why{font-size:13.5px}
@@ -173,6 +175,7 @@ html,body{overflow-x:hidden;max-width:100%}
   .bars{height:44px}
   .blabel{font-size:8px}
   .pill{font-size:9px;padding:2px 6px}
+  .search-inp{font-size:12px}
 }
 </style>
 </head>
@@ -191,7 +194,10 @@ html,body{overflow-x:hidden;max-width:100%}
       <button class="swatch sw-cambr" data-set="cambr" aria-label="CAMBR theme"><span class="tip">CAMBR</span></button>
     </div>
     <div class="scrubber">
-      <div class="scrub-label">Patents per era — tap a bar to jump</div>
+      <div class="scrub-label-row">
+        <div class="scrub-label">Patents per era — tap a bar to jump</div>
+        <button class="step-btn" id="stepToggle" title="Toggle bar bracket: 5yr → 2yr → 1yr → 5yr">5yr</button>
+      </div>
       <div class="bars" id="bars" role="navigation" aria-label="Timeline eras"></div>
       <div class="bars-foot"></div>
     </div>
@@ -199,6 +205,13 @@ html,body{overflow-x:hidden;max-width:100%}
 </header>
 
 <div class="filters" id="filters">
+  <div class="search-row">
+    <div class="search-wrap">
+      <input type="search" id="searchInput" class="search-inp"
+        placeholder="Search — title, inventor, brand, patent number…"
+        autocomplete="off" spellcheck="false">
+    </div>
+  </div>
   <div class="frow" id="rowCat"><span class="flabel">Category</span></div>
   <div class="frow" id="rowStatus"><span class="flabel">Status</span></div>
   <div class="frow" id="rowBadge"><span class="flabel">Story</span></div>
@@ -333,7 +346,6 @@ const D = [
 {y:2016,g:2018,t:"Integrated hidden-shock frame designs",a:"Scott / Bold Cycles",num:null,cat:"susp",st:"active",exp:2036,b:[],who:[],conf:"l",
  s:"Bold's in-frame shock placement, later adopted by Scott on the Spark, with associated structural and access patents.",
  w:"Where suspension patents meet industrial design — protecting packaging, not just kinematics."},
-
 {y:2001,g:2001,t:"FPS / OST+ rear suspension",a:"Lapierre Cycles (France)",num:null,cat:"susp",st:"expired",exp:2021,j:"FR",b:[],who:["Lapierre"],conf:"m",
  s:"Lapierre's patented FPS (Frequency Performance System) debuted on the 2001 X-Control — Jérôme Chiotti won the French MTB Championship on it, the first rider ever to win a national title on a full-suspension bike. OST+ later evolved the upper link into a patented four-bar with VPP-like kinematics.",
  w:"France's entry into the suspension patent wars, from a brand founded in Dijon in 1946. The atlas's only French utility patent — patent numbers need INPI/EPO verification."},
@@ -404,7 +416,6 @@ const D = [
 {y:2009,g:2011,t:"TwinLoc simultaneous lockout",a:"Scott",num:null,cat:"fork",st:"expired",exp:2029,b:[],who:[],conf:"l",
  s:"A single bar-mounted remote switching fork and shock between three modes at once, including a reduced-travel traction mode.",
  w:"Cockpit-control IP — patents on how the rider commands the bike, not the suspension itself."},
-
 {y:1991,g:1993,t:"AMP F1/BLT linkage fork + through-shaft damper",a:"Horst Leitner / AMP Research",num:null,cat:"fork",st:"expired",exp:2013,b:["licensor"],who:["Horst Leitner"],conf:"m",
  s:"A parallelogram-link fork derived from Leitner's moto designs, paired with a through-shaft hydraulic damper sealed at both ends — frame, fork and shock all built in-house at AMP in Laguna Beach.",
  w:"Proof AMP was a complete suspension house, not just the Horst Link company — the entire B2 was AMP-designed and manufactured."},
@@ -484,7 +495,6 @@ const D = [
 {y:2015,g:2017,t:"Cassette extender cogs",a:"OneUp / e*thirteen",num:null,cat:"drive",st:"active",exp:2035,b:[],who:[],conf:"l",
  s:"Aftermarket cogs and modified cluster designs extending stock cassettes' range, with their own filings.",
  w:"Small companies patenting around the giants — the aftermarket's survival strategy."},
-
 {y:2008,g:2010,t:"Gates Carbon Drive / CDX CenterTrack",a:"Gates (CenterTrack: Wayne Lumpkin)",num:null,cat:"drive",st:"active",exp:2030,b:["licensor"],who:["Gates","Wayne Lumpkin"],conf:"m",
  s:"Carbon tensile-cord belts plus the CenterTrack center-rib sprocket system — designed and patented by Wayne Lumpkin, the founder of Avid Brakes, to fix the first-generation belt's alignment and tension problems.",
  w:"The Avid founder reappearing in belt drives is the kind of cross-category inventor thread this atlas exists to surface. Standard partner to every Pinion build."},
@@ -558,7 +568,6 @@ const D = [
 {y:2017,g:2019,t:"Polymer spoke construction",a:"Berd",num:null,cat:"wheel",st:"active",exp:2037,b:[],who:[],conf:"l",
  s:"UHMWPE fiber spokes lighter than steel with patented termination and attachment methods.",
  w:"Materials-science patents arriving in the most conservative part of the bike."},
-
 {y:1978,g:1980,t:"Freehub cassette hub",a:"Shimano",num:null,cat:"wheel",st:"expired",exp:2000,b:[],who:["Shimano"],conf:"m",
  s:"Moving the ratchet mechanism from a threaded freewheel into the hub body itself, creating the cassette standard.",
  w:"Arguably Shimano's most consequential hub patent ever — every modern rear wheel descends from it."},
@@ -614,7 +623,6 @@ const D = [
 {y:2016,g:2018,t:"EDC steerer-tube tool system",a:"OneUp",num:null,cat:"comp",st:"active",exp:2036,b:[],who:[],conf:"l",
  s:"Tool storage threaded inside the fork steerer, with patents on the threading method and tool packaging.",
  w:"Aftermarket ingenuity finding patentable space inside a part everyone ignored."},
-
 {y:2010,g:2014,t:"GripLock headset retention (US 8,662,517)",a:"Chris King",num:"8662517",cat:"comp",st:"active",exp:2030,b:[],who:["Chris King"],conf:"v",
  s:"An isolated-wedge system separating bearing preload from steerer-tube clamping, so impacts through the steerer can't hammer the headset out of adjustment on long-travel bikes.",
  w:"Paired with the 1990 Aheadset entry: headset patents 20 years apart, solving the problems the first one created. Number published by Chris King themselves."},
@@ -664,7 +672,6 @@ const D = [
 {y:2019,g:2021,t:"Reverb AXS wireless actuation",a:"RockShox / SRAM",num:null,cat:"emtb",st:"active",exp:2039,b:[],who:["RockShox","SRAM"],conf:"m",
  s:"Battery-and-solenoid actuation replacing hydraulic hose, inside the AXS wireless ecosystem.",
  w:"The bridge entry between mechanical droppers and the fully electronic cockpit."},
-
 {y:2023,g:null,t:"Electronic suspension + dropper control (application)",a:"Öhlins (Sweden)",num:null,cat:"emtb",st:"pending",exp:null,j:"SE",b:[],who:["Öhlins"],conf:"v",
  s:"A 2024-published filing for simultaneous electronic control of damping and seatpost position — spotted before any Öhlins electronic product exists.",
  w:"Every suspension maker now files electronics patents first and ships hardware later. The Swedish entry in the Live Valve / Flight Attendant arms race."},
@@ -720,7 +727,6 @@ const D = [
 {y:1989,g:1989,t:"Triple Triangle — the trademark, not the patent",a:"GT Bicycles",num:null,cat:"frame",st:"expired",exp:null,b:["priorart"],who:["GT"],conf:"v",
  s:"GT's signature seatstay-past-the-seat-tube frame design is protected as a registered trademark (Triple Triangle®) and trade dress — research shows no utility patent on the mechanism.",
  w:"The second 'un-patent' in the atlas alongside Boost: one of cycling's most recognizable frame identities, built on branding rather than utility claims."},
-
 /* ---- Bike Transport ---- */
 {y:1995,g:1998,t:"QuikRack — Fast-loading protective bicycle rack (US 5,833,074)",a:"Cal M. Phillips (licensed to 1UP USA)",num:"5833074",cat:"transport",st:"expired",exp:2016,b:["licensor","priorart"],who:["Cal Phillips","1UP USA"],conf:"v",
  s:"The original no-frame-contact tray rack — bikes held by tires, a swinging arm over each wheel, mounted to a standard hitch receiver. Invented and patented by Cal Phillips; 1UP USA licensed the design rather than buying it outright. Its 2016 expiry triggered an immediate wave of tray-style competitors including RockyMounts GuideRail and Quik'R'Stuff.",
@@ -745,32 +751,45 @@ const D = [
  w:"The world's largest rack company whose IP is the hardest to pin down. Either very quietly protected or relying on trade dress and manufacturing scale. Needs a PRV/Espacenet search to resolve."}
 ];
 
-/* ======== ERAS ======== */
+
+/* ======== ERAS (5yr default) ======== */
 const ERAS = [
   {k:"e00pre", label:"Pre-1977", from:1800, to:1976},
-  {k:"e77", label:"1977–84", from:1977, to:1984},
-  {k:"e85", label:"1985–89", from:1985, to:1989},
-  {k:"e90", label:"1990–94", from:1990, to:1994},
-  {k:"e95", label:"1995–99", from:1995, to:1999},
-  {k:"e00", label:"2000–04", from:2000, to:2004},
-  {k:"e05", label:"2005–09", from:2005, to:2009},
-  {k:"e10", label:"2010–14", from:2010, to:2014},
-  {k:"e15", label:"2015–19", from:2015, to:2019},
-  {k:"e20", label:"2020–26", from:2020, to:2026}
+  {k:"e77",    label:"1977–84",  from:1977, to:1984},
+  {k:"e85",    label:"1985–89",  from:1985, to:1989},
+  {k:"e90",    label:"1990–94",  from:1990, to:1994},
+  {k:"e95",    label:"1995–99",  from:1995, to:1999},
+  {k:"e00",    label:"2000–04",  from:2000, to:2004},
+  {k:"e05",    label:"2005–09",  from:2005, to:2009},
+  {k:"e10",    label:"2010–14",  from:2010, to:2014},
+  {k:"e15",    label:"2015–19",  from:2015, to:2019},
+  {k:"e20",    label:"2020–26",  from:2020, to:2026}
 ];
 
 /* ======== STATE ======== */
 const state = { cat:new Set(), st:new Set(), badge:new Set(), inv:new Set(), brand:new Set() };
 
+/* NEW: year-bracket step (5 | 2 | 1) and search query */
+let stepYr  = 5;
+let searchQ = '';
+
 /* ======== HELPERS ======== */
 const $ = s => document.querySelector(s);
 const NOW = new Date().getFullYear();
-function statusOf(d){
-  if(d.st==="pending") return "pending";
-  if(d.b.includes("litigated") && d.num) return d.st; // status stays; litigated is badge+pill
-  return d.st;
-}
 function confLabel(c){ return c==="v"?null : c==="m"?"patent number unverified":"draft data — research in progress"; }
+
+/* NEW: returns era array for current stepYr */
+function getEras(){
+  if(stepYr===5) return ERAS;
+  const ys=D.map(d=>d.y);
+  const lo=Math.floor(Math.min(...ys)/stepYr)*stepYr;
+  const hi=Math.ceil((Math.max(...ys)+1)/stepYr)*stepYr;
+  const eras=[];
+  for(let y=lo;y<hi;y+=stepYr){
+    eras.push({k:`era${y}`, label:stepYr===1?`${y}`:`${y}–${y+stepYr-1}`, from:y, to:y+stepYr-1});
+  }
+  return eras;
+}
 
 /* ======== FILTER CHIPS ======== */
 function chip(label,set,key,row){
@@ -791,9 +810,12 @@ Object.entries(BADGES).forEach(([k,v])=>{
 INVENTORS.forEach(({label,key})=>chip(label,state.inv,key,$("#rowInv")));
 BRANDS.forEach(b=>chip(b,state.brand,b,$("#rowBrand")));
 
+/* MODIFIED: also clears searchQ */
 $("#clearAll").onclick=()=>{
   Object.values(state).forEach(s=>s.clear());
   document.querySelectorAll(".chip.on").forEach(c=>{c.classList.remove("on");c.setAttribute("aria-pressed","false")});
+  searchQ='';
+  const si=document.getElementById("searchInput"); if(si) si.value='';
   render();
 };
 
@@ -814,7 +836,14 @@ document.querySelectorAll(".frow").forEach(row=>{
     }
   },{passive:false});
 });
+
+/* MODIFIED: passes() now also checks searchQ */
 function passes(d){
+  if(searchQ){
+    const q=searchQ.toLowerCase();
+    const hay=[d.t,d.a,d.s,d.w,d.num,...d.who,...(d.nums||[])].filter(Boolean).join(' ').toLowerCase();
+    if(!hay.includes(q)) return false;
+  }
   if(state.cat.size && !state.cat.has(d.cat)) return false;
   if(state.st.size && !state.st.has(d.st)) return false;
   if(state.badge.size && ![...state.badge].some(b=>d.b.includes(b))) return false;
@@ -836,7 +865,6 @@ const NATOFFICE = {
 const NON_ENGLISH_JUR = new Set(["DE","FR","SE","ES","JP"]);
 const JUR_LANG = {DE:"German",FR:"French",SE:"Swedish",ES:"Spanish",JP:"Japanese"};
 
-// num is all-digits → US patent; country-prefixed (AU2013...) → use directly
 function patentUrl(num,jur){
   if(!num) return null;
   if(/^[A-Z]{2}/.test(num)) return `https://patents.google.com/patent/${num}`;
@@ -918,12 +946,14 @@ function cardHTML(d){
   </article>`;
 }
 
+/* MODIFIED: render() now uses getEras() for step-aware grouping */
 function render(){
   const list=D.filter(passes).sort((a,b)=>a.y-b.y);
   const tl=$("#timeline");
+  const eras=getEras();
   if(!list.length){ tl.innerHTML=`<div class="empty">No patents match these filters. Loosen one and the timeline comes back.</div>`; }
   else{
-    tl.innerHTML=ERAS.map(e=>{
+    tl.innerHTML=eras.map(e=>{
       const items=list.filter(d=>d.y>=e.from&&d.y<=e.to);
       if(!items.length) return "";
       return `<section class="era" id="${e.k}">
@@ -938,30 +968,52 @@ function render(){
   });
   // counts + clear
   const total=D.length, n=list.length;
-  const anyFilter=Object.values(state).some(s=>s.size);
+  const anyFilter=Object.values(state).some(s=>s.size)||searchQ;
   $("#resultCount").textContent = anyFilter?`${n} of ${total} entries`:`${total} entries · 1890–${NOW}`;
   $("#clearAll").hidden=!anyFilter;
   renderBars(list);
 }
 
+/* MODIFIED: renderBars() uses getEras() + adjusts bar min-width for step */
 function renderBars(list){
   const bars=$("#bars"); bars.innerHTML="";
-  const max=Math.max(...ERAS.map(e=>D.filter(d=>d.y>=e.from&&d.y<=e.to).length),1);
-  ERAS.forEach(e=>{
+  const eras=getEras();
+  const minW=stepYr===1?"3px":stepYr===2?"5px":"8px";
+  const max=Math.max(...eras.map(e=>D.filter(d=>d.y>=e.from&&d.y<=e.to).length),1);
+  eras.forEach(e=>{
     const full=D.filter(d=>d.y>=e.from&&d.y<=e.to).length;
     const cur=list.filter(d=>d.y>=e.from&&d.y<=e.to).length;
+    if(!full) return;
     const b=document.createElement("button");
     b.className="bar";
     b.style.height=Math.max(8,(full/max)*100)+"%";
     b.style.opacity=cur?1:.35;
+    b.style.minWidth=minW;
     b.setAttribute("aria-label",`${e.label}: ${cur} matching of ${full} patents — jump to era`);
-    b.innerHTML=`<span class="bcount">${cur}</span><span class="blabel">${e.k==="e00pre"?"Pre":e.label.slice(0,4)}</span>`;
+    // Label: 5yr uses original format; 2yr/1yr uses short year
+    const blabel=stepYr===5?(e.k==="e00pre"?"Pre":e.label.slice(0,4)):`'${String(e.from).slice(2)}`;
+    b.innerHTML=`<span class="bcount">${cur}</span><span class="blabel">${blabel}</span>`;
     b.onclick=()=>{ const el=document.getElementById(e.k); if(el) el.scrollIntoView({behavior:"smooth",block:"start"}); };
     bars.appendChild(b);
   });
 }
 
 render();
+
+/* ======== STEP TOGGLE  (5yr → 2yr → 1yr → 5yr) ======== */
+document.getElementById("stepToggle").addEventListener("click",()=>{
+  stepYr={5:2,2:1,1:5}[stepYr];
+  document.getElementById("stepToggle").textContent=`${stepYr}yr`;
+  render();
+});
+
+/* ======== SEARCH INPUT ======== */
+(()=>{
+  const inp=document.getElementById("searchInput");
+  let t;
+  inp.addEventListener("input",()=>{ clearTimeout(t); t=setTimeout(()=>{ searchQ=inp.value.trim(); render(); },150); });
+  inp.addEventListener("keydown",e=>{ if(e.key==="Escape"){ inp.value=''; searchQ=''; render(); } });
+})();
 </script>
 </body>
 </html>
