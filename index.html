@@ -753,17 +753,12 @@ const D = [
 
 
 /* ======== ERAS (5yr default) ======== */
-const ERAS = [
+  const ERAS = [
   {k:"e00pre", label:"Pre-1977", from:1800, to:1976},
-  {k:"e77",    label:"1977–84",  from:1977, to:1984},
-  {k:"e85",    label:"1985–89",  from:1985, to:1989},
-  {k:"e90",    label:"1990–94",  from:1990, to:1994},
-  {k:"e95",    label:"1995–99",  from:1995, to:1999},
-  {k:"e00",    label:"2000–04",  from:2000, to:2004},
-  {k:"e05",    label:"2005–09",  from:2005, to:2009},
-  {k:"e10",    label:"2010–14",  from:2010, to:2014},
-  {k:"e15",    label:"2015–19",  from:2015, to:2019},
-  {k:"e20",    label:"2020–26",  from:2020, to:2026}
+  ...Array.from({length: 2026-1977+1}, (_,i)=>{
+    const y=1977+i;
+    return {k:"y"+y, label:String(y), from:y, to:y};
+  })
 ];
 
 /* ======== STATE ======== */
