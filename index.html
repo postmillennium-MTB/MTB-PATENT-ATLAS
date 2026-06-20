@@ -136,6 +136,22 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .tab-panes .frow{padding:3px 0;max-width:none;margin:0}
 .hidden-pane{display:none!important}
 .filters:not([data-mode="all"]) .flabel{display:none}
+/* ---------- Scrollable row controls (arrows + show all) ---------- */
+.scroller{position:relative}
+.scroller .frow{padding-right:4px}
+.scroll-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:30px;height:30px;border-radius:50%;border:1px solid var(--card-border);background:var(--surface);color:var(--primary);font-size:14px;line-height:1;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.14)}
+.scroll-btn.show{display:flex}
+.scroll-btn.sb-left{left:-2px}
+.scroll-btn.sb-right{right:-2px}
+.scroller::before,.scroller::after{content:"";position:absolute;top:0;bottom:0;width:26px;pointer-events:none;z-index:4;opacity:0;transition:opacity .15s}
+.scroller::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
+.scroller::after{right:0;background:linear-gradient(270deg,var(--surface),transparent)}
+.scroller.can-left::before{opacity:1}
+.scroller.can-right::after{opacity:1}
+.showall-btn{flex:0 0 auto;align-self:center;border:1px dashed var(--spine);background:transparent;color:var(--primary);border-radius:999px;padding:6px 12px;font-size:11.5px;font-weight:600;font-family:var(--font-body);cursor:pointer;min-height:34px;white-space:nowrap}
+.scroller.expanded .frow{flex-wrap:wrap;overflow-x:visible}
+.scroller.expanded .scroll-btn{display:none!important}
+.scroller.expanded::before,.scroller.expanded::after{opacity:0!important}
 /* ---------- Timeline ---------- */
 main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .era{margin-top:8px}
@@ -297,8 +313,16 @@ html,body{overflow-x:hidden;max-width:100%}
     <div class="frow" id="rowCat"><span class="flabel">Category</span></div>
     <div class="frow" id="rowStatus"><span class="flabel">Status</span></div>
     <div class="frow" id="rowBadge"><span class="flabel">Story</span></div>
-    <div class="frow" id="rowInv"><span class="flabel">Inventors</span></div>
-    <div class="frow" id="rowBrand"><span class="flabel">Brands</span></div>
+    <div class="scroller" id="scrollInv">
+      <button class="scroll-btn sb-left" aria-label="Scroll left">‹</button>
+      <div class="frow" id="rowInv"><span class="flabel">Inventors</span></div>
+      <button class="scroll-btn sb-right" aria-label="Scroll right">›</button>
+    </div>
+    <div class="scroller" id="scrollBrand">
+      <button class="scroll-btn sb-left" aria-label="Scroll left">‹</button>
+      <div class="frow" id="rowBrand"><span class="flabel">Brands</span></div>
+      <button class="scroll-btn sb-right" aria-label="Scroll right">›</button>
+    </div>
   </div>
   <div class="fmeta">
     <span id="resultCount"></span>
@@ -386,7 +410,7 @@ const INVENTORS = [
   {label:"Owen Pemberton",key:"Owen Pemberton"},
   {label:"Mic Williams", key:"Mic Williams"},
 ];
-const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff","Hayes","Manitou","SUNringlé","Reynolds","MRP","Nicolai","KOM","Antidote","OPEN","Speedplay","Wahoo Fitness","Onyx","Classified","Foes","EXT","Spot","Reeb","Revel","Odyssey","Mongoose","SE Racing","Canyon","Priority","Ari","Knolly","Intense","WRP","Vittoria","Lauf","BikeYoke","Forbidden","OneUp","Garbaruk","AMS","RideWrap","Aenomaly","BMC","SCOR"];
+const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff","Hayes","Manitou","SUNringlé","Reynolds","MRP","Nicolai","KOM","Antidote","OPEN","Speedplay","Wahoo Fitness","Onyx","Classified","Foes","EXT","Spot","Reeb","Revel","Odyssey","Mongoose","SE Racing","Canyon","Priority","Ari","Knolly","Intense","WRP","Vittoria","Lauf","BikeYoke","Forbidden","OneUp","Garbaruk","AMS","RideWrap","Aenomaly","BMC","SCOR","Avinox"];
 
 const D = [
 /* ---- Rear Suspension ---- */
@@ -456,9 +480,15 @@ const D = [
 {y:2019,g:2021,t:"DW6 six-bar platform",a:"Dave Weagle → Atherton Bikes, Pivot",num:null,cat:"susp",st:"active",exp:2039,b:["licensor"],who:["Dave Weagle"],conf:"v",
  s:"A six-bar DW-Link evolution; Atherton builds its whole range on it, and Charlie Hatton won the 2023 DH World Championship aboard one.",
  w:"While the original DW-Link patents lapse, the licensing model lives on through next-generation designs."},
-{y:2007,g:2009,t:"Knolly Fourby4 linkage",a:"Knolly Bikes",num:null,cat:"susp",st:"active",exp:2027,b:[],who:[],conf:"m",
+{y:2007,g:2009,t:"Knolly Fourby4 linkage",a:"Knolly Bikes",num:null,cat:"susp",st:"active",exp:2027,b:[],who:["Knolly"],conf:"m",
  s:"A four-bar wheel path actuated through an extra linkage — engineered partly to deliver Horst-like behavior without infringing the FSR patent in its active years.",
  w:"A textbook 'design-around': patents shape bikes even on brands that never license anything."},
+{y:2014,g:2019,t:"Knolly seat-tube geometry patent (US 10,363,988)",a:"Noel Buckley / Knolly Bikes",num:"10363988",cat:"susp",st:"active",exp:2034,b:["litigated"],who:["Knolly","Intense"],conf:"v",
+ s:"Granted to Knolly CEO Noel Buckley in 2019, this 'rear suspension system for bicycles' patent claims a seat tube angled so its axis meets the downtube above and in front of the bottom bracket — a straight, continuous tube allowing very deep dropper-post insertion alongside at least four inches of rear travel.",
+ w:"The basis for Knolly v. Intense (see the Fights view). Critics noted that seat tubes meeting the downtube ahead of the BB long predated 2014 — and prior art is exactly what ended the case."},
+{y:2024,g:null,t:"Avinox / DJI drive system (patent pending)",a:"Avinox (DJI subsidiary) — debuted on Amflow",num:null,cat:"emtb",st:"pending",exp:null,j:"CN",b:[],who:["Avinox"],conf:"m",
+ s:"DJI — the drone company — built an in-house e-bike motor team, launched it on its own Amflow PL Carbon in late 2024, then spun the drive system out as Avinox, an independent supplier now in 60-plus brands (Forbidden, Canyon, Pivot, Mondraker, Rotwild, Commencal). The unit pairs a compound planetary gearset in a noise-damping polymer housing with DJI's drone-derived sensor fusion and battery-density expertise; the M2S claims up to 1,500W and 150Nm in boost, beyond standard e-bike regulatory limits, handled via software power-limiting per market.",
+ w:"The fastest motor-platform takeover the eMTB world has seen — a drone giant transplanting compact-motor, battery and software know-how straight into bikes. No patent number has surfaced yet, consistent with the brand only going public in late 2024 and the standard 18-month application-publication delay; DJI is not a company that tends to skip IP protection."},
 {y:2016,g:2018,t:"Integrated hidden-shock frame designs",a:"Scott / Bold Cycles",num:null,cat:"susp",st:"active",exp:2036,b:[],who:[],conf:"l",
  s:"Bold's in-frame shock placement, later adopted by Scott on the Spark, with associated structural and access patents.",
  w:"Where suspension patents meet industrial design — protecting packaging, not just kinematics."},
@@ -1077,6 +1107,16 @@ const FIGHTS = [
     stakes:"Golden's Spot Brand sued Denver's Gates Corp. over the belt-drive 'Drop-Out' frame patent, alleging a 2008 royalty deal went unpaid as 30-plus brands adopted the design. Invented by a former Spot co-owner.",
     outcome:"A Denver judge declined to invalidate the patent or void the royalty contract, clearing the way to trial. Active — and a rare current, local Colorado patent fight.",
     cards:["Gates Carbon Drive","Living Link"]
+  },
+  {
+    key:"knolly-intense",
+    title:"Knolly v. Intense",
+    sub:"The seat-tube geometry suit",
+    combatants:["Knolly Bikes","Intense Cycles"],
+    era:"2020–2021",
+    stakes:"Knolly sued Intense (Case 5:20-cv-02571) claiming six models — the Tracer, Carbine, Tazer e-bike, and three Primers — infringed US 10,363,988, which covers a seat tube meeting the downtube above and in front of the bottom bracket for deep dropper insertion plus 4+ inches of travel.",
+    outcome:"Intense answered with prior art — its own VPP lineage plus dozens of older frames using the same pre-BB seat-tube geometry — and counterclaimed the patent was invalid. Knolly dropped the suit in May 2021; both sides dismissed all claims, and Intense kept its frame architecture.",
+    cards:["10363988"]
   }
 ];
   const ERAS = [
@@ -1131,6 +1171,54 @@ Object.entries(BADGES).forEach(([k,v])=>{
 INVENTORS.forEach(({label,key})=>chip(label,state.inv,key,$("#rowInv")));
 BRANDS.forEach(b=>chip(b,state.brand,b,$("#rowBrand")));
 
+/* ======== SCROLLABLE ROW CONTROLS (arrows + show all) ======== */
+function setupScroller(scrollerId, rowId){
+  const sc=document.getElementById(scrollerId);
+  const row=document.getElementById(rowId);
+  if(!sc||!row) return;
+  const left=sc.querySelector(".sb-left");
+  const right=sc.querySelector(".sb-right");
+  // append a "Show all" toggle to the end of the row
+  const showAll=document.createElement("button");
+  showAll.className="showall-btn";
+  showAll.type="button";
+  showAll.textContent="Show all";
+  row.appendChild(showAll);
+  showAll.onclick=()=>{
+    const expanded=sc.classList.toggle("expanded");
+    showAll.textContent=expanded?"Collapse":"Show all";
+    if(!expanded){ row.scrollLeft=0; updateState(); }
+  };
+  function updateState(){
+    if(sc.classList.contains("expanded")) return;
+    const max=row.scrollWidth-row.clientWidth;
+    const x=row.scrollLeft;
+    const overflowing=max>4;
+    left.classList.toggle("show", overflowing && x>2);
+    right.classList.toggle("show", overflowing && x<max-2);
+    sc.classList.toggle("can-left", overflowing && x>2);
+    sc.classList.toggle("can-right", overflowing && x<max-2);
+  }
+  const step=()=>Math.max(160, row.clientWidth*0.7);
+  function scrollByX(dx){
+    if(row.scrollBy){ row.scrollBy({left:dx,behavior:"smooth"}); }
+    else { row.scrollLeft += dx; }
+  }
+  left.onclick=()=>scrollByX(-step());
+  right.onclick=()=>scrollByX(step());
+  row.addEventListener("scroll",updateState,{passive:true});
+  window.addEventListener("resize",updateState);
+  // re-check when this pane becomes visible (tab switch) — MutationObserver on class
+  new MutationObserver(updateState).observe(row,{attributes:true,attributeFilter:["class"]});
+  // initial, and a deferred pass once layout settles
+  updateState();
+  requestAnimationFrame(updateState);
+  setTimeout(updateState,200);
+  return updateState;
+}
+const updInv=setupScroller("scrollInv","rowInv");
+const updBrand=setupScroller("scrollBrand","rowBrand");
+
 /* ======== FILTER TABS ======== */
 const TAB_DEFS=[
   {key:"cat",label:"Category"},
@@ -1164,6 +1252,8 @@ function renderTabs(){
   Object.entries(paneEls).forEach(([k,el])=>{
     el.classList.toggle("hidden-pane", fightsMode || !(activeTab==="all"||activeTab===k));
   });
+  // recompute scroll arrows once the now-visible row has real width
+  requestAnimationFrame(()=>{ if(typeof updInv==="function")updInv(); if(typeof updBrand==="function")updBrand(); });
 }
 function updateTabDots(){
   TAB_DEFS.forEach(t=>{
