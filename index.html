@@ -13,43 +13,63 @@
   --font-body:'Barlow',system-ui,sans-serif;
   --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
 }
+/* ===== WMBC — clean trail / topographic (soft, rounded, organic) ===== */
 [data-theme="wmbc"]{
-  --bg:#F2F5F1; --surface:#FFFFFF; --ink:#16261C; --ink-soft:#4b5f53;
+  --bg:#EEF3EC; --surface:#FFFFFF; --ink:#16261C; --ink-soft:#4b5f53;
   --spine:#4F7A5E; --primary:#2D6A4F; --accent:#8AB17D; --deep:#1B4332;
   --chip-bg:#E3ECE4; --card-border:#D8E2D9;
   --st-active:#2D6A4F; --st-expired:#7d8a80; --st-pending:#A9762B; --st-lit:#B5532A;
   --lit-solid:1;
+  --radius:14px; --spine-w:3px; --spine-radius:3px; --card-accent-w:0px; --dot-radius:50%;
+  --head-weight:700; --head-spacing:.01em; --head-transform:uppercase;
+  --card-shadow:0 1px 2px rgba(20,38,28,.05); --pill-radius:999px; --era-line:2px;
+  --header-bg:linear-gradient(160deg,#1B4332 0%,#225239 100%);
 }
+/* ===== COMBA — vintage editorial print (warm cream, heavy serif-feel, squared) ===== */
 [data-theme="comba"]{
-  --bg:#F5F1EA; --surface:#FDFBF7; --ink:#3A352F; --ink-soft:#6E6259;
-  --spine:#8C7B6B; --primary:#6E5C49; --accent:#C19A6B; --deep:#4A423A;
-  --chip-bg:#EAE2D6; --card-border:#DDD3C4;
+  --bg:#EFE7D6; --surface:#FBF6EC; --ink:#33291C; --ink-soft:#6E6259;
+  --spine:#8C6B43; --primary:#6E5C49; --accent:#C19A6B; --deep:#3D3122;
+  --chip-bg:#E6D9C2; --card-border:#D2C2A4;
   --st-active:#5C7148; --st-expired:#8C8377; --st-pending:#A9762B; --st-lit:#9C4A2F;
   --lit-solid:1;
+  --radius:3px; --spine-w:2px; --spine-radius:0; --card-accent-w:0px; --dot-radius:0;
+  --head-weight:700; --head-spacing:.04em; --head-transform:none;
+  --card-shadow:none; --pill-radius:3px; --era-line:3px;
+  --header-bg:#3D3122;
 }
+/* ===== CAMBA — bold racing / high contrast (sharp, black rules, urgent) ===== */
 [data-theme="camba"]{
-  --bg:#FFFFFF; --surface:#F7F7F7; --ink:#282728; --ink-soft:#5a585a;
-  --spine:#C5050C; --primary:#C5050C; --accent:#9B0000; --deep:#282728;
-  --chip-bg:#EFEFEF; --card-border:#E2E2E2;
-  --st-active:#1f7a33; --st-expired:#8a8a8a; --st-pending:#A9762B; --st-lit:#C5050C;
+  --bg:#F2F2F2; --surface:#FFFFFF; --ink:#161616; --ink-soft:#555;
+  --spine:#C5050C; --primary:#C5050C; --accent:#161616; --deep:#161616;
+  --chip-bg:#EDEDED; --card-border:#161616;
+  --st-active:#1f7a33; --st-expired:#9a9a9a; --st-pending:#C77800; --st-lit:#C5050C;
   --lit-solid:0;
+  --radius:0px; --spine-w:4px; --spine-radius:0; --card-accent-w:5px; --dot-radius:0;
+  --head-weight:700; --head-spacing:0; --head-transform:uppercase;
+  --card-shadow:3px 3px 0 rgba(22,22,22,.10); --pill-radius:0; --era-line:4px;
+  --header-bg:#161616;
 }
+/* ===== CAMBR — technical blueprint (navy structure, orange accents, mono-forward) ===== */
 [data-theme="cambr"]{
-  --bg:#F7F8FA; --surface:#FFFFFF; --ink:#0B162A; --ink-soft:#4a566b;
-  --spine:#C83803; --primary:#0B162A; --accent:#C83803; --deep:#0B162A;
-  --chip-bg:#E8EBF0; --card-border:#DCE0E6;
+  --bg:#EDF0F5; --surface:#FFFFFF; --ink:#0B162A; --ink-soft:#4a566b;
+  --spine:#C83803; --primary:#13294B; --accent:#C83803; --deep:#0B162A;
+  --chip-bg:#E0E6F0; --card-border:#C3CCDC;
   --st-active:#1f7a33; --st-expired:#8a8f99; --st-pending:#C83803; --st-lit:#A52A1A;
   --lit-solid:1;
+  --radius:6px; --spine-w:2px; --spine-radius:0; --card-accent-w:0px; --dot-radius:50%;
+  --head-weight:600; --head-spacing:.06em; --head-transform:uppercase;
+  --card-shadow:0 1px 3px rgba(11,22,42,.07); --pill-radius:4px; --era-line:2px;
+  --header-bg:linear-gradient(160deg,#0B162A 0%,#13294B 100%);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:var(--primary)}
 button{font-family:inherit;cursor:pointer}
 /* ---------- Header ---------- */
-header{background:var(--deep);color:#fff;padding:18px 16px 14px}
+header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
 .hwrap{max-width:880px;margin:0 auto}
 .eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
-h1{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,6vw,46px);line-height:1.02;letter-spacing:.01em;text-transform:uppercase}
+h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clamp(30px,6vw,46px);line-height:1.02;letter-spacing:var(--head-spacing);text-transform:var(--head-transform)}
 .sub{font-size:14px;opacity:.85;max-width:560px;margin-top:4px}
 .themes{display:flex;gap:8px;margin-top:12px;align-items:center}
 .themes span{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-right:2px}
@@ -57,9 +77,9 @@ h1{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,6vw,46px
 .swatch.on{border-color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.35)}
 .swatch:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .sw-wmbc{background:linear-gradient(135deg,#2D6A4F 55%,#8AB17D 55%)}
-.sw-comba{background:linear-gradient(135deg,#6E5C49 55%,#C19A6B 55%)}
-.sw-camba{background:linear-gradient(135deg,#C5050C 55%,#fff 55%)}
-.sw-cambr{background:linear-gradient(135deg,#0B162A 55%,#C83803 55%)}
+.sw-comba{background:linear-gradient(135deg,#6E5C49 50%,#C19A6B 50%)}
+.sw-camba{background:linear-gradient(135deg,#C5050C 50%,#161616 50%)}
+.sw-cambr{background:linear-gradient(135deg,#13294B 55%,#C83803 55%)}
 .swatch .tip{position:absolute;top:110%;left:50%;transform:translateX(-50%);background:#000;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s}
 .swatch:hover .tip{opacity:1}
 /* ---------- Scrubber ---------- */
@@ -104,17 +124,46 @@ h1{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,6vw,46px
 }
 .fmeta{max-width:880px;margin:2px auto 0;padding:0 16px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink-soft)}
 .clearbtn{background:none;border:none;color:var(--primary);font-size:12px;font-weight:600;text-decoration:underline;padding:4px}
+/* ---------- Filter tabs ---------- */
+.tab-row{max-width:880px;margin:0 auto;display:flex;gap:5px;overflow-x:auto;padding:3px 16px;scrollbar-width:none}
+.tab-row::-webkit-scrollbar{display:none}
+.tab-btn{flex:0 0 auto;position:relative;border:1px solid var(--card-border);background:var(--surface);color:var(--ink-soft);border-radius:8px 8px 0 0;padding:9px 14px;font-size:14px;font-weight:600;border-bottom:none;font-family:var(--font-display);letter-spacing:.01em;min-height:44px}
+.tab-btn.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+.tab-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.tab-dot{position:absolute;top:6px;right:6px;width:6px;height:6px;border-radius:50%;background:var(--accent);display:none}
+.tab-dot.show{display:block}
+.tab-panes{max-width:880px;margin:0 auto;padding:6px 16px 2px;background:var(--surface);border:1px solid var(--card-border);border-radius:0 8px 8px 8px}
+.tab-panes .frow{padding:3px 0;max-width:none;margin:0}
+.hidden-pane{display:none!important}
+.filters:not([data-mode="all"]) .flabel{display:none}
+/* ---------- Scrollable row controls (arrows + show all) ---------- */
+.scroller{position:relative}
+.scroller .frow{padding-right:4px}
+.scroll-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:30px;height:30px;border-radius:50%;border:1px solid var(--card-border);background:var(--surface);color:var(--primary);font-size:14px;line-height:1;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.14)}
+.scroll-btn.show{display:flex}
+.scroll-btn.sb-left{left:-2px}
+.scroll-btn.sb-right{right:-2px}
+.scroller::before,.scroller::after{content:"";position:absolute;top:0;bottom:0;width:26px;pointer-events:none;z-index:4;opacity:0;transition:opacity .15s}
+.scroller::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
+.scroller::after{right:0;background:linear-gradient(270deg,var(--surface),transparent)}
+.scroller.can-left::before{opacity:1}
+.scroller.can-right::after{opacity:1}
+.showall-btn{flex:0 0 auto;align-self:center;border:1px dashed var(--spine);background:transparent;color:var(--primary);border-radius:999px;padding:6px 12px;font-size:11.5px;font-weight:600;font-family:var(--font-body);cursor:pointer;min-height:34px;white-space:nowrap}
+.scroller.expanded .frow{flex-wrap:wrap;overflow-x:visible}
+.scroller.expanded .scroll-btn{display:none!important}
+.scroller.expanded::before,.scroller.expanded::after{opacity:0!important}
 /* ---------- Timeline ---------- */
 main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .era{margin-top:8px}
 .era-head{display:flex;align-items:center;gap:10px;margin:26px 0 12px;scroll-margin-top:130px}
-.era-head h2{font-family:var(--font-display);font-size:30px;font-weight:700;color:var(--primary);letter-spacing:.02em}
+.era-head h2{font-family:var(--font-display);font-size:30px;font-weight:var(--head-weight);color:var(--primary);letter-spacing:var(--head-spacing);text-transform:var(--head-transform)}
 .era-head .count{font-family:var(--font-mono);font-size:11px;color:var(--ink-soft)}
-.era-head::after{content:"";flex:1;height:2px;background:var(--spine);opacity:.35;border-radius:2px}
+.era-head::after{content:"";flex:1;height:var(--era-line);background:var(--spine);opacity:.35;border-radius:2px}
 .tl{position:relative;padding-left:26px}
-.tl::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:3px;background:var(--spine);opacity:.5;border-radius:2px}
-.card{position:relative;background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
-.card::before{content:"";position:absolute;left:-22px;top:20px;width:11px;height:11px;border-radius:50%;background:var(--spine);border:2px solid var(--bg)}
+.tl::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:var(--spine-w);background:var(--spine);opacity:.5;border-radius:var(--spine-radius)}
+.card{position:relative;background:var(--surface);border:1px solid var(--card-border);border-left:calc(1px + var(--card-accent-w)) solid var(--card-border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;box-shadow:var(--card-shadow)}
+.card.lit-card{border-left-color:var(--st-lit)}
+.card::before{content:"";position:absolute;left:-22px;top:20px;width:11px;height:11px;border-radius:var(--dot-radius,50%);background:var(--spine);border:2px solid var(--bg)}
 .card.pending-card{border-style:dashed;border-width:2px}
 .chead{width:100%;background:none;border:none;text-align:left;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;color:inherit}
 .yr{font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--primary);background:var(--chip-bg);border-radius:6px;padding:3px 7px;flex:0 0 auto;margin-top:1px}
@@ -122,7 +171,7 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .ct .t{font-weight:600;font-size:15px;line-height:1.3}
 .ct .a{font-size:12.5px;color:var(--ink-soft);margin-top:1px}
 .pills{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
-.pill{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2.5px 8px;color:#fff;font-weight:600}
+.pill{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;border-radius:var(--pill-radius,999px);padding:2.5px 8px;color:#fff;font-weight:600}
 .pill.cat{background:var(--ink-soft)}
 .pill.active{background:var(--st-active)}
 .pill.expired{background:var(--st-expired)}
@@ -151,6 +200,51 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .gp-list summary:hover{text-decoration:underline}
 .gp-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:2px 14px;padding:6px 0 2px;border-top:1px dashed var(--card-border);margin-top:4px}
 .gp-li{margin-top:0;font-family:var(--font-mono);font-size:12px;font-weight:500;padding:3px 0}
+/* ---------- Colorado MTB innovation feature ---------- */
+.co-link{display:inline-flex;align-items:center;gap:4px;margin-top:10px;background:var(--chip-bg);border:1px solid var(--card-border);color:var(--primary);border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:var(--font-body)}
+.co-link:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+.co-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;animation:coFade .2s}
+@keyframes coFade{from{opacity:0}to{opacity:1}}
+.co-panel{position:fixed;top:0;right:0;bottom:0;width:min(440px,92vw);background:var(--surface);box-shadow:-8px 0 32px rgba(0,0,0,.25);z-index:91;display:flex;flex-direction:column;animation:coSlide .25s ease}
+.co-panel[hidden],.co-overlay[hidden],.co-tab[hidden]{display:none!important}
+@keyframes coSlide{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.co-panel-head{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;background:var(--deep);color:#fff;flex:0 0 auto}
+.co-panel-title{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:.01em}
+.co-panel-btns{display:flex;gap:6px}
+.co-btn{background:rgba(255,255,255,.18);border:none;color:#fff;width:34px;height:34px;border-radius:8px;font-size:15px;cursor:pointer;line-height:1}
+.co-btn:hover{background:rgba(255,255,255,.32)}
+.co-panel-body{overflow-y:auto;padding:18px;color:var(--ink);line-height:1.55}
+.co-panel-body h4{font-family:var(--font-display);font-size:16px;color:var(--primary);margin:16px 0 5px;letter-spacing:.01em}
+.co-panel-body p{font-size:13.5px;margin-bottom:8px}
+.co-note{margin-top:14px;font-size:11.5px;color:var(--ink-soft);border-top:1px dashed var(--card-border);padding-top:10px}
+.co-tab{position:fixed;bottom:16px;right:16px;z-index:80;background:var(--deep);color:#fff;border:none;border-radius:999px;padding:11px 18px;font-family:var(--font-display);font-weight:700;font-size:14px;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer;animation:coPop .2s}
+@keyframes coPop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.co-tab:hover{background:var(--primary)}
+@media(max-width:480px){.co-panel-title{font-size:16px}.co-tab{font-size:12.5px;padding:9px 14px}}
+/* ---------- Patent Fights view ---------- */
+.tab-fights{color:var(--st-lit);font-weight:700}
+.tab-fights.on{background:var(--st-lit);border-color:var(--st-lit);color:#fff}
+.fights-intro{margin:18px 0 6px}
+.fights-h{font-family:var(--font-display);font-size:30px;font-weight:700;color:var(--st-lit);letter-spacing:.02em}
+.fights-intro p{font-size:14px;color:var(--ink-soft);margin-top:4px;max-width:620px}
+.fights-wrap{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+.fight{background:var(--surface);border:1px solid var(--card-border);border-left:4px solid var(--st-lit);border-radius:var(--radius);padding:16px 16px 14px}
+.fight-head{margin-bottom:10px}
+.fight-titles h3{font-family:var(--font-display);font-size:23px;font-weight:700;letter-spacing:.01em;line-height:1.05}
+.fight-sub{font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;color:var(--ink-soft);text-transform:uppercase}
+.fight-versus{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px}
+.fight-team{background:var(--chip-bg);border:1px solid var(--card-border);border-radius:8px;padding:5px 11px;font-size:13px;font-weight:600}
+.fight-vs{font-family:var(--font-display);font-weight:700;color:var(--st-lit);font-size:15px;font-style:italic}
+.fight-stakes,.fight-outcome{font-size:13.5px;line-height:1.5;margin-bottom:8px}
+.fight-stakes b,.fight-outcome b{font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--st-lit)}
+.fight-outcome b{color:var(--st-active)}
+.fight-cards{margin-top:10px;padding-top:10px;border-top:1px dashed var(--card-border);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.fight-cards-lbl{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);width:100%;margin-bottom:2px}
+.fight-jump{background:var(--surface);border:1px solid var(--st-lit);color:var(--st-lit);border-radius:999px;padding:5px 11px;font-family:var(--font-mono);font-size:11.5px;font-weight:600;cursor:pointer;transition:background .12s,color .12s;min-height:34px}
+.fight-jump:hover{background:var(--st-lit);color:#fff}
+@keyframes cardFlash{0%,100%{box-shadow:0 0 0 0 transparent}30%{box-shadow:0 0 0 3px var(--st-lit)}}
+.card-flash{animation:cardFlash 1.5s ease}
+@media(max-width:480px){.fight-titles h3{font-size:20px}.fights-h{font-size:25px}}
 .jtag{font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:.08em;background:var(--ink);color:var(--surface);border-radius:4px;padding:2px 5px;flex:0 0 auto;margin-top:3px;opacity:.65;white-space:nowrap}
 .pill.design{background:transparent;color:var(--ink-soft);border:1px dashed var(--ink-soft)}
 .empty{text-align:center;color:var(--ink-soft);padding:40px 10px;font-size:14px}
@@ -176,7 +270,9 @@ html,body{overflow-x:hidden;max-width:100%}
   .blabel{font-size:8px}
   .pill{font-size:9px;padding:2px 6px}
   .search-inp{font-size:12px}
+  .tab-btn{font-size:13px;padding:8px 10px}
 }
+@media(max-width:380px){.tab-row{flex-wrap:wrap;overflow-x:visible}}
 </style>
 </head>
 <body>
@@ -185,7 +281,7 @@ html,body{overflow-x:hidden;max-width:100%}
   <div class="hwrap">
     <div class="eyebrow">RedFoxRun Interactive</div>
     <h1>MTB Patent Atlas</h1>
-    <p class="sub">45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use. Eight categories from suspension to bike transport.</p>
+    <p class="sub">45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.</p>
     <div class="themes" role="group" aria-label="Color scheme">
       <span>Theme</span>
       <button class="swatch sw-wmbc on" data-set="wmbc" aria-label="WMBC theme"><span class="tip">WMBC</span></button>
@@ -212,11 +308,22 @@ html,body{overflow-x:hidden;max-width:100%}
         autocomplete="off" spellcheck="false">
     </div>
   </div>
-  <div class="frow" id="rowCat"><span class="flabel">Category</span></div>
-  <div class="frow" id="rowStatus"><span class="flabel">Status</span></div>
-  <div class="frow" id="rowBadge"><span class="flabel">Story</span></div>
-  <div class="frow" id="rowInv"><span class="flabel">Inventors</span></div>
-  <div class="frow" id="rowBrand"><span class="flabel">Brands</span></div>
+  <div class="tab-row" id="filterTabs"></div>
+  <div class="tab-panes" id="filterPanes">
+    <div class="frow" id="rowCat"><span class="flabel">Category</span></div>
+    <div class="frow" id="rowStatus"><span class="flabel">Status</span></div>
+    <div class="frow" id="rowBadge"><span class="flabel">Story</span></div>
+    <div class="scroller" id="scrollInv">
+      <button class="scroll-btn sb-left" aria-label="Scroll left">‹</button>
+      <div class="frow" id="rowInv"><span class="flabel">Inventors</span></div>
+      <button class="scroll-btn sb-right" aria-label="Scroll right">›</button>
+    </div>
+    <div class="scroller" id="scrollBrand">
+      <button class="scroll-btn sb-left" aria-label="Scroll left">‹</button>
+      <div class="frow" id="rowBrand"><span class="flabel">Brands</span></div>
+      <button class="scroll-btn sb-right" aria-label="Scroll right">›</button>
+    </div>
+  </div>
   <div class="fmeta">
     <span id="resultCount"></span>
     <button class="clearbtn" id="clearAll" hidden>Clear filters</button>
@@ -224,6 +331,29 @@ html,body{overflow-x:hidden;max-width:100%}
 </div>
 
 <main id="timeline"></main>
+
+<!-- Colorado MTB Innovation panel -->
+<div id="coOverlay" class="co-overlay" hidden></div>
+<aside id="coPanel" class="co-panel" hidden aria-label="Colorado MTB innovation">
+  <div class="co-panel-head">
+    <span class="co-panel-title">📍 Colorado MTB Innovation</span>
+    <div class="co-panel-btns">
+      <button id="coMin" class="co-btn" title="Minimize">▁</button>
+      <button id="coClose" class="co-btn" title="Close">✕</button>
+    </div>
+  </div>
+  <div class="co-panel-body">
+    <p>Mountain-bike innovation runs deep in Colorado — a mix of famous patented suspension designs, homegrown technology, and high-profile, multi-million-dollar intellectual-property disputes playing out in the state's courts.</p>
+    <h4>1 · Spot Brand vs. Gates Corp.</h4>
+    <p>Golden-based Spot Brand sued Denver-based Gates Corp. in Denver District Court over the "Drop-Out" frame feature — the patented split dropout that lets a seamless carbon drive belt pass into the rear triangle. Spot seeks millions in unpaid royalties, alleging Gates encouraged other brands to use the invention without compensating Spot. A Denver judge has denied Gates' attempts to invalidate the patent and throw out the royalty contract, clearing the way to trial. The patent, invented by a former Spot co-owner, was assigned to Gates in a 2008 agreement that later expired.</p>
+    <h4>2 · Canfield Balance Formula (CBF)</h4>
+    <p>Developed by engineers Lance and Chris Canfield, US Patent 9,061,729 protects the CBF suspension system, which balances the center-of-curvature directly above the chainring to maintain consistent pedal force and keep the suspension active independent of drivetrain or braking forces. After the brothers' split, Chris Canfield's Suspension Formulas (Colorado-based) licenses CBF to local brands like Revel Bikes, headquartered in Carbondale, CO.</p>
+    <h4>3 · Fox Factory vs. SRAM</h4>
+    <p>Colorado served as the battleground for a multi-year suspension-patent fight between Fox Factory and SRAM after the case was transferred to the U.S. District Court in Colorado; proceedings later narrowed when the Patent Trial and Appeal Board (PTAB) invalidated several of Fox's specific claims. Note that this is a matter of court jurisdiction — neither Fox (headquartered in Duluth, GA, with engineering offices in Colorado) nor SRAM (Chicago, IL) is actually headquartered in Colorado. Fox continues to file component patents, such as a braided-mesh "Fiber Core" grip.</p>
+    <p class="co-note">Shown on cards involving Colorado-connected brands. This is background context, not legal advice.</p>
+  </div>
+</aside>
+<button id="coTab" class="co-tab" hidden>📍 Colorado MTB Innovation</button>
 
 <footer>
   <div class="hwrap">
@@ -269,14 +399,25 @@ const INVENTORS = [
   {label:"Wayne Lumpkin",key:"Wayne Lumpkin"},
   {label:"Gavin Vos",    key:"Gavin Vos"},
   {label:"Cal Phillips", key:"Cal Phillips"},
+  {label:"Richard Bryne",key:"Richard Bryne"},
+  {label:"Brian Scura",  key:"Brian Scura"},
+  {label:"Charles Curnutt",key:"Charles Curnutt"},
+  {label:"Damon Madsen", key:"Damon Madsen"},
+  {label:"Scot Breithaupt",key:"Scot Breithaupt"},
+  {label:"Sam Garrett",  key:"Sam Garrett"},
+  {label:"Adam Krefting",key:"Adam Krefting"},
+  {label:"Benedikt Skulason",key:"Benedikt Skulason"},
+  {label:"Owen Pemberton",key:"Owen Pemberton"},
+  {label:"Mic Williams", key:"Mic Williams"},
+  {label:"Bill Shook",   key:"Bill Shook"},
 ];
-const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff"];
+const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff","Hayes","Manitou","SUNringlé","Reynolds","MRP","Nicolai","KOM","Antidote","OPEN","Speedplay","Wahoo Fitness","Onyx","Classified","Foes","EXT","Spot","Reeb","Revel","Odyssey","Mongoose","SE Racing","Canyon","Priority","Ari","Knolly","Intense","WRP","Vittoria","Lauf","BikeYoke","Forbidden","OneUp","Garbaruk","AMS","RideWrap","Aenomaly","BMC","SCOR","Avinox","American Classic"];
 
 const D = [
 /* ---- Rear Suspension ---- */
 {y:1994,g:1996,t:"Horst Link rear suspension (US 5,509,679)",a:"Horst Leitner / AMP Research → Specialized",num:"5509679",cat:"susp",st:"expired",exp:2014,b:["acquired","litigated"],who:["Horst Leitner","Specialized"],conf:"v",
  s:"A chainstay pivot located in front of and below the rear axle, isolating pedaling and braking forces from the suspension — the original four-bar that became Specialized FSR.",
- w:"Its 2013–14 expiration reshaped the market: Canyon, YT, Norco and dozens of others adopted the layout overnight."},
+ w:"Its 2013–14 expiration reshaped the market: Canyon, YT, Norco and dozens of others adopted the layout overnight. Colorado's REEB Cycles takes the opposite path on bikes like the SST and STEEZL — rather than license a multi-link patent, it uses single-pivot or modified four-bar flex-stay designs that approximate Horst-link behavior with a flexing seatstay and far fewer parts."},
 {y:1996,g:1997,t:"Horst Link continuation (US 5,678,837)",a:"Horst Leitner → Specialized",num:"5678837",cat:"susp",st:"expired",exp:2016,b:["acquired"],who:["Horst Leitner","Specialized"],conf:"v",
  s:"The follow-on patent extending and refining the original four-bar claims.",
  w:"Continuation filings are how companies stretch protection — a recurring tactic across this atlas."},
@@ -288,7 +429,7 @@ const D = [
  w:"Proof that the best patent doesn't always belong to the best businessman — Santa Cruz built an empire on a failed brand's IP."},
 {y:1999,g:2001,t:"Counter-rotating links / VPP (US 6,206,397)",a:"Santa Cruz (Intense licensed)",num:"6206397",cat:"susp",st:"expired",exp:2019,b:["acquired","licensor"],who:["Santa Cruz"],conf:"v",
  s:"The key VPP-era patent covering counter-rotating dual links, deployed on the original V10 and Intense M3 in 2002.",
- w:"Expiration around 2016–19 freed dual-link layouts — Diamondback's Level Link and others followed."},
+ w:"Expiration around 2016–19 freed dual-link layouts — Diamondback's Level Link and others followed. SCOR, the gravity-focused offshoot BMC Switzerland launched after the patent lapsed, builds its whole range on a counter-rotating VPP-style lower link without any SCOR- or BMC-branded suspension patent of its own — a clean example of expired IP simply becoming the industry's shared vocabulary."},
 {y:2003,g:2006,t:"DW-Link patent family",a:"Dave Weagle → Ibis, Pivot, Turner, Iron Horse",num:"7128329",cat:"susp",st:"expired",exp:2025,b:["licensor"],who:["Dave Weagle"],conf:"m",
  s:"Anti-squat-focused dual-link design controlling pedaling behavior via instant-center placement; licensed rather than sold, the model Weagle made famous.",
  w:"Protection ending now — the industry is watching what unlicensed DW-style bikes appear next."},
@@ -302,7 +443,7 @@ const D = [
  s:"Weagle's company sued Trek for infringement over ABP; Trek defended its independent development. The dispute was ultimately resolved out of public view.",
  w:"Shows how the licensing-inventor model collides with big-brand R&D — and why concentric pivots appear on so many bikes today."},
 {y:2009,g:2015,t:"Canfield Balance Formula — CBF (US 9,061,729)",a:"Lance & Chris Canfield",num:"9061729",cat:"susp",st:"active",exp:2033,b:["licensor"],who:["Canfield"],conf:"v",
- s:"Seven-plus years in development: a parallel-link design that aims drive forces through the Center of Curvature above the chainring, making anti-squat consistent regardless of sag. In 2019 Lance assigned his interest to Christopher; in 2022 the patent moved to Suspension Formulas LLC, which now licenses CBF to Revel Bikes and Canfield Bikes.",
+ s:"Seven-plus years in development: a parallel-link design that aims drive forces through the Center of Curvature above the chainring, making anti-squat consistent regardless of sag. In 2019 Lance assigned his interest to Christopher; in 2022 the patent moved to Suspension Formulas LLC, which now licenses CBF to Revel Bikes and Canfield Bikes. <a class=\"gp gp-secondary\" href=\"https://canfieldbikes.com/pages/cbf-suspension\" target=\"_blank\" rel=\"noopener\">Canfield's own CBF explainer →</a>",
  w:"The Canfields' answer to DW-Link — designing around the Center of Curvature rather than the Instant Center. The ownership chain mirrors Weagle's Split Pivot Inc. licensing structure at boutique scale."},
 {y:1998,g:2000,t:"Canfield parallel-link lineage (late '90s)",a:"Canfield Brothers",num:null,cat:"susp",st:"expired",exp:null,b:["licensor"],who:["Canfield"],conf:"l",
  s:"The parallel-link experiments Lance and Chris refined from the late 1990s onward, which matured into CBF.",
@@ -340,9 +481,15 @@ const D = [
 {y:2019,g:2021,t:"DW6 six-bar platform",a:"Dave Weagle → Atherton Bikes, Pivot",num:null,cat:"susp",st:"active",exp:2039,b:["licensor"],who:["Dave Weagle"],conf:"v",
  s:"A six-bar DW-Link evolution; Atherton builds its whole range on it, and Charlie Hatton won the 2023 DH World Championship aboard one.",
  w:"While the original DW-Link patents lapse, the licensing model lives on through next-generation designs."},
-{y:2007,g:2009,t:"Knolly Fourby4 linkage",a:"Knolly Bikes",num:null,cat:"susp",st:"active",exp:2027,b:[],who:[],conf:"m",
+{y:2007,g:2009,t:"Knolly Fourby4 linkage",a:"Knolly Bikes",num:null,cat:"susp",st:"active",exp:2027,b:[],who:["Knolly"],conf:"m",
  s:"A four-bar wheel path actuated through an extra linkage — engineered partly to deliver Horst-like behavior without infringing the FSR patent in its active years.",
  w:"A textbook 'design-around': patents shape bikes even on brands that never license anything."},
+{y:2014,g:2019,t:"Knolly seat-tube geometry patent (US 10,363,988)",a:"Noel Buckley / Knolly Bikes",num:"10363988",cat:"susp",st:"active",exp:2034,b:["litigated"],who:["Knolly","Intense"],conf:"v",
+ s:"Granted to Knolly CEO Noel Buckley in 2019, this 'rear suspension system for bicycles' patent claims a seat tube angled so its axis meets the downtube above and in front of the bottom bracket — a straight, continuous tube allowing very deep dropper-post insertion alongside at least four inches of rear travel.",
+ w:"The basis for Knolly v. Intense (see the Fights view). Critics noted that seat tubes meeting the downtube ahead of the BB long predated 2014 — and prior art is exactly what ended the case."},
+{y:2024,g:null,t:"Avinox / DJI drive system (patent pending)",a:"Avinox (DJI subsidiary) — debuted on Amflow",num:null,cat:"emtb",st:"pending",exp:null,j:"CN",b:[],who:["Avinox"],conf:"m",
+ s:"DJI — the drone company — built an in-house e-bike motor team, launched it on its own Amflow PL Carbon in late 2024, then spun the drive system out as Avinox, an independent supplier now in 60-plus brands (Forbidden, Canyon, Pivot, Mondraker, Rotwild, Commencal). The unit pairs a compound planetary gearset in a noise-damping polymer housing with DJI's drone-derived sensor fusion and battery-density expertise; the M2S claims up to 1,500W and 150Nm in boost, beyond standard e-bike regulatory limits, handled via software power-limiting per market.",
+ w:"The fastest motor-platform takeover the eMTB world has seen — a drone giant transplanting compact-motor, battery and software know-how straight into bikes. No patent number has surfaced yet, consistent with the brand only going public in late 2024 and the standard 18-month application-publication delay; DJI is not a company that tends to skip IP protection."},
 {y:2016,g:2018,t:"Integrated hidden-shock frame designs",a:"Scott / Bold Cycles",num:null,cat:"susp",st:"active",exp:2036,b:[],who:[],conf:"l",
  s:"Bold's in-frame shock placement, later adopted by Scott on the Spark, with associated structural and access patents.",
  w:"Where suspension patents meet industrial design — protecting packaging, not just kinematics."},
@@ -361,9 +508,9 @@ const D = [
 {y:2014,g:2016,t:"Sine Suspension",a:"David Earle → Alchemy Bikes (Colorado)",num:null,cat:"susp",st:"active",exp:2034,b:["licensor"],who:["David Earle"],conf:"l",
  s:"A dual-link whose shock-rate curve resembles a sine wave — regressive early, progressive mid-stroke, regressive again at the end. Patented by designer David Earle and exclusively licensed to Alchemy, enabled by the expiry of the original VPP patents.",
  w:"Earle designed the original VPP and worked on Yeti's Switch — Sine is what he built once that era's patent limitations lapsed. Three atlas entries, one designer."},
-{y:2014,g:2016,t:"Living Link leaf-spring suspension",a:"Wayne Lumpkin / Spot Brand (Golden, CO)",num:null,cat:"susp",st:"active",exp:2034,b:["licensor"],who:["Wayne Lumpkin"],conf:"l",
- s:"A titanium leaf spring built into the lower linkage — two of three patents granted by 2016 — designed to return energy into the pedal stroke at the right moment.",
- w:"Wayne Lumpkin's third atlas appearance: founder of Avid brakes (sold to SRAM), patentee of Gates' CenterTrack, and now a suspension inventor. Golden, Colorado's quiet patent machine."},
+{y:2014,g:2016,t:"Living Link leaf-spring suspension (4 patents)",a:"Wayne Lumpkin / Spot Brand (Golden, CO)",num:"9701361",nums:["9701361","9359039","9156521","8740239"],cat:"susp",st:"active",exp:2034,b:["licensor"],who:["Wayne Lumpkin","Spot","Gates"],conf:"m",
+ s:"A titanium leaf spring built into the lower linkage — four patents (US 9,701,361, 9,359,039, 9,156,521, 8,740,239) — designed to return energy into the pedal stroke at the right moment.",
+ w:"Wayne Lumpkin's third atlas appearance: founder of Avid brakes (sold to SRAM), patentee of Gates' CenterTrack, and now a suspension inventor. In 2024 his Spot Brand sued Gates in Denver District Court over the belt-drive Drop-Out dropout patent — see that entry. Golden, Colorado's quiet patent machine, now in court with a Denver company."},
 {y:2010,g:2012,t:"Switch Technology (eccentric pivot)",a:"Yeti Cycles",num:null,cat:"susp",st:"expired",exp:2030,b:[],who:["Yeti","David Earle"],conf:"m",
  s:"The pre-Infinity Switch: an eccentric mechanism on the SB66/SB75/SB95 that reverses direction through travel — the conceptual ancestor of the translating-rail Switch Infinity that replaced it in 2014.",
  w:"Designed under the patent constraints of the dual-link era; both its successor and the designer's later workaround (Sine) are in this atlas."},
@@ -437,7 +584,7 @@ const D = [
 {y:2002,g:2004,t:"Reverse Arch fork chassis",a:"Manitou",num:null,cat:"fork",st:"expired",exp:2022,b:[],who:[],conf:"m",
  s:"Manitou's signature rearward-facing arch — patented, claimed to better resist braking loads, and instantly recognizable on every Manitou fork since.",
  w:"A patent you can identify at fifty yards. Structural choice as brand identity."},
-{y:2016,g:null,t:"PSST pressure-relief valves (prior art)",a:"MRP (Grand Junction, CO)",num:null,cat:"fork",st:"unknown",exp:null,b:["priorart"],who:[],conf:"l",
+{y:2016,g:null,t:"PSST pressure-relief valves (prior art)",a:"MRP (Grand Junction, CO)",num:null,cat:"fork",st:"unknown",exp:null,b:["priorart"],who:["MRP"],conf:"l",
  s:"Push-button bleed valves on the Ribbon fork's lower legs (2016), equalizing trapped air at altitude — shipped four years before Fox was granted a patent on the same concept.",
  w:"Whether MRP ever filed is unclear; what's documented is that MRP, DVO and X-Fusion all sold the feature before Fox's 2020 grant. Prior art with a Colorado address."},
 {y:2013,g:2020,t:"Bleed valve patent + Fox v. SRAM (US 10,746,250)",a:"Fox Factory",num:"10746250",cat:"fork",st:"active",exp:2033,b:["litigated"],who:["Fox","SRAM","RockShox"],conf:"v",
@@ -495,9 +642,9 @@ const D = [
 {y:2015,g:2017,t:"Cassette extender cogs",a:"OneUp / e*thirteen",num:null,cat:"drive",st:"active",exp:2035,b:[],who:[],conf:"l",
  s:"Aftermarket cogs and modified cluster designs extending stock cassettes' range, with their own filings.",
  w:"Small companies patenting around the giants — the aftermarket's survival strategy."},
-{y:2008,g:2010,t:"Gates Carbon Drive / CDX CenterTrack",a:"Gates (CenterTrack: Wayne Lumpkin)",num:null,cat:"drive",st:"active",exp:2030,b:["licensor"],who:["Gates","Wayne Lumpkin"],conf:"m",
- s:"Carbon tensile-cord belts plus the CenterTrack center-rib sprocket system — designed and patented by Wayne Lumpkin, the founder of Avid Brakes, to fix the first-generation belt's alignment and tension problems.",
- w:"The Avid founder reappearing in belt drives is the kind of cross-category inventor thread this atlas exists to surface. Standard partner to every Pinion build."},
+{y:2008,g:2010,t:"Gates Carbon Drive / CDX CenterTrack",a:"Gates (CenterTrack: Wayne Lumpkin)",num:null,cat:"drive",st:"active",exp:2030,b:["licensor","litigated"],who:["Gates","Wayne Lumpkin","Spot"],conf:"m",
+ s:"Carbon tensile-cord belts plus the CenterTrack center-rib sprocket system — designed and patented by Wayne Lumpkin, the founder of Avid Brakes, to fix the first-generation belt's alignment and tension problems. A separate 'Drop-Out' frame patent (a split dropout that lets a one-piece belt pass into the rear triangle) sits at the center of a 2024 lawsuit.",
+ w:"The Avid founder reappearing in belt drives is the kind of cross-category inventor thread this atlas exists to surface. In 2024 Spot Brand sued Gates in Denver District Court, alleging a 2008 royalty deal (8% of net sales) went unpaid as 30-plus brands across 100-plus models adopted the Drop-Out design; a Denver judge has since declined to invalidate the patent, clearing the way to trial."},
 {y:1890,g:1890,t:"Belt-driven bicycle (the 1890 patent)",a:"19th-century inventor",num:null,cat:"drive",st:"expired",exp:1910,b:["priorart"],who:[],conf:"l",
  s:"A belt-drive bicycle patent was filed in 1890; the idea waited over a century for materials stiff enough to make it practical.",
  w:"The oldest entry in the atlas — some 'innovations' are just patents waiting for materials science to catch up."},
@@ -510,9 +657,9 @@ const D = [
 {y:2022,g:null,t:"Shift-under-load gearbox (application)",a:"Fox",num:null,cat:"drive",st:"pending",exp:null,b:[],who:["Fox"],conf:"v",
  s:"Fox successfully filed a patent for a gearbox that can shift under load — the crux limitation of every existing design.",
  w:"The suspension giant entering drivetrains; if anyone cracks shift-under-load, the derailleur's biggest advantage disappears."},
-{y:1988,g:1992,t:"Schlumpf planetary crank drive",a:"Florian Schlumpf (Switzerland) → Haberstock-Mobility → SRAM (Truvativ)",num:null,cat:"drive",st:"active",exp:2030,j:"CH",b:["licensor","acquired"],who:["SRAM"],conf:"m",
- s:"A two-ratio planetary gear assembly behind the chainring, shifted by a heel-tap on the axle button — prototyped in Switzerland in 1988. Production and patents sold to German Haberstock-Mobility GmbH in 2011; SRAM commercialized the concept as Hammerschmidt for freeride.",
- w:"A Swiss inventor, a German buyer, and an American giant — a three-country acquisition chain in a single component. The crank gearbox idea that was a decade early."},
+{y:1988,g:1992,t:"Schlumpf planetary crank drive → SRAM HammerSchmidt (US 7,712,566)",a:"Florian Schlumpf (Switzerland) → Haberstock-Mobility → SRAM (Truvativ)",num:"7712566",cat:"drive",st:"active",exp:2030,j:"CH",b:["licensor","acquired"],who:["SRAM"],conf:"v",
+ s:"A two-ratio planetary gear assembly behind the chainring, shifted by a heel-tap on the axle button — prototyped in Switzerland in 1988. SRAM commercialized the concept as the Truvativ HammerSchmidt for freeride, with its own US 7,712,566 'Bicycle transmission' patent (a continuation of a 2007 internal-transmission mounting filing) covering the crank-mounted planetary mechanism.",
+ w:"A Swiss inventor, a German buyer, and an American giant — a three-country chain in a single component, with SRAM's own patent layered on top of the original concept. The crank gearbox idea that was a decade early, and the rare two-speeds-built-into-the-cranks design that briefly shipped on real freeride bikes."},
 {y:2019,g:null,t:"13-speed dual-cassette gearbox (application)",a:"Shimano",num:null,cat:"drive",st:"pending",exp:null,b:[],who:["Shimano"],conf:"v",
  s:"A 2019 filing: two cassettes inside a case with a laterally-moving chainline — Shimano's first serious public move at the gearbox, six years before its motor-gearbox MGU filing.",
  w:"Filed alongside Pinion's rise; together with the 2025 MGU application it shows Shimano circling the gearbox for over half a decade."},
@@ -538,9 +685,9 @@ const D = [
 {y:1998,g:2000,t:"UST tubeless system",a:"Mavic / Michelin / Hutchinson",num:null,cat:"wheel",st:"expired",exp:2020,b:["licensor"],who:[],conf:"m",
  s:"The original certified tubeless standard: sealed rim bed, hooked bead interface, and a licensing program.",
  w:"Tubeless 1.0 — a closed, licensed standard that the open 'tubeless-ready' world eventually routed around."},
-{y:2016,g:2018,t:"CushCore tire insert",a:"CushCore",num:null,cat:"wheel",st:"active",exp:2036,b:[],who:[],conf:"l",
- s:"A closed-cell foam insert engineered as a sidewall stabilizer and rim protector, with patents on profile and function.",
- w:"A whole accessory category created — then crowded by competitors testing the patent's edges."},
+{y:2015,g:2019,t:"CushCore tire insert + Hi-Flo valve (4 patents)",a:"CushCore, Inc. (Adam Krefting)",num:"10787043",nums:["10787043","10703149","10286736","10293640"],cat:"wheel",st:"active",exp:2036,b:[],who:[],conf:"v",
+ s:"A closed-cell foam insert (US 10,787,043, plus earlier continuations 10,286,736 and 10,293,640) occupying 80-90% of a tire's inner volume, pre-loaded wider than the tire itself so it wedges constant outward pressure against both sidewalls — stabilizing cornering, damping impacts, and resisting burping. A separate patent (10,703,149) covers the Hi-Flo valve, whose T-shaped, multi-hole air passage resists clogging from tire sealant. In 2026 CushCore added a separate patent-pending rotary tool that glides a tire onto the rim, tackling the notoriously hard installation its own inserts are known for.",
+ w:"A whole accessory category created — then crowded by competitors testing the patent's edges. Inventor Adam Krefting holds the core IP personally, assigned to CushCore Inc.; the newer mounting-tool patent is a tell that the company solved the install problem its first product created, and patented that too."},
 {y:2010,g:2015,t:"Maxxis compound & casing patents",a:"Cheng Shin Rubber (Maxxis)",num:null,cat:"wheel",st:"active",exp:null,b:[],who:[],conf:"l",
  s:"Maxxis' utility patents sit with parent Cheng Shin and cluster in compounds, casings and construction rather than tread shapes (tread is mostly design-patent territory).",
  w:"Honest framing: the world's most popular MTB tires are protected more by trade secrets and design patents than utility claims."},
@@ -559,9 +706,9 @@ const D = [
 {y:2012,g:2013,t:"Star Ratchet EXP (US 8,757,341)",a:"Jo Klieber / Syntace GmbH → DT Swiss AG",num:"8757341",cat:"wheel",st:"active",exp:2032,b:["acquired"],who:["Jo Klieber","DT Swiss"],conf:"v",
  s:"One fixed and one floating ratchet ring replacing the original double-floating design — designed by Jo Klieber at Syntace and formally assigned to DT Swiss in January 2020, exactly as the original ratchet patent expired. US 8,757,341 B2 confirmed on Google Patents.",
  w:"The seamless handoff: DT Swiss acquired the next-generation IP the same month the old patent opened the market. The timing was not accidental — and the inventor is the same Jo Klieber who created the K.I.S. steering stabilizer."},
-{y:2014,g:2016,t:"Sprag-clutch silent hub",a:"Onyx Racing",num:null,cat:"wheel",st:"active",exp:2034,b:[],who:[],conf:"v",
- s:"A patented sprag-clutch mechanism delivering instant engagement and silent, drag-free coasting.",
- w:"Proof there's still patentable space in a component category a century old."},
+{y:2014,g:2016,t:"Sprag-clutch silent hub (US 9,102,197 + freehub wear-insert IP)",a:"Onyx Racing Products (Minnesota)",num:"9102197",nums:["9102197","9662938","10787033","10119579"],cat:"wheel",st:"active",exp:2034,b:[],who:["Onyx"],conf:"v",
+ s:"Onyx's core patent (US 9,102,197) covers a sprag clutch — 29 cam-shaped wedges — packed into a bike hub for instant, zero-degree, silent engagement, used across their entire rear-hub lineup. A separate patent (10,119,579) protects the replaceable freehub wear-insert design that fixes alloy freehub-body gouging.",
+ w:"The sprag clutch isn't an Onyx invention — it's a 1940s automotive one-way clutch used in automatic-transmission torque converters. Onyx's IP is about cramming that mechanism into the tight space of a bicycle hub, the same 'borrow a mature mechanism from another industry' move that shows up again and again in this atlas."},
 {y:2018,g:2022,t:"Hydra high-engagement system (US 11,293,500)",a:"Industry Nine (Asheville, NC)",num:"11293500",cat:"wheel",st:"active",exp:2038,b:[],who:[],conf:"v",
  s:"690 points of engagement via six phased pawls — only one pawl group engages at a time, multiplying effective engagement points beyond what the drive ring's teeth alone allow.",
  w:"Engagement count as marketing arms race — with the patent number to back the claim."},
@@ -688,9 +835,9 @@ const D = [
 {y:2014,g:2016,t:"SWAT in-frame storage",a:"Specialized",num:null,cat:"frame",st:"active",exp:2034,b:[],who:["Specialized"],conf:"m",
  s:"The down-tube door and internal storage system that competitors spent years designing around.",
  w:"Once it lapses or gets designed around, every frame gets a glovebox — watch this one."},
-{y:2015,g:2017,t:"Knock Block steerer stop",a:"Trek",num:null,cat:"frame",st:"active",exp:2035,b:[],who:["Trek"],conf:"l",
- s:"A keyed headset limiting steering rotation to protect Trek's straight-shot down tubes.",
- w:"A patent born from a frame-engineering tradeoff — protection and annoyance in one part."},
+{y:2015,g:2017,t:"Knock Block steerer stop",a:"Trek",num:null,cat:"frame",st:"active",exp:2035,b:[],who:["Trek","SRAM"],conf:"l",
+ s:"A keyed headset limiting steering rotation to protect Trek's straight-shot down tubes. SRAM filed its own fork-crown steering-limiter application in December 2025 — distinct in that it anchors one side of the rotational stop to the fork crown rather than the headset, putting it in the same competitive space as Knock Block and Acros' Blocklock.",
+ w:"A patent born from a frame-engineering tradeoff — protection and annoyance in one part — and now a small patent race, as internal headset cable routing makes over-rotation damage a wider industry problem."},
 {y:2011,g:2013,t:"IsoSpeed decoupler",a:"Trek",num:null,cat:"frame",st:"active",exp:2031,b:[],who:["Trek"],conf:"m",
  s:"A pivot decoupling the seat tube from the top tube for compliance, crossing over from road to MTB hardtails.",
  w:"Comfort IP — patents on flex, not travel."},
@@ -748,22 +895,247 @@ const D = [
  w:"Modularity as patent strategy: Saris protects the interface rather than specific rack configurations, so every new accessory extends the moat. Numbers unverified pending USPTO search. Wisconsin's fourth appearance in this atlas after Gehl, Hayes, and the University of Wisconsin geometry formula patent."},
 {y:2010,g:2014,t:"Thule hitch rack portfolio",a:"Thule Group (Sweden)",num:null,cat:"transport",st:"active",exp:2034,j:"SE",b:[],who:["Thule"],conf:"l",
  s:"Thule's HitchSwitch lever (tilt with or without bikes loaded), AutoAttach tool-free installation, and SnugTite Stinger anti-wobble positioning are described as proprietary across the T2 Pro line. Thule is Swedish — patents likely filed with PRV and/or EPO. No patent page or specific numbers found in product literature.",
- w:"The world's largest rack company whose IP is the hardest to pin down. Either very quietly protected or relying on trade dress and manufacturing scale. Needs a PRV/Espacenet search to resolve."}
+ w:"The world's largest rack company whose IP is the hardest to pin down. Either very quietly protected or relying on trade dress and manufacturing scale. Needs a PRV/Espacenet search to resolve."},
+/* ---- Added: Hayes Bicycle Group, MRP, KOM, SRAM MGU, Nicolai, Antidote, OPEN ---- */
+{y:2003,g:2008,t:"SUNringlé wheel & hub patents (US 7,334,846 + 11,090,977)",a:"Hayes Bicycle Group (SUNringlé)",num:"11090977",nums:["7334846","11090977"],cat:"wheel",st:"active",exp:2038,b:[],who:["SUNringlé","Hayes","Stan's"],conf:"v",
+ s:"Hayes' own virtual-marking page lists US 7,334,846 — the Bead Socket Technology patent already in this atlas under Stan's NoTubes — as covering SUNringlé wheelsets too, alongside US 11,090,977, shared with sibling brand Reynolds.",
+ w:"The only patent in this atlas claimed simultaneously by two listed companies: Stan's holds and has litigated 7,334,846, while Hayes lists the same number on SUNringlé's own marking page — a licensing arrangement neither party explains in public."},
+{y:2018,g:2021,t:"Reynolds wheel patent (US 11,090,977)",a:"Hayes Bicycle Group (Reynolds)",num:"11090977",cat:"wheel",st:"active",exp:2038,b:[],who:["Reynolds","Hayes"],conf:"v",
+ s:"Reynolds' DH-focused A307/A309 and Blacklabel rims are covered by US 11,090,977, the same patent SUNringlé lists for its own wheelsets — confirming the number is shared IP across Hayes' wheel brands rather than a typo.",
+ w:"Hayes Bicycle Group treats Reynolds and SUNringlé as one wheel-engineering pool: build the rim tech once, mark every brand that uses it."},
+{y:2012,g:2014,t:"Manitou fork & shock portfolio (9 patents)",a:"Hayes Bicycle Group (Manitou)",num:"9376160",nums:["RE45684","9376160","9758210","9988124","10597112","11273886","11639212","TWI386342","TWI640440"],cat:"fork",st:"active",exp:2034,b:[],who:["Manitou","Hayes"],conf:"v",
+ s:"Manitou's own patent grid lists nine numbers spanning the Mattoc, Mara, Mastodon and Minute lines, including a US reissue patent (RE45684) and two Taiwan grants — the broadest single-brand fork portfolio in this atlas.",
+ w:"A reissue patent is a different animal from the design (D) and country-prefixed entries elsewhere here: it corrects or narrows an already-granted patent without resetting its term, which is why this card needed a small code change just to link to it correctly."},
+{y:2013,g:2015,t:"Hayes modern brake portfolio (7 patents)",a:"Hayes Bicycle Group",num:"8936136",nums:["8936136","8943924","9487264","11124263","11772739","12024260","12151775"],cat:"comp",st:"active",exp:2035,b:[],who:["Hayes"],conf:"v",
+ s:"Seven patents cover the current Dominion, Prime and Radar lineups — filed roughly two decades after the original 1996 Hayes Mag entry already in this atlas.",
+ w:"Same brand, two separate patent eras: the company that helped invent the MTB disc brake in the 1990s is still filing on the mechanism in the 2020s."},
+{y:2014,g:2016,t:"MRP suspension portfolio — Ribbon, Raven, Bartlett, Baxter (6 patents)",a:"Eko Sport, Inc. d/b/a Mountain Racing Products (Boulder, CO)",num:"11091218",nums:["11091218","10549814","10435105","9903436","9573649","11008062"],cat:"fork",st:"active",exp:2036,b:[],who:["MRP"],conf:"v",
+ s:"MRP's virtual marking page covers the damper architecture across its Ribbon, Raven, Bartlett and Baxter fork lines with six core patents; the QR axle is separately listed as patent-pending.",
+ w:"Directly upstream of the Fox v. SRAM bleed-valve litigation already in this atlas — MRP's Ribbon fork shipped its own pressure-relief valves in 2016, four years before Fox's patent on the concept was granted. This portfolio is the architecture those earlier valves lived inside."},
+{y:2013,g:2015,t:"MRP chainguide portfolio — G5, AMg, 1X, GCX (4 patents)",a:"Eko Sport, Inc. d/b/a Mountain Racing Products",num:"11613326",nums:["11613326","9327786","8491429","8235849"],cat:"comp",st:"active",exp:2035,b:[],who:["MRP"],conf:"v",
+ s:"The G5 chainguide is covered by three older patents (9,327,786, 8,491,429, 8,235,849), while the newer AMg/1X/GCX family carries 11,613,326, with additional filings pending.",
+ w:"A decade-plus gap between the G5's IP and the current AMg generation — the kind of slow-burn product evolution that doesn't show up if you only look at headline release dates."},
+{y:2015,g:2017,t:"MRP Wave Ring chainring (US + EP/UK + DE)",a:"Eko Sport, Inc. d/b/a Mountain Racing Products",num:"11293537",nums:["11293537","11054014","10563746","10451166","9669899","EP3111109","DE602015077"],cat:"drive",st:"active",exp:2037,b:[],who:["MRP"],conf:"v",
+ s:"Five US patents plus a combined EP/UK filing (3,111,109) and a German grant (DE 602015077) protect the Wave Ring's tooth-profile geometry — MRP's only chainring-specific filing, separate from its fork and chainguide portfolios.",
+ w:"The only MRP entry with international coverage outside the US — a sign Wave Ring was considered worth protecting in Europe specifically, unlike the rest of the catalog."},
+{y:2024,g:null,t:"KOM Xeno Hub — Infinity Drive (application)",a:"Steve Elkins / King of the Mountain (Peak District, England)",num:"WO2025003104",cat:"wheel",st:"pending",exp:null,j:"GB",b:[],who:["KOM"],conf:"m",
+ s:"A UK national filing (GB2310114.8), PCT application, and WO publication (WO2025/003104) reportedly cover the Xeno hub's disc-side drive ring and dual concentric-axle layout — ten years in development per founder Steve Elkins. Existence and pending status are independently confirmed via Pinkbike, BikeRadar and KOM's own site; the specific filing numbers above are carried over from prior research and not independently re-verified against UK IPO or WIPO records.",
+ w:"The three-tier filing path (UK national → PCT → WO publication) is the standard route toward eventual protection in multiple countries — nothing has been granted yet, so this is a bet on the design holding up under examination."},
+{y:2025,g:null,t:"Multispeed Drive Unit / MGU (US App. 19/238,462)",a:"SRAM, LLC / SRAM Deutschland GmbH",num:null,cat:"emtb",st:"pending",exp:null,b:[],who:["SRAM"],conf:"v",
+ s:"Published publicly on Christmas Day 2025, this application describes a motor-gearbox unit combining 12 discrete gear ratios with a 504% range — between the 8-speed Intradrive GD8 (473%) and the 12-speed Pinion MGU (600%). Shimano filed a conceptually similar application (18/769,967) earlier the same year.",
+ w:"SRAM doubled down on the derailleur with UDH and T-Type, then quietly filed for the technology that could make derailleurs optional. Whether this becomes a product or just a defensive filing is the open question — patent applications are option contracts on possible futures, not announcements."},
+{y:2004,g:2008,t:"Nicolai gear-transmission portfolio (5 patents, 2 assigned to Gates)",a:"Karlheinz Nicolai (Nicolai Bicycles, Germany)",num:"8043185",nums:["7338058","7644944","8043185","8308589","9435382"],cat:"drive",st:"active",exp:2028,j:"DE",b:["acquired"],who:["Nicolai","Gates"],conf:"v",
+ s:"Karlheinz Nicolai's own name sits on a frame-integration patent (7,338,058), a mechanical multi-gear transmission (7,644,944), and the magnetic-clutch transmission already cited in this atlas (8,043,185) — plus two later belt/chain-drive and shaft/hub patents (8,308,589 and 9,435,382) assigned directly to The Gates Corporation.",
+ w:"Nicolai told Pinkbike in 2020: 'I also have many patents on motor technologies and I sold them to an important motor company.' The Gates assignments on record confirm it — a boutique German frame builder's drivetrain IP ended up inside a Fortune-500 supplier's portfolio."},
+{y:2024,g:null,t:"Nicolai shift-under-load clutch (applications)",a:"Karlheinz Nicolai (Nicolai Bicycles, Germany)",num:"20250237272",nums:["20250237272","20250050971"],cat:"drive",st:"pending",exp:null,j:"DE",b:[],who:["Nicolai"],conf:"v",
+ s:"Two 2024–25 applications describe a clutch device that lets a bicycle gearbox shift under load — a spatially-separated opening mechanism is the headline claim — alongside a data-processing method for automating the gear change itself. This is the IP behind Nicolai's new Saturn 16 MGU, built around a Pinion 12-speed gearbox.",
+ w:"Twenty years after his first gearbox-frame patent, Nicolai is filing again on the exact problem that's defined every gearbox bike since: shifting under load without grinding the gears. The MGU era restarted his patent activity."},
+{y:2016,g:null,t:"FDS — Floating Damping System (existence confirmed, numbers unknown)",a:"Antidote Bikes (Poland)",num:null,cat:"susp",st:"active",exp:null,j:"PL",b:[],who:["Antidote"],conf:"l",
+ s:"Antidote's dual mini-link FDS layout — a vertically-mounted shock actuated from both ends simultaneously by counter-rotating links — debuted on the Lifeline and is described by Antidote as patented. No patent number has been located; Polish origin suggests a filing with the Polish Patent Office (UPRP) and/or EPO.",
+ w:"A patented suspension layout from a country with zero other entries in this atlas — Polish IP in mountain biking is essentially undocumented in English-language sources, which is exactly the kind of gap this atlas exists to flag rather than paper over."},
+{y:2018,g:null,t:"OPEN BAR internal clamp stem (existence confirmed, numbers unknown)",a:"OPEN Cycle (Gerard Vroomen & Andy Kessler)",num:null,cat:"comp",st:"active",exp:null,b:[],who:["OPEN"],conf:"l",
+ s:"A closed-form, 100% carbon stem that adjusts length by 15mm in 5mm steps with no metal inserts or clamp cuts, described by OPEN as patented on its own product page. No patent number is publicly listed; OPEN's frames are made in Portugal, but the company itself is Swiss-American.",
+ w:"Gerard Vroomen co-founded Cervélo before OPEN — this is the kind of small-parts patent that never makes headlines but quietly protects a genuinely unusual manufacturing approach to a stem."},
+/* ---- Added batch: hubs, drivetrain, suspension, BMX heritage, Colorado litigation ---- */
+{y:2020,g:null,t:"Classified Powershift internal 2-speed hub (applications)",a:"Classified Cycling (Belgium)",num:"WO2023012188",cat:"drive",st:"pending",exp:null,j:"BE",b:[],who:["Classified","SRAM"],conf:"m",
+ s:"Classified's wireless rear hub hides a two-speed planetary gear inside the freehub, shifted under full load via a handlebar control and a one-piece steel cassette — protected by a family of mechanical and wireless-control filings (cited as WO2023012188A1 and related). SRAM has its own strikingly similar 2-speed hub application published April 2025.",
+ w:"The hub-gear idea keeps resurfacing because it solves real problems — shift under load, no exposed derailleur — and the big players are now filing around the same space a Belgian startup staked out first. Numbers carried from secondary sources; not independently re-verified against WIPO this pass."},
+{y:1993,g:1993,t:"Curnutt air-cavity shock (US 5,190,126) — the Foes damper",a:"Charles Curnutt",num:"5190126",nums:["5190126","4210344"],cat:"fork",st:"expired",exp:2013,b:["licensor"],who:["Charles Curnutt","Foes"],conf:"v",
+ s:"Charles Curnutt's air-cavity-controlled orifice damper (US 5,190,126), descended from his father's 1980 desert-racing shock patent (US 4,210,344), brought peewee-motocross shock technology to mountain bikes. Brent Foes paired it with his hand-welded aluminum long-travel frames and a 2:1 leverage layout starting in the mid-1990s.",
+ w:"There is no single 'Foes-Curnutt patent' — the 2:1 leverage ratio is frame geometry, not patentable on its own. What's patented is the Curnutt damper, an automotive/moto shock lineage adapted to bikes. Foes' contribution was the frame and the pairing, a recurring atlas pattern: the famous bike, the borrowed-industry damper underneath."},
+{y:2018,g:null,t:"Madsen forward-link rear suspension (application)",a:"Damon Madsen",num:null,cat:"susp",st:"pending",exp:null,b:[],who:["Damon Madsen"],conf:"l",
+ s:"A four-bar layout with a forward-facing lower link, designed by an independent inventor to separate the instant-center path from the chain line for a specific anti-squat-vs-bump tradeoff. Covered by a published US application; the exact number could not be located this pass.",
+ w:"A garage-inventor suspension patent in the same tradition as the Canfields and KOM — the kind of solo, first-principles design work that still occasionally breaks into an industry dominated by a handful of licensors. Existence confirmed via Pinkbike's first-ride coverage; number unverified."},
+{y:2015,g:null,t:"EXT (Extreme Racing Shox) damper patents",a:"EXT / Franco Fratton (Italy)",num:null,cat:"fork",st:"active",exp:null,j:"IT",b:[],who:["EXT"],conf:"l",
+ s:"EXT's high-end coil and air dampers focus on friction reduction, hydraulic bottom-out control, and frequency-separated damping. The company explicitly markets a 'patent pending' hydraulic bump-stop mechanism; specific numbers are likely Italian/EPO filings not well indexed in English-language sources.",
+ w:"Founded by the late Franco Fratton, a motorsport-suspension veteran — EXT is one of several European suspension houses whose IP is real but nearly invisible to US patent search, an honest gap this atlas flags rather than papers over."},
+{y:1994,g:1995,t:"Unified Rear Triangle / Sweet Spot (US 5,474,318)",a:"John Castellano",num:"5474318",cat:"susp",st:"expired",exp:2015,b:["licensor"],who:[],conf:"m",
+ s:"John Castellano's 'Sweet Spot' Unified Rear Triangle mounted the bottom bracket on the swingarm so chain forces stayed neutral through travel. Licensed to Ibis (the Bow-Ti and Szazbo), Schwinn, Mountain Cycle and others through the 1990s.",
+ w:"The URT idea Trek's Y-bike is usually credited with actually originates here — Castellano patented it first and licensed it widely. The next entry is Trek deliberately designing around this patent rather than paying to license it."},
+{y:1995,g:1997,t:"Trek Y-bike Y-frame suspension (US 5,685,553)",a:"Trek Bicycle",num:"5685553",cat:"susp",st:"expired",exp:2017,b:[],who:["Trek"],conf:"v",
+ s:"Trek's patent on the iconic Y-shaped mainframe and its unified-rear-triangle suspension. The Y-bike became one of the best-known mass-market full-suspension shapes of the late 1990s.",
+ w:"Read alongside the Castellano entry, this is a textbook 'design-around': URT suspension was already patented, so Trek engineered a distinct Y-shaped frame geometry it could patent and sell without licensing the original. The shape sold the bike; the patent protected the workaround."},
+{y:2019,g:2022,t:"Trek Supercaliber IsoStrut (US 11,242,110)",a:"Trek Bicycle",num:"11242110",cat:"susp",st:"active",exp:2039,b:[],who:["Trek"],conf:"m",
+ s:"An integrated shock-in-top-tube unit for Trek's short-travel XC race bike, packaging a stroke-limited shock into the frame's main beam for a stiffer, lighter rear end than a conventional linkage.",
+ w:"Trek's current marking page also lists newer continuation patents extending its older ABP technology — the brand keeps re-filing on suspension ideas decades after the originals, the same pattern visible across Weagle and Specialized entries here."},
+{y:2011,g:2014,t:"Trek DRCV dual-chamber air shock (US 8,894,083)",a:"Trek Bicycle (with Fox)",num:"8894083",cat:"fork",st:"active",exp:2031,b:[],who:["Trek","Fox"],conf:"m",
+ s:"Dual Rate Control Valve — a two-chamber air shock co-developed with Fox that opens a second air volume partway through travel, giving a supple beginning and supportive end without a piggyback.",
+ w:"A rare co-developed-patent entry: a frame brand and a suspension brand sharing IP on a single shock, prefiguring the deeper Trek–Fox collaborations that followed."},
+{y:1986,g:null,t:"BMX Gyro detangler (Taiwan-origin, US refinements)",a:"Brian Scura / Odyssey BMX",num:"6968927",nums:["6968927","5829314","6164153","6205635"],cat:"comp",st:"active",exp:2023,b:["licensor"],who:["Brian Scura","Odyssey"],conf:"m",
+ s:"The Gyro lets BMX handlebars spin 360° without tangling the rear-brake cable, via a split dual-cable system around a rotating bearing. Brian Scura designed it; the original mechanism traces to a Taiwanese filing commercialized by Odyssey (Bear Corp), while Scura's well-documented US portfolio (5,829,314; 6,164,153; 6,205,635; 6,968,927) covers anti-flop and cable-balancing refinements over the following 15 years.",
+ w:"'Gyro' is an Odyssey trademark, not a patent. The cleaner story isn't 'Odyssey patented the Gyro in the US' — it's that the original protection was Taiwanese, and the inventor spent the next decade-plus re-patenting improvements in the US. A reminder that famous product names and actual patent chains rarely line up neatly."},
+{y:1974,g:1975,t:"Mongoose Motomag cast wheel (US D236,609)",a:"BMX Products, Inc. (Mongoose)",num:"D236609",cat:"wheel",st:"expired",exp:1989,b:[],who:["Mongoose"],conf:"v",
+ s:"The original cast-magnesium (later aluminum) Motomag wheel — a design patent on the five-spoke 'mag' shape that defined mid-1970s BMX and became one of the most recognizable wheels in the sport.",
+ w:"A design patent, like the Speedplay and Wolf Tooth design entries here — protecting how something looks rather than how it works. Mongoose still cites D236609 on the 2020s reissue Motomag III decades after it lapsed."},
+{y:1986,g:1988,t:"Bicycle stunt footpeg (US 4,733,881)",a:"Freestyle BMX (1980s)",num:"4733881",cat:"comp",st:"expired",exp:2006,b:[],who:[],conf:"v",
+ s:"A patent covering supplemental standing platforms and steps added to freestyle BMX frames and axles, letting riders perform flatland and street maneuvers — a 1986-era divisional filing from the freestyle boom.",
+ w:"Pegs are so standard now they read as obvious, but someone patented the standing-platform concept when freestyle was brand new — the footpeg's paperwork is older than most riders using them today."},
+{y:2006,g:2010,t:"BMX starting gate (US 7,665,929)",a:"BMX/MTB race technology",num:"7665929",cat:"frame",st:"active",exp:2026,b:[],who:[],conf:"v",
+ s:"The drop-gate starting system used at major BMX and mountain-bike race tracks — a platform with gates driven from a stopping position to a releasing position to ensure fair, simultaneous launches.",
+ w:"One of the few entries here protecting race infrastructure rather than a part on the bike — the start gate is patented hardware most racers never think about as 'technology.'"},
+{y:2001,g:2002,t:"BMX freecoaster clutch hub (US 6,408,715 / EP 1308337)",a:"Freecoaster mechanism",num:"6408715",nums:["6408715","EP1308337"],cat:"wheel",st:"expired",exp:2021,b:[],who:[],conf:"l",
+ s:"A clutch-based rear hub that lets BMX riders roll backwards without the pedals turning — the 'freecoaster' — using a sliding clutch that disengages the driver during fakie and backward riding.",
+ w:"The opposite design goal of the Onyx sprag hub elsewhere here: instead of instant engagement, the freecoaster deliberately delays it, so riders can roll backward. Same component, opposite patented philosophy. Number from secondary sources, not independently verified this pass."},
+{y:1979,g:null,t:"SE Quadangle frame (no patent)",a:"Scot Breithaupt / SE Racing",num:null,cat:"frame",st:"unknown",exp:null,b:["priorart"],who:["SE Racing","Scot Breithaupt"],conf:"l",
+ s:"Scot Breithaupt's 1979 four-tube Quadangle frame used distinct overlapping triangles for stiffness. It was never patented — the radical geometry simply became an iconic, widely-copied symbol of the era.",
+ w:"Included precisely because there's no patent: like the open-sourcing stories elsewhere here, the Quadangle shows that some of the most influential designs in cycling spread fastest by not being locked down. Iconic, uncopyrighted, everywhere."},
+{y:2026,g:null,t:"Canyon adjustable main pivot & anti-squat (application)",a:"Canyon Bicycles (Germany)",num:null,cat:"susp",st:"pending",exp:null,j:"DE",b:[],who:["Canyon"],conf:"v",
+ s:"A January 2026 patent application describing a two-position main pivot for XC bikes, letting riders tune anti-squat to match different chainring sizes for more consistent pedalling. Developed around the Lux XC platform.",
+ w:"Adjustable geometry is a trend; adjustable kinematics is the next frontier. Canyon patenting a movable pivot point is a sign the fine-tuning war is shifting from where the wheels sit to how the suspension actually responds."},
+{y:2025,g:null,t:"Priority Stillpoint high-pivot (patent pending)",a:"Priority Bicycles (New York)",num:null,cat:"susp",st:"pending",exp:null,b:[],who:["Priority"],conf:"v",
+ s:"A high-single-pivot platform on Priority's first full-suspension bike, the Vanth enduro — a Pinion gearbox, Gates belt-drive machine. Priority says the pivots sit along a 'previously impossible line,' though as a single pivot it governs shock motion rather than axle path.",
+ w:"A belt-drive specialist's first suspension bike, patent-pending and gearbox-equipped — the kind of small-brand swing for the fences that this atlas tracks alongside KOM, Antidote and Madsen."},
+{y:2024,g:null,t:"Specialized GENIE dual-stage air spring (patent pending)",a:"Specialized",num:null,cat:"fork",st:"pending",exp:null,b:[],who:["Specialized"],conf:"v",
+ s:"A dual-stage air spring using a secondary air volume that opens late in the stroke — coil-like grip early, ramped bottom-out resistance late, with tunable mid-stroke support. Launched on the Stumpjumper 15 and shared with the Turbo Levo SL.",
+ w:"Air-spring tuning is where suspension patents are quietly concentrating now that linkage layouts have largely come off patent — the spring curve itself, not the frame, is the new contested ground."},
+{y:2025,g:null,t:"Garrett in-axle tubeless plug tool (design patent)",a:"Sam Garrett (Rapid City, SD)",num:null,cat:"comp",st:"active",exp:null,b:[],who:["Sam Garrett"],conf:"l",
+ s:"A teenage inventor's design patent for a tubeless tire-plug tool that stows inside a standard thru-axle, keeping a trail-repair tool on the bike at all times.",
+ w:"The youngest inventor in the atlas. A reminder that meaningful, patentable bike ideas still come from riders solving their own problems in a garage — not only from corporate R&D departments."},
+{y:2026,g:2026,t:"Fox Fiber Core grip (finger-trap design)",a:"Fox Factory",num:null,cat:"comp",st:"active",exp:2046,b:[],who:["Fox"],conf:"m",
+ s:"A lock-on-free grip using a braided helical mesh over an elastomer that works like a finger trap — expanding to slide on, contracting to grip the bar — avoiding clamp hardware that can over-torque carbon bars. Granted to Fox in March 2026.",
+ w:"Fox (with a Longmont, CO engineering presence) patenting a grip is a sign of how granular component IP has become — even the rubber you hold onto is now contested, protectable territory."},
+{y:2022,g:null,t:"Fox v. SRAM — transferred to Colorado District Court",a:"Fox Factory vs. SRAM",num:null,cat:"fork",st:"pending",exp:null,b:["litigated"],who:["Fox","SRAM"],conf:"v",
+ s:"Fox Factory's multi-year patent suit against SRAM was transferred to the U.S. District Court in Colorado, where the case narrowed after the Patent Trial and Appeal Board (PTAB) found the relevant claims of a key Fox patent unpatentable.",
+ w:"Colorado here is the courtroom, not the home address — neither Fox (headquartered in Duluth, GA, with Colorado engineering offices) nor SRAM (Chicago, IL) is a Colorado company. The state keeps turning up as the venue for the industry's biggest suspension fights, which is a jurisdictional story, not a hometown one."},
+{y:2015,g:2015,t:"Canfield Balance Formula (US 9,061,729) — Revel's licensed suspension",a:"Lance & Chris Canfield → Revel Bikes (Carbondale, CO)",num:"9061729",cat:"susp",st:"active",exp:2035,b:["licensor"],who:["Canfield","Revel"],conf:"v",
+ s:"CBF balances the center-of-curvature directly above the chainring to hold pedal force consistent and keep the suspension active independent of drivetrain and braking input. After the Canfield brothers split, Chris Canfield's Suspension Formulas licenses CBF to Colorado's Revel Bikes, whose Rascal topped the 2026 Pinkbike trail-bike field test.",
+ w:"The Canfields appear again here (see their earlier CBF and DELTA entries) — this is the licensing arm of that work, and a clean example of homegrown Colorado suspension IP powering a homegrown Colorado brand, the bright side of the state's otherwise litigation-heavy bike-patent story."},
+{y:1989,g:1990,t:"Bryne clipless pedal & cleat portfolio — Speedplay's founding IP (6 patents)",a:"Richard M. Bryne",num:"4942778",nums:["4942778","5213009","5325738","5606894","5687619","5862716"],cat:"comp",st:"expired",exp:2014,b:["litigated","licensor"],who:["Richard Bryne","Speedplay"],conf:"v",
+ s:"Bryne patented the original symmetrical, double-sided clipless pedal-and-cleat system in 1990 (US 4,942,778), then a multilayered cleat (5,213,009) and locking mechanism (5,325,738), then a three-patent continuation family covering refinements through 1999 — all individually held before being licensed into the company he founded, Speedplay.",
+ w:"Speedplay sued rival pedal maker Bebop in a case that reached the Federal Circuit (Speedplay, Inc. v. Bebop, Inc., 211 F.3d 1245, 2000) over the exact scope of Bryne's license to his own company — a reminder that 'founder licenses IP to the startup he runs' can get legally messy even when everyone's on the same side."},
+{y:2000,g:2002,t:"Bryne / Speedplay later pedal-interface patents (8 patents, now Wahoo-owned)",a:"Richard M. Bryne — Speedplay, Inc. → Wahoo Fitness LLC",num:"8272150",nums:["6425304","6494117","7017445","8272150","9826794","11147339","8745900","9901134"],cat:"comp",st:"active",exp:2029,b:["acquired"],who:["Richard Bryne","Speedplay","Wahoo Fitness"],conf:"v",
+ s:"After Speedplay became the assignee, Bryne kept inventing as the company's chief engineer: a refined pedal/cleat assembly (6,425,304 and 6,494,117, then 7,017,445), a redesigned shoe-sole mounting standard meant to fix poor cleat-to-pedal alignment (8,272,150, continued in 9,826,794 and 11,147,339), and an aerodynamic shoe-and-pedal cover system (8,745,900, continued in 9,901,134).",
+ w:"Wahoo Fitness acquired Speedplay in 2020, so this entire later-era portfolio — still active, still expiring as late as 2029 — now sits inside a smart-trainer and head-unit company's IP shelf rather than a pedal specialist's. Same inventor, same pedal interface, three different corporate owners across 35 years."},
+/* ---- Bill Shook / American Classic ---- */
+{y:1999,g:2000,t:"Bill Shook / American Classic hub & drivetrain portfolio (3 patents + rim)",a:"William B. Shook / American Classic",num:"6155394",nums:["6155394","8371660","20190136918"],cat:"wheel",st:"active",exp:2030,b:["licensor"],who:["Bill Shook","American Classic"],conf:"v",
+ s:"Three core patents spanning 20 years of hub engineering: US 6,155,394 (1999) covers a coasting mechanism with simultaneous pawl engagement, making freehub engagement faster and more consistent; US 8,371,660 (2010) protects a hardened steel insert pressed into a soft aluminum freehub spline body to resist cassette-tooth damage — a fix for one of the most common real-world aluminum hub failure modes; US 20190136918 (2018 application) extends the work to a ratchet-tooth ring with spline torque transfer designed to avoid thin spots at the tooth root. Shook's US 7,555,838 rim patent (see its own entry) is also wheel-manufacturing IP from the same era.",
+ w:"American Classic built a reputation for lightweight performance wheels; the patent trail shows that reputation rested on solving specific engineering problems — pawl synchronization, spline wear, ring geometry — rather than broad claims. Each patent is a direct answer to a known failure point in the parts it replaced."},
+{y:1974,g:1976,t:"Bill Shook saddle & seatpost lineage (3 patents, 1974–2008)",a:"William B. Shook / Thurston, Inc. → American Classic",num:"7318623",nums:["3933391","4995753","7318623"],cat:"comp",st:"expired",exp:2025,b:[],who:["Bill Shook","American Classic"],conf:"v",
+ s:"Shook's saddle and seatpost work spans 34 years across two companies: US 3,933,391 (Thurston, Inc., 1974) is a saddle-mount with a pivoting clamp that allows fore-aft and tilt adjustment — one of his earliest bicycle patents, filed before American Classic existed. US 4,995,753 (1990) refined the cradle-and-clamp concept with extruded metal for lighter weight. US 7,318,623 (2005) brought the lineage into the modern era with a straight-insert seatpost and a toroidal clamp section, eliminating the usual two-bolt pinch arrangement.",
+ w:"The 1974 filing predates American Classic by almost a decade — Shook was doing bicycle IP before the company that made him famous existed. Following one inventor's work from a 1974 saddle clamp to a 2005 seatpost is a reminder that the people who shaped lightweight cycling components often had decades of quiet, unglamorous patent work underneath the brand names."},
+{y:2006,g:2009,t:"Bill Shook lightweight rim extrusion method (US 7,555,838)",a:"William B. Shook / American Classic",num:"7555838",cat:"wheel",st:"active",exp:2026,b:[],who:["Bill Shook","American Classic"],conf:"v",
+ s:"A manufacturing method for thin-walled aluminum rims: extrude the profile with an intentional external tab that prevents the thin walls from buckling during the roll-forming step, then remove the tab after the rim is shaped and the ends are joined. The walls end up thinner than would be possible to roll without the tab acting as a stabilizer.",
+ w:"A process patent rather than a component patent — protecting how something is made rather than what it is. The tab-assisted extrusion trick is elegant precisely because the tab isn't in the finished product; it's a manufacturing scaffold. This category of IP (the jig, the process, the sequence) is the least visible and most underappreciated corner of the atlas."},
+/* ---- Added batch: hubs, tires, suspension, cockpit, tools — patent-pending boutiques ---- */
+{y:2023,g:null,t:"WRP Zero Drag hub internals (patent pending)",a:"Mic Williams / Williams Racing Products (Geelong, Australia)",num:null,cat:"wheel",st:"pending",exp:null,j:"AU",b:[],who:["WRP","Mic Williams"],conf:"v",
+ s:"A double-clutch system that retrofits inside DT Swiss Star Ratchet and EXP hubs, isolating the drive ring so no speed is lost to ratchet friction while coasting — light backpedal pressure also lets it act as a freecoaster. Troy Brosnan won the 2024 Mont-Sainte-Anne World Cup running it. WRP's broader catalog (Mullet Linkages/Yokes for 29er-to-mixed-wheel conversion, custom-keyed DH stems, Supreme Mullet Dropouts) is built on the same proprietary, deliberately-unpublished IP strategy.",
+ w:"The same mechanical idea as the BMX freecoaster elsewhere in this atlas — decoupling the driver from the hub shell — arrived at independently, decades apart, for opposite reasons (one wants drag-free coasting, the other wants to ride backward). WRP's whole company runs on staying patent-pending rather than ever publishing, the same playbook as EXT and Forbidden here."},
+{y:2018,g:null,t:"Vittoria graphene compounds & Air-Liner inserts (existence confirmed, numbers unlocated)",a:"Vittoria (Italy, with Directa Plus / Haydale)",num:null,cat:"wheel",st:"active",exp:null,j:"IT",b:[],who:[],conf:"l",
+ s:"Vittoria's graphene and graphene-silica rubber compounds, co-developed with Directa Plus and Haydale, let tire compounds stiffen while rolling straight and soften under braking or cornering load — featured on the Corsa PRO road line. Separately, patented hexagonal and T-shaped foam profiles define the Air-Liner Road/Trail/Protect tubeless inserts, which add run-flat bead retention if a tire loses air. A newer collaboration with reTyre adds an injection-molding process aimed at fully recyclable tires.",
+ w:"Three separate patent families under one tire brand — compound chemistry, insert geometry, and manufacturing process — a reminder that 'tire technology' covers far more contested ground than tread pattern alone."},
+{y:2013,g:null,t:"Lauf pivotless leaf-spring fork & rear suspension",a:"Benedikt Skulason / Lauf Cycling (Iceland)",num:null,cat:"fork",st:"pending",exp:null,j:"IS",b:[],who:["Lauf","Benedikt Skulason"],conf:"m",
+ s:"The Lauf fork suspends the axle on glass- or carbon-fiber leaf springs in a trailing-link layout — no pivots, bushings, or seals, about 30mm of travel on the Grit. Even after a decade on the market the core mechanism remains patent-pending rather than granted. A 2019 family of rear-suspension applications (including EP application 22173EP01) pairs flexible leaf-spring chainstays with a seatstay that mates into a cavity in the seat tube for roughly 40mm of adjustable flex, and a newer filing covers a magnet-free freehub using 3D-printed titanium pawls and leaf springs instead of traditional pawl springs.",
+ w:"A company whose entire identity is 'pivotless leaf springs' applying the same core idea three times — fork, rear end, now hub internals. Years patent-pending on the original fork shows how slow examination can be on a genuinely novel mechanism, not just a paperwork formality."},
+{y:2025,g:null,t:"Shimano co-axial disc brake mount (application)",a:"Shimano",num:null,cat:"comp",st:"pending",exp:null,b:["priorart"],who:["Shimano","SRAM"],conf:"v",
+ s:"US application 18/073,453 describes a disc caliper mount that receives caliper force coaxially, simplifying the frame-to-caliper coupling and improving mounting flexibility. Filed roughly a year after SRAM published a conceptually similar co-axial brake-mount patent.",
+ w:"A small, unglamorous part getting two competing patent filings within twelve months of each other — proof that even disc brake mounting hardware isn't considered settled, decade-old technology to the people who make it."},
+{y:2023,g:2024,t:"Shimano AI-assisted suspension & dropper learning model (US 11,866,114)",a:"Shimano",num:"11866114",cat:"susp",st:"active",exp:2043,b:[],who:["Shimano"],conf:"m",
+ s:"A handlebar-mounted screen and 'learning model' that records a rider's manual suspension, dropper-post, and saddle-tilt adjustments on a given course, then plays them back automatically lap after lap — Shimano's patent text states plainly that 'proper skill is required for the rider to appropriately control the seat post and suspension during riding,' and proposes automating it instead.",
+ w:"Automatic suspension already exists; what's novel here is a rider training the system rather than the system just reading terrain — a small but real step toward bikes that remember a track better than the rider does."},
+{y:2014,g:null,t:"BikeYoke REVIVE dropper hydraulics (proprietary)",a:"BikeYoke (Germany)",num:null,cat:"comp",st:"active",exp:null,j:"DE",b:[],who:["BikeYoke"],conf:"l",
+ s:"REVIVE is BikeYoke's signature dropper-post mechanism: a small external lever lets a rider manually bleed air that's migrated into the hydraulic circuit, fixing the top-out sag that eventually afflicts most hydraulic droppers without a full service.",
+ w:"A patent built around fixing a competitor-wide design flaw rather than inventing a new function — the dropper post's version of the bleed-valve story already in this atlas under Fox and MRP."},
+{y:2020,g:null,t:"Forbidden Trifecta / OneRide high-pivot idler (proprietary)",a:"Owen Pemberton / Forbidden Bike Co. (Squamish, BC)",num:null,cat:"susp",st:"pending",exp:null,b:[],who:["Forbidden","Owen Pemberton"],conf:"l",
+ s:"Forbidden's Trifecta layout routes the chain over an idler pulley above a high main pivot, producing a strongly rearward axle path for impact absorption. DUH dropouts (patent-pending) swap between derailleur, single-speed and SRAM Full-Mount configurations on frames like the titanium Sorceress; OneRide proportional sizing adjusts rear-center and linkage rate per frame size rather than just front-triangle length.",
+ w:"Three separate proprietary ideas under one small Squamish brand, none of them published as granted patents — a high-pivot specialist betting its differentiation stays ahead of the idler-bike crowd through iteration speed rather than litigation."},
+{y:2014,g:2016,t:"OneUp Components portfolio — guides, dropper, EDC tools, bar, chainring",a:"OneUp Components (Squamish, BC)",num:"10053188",nums:["10053188","10787227","10197049","10883481","11352093","D896132","11300192","10370051","10583882","10787215","10974781","11104395","11364963","11479314"],cat:"comp",st:"active",exp:2034,b:[],who:["OneUp"],conf:"v",
+ s:"One shared chainguide patent (10,053,188, plus 10,787,227) covers OneUp's bash/chain/e-bike guides across ISCG05, Shimano STEPS and Bosch mounts. The EDC integrated tool-and-storage system runs on 10,197,049 and 10,883,481. Separate families cover the carbon handlebar (design patent D896,132 plus 11,352,093), the chainring (11,300,192), and the V2 dropper post, which alone carries seven numbers (10,370,051; 10,583,882; 10,787,215; 10,974,781; 11,104,395; 11,364,963; 11,479,314) — per OneUp's own marking page, plus unlisted foreign filings and other pending US applications.",
+ w:"The single densest patent portfolio by product-line count in this atlas outside the majors — a reminder that 'small Squamish components brand' and 'extensive layered IP strategy' aren't mutually exclusive."},
+{y:2015,g:null,t:"Garbaruk — deliberately patent-free (trade secret)",a:"Garbaruk (Poland)",num:null,cat:"drive",st:"unknown",exp:null,j:"PL",b:["priorart"],who:[],conf:"l",
+ s:"Garbaruk, known for ultralight CNC-machined cassettes, chainrings, and derailleur cages, protects its construction methods as trade secrets rather than filing utility patents.",
+ w:"Same philosophy as the SE Quadangle entry elsewhere in this atlas: not every important design choice shows up in a patent search, and a company can choose secrecy over disclosure as a deliberate IP strategy, not an oversight."},
+{y:2021,g:null,t:"AMS Rise Grips (patent pending)",a:"All Mountain Style (Barcelona, Spain)",num:null,cat:"comp",st:"pending",exp:null,j:"ES",b:[],who:[],conf:"l",
+ s:"AMS's Rise Grips carry patent-pending status, alongside other modular accessories like the AMS Adjustable Kickstand, also listed as patent pending.",
+ w:"A small Barcelona accessories brand filing on grips and a kickstand — proof patent activity in this industry isn't confined to suspension and drivetrains; even the smallest touchpoints get IP attention now."},
+{y:2019,g:null,t:"RideWrap frame protection film (proprietary, no patent located)",a:"RideWrap (Whistler, BC)",num:null,cat:"frame",st:"unknown",exp:null,b:[],who:[],conf:"l",
+ s:"RideWrap engineers its own 9-mil TPU film in-house (Lotus Pro), paired with proprietary frame-mapping software for near-complete coverage, a self-healing ceramic top coat, and hydrophobic surface properties — described throughout as proprietary engineering rather than patented invention.",
+ w:"Included as a deliberate contrast to the patent-heavy entries around it: a real, differentiated product built on trade secrets and in-house process rather than a single defensible patent claim."},
+{y:2023,g:2025,t:"SwitchGrade saddle-angle adjuster (US 12,448,072)",a:"Aenomaly Constructs",num:"12448072",cat:"comp",st:"active",exp:2045,b:[],who:["Aenomaly"],conf:"v",
+ s:"A mechanism fitting between the saddle rails and dropper post that lets a rider toggle saddle angle on the fly — nose-down for climbing, level for flats, nose-up for descending — via a single lever, with 2 to 8 discrete positions depending on model.",
+ w:"A genuinely new touchpoint in the bike's adjustability stack: geometry has gotten size-specific, suspension has gotten tunable, and now saddle angle itself is becoming a mid-ride control rather than a fixed setup choice."}
 ];
 
-
-/* ======== ERAS (5yr default) ======== */
-const ERAS = [
+/* ======== PATENT FIGHTS (rivalry groupings) ========
+   Each fight references existing D[] entries via `cards` (matched by patent num or title substring).
+   era: rough span for sorting.  outcome: short resolution line. */
+const FIGHTS = [
+  {
+    key:"weagle-trek",
+    title:"Weagle v. Trek",
+    sub:"The concentric-pivot war",
+    combatants:["Dave Weagle / Split Pivot, Inc.","Trek Bicycle"],
+    era:"2009–2015",
+    stakes:"Weagle patented Split Pivot — a suspension pivot concentric with the rear axle. Trek shipped Active Braking Pivot (ABP), the same concentric-pivot concept, saying it was developed independently. Weagle's company sued.",
+    outcome:"Settled out of public view. Both technologies remain in wide use, and concentric rear-axle pivots are now everywhere — the fight effectively legitimized the layout for the whole industry.",
+    cards:["7717212","7837213","Split Pivot, Inc. v. Trek"]
+  },
+  {
+    key:"fox-sram",
+    title:"Fox v. SRAM",
+    sub:"The bleed-valve & damper fight",
+    combatants:["Fox Factory","SRAM / RockShox"],
+    era:"2020–present",
+    stakes:"Fox holds a patent on push-button bleed valves that equalize trapped fork air at altitude (US 10,746,250). The dispute widened into a multi-patent suspension fight — even though MRP, Manitou and others arguably shipped the same idea years earlier (see the PSST prior-art entry).",
+    outcome:"Transferred to the U.S. District Court in Colorado; narrowed after the Patent Trial and Appeal Board (PTAB) invalidated several of Fox's specific claims. Still live. Note: neither company is actually Colorado-based — it's a jurisdictional venue, not a hometown.",
+    cards:["10746250","Fox v. SRAM — transferred"]
+  },
+  {
+    key:"sram-narrowwide",
+    title:"SRAM v. the Industry",
+    sub:"The narrow-wide chainring claim",
+    combatants:["SRAM","Race Face / Fox","Praxis","Wolf Tooth"],
+    era:"2015–2019",
+    stakes:"SRAM's X-Sync narrow-wide chainring patents (US 9,182,027 and 9,062,758) claimed the alternating tooth-width idea that makes 1x drivetrains hold a chain without a guide. SRAM enforced them against multiple component makers at once.",
+    outcome:"Mixed and widely contested — narrow-wide rings remain ubiquitous across the industry, and the disputes helped define how far a 'tooth profile' patent can actually reach.",
+    cards:["9182027","9062758","SRAM v. Race Face","9404565"]
+  },
+  {
+    key:"stans-specialized",
+    title:"Stan's v. Specialized",
+    sub:"The tubeless bead fight",
+    combatants:["Stan's NoTubes","Specialized"],
+    era:"2010s",
+    stakes:"Stan's holds the Bead Socket Technology patent (US 7,334,846) governing how a tubeless tire bead locks to the rim. The same number later turns up on Hayes/SUNringlé's marking page — making it the only patent in this atlas claimed by two companies at once.",
+    outcome:"Resolved between the parties; the BST number lives on across multiple brands' wheels via licensing.",
+    cards:["7334846","Stan's v. Specialized"]
+  },
+  {
+    key:"speedplay-bebop",
+    title:"Speedplay v. Bebop",
+    sub:"The founder-license pedal case",
+    combatants:["Speedplay, Inc.","Bebop, Inc."],
+    era:"2000",
+    stakes:"Speedplay sued rival pedal maker Bebop over Richard Bryne's clipless pedal patents. The twist: the case reached the Federal Circuit largely over the scope of Bryne's license to his own company.",
+    outcome:"Federal Circuit ruling (211 F.3d 1245, 2000) — a textbook example of how 'founder licenses IP to the startup he runs' can get legally messy even when everyone's nominally on the same side.",
+    cards:["4942778","8272150"]
+  },
+  {
+    key:"spot-gates",
+    title:"Spot v. Gates",
+    sub:"The belt-drive royalty suit",
+    combatants:["Spot Brand","Gates Corp."],
+    era:"2024–present",
+    stakes:"Golden's Spot Brand sued Denver's Gates Corp. over the belt-drive 'Drop-Out' frame patent, alleging a 2008 royalty deal went unpaid as 30-plus brands adopted the design. Invented by a former Spot co-owner.",
+    outcome:"A Denver judge declined to invalidate the patent or void the royalty contract, clearing the way to trial. Active — and a rare current, local Colorado patent fight.",
+    cards:["Gates Carbon Drive","Living Link"]
+  },
+  {
+    key:"knolly-intense",
+    title:"Knolly v. Intense",
+    sub:"The seat-tube geometry suit",
+    combatants:["Knolly Bikes","Intense Cycles"],
+    era:"2020–2021",
+    stakes:"Knolly sued Intense (Case 5:20-cv-02571) claiming six models — the Tracer, Carbine, Tazer e-bike, and three Primers — infringed US 10,363,988, which covers a seat tube meeting the downtube above and in front of the bottom bracket for deep dropper insertion plus 4+ inches of travel.",
+    outcome:"Intense answered with prior art — its own VPP lineage plus dozens of older frames using the same pre-BB seat-tube geometry — and counterclaimed the patent was invalid. Knolly dropped the suit in May 2021; both sides dismissed all claims, and Intense kept its frame architecture.",
+    cards:["10363988"]
+  }
+];
+  const ERAS = [
   {k:"e00pre", label:"Pre-1977", from:1800, to:1976},
-  {k:"e77",    label:"1977–84",  from:1977, to:1984},
-  {k:"e85",    label:"1985–89",  from:1985, to:1989},
-  {k:"e90",    label:"1990–94",  from:1990, to:1994},
-  {k:"e95",    label:"1995–99",  from:1995, to:1999},
-  {k:"e00",    label:"2000–04",  from:2000, to:2004},
-  {k:"e05",    label:"2005–09",  from:2005, to:2009},
-  {k:"e10",    label:"2010–14",  from:2010, to:2014},
-  {k:"e15",    label:"2015–19",  from:2015, to:2019},
-  {k:"e20",    label:"2020–26",  from:2020, to:2026}
+  ...Array.from({length: 2026-1977+1}, (_,i)=>{
+    const y=1977+i;
+    return {k:"y"+y, label:String(y), from:y, to:y};
+  })
 ];
 
 /* ======== STATE ======== */
@@ -809,6 +1181,100 @@ Object.entries(BADGES).forEach(([k,v])=>{
 });
 INVENTORS.forEach(({label,key})=>chip(label,state.inv,key,$("#rowInv")));
 BRANDS.forEach(b=>chip(b,state.brand,b,$("#rowBrand")));
+
+/* ======== SCROLLABLE ROW CONTROLS (arrows + show all) ======== */
+function setupScroller(scrollerId, rowId){
+  const sc=document.getElementById(scrollerId);
+  const row=document.getElementById(rowId);
+  if(!sc||!row) return;
+  const left=sc.querySelector(".sb-left");
+  const right=sc.querySelector(".sb-right");
+  // append a "Show all" toggle to the end of the row
+  const showAll=document.createElement("button");
+  showAll.className="showall-btn";
+  showAll.type="button";
+  showAll.textContent="Show all";
+  row.appendChild(showAll);
+  showAll.onclick=()=>{
+    const expanded=sc.classList.toggle("expanded");
+    showAll.textContent=expanded?"Collapse":"Show all";
+    if(!expanded){ row.scrollLeft=0; updateState(); }
+  };
+  function updateState(){
+    if(sc.classList.contains("expanded")) return;
+    const max=row.scrollWidth-row.clientWidth;
+    const x=row.scrollLeft;
+    const overflowing=max>4;
+    left.classList.toggle("show", overflowing && x>2);
+    right.classList.toggle("show", overflowing && x<max-2);
+    sc.classList.toggle("can-left", overflowing && x>2);
+    sc.classList.toggle("can-right", overflowing && x<max-2);
+  }
+  const step=()=>Math.max(160, row.clientWidth*0.7);
+  function scrollByX(dx){
+    if(row.scrollBy){ row.scrollBy({left:dx,behavior:"smooth"}); }
+    else { row.scrollLeft += dx; }
+  }
+  left.onclick=()=>scrollByX(-step());
+  right.onclick=()=>scrollByX(step());
+  row.addEventListener("scroll",updateState,{passive:true});
+  window.addEventListener("resize",updateState);
+  // re-check when this pane becomes visible (tab switch) — MutationObserver on class
+  new MutationObserver(updateState).observe(row,{attributes:true,attributeFilter:["class"]});
+  // initial, and a deferred pass once layout settles
+  updateState();
+  requestAnimationFrame(updateState);
+  setTimeout(updateState,200);
+  return updateState;
+}
+const updInv=setupScroller("scrollInv","rowInv");
+const updBrand=setupScroller("scrollBrand","rowBrand");
+
+/* ======== FILTER TABS ======== */
+const TAB_DEFS=[
+  {key:"cat",label:"Category"},
+  {key:"st",label:"Status"},
+  {key:"badge",label:"Story"},
+  {key:"inv",label:"Inventors"},
+  {key:"brand",label:"Brands"},
+];
+const paneEls={cat:$("#rowCat"),st:$("#rowStatus"),badge:$("#rowBadge"),inv:$("#rowInv"),brand:$("#rowBrand")};
+let activeTab="cat";
+const tabRow=$("#filterTabs");
+TAB_DEFS.concat([{key:"all",label:"All"},{key:"fights",label:"⚔ Fights"}]).forEach(t=>{
+  const b=document.createElement("button");
+  b.className="tab-btn"+(t.key===activeTab?" on":"")+(t.key==="fights"?" tab-fights":"");
+  b.innerHTML=`${t.label}<span class="tab-dot" data-dot="${t.key}"></span>`;
+  b.dataset.tab=t.key;
+  b.setAttribute("aria-pressed",t.key===activeTab?"true":"false");
+  b.onclick=()=>{ activeTab=t.key; renderTabs(); render(); };
+  tabRow.appendChild(b);
+});
+function renderTabs(){
+  document.querySelectorAll(".tab-btn").forEach(b=>{
+    const on=b.dataset.tab===activeTab;
+    b.classList.toggle("on",on);
+    b.setAttribute("aria-pressed",on?"true":"false");
+  });
+  const fightsMode=activeTab==="fights";
+  $("#filters").setAttribute("data-mode", activeTab==="all"?"all":"single");
+  // In Fights mode, hide the chip panes entirely (rivalries aren't chip-filtered)
+  $("#filterPanes").classList.toggle("hidden-pane", fightsMode);
+  Object.entries(paneEls).forEach(([k,el])=>{
+    el.classList.toggle("hidden-pane", fightsMode || !(activeTab==="all"||activeTab===k));
+  });
+  // recompute scroll arrows once the now-visible row has real width
+  requestAnimationFrame(()=>{ if(typeof updInv==="function")updInv(); if(typeof updBrand==="function")updBrand(); });
+}
+function updateTabDots(){
+  TAB_DEFS.forEach(t=>{
+    const dot=document.querySelector(`.tab-btn[data-tab="${t.key}"] .tab-dot`);
+    if(dot) dot.classList.toggle("show", state[t.key].size>0);
+  });
+  const allDot=document.querySelector('.tab-btn[data-tab="all"] .tab-dot');
+  if(allDot) allDot.classList.toggle("show", Object.values(state).some(s=>s.size>0));
+}
+renderTabs();
 
 /* MODIFIED: also clears searchQ */
 $("#clearAll").onclick=()=>{
@@ -861,9 +1327,10 @@ const NATOFFICE = {
   AU:{full:"IP Australia (AusPat)",        url:"https://pericles.ipaustralia.gov.au/ols/auspat/quickSearch.do"},
   EP:{full:"EPO Espacenet",               url:"https://worldwide.espacenet.com/patent/search"},
   CA:{full:"Canadian Patent Database (CIPO)", url:"https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en"},
+  PL:{full:"Polish Patent Office (UPRP)", url:"https://uprp.gov.pl/en"},
 };
-const NON_ENGLISH_JUR = new Set(["DE","FR","SE","ES","JP"]);
-const JUR_LANG = {DE:"German",FR:"French",SE:"Swedish",ES:"Spanish",JP:"Japanese"};
+const NON_ENGLISH_JUR = new Set(["DE","FR","SE","ES","JP","PL"]);
+const JUR_LANG = {DE:"German",FR:"French",SE:"Swedish",ES:"Spanish",JP:"Japanese",PL:"Polish"};
 
 function patentUrl(num,jur){
   if(!num) return null;
@@ -886,12 +1353,15 @@ function cardHTML(d){
   ].join("");
   const cd=d.st==="active"&&d.exp?(d.exp-NOW>0?`<span class="countdown">~${d.exp-NOW} yrs remaining</span>`:`<span class="countdown">expiring</span>`):(d.exp?`est. ${d.exp}`:"—");
   function numLink(n){
-    const url=patentUrl(n,"US");
-    const isCountry=/^[A-Z]{2}\d/.test(n);
-    const isD=n.startsWith("D")&&!isCountry;
+    const isRE=/^RE\d/.test(n);
+    const countryMatch=!isRE&&n.match(/^([A-Z]{2,3})(\d.*)$/);
+    const isD=n.startsWith("D")&&!countryMatch&&!isRE;
+    const url=isRE?`https://patents.google.com/patent/US${n}`:patentUrl(n,"US");
     let label;
-    if(isCountry){
-      const cc=n.slice(0,2), digits=n.slice(2);
+    if(isRE){
+      label=`US RE${n.slice(2)}`;
+    } else if(countryMatch){
+      const cc=countryMatch[1], digits=countryMatch[2];
       label=`${cc} ${digits.replace(/(\d{1,3})(\d{3})(\d{3})$/,"$1,$2,$3")}`;
     } else if(isD){
       label=`US D${n.slice(1)}`;
@@ -901,6 +1371,9 @@ function cardHTML(d){
     return {url,label};
   }
   const q=encodeURIComponent('bicycle '+(d.a.split(/[\/→(]/)[0].trim())+' '+d.t.replace(/\(.*?\)/g,'').split('—')[0].trim());
+  const COLORADO_BRANDS=new Set(["Spot","Gates","MRP","Revel","Reeb"]);
+  const isColorado = (d.who||[]).some(w=>COLORADO_BRANDS.has(w)) || /Colorado|Golden, CO|Carbondale|Longmont|Denver|Boulder|Grand Junction/.test(d.a+" "+d.s+" "+d.w);
+  const coLink = isColorado ? `<button class="co-link" data-co="1">📍 Colorado MTB innovation</button>` : "";
   const nat=NATOFFICE[jur];
   const needsTrans=NON_ENGLISH_JUR.has(jur);
   const transNote=needsTrans?`<span class="gp-trans">Patent text in ${JUR_LANG[jur]||jur} — machine translation available via Google Patents or Espacenet</span>`:"";
@@ -921,7 +1394,7 @@ function cardHTML(d){
   } else {
     gp=`<a class="gp" href="https://patents.google.com/?q=${q}" target="_blank" rel="noopener">Search related patents on Google Patents →</a>`;
   }
-  return `<article class="card ${d.st==='pending'?'pending-card':''}" data-y="${d.y}">
+  return `<article class="card ${d.st==='pending'?'pending-card':''} ${(d.b&&d.b.includes('litigated'))?'lit-card':''}" data-y="${d.y}">
     <button class="chead" aria-expanded="false">
       <span class="yr">${d.y}</span>${showJurTag?`<span class="jtag">${jur}</span>`:''}
       <span class="ct">
@@ -942,12 +1415,81 @@ function cardHTML(d){
         <div><b>Jurisdiction</b>${jur}</div>
       </div>
       ${gp}
+      ${coLink}
     </div>
   </article>`;
 }
 
+/* ======== PATENT FIGHTS VIEW ======== */
+function fightCardMatches(matcher){
+  return D.filter(d=>{
+    if(d.num===matcher) return true;
+    if(d.nums&&d.nums.includes(matcher)) return true;
+    if(d.t.includes(matcher)) return true;
+    return false;
+  });
+}
+function renderFights(){
+  const tl=$("#timeline");
+  const intro=`<div class="fights-intro">
+    <h2 class="fights-h">Patent Fights</h2>
+    <p>The lawsuits are where the drama lives. These are the major disputes in the atlas — who fought, what over, and how it ended. Tap any patent to jump to its full card.</p>
+  </div>`;
+  const blocks=FIGHTS.map(f=>{
+    const linked=[];
+    const seen=new Set();
+    f.cards.forEach(m=>fightCardMatches(m).forEach(d=>{
+      const id=d.num||d.t;
+      if(!seen.has(id)){ seen.add(id); linked.push(d); }
+    }));
+    const chips=linked.map(d=>{
+      const lbl=d.num?(/^[A-Z]/.test(d.num)?d.num:`US ${d.num}`):d.t.replace(/\s*\(.*?\)\s*/g,"").slice(0,38);
+      return `<button class="fight-jump" data-fy="${d.y}" data-ft="${encodeURIComponent(d.t)}">${lbl} →</button>`;
+    }).join("");
+    const vs=f.combatants.map(c=>`<span class="fight-team">${c}</span>`).join(`<span class="fight-vs">v.</span>`);
+    return `<article class="fight">
+      <div class="fight-head">
+        <div class="fight-titles">
+          <h3>${f.title}</h3>
+          <span class="fight-sub">${f.sub} · ${f.era}</span>
+        </div>
+      </div>
+      <div class="fight-versus">${vs}</div>
+      <p class="fight-stakes"><b>What it's about — </b>${f.stakes}</p>
+      <p class="fight-outcome"><b>How it ended — </b>${f.outcome}</p>
+      <div class="fight-cards"><span class="fight-cards-lbl">Patents in this fight</span>${chips}</div>
+    </article>`;
+  }).join("");
+  tl.innerHTML=intro+`<div class="fights-wrap">${blocks}</div>`;
+  // jump links: switch back to All view, then scroll to the matching card and open it
+  tl.querySelectorAll(".fight-jump").forEach(btn=>{
+    btn.onclick=()=>{
+      const title=decodeURIComponent(btn.dataset.ft);
+      activeTab="all"; renderTabs(); render();
+      requestAnimationFrame(()=>{
+        const cards=[...document.querySelectorAll(".card")];
+        const target=cards.find(c=>c.querySelector(".t")?.textContent.trim()===title.trim())
+                   ||cards.find(c=>c.querySelector(".t")?.textContent.includes(title.slice(0,20)));
+        if(target){
+          target.classList.add("open");
+          const h=target.querySelector(".chead"); if(h) h.setAttribute("aria-expanded","true");
+          if(target.scrollIntoView) target.scrollIntoView({behavior:"smooth",block:"center"});
+          target.classList.add("card-flash");
+          setTimeout(()=>target.classList.remove("card-flash"),1600);
+        }
+      });
+    };
+  });
+  // counts + bars
+  $("#resultCount").textContent=`${FIGHTS.length} major disputes`;
+  $("#clearAll").hidden=true;
+  updateTabDots();
+  renderBars(D.filter(d=>d.b&&d.b.includes("litigated")));
+}
+
 /* MODIFIED: render() now uses getEras() for step-aware grouping */
 function render(){
+  if(typeof activeTab!=="undefined" && activeTab==="fights"){ renderFights(); return; }
   const list=D.filter(passes).sort((a,b)=>a.y-b.y);
   const tl=$("#timeline");
   const eras=getEras();
@@ -966,11 +1508,15 @@ function render(){
   tl.querySelectorAll(".chead").forEach(h=>{
     h.onclick=()=>{ const c=h.closest(".card"); const open=c.classList.toggle("open"); h.setAttribute("aria-expanded",open); };
   });
+  tl.querySelectorAll(".co-link").forEach(b=>{
+    b.onclick=(e)=>{ e.stopPropagation(); openColorado(); };
+  });
   // counts + clear
   const total=D.length, n=list.length;
   const anyFilter=Object.values(state).some(s=>s.size)||searchQ;
   $("#resultCount").textContent = anyFilter?`${n} of ${total} entries`:`${total} entries · 1890–${NOW}`;
   $("#clearAll").hidden=!anyFilter;
+  updateTabDots();
   renderBars(list);
 }
 
@@ -1014,6 +1560,20 @@ document.getElementById("stepToggle").addEventListener("click",()=>{
   inp.addEventListener("input",()=>{ clearTimeout(t); t=setTimeout(()=>{ searchQ=inp.value.trim(); render(); },150); });
   inp.addEventListener("keydown",e=>{ if(e.key==="Escape"){ inp.value=''; searchQ=''; render(); } });
 })();
+/* ======== COLORADO MTB INNOVATION PANEL ======== */
+(()=>{
+  const panel=document.getElementById("coPanel");
+  const overlay=document.getElementById("coOverlay");
+  const tab=document.getElementById("coTab");
+  window.openColorado=()=>{
+    panel.hidden=false; overlay.hidden=false; tab.hidden=true;
+  };
+  function minimize(){ panel.hidden=true; overlay.hidden=true; tab.hidden=false; }
+  function close(){ panel.hidden=true; overlay.hidden=true; tab.hidden=true; }
+  document.getElementById("coMin").onclick=minimize;
+  document.getElementById("coClose").onclick=close;
+  overlay.onclick=minimize;
+  tab.onclick=window.openColorado;
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&!panel.hidden) minimize(); });
+})();
 </script>
-</body>
-</html>
