@@ -69,6 +69,49 @@ button{font-family:inherit;cursor:pointer}
 header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
 .hwrap{max-width:880px;margin:0 auto}
 .eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+/* ---------- PMR home link ---------- */
+.eyebrow-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pmr-home{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.85;text-decoration:none;border:1.5px solid rgba(255,255,255,.45);border-radius:6px;padding:3px 10px;white-space:nowrap;transition:opacity .15s,border-color .15s}
+.pmr-home:hover{opacity:1;border-color:#fff}
+.pmr-home:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* ---------- fmeta action buttons (surprise / share) ---------- */
+.fmeta-actions{display:flex;gap:6px;align-items:center}
+.mini-btn{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.04em;background:var(--surface);border:1px solid var(--card-border);color:var(--ink);border-radius:999px;padding:5px 11px;min-height:30px;white-space:nowrap;transition:border-color .15s,background .15s}
+.mini-btn:hover{border-color:var(--primary)}
+.mini-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.mini-btn.flash{background:var(--primary);color:#fff;border-color:var(--primary)}
+@media(max-width:480px){.mini-btn{font-size:10px;padding:4px 8px}}
+/* ---------- Going free soon ---------- */
+.pill.soon{background:transparent;color:var(--st-pending);border:1.5px solid var(--st-pending)}
+.chip.chip-soon{border-style:dashed}
+/* ---------- Stats view ---------- */
+.stats-wrap{max-width:880px;margin:0 auto;padding:18px 16px 30px}
+.stats-h{font-family:var(--font-display);font-weight:700;font-size:clamp(24px,5vw,34px);text-transform:uppercase;letter-spacing:.01em}
+.stats-intro{font-size:14px;color:var(--ink-soft);max-width:560px;margin:4px 0 18px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:22px}
+.stat-box{background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:12px 14px}
+.stat-num{font-family:var(--font-display);font-weight:700;font-size:30px;line-height:1;color:var(--primary)}
+.stat-lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.stats-sec{margin-bottom:22px}
+.stats-sec h3{font-family:var(--font-display);font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:8px}
+.hbar-row{display:grid;grid-template-columns:150px 1fr 34px;gap:8px;align-items:center;margin-bottom:5px;font-size:13px}
+.hbar-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right;color:var(--ink)}
+.hbar-track{background:var(--chip-bg);border-radius:4px;height:16px;overflow:hidden}
+.hbar-fill{background:var(--primary);height:100%;border-radius:4px;min-width:2px}
+.hbar-fill.alt{background:var(--accent)}
+.hbar-val{font-family:var(--font-mono);font-size:11px;color:var(--ink-soft)}
+.hbar-row.clickable{cursor:pointer}
+.hbar-row.clickable:hover .hbar-name{color:var(--primary);text-decoration:underline}
+.stack-bar{display:flex;height:26px;border-radius:6px;overflow:hidden;margin:6px 0 4px}
+.stack-seg{height:100%}
+.stack-legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--ink-soft);margin-top:4px}
+.stack-legend .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.soon-list{list-style:none;margin-top:4px}
+.soon-list li{background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:9px 12px;margin-bottom:6px;font-size:13.5px;display:flex;gap:10px;align-items:baseline;cursor:pointer;transition:border-color .15s}
+.soon-list li:hover{border-color:var(--primary)}
+.soon-yr{font-family:var(--font-mono);font-weight:700;color:var(--st-pending);flex:0 0 auto}
+.stats-note{font-size:12px;color:var(--ink-soft);margin-top:14px}
+@media(max-width:480px){.hbar-row{grid-template-columns:110px 1fr 30px;font-size:12px}}
 h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clamp(30px,6vw,46px);line-height:1.02;letter-spacing:var(--head-spacing);text-transform:var(--head-transform)}
 .sub{font-size:14px;opacity:.85;max-width:560px;margin-top:4px}
 .themes{display:flex;gap:8px;margin-top:12px;align-items:center}
@@ -279,7 +322,10 @@ html,body{overflow-x:hidden;max-width:100%}
 
 <header>
   <div class="hwrap">
-    <div class="eyebrow">RedFoxRun Interactive</div>
+    <div class="eyebrow-row">
+      <div class="eyebrow">RedFoxRun Interactive</div>
+      <a class="pmr-home" href="https://www.postmillenniumrenaissance.com" target="_blank" rel="noopener">PMR ↗</a>
+    </div>
     <h1>MTB Patent Atlas</h1>
     <p class="sub">45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.</p>
     <div class="themes" role="group" aria-label="Color scheme">
@@ -326,7 +372,11 @@ html,body{overflow-x:hidden;max-width:100%}
   </div>
   <div class="fmeta">
     <span id="resultCount"></span>
-    <button class="clearbtn" id="clearAll" hidden>Clear filters</button>
+    <span class="fmeta-actions">
+      <button class="mini-btn" id="surpriseBtn" title="Jump to a random patent">🎲 Surprise me</button>
+      <button class="mini-btn" id="shareBtn" title="Copy a link to this exact view">🔗 Share view</button>
+      <button class="clearbtn" id="clearAll" hidden>Clear filters</button>
+    </span>
   </div>
 </div>
 
@@ -1164,23 +1214,31 @@ function getEras(){
 }
 
 /* ======== FILTER CHIPS ======== */
-function chip(label,set,key,row){
+function chip(label,set,key,row,setName){
   const b=document.createElement("button");
   b.className="chip"; b.textContent=label; b.setAttribute("aria-pressed","false");
+  if(setName){ b.dataset.fset=setName; b.dataset.fkey=key; }
   b.onclick=()=>{ set.has(key)?set.delete(key):set.add(key);
     b.classList.toggle("on"); b.setAttribute("aria-pressed",set.has(key));
     render(); };
   row.appendChild(b); return b;
 }
-Object.entries(CATS).forEach(([k,v])=>chip(v,state.cat,k,$("#rowCat")));
-[["active","Active"],["expired","Expired"],["pending","Pending"]].forEach(([k,v])=>chip(v,state.st,k,$("#rowStatus")));
+Object.entries(CATS).forEach(([k,v])=>chip(v,state.cat,k,$("#rowCat"),"cat"));
+[["active","Active"],["expired","Expired"],["pending","Pending"]].forEach(([k,v])=>chip(v,state.st,k,$("#rowStatus"),"st"));
+/* NEW: Going free soon — active patents expiring within 2 years */
+(()=>{
+  const b=chip("⏳ Going free soon",state.st,"soon",$("#rowStatus"),"st");
+  b.classList.add("chip-soon");
+  b.title="Active patents whose estimated expiration falls within the next 2 years — technology about to become free for everyone to use.";
+  b.setAttribute("aria-description",b.title);
+})();
 Object.entries(BADGES).forEach(([k,v])=>{
-  const b=chip(v,state.badge,k,$("#rowBadge"));
+  const b=chip(v,state.badge,k,$("#rowBadge"),"badge");
   if(BADGE_TIPS[k]){ b.title=BADGE_TIPS[k]; b.setAttribute("aria-description",BADGE_TIPS[k]); }
   if(k==="priorart"){ const info=document.createElement("span"); info.className="chip-info"; info.setAttribute("aria-hidden","true"); info.textContent="ⓘ"; b.appendChild(info); }
 });
-INVENTORS.forEach(({label,key})=>chip(label,state.inv,key,$("#rowInv")));
-BRANDS.forEach(b=>chip(b,state.brand,b,$("#rowBrand")));
+INVENTORS.forEach(({label,key})=>chip(label,state.inv,key,$("#rowInv"),"inv"));
+BRANDS.forEach(b=>chip(b,state.brand,b,$("#rowBrand"),"brand"));
 
 /* ======== SCROLLABLE ROW CONTROLS (arrows + show all) ======== */
 function setupScroller(scrollerId, rowId){
@@ -1241,7 +1299,7 @@ const TAB_DEFS=[
 const paneEls={cat:$("#rowCat"),st:$("#rowStatus"),badge:$("#rowBadge"),inv:$("#rowInv"),brand:$("#rowBrand")};
 let activeTab="cat";
 const tabRow=$("#filterTabs");
-TAB_DEFS.concat([{key:"all",label:"All"},{key:"fights",label:"⚔ Fights"}]).forEach(t=>{
+TAB_DEFS.concat([{key:"all",label:"All"},{key:"stats",label:"📊 Stats"},{key:"fights",label:"⚔ Fights"}]).forEach(t=>{
   const b=document.createElement("button");
   b.className="tab-btn"+(t.key===activeTab?" on":"")+(t.key==="fights"?" tab-fights":"");
   b.innerHTML=`${t.label}<span class="tab-dot" data-dot="${t.key}"></span>`;
@@ -1256,7 +1314,7 @@ function renderTabs(){
     b.classList.toggle("on",on);
     b.setAttribute("aria-pressed",on?"true":"false");
   });
-  const fightsMode=activeTab==="fights";
+  const fightsMode=activeTab==="fights"||activeTab==="stats";
   $("#filters").setAttribute("data-mode", activeTab==="all"?"all":"single");
   // In Fights mode, hide the chip panes entirely (rivalries aren't chip-filtered)
   $("#filterPanes").classList.toggle("hidden-pane", fightsMode);
@@ -1303,6 +1361,9 @@ document.querySelectorAll(".frow").forEach(row=>{
   },{passive:false});
 });
 
+/* NEW: is this patent going free within the next 2 years? */
+function goingFreeSoon(d){ return d.st==="active" && d.exp && d.exp>=NOW && d.exp<=NOW+2; }
+
 /* MODIFIED: passes() now also checks searchQ */
 function passes(d){
   if(searchQ){
@@ -1311,7 +1372,10 @@ function passes(d){
     if(!hay.includes(q)) return false;
   }
   if(state.cat.size && !state.cat.has(d.cat)) return false;
-  if(state.st.size && !state.st.has(d.st)) return false;
+  if(state.st.size){
+    const statusHit = state.st.has(d.st) || (state.st.has("soon") && goingFreeSoon(d));
+    if(!statusHit) return false;
+  }
   if(state.badge.size && ![...state.badge].some(b=>d.b.includes(b))) return false;
   const allWho=new Set([...state.inv,...state.brand]);
   if(allWho.size && !d.who.some(w=>allWho.has(w))) return false;
@@ -1338,6 +1402,11 @@ function patentUrl(num,jur){
   return `https://patents.google.com/patent/US${num}`;
 }
 
+/* NEW: stable reference for deep links — patent number if present, else a slug of the title */
+function cardRef(d){
+  return d.num || d.t.toLowerCase().replace(/\(.*?\)/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40);
+}
+
 function cardHTML(d){
   const conf=confLabel(d.conf);
   const jur=d.j??"US";
@@ -1348,6 +1417,7 @@ function cardHTML(d){
   const pills=[
     `<span class="pill cat">${CATS[d.cat]}</span>`,
     `<span class="pill ${d.st}">${d.st}</span>`,
+    ...(goingFreeSoon(d)?[`<span class="pill soon">⏳ free by ${d.exp}</span>`]:[]),
     ...(ptPill?[ptPill]:[]),
     ...d.b.map(b=>b==="litigated"?`<span class="pill litigated">litigated</span>`:`<span class="pill badge">${BADGES[b]}</span>`)
   ].join("");
@@ -1394,7 +1464,7 @@ function cardHTML(d){
   } else {
     gp=`<a class="gp" href="https://patents.google.com/?q=${q}" target="_blank" rel="noopener">Search related patents on Google Patents →</a>`;
   }
-  return `<article class="card ${d.st==='pending'?'pending-card':''} ${(d.b&&d.b.includes('litigated'))?'lit-card':''}" data-y="${d.y}">
+  return `<article class="card ${d.st==='pending'?'pending-card':''} ${(d.b&&d.b.includes('litigated'))?'lit-card':''}" data-y="${d.y}" id="p-${cardRef(d)}">
     <button class="chead" aria-expanded="false">
       <span class="yr">${d.y}</span>${showJurTag?`<span class="jtag">${jur}</span>`:''}
       <span class="ct">
@@ -1487,9 +1557,94 @@ function renderFights(){
   renderBars(D.filter(d=>d.b&&d.b.includes("litigated")));
 }
 
+/* ======== STATS SNAPSHOT VIEW ======== */
+function renderStats(){
+  const tl=$("#timeline");
+  const total=D.length;
+  const stCounts={active:0,expired:0,pending:0,unknown:0};
+  D.forEach(d=>{ stCounts[d.st]=(stCounts[d.st]||0)+1; });
+  const litigated=D.filter(d=>d.b&&d.b.includes("litigated")).length;
+  const soon=D.filter(goingFreeSoon).sort((a,b)=>a.exp-b.exp);
+  // category counts
+  const catCounts=Object.keys(CATS).map(k=>({label:CATS[k],key:k,n:D.filter(d=>d.cat===k).length})).sort((a,b)=>b.n-a.n);
+  // who leaderboard (brands + inventors combined, top 12)
+  const whoCounts={};
+  D.forEach(d=>(d.who||[]).forEach(w=>{ whoCounts[w]=(whoCounts[w]||0)+1; }));
+  const topWho=Object.entries(whoCounts).sort((a,b)=>b[1]-a[1]).slice(0,12);
+  const maxWho=topWho.length?topWho[0][1]:1;
+  const maxCat=catCounts.length?catCounts[0].n:1;
+  // status stacked bar
+  const stColors={active:"var(--st-active)",expired:"var(--st-expired)",pending:"var(--st-pending)",unknown:"var(--ink-soft)"};
+  const stackSegs=Object.entries(stCounts).filter(([,n])=>n>0)
+    .map(([k,n])=>`<div class="stack-seg" style="width:${(n/total*100).toFixed(1)}%;background:${stColors[k]}" title="${k}: ${n}"></div>`).join("");
+  const stackLegend=Object.entries(stCounts).filter(([,n])=>n>0)
+    .map(([k,n])=>`<span><span class="dot" style="background:${stColors[k]}"></span>${k} · ${n}</span>`).join("");
+  const catBars=catCounts.map(c=>`<div class="hbar-row clickable" data-statcat="${c.key}">
+      <span class="hbar-name">${c.label}</span>
+      <span class="hbar-track"><span class="hbar-fill" style="width:${(c.n/maxCat*100).toFixed(1)}%;display:block"></span></span>
+      <span class="hbar-val">${c.n}</span></div>`).join("");
+  const whoBars=topWho.map(([w,n])=>`<div class="hbar-row clickable" data-statwho="${encodeURIComponent(w)}">
+      <span class="hbar-name">${w}</span>
+      <span class="hbar-track"><span class="hbar-fill alt" style="width:${(n/maxWho*100).toFixed(1)}%;display:block"></span></span>
+      <span class="hbar-val">${n}</span></div>`).join("");
+  const soonList=soon.length?`<ul class="soon-list">${soon.map(d=>
+      `<li data-jumpref="${cardRef(d)}"><span class="soon-yr">${d.exp}</span><span>${d.t} — ${d.a}</span></li>`).join("")}</ul>`
+    :`<p class="stats-intro">No active patents in the atlas are estimated to expire within the next two years.</p>`;
+  tl.innerHTML=`<div class="stats-wrap">
+    <h2 class="stats-h">Atlas by the numbers</h2>
+    <p class="stats-intro">Everything below is computed live from the atlas data — it updates automatically as entries are added.</p>
+    <div class="stat-grid">
+      <div class="stat-box"><div class="stat-num">${total}</div><div class="stat-lbl">Total entries</div></div>
+      <div class="stat-box"><div class="stat-num">${stCounts.active}</div><div class="stat-lbl">Active</div></div>
+      <div class="stat-box"><div class="stat-num">${stCounts.expired}</div><div class="stat-lbl">Expired — free to use</div></div>
+      <div class="stat-box"><div class="stat-num">${litigated}</div><div class="stat-lbl">Litigated</div></div>
+    </div>
+    <div class="stats-sec">
+      <h3>Status split</h3>
+      <div class="stack-bar">${stackSegs}</div>
+      <div class="stack-legend">${stackLegend}</div>
+    </div>
+    <div class="stats-sec">
+      <h3>⏳ Going free soon</h3>
+      <p class="stats-intro">Active patents whose estimated expiration (filing + 20 yrs) falls by ${NOW+2}. Tap one to jump to its card.</p>
+      ${soonList}
+    </div>
+    <div class="stats-sec">
+      <h3>Entries by category</h3>
+      ${catBars}
+    </div>
+    <div class="stats-sec">
+      <h3>Most-patented names</h3>
+      <p class="stats-intro">Brands and inventors by number of entries. Tap a bar to filter the timeline.</p>
+      ${whoBars}
+    </div>
+    <p class="stats-note">Expiration estimates don't account for terminal disclaimers or fee lapses — see the note in the footer.</p>
+  </div>`;
+  // wire up jumps
+  tl.querySelectorAll("[data-jumpref]").forEach(li=>{ li.onclick=()=>jumpToCard(li.dataset.jumpref); });
+  tl.querySelectorAll("[data-statcat]").forEach(r=>{ r.onclick=()=>{
+    Object.values(state).forEach(s=>s.clear()); state.cat.add(r.dataset.statcat);
+    syncChipsToState(); activeTab="all"; renderTabs(); render();
+    window.scrollTo({top:0,behavior:"smooth"});
+  };});
+  tl.querySelectorAll("[data-statwho]").forEach(r=>{ r.onclick=()=>{
+    const w=decodeURIComponent(r.dataset.statwho);
+    Object.values(state).forEach(s=>s.clear());
+    (INVENTORS.some(i=>i.key===w)?state.inv:state.brand).add(w);
+    syncChipsToState(); activeTab="all"; renderTabs(); render();
+    window.scrollTo({top:0,behavior:"smooth"});
+  };});
+  $("#resultCount").textContent=`${total} entries analyzed`;
+  $("#clearAll").hidden=true;
+  updateTabDots();
+  renderBars(D);
+}
+
 /* MODIFIED: render() now uses getEras() for step-aware grouping */
 function render(){
+  if(typeof syncHash==="function") syncHash();
   if(typeof activeTab!=="undefined" && activeTab==="fights"){ renderFights(); return; }
+  if(typeof activeTab!=="undefined" && activeTab==="stats"){ renderStats(); return; }
   const list=D.filter(passes).sort((a,b)=>a.y-b.y);
   const tl=$("#timeline");
   const eras=getEras();
@@ -1544,7 +1699,91 @@ function renderBars(list){
   });
 }
 
+/* ======== DEEP LINKS (shareable URLs) ======== */
+/* Hash format: #tab=all&cat=susp,fork&st=active&q=weagle&p=5509679 */
+const HASH_SETS=["cat","st","badge","inv","brand"];
+let pendingCardRef=null;
+
+function syncChipsToState(){
+  document.querySelectorAll(".chip[data-fset]").forEach(b=>{
+    const on=state[b.dataset.fset]?.has(b.dataset.fkey);
+    b.classList.toggle("on",!!on);
+    b.setAttribute("aria-pressed",on?"true":"false");
+  });
+}
+function syncHash(){
+  const p=new URLSearchParams();
+  if(activeTab!=="cat") p.set("tab",activeTab);
+  HASH_SETS.forEach(k=>{ if(state[k].size) p.set(k,[...state[k]].join(",")); });
+  if(searchQ) p.set("q",searchQ);
+  const s=p.toString();
+  try{
+    history.replaceState(null,"", s?("#"+s):location.pathname+location.search);
+  }catch(e){ /* URL rewriting blocked (file:// or sandboxed iframe) — deep links still readable, just not written */ }
+}
+function initFromHash(){
+  try{
+  if(!location.hash || location.hash.length<2) return;
+  const p=new URLSearchParams(location.hash.slice(1));
+  HASH_SETS.forEach(k=>{
+    const v=p.get(k);
+    if(v) v.split(",").forEach(x=>{ if(x) state[k].add(decodeURIComponent(x)); });
+  });
+  const q=p.get("q");
+  if(q){ searchQ=q; const si=document.getElementById("searchInput"); if(si) si.value=q; }
+  const tab=p.get("tab");
+  if(tab && document.querySelector(`.tab-btn[data-tab="${tab}"]`)) activeTab=tab;
+  pendingCardRef=p.get("p");
+  syncChipsToState();
+  renderTabs();
+  }catch(e){ /* hash parsing blocked or malformed — start with a clean view */ }
+}
+function jumpToCard(ref){
+  if(activeTab==="fights"||activeTab==="stats"){ activeTab="all"; renderTabs(); render(); }
+  requestAnimationFrame(()=>{
+    let target=document.getElementById("p-"+ref);
+    if(!target){ // card may be filtered out — clear filters and retry
+      Object.values(state).forEach(s=>s.clear());
+      searchQ=''; const si=document.getElementById("searchInput"); if(si) si.value='';
+      syncChipsToState(); render();
+      target=document.getElementById("p-"+ref);
+    }
+    if(target){
+      target.classList.add("open");
+      const h=target.querySelector(".chead"); if(h) h.setAttribute("aria-expanded","true");
+      if(target.scrollIntoView) target.scrollIntoView({behavior:"smooth",block:"center"});
+      target.classList.add("card-flash");
+      setTimeout(()=>target.classList.remove("card-flash"),1600);
+    }
+  });
+}
+
+initFromHash();
 render();
+if(pendingCardRef){ const r=pendingCardRef; pendingCardRef=null; setTimeout(()=>jumpToCard(r),150); }
+
+/* ======== SURPRISE ME ======== */
+document.getElementById("surpriseBtn").addEventListener("click",()=>{
+  const pool=(activeTab!=="fights"&&activeTab!=="stats")?D.filter(passes):D;
+  const pick=(pool.length?pool:D)[Math.floor(Math.random()*(pool.length?pool.length:D.length))];
+  if(pick) jumpToCard(cardRef(pick));
+});
+
+/* ======== SHARE VIEW ======== */
+document.getElementById("shareBtn").addEventListener("click",async()=>{
+  syncHash();
+  const url=location.href;
+  const btn=document.getElementById("shareBtn");
+  const flash=msg=>{ const old=btn.textContent; btn.textContent=msg; btn.classList.add("flash");
+    setTimeout(()=>{ btn.textContent=old; btn.classList.remove("flash"); },1600); };
+  try{
+    if(navigator.clipboard&&navigator.clipboard.writeText){ await navigator.clipboard.writeText(url); flash("✓ Link copied"); }
+    else if(navigator.share){ await navigator.share({url}); }
+    else{ window.prompt("Copy this link:",url); }
+  }catch(e){
+    try{ window.prompt("Copy this link:",url); }catch(_){}
+  }
+});
 
 /* ======== STEP TOGGLE  (5yr → 2yr → 1yr → 5yr) ======== */
 document.getElementById("stepToggle").addEventListener("click",()=>{
