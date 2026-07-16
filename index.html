@@ -463,6 +463,25 @@ const CATS = {
   wheel:"Wheels & Tires", comp:"Components", emtb:"E-MTB & Electronics",
   frame:"Frame & Standards", transport:"Bike Transport"
 };
+/* Brand (and individual inventor) headquarters — used only to make
+   state/region names searchable (e.g. searching "Colorado" surfaces
+   Spot/Gates/MRP/Revel/Reeb even when an entry's own text never spells out
+   the state) and to drive the Colorado panel below, so both features read
+   from one list instead of two that can drift apart. This is necessarily a
+   partial list — only brands and inventors verified so far are included,
+   not everyone in BRANDS/INVENTORS — and is meant to grow over time. Extend
+   by adding a "Name": "State" (or country, for non-US) pair; keys must match
+   a name used in some entry's who[] exactly, whether that's a BRANDS entry
+   or an INVENTORS key. */
+const BRAND_HQ = {
+  Spot:"Colorado", Gates:"Colorado", MRP:"Colorado", Revel:"Colorado", Reeb:"Colorado",
+  Specialized:"California", Fox:"California", GoPro:"California", Yoshimura:"California",
+  Trek:"Wisconsin",
+  Schwinn:"Illinois", SRAM:"Illinois",
+  VelociRAX:"Utah", "McKay H. Davis":"Utah",
+  Shimano:"Japan",
+  "Rocky Mountain":"British Columbia, Canada"
+};
 const BADGES = {
   licensor:"Inventor-licensor", acquired:"Patent acquired", givenaway:"Given away",
   litigated:"Litigated",
@@ -499,11 +518,15 @@ const INVENTORS = [
   {label:"Bill Shook",   key:"Bill Shook"},
   {label:"Frank W. Schwinn",key:"Frank W. Schwinn"},
   {label:"Frank P. Brilando",key:"Frank P. Brilando"},
+  {label:"McKay H. Davis",key:"McKay H. Davis"},
 ];
-const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff","Hayes","Manitou","SUNringlé","Reynolds","MRP","Nicolai","KOM","Antidote","OPEN","Speedplay","Wahoo Fitness","Onyx","Classified","Foes","EXT","Spot","Reeb","Revel","Odyssey","Mongoose","SE Racing","Canyon","Priority","Ari","Knolly","Intense","WRP","Vittoria","Lauf","BikeYoke","Forbidden","OneUp","Garbaruk","AMS","RideWrap","Aenomaly","BMC","SCOR","Avinox","American Classic","GoPro","Insta360","Sopro Mounts","Schwinn"];
+const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff","Hayes","Manitou","SUNringlé","Reynolds","MRP","Nicolai","KOM","Antidote","OPEN","Speedplay","Wahoo Fitness","Onyx","Classified","Foes","EXT","Spot","Reeb","Revel","Odyssey","Mongoose","SE Racing","Canyon","Priority","Ari","Knolly","Intense","WRP","Vittoria","Lauf","BikeYoke","Forbidden","OneUp","Garbaruk","AMS","RideWrap","Aenomaly","BMC","SCOR","Avinox","American Classic","GoPro","Insta360","Sopro Mounts","Schwinn","VelociRAX","Rocky Mountain","Yoshimura"];
 
 const D = [
 /* ---- Rear Suspension ---- */
+{y:2002,g:2005,t:"Rocky Mountain rear suspension system (US 6,843,494)",a:"Duhane Lam → Rocky Mountain Bicycles",num:"6843494",cat:"susp",st:"expired",exp:2022,b:[],who:["Rocky Mountain"],conf:"v",
+ s:"Rocky Mountain's foundational rear-suspension patent, filed by Duhane Lam and assigned to the Vancouver-area brand — a linkage aimed at a near-vertical rear-axle path with a roughly constant leverage-curve rate. It's the parent of a small continuation family (US 7,216,883 and 7,392,999, both credited to designer D'Arcy O'Connor) that carried the platform through the following years.",
+ w:"A later competing filing (US 2010/0007113A) argued the constant-rate approach was 'fundamentally incorrect' on pedal-bob grounds — a rare instance in this atlas of one company's patent application directly critiquing another's in its own background section. Worth a look regardless of who was right: it's a reminder that a patent's claims and a patent's marketing copy don't always agree on why a design is good."},
 {y:1994,g:1996,t:"Horst Link rear suspension (US 5,509,679)",a:"Horst Leitner / AMP Research → Specialized",num:"5509679",cat:"susp",st:"expired",exp:2014,b:["acquired","litigated"],who:["Horst Leitner","Specialized"],conf:"v",
  s:"A chainstay pivot located in front of and below the rear axle, isolating pedaling and braking forces from the suspension — the original four-bar that became Specialized FSR.",
  w:"Its 2013–14 expiration reshaped the market: Canyon, YT, Norco and dozens of others adopted the layout overnight. Colorado's REEB Cycles takes the opposite path on bikes like the SST and STEEZL — rather than license a multi-link patent, it uses single-pivot or modified four-bar flex-stay designs that approximate Horst-link behavior with a flexing seatstay and far fewer parts."},
@@ -697,6 +720,9 @@ const D = [
 {y:2013,g:2020,t:"Bleed valve patent + Fox v. SRAM (US 10,746,250)",a:"Fox Factory",num:"10746250",cat:"fork",st:"active",exp:2033,b:["litigated"],who:["Fox","SRAM","RockShox"],conf:"v",
  s:"Granted in 2020 despite MRP, Manitou, DVO and X-Fusion shipping similar relief valves earlier. Fox sued SRAM over the 2023 Pike, Lyrik and Zeb — while in a separate Fox case a court ruled 15 of 19 claims in a 2013 Fox patent unpatentable as obvious or anticipated.",
  w:"A live test of whether a patent granted over visible prior art survives enforcement. Still in court as of 2025."},
+{y:2018,g:2022,t:"Linkage fork with dual-taper arm (US 11,345,432)",a:"David Weagle / Trvstper Inc. → Specialized",num:"11345432",cat:"fork",st:"active",exp:2038,b:["acquired"],who:["Dave Weagle","Specialized"],conf:"v",
+ s:"A linkage-style suspension fork — a shock-and-link assembly bolted between the fork arms rather than a telescoping tube — with a fork-arm cross-section that tapers in two opposing directions along its length. Filed by Weagle's own Trvstper Inc. (maker of the Trust Shout and Message forks) in 2018, reassigned to Specialized in 2021, and granted in 2022 alongside a companion 'dual sided suspension' family (US 11,945,539 and its 2025 continuation US 12,448,078). Weagle has said publicly he isn't involved in whatever Specialized does with the design.",
+ w:"The sixth atlas entry carrying Dave Weagle's name, and a different flavor of IP story than his suspension-linkage work: Trust Performance built and sold real forks on this design, then folded, and the patent portfolio simply migrated to a company with the balance sheet to sit on it indefinitely. Whether 'The Big S' ever ships a linkage fork of its own remains an open question — but the patent says they could."},
 /* ---- Drivetrain ---- */
 {y:2012,g:2015,t:"X-Sync narrow-wide chainring (US 9,182,027)",a:"SRAM",num:"9182027",cat:"drive",st:"active",exp:2032,b:["litigated","licensor"],who:["SRAM"],conf:"v",
  s:"Alternating narrow and wide tooth profiles with offset geometry to retain the chain without a guide — the enabling patent of the 1x revolution.",
@@ -832,6 +858,12 @@ const D = [
  s:"Hadley's patented phased multi-pawl mechanism delivering 72 points of engagement — a BMX-and-DH cult favorite, machined in small batches for decades.",
  w:"The boutique hub patent that predates the engagement-count arms race Industry Nine and Onyx later ran."},
 /* ---- Components ---- */
+{y:1994,g:1995,t:"Water-bottle-cage battery light system (US 5,426,570)",a:"McKay H. Davis (Salt Lake City, UT)",num:"5426570",cat:"comp",st:"expired",exp:2012,b:[],who:["McKay H. Davis"],conf:"v",
+ s:"A high-power battery pack encased in a compressible sleeve, sized to force-fit into a standard water bottle cage in place of a bottle and wired to a mountain bike's headlight — filed March 1994, granted June 1995. Two continuations (US 5,523,924 and US 5,597,225) refined the same cage-mounted approach through the late 1990s.",
+ w:"Solves the actual problem with early-90s night riding — battery packs heavy and bulky enough that mounting them anywhere on the bike was the hard part — by repurposing hardware every bike already had. A low-tech, well-observed answer from years before dedicated light-and-battery combos became standard."},
+{y:2024,g:null,t:"Chilao SS 'Static Spring' pedal axle (patent pending)",a:"Yoshimura Cycling (Chino, CA)",num:null,cat:"comp",st:"pending",exp:null,b:[],who:["Yoshimura"],conf:"l",
+ s:"A coil spring inside the pedal body preloads the outer bearing against the end cap, holding side-load on the bearings and dust seal constant regardless of installation torque or wear — paired with an impact flange that routes pedal-strike loads through the spindle rather than the bearings. Announced April 1, 2024 on the second-generation Chilao pedal; still listed as patent pending as of the most recent product materials.",
+ w:"Yoshimura's 70 years of motorsport exhaust and suspension-tuning credibility applied to a $229 flat pedal — proof the atlas's boutique-patent-pending pattern (WRP, EXT, Antidote) isn't limited to suspension and frames."},
 {y:1965,g:1966,t:"Schwinn Sting-Ray banana seat (US D204,121)",a:"Frank P. Brilando / Arnold, Schwinn & Co.",num:"D204121",cat:"comp",st:"expired",exp:1970,b:["litigated","priorart"],who:["Schwinn","Frank P. Brilando"],conf:"v",
  s:"A design patent on the elongated 'banana' seat shape defining the Sting-Ray, filed January 1965 and granted March 1966 to Schwinn chief engineer Frank P. Brilando. Schwinn licensed Troxel Manufacturing to build seats under it in 1967, then sued Goodyear Tire & Rubber over a similar seat sold through Troxel's rival Fisher Cycle. The Ninth Circuit invalidated the patent in 1970 (Schwinn Bicycle Co. v. Goodyear Tire & Rubber Co., 444 F.2d 295): the design had already been publicly advertised in a June 1963 Schwinn ad, more than a year before the 1965 filing, which is fatal prior art against Schwinn's own patent under the on-sale bar.",
  w:"Design patents get comparatively little scrutiny elsewhere in this atlas, but this one is a clean case study of the doctrine's sharpest edge: a company can invalidate its own patent by advertising the product too early. The shape survived every court loss to become one of the most recognized silhouettes in American bicycle history — the IP died in 1970, the design never did."},
@@ -899,6 +931,9 @@ const D = [
  s:"A low-friction liner letting the helmet slide 10–15mm relative to the head during angled impacts, reducing rotational forces transmitted to the brain. Born from research at KTH Royal Institute of Technology and the Karolinska Institute in Stockholm; first patents date to the mid-1990s, with a large continuing portfolio.",
  w:"The most successful licensing model in cycling safety — the yellow dot sits in essentially every premium helmet lineup. MIPS never made a helmet; it patented a layer and licensed the physics."},
 /* ---- E-MTB & Electronics ---- */
+{y:2015,g:2017,t:"Dyname electric propulsion system (US 9,643,683)",a:"Propulsion PowerCycle Inc. (now Dyname) — exclusive to Rocky Mountain",num:"9643683",nums:["9643683","EP2957496"],cat:"emtb",st:"active",exp:2035,b:["licensor"],who:["Rocky Mountain"],conf:"v",
+ s:"An e-bike motor and propulsion system, and a method for converting a non-electric bicycle into one — the drive unit branded Dyname, exclusive to Rocky Mountain's Powerplay line since 2017. Filed 2015, granted 2017, with a companion torque-sensor patent (US 10,583,893) filed later. The exclusivity ended in 2024–25 after a change in Rocky Mountain's ownership; Propulsion PowerCycle now supplies other bike brands under the Dyname name.",
+ w:"An unusually clean licensor story for this category: the patent holder and the brand riders associate with the technology were two different companies for nearly a decade, by design, until a corporate restructuring — not a patent expiration — reopened the field. Worth contrasting with Bosch and Shimano just below, who hold their e-MTB IP in-house rather than through an exclusive external supplier."},
 {y:2010,g:2013,t:"Bosch mid-drive motor platform",a:"Bosch",num:null,cat:"emtb",st:"active",exp:2033,b:[],who:["Bosch"],conf:"v",
  s:"The Performance Line family, backed by roughly 65 bicycle-related filings a year spanning motors, batteries, sensors and connectivity.",
  w:"An automotive-scale patent machine setting the pace of the entire e-MTB category."},
@@ -997,6 +1032,9 @@ const D = [
 {y:2018,g:2021,t:"1UP USA independent rack patents",a:"1UP USA (Binghamton, NY)",num:"11142133",nums:["11142133","10603968"],cat:"transport",st:"active",exp:2039,b:[],who:["1UP USA"],conf:"v",
  s:"Two patents 1UP USA holds independently of the Cal Phillips Mach2 family: US 11,142,133 — adjustable arm hooks for clamping bicycle tires; US 10,603,968 — locking adjustable hitch receiver tensioning assembly. Filed after the original QuikRack patent expired.",
  w:"The licensee filing their own IP in the category once the original opened up. 1UP's independent patents protect the refinements they developed over two decades of manufacturing — not the concept, but the execution."},
+{y:2021,g:2023,t:"VelociRAX C-hoop vertical hitch rack (US 11,554,724 + family)",a:"Charles Blake Owen & Bryce Allen Owen / East Mountain Outfitters LLC (Lehi, UT)",num:"11554724",nums:["11554724","11572022","11858575","12005866","12384302"],cat:"transport",st:"active",exp:2041,b:[],who:["VelociRAX"],conf:"v",
+ s:"A hitch-mounted rack that hangs bikes vertically by the front tire in a C-hoop, rather than laying them tray-style — letting four to seven bikes fit on a single hitch receiver in the footprint that a tray rack needs for two. Filed by Utah brothers Blake and Bryce Owen, who started prototyping in a 2018 self-reliance class before founding East Mountain Outfitters (the VelociRAX brand). US 11,554,724 (filed 2021, granted 2023) is the core C-hoop claim; the surrounding family adds the storage/access rack (11,572,022), a wall-mount version (11,858,575), an anti-rattle hitch clamp (12,005,866), and a 2025 damper continuation (12,384,302).",
+ w:"A genuine third approach in a category the atlas otherwise splits between tray racks (Cal Phillips/1UP) and hanging hook racks — and a reminder that Colorado's Front Range isn't the only mountain-adjacent state producing rack patents; this one's out of Lehi, Utah, in the shadow of the Wasatch."},
 {y:2019,g:2021,t:"Lolo bike rack portfolio",a:"Lolo (Portland, OR)",num:"11518317",nums:["11518317","11590555"],cat:"transport",st:"active",exp:2041,b:[],who:["Lolo"],conf:"v",
  s:"Two confirmed US patents: 11,518,317 and 11,590,555. A third number cited by Lolo (17,214,670) matches the format of a US patent application serial number rather than a granted patent — held pending verification of whether it resolved to a grant and what number it received.",
  w:"Portland-made rack competing in the premium tray space. The application-vs-grant distinction on the third number is a useful teaching point: 'patent pending' and 'patented' are meaningfully different claims, and distinguishing them is part of what this atlas exists to do."},
@@ -1440,7 +1478,14 @@ function goingFreeSoon(d){ return d.st==="active" && d.exp && d.exp>=NOW && d.ex
 function passes(d){
   if(searchQ){
     const q=searchQ.toLowerCase();
-    const hay=[d.t,d.a,d.s,d.w,d.num,...d.who,...(d.nums||[])].filter(Boolean).join(' ').toLowerCase();
+    /* Location terms (state/region/country) aren't written into most entries'
+       prose, so without this a search like "Colorado" or "Utah" would only
+       catch the handful of entries that happen to mention litigation venues
+       or similar. Appending each who[] brand's HQ (from BRAND_HQ) lets a
+       state/country search surface every entry for brands headquartered
+       there, not just the ones that spell it out. */
+    const hqTerms=(d.who||[]).map(w=>BRAND_HQ[w]).filter(Boolean).join(' ');
+    const hay=[d.t,d.a,d.s,d.w,d.num,...d.who,...(d.nums||[]),hqTerms].filter(Boolean).join(' ').toLowerCase();
     if(!hay.includes(q)) return false;
   }
   if(state.cat.size && !state.cat.has(d.cat)) return false;
@@ -1513,8 +1558,9 @@ function cardHTML(d){
     return {url,label};
   }
   const q=encodeURIComponent('bicycle '+(d.a.split(/[\/→(]/)[0].trim())+' '+d.t.replace(/\(.*?\)/g,'').split('—')[0].trim());
-  const COLORADO_BRANDS=new Set(["Spot","Gates","MRP","Revel","Reeb"]);
-  const isColorado = (d.who||[]).some(w=>COLORADO_BRANDS.has(w)) || /Colorado|Golden, CO|Carbondale|Longmont|Denver|Boulder|Grand Junction/.test(d.a+" "+d.s+" "+d.w);
+  /* Derived from BRAND_HQ rather than a separate hardcoded list, so this and
+     the search-location fix can't drift out of sync with each other. */
+  const isColorado = (d.who||[]).some(w=>BRAND_HQ[w]==="Colorado") || /Colorado|Golden, CO|Carbondale|Longmont|Denver|Boulder|Grand Junction/.test(d.a+" "+d.s+" "+d.w);
   const coLink = isColorado ? `<button class="co-link" data-co="1">📍 Colorado MTB innovation</button>` : "";
   const nat=NATOFFICE[jur];
   const needsTrans=NON_ENGLISH_JUR.has(jur);
