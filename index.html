@@ -81,6 +81,30 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
 .mini-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 .mini-btn.flash{background:var(--primary);color:#fff;border-color:var(--primary)}
 @media(max-width:480px){.mini-btn{font-size:10px;padding:4px 8px}}
+/* ---------- Surprise me shimmer ----------
+   A light sweep passes across the button at random intervals (see JS) to hint
+   that it's interactive. Deliberately subtle: a soft highlight, no color or
+   layout change, and it never blocks clicks. */
+.mini-btn.shimmer{position:relative;overflow:hidden}
+.mini-btn.shimmer::after{
+  content:"";position:absolute;top:0;left:0;width:100%;height:100%;
+  /* All four themes use a light surface, so the sweep is a soft tint of the
+     theme's own primary color rather than a white gloss. */
+  background:linear-gradient(100deg,
+    transparent 20%,
+    color-mix(in srgb, var(--primary) 8%, transparent) 40%,
+    color-mix(in srgb, var(--primary) 22%, transparent) 50%,
+    color-mix(in srgb, var(--primary) 8%, transparent) 60%,
+    transparent 80%);
+  transform:translateX(-120%);
+  animation:btnShimmer 1.5s ease-in-out 1;
+  pointer-events:none;
+}
+@keyframes btnShimmer{ to{ transform:translateX(120%); } }
+/* Respect users who ask for reduced motion — no sweep at all. */
+@media(prefers-reduced-motion:reduce){
+  .mini-btn.shimmer::after{animation:none;display:none}
+}
 /* ---------- Going free soon ---------- */
 .pill.soon{background:transparent;color:var(--st-pending);border:1.5px solid var(--st-pending)}
 .chip.chip-soon{border-style:dashed}
@@ -115,6 +139,9 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
 h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clamp(30px,6vw,46px);line-height:1.02;letter-spacing:var(--head-spacing);text-transform:var(--head-transform)}
 .sub{font-size:14px;opacity:.85;max-width:560px;margin-top:4px}
 .themes{display:flex;gap:8px;margin-top:12px;align-items:center}
+/* Theme row now sits directly under the PMR link, above the title.
+   flex-wrap keeps the swatches on-screen on very narrow phones. */
+.themes-top{margin-top:10px;margin-bottom:14px;flex-wrap:wrap;row-gap:6px}
 .themes span{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-right:2px}
 .swatch{width:34px;height:24px;border-radius:6px;border:2px solid rgba(255,255,255,.45);padding:0;position:relative}
 .swatch.on{border-color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.35)}
@@ -138,10 +165,18 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .bar{flex:1;background:rgba(255,255,255,.32);border:none;border-radius:3px 3px 0 0;min-width:8px;position:relative;transition:background .15s}
 .bar:hover,.bar:focus-visible{background:rgba(255,255,255,.85)}
 .bar:focus-visible{outline:2px solid #fff;outline-offset:1px}
-.bar .blabel{position:absolute;top:100%;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:9px;opacity:.65;padding-top:3px;white-space:nowrap}
-.bar .bcount{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:9px;opacity:0;padding-bottom:2px}
-.bar:hover .bcount{opacity:.9}
-.bars-foot{height:16px}
+/* Bar date labels: full-opacity white with a dark shadow so they stay legible
+   against every theme's header background (green, cream, red, navy). */
+.bar .blabel{position:absolute;top:100%;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:10px;font-weight:600;color:#fff;opacity:.92;letter-spacing:.02em;text-shadow:0 1px 2px rgba(0,0,0,.55),0 0 1px rgba(0,0,0,.4);padding-top:4px;white-space:nowrap;pointer-events:none}
+.bar .blabel.bl-decade{opacity:1;font-weight:700}
+.bar:hover .blabel,.bar:focus-visible .blabel{opacity:1}
+.bar .bcount{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:10px;font-weight:600;color:#fff;opacity:0;text-shadow:0 1px 2px rgba(0,0,0,.55);padding-bottom:2px;pointer-events:none}
+.bar:hover .bcount,.bar:focus-visible .bcount{opacity:1}
+/* Gap marker: a narrow dashed break standing in for skipped empty brackets,
+   so a long silence in the data reads as a gap rather than as adjacency. */
+.bar-gap{flex:0 0 auto;width:9px;align-self:stretch;border-left:1px dashed rgba(255,255,255,.4);margin:0 2px;opacity:.7;pointer-events:none}
+@media(max-width:480px){.bar-gap{width:5px;margin:0 1px}}
+.bars-foot{height:18px}
 /* ---------- Search (NEW) ---------- */
 .search-row{border-bottom:1px solid var(--card-border);padding:6px 0 5px;background:var(--bg)}
 .search-wrap{max-width:880px;margin:0 auto;padding:0 16px}
@@ -309,8 +344,10 @@ html,body{overflow-x:hidden;max-width:100%}
   .cbody p,.why{font-size:13.5px}
   .meta{gap:10px}
   .gp,.gp-secondary{font-size:12.5px}
-  .bars{height:44px}
-  .blabel{font-size:8px}
+  .bars{height:44px;gap:2px}
+  /* Keep labels at a readable size on phones rather than shrinking them;
+     renderBars() thins out which bars get a label so they don't collide. */
+  .bar .blabel{font-size:9px;padding-top:3px}
   .pill{font-size:9px;padding:2px 6px}
   .search-inp{font-size:12px}
   .tab-btn{font-size:13px;padding:8px 10px}
@@ -326,19 +363,19 @@ html,body{overflow-x:hidden;max-width:100%}
       <div class="eyebrow">RedFoxRun Interactive</div>
       <a class="pmr-home" href="https://www.postmillenniumrenaissance.com" target="_blank" rel="noopener">PMR ↗</a>
     </div>
-    <h1>MTB Patent Atlas</h1>
-    <p class="sub">45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.</p>
-    <div class="themes" role="group" aria-label="Color scheme">
+    <div class="themes themes-top" role="group" aria-label="Color scheme">
       <span>Theme</span>
       <button class="swatch sw-wmbc on" data-set="wmbc" aria-label="WMBC theme"><span class="tip">WMBC</span></button>
       <button class="swatch sw-comba" data-set="comba" aria-label="COMBA theme"><span class="tip">COMBA</span></button>
       <button class="swatch sw-camba" data-set="camba" aria-label="CAMBA theme"><span class="tip">CAMBA</span></button>
       <button class="swatch sw-cambr" data-set="cambr" aria-label="CAMBR theme"><span class="tip">CAMBR</span></button>
     </div>
+    <h1>MTB Patent Atlas</h1>
+    <p class="sub">45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.</p>
     <div class="scrubber">
       <div class="scrub-label-row">
         <div class="scrub-label">Patents per era — tap a bar to jump</div>
-        <button class="step-btn" id="stepToggle" title="Toggle bar bracket: 5yr → 2yr → 1yr → 5yr">5yr</button>
+        <button class="step-btn" id="stepToggle" title="Toggle bar bracket: 2yr → 1yr → 5yr">2yr</button>
       </div>
       <div class="bars" id="bars" role="navigation" aria-label="Timeline eras"></div>
       <div class="bars-foot"></div>
@@ -461,7 +498,7 @@ const INVENTORS = [
   {label:"Mic Williams", key:"Mic Williams"},
   {label:"Bill Shook",   key:"Bill Shook"},
 ];
-const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff","Hayes","Manitou","SUNringlé","Reynolds","MRP","Nicolai","KOM","Antidote","OPEN","Speedplay","Wahoo Fitness","Onyx","Classified","Foes","EXT","Spot","Reeb","Revel","Odyssey","Mongoose","SE Racing","Canyon","Priority","Ari","Knolly","Intense","WRP","Vittoria","Lauf","BikeYoke","Forbidden","OneUp","Garbaruk","AMS","RideWrap","Aenomaly","BMC","SCOR","Avinox","American Classic"];
+const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff","Hayes","Manitou","SUNringlé","Reynolds","MRP","Nicolai","KOM","Antidote","OPEN","Speedplay","Wahoo Fitness","Onyx","Classified","Foes","EXT","Spot","Reeb","Revel","Odyssey","Mongoose","SE Racing","Canyon","Priority","Ari","Knolly","Intense","WRP","Vittoria","Lauf","BikeYoke","Forbidden","OneUp","Garbaruk","AMS","RideWrap","Aenomaly","BMC","SCOR","Avinox","American Classic","GoPro","Insta360","Sopro Mounts"];
 
 const D = [
 /* ---- Rear Suspension ---- */
@@ -505,8 +542,23 @@ const D = [
  s:"A main pivot that translates vertically on Kashima-coated rails, switching direction mid-travel to shape anti-squat — patented, with Yeti maintaining a public patent notice page.",
  w:"Three years of secret co-development with Fox; the rare suspension patent built around a sliding element instead of links."},
 {y:2020,g:2021,t:"Sixfinity six-bar (application/patents)",a:"Yeti",num:null,cat:"susp",st:"active",exp:2040,b:[],who:["Yeti"],conf:"v",
- s:"A six-bar evolution of the Switch concept, initially built for the added power and mass of e-MTBs.",
- w:"Signals where suspension patents are headed: more links, more independent control of each kinematic curve."},
+ s:"A six-bar evolution of the Switch concept, initially built for the added power and mass of e-MTBs. Yeti now appears to be migrating Sixfinity onto non-assist bikes: the LT enduro bike, reviewed July 2026, adopts the six-bar layout and marks a departure from the Switch Infinity platform that defined their pedal bikes for several generations. Yeti cites durability — more bearings, but lower loads spread across each pivot — alongside the kinematic freedom, pointing to the e-MTB and DH platforms since the 2021 160e as evidence.",
+ w:"Signals where suspension patents are headed: more links, more independent control of each kinematic curve. The LT is the tell — a design adopted for e-bike packaging constraints migrating back onto non-assist bikes on its own merits. If that migration continues, Yeti's identity shifts from the Switch Infinity sliding element (filed 2012, estimated free 2032) to a six-bar portfolio running to roughly 2040, resetting their IP runway by nearly a decade without inventing a new category."},
+{y:2015,g:2018,t:"Helmet-chin mount for accessories, including cameras (US 10,021,931)",a:"Eric Brock Tulley / Sopro Mounts Inc.",num:"10021931",cat:"comp",st:"expired",exp:2035,b:[],who:["Sopro Mounts","GoPro"],conf:"v",
+ s:"A Y-shaped accessory mount that straps to the chin bar of a full-face helmet, claiming the mount, a removable fastener such as a quick-release buckle, and the strap-and-slit retention geometry. Claims cover full-face, off-road/motocross and modular/flip-up helmets, and the accessory may be a camera, video recorder, phone or flashlight. Filed 2015 by Eric Brock Tulley and assigned to Sopro Mounts Inc.; the record now shows expired/fee-related status rather than running to its ~2035 term.",
+ w:"The chin-mount POV angle is now the default look of MTB and moto edits, but the patent covering it lapsed rather than being enforced into a licensing regime. Note the correction worth making here: the popular retailer chinmounts.com sells 60+ helmet-specific adhesive mounts and is a separate business — no public filing ties it to this patent, and its helmet-specific fitments read as a tooling-and-catalogue moat rather than an IP one. Much of the category does effectively operate on 'patent pending' or on no protection at all, which is exactly why a lapsed 2015 patent didn't stop anyone."},
+{y:2014,g:2018,t:"Image processing & field of view — SuperView / OverCapture (bundle)",a:"GoPro",num:"10015413",cat:"comp",st:"active",exp:2034,b:[],who:["GoPro"],conf:"m",
+ s:"A representative filing from GoPro's FOV-manipulation family, covering the dynamic stretch of a taller 4:3 sensor capture into a 16:9 frame while keeping the image center undistorted and pushing distortion to the edges. The related OverCapture family covers reframing a flat crop out of a spherical 360° canvas in post. Grouped here as a category rather than enumerated — GoPro holds 1,600+ granted patents globally, 1,000+ in the US.",
+ w:"Bundled deliberately: an atlas entry per GoPro patent would swamp the drivetrain and suspension categories combined. The lesson is that the action camera became a mountain bike component through software claims, not optics."},
+{y:2016,g:2019,t:"Stabilization & horizon leveling — HyperSmooth (bundle)",a:"GoPro",num:null,cat:"comp",st:"active",exp:2036,b:["litigated"],who:["GoPro","Insta360"],conf:"l",
+ s:"GoPro's most aggressively defended family: electronic image stabilization that analyzes camera motion and crops the sensor in real time to cancel vibration and impacts, plus horizon leveling that uses the internal accelerometers and gyroscopes to hold the horizon flat through full camera rotation. Specific numbers not individually verified for this entry.",
+ w:"This is why bar-mounted footage stopped looking like a paint shaker. It's also the sharp end of GoPro's IP: stabilization and leveling were central to the 2024 ITC complaint against Insta360."},
+{y:2014,g:null,t:"Hardware, form factor & acoustics — HERO design + mounts (bundle)",a:"GoPro",num:"12167211",cat:"comp",st:"active",exp:null,b:["litigated"],who:["GoPro"],conf:"l",
+ s:"Design patents on the boxy HERO chassis — lens placement, dual screens, overall geometry — alongside utility filings on multi-microphone wind-noise mitigation (US 12,167,211 cited as representative) and on the integrated folding mounting fingers that collapse into the frame. The underlying two-prong mount interface has become a quasi-open standard the industry builds to freely.",
+ w:"The clearest live demonstration in the atlas that a design patent has teeth: the ITC ruled for GoPro on the physical HERO design, producing an import ban on certain Insta360 models judged too close to the silhouette. Mirrors the atlas's existing 'not all IP is a utility patent' thread — the shape was defensible, while the mount interface everyone actually depends on was effectively given away."},
+{y:2015,g:null,t:"Data & telemetry — GPS overlay + depth analysis (bundle)",a:"GoPro",num:null,cat:"emtb",st:"active",exp:null,b:["acquired"],who:["GoPro"],conf:"l",
+ s:"Methods for capturing telemetry — GPS, speed, altitude, G-force — and time-aligning it precisely to the video track, which is what makes speedometer and track-map overlays on a downhill run possible. A related family covers structure-from-motion depth mapping from a single 2D lens. Separately, GoPro sold 114 drone flight-control, spatial-navigation and vehicle-guidance patents to Skydio after winding down the Karma program.",
+ w:"Filed under E-MTB & Electronics rather than Components because this is data infrastructure, not a part you bolt on — it's the same sensor-fusion stack that suspension telemetry and e-bike control systems are converging on. The Skydio sale is the instructive move: GoPro kept the IP that defends the camera and sold the IP that defended a business it exited."},
 {y:1997,g:1999,t:"GT i-Drive independent drivetrain",a:"Jim Busby → GT",num:null,cat:"susp",st:"expired",exp:2019,b:[],who:[],conf:"m",
  s:"An eccentric bottom-bracket carrier that let the drivetrain float semi-independently of the swingarm.",
  w:"One of the wildest mass-produced answers to pedal feedback — a design-history landmark even if the approach died out."},
@@ -1180,19 +1232,12 @@ const FIGHTS = [
     cards:["10363988"]
   }
 ];
-  const ERAS = [
-  {k:"e00pre", label:"Pre-1977", from:1800, to:1976},
-  ...Array.from({length: 2026-1977+1}, (_,i)=>{
-    const y=1977+i;
-    return {k:"y"+y, label:String(y), from:y, to:y};
-  })
-];
 
 /* ======== STATE ======== */
 const state = { cat:new Set(), st:new Set(), badge:new Set(), inv:new Set(), brand:new Set() };
 
-/* NEW: year-bracket step (5 | 2 | 1) and search query */
-let stepYr  = 5;
+/* Year-bracket step (5 | 2 | 1) and search query. Default: 2yr. */
+let stepYr  = 2;
 let searchQ = '';
 
 /* ======== HELPERS ======== */
@@ -1200,15 +1245,31 @@ const $ = s => document.querySelector(s);
 const NOW = new Date().getFullYear();
 function confLabel(c){ return c==="v"?null : c==="m"?"patent number unverified":"draft data — research in progress"; }
 
-/* NEW: returns era array for current stepYr */
+/* Returns era array for current stepYr.
+   stepYr 1  -> one bar per year
+   stepYr 2  -> 2-year brackets aligned to even years (1990–91, 1992–93, …)
+   stepYr 5  -> 5-year brackets aligned to the half-decade (1990–94, 1995–99, …)
+   Buckets are aligned to the calendar (floor to a multiple of stepYr) rather than
+   to the earliest data point, so the brackets stay stable as data is added. */
 function getEras(){
-  if(stepYr===5) return ERAS;
-  const ys=D.map(d=>d.y);
+  const ys=D.map(d=>d.y).filter(y=>typeof y==="number"&&isFinite(y));
+  if(!ys.length) return [];
   const lo=Math.floor(Math.min(...ys)/stepYr)*stepYr;
-  const hi=Math.ceil((Math.max(...ys)+1)/stepYr)*stepYr;
+  const hi=Math.max(...ys);
   const eras=[];
-  for(let y=lo;y<hi;y+=stepYr){
-    eras.push({k:`era${y}`, label:stepYr===1?`${y}`:`${y}–${y+stepYr-1}`, from:y, to:y+stepYr-1});
+  for(let y=lo;y<=hi;y+=stepYr){
+    const end=y+stepYr-1;
+    /* Clamp the closing bucket's label to the last year we actually have data
+       for, so the axis never advertises years that haven't happened yet
+       (e.g. "2025–2029" in 2026). `to` stays unclamped so filtering still
+       catches any future-dated filing that gets added later. */
+    const shownEnd=Math.min(end,hi);
+    eras.push({
+      k:`era${y}`,
+      label: stepYr===1 ? `${y}` : (shownEnd>y ? `${y}–${shownEnd}` : `${y}`),
+      from:y,
+      to:end
+    });
   }
   return eras;
 }
@@ -1679,21 +1740,45 @@ function render(){
 function renderBars(list){
   const bars=$("#bars"); bars.innerHTML="";
   const eras=getEras();
+  /* On narrow screens there isn't room for a label under every bar, so we show
+     decade markers only. Recomputed each render; a resize listener re-renders. */
+  const narrow = (typeof window!=="undefined" && window.innerWidth) ? window.innerWidth<560 : false;
   const minW=stepYr===1?"3px":stepYr===2?"5px":"8px";
   const max=Math.max(...eras.map(e=>D.filter(d=>d.y>=e.from&&d.y<=e.to).length),1);
+  /* Empty brackets are skipped rather than drawn, which would otherwise place
+     the lone 1890 entry flush against 1974 as if they were adjacent. Where a
+     run of 2+ empty brackets is skipped, insert a visible gap marker so the
+     axis doesn't imply continuous data it doesn't have. */
+  let skipped=0;
   eras.forEach(e=>{
     const full=D.filter(d=>d.y>=e.from&&d.y<=e.to).length;
     const cur=list.filter(d=>d.y>=e.from&&d.y<=e.to).length;
-    if(!full) return;
+    if(!full){ if(bars.children.length) skipped++; return; }
+    if(skipped>=2){
+      const g=document.createElement("span");
+      g.className="bar-gap";
+      g.setAttribute("aria-hidden","true");
+      g.title=`no entries for ${skipped*stepYr} years`;
+      bars.appendChild(g);
+    }
+    skipped=0;
     const b=document.createElement("button");
     b.className="bar";
     b.style.height=Math.max(8,(full/max)*100)+"%";
     b.style.opacity=cur?1:.35;
     b.style.minWidth=minW;
     b.setAttribute("aria-label",`${e.label}: ${cur} matching of ${full} patents — jump to era`);
-    // Label: 5yr uses original format; 2yr/1yr uses short year
-    const blabel=stepYr===5?(e.k==="e00pre"?"Pre":e.label.slice(0,4)):`'${String(e.from).slice(2)}`;
-    b.innerHTML=`<span class="bcount">${cur}</span><span class="blabel">${blabel}</span>`;
+    /* Labels: show every bar's start year at 5yr; thin out at 2yr/1yr so they
+       don't collide. Decade starts always get a full 4-digit year and extra
+       emphasis, which gives the axis a readable rhythm at any step. */
+    const decade = e.from%10===0;
+    let show;
+    if(stepYr===5)      show = narrow ? e.from%10===0 : true;
+    else if(stepYr===2) show = narrow ? e.from%10===0 : (e.from%10===0||e.from%10===4||e.from%10===6);
+    else                show = narrow ? e.from%10===0 : e.from%5===0;
+    const blabel = show ? (decade?String(e.from):`'${String(e.from).slice(2)}`) : "";
+    b.innerHTML=`<span class="bcount">${cur}</span>`+
+      (blabel?`<span class="blabel${decade?" bl-decade":""}">${blabel}</span>`:"");
     b.onclick=()=>{ const el=document.getElementById(e.k); if(el) el.scrollIntoView({behavior:"smooth",block:"start"}); };
     bars.appendChild(b);
   });
@@ -1769,6 +1854,34 @@ document.getElementById("surpriseBtn").addEventListener("click",()=>{
   if(pick) jumpToCard(cardRef(pick));
 });
 
+/* ======== SURPRISE ME — periodic shimmer ========
+   Sweeps the button at a random interval between 20s and 90s so it catches the
+   eye occasionally without becoming a distraction. Pauses while the tab is
+   hidden, and skips entirely for users who prefer reduced motion. */
+(()=>{
+  const btn=document.getElementById("surpriseBtn");
+  if(!btn) return;
+  const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduced) return;
+  const MIN=20000, MAX=90000;
+  let timer=null;
+  const rand=()=>MIN+Math.random()*(MAX-MIN);
+  function shimmer(){
+    // Restart the animation cleanly even if a previous sweep just ran.
+    btn.classList.remove("shimmer");
+    void btn.offsetWidth; // force reflow so the animation replays
+    btn.classList.add("shimmer");
+    setTimeout(()=>btn.classList.remove("shimmer"),1600);
+    schedule();
+  }
+  function schedule(){
+    clearTimeout(timer);
+    timer=setTimeout(()=>{ if(!document.hidden) shimmer(); else schedule(); }, rand());
+  }
+  document.addEventListener("visibilitychange",()=>{ if(!document.hidden) schedule(); });
+  schedule();
+})();
+
 /* ======== SHARE VIEW ======== */
 document.getElementById("shareBtn").addEventListener("click",async()=>{
   syncHash();
@@ -1785,12 +1898,22 @@ document.getElementById("shareBtn").addEventListener("click",async()=>{
   }
 });
 
-/* ======== STEP TOGGLE  (5yr → 2yr → 1yr → 5yr) ======== */
+/* ======== STEP TOGGLE  (2yr → 1yr → 5yr → 2yr) ======== */
 document.getElementById("stepToggle").addEventListener("click",()=>{
-  stepYr={5:2,2:1,1:5}[stepYr];
+  stepYr={2:1,1:5,5:2}[stepYr];
   document.getElementById("stepToggle").textContent=`${stepYr}yr`;
   render();
 });
+
+/* Re-render bars on resize so label density matches the viewport
+   (debounced — renderBars is cheap but resize fires constantly). */
+(()=>{
+  let rt;
+  window.addEventListener("resize",()=>{
+    clearTimeout(rt);
+    rt=setTimeout(()=>{ try{ renderBars(D.filter(passes)); }catch(e){} },200);
+  });
+})();
 
 /* ======== SEARCH INPUT ======== */
 (()=>{
