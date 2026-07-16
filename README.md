@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 217 patents and applications spanning 1890 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 223 patents and applications spanning 1890 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,19 +14,19 @@ An interactive timeline of mountain bike intellectual property: 217 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 217 |
+| **Total entries** | 223 |
 | **Year range** | 1890 – 2026 |
-| **Active patents** | 107 |
-| **Expired patents** | 72 |
-| **Pending applications** | 34 |
+| **Active patents** | 110 |
+| **Expired patents** | 74 |
+| **Pending applications** | 35 |
 | **Litigated entries** | 20 |
 | **Patent Fights (named rivalries)** | 7 |
-| **Brands** | 75 |
-| **Named inventors** | 23 |
+| **Brands** | 78 |
+| **Named inventors** | 24 |
 | **Non-US jurisdictions** | 14 (AU, BE, CH, CN, DE, EP, ES, FR, GB, IS, IT, PL, SE, ZA) |
-| **Verified entries** | 104 |
+| **Verified entries** | 109 |
 | **Medium confidence** | 61 |
-| **Draft / in progress** | 52 |
+| **Draft / in progress** | 53 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -95,7 +95,7 @@ A "PMR ↗" button in the header top-right returns to [postmillenniumrenaissance
 
 ## Named inventors
 
-Canfield (Lance & Chris) · Dave Weagle · Horst Leitner · Joe Breeze · Paul Turner · Jo Klieber · David Earle · Wayne Lumpkin · Gavin Vos · Cal Phillips · Richard Bryne · Brian Scura · Charles Curnutt · Damon Madsen · Scot Breithaupt · Sam Garrett · Adam Krefting · Benedikt Skulason · Owen Pemberton · Mic Williams · Bill Shook · Frank W. Schwinn · Frank P. Brilando
+Canfield (Lance & Chris) · Dave Weagle · Horst Leitner · Joe Breeze · Paul Turner · Jo Klieber · David Earle · Wayne Lumpkin · Gavin Vos · Cal Phillips · Richard Bryne · Brian Scura · Charles Curnutt · Damon Madsen · Scot Breithaupt · Sam Garrett · Adam Krefting · Benedikt Skulason · Owen Pemberton · Mic Williams · Bill Shook · Frank W. Schwinn · Frank P. Brilando · McKay H. Davis
 
 ---
 
@@ -214,6 +214,15 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **Corrected a mismatched patent reference:** an earlier candidate for the camera chin-mount category (US 7,735,160) turned out to be an unrelated football helmet chin-guard patent with no camera-mount claims. Replaced with the correct filing.
 - **Added Schwinn** as a registered brand, with three verified entries spanning the company's two most historically significant filings: the 1938 cantilever frame (US 2,151,533) and Knee-Action Spring Fork (US 2,160,034) — filed the same day by Frank W. Schwinn — and the 1965 Sting-Ray banana seat design patent (US D204,121) by Frank P. Brilando, which was itself invalidated on appeal in 1970 after Schwinn's own prior advertising became prior art against its own patent. All three predate the atlas's existing entries by decades and fill in real ground between the 1890s bicycle-mechanics patents and the 1970s mountain-bike-specific ones. Corrected `exp` for all three using the pre-1995 statutory term (grant + 17/14 years) rather than the atlas's usual filing + 20 shorthand, which would have been wrong by nearly a decade for patents this old.
 - **Open question, not yet decided:** whether GoPro-type entries (currently split across `comp` and `emtb`) warrant a ninth category — tentatively "Tech" or similar — rather than being absorbed into the existing eight. See *A note on the "Tech" category question*, below, for the tradeoffs as they stand today.
+
+**Later in July 2026:**
+
+- **Fixed state/region search coverage.** Searching "Colorado," "California," "Wisconsin," or "Utah" previously only matched entries whose prose happened to mention the state (litigation venues, mostly) — so "California," the state where mountain biking itself was invented, returned exactly one result, and "Utah" returned zero. Search now also checks each entry's brands against a new `BRAND_HQ` lookup table of company/inventor headquarters, so a state search surfaces every entry for brands based there, not just the ones that spell it out. Colorado: 6 → 12 results. California: 1 → 29. Wisconsin: 3 → 12. Utah: 0 → 2. The existing Colorado MTB Innovation panel now reads from this same table instead of a separate hardcoded brand list, so the two features can't drift out of sync with each other. `BRAND_HQ` is intentionally partial — only brands and inventors verified so far are tagged, not all 78 in `BRANDS` — and documented in the source as straightforward to extend.
+- **Added Rocky Mountain** (Vancouver-area, BC) as a registered brand: their foundational 2002 rear-suspension patent (US 6,843,494, Duhane Lam), and the Dyname e-bike propulsion system (US 9,643,683) — which turns out to be a genuine licensor story rather than in-house IP. Dyname is built by a separate company, Propulsion PowerCycle Inc., under an exclusivity deal with Rocky Mountain that ran 2017 through a 2024–25 ownership change at Rocky Mountain, after which Dyname became free to supply other brands.
+- **Added VelociRAX** (Lehi, UT) as a registered brand: the C-hoop vertical hitch rack portfolio (US 11,554,724 and four related patents), filed by founders Blake and Bryce Owen. A third rack architecture in the Bike Transport category, alongside the existing tray-rack (Cal Phillips/1UP) and hook-rack coverage — and the entry that makes "Utah" search return something.
+- **Added a verified Utah patent from the historical record:** McKay H. Davis's 1994 water-bottle-cage battery light system (US 5,426,570, Salt Lake City) — a 1994 solution to mounting a heavy light battery on a bike by force-fitting it into a standard bottle cage, cross-checked against a contemporary Deseret News patent listing.
+- **Added Yoshimura Cycling** (Chino, CA) as a registered brand: the Chilao SS pedal's "Static Spring" axle preload system, tagged honestly as patent-pending (`conf: "l"`) since no application number has surfaced in any 2024–2025 coverage.
+- **Added the Specialized/Dave Weagle linkage fork** (US 11,345,432): a sixth atlas entry under Weagle's name, and a different IP story than his suspension-linkage work — Weagle's own startup Trvstper Inc. (maker of the Trust Shout and Message forks) filed it in 2018, folded, and the patent migrated to Specialized in 2021. Badged `acquired`, cross-referencing the existing Fox v. SRAM and Horst Link acquisition entries.
 
 ---
 
