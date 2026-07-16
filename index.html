@@ -79,7 +79,6 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
 .mini-btn{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.04em;background:var(--surface);border:1px solid var(--card-border);color:var(--ink);border-radius:999px;padding:5px 11px;min-height:30px;white-space:nowrap;transition:border-color .15s,background .15s}
 .mini-btn:hover{border-color:var(--primary)}
 .mini-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
-.mini-btn.flash{background:var(--primary);color:#fff;border-color:var(--primary)}
 @media(max-width:480px){.mini-btn{font-size:10px;padding:4px 8px}}
 /* ---------- Surprise me shimmer ----------
    A light sweep passes across the button at random intervals (see JS) to hint
@@ -411,7 +410,6 @@ html,body{overflow-x:hidden;max-width:100%}
     <span id="resultCount"></span>
     <span class="fmeta-actions">
       <button class="mini-btn" id="surpriseBtn" title="Jump to a random patent">🎲 Surprise me</button>
-      <button class="mini-btn" id="shareBtn" title="Copy a link to this exact view">🔗 Share view</button>
       <button class="clearbtn" id="clearAll" hidden>Clear filters</button>
     </span>
   </div>
@@ -1938,22 +1936,6 @@ document.getElementById("surpriseBtn").addEventListener("click",()=>{
   document.addEventListener("visibilitychange",()=>{ if(!document.hidden) schedule(); });
   schedule();
 })();
-
-/* ======== SHARE VIEW ======== */
-document.getElementById("shareBtn").addEventListener("click",async()=>{
-  syncHash();
-  const url=location.href;
-  const btn=document.getElementById("shareBtn");
-  const flash=msg=>{ const old=btn.textContent; btn.textContent=msg; btn.classList.add("flash");
-    setTimeout(()=>{ btn.textContent=old; btn.classList.remove("flash"); },1600); };
-  try{
-    if(navigator.clipboard&&navigator.clipboard.writeText){ await navigator.clipboard.writeText(url); flash("✓ Link copied"); }
-    else if(navigator.share){ await navigator.share({url}); }
-    else{ window.prompt("Copy this link:",url); }
-  }catch(e){
-    try{ window.prompt("Copy this link:",url); }catch(_){}
-  }
-});
 
 /* ======== STEP TOGGLE  (2yr → 1yr → 5yr → 2yr) ======== */
 document.getElementById("stepToggle").addEventListener("click",()=>{
