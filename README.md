@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 214 patents and applications spanning 1890 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 217 patents and applications spanning 1890 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 214 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 214 |
+| **Total entries** | 217 |
 | **Year range** | 1890 – 2026 |
 | **Active patents** | 107 |
-| **Expired patents** | 69 |
+| **Expired patents** | 72 |
 | **Pending applications** | 34 |
-| **Litigated entries** | 19 |
+| **Litigated entries** | 20 |
 | **Patent Fights (named rivalries)** | 7 |
-| **Brands** | 74 |
-| **Named inventors** | 21 |
+| **Brands** | 75 |
+| **Named inventors** | 23 |
 | **Non-US jurisdictions** | 14 (AU, BE, CH, CN, DE, EP, ES, FR, GB, IS, IT, PL, SE, ZA) |
-| **Verified entries** | 101 |
+| **Verified entries** | 104 |
 | **Medium confidence** | 61 |
 | **Draft / in progress** | 52 |
 
@@ -67,7 +67,7 @@ A dedicated Status filter surfaces active patents estimated to expire within the
 Every filter combination, search term, active tab, and individual card now has its own URL. The **Share view** button (next to the result count) copies a link that reproduces the exact view it was copied from — filters, search, and all. Individual cards resolve by patent number (or a title slug for unverified entries), so a link can point at one specific patent. Handy for citing a specific view or card from a Pinkbike article instead of telling readers "search for it yourself."
 
 ### 🎲 Surprise me
-Jumps to a random card from whatever's currently visible (respects active filters), opens it, and scrolls it into view. A low-effort way to surface entries from deep in a 214-item catalogue that most visitors would otherwise never scroll to. The button also gives itself a subtle shimmer at a random interval (roughly every 20–90 seconds) as a passive hint that it's interactive — it never interrupts a click and turns itself off for anyone with reduced-motion preferences set.
+Jumps to a random card from whatever's currently visible (respects active filters), opens it, and scrolls it into view. A low-effort way to surface entries from deep in a 217-item catalogue that most visitors would otherwise never scroll to. The button also gives itself a subtle shimmer at a random interval (roughly every 20–90 seconds) as a passive hint that it's interactive — it never interrupts a click and turns itself off for anyone with reduced-motion preferences set.
 
 ### 📍 Colorado MTB Innovation panel
 A slide-in explainer auto-linked from cards involving Colorado-connected brands (Spot, Gates, MRP, Revel, Reeb). Covers the CBF/Revel licensing story, the Spot v. Gates suit, and the Fox v. SRAM jurisdictional transfer to Colorado. Minimizes to a persistent tab; reopens with one tap. Esc key or overlay-click also minimizes.
@@ -95,7 +95,7 @@ A "PMR ↗" button in the header top-right returns to [postmillenniumrenaissance
 
 ## Named inventors
 
-Canfield (Lance & Chris) · Dave Weagle · Horst Leitner · Joe Breeze · Paul Turner · Jo Klieber · David Earle · Wayne Lumpkin · Gavin Vos · Cal Phillips · Richard Bryne · Brian Scura · Charles Curnutt · Damon Madsen · Scot Breithaupt · Sam Garrett · Adam Krefting · Benedikt Skulason · Owen Pemberton · Mic Williams · Bill Shook
+Canfield (Lance & Chris) · Dave Weagle · Horst Leitner · Joe Breeze · Paul Turner · Jo Klieber · David Earle · Wayne Lumpkin · Gavin Vos · Cal Phillips · Richard Bryne · Brian Scura · Charles Curnutt · Damon Madsen · Scot Breithaupt · Sam Garrett · Adam Krefting · Benedikt Skulason · Owen Pemberton · Mic Williams · Bill Shook · Frank W. Schwinn · Frank P. Brilando
 
 ---
 
@@ -197,6 +197,8 @@ Primary-source verification is preferred throughout. Where verification wasn't p
 
 Expiration dates are estimated as filing year + 20 years and do not account for terminal disclaimers, maintenance fee lapses, or patent term adjustments. **Nothing here is legal advice.**
 
+For patents that issued before June 8, 1995 (when US law switched to a 20-years-from-filing term), `exp` is instead estimated as **grant year + 17 years** for utility patents or **grant year + 14 years** for design patents, matching the actual pre-GATT statutory term. The atlas's three Schwinn entries (1938–1966) are the only current cases old enough for this to matter, but it's the correct rule for any pre-1995 filing added later.
+
 Corrections, additional patents, and better sourcing are welcome — open an issue or PR.
 
 ---
@@ -210,6 +212,22 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **Surprise Me now shimmers** at a random 20–90 second interval as a passive discoverability hint. Subtle by design, respects `prefers-reduced-motion`, and never blocks the click target.
 - **New entries:** the Yeti Sixfinity entry now covers the July 2026 Yeti LT, which moves off the Switch Infinity platform onto the six-bar layout — the first time that migration has shown up on a non-assist bike. Added a verified action-camera chin-mount patent (US 10,021,931, Sopro Mounts Inc.) and four bundled GoPro entries covering image processing/FOV, stabilization, hardware/design, and telemetry, rather than attempting to catalogue a 1,600+ patent portfolio one filing at a time.
 - **Corrected a mismatched patent reference:** an earlier candidate for the camera chin-mount category (US 7,735,160) turned out to be an unrelated football helmet chin-guard patent with no camera-mount claims. Replaced with the correct filing.
+- **Added Schwinn** as a registered brand, with three verified entries spanning the company's two most historically significant filings: the 1938 cantilever frame (US 2,151,533) and Knee-Action Spring Fork (US 2,160,034) — filed the same day by Frank W. Schwinn — and the 1965 Sting-Ray banana seat design patent (US D204,121) by Frank P. Brilando, which was itself invalidated on appeal in 1970 after Schwinn's own prior advertising became prior art against its own patent. All three predate the atlas's existing entries by decades and fill in real ground between the 1890s bicycle-mechanics patents and the 1970s mountain-bike-specific ones. Corrected `exp` for all three using the pre-1995 statutory term (grant + 17/14 years) rather than the atlas's usual filing + 20 shorthand, which would have been wrong by nearly a decade for patents this old.
+- **Open question, not yet decided:** whether GoPro-type entries (currently split across `comp` and `emtb`) warrant a ninth category — tentatively "Tech" or similar — rather than being absorbed into the existing eight. See *A note on the "Tech" category question*, below, for the tradeoffs as they stand today.
+
+---
+
+## A note on the "Tech" category question
+
+Every current entry fits the existing eight categories (`susp fork drive wheel comp emtb frame transport`), including the new GoPro entries, which are split across `comp` (image processing, stabilization, hardware/acoustics) and `emtb` (telemetry). Whether that's the right long-term home, or whether a ninth category — "Tech," "Camera & Electronics," something similar — would serve better, is an open call rather than a settled one. The tradeoffs as of this update:
+
+**For a new category:** GoPro doesn't cleanly fit "Components" (a physical bike part) or "E-MTB & Electronics" (motor/battery systems specifically) — it's neither. Future camera-and-sensor entries (action cameras, ride computers, the suspension-AI telemetry entries already in the atlas) would have a clearer home, and the Stats view's category breakdown would more accurately reflect where the dataset's weight sits as this area grows.
+
+**Against, for now:** only 5 entries currently fall in this space (4 GoPro bundles + the chin mount) — thin enough that a dedicated filter tab risks reading as a single-brand category rather than a genuine cluster. Adding a ninth category is also a real identity change: the README, meta description, and site tagline all currently describe "eight categories," and the filter-tab row would need to accommodate the addition without crowding on mobile.
+
+**Implementation note, if it happens:** category rendering is fully data-driven from the `CATS` object near the top of the script (filter chips, card pills, and the Stats breakdown all read from it directly) — adding a key there is a small, low-risk change with no hardcoded per-category styling to update elsewhere. The harder part is deciding the boundary and migrating the 5 existing `comp`/`emtb` entries, not the code.
+
+No action taken on this yet — flagging it here so the decision and its tradeoffs are on record rather than made silently in a future update.
 
 ---
 
