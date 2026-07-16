@@ -63,8 +63,8 @@ A dedicated tab that turns the raw dataset into a live dashboard: total/active/e
 ### ⏳ Going free soon
 A dedicated Status filter surfaces active patents estimated to expire within the next two years — the atlas's forward-looking answer to its own tagline about technology "becoming free for everyone to use." Qualifying cards carry an amber "⏳ free by [year]" pill. The same list appears at the top of the Stats tab as a tap-to-jump watchlist.
 
-### 🔗 Shareable deep links
-Every filter combination, search term, active tab, and individual card now has its own URL. The **Share view** button (next to the result count) copies a link that reproduces the exact view it was copied from — filters, search, and all. Individual cards resolve by patent number (or a title slug for unverified entries), so a link can point at one specific patent. Handy for citing a specific view or card from a Pinkbike article instead of telling readers "search for it yourself."
+### 🔗 URL reflects the current view
+Every filter combination, search term, active tab, and individual card has its own URL — the browser's address bar updates automatically as you filter and browse, and reloading or bookmarking a page returns to the same view. Individual cards resolve by patent number (or a title slug for unverified entries), so a URL can point at one specific patent. There's no dedicated "copy link" button for this at the moment — pulled deliberately, see *Recent updates* below — so sharing a specific view currently means copying the address bar URL directly.
 
 ### 🎲 Surprise me
 Jumps to a random card from whatever's currently visible (respects active filters), opens it, and scrolls it into view. A low-effort way to surface entries from deep in a 217-item catalogue that most visitors would otherwise never scroll to. The button also gives itself a subtle shimmer at a random interval (roughly every 20–90 seconds) as a passive hint that it's interactive — it never interrupts a click and turns itself off for anyone with reduced-motion preferences set.
@@ -115,7 +115,7 @@ The page works as a standalone link or an `[IFRAME]` embed. Pinkbike's embed syn
 
 **Known limitation:** `position: sticky` (filter bar) and `position: fixed` (Colorado panel) resolve against the *iframe's* own viewport, not the host page. Inside a fixed-height iframe, the sticky filter bar scrolls away when the reader scrolls the article page and doesn't return without manually scrolling inside the iframe. On mobile this is the most noticeable friction point. A `?embed=1` mode that wraps the atlas in its own internal scroll container would fix this cleanly and is a planned improvement. Test in an actual iframe before publishing.
 
-**Deep links inside an iframe:** the Share button copies the standalone `github.io` URL, not an iframe-wrapped one — that's intentional, since it's the only URL that resolves correctly on its own. If the browser blocks URL rewriting inside a sandboxed iframe (some embed contexts do), the tool degrades gracefully: filtering and browsing still work, only the "URL reflects current view" behavior is skipped.
+**Deep links inside an iframe:** the address bar always reflects the standalone `github.io` URL, not an iframe-wrapped one — that's a consequence of how the hash-routing is written, and it's actually the right behavior, since it's the only URL that resolves correctly on its own. If the browser blocks URL rewriting inside a sandboxed iframe (some embed contexts do), the tool degrades gracefully: filtering and browsing still work, only the "URL reflects current view" behavior is skipped.
 
 ---
 
@@ -223,6 +223,7 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **Added a verified Utah patent from the historical record:** McKay H. Davis's 1994 water-bottle-cage battery light system (US 5,426,570, Salt Lake City) — a 1994 solution to mounting a heavy light battery on a bike by force-fitting it into a standard bottle cage, cross-checked against a contemporary Deseret News patent listing.
 - **Added Yoshimura Cycling** (Chino, CA) as a registered brand: the Chilao SS pedal's "Static Spring" axle preload system, tagged honestly as patent-pending (`conf: "l"`) since no application number has surfaced in any 2024–2025 coverage.
 - **Added the Specialized/Dave Weagle linkage fork** (US 11,345,432): a sixth atlas entry under Weagle's name, and a different IP story than his suspension-linkage work — Weagle's own startup Trvstper Inc. (maker of the Trust Shout and Message forks) filed it in 2018, folded, and the patent migrated to Specialized in 2021. Badged `acquired`, cross-referencing the existing Fox v. SRAM and Horst Link acquisition entries.
+- **Removed the Share view button.** The URL still updates automatically to reflect the current filter/search/card state (that underlying mechanism wasn't touched), but the one-click "copy a shareable link" button and its confirmation flash are gone — a deliberate step back on the sharing concept, revisited at a later date.
 
 ---
 
