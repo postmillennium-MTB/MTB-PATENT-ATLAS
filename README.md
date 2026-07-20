@@ -21,8 +21,8 @@ An interactive timeline of mountain bike intellectual property: 223 patents and 
 | **Pending applications** | 35 |
 | **Litigated entries** | 20 |
 | **Patent Fights (named rivalries)** | 7 |
-| **Brands** | 78 |
-| **Named inventors** | 24 |
+| **Brands** | 117 |
+| **Named inventors** | 33 |
 | **Non-US jurisdictions** | 14 (AU, BE, CH, CN, DE, EP, ES, FR, GB, IS, IT, PL, SE, ZA) |
 | **Verified entries** | 109 |
 | **Medium confidence** | 61 |
@@ -95,7 +95,7 @@ A "PMR ↗" button in the header top-right returns to [postmillenniumrenaissance
 
 ## Named inventors
 
-Canfield (Lance & Chris) · Dave Weagle · Horst Leitner · Joe Breeze · Paul Turner · Jo Klieber · David Earle · Wayne Lumpkin · Gavin Vos · Cal Phillips · Richard Bryne · Brian Scura · Charles Curnutt · Damon Madsen · Scot Breithaupt · Sam Garrett · Adam Krefting · Benedikt Skulason · Owen Pemberton · Mic Williams · Bill Shook · Frank W. Schwinn · Frank P. Brilando · McKay H. Davis
+Canfield (Lance & Chris) · Dave Weagle · Horst Leitner · Joe Breeze · Paul Turner · Jo Klieber · David Earle · Wayne Lumpkin · Gavin Vos · Cal Phillips · Richard Bryne · Brian Scura · Charles Curnutt · Damon Madsen · Scot Breithaupt · Sam Garrett · Adam Krefting · Benedikt Skulason · Owen Pemberton · Mic Williams · Bill Shook · Frank W. Schwinn · Frank P. Brilando · McKay H. Davis · Jim Busby · Mert Lawwill · Tony Ellsworth · Gary Ewing · Doug Bradbury · Cedric Eveleigh · Wayne Sicz · John Rader · John Castellano
 
 ---
 
@@ -224,6 +224,8 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **Added Yoshimura Cycling** (Chino, CA) as a registered brand: the Chilao SS pedal's "Static Spring" axle preload system, tagged honestly as patent-pending (`conf: "l"`) since no application number has surfaced in any 2024–2025 coverage.
 - **Added the Specialized/Dave Weagle linkage fork** (US 11,345,432): a sixth atlas entry under Weagle's name, and a different IP story than his suspension-linkage work — Weagle's own startup Trvstper Inc. (maker of the Trust Shout and Message forks) filed it in 2018, folded, and the patent migrated to Specialized in 2021. Badged `acquired`, cross-referencing the existing Fox v. SRAM and Horst Link acquisition entries.
 - **Removed the Share view button.** The URL still updates automatically to reflect the current filter/search/card state (that underlying mechanism wasn't touched), but the one-click "copy a shareable link" button and its confirmation flash are gone — a deliberate step back on the sharing concept, revisited at a later date.
+- **Fixed a systemic search/filter gap: 47 of 223 entries had no brand or inventor tags at all.** The Supre Drive entry (Cedric Eveleigh / Lal Bikes) was one of them — the name was right there in the card's own text, but `who: []` was empty, so it never showed up under the Brands or Inventors filter tabs, and would have stayed invisible to anyone browsing rather than free-text searching. An audit of every entry with an empty `who[]` found 47 more of the same pattern — Cannondale, Marzocchi, Crankbrothers, Magura, Pinion, Atherton, and 40 others, all real, identifiable brands or inventors sitting unloaded. All 47 are now correctly tagged, adding 38 new brands and 9 new named inventors to the registries. The 8 entries still showing an empty `who[]` are genuinely anonymous (unnamed 19th-century inventors, "independent inventors," a still-unverified assignee) — that's accurate, not a bug.
+- **Closed the underlying reason this class of bug is easy to introduce: search text didn't cover everything a card actually displays.** Free-text search previously only scanned title, assignee, summary, editorial text, and patent number — not the category pill, status pill, badge pill text, jurisdiction, or filing/grant/expiry years, even though all of those are printed right on the card. Searching a word the person could literally see and not finding it is worse than the word not existing at all. Search now also indexes the category label ("Drivetrain," "Rear Suspension," …), badge text ("Litigated," "Patent acquired," …), jurisdiction code and full patent-office name, and the filing/grant/expiry years — so any visible text on a card is now findable by typing it.
 
 ---
 
