@@ -526,6 +526,7 @@ const INVENTORS = [
   {label:"Wayne Sicz",key:"Wayne Sicz"},
   {label:"John Rader",key:"John Rader"},
   {label:"John Castellano",key:"John Castellano"},
+  {label:"Stefan Sack",key:"Stefan Sack"},
 ];
 const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff","Hayes","Manitou","SUNringlé","Reynolds","MRP","Nicolai","KOM","Antidote","OPEN","Speedplay","Wahoo Fitness","Onyx","Classified","Foes","EXT","Spot","Reeb","Revel","Odyssey","Mongoose","SE Racing","Canyon","Priority","Ari","Knolly","Intense","WRP","Vittoria","Lauf","BikeYoke","Forbidden","OneUp","Garbaruk","AMS","RideWrap","Aenomaly","BMC","SCOR","Avinox","American Classic","GoPro","Insta360","Sopro Mounts","Schwinn","VelociRAX","Rocky Mountain","Yoshimura",
 "Cannondale","Marzocchi","Scott","Rimpact","Gehl Company","Pinion","Effigear","Lal Bikes","Mavic","Michelin","Hutchinson",
@@ -662,6 +663,9 @@ const D = [
 {y:1938,g:1939,t:"Schwinn Knee-Action Spring Fork (US 2,160,034)",a:"Frank W. Schwinn / Arnold, Schwinn & Co.",num:"2160034",cat:"fork",st:"expired",exp:1956,b:[],who:["Schwinn","Frank W. Schwinn"],conf:"v",
  s:"A telescoping front fork with a spring-and-rubber-cushion mechanism that let the wheel move relative to the frame, marketed on 1938 Autocycle-line balloon-tire bikes as the 'Knee-Action Spring Fork.' Filed the same day (March 3, 1938) as Schwinn's cantilever frame patent below. Patents of this era ran 17 years from grant rather than 20 years from filing, so protection lapsed in 1956.",
  w:"Genuine front-wheel suspension on a mass-market bicycle, roughly 50 years before Manitou and RockShox rediscovered the idea for mountain bikes. The mechanism (rubber-cushioned pivot, not oil-and-air damping) has nothing to do with modern telescopic forks technically, but the marketing instinct — sell comfort and durability, not just a part — is identical."},
+{y:2013,g:2016,t:"Three-way damping cartridge (US 9,404,552)",a:"Stefan Sack & Andreas Felsl / B-LABS AG (Switzerland) → Fox Factory",num:"9404552",cat:"fork",st:"active",exp:2034,b:["acquired"],who:["Stefan Sack","Fox"],conf:"v",
+ s:"A suspension-fork damping cartridge with a three-way compression circuit — separate low-, mid-, and high-speed flow paths controlled by a shim-based mid-speed ring — plus a tube-bladder compensating volume in place of an internal floating piston. Filed by Stefan Sack and Andreas Felsl through their Swiss company B-LABS AG in 2013, several years before Sack co-founded BikeYoke. Fox Factory acquired the patent from B-LABS AG in 2017 and still holds it.",
+ w:"Not the BikeYoke Revive story — this is a different mechanism (fork damping, not a dropper reset valve) from earlier in Stefan Sack's career, and it ended up owned by one of the biggest suspension companies in the industry rather than the small German dropper-post brand he's known for today. A reminder that an inventor's name can lead to more than one atlas entry, filed under more than one company, years apart."},
 {y:1977,g:1980,t:"Simons inverted-fork patents",a:"Steve Simons (moto, pre-MTB)",num:null,cat:"fork",st:"expired",exp:2000,b:["priorart","licensor"],who:["Paul Turner"],conf:"m",
  s:"Simons held two suspension fork patents from his motorcycle work, one for upside-down forks licensed across the moto industry — IP that predates mountain biking itself.",
  w:"The technical DNA of the RockShox RS-1 came from motocross, patents included."},
@@ -1194,9 +1198,12 @@ const D = [
 {y:2023,g:2024,t:"Shimano AI-assisted suspension & dropper learning model (US 11,866,114)",a:"Shimano",num:"11866114",cat:"susp",st:"active",exp:2043,b:[],who:["Shimano"],conf:"m",
  s:"A handlebar-mounted screen and 'learning model' that records a rider's manual suspension, dropper-post, and saddle-tilt adjustments on a given course, then plays them back automatically lap after lap — Shimano's patent text states plainly that 'proper skill is required for the rider to appropriately control the seat post and suspension during riding,' and proposes automating it instead.",
  w:"Automatic suspension already exists; what's novel here is a rider training the system rather than the system just reading terrain — a small but real step toward bikes that remember a track better than the rider does."},
-{y:2014,g:null,t:"BikeYoke REVIVE dropper hydraulics (proprietary)",a:"BikeYoke (Germany)",num:null,cat:"comp",st:"active",exp:null,j:"DE",b:[],who:["BikeYoke"],conf:"l",
+{y:2014,g:null,t:"BikeYoke REVIVE dropper hydraulics (proprietary)",a:"BikeYoke (Germany)",num:null,cat:"comp",st:"active",exp:null,j:"DE",b:[],who:["BikeYoke","Stefan Sack"],conf:"l",
  s:"REVIVE is BikeYoke's signature dropper-post mechanism: a small external lever lets a rider manually bleed air that's migrated into the hydraulic circuit, fixing the top-out sag that eventually afflicts most hydraulic droppers without a full service.",
  w:"A patent built around fixing a competitor-wide design flaw rather than inventing a new function — the dropper post's version of the bleed-valve story already in this atlas under Fox and MRP."},
+{y:2023,g:null,t:"Revive Wireless actuator dispute (patents pending, unresolved litigation)",a:"BikeYoke (Germany) / Cranking Solutions Co., Ltd. (Taiwan) — actuator tech developed with Cell Cycling LLC / OG Bikeworks",num:null,cat:"comp",st:"pending",exp:null,b:["litigated"],who:["BikeYoke","Stefan Sack"],conf:"l",
+ s:"BikeYoke's Revive Wireless converts the mechanical Revive to Bluetooth actuation via an electronic valve actuator, first shown as a prototype at Eurobike 2023; the hydraulic internals are the same Revive mechanism above. The actuator was developed in partnership with Cell Cycling LLC, later OG Bikeworks — a relationship that ended in 2024 over what OG Bikeworks publicly described as 'unresolved contractual matters.' OG Bikeworks went on to announce its own competing aftermarket wireless-conversion kit, also marketed as patent-pending. Neither side's actuator patent has a public number to verify as of this writing.",
+ w:"In June 2026 OG Bikeworks founder Paul Gallagher, representing himself, took the dispute to the Fourth Circuit (Gallagher v. Cranking Solutions Co., Ltd., No. 26-1737), naming Cranking Solutions' Jacky Hou and BikeYoke co-founder Stefan Sack as defendants and alleging a Taiwan patent filing was secured using forged documents. These are Gallagher's allegations in a pending appeal, not court findings — no ruling on the merits has been reported, and this atlas has found no public statement from BikeYoke or Sack responding to the claims. Logged here as an active, unresolved dispute rather than a verdict; check the federal docket before treating any of it as settled fact."},
 {y:2020,g:null,t:"Forbidden Trifecta / OneRide high-pivot idler (proprietary)",a:"Owen Pemberton / Forbidden Bike Co. (Squamish, BC)",num:null,cat:"susp",st:"pending",exp:null,b:[],who:["Forbidden","Owen Pemberton"],conf:"l",
  s:"Forbidden's Trifecta layout routes the chain over an idler pulley above a high main pivot, producing a strongly rearward axle path for impact absorption. DUH dropouts (patent-pending) swap between derailleur, single-speed and SRAM Full-Mount configurations on frames like the titanium Sorceress; OneRide proportional sizing adjusts rear-center and linkage rate per frame size rather than just front-triangle length.",
  w:"Three separate proprietary ideas under one small Squamish brand, none of them published as granted patents — a high-pivot specialist betting its differentiation stays ahead of the idler-bike crowd through iteration speed rather than litigation."},
@@ -1488,7 +1495,11 @@ function goingFreeSoon(d){ return d.st==="active" && d.exp && d.exp>=NOW && d.ex
 /* MODIFIED: passes() now also checks searchQ */
 function passes(d){
   if(searchQ){
-    const q=searchQ.toLowerCase();
+    /* Strips accents (é→e, ö→o, …) so "Sunringle" finds "SUNringlé" and
+       "Ohlins" finds "Öhlins" — most people typing on a US keyboard won't
+       reach for the accented character even when they know it's "correct". */
+    const fold=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    const q=fold(searchQ.toLowerCase());
     /* Location terms (state/region/country) aren't written into most entries'
        prose, so without this a search like "Colorado" or "Utah" would only
        catch the handful of entries that happen to mention litigation venues
@@ -1506,9 +1517,13 @@ function passes(d){
     const badgeLabels=(d.b||[]).map(b=>b==='litigated'?'litigated':(BADGES[b]||'')).join(' ');
     const jurText=(d.j&&d.j!=='US') ? [d.j, NATOFFICE[d.j]&&NATOFFICE[d.j].full].filter(Boolean).join(' ') : '';
     const yearText=[d.y,d.g,d.exp].filter(Boolean).join(' ');
-    const hay=[d.t,d.a,d.s,d.w,d.num,...d.who,...(d.nums||[]),hqTerms,catLabel,d.st,badgeLabels,jurText,yearText]
-      .filter(Boolean).join(' ').toLowerCase();
-    if(!hay.includes(q)) return false;
+    const hay=fold([d.t,d.a,d.s,d.w,d.num,...d.who,...(d.nums||[]),hqTerms,catLabel,d.st,badgeLabels,jurText,yearText]
+      .filter(Boolean).join(' ').toLowerCase());
+    /* Fall back to a whitespace-stripped comparison so a compound name typed
+       with a space still matches — "Bike Yoke" should find "BikeYoke", "One
+       Up" should find "OneUp", etc. Only kicks in when the normal spaced
+       check fails, so it only adds matches, never removes any. */
+    if(!hay.includes(q) && !hay.replace(/\s+/g,'').includes(q.replace(/\s+/g,''))) return false;
   }
   if(state.cat.size && !state.cat.has(d.cat)) return false;
   if(state.st.size){
