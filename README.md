@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 223 patents and applications spanning 1890 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 228 patents and applications spanning 1890 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,19 +14,19 @@ An interactive timeline of mountain bike intellectual property: 223 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 225 |
+| **Total entries** | 228 |
 | **Year range** | 1890 – 2026 |
-| **Active patents** | 111 |
-| **Expired patents** | 74 |
-| **Pending applications** | 36 |
+| **Active patents** | 112 |
+| **Expired patents** | 75 |
+| **Pending applications** | 37 |
 | **Litigated entries** | 21 |
 | **Patent Fights (named rivalries)** | 7 |
-| **Brands** | 117 |
-| **Named inventors** | 34 |
+| **Brands** | 119 |
+| **Named inventors** | 35 |
 | **Non-US jurisdictions** | 14 (AU, BE, CH, CN, DE, EP, ES, FR, GB, IS, IT, PL, SE, ZA) |
-| **Verified entries** | 110 |
+| **Verified entries** | 112 |
 | **Medium confidence** | 61 |
-| **Draft / in progress** | 54 |
+| **Draft / in progress** | 55 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
