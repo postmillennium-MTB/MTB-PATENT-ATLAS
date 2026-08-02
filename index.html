@@ -165,10 +165,10 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .swatch:hover .tip{opacity:1}
 /* ---------- Scrubber ---------- */
 .scrubber{margin-top:14px}
-/* NEW: label row holds scrub-label + step-btn side by side */
+/* Holds the scrubber's label and the year-bracket step toggle side by side */
 .scrub-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
 .scrub-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
-/* NEW: year-bracket step toggle */
+/* Toggles how many years each timeline bar covers (1/2/5yr brackets) */
 .step-btn{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.42);color:#fff;border-radius:6px;padding:3px 10px;cursor:pointer;transition:background .15s,border-color .15s;white-space:nowrap}
 .step-btn:hover{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.7)}
 .step-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
@@ -477,6 +477,17 @@ const CATS = {
   wheel:"Wheels & Tires", comp:"Components", emtb:"E-MTB & Electronics",
   frame:"Frame & Standards", transport:"Bike Transport"
 };
+/* Status → CSS color variable, for the one spot (the Stats tab's status
+   stacked-bar) that needs a color as a JS string rather than a CSS class.
+   Everywhere else (pills, etc.) applies the status as a class name and lets
+   .pill.active / .pill.expired / .pill.pending in the stylesheet handle
+   color — this constant exists only because inline-styled bar segments
+   need the value directly. Keep in sync with the --st-* variables defined
+   per-theme at the top of <style>. */
+const STATUS_COLOR_VAR = {
+  active:"var(--st-active)", expired:"var(--st-expired)",
+  pending:"var(--st-pending)", unknown:"var(--ink-soft)"
+};
 /* Brand (and individual inventor) headquarters — used only to make
    state/region names searchable (e.g. searching "Colorado" surfaces
    Spot/Gates/MRP/Revel/Reeb even when an entry's own text never spells out
@@ -549,7 +560,7 @@ const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devin
 "Cannondale","Marzocchi","Scott","Rimpact","Gehl Company","Pinion","Effigear","Lal Bikes","Mavic","Michelin","Hutchinson",
 "CushCore","Maxxis","Schwalbe","Continental","Industry Nine","Berd","Hadley Racing","Kind Shock","Crankbrothers","ODI",
 "Magura","TQ","Fazua","Atherton","Robot Bike Co.","Guerrilla Gravity","Allite","Mondraker","e*thirteen","I-Track Suspension",
-"Auckland Cycle Works","Dia-Compe","Cane Creek","Truvativ","Race Face","Bontrager","Answer","Bold Cycles","Reserve Wheels","Peaty's"];
+"Auckland Cycle Works","Dia-Compe","Cane Creek","Truvativ","Race Face","Bontrager","Answer","Bold Cycles","Reserve Wheels","Peaty's","Foxfolk"];
 
 const D = [
 /* ---- Rear Suspension ---- */
@@ -847,9 +858,12 @@ const D = [
 {y:2016,g:2016,t:"Stan's v. Specialized (litigation)",a:"Stan's NoTubes vs. Specialized",num:null,cat:"wheel",st:"expired",exp:null,b:["litigated"],who:["Stan's","Specialized"],conf:"v",
  s:"PTAB ruled for Stan's; the Court of Appeals for the Federal Circuit affirmed in February 2016, with compensation owed.",
  w:"A small upstate-NY company successfully defending tubeless IP against the industry's biggest brand."},
-{y:1998,g:2000,t:"UST tubeless system",a:"Mavic / Michelin / Hutchinson",num:null,cat:"wheel",st:"expired",exp:2020,b:["licensor"],who:["Mavic","Michelin","Hutchinson"],conf:"m",
- s:"The original certified tubeless standard: sealed rim bed, hooked bead interface, and a licensing program.",
+{y:1998,g:2001,t:"UST tubeless system (US 6,257,676)",a:"Mavic / Michelin / Hutchinson",num:"6257676",nums:["6257676","6443533","6641227"],cat:"wheel",st:"expired",exp:2018,b:["licensor"],who:["Mavic","Michelin","Hutchinson"],conf:"v",
+ s:"The original certified tubeless standard: a rim bed with a narrow recessed central well and oblique bead seats, a hooked bead interface, and a licensing program requiring both a certified UST rim and a certified UST tire. US 6,257,676, filed July 24, 1998 and granted July 10, 2001, credited to Jean-Pierre Lacombe and Jean-Pierre Mercat, with two later continuations (6,443,533; 6,641,227) extending the family into 2003.",
  w:"Tubeless 1.0 — a closed, licensed standard that the open 'tubeless-ready' world eventually routed around."},
+{y:1997,g:2001,t:"Mavic ISM & FORE rim manufacturing patents",a:"Mavic S.A. (Annecy, France)",num:"6402256",nums:["6402256","6216344","6224165"],cat:"wheel",st:"expired",exp:2020,b:[],who:["Mavic"],conf:"m",
+ s:"Two related manufacturing techniques from the same era as UST, both still marketed on current Mavic wheels. ISM (Inter Spoke Milling) mills the rim wall down to a lower thickness in the material between spoke holes while leaving full thickness right at each hole — cutting rim weight 10-20% without losing strength (US 6,402,256, filed 2000, granted 2002, credited to Jean-Pierre Mercat). FORE threads a spoke tunnel into only the outer rim wall via a flow-drilled 'chimney,' rather than piercing straight through — eliminating rim tape and the spoke-hole leak path (closest documented match: US 6,216,344 and 6,224,165, filed 1997-99).",
+ w:"Mavic's own marketing names (ISM, FORE) don't appear verbatim in the patent text, so the FORE match here is by mechanism rather than a named citation — flagged at medium confidence rather than verified for that reason. ISM's match is unambiguous."},
 {y:2015,g:2019,t:"CushCore tire insert + Hi-Flo valve (4 patents)",a:"CushCore, Inc. (Adam Krefting)",num:"10787043",nums:["10787043","10703149","10286736","10293640"],cat:"wheel",st:"active",exp:2036,b:[],who:["CushCore","Adam Krefting"],conf:"v",
  s:"A closed-cell foam insert (US 10,787,043, plus earlier continuations 10,286,736 and 10,293,640) occupying 80-90% of a tire's inner volume, pre-loaded wider than the tire itself so it wedges constant outward pressure against both sidewalls — stabilizing cornering, damping impacts, and resisting burping. A separate patent (10,703,149) covers the Hi-Flo valve, whose T-shaped, multi-hole air passage resists clogging from tire sealant. In 2026 CushCore added a separate patent-pending rotary tool that glides a tire onto the rim, tackling the notoriously hard installation its own inserts are known for.",
  w:"A whole accessory category created — then crowded by competitors testing the patent's edges. Inventor Adam Krefting holds the core IP personally, assigned to CushCore Inc.; the newer mounting-tool patent is a tell that the company solved the install problem its first product created, and patented that too."},
@@ -905,6 +919,9 @@ const D = [
 {y:2024,g:null,t:"Chilao SS 'Static Spring' pedal axle (patent pending)",a:"Yoshimura Cycling (Chino, CA)",num:null,cat:"comp",st:"pending",exp:null,b:[],who:["Yoshimura"],conf:"l",
  s:"A coil spring inside the pedal body preloads the outer bearing against the end cap, holding side-load on the bearings and dust seal constant regardless of installation torque or wear — paired with an impact flange that routes pedal-strike loads through the spindle rather than the bearings. Announced April 1, 2024 on the second-generation Chilao pedal; still listed as patent pending as of the most recent product materials.",
  w:"Yoshimura's 70 years of motorsport exhaust and suspension-tuning credibility applied to a $229 flat pedal — proof the atlas's boutique-patent-pending pattern (WRP, EXT, Antidote) isn't limited to suspension and frames."},
+{y:2022,g:null,t:"Dirtskirt lower-linkage frame protector (patented)",a:"Foxfolk (Queenstown, NZ)",num:null,cat:"comp",st:"active",exp:null,j:"NZ",b:[],who:["Foxfolk"],conf:"m",
+ s:"A stick-on acetate-backed EVA (V1) or molded silicone (V2) shield that adheres over a full-suspension frame's lower-linkage gap, flexing through the suspension's travel to keep mud and stones from wedging between the swingarm and main frame — a 'nutcracker' effect that can crack an otherwise-warranty-covered carbon frame. V1 launched 2022 fitted only to Stumpjumper/Stumpjumper EVO frames after 186 prototypes and 18 months of R&D; V2 (2023) moved to a universal design compatible with 37+ brands across Single Pivot, Horst Link, and Delta suspension platforms. Founded by Mikkel Johannessen.",
+ w:"The atlas's first confirmed New Zealand entry. 'Patented' is stated repeatedly and consistently — by Foxfolk's own product pages and independently by Bikerumor, Vital MTB, and others — but no public patent number turned up in general search; IPONZ's own register isn't indexed by search engines the way USPTO/Google Patents are. Flagged at medium rather than verified confidence for that reason, not because the claim looks doubtful."},
 {y:1965,g:1966,t:"Schwinn Sting-Ray banana seat (US D204,121)",a:"Frank P. Brilando / Arnold, Schwinn & Co.",num:"D204121",cat:"comp",st:"expired",exp:1970,b:["litigated","priorart"],who:["Schwinn","Frank P. Brilando"],conf:"v",
  s:"A design patent on the elongated 'banana' seat shape defining the Sting-Ray, filed January 1965 and granted March 1966 to Schwinn chief engineer Frank P. Brilando. Schwinn licensed Troxel Manufacturing to build seats under it in 1967, then sued Goodyear Tire & Rubber over a similar seat sold through Troxel's rival Fisher Cycle. The Ninth Circuit invalidated the patent in 1970 (Schwinn Bicycle Co. v. Goodyear Tire & Rubber Co., 444 F.2d 295): the design had already been publicly advertised in a June 1963 Schwinn ad, more than a year before the 1965 filing, which is fatal prior art against Schwinn's own patent under the on-sale bar.",
  w:"Design patents get comparatively little scrutiny elsewhere in this atlas, but this one is a clean case study of the doctrine's sharpest edge: a company can invalidate its own patent by advertising the product too early. The shape survived every court loss to become one of the most recognized silhouettes in American bicycle history — the IP died in 1970, the design never did."},
@@ -1002,6 +1019,9 @@ const D = [
 {y:2018,g:2020,t:"eMTB mode / ride-sensor control",a:"Bosch",num:null,cat:"emtb",st:"active",exp:2038,b:[],who:["Bosch"],conf:"l",
  s:"Software-defined assistance that modulates power from torque, cadence and pitch sensing.",
  w:"Ride feel as firmware — the patents are increasingly in the algorithms."},
+{y:2018,g:2025,t:"X-Tend e-bike motor platform (15-patent family)",a:"Mavic Group (Chavanod, France)",num:"12434786",nums:["12434786","12325488"],cat:"emtb",st:"active",exp:2038,b:[],who:["Mavic"],conf:"v",
+ s:"An 87mm-diameter motor shell sized to slot into a purpose-built bottom bracket, with a cycloidal reduction gear bringing motor RPM down to pedaling cadence and a pawl-based freewheel/clutch that fully disengages the motor for a claimed zero-drag feel when riding unpowered. Compatible with standard Shimano Hollowtech II cranks; motor alone is a claimed 1.2kg. French priority filing November 2018, developed since 2016, covered by roughly 15 patents worldwide including 8 US applications — US 12,434,786 and US 12,325,488 among the granted examples, both crediting Jean-Pierre Mercat (also the named inventor on Mavic's earlier UST and ISM wheel patents above). Paused during Mavic's 2020 insolvency and Bourrelier Group takeover, revived more recently with Jtekt (Toyota Group) engineering involvement.",
+ w:"Worth flagging: X-Tend is explicitly a road/gravel e-bike system, not an MTB motor — Mavic is chasing sub-10kg e-road builds, not torque for climbs. Included here because it's a direct sibling to the Bosch and Shimano e-MTB entries above (same inventor lineage as Mavic's MTB-relevant wheel patents, too), but it's the one entry in this category that isn't actually mountain-bike technology."},
 {y:2019,g:2021,t:"Reverb AXS wireless actuation",a:"RockShox / SRAM",num:null,cat:"emtb",st:"active",exp:2039,b:[],who:["RockShox","SRAM"],conf:"m",
  s:"Battery-and-solenoid actuation replacing hydraulic hose, inside the AXS wireless ecosystem.",
  w:"The bridge entry between mechanical droppers and the fully electronic cockpit."},
@@ -1336,6 +1356,33 @@ let searchQ = '';
 /* ======== HELPERS ======== */
 const $ = s => document.querySelector(s);
 const NOW = new Date().getFullYear();
+/* Matches the @media(max-width:480px) breakpoint used throughout the
+   stylesheet (mini-btn, hbar-row, bar-gap, co-panel-title, fights headers).
+   Previously this was a standalone 560 found nowhere else in the file —
+   nothing was wrong at runtime, but it meant a phone between 480-559px
+   wide got the "full label" timeline treatment while every other part of
+   the page had already switched to its mobile layout. If the CSS
+   breakpoint ever changes, update this to match — CSS custom properties
+   can't be read inside @media queries, so this can't be linked automatically. */
+const NARROW_BREAKPOINT_PX = 480;
+
+/* ===== Timing constants =====
+   Named individually rather than collapsed into shared values, because a
+   couple of these coincidentally share a number without sharing a purpose
+   (e.g. the two 200ms delays below debounce completely unrelated things) —
+   naming them separately means tuning one later won't silently affect
+   the other. */
+const SEARCH_DEBOUNCE_MS = 150;         // wait after the last keystroke before re-filtering
+const DEEP_LINK_JUMP_DELAY_MS = 150;    // wait for the initial render before jumping to a #p= deep link
+const RESIZE_DEBOUNCE_MS = 200;         // wait after the last resize event before re-rendering the era bars
+const SCROLLER_SETTLE_DELAY_MS = 200;   // one deferred re-check of scroll-arrow visibility once fonts/layout settle
+/* Both cardFlash and btnShimmer (see <style>) are 1.5s CSS animations;
+   this is intentionally ~100ms longer so the class is removed just after
+   the animation finishes rather than cutting it off. If either animation's
+   duration changes, update this to match — CSS animation-duration isn't
+   readable from a plain JS constant without extra plumbing this file
+   doesn't otherwise need. */
+const ANIMATION_CLEANUP_MS = 1600;
 function confLabel(c){ return c==="v"?null : c==="m"?"patent number unverified":"draft data — research in progress"; }
 
 /* Returns era array for current stepYr.
@@ -1379,7 +1426,7 @@ function chip(label,set,key,row,setName){
 }
 Object.entries(CATS).forEach(([k,v])=>chip(v,state.cat,k,$("#rowCat"),"cat"));
 [["active","Active"],["expired","Expired"],["pending","Pending"]].forEach(([k,v])=>chip(v,state.st,k,$("#rowStatus"),"st"));
-/* NEW: Going free soon — active patents expiring within 2 years */
+/* Extra status chip: active patents expiring soon (see goingFreeSoon below) */
 (()=>{
   const b=chip("⏳ Going free soon",state.st,"soon",$("#rowStatus"),"st");
   b.classList.add("chip-soon");
@@ -1392,7 +1439,7 @@ Object.entries(BADGES).forEach(([k,v])=>{
   if(k==="priorart"){ const info=document.createElement("span"); info.className="chip-info"; info.setAttribute("aria-hidden","true"); info.textContent="ⓘ"; b.appendChild(info); }
 });
 INVENTORS.forEach(({label,key})=>chip(label,state.inv,key,$("#rowInv"),"inv"));
-BRANDS.forEach(b=>chip(b,state.brand,b,$("#rowBrand"),"brand"));
+BRANDS.forEach(brand=>chip(brand,state.brand,brand,$("#rowBrand"),"brand"));
 
 /* ======== SCROLLABLE ROW CONTROLS (arrows + show all) ======== */
 function setupScroller(scrollerId, rowId){
@@ -1436,7 +1483,7 @@ function setupScroller(scrollerId, rowId){
   // initial, and a deferred pass once layout settles
   updateState();
   requestAnimationFrame(updateState);
-  setTimeout(updateState,200);
+  setTimeout(updateState,SCROLLER_SETTLE_DELAY_MS);
   return updateState;
 }
 const updInv=setupScroller("scrollInv","rowInv");
@@ -1453,14 +1500,14 @@ const TAB_DEFS=[
 const paneEls={cat:$("#rowCat"),st:$("#rowStatus"),badge:$("#rowBadge"),inv:$("#rowInv"),brand:$("#rowBrand")};
 let activeTab="cat";
 const tabRow=$("#filterTabs");
-TAB_DEFS.concat([{key:"all",label:"All"},{key:"stats",label:"📊 Stats"},{key:"fights",label:"⚔ Fights"}]).forEach(t=>{
-  const b=document.createElement("button");
-  b.className="tab-btn"+(t.key===activeTab?" on":"")+(t.key==="fights"?" tab-fights":"");
-  b.innerHTML=`${t.label}<span class="tab-dot" data-dot="${t.key}"></span>`;
-  b.dataset.tab=t.key;
-  b.setAttribute("aria-pressed",t.key===activeTab?"true":"false");
-  b.onclick=()=>{ activeTab=t.key; renderTabs(); render(); };
-  tabRow.appendChild(b);
+TAB_DEFS.concat([{key:"all",label:"All"},{key:"stats",label:"📊 Stats"},{key:"fights",label:"⚔ Fights"}]).forEach(tabDef=>{
+  const btn=document.createElement("button");
+  btn.className="tab-btn"+(tabDef.key===activeTab?" on":"")+(tabDef.key==="fights"?" tab-fights":"");
+  btn.innerHTML=`${tabDef.label}<span class="tab-dot" data-dot="${tabDef.key}"></span>`;
+  btn.dataset.tab=tabDef.key;
+  btn.setAttribute("aria-pressed",tabDef.key===activeTab?"true":"false");
+  btn.onclick=()=>{ activeTab=tabDef.key; renderTabs(); render(); };
+  tabRow.appendChild(btn);
 });
 function renderTabs(){
   document.querySelectorAll(".tab-btn").forEach(b=>{
@@ -1479,16 +1526,16 @@ function renderTabs(){
   requestAnimationFrame(()=>{ if(typeof updInv==="function")updInv(); if(typeof updBrand==="function")updBrand(); });
 }
 function updateTabDots(){
-  TAB_DEFS.forEach(t=>{
-    const dot=document.querySelector(`.tab-btn[data-tab="${t.key}"] .tab-dot`);
-    if(dot) dot.classList.toggle("show", state[t.key].size>0);
+  TAB_DEFS.forEach(tabDef=>{
+    const dot=document.querySelector(`.tab-btn[data-tab="${tabDef.key}"] .tab-dot`);
+    if(dot) dot.classList.toggle("show", state[tabDef.key].size>0);
   });
   const allDot=document.querySelector('.tab-btn[data-tab="all"] .tab-dot');
   if(allDot) allDot.classList.toggle("show", Object.values(state).some(s=>s.size>0));
 }
 renderTabs();
 
-/* MODIFIED: also clears searchQ */
+/* Resets every filter chip, the search box, and the search state, then re-renders */
 $("#clearAll").onclick=()=>{
   Object.values(state).forEach(s=>s.clear());
   document.querySelectorAll(".chip.on").forEach(c=>{c.classList.remove("on");c.setAttribute("aria-pressed","false")});
@@ -1515,17 +1562,20 @@ document.querySelectorAll(".frow").forEach(row=>{
   },{passive:false});
 });
 
-/* NEW: is this patent going free within the next 2 years? */
+/* Is this an active patent whose estimated expiration falls within the
+   next 2 years? Drives the "Going free soon" chip and Stats-tab list. */
 function goingFreeSoon(d){ return d.st==="active" && d.exp && d.exp>=NOW && d.exp<=NOW+2; }
 
-/* MODIFIED: passes() now also checks searchQ */
+/* Whether entry d matches the current search box text and every active
+   filter chip — the single predicate render() (and the resize-driven bars
+   re-render) filters the full D array through. */
 function passes(d){
   if(searchQ){
     /* Strips accents (é→e, ö→o, …) so "Sunringle" finds "SUNringlé" and
        "Ohlins" finds "Öhlins" — most people typing on a US keyboard won't
        reach for the accented character even when they know it's "correct". */
     const fold=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-    const q=fold(searchQ.toLowerCase());
+    const foldedQuery=fold(searchQ.toLowerCase());
     /* Location terms (state/region/country) aren't written into most entries'
        prose, so without this a search like "Colorado" or "Utah" would only
        catch the handful of entries that happen to mention litigation venues
@@ -1540,7 +1590,7 @@ function passes(d){
        "Drivetrain", "litigated", "Germany") could come back empty, which is
        far more confusing than a search term simply not existing anywhere. */
     const catLabel=CATS[d.cat]||'';
-    const badgeLabels=(d.b||[]).map(b=>b==='litigated'?'litigated':(BADGES[b]||'')).join(' ');
+    const badgeLabels=(d.b||[]).map(badge=>badge==='litigated'?'litigated':(BADGES[badge]||'')).join(' ');
     const jurText=(d.j&&d.j!=='US') ? [d.j, NATOFFICE[d.j]&&NATOFFICE[d.j].full].filter(Boolean).join(' ') : '';
     const yearText=[d.y,d.g,d.exp].filter(Boolean).join(' ');
     const hay=fold([d.t,d.a,d.s,d.w,d.num,...d.who,...(d.nums||[]),hqTerms,catLabel,d.st,badgeLabels,jurText,yearText]
@@ -1549,7 +1599,7 @@ function passes(d){
        with a space still matches — "Bike Yoke" should find "BikeYoke", "One
        Up" should find "OneUp", etc. Only kicks in when the normal spaced
        check fails, so it only adds matches, never removes any. */
-    if(!hay.includes(q) && !hay.replace(/\s+/g,'').includes(q.replace(/\s+/g,''))) return false;
+    if(!hay.includes(foldedQuery) && !hay.replace(/\s+/g,'').includes(foldedQuery.replace(/\s+/g,''))) return false;
   }
   if(state.cat.size && !state.cat.has(d.cat)) return false;
   if(state.st.size){
@@ -1572,6 +1622,7 @@ const NATOFFICE = {
   EP:{full:"EPO Espacenet",               url:"https://worldwide.espacenet.com/patent/search"},
   CA:{full:"Canadian Patent Database (CIPO)", url:"https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en"},
   PL:{full:"Polish Patent Office (UPRP)", url:"https://uprp.gov.pl/en"},
+  NZ:{full:"IPONZ (NZ Intellectual Property Office)", url:"https://www.iponz.govt.nz/get-ip/patents/search/"},
 };
 const NON_ENGLISH_JUR = new Set(["DE","FR","SE","ES","JP","PL"]);
 const JUR_LANG = {DE:"German",FR:"French",SE:"Swedish",ES:"Spanish",JP:"Japanese",PL:"Polish"};
@@ -1619,9 +1670,21 @@ function cardHTML(d){
     `<span class="pill ${d.st}">${d.st}</span>`,
     ...(goingFreeSoon(d)?[`<span class="pill soon">⏳ free by ${d.exp}</span>`]:[]),
     ...(ptPill?[ptPill]:[]),
-    ...d.b.map(b=>b==="litigated"?`<span class="pill litigated">litigated</span>`:`<span class="pill badge">${BADGES[b]}</span>`)
+    ...d.b.map(badge=>badge==="litigated"?`<span class="pill litigated">litigated</span>`:`<span class="pill badge">${BADGES[badge]}</span>`)
   ].join("");
   const cd=d.st==="active"&&d.exp?(d.exp-NOW>0?`<span class="countdown">~${d.exp-NOW} yrs remaining</span>`:`<span class="countdown">expiring</span>`):(d.exp?`est. ${d.exp}`:"—");
+  /* Only used for entries with multiple patent numbers (d.nums) — each one
+     can be in a different format, so this sniffs out which and links/labels
+     it accordingly:
+       RE#######   reissue patent           -> googles as US RE#######
+       XX######... foreign (2-3 letter       -> country code kept, digits
+                    country prefix, e.g.        comma-grouped for reading
+                    EP/CA/DE/TWI)
+       D#######    US design patent          -> shown as "US D#######"
+       ########    plain US utility patent   -> shown as "US ##,###,###"
+     Order matters: RE is checked first since "RE" could otherwise be
+     mistaken for a 2-letter country code, and D-numbers are checked only
+     after ruling out a country-code match. */
   function numLink(n){
     const isRE=/^RE\d/.test(n);
     const countryMatch=!isRE&&n.match(/^([A-Z]{2,3})(\d.*)$/);
@@ -1640,7 +1703,7 @@ function cardHTML(d){
     }
     return {url,label};
   }
-  const q=encodeURIComponent('bicycle '+(d.a.split(/[\/→(]/)[0].trim())+' '+d.t.replace(/\(.*?\)/g,'').split('—')[0].trim());
+  const externalSearchQuery=encodeURIComponent('bicycle '+(d.a.split(/[\/→(]/)[0].trim())+' '+d.t.replace(/\(.*?\)/g,'').split('—')[0].trim());
   /* Derived from BRAND_HQ rather than a separate hardcoded list, so this and
      the search-location fix can't drift out of sync with each other. */
   const isColorado = (d.who||[]).some(w=>BRAND_HQ[w]==="Colorado") || /Colorado|Golden, CO|Carbondale|Longmont|Denver|Boulder|Grand Junction/.test(d.a+" "+d.s+" "+d.w);
@@ -1659,11 +1722,11 @@ function cardHTML(d){
     const pretty=/^[A-Z]{2}/.test(raw)?raw:`US ${raw.replace(/(\d{1,2})(\d{3})(\d{3})$/,"$1,$2,$3")}`;
     gp=`<a class="gp" href="${url}" target="_blank" rel="noopener">View ${pretty} on Google Patents →</a>${transNote}`;
   } else if(jur!=="US"){
-    const espUrl=`https://worldwide.espacenet.com/patent/search?q=${q}`;
+    const espUrl=`https://worldwide.espacenet.com/patent/search?q=${externalSearchQuery}`;
     const natLink=nat?`<a class="gp gp-secondary" href="${nat.url}" target="_blank" rel="noopener">Search ${nat.full} →</a>`:"";
     gp=`<a class="gp" href="${espUrl}" target="_blank" rel="noopener">Search on Espacenet (worldwide) →</a>${natLink}${transNote}`;
   } else {
-    gp=`<a class="gp" href="https://patents.google.com/?q=${q}" target="_blank" rel="noopener">Search related patents on Google Patents →</a>`;
+    gp=`<a class="gp" href="https://patents.google.com/?q=${externalSearchQuery}" target="_blank" rel="noopener">Search related patents on Google Patents →</a>`;
   }
   const figHTML = d.img ? `<figure class="patent-fig">
       <img src="${d.img}" alt="${d.imgAlt || `Original patent drawing for ${d.t.replace(/\(.*?\)/g,'').trim()}`}" loading="lazy">
@@ -1751,7 +1814,7 @@ function renderFights(){
           const h=target.querySelector(".chead"); if(h) h.setAttribute("aria-expanded","true");
           if(target.scrollIntoView) target.scrollIntoView({behavior:"smooth",block:"center"});
           target.classList.add("card-flash");
-          setTimeout(()=>target.classList.remove("card-flash"),1600);
+          setTimeout(()=>target.classList.remove("card-flash"),ANIMATION_CLEANUP_MS);
         }
       });
     };
@@ -1764,6 +1827,26 @@ function renderFights(){
 }
 
 /* ======== STATS SNAPSHOT VIEW ======== */
+/* ===== Shared bar-chart math/markup =====
+   Three different visuals in the Stats tab and timeline all reduce to
+   "this value as a % of some denominator" — pct() keeps that one
+   calculation (and its rounding) in one place instead of three near-copies.
+   hbarRow() is the "name — track with fill — value" row shape used by both
+   the category breakdown and the brand/inventor leaderboard below; those
+   two were previously identical blocks of template-literal HTML with only
+   the CSS variant and data-attribute differing. The timeline era histogram
+   (renderBars, further down) is a genuinely different shape — vertical
+   columns with gap-skipping and label-thinning logic — so it stays
+   separate rather than being forced into this same helper; it still uses
+   pct() for its own percentage math. */
+function pct(value, denom){ return denom ? (value/denom*100) : 0; }
+function hbarRow(name, value, max, {dataAttr, dataVal, variant=""} = {}){
+  return `<div class="hbar-row clickable" data-${dataAttr}="${dataVal}">
+      <span class="hbar-name">${name}</span>
+      <span class="hbar-track"><span class="hbar-fill${variant?" "+variant:""}" style="width:${pct(value,max).toFixed(1)}%;display:block"></span></span>
+      <span class="hbar-val">${value}</span></div>`;
+}
+
 function renderStats(){
   const tl=$("#timeline");
   const total=D.length;
@@ -1780,19 +1863,12 @@ function renderStats(){
   const maxWho=topWho.length?topWho[0][1]:1;
   const maxCat=catCounts.length?catCounts[0].n:1;
   // status stacked bar
-  const stColors={active:"var(--st-active)",expired:"var(--st-expired)",pending:"var(--st-pending)",unknown:"var(--ink-soft)"};
   const stackSegs=Object.entries(stCounts).filter(([,n])=>n>0)
-    .map(([k,n])=>`<div class="stack-seg" style="width:${(n/total*100).toFixed(1)}%;background:${stColors[k]}" title="${k}: ${n}"></div>`).join("");
+    .map(([k,n])=>`<div class="stack-seg" style="width:${pct(n,total).toFixed(1)}%;background:${STATUS_COLOR_VAR[k]}" title="${k}: ${n}"></div>`).join("");
   const stackLegend=Object.entries(stCounts).filter(([,n])=>n>0)
-    .map(([k,n])=>`<span><span class="dot" style="background:${stColors[k]}"></span>${k} · ${n}</span>`).join("");
-  const catBars=catCounts.map(c=>`<div class="hbar-row clickable" data-statcat="${c.key}">
-      <span class="hbar-name">${c.label}</span>
-      <span class="hbar-track"><span class="hbar-fill" style="width:${(c.n/maxCat*100).toFixed(1)}%;display:block"></span></span>
-      <span class="hbar-val">${c.n}</span></div>`).join("");
-  const whoBars=topWho.map(([w,n])=>`<div class="hbar-row clickable" data-statwho="${encodeURIComponent(w)}">
-      <span class="hbar-name">${w}</span>
-      <span class="hbar-track"><span class="hbar-fill alt" style="width:${(n/maxWho*100).toFixed(1)}%;display:block"></span></span>
-      <span class="hbar-val">${n}</span></div>`).join("");
+    .map(([k,n])=>`<span><span class="dot" style="background:${STATUS_COLOR_VAR[k]}"></span>${k} · ${n}</span>`).join("");
+  const catBars=catCounts.map(c=>hbarRow(c.label, c.n, maxCat, {dataAttr:"statcat", dataVal:c.key})).join("");
+  const whoBars=topWho.map(([w,n])=>hbarRow(w, n, maxWho, {dataAttr:"statwho", dataVal:encodeURIComponent(w), variant:"alt"})).join("");
   const soonList=soon.length?`<ul class="soon-list">${soon.map(d=>
       `<li data-jumpref="${cardRef(d)}"><span class="soon-yr">${d.exp}</span><span>${d.t} — ${d.a}</span></li>`).join("")}</ul>`
     :`<p class="stats-intro">No active patents in the atlas are estimated to expire within the next two years.</p>`;
@@ -1846,7 +1922,9 @@ function renderStats(){
   renderBars(D);
 }
 
-/* MODIFIED: render() now uses getEras() for step-aware grouping */
+/* Main entry point: applies filters/search, routes to the Fights or Stats
+   view if one of those tabs is active, otherwise groups the timeline into
+   the current step size (getEras) and rebuilds the card list. */
 function render(){
   if(typeof syncHash==="function") syncHash();
   if(typeof activeTab!=="undefined" && activeTab==="fights"){ renderFights(); return; }
@@ -1881,13 +1959,16 @@ function render(){
   renderBars(list);
 }
 
-/* MODIFIED: renderBars() uses getEras() + adjusts bar min-width for step */
+/* Draws the era histogram above the timeline: one bar per bracket from
+   getEras(), sized by how many entries in `list` fall in that bracket
+   relative to the full dataset, with empty brackets skipped and gap
+   markers inserted where several in a row are missing. */
 function renderBars(list){
   const bars=$("#bars"); bars.innerHTML="";
   const eras=getEras();
   /* On narrow screens there isn't room for a label under every bar, so we show
      decade markers only. Recomputed each render; a resize listener re-renders. */
-  const narrow = (typeof window!=="undefined" && window.innerWidth) ? window.innerWidth<560 : false;
+  const narrow = (typeof window!=="undefined" && window.innerWidth) ? window.innerWidth<NARROW_BREAKPOINT_PX : false;
   const minW=stepYr===1?"3px":stepYr===2?"5px":"8px";
   const max=Math.max(...eras.map(e=>D.filter(d=>d.y>=e.from&&d.y<=e.to).length),1);
   /* Empty brackets are skipped rather than drawn, which would otherwise place
@@ -1909,7 +1990,7 @@ function renderBars(list){
     skipped=0;
     const b=document.createElement("button");
     b.className="bar";
-    b.style.height=Math.max(8,(full/max)*100)+"%";
+    b.style.height=Math.max(8,pct(full,max))+"%";
     b.style.opacity=cur?1:.35;
     b.style.minWidth=minW;
     b.setAttribute("aria-label",`${e.label}: ${cur} matching of ${full} patents — jump to era`);
@@ -1959,8 +2040,8 @@ function initFromHash(){
     const v=p.get(k);
     if(v) v.split(",").forEach(x=>{ if(x) state[k].add(decodeURIComponent(x)); });
   });
-  const q=p.get("q");
-  if(q){ searchQ=q; const si=document.getElementById("searchInput"); if(si) si.value=q; }
+  const hashQuery=p.get("q");
+  if(hashQuery){ searchQ=hashQuery; const si=document.getElementById("searchInput"); if(si) si.value=hashQuery; }
   const tab=p.get("tab");
   if(tab && document.querySelector(`.tab-btn[data-tab="${tab}"]`)) activeTab=tab;
   pendingCardRef=p.get("p");
@@ -1983,14 +2064,14 @@ function jumpToCard(ref){
       const h=target.querySelector(".chead"); if(h) h.setAttribute("aria-expanded","true");
       if(target.scrollIntoView) target.scrollIntoView({behavior:"smooth",block:"center"});
       target.classList.add("card-flash");
-      setTimeout(()=>target.classList.remove("card-flash"),1600);
+      setTimeout(()=>target.classList.remove("card-flash"),ANIMATION_CLEANUP_MS);
     }
   });
 }
 
 initFromHash();
 render();
-if(pendingCardRef){ const r=pendingCardRef; pendingCardRef=null; setTimeout(()=>jumpToCard(r),150); }
+if(pendingCardRef){ const r=pendingCardRef; pendingCardRef=null; setTimeout(()=>jumpToCard(r),DEEP_LINK_JUMP_DELAY_MS); }
 
 /* ======== SURPRISE ME ======== */
 document.getElementById("surpriseBtn").addEventListener("click",()=>{
@@ -2016,7 +2097,7 @@ document.getElementById("surpriseBtn").addEventListener("click",()=>{
     btn.classList.remove("shimmer");
     void btn.offsetWidth; // force reflow so the animation replays
     btn.classList.add("shimmer");
-    setTimeout(()=>btn.classList.remove("shimmer"),1600);
+    setTimeout(()=>btn.classList.remove("shimmer"),ANIMATION_CLEANUP_MS);
     schedule();
   }
   function schedule(){
@@ -2040,15 +2121,15 @@ document.getElementById("stepToggle").addEventListener("click",()=>{
   let rt;
   window.addEventListener("resize",()=>{
     clearTimeout(rt);
-    rt=setTimeout(()=>{ try{ renderBars(D.filter(passes)); }catch(e){} },200);
+    rt=setTimeout(()=>{ try{ renderBars(D.filter(passes)); }catch(e){} },RESIZE_DEBOUNCE_MS);
   });
 })();
 
 /* ======== SEARCH INPUT ======== */
 (()=>{
   const inp=document.getElementById("searchInput");
-  let t;
-  inp.addEventListener("input",()=>{ clearTimeout(t); t=setTimeout(()=>{ searchQ=inp.value.trim(); render(); },150); });
+  let searchTimer;
+  inp.addEventListener("input",()=>{ clearTimeout(searchTimer); searchTimer=setTimeout(()=>{ searchQ=inp.value.trim(); render(); },SEARCH_DEBOUNCE_MS); });
   inp.addEventListener("keydown",e=>{ if(e.key==="Escape"){ inp.value=''; searchQ=''; render(); } });
 })();
 /* ======== COLORADO MTB INNOVATION PANEL ======== */
