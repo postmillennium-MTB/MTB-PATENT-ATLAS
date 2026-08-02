@@ -1015,8 +1015,8 @@ const D = [
 {y:1996,g:1998,t:"MIPS — Multi-directional Impact Protection System",a:"Peter Halldin & Hans von Holst / MIPS AB (Sweden)",num:null,cat:"comp",st:"active",exp:null,j:"SE",b:["licensor"],who:["MIPS"],conf:"m",
  s:"A low-friction liner letting the helmet slide 10–15mm relative to the head during angled impacts, reducing rotational forces transmitted to the brain. Born from research at KTH Royal Institute of Technology and the Karolinska Institute in Stockholm; first patents date to the mid-1990s, with a large continuing portfolio.",
  w:"The most successful licensing model in cycling safety — the yellow dot sits in essentially every premium helmet lineup. MIPS never made a helmet; it patented a layer and licensed the physics."},
-{y:1998,g:2014,t:"Alan Coté chain-tension power measurement (6 filings)",a:"Alan Coté (Vermont)",num:"6199021",nums:["6199021","6356848","8646796","8757561"],cat:"comp",st:"expired",exp:2034,b:["priorart"],who:["Alan Coté"],conf:"v",
- s:"A long-running independent portfolio built on one idea: you can derive a rider’s power output by measuring the drive chain itself rather than instrumenting the crank or hub. US 6,199,021 (filed 1998, granted 2001) and its continuation US 6,356,848 claim measuring the tension and vibrational frequency of an elongate flexible member — pluck the chain, read the pitch, infer the load. US 8,646,796 (2014) extends this to extracting vibration data from a chain that is actually moving, the hard version of the problem. Two published applications round out the set: US 2010/0000369 on mounting aerodynamic handlebars and US 2012/0042725 on measuring pedaling dynamics. A fifth grant, US 8,757,561, is unrelated to power — it covers a bicycle brake cable hanger.",
+{y:1998,g:2014,t:"Alan Coté chain-tension power measurement (6 filings)",a:"Alan Coté (Vermont)",num:"6199021",nums:["6199021","6356848","8646796","8757561","20100000369","20120042725"],cat:"comp",st:"active",exp:2034,b:["priorart"],who:["Alan Coté"],conf:"v",
+ s:"A long-running independent portfolio built on one idea: you can derive a rider’s power output by measuring the drive chain itself rather than instrumenting the crank or hub. US 6,199,021 (filed 1998, granted 2001) and its continuation US 6,356,848 claim measuring the tension and vibrational frequency of an elongate flexible member — pluck the chain, read the pitch, infer the load. US 8,646,796 (2014) extends this to extracting vibration data from a chain that is actually moving, the hard version of the problem. Two published applications round out the set, neither of which became a patent: US 2010/0000369 on mounting aerodynamic handlebars (three-point aerobar mounting braced against the stem, filed under the inventor name Alan Francis Coté) went abandoned in November 2012 after no response to an office action, and US 2012/0042725 on measuring pedaling dynamics is published but not verified here as granted. A fourth grant, US 8,757,561, is unrelated to power — it covers a bicycle brake cable hanger. Status here follows the longest-lived member of the group: the two 2014 grants run to roughly 2034, while the 1998 and 2000 filings lapsed years ago, and the two publications are applications rather than granted patents.",
  w:"Prior art worth knowing about in a market that went a different way. Every mainstream power meter measures strain in the crank, spider, pedal or hub; Coté’s filings stake out the chain-tension route years before power meters were consumer products. The commercial history is thin, but the early priority dates make this a portfolio that anyone filing chain-based measurement claims today would have to reckon with. Coté now works as a bicycle patent expert witness, which is its own kind of second act."},
 /* ---- E-MTB & Electronics ---- */
 {y:2015,g:2017,t:"Dyname electric propulsion system (US 9,643,683)",a:"Propulsion PowerCycle Inc. (now Dyname) — exclusive to Rocky Mountain",num:"9643683",nums:["9643683","EP2957496"],cat:"emtb",st:"active",exp:2035,b:["licensor"],who:["Rocky Mountain"],conf:"v",
@@ -1711,18 +1711,28 @@ function cardHTML(d){
                     country prefix, e.g.        comma-grouped for reading
                     EP/CA/DE/TWI)
        D#######    US design patent          -> shown as "US D#######"
+       YYYYNNNNNNN pre-grant publication      -> shown as "US YYYY/NNNNNNN"
+                    (11 digits: 4-digit year      (an application, not a grant;
+                     + 7-digit serial)             linked with its A1 kind code)
        ########    plain US utility patent   -> shown as "US ##,###,###"
      Order matters: RE is checked first since "RE" could otherwise be
-     mistaken for a 2-letter country code, and D-numbers are checked only
-     after ruling out a country-code match. */
+     mistaken for a 2-letter country code; D-numbers are checked only after
+     ruling out a country-code match; and the 11-digit publication test runs
+     before the utility formatter, which would otherwise comma-group the
+     trailing 8 digits and render "US 2010/0000369" as "US 20100,000,369". */
   function numLink(n){
     const isRE=/^RE\d/.test(n);
     const countryMatch=!isRE&&n.match(/^([A-Z]{2,3})(\d.*)$/);
     const isD=n.startsWith("D")&&!countryMatch&&!isRE;
-    const url=isRE?`https://patents.google.com/patent/US${n}`:patentUrl(n,"US");
+    const isApp=!isRE&&!countryMatch&&/^(19|20)\d{9}$/.test(n);
+    const url=isRE?`https://patents.google.com/patent/US${n}`
+            : isApp?`https://patents.google.com/patent/US${n}A1`
+            : patentUrl(n,"US");
     let label;
     if(isRE){
       label=`US RE${n.slice(2)}`;
+    } else if(isApp){
+      label=`US ${n.slice(0,4)}/${n.slice(4)}`;
     } else if(countryMatch){
       const cc=countryMatch[1], digits=countryMatch[2];
       label=`${cc} ${digits.replace(/(\d{1,3})(\d{3})(\d{3})$/,"$1,$2,$3")}`;
