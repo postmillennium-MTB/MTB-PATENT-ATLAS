@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 244 patents and applications spanning 1890 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 248 patents and applications spanning 1890 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 244 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 244 |
+| **Total entries** | 248 |
 | **Year range** | 1890 – 2026 |
-| **Active patents** | 123 |
+| **Active patents** | 126 |
 | **Expired patents** | 79 |
 | **Pending applications** | 38 |
 | **Litigated entries** | 22 |
 | **Patent Fights (named rivalries)** | 7 |
-| **Brands** | 134 |
-| **Named inventors** | 39 |
+| **Brands** | 136 |
+| **Named inventors** | 40 |
 | **Non-US jurisdictions** | 15 (AU, BE, CH, CN, DE, EP, ES, FR, GB, IS, IT, NZ, PL, SE, ZA) |
-| **Verified entries** | 133 |
+| **Verified entries** | 137 |
 | **Medium confidence** | 56 |
 | **Draft / in progress** | 55 |
 
@@ -95,7 +95,7 @@ A "PMR ↗" button in the header top-right returns to [postmillenniumrenaissance
 
 ## Named inventors
 
-Canfield (Lance & Chris) · Dave Weagle · Horst Leitner · Joe Breeze · Josh Angell · Paul Turner · Jo Klieber · David Earle · Wayne Lumpkin · Gavin Vos · Cal Phillips · Richard Bryne · Brian Scura · Charles Curnutt · Damon Madsen · Scot Breithaupt · Sam Garrett · Adam Krefting · Benedikt Skulason · Owen Pemberton · Mic Williams · Bill Shook · Frank W. Schwinn · Frank P. Brilando · McKay H. Davis · Jim Busby · Mert Lawwill · Tony Ellsworth · Gary Ewing · Doug Bradbury · Cedric Eveleigh · Wayne Sicz · John Rader · John Castellano · Stefan Sack · Joseph N. Newsom · Alan Coté · Manuel Martínez Guillén · Hugh McLeay
+Canfield (Lance & Chris) · Dave Weagle · Horst Leitner · Joe Breeze · Josh Angell · Paul Turner · Jo Klieber · David Earle · Wayne Lumpkin · Gavin Vos · Cal Phillips · Richard Bryne · Brian Scura · Charles Curnutt · Damon Madsen · Scot Breithaupt · Sam Garrett · Adam Krefting · Benedikt Skulason · Owen Pemberton · Mic Williams · Bill Shook · Frank W. Schwinn · Frank P. Brilando · McKay H. Davis · Jim Busby · Mert Lawwill · Tony Ellsworth · Gary Ewing · Doug Bradbury · Cedric Eveleigh · Wayne Sicz · John Rader · John Castellano · Stefan Sack · Joseph N. Newsom · Alan Coté · Manuel Martínez Guillén · Hugh McLeay · Keith Scott
 
 ---
 
@@ -240,6 +240,9 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **New entry: Forcite smart helmet electronics (US 12,016,421).** Real number, confirmed via GoPro's own patents page (per search-engine corroboration — this sandbox couldn't reach gopro.com, patents.google.com, or the USPTO directly to verify beyond that), tied to GoPro's January 2024 acquisition of Forcite Helmet Systems, an Australian smart-motorcycle-helmet maker. Shipped at `conf:"m"` rather than `"v"` since the title, exact filing date, and claims are unconfirmed this pass — the grant year (2024) is an estimate from USPTO numbering pace, stated as such rather than presented as fact. Flagged directly in the entry as an edge-of-scope inclusion (a motorcycle helmet, not a mountain bike part) — the same call the atlas already makes for Mavic's road-e-bike X-Tend motor, included because the acquisition folds Forcite's IP into the same GoPro portfolio the action-camera entries already cover.
 - **Five user-verified patent numbers, cross-checked and filled in:** Manitou's **Reverse Arch fork chassis** now cites US 6,607,185 ("Suspension fork having reversed arch," Answer Products, Inc., filed Oct 17, 2001, granted Apr 17, 2003 — confirmed against Google Patents), correcting the card's previous unverified 2002/2004/2022 dates to the real 2001/2003/2021. **Wayne Sicz's Gravity Dropper** now cites the granted US patent behind the WO 2007/117884 PCT application the user linked: US 7,422,224 ("Adjustable bicycle seat post assembly," Kimir Seatpost — Sicz and co-inventor Arlen Wisseman — filed March 2007, granted September 2008), a genuine surprise since the product hit Interbike in 2000–03, years before this patent was even filed; corrected status from `expired` to `active` (it doesn't expire until 2027) and `conf` from `m` to `v`. **ODI's Lock-On grip system** now cites the two-patent continuation family behind the user-linked US 6,263,759: the parent, US 6,035,742 (filed 1997), and its continuation-in-part US 6,263,759 (filed 1999, "Removable, non-turning handlebar grip") — bumped to `v`. **Castellano's Sweet Spot** and the **Precision suspension fork family** (US 5,470,090 et al.) each got a `nums`/verification pass too — the latter's assignee remains genuinely unconfirmed even with the new patent-drawing image (a stated gap, not a guess), so it stays at `conf:"m"`, but the entry now cites all three family members as a formal `nums` array (5,470,090; 5,445,401; 5,509,677) instead of prose-only, and the "granted the same day as Leitner's 5,509,679" trivia now has a confirmed date (April 23, 1996) behind it.
 - **Five new patent-drawing images added directly to `pictures/`** (`US5474318A.png`, `US5509677A.png`, `US6607185B2.png`, `WO2007117884A2.png`, `US11019237B2.png`) — the first four wired into the five entries above via `img`/`imgAlt`. The fifth, `US11019237B2.png`, shows a multi-camera wireless-synchronization patent (three cameras, labeled A/B/C, linked by wireless signal arrows) that doesn't match anything else added this pass and couldn't be tied to an existing or new atlas entry — flagging it back to the user rather than guessing at a connection or leaving it silently unused.
+- **Resolved the previously-flagged `US11019237B2.png` mystery and traced a real gap in the Yeti coverage.** The user confirmed the multi-camera image is a GoPro patent; added as a new entry, "Multi-camera wireless sync (US 11,019,237)" — camera-to-camera wireless pairing so multi-angle footage syncs automatically without a wired genlock or manual clap-sync. Title/filing date weren't independently confirmable via this sandbox's search this pass, so it ships at `conf:"m"`, built from what the drawing itself shows plus the user's identification. Separately, the user asked why Yeti's original 2010 "Switch Technology" entry was still unverified given Yeti's own patents page — the answer turned out to be structural, not an oversight: that patent family (US 8,066,297 + 8,201,841, "Bicycle rear suspension linkage") was never Yeti's to begin with. It was developed by Sotto Group (Luther Beale and David Earle) and exclusively *licensed* to Yeti — then reassigned to Earle's own Sine Suspension LLC in 2020 — so it was never going to appear on a marking page that only lists what Yeti itself owns. Confirmed and cited both numbers, bumped to `v`. This also confirmed the *other* Yeti mapping from the previous pass was correct: US 9,821,879 and siblings really are Switch **Infinity** (the 2014+ translating-rail system, "Reciprocating rail movement suspension system"), a mechanically distinct, separately-invented system from the original eccentric-pivot Switch — not two names for the same patent family.
+- **Six more entries added or verified from user-supplied leads:** the **DW-Link family** entry now also cites US 7,661,503 ("Vehicle suspension system for stable squat magnitude responses," 56 sheets, extending the DW-Link method to motorcycles/ATVs), confirmed as DW-Link Incorporated/David Weagle IP and bumped to `v`. New entry: **Trek rearward-axle-path suspension (US 6,203,042)**, filed 1999 under Weston M. Wilcox — five years before Active Braking Pivot, Trek was already patenting rearward axle-path behavior through a different mechanism (linkage geometry, not a concentric pivot). New entry: **BMX/MTB starting gate (US 7,665,929)**, Prostuff LLC — the atlas's first patent on racing infrastructure rather than a bike itself. New entry: **Banshee KS-Link / KS2 (no patent)** — confirmed via Banshee's own public statements that engineer/co-owner Keith Scott's dual-link design was deliberately never patented, the same strategic-non-patent story as the existing SE Quadangle entry; this is also why searching "Keith Scott" previously returned nothing, and now it won't. **Two more images wired in:** `US11090977B2.png` onto the existing Reynolds wheel-patent entry, and `US7661503B2.png` onto the DW-Link entry.
+- **Two source pages the user asked about, both blocked in this sandbox:** Rocky Mountain's own patent-marking page (bikes.com/pages/patents) and OneUp Components' IP page (oneupcomponents.com/pages/ip). Neither could be fetched directly — flagged back to the user to paste, the same way the Yeti and GoPro marking-page content came in earlier.
 
 ---
 
