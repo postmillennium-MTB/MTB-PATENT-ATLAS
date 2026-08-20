@@ -91,7 +91,23 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
 .mini-btn{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.04em;background:var(--surface);border:1px solid var(--card-border);color:var(--ink);border-radius:999px;padding:5px 11px;min-height:30px;white-space:nowrap;transition:border-color .15s,background .15s}
 .mini-btn:hover{border-color:var(--primary)}
 .mini-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+/* Brief solid-fill confirmation state after a successful copy — same
+   ANIMATION_CLEANUP_MS timeout the deep-link card-flash uses, so every
+   "did that work?" confirmation in the app lasts the same 1.6s. */
+.mini-btn.flash{background:var(--primary);color:#fff;border-color:var(--primary)}
 @media(max-width:480px){.mini-btn{font-size:10px;padding:4px 8px}}
+/* ---------- Per-card share button ----------
+   A small icon-only button sitting beside .chead rather than inside it —
+   .chead is itself a <button> (the expand/collapse toggle), and buttons
+   can't nest, so the two live as flex siblings in .chead-row instead. */
+.chead-row{display:flex;align-items:flex-start}
+.chead-row .chead{flex:1;width:auto}
+.card-share-btn{flex:0 0 auto;width:30px;height:30px;margin:11px 12px 0 0;border-radius:50%;border:1px solid var(--card-border);background:var(--surface);color:var(--ink-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:color .15s,border-color .15s,background .15s}
+.card-share-btn:hover{color:var(--primary);border-color:var(--primary)}
+.card-share-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.card-share-btn svg{width:15px;height:15px;pointer-events:none}
+.card-share-btn.copied{color:#fff;background:var(--primary);border-color:var(--primary)}
+@media(max-width:480px){.card-share-btn{width:28px;height:28px;margin:10px 8px 0 0}}
 /* ---------- Surprise me shimmer ----------
    A light sweep passes across the button at random intervals (see JS) to hint
    that it's interactive. Deliberately subtle: a soft highlight, no color or
@@ -426,6 +442,7 @@ html,body{overflow-x:hidden;max-width:100%}
     <span id="resultCount"></span>
     <span class="fmeta-actions">
       <button class="mini-btn" id="surpriseBtn" title="Jump to a random patent">🎲 Surprise me</button>
+      <button class="mini-btn" id="shareBtn" title="Copy a link to this exact view">🔗 Share view</button>
       <button class="clearbtn" id="clearAll" hidden>Clear filters</button>
     </span>
   </div>
@@ -1238,8 +1255,10 @@ const D = [
 {y:2011,g:2014,t:"Trek DRCV dual-chamber air shock (US 8,894,083)",a:"Trek Bicycle (with Fox)",num:"8894083",cat:"fork",st:"active",exp:2031,b:[],who:["Trek","Fox"],conf:"m",
  s:"Dual Rate Control Valve — a two-chamber air shock co-developed with Fox that opens a second air volume partway through travel, giving a supple beginning and supportive end without a piggyback.",
  w:"A rare co-developed-patent entry: a frame brand and a suspension brand sharing IP on a single shock, prefiguring the deeper Trek–Fox collaborations that followed."},
-{y:1986,g:null,t:"BMX Gyro detangler (Taiwan-origin, US refinements)",a:"Brian Scura / Odyssey BMX",num:"6968927",nums:["6968927","5829314","6164153","6205635"],cat:"comp",st:"active",exp:2023,b:["licensor"],who:["Brian Scura","Odyssey"],conf:"m",
- s:"The Gyro lets BMX handlebars spin 360° without tangling the rear-brake cable, via a split dual-cable system around a rotating bearing. Brian Scura designed it; the original mechanism traces to a Taiwanese filing commercialized by Odyssey (Bear Corp), while Scura's well-documented US portfolio (5,829,314; 6,164,153; 6,205,635; 6,968,927) covers anti-flop and cable-balancing refinements over the following 15 years.",
+{y:1986,g:2000,t:"BMX Gyro detangler (Taiwan-origin, US refinements)",a:"Brian Scura / Odyssey BMX",num:"6968927",nums:["6968927","5829314","6164153","6205635"],cat:"comp",st:"active",exp:2023,b:["licensor"],who:["Brian Scura","Odyssey"],conf:"v",
+ s:"The Gyro lets BMX handlebars spin 360° without tangling the rear-brake cable, via a split dual-cable system around a rotating bearing. Brian Scura designed it; the original mechanism traces to a Taiwanese filing commercialized by Odyssey (Bear Corp), while Scura's well-documented US portfolio covers anti-flop and cable-balancing refinements over the following 15 years: US 5,829,314, US 6,164,153 (granted December 26, 2000 — 'Method for adjusting cable detangler systems,' mounted at the stem/headset), US 6,205,635, and US 6,968,927 ('Bicycle force balancing mechanism').",
+ img:"pictures/US6164153A.png",
+ imgAlt:"Brian Scura BMX Gyro detangler patent drawing, Fig. 1, showing the stem-mounted cable-balancing mechanism",
  w:"'Gyro' is an Odyssey trademark, not a patent. The cleaner story isn't 'Odyssey patented the Gyro in the US' — it's that the original protection was Taiwanese, and the inventor spent the next decade-plus re-patenting improvements in the US. A reminder that famous product names and actual patent chains rarely line up neatly."},
 {y:1974,g:1975,t:"Mongoose Motomag cast wheel (US D236,609)",a:"BMX Products, Inc. (Mongoose)",num:"D236609",cat:"wheel",st:"expired",exp:1989,b:[],who:["Mongoose"],conf:"v",
  s:"The original cast-magnesium (later aluminum) Motomag wheel — a design patent on the five-spoke 'mag' shape that defined mid-1970s BMX and became one of the most recognizable wheels in the sport.",
@@ -1816,7 +1835,9 @@ function cardHTML(d){
       <img src="${f.src}" alt="${f.alt || `Original patent drawing for ${d.t.replace(/\(.*?\)/g,'').trim()}`}" loading="lazy">
       <figcaption><span>${f.caption||"Fig. from original filing"}</span>${f.link?`<a href="${f.link}" target="_blank" rel="noopener">View full patent →</a>`:(d.num?`<a href="${patentUrl(d.num,jur)}" target="_blank" rel="noopener">View full patent →</a>`:"")}</figcaption>
     </figure>`).join("") : "";
-  return `<article class="card ${d.st==='pending'?'pending-card':''} ${(d.b&&d.b.includes('litigated'))?'lit-card':''}" data-y="${d.y}" id="p-${cardRef(d)}">
+  const ref=cardRef(d);
+  return `<article class="card ${d.st==='pending'?'pending-card':''} ${(d.b&&d.b.includes('litigated'))?'lit-card':''}" data-y="${d.y}" id="p-${ref}">
+    <div class="chead-row">
     <button class="chead" aria-expanded="false">
       <span class="yr">${d.y}</span>${showJurTag?`<span class="jtag">${jur}</span>`:''}
       <span class="ct">
@@ -1827,6 +1848,10 @@ function cardHTML(d){
       </span>
       <span class="caret">▼</span>
     </button>
+    <button class="card-share-btn" data-ref="${ref}" aria-label="Copy link to this patent" title="Copy link to this patent">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+    </button>
+    </div>
     <div class="cbody">
       <p>${d.s}</p>
       ${figHTML}
@@ -2034,6 +2059,16 @@ function render(){
   tl.querySelectorAll(".co-link").forEach(b=>{
     b.onclick=(e)=>{ e.stopPropagation(); openColorado(); };
   });
+  tl.querySelectorAll(".card-share-btn").forEach(b=>{
+    b.onclick=async(e)=>{
+      e.stopPropagation();
+      const url=`${location.origin}${location.pathname}${location.search}#p=${encodeURIComponent(b.dataset.ref)}`;
+      if(await copyToClipboard(url)){
+        b.classList.add("copied");
+        setTimeout(()=>b.classList.remove("copied"),ANIMATION_CLEANUP_MS);
+      }
+    };
+  });
   // counts + clear
   const total=D.length, n=list.length;
   const anyFilter=Object.values(state).some(s=>s.size)||searchQ;
@@ -2162,6 +2197,43 @@ document.getElementById("surpriseBtn").addEventListener("click",()=>{
   const pool=(activeTab!=="fights"&&activeTab!=="stats")?D.filter(passes):D;
   const pick=(pool.length?pool:D)[Math.floor(Math.random()*(pool.length?pool.length:D.length))];
   if(pick) jumpToCard(cardRef(pick));
+});
+
+/* ======== SHARE (toolbar "share view" + per-card share buttons) ========
+   One clipboard helper backs both: the toolbar button copies the current
+   filter/search/tab state (already live in the URL via syncHash()), and
+   each card's send-icon button copies a #p=<ref> deep link straight to
+   that one entry. Layered fallback because this tool is designed to run
+   inside a cross-origin Pinkbike iframe, where the Clipboard API is
+   frequently blocked by the embedding page's permissions policy:
+     1. navigator.clipboard.writeText — the normal path
+     2. a hidden textarea + execCommand("copy") — works in more iframe
+        contexts than the Clipboard API does
+     3. window.prompt — always works, just requires a manual copy */
+async function copyToClipboard(text){
+  try{
+    if(navigator.clipboard&&navigator.clipboard.writeText){ await navigator.clipboard.writeText(text); return true; }
+  }catch(e){ /* fall through to the execCommand fallback */ }
+  try{
+    const ta=document.createElement("textarea");
+    ta.value=text; ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.select();
+    const ok=document.execCommand("copy");
+    document.body.removeChild(ta);
+    if(ok) return true;
+  }catch(e){ /* fall through to the prompt fallback */ }
+  try{ window.prompt("Copy this link:",text); }catch(e){}
+  return false;
+}
+
+document.getElementById("shareBtn").addEventListener("click",async()=>{
+  syncHash();
+  const btn=document.getElementById("shareBtn");
+  const ok=await copyToClipboard(location.href);
+  const old=btn.textContent;
+  btn.textContent=ok?"✓ Link copied":"Copy the link shown";
+  btn.classList.add("flash");
+  setTimeout(()=>{ btn.textContent=old; btn.classList.remove("flash"); },ANIMATION_CLEANUP_MS);
 });
 
 /* ======== SURPRISE ME — periodic shimmer ========
