@@ -7,15 +7,15 @@
 <link rel="icon" type="image/png" href="favicon-32x32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>MTB Patent Atlas — 45 Years of Mountain Bike Innovation</title>
-<meta name="description" content="An interactive timeline of 228+ mountain bike patents and applications, 1890 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta name="description" content="An interactive timeline of 255+ mountain bike patents and applications, 1884 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MTB Patent Atlas — 45 Years of Mountain Bike Innovation">
-<meta property="og:description" content="An interactive timeline of 228+ mountain bike patents and applications, 1890 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta property="og:description" content="An interactive timeline of 255+ mountain bike patents and applications, 1884 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta property="og:url" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/">
 <meta property="og:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/apple-touch-icon.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MTB Patent Atlas — 45 Years of Mountain Bike Innovation">
-<meta name="twitter:description" content="An interactive timeline of 228+ mountain bike patents and applications, 1890 to present.">
+<meta name="twitter:description" content="An interactive timeline of 255+ mountain bike patents and applications, 1884 to present.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -581,13 +581,17 @@ const INVENTORS = [
   {label:"Robert L. Seals",key:"Robert L. Seals"},
   {label:"Steve Smilanick",key:"Steve Smilanick"},
   {label:"John J. Tower",key:"John J. Tower"},
+  {label:"William S. Kelley",key:"William S. Kelley"},
+  {label:"John G. Blount",key:"John G. Blount"},
+  {label:"Alexander H. Mackinnon",key:"Alexander H. Mackinnon"},
+  {label:"Stuart M. Gage",key:"Stuart M. Gage"},
 ];
 const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff","Hayes","Manitou","SUNringlé","Reynolds","MRP","Nicolai","KOM","Antidote","OPEN","Speedplay","Wahoo Fitness","Onyx","Classified","Foes","EXT","Spot","Reeb","Revel","Odyssey","Mongoose","SE Racing","Canyon","Priority","Ari","Knolly","Intense","WRP","Vittoria","Lauf","BikeYoke","Forbidden","OneUp","Garbaruk","AMS","RideWrap","Aenomaly","BMC","SCOR","Avinox","American Classic","GoPro","Insta360","Sopro Mounts","Schwinn","VelociRAX","Rocky Mountain","Yoshimura",
 "Cannondale","Marzocchi","Scott","Rimpact","Gehl Company","Pinion","Effigear","Lal Bikes","Mavic","Michelin","Hutchinson",
 "CushCore","Maxxis","Schwalbe","Continental","Industry Nine","Berd","Hadley Racing","Kind Shock","Crankbrothers","ODI",
 "Magura","TQ","Fazua","Atherton","Robot Bike Co.","Guerrilla Gravity","Allite","Mondraker","e*thirteen","I-Track Suspension",
 "Auckland Cycle Works","Dia-Compe","Cane Creek","Truvativ","Race Face","Bontrager","Answer","Bold Cycles","Reserve Wheels","Peaty's","Foxfolk","milKit","Clik","Park Tool","Norco","Craftworks",
-"Taken","Velduro","Vampire Bike Co","Archibald Cycles","Terra Bikes","NS Bikes","Pyga","Trinity MTB","Forcite","Banshee","Prostuff","Moots"];
+"Taken","Velduro","Vampire Bike Co","Archibald Cycles","Terra Bikes","NS Bikes","Pyga","Trinity MTB","Forcite","Banshee","Prostuff","Moots","Velocity Hucking Systems","Dyedbro"];
 
 const D = [
 /* ---- Rear Suspension ---- */
@@ -892,9 +896,24 @@ const D = [
 {y:2008,g:2010,t:"Gates Carbon Drive / CDX CenterTrack",a:"Gates (CenterTrack: Wayne Lumpkin)",num:null,cat:"drive",st:"active",exp:2030,b:["licensor","litigated"],who:["Gates","Wayne Lumpkin","Spot"],conf:"m",
  s:"Carbon tensile-cord belts plus the CenterTrack center-rib sprocket system — designed and patented by Wayne Lumpkin, the founder of Avid Brakes, to fix the first-generation belt's alignment and tension problems. A separate 'Drop-Out' frame patent (a split dropout that lets a one-piece belt pass into the rear triangle) sits at the center of a 2024 lawsuit.",
  w:"The Avid founder reappearing in belt drives is the kind of cross-category inventor thread this atlas exists to surface. In 2024 Spot Brand sued Gates in Denver District Court, alleging a 2008 royalty deal (8% of net sales) went unpaid as 30-plus brands across 100-plus models adopted the Drop-Out design; a Denver judge has since declined to invalidate the patent, clearing the way to trial."},
+{y:1884,g:1885,t:"Kelley strap-drum bicycle drive (US 321,932)",a:"William S. Kelley (Smithville, NJ)",num:"321932",cat:"drive",st:"expired",exp:1902,b:["priorart"],who:["William S. Kelley"],conf:"v",
+ s:"Filed March 24, 1884, granted July 7, 1885, titled simply 'Bicycle.' The specification describes the driving wheel actuated by a clutch/ratchet mechanism from a drum wound forward by a strap connected to a foot lever, and turned back by a spring when the lever releases — a treadle-and-drum alternative to the crank-and-pedal drive that eventually won out, on a high-wheel 'ordinary.'",
+ img:"pictures/US321932A.png",
+ imgAlt:"William S. Kelley bicycle patent drawing, Fig. 1 and Fig. 4, showing the high-wheel ordinary and the spring-loaded ratchet drum detail",
+ w:"Now the atlas's oldest verified drivetrain patent — nearly 140 years before the current dominant crank-and-chain arrangement, someone was patenting a foot-lever alternative to it. The mechanism lost, but the instinct (there's more than one way to turn a wheel) is the same one behind gearboxes and belt drives today."},
+{y:1885,g:1885,t:"Blount bicycle frame/steering patent (US 323,289)",a:"John G. Blount (Boston, MA)",num:"323289",cat:"frame",st:"expired",exp:1902,b:["priorart"],who:["John G. Blount"],conf:"m",
+ s:"Granted July 28, 1885, titled simply 'Bicycle' on a high-wheel 'ordinary.' The drawing shows a bracing/linkage system running from the head tube area down toward the small trailing wheel; the exact claimed mechanism isn't independently confirmed this pass — Google Patents doesn't carry searchable specification text for this one, and the description here is read directly from the drawing rather than the claims.",
+ img:"pictures/US323289A.png",
+ imgAlt:"John G. Blount bicycle patent drawing, Fig. 1, showing the high-wheel ordinary with head-tube-to-rear-wheel bracing",
+ w:"One of the honest-gap entries: the drawing and bibliographic facts (inventor, date, number) are solid, but what exactly Blount was claiming is a question left open for whoever reads the original specification next."},
+{y:1896,g:1896,t:"Mackinnon & Gage saddle-spring suspension (US 566,201)",a:"Alexander H. Mackinnon & Stuart M. Gage",num:"566201",cat:"comp",st:"expired",exp:1913,b:[],who:["Alexander H. Mackinnon","Stuart M. Gage"],conf:"m",
+ s:"Granted August 18, 1896, titled 'Bicycle.' A looped spring assembly under the saddle, connecting it to the seatpost so the seat itself absorbs shock independently of the frame — shown mounted on a full chain-drive safety bicycle in the patent's second figure, not a high-wheeler. Read directly from the drawing; the specification text wasn't independently confirmed this pass.",
+ img:"pictures/US566201A.png",
+ imgAlt:"Mackinnon and Gage bicycle patent drawing, Fig. 1 and Fig. 2, showing the spring-looped saddle mount and the complete safety bicycle",
+ w:"Worth flagging directly: this entry was submitted labeled as a William S. Kelley patent, but the patent document itself names Alexander H. Mackinnon and Stuart M. Gage as inventors — corrected here to match the primary source rather than the label it arrived with. Also a reminder that saddle suspension is nearly as old as the safety bicycle itself, a full century before dropper posts and suspension seatposts reinvented the idea."},
 {y:1890,g:1890,t:"Belt-driven bicycle (the 1890 patent)",a:"19th-century inventor",num:null,cat:"drive",st:"expired",exp:1910,b:["priorart"],who:[],conf:"l",
  s:"A belt-drive bicycle patent was filed in 1890; the idea waited over a century for materials stiff enough to make it practical.",
- w:"The oldest entry in the atlas — some 'innovations' are just patents waiting for materials science to catch up."},
+ w:"Some 'innovations' are just patents waiting for materials science to catch up — though it's no longer the atlas's oldest entry now that Kelley's 1884 filing is on record."},
 {y:2002,g:2004,t:"Honda RN-01 gearboxes (3 generations)",a:"Honda",num:null,cat:"drive",st:"expired",exp:2024,b:["priorart"],who:["Honda"],conf:"m",
  s:"The first two generations were CVTs using a camshaft and levers with no fixed ratios — known mostly through their patents. Gen 3 enclosed a derailleur and cassette with a front freewheel, letting Greg Minnaar shift without pedaling. Mechanics removed the gearbox after races.",
  w:"Patented technology that existed solely to win World Cups and was never sold — the most secretive drivetrain in MTB history."},
@@ -1200,8 +1219,8 @@ const D = [
  s:"Lower-link grease ports, sealed pivot architectures and lifetime-bearing programs with assorted filings.",
  w:"Unsexy patents that decide whether your bike survives a Pacific Northwest winter."},
 {y:2021,g:2022,t:"K.I.S. steering stabilizer",a:"Jo Klieber / Syntace (Germany) → Canyon exclusive",num:null,cat:"frame",st:"active",exp:2041,j:"DE",b:["licensor"],who:["Jo Klieber"],conf:"m",
- s:"A polymer cam ring on the steerer connected via high-strength fiber bands to springs inside the top tube — tunable centering force without friction or steering restriction. Invented by Jo Klieber at Syntace/Liteville, licensed to Canyon with a 12-month exclusive from late 2022.",
- w:"Jo Klieber designed the X-12 thru-axle standard, sold the Star Ratchet EXP to DT Swiss, and invented K.I.S. — Germany's Dave Weagle, with documented connections across three atlas categories."},
+ s:"A polymer cam ring on the steerer connected via high-strength fiber bands to springs inside the top tube — tunable centering force without friction or steering restriction. Invented by Jo Klieber at Syntace/Liteville, licensed to Canyon with a 12-month exclusive from late 2022. A possible link worth noting: US 6,394,694 B1, 'Connection clamp, in particular for handlebar and front mounting units of bicycles and the like,' granted May 28, 2002 to Jo Klieber GmbH, covers earlier clamp/mounting hardware from the same inventor and company two decades before K.I.S. — genuine Klieber IP, but not independently confirmed as the specific patent behind K.I.S.'s centering-spring mechanism itself, so K.I.S.'s own number stays unconfirmed here.",
+ w:"Jo Klieber designed the X-12 thru-axle standard, sold the Star Ratchet EXP to DT Swiss, and invented K.I.S. — Germany's Dave Weagle, with documented connections across three atlas categories, and now a fourth-generation patent trail (this clamp patent) reaching back to the early 2000s."},
 {y:2018,g:2020,t:"Rim shape determination method (US 10,733,795)",a:"Trek Bicycle",num:"10733795",cat:"frame",st:"active",exp:2038,b:[],who:["Trek"],conf:"v",
  s:"A computer-based system using computational fluid dynamics and Pareto-front optimization to generate optimal rim cross-sections — minimizing drag and lateral stability forces simultaneously. Trek patented the design *process*, not a physical rim.",
  w:"One of only two method patents in this atlas, alongside the geometry formula patent — both protect math, not hardware. Trek declined to comment when the trade press reported it."},
@@ -1399,9 +1418,9 @@ const D = [
 {y:2021,g:null,t:"AMS Rise Grips (patent pending)",a:"All Mountain Style (Barcelona, Spain)",num:null,cat:"comp",st:"pending",exp:null,j:"ES",b:[],who:["AMS"],conf:"l",
  s:"AMS's Rise Grips carry patent-pending status, alongside other modular accessories like the AMS Adjustable Kickstand, also listed as patent pending.",
  w:"A small Barcelona accessories brand filing on grips and a kickstand — proof patent activity in this industry isn't confined to suspension and drivetrains; even the smallest touchpoints get IP attention now."},
-{y:2019,g:null,t:"RideWrap frame protection film (proprietary, no patent located)",a:"RideWrap (Whistler, BC)",num:null,cat:"frame",st:"unknown",exp:null,b:[],who:["RideWrap"],conf:"l",
- s:"RideWrap engineers its own 9-mil TPU film in-house (Lotus Pro), paired with proprietary frame-mapping software for near-complete coverage, a self-healing ceramic top coat, and hydrophobic surface properties — described throughout as proprietary engineering rather than patented invention.",
- w:"Included as a deliberate contrast to the patent-heavy entries around it: a real, differentiated product built on trade secrets and in-house process rather than a single defensible patent claim."},
+{y:2019,g:null,t:"RideWrap frame protection film (proprietary, no patent located)",a:"RideWrap (Whistler, BC)",num:null,cat:"frame",st:"unknown",exp:null,b:[],who:["RideWrap","Velocity Hucking Systems","Dyedbro"],conf:"l",
+ s:"RideWrap engineers its own 9-mil TPU film in-house (Lotus Pro), paired with proprietary frame-mapping software for near-complete coverage, a self-healing ceramic top coat, and hydrophobic surface properties — described throughout as proprietary engineering rather than patented invention. In May 2025 RideWrap acquired the assets of Velocity Hucking Systems Limited (VHS), the cult-favorite maker of the 'Slapper Tape' chain-slap dampener — a malleable silicone strip with low-profile air-cushioned bubbles that absorbs chain impact and kills chainstay noise — relaunching the line as the VHS V-3 in July 2025.",
+ w:"Included as a deliberate contrast to the patent-heavy entries around it: a real, differentiated product built on trade secrets and in-house process rather than a single defensible patent claim. The VHS acquisition wasn't a quiet one either — VHS founder Ferris Fairbairn publicly alleged corporate sabotage in the run-up to the sale, naming a Dyedbro co-owner (maker of the competing SHUSH dampener) as involved. Worth its own entry if the allegations firm up into something citable, but noted here since it's directly downstream of a RideWrap acquisition."},
 {y:2023,g:2025,t:"SwitchGrade saddle-angle adjuster (US 12,448,072)",a:"Aenomaly Constructs",num:"12448072",cat:"comp",st:"active",exp:2045,b:[],who:["Aenomaly"],conf:"v",
  s:"A mechanism fitting between the saddle rails and dropper post that lets a rider toggle saddle angle on the fly — nose-down for climbing, level for flats, nose-up for descending — via a single lever, with 2 to 8 discrete positions depending on model.",
  w:"A genuinely new touchpoint in the bike's adjustability stack: geometry has gotten size-specific, suspension has gotten tunable, and now saddle angle itself is becoming a mid-ride control rather than a fixed setup choice."}
@@ -2125,7 +2144,7 @@ function render(){
   // counts + clear
   const total=D.length, n=list.length;
   const anyFilter=Object.values(state).some(s=>s.size)||searchQ;
-  $("#resultCount").textContent = anyFilter?`${n} of ${total} entries`:`${total} entries · 1890–${NOW}`;
+  $("#resultCount").textContent = anyFilter?`${n} of ${total} entries`:`${total} entries · 1884–${NOW}`;
   $("#clearAll").hidden=!anyFilter;
   updateTabDots();
   renderBars(list);
@@ -2144,7 +2163,7 @@ function renderBars(list){
   const minW=stepYr===1?"3px":stepYr===2?"5px":"8px";
   const max=Math.max(...eras.map(e=>D.filter(d=>d.y>=e.from&&d.y<=e.to).length),1);
   /* Empty brackets are skipped rather than drawn, which would otherwise place
-     the lone 1890 entry flush against 1974 as if they were adjacent. Where a
+     the 1880s-90s cluster flush against 1974 as if they were adjacent. Where a
      run of 2+ empty brackets is skipped, insert a visible gap marker so the
      axis doesn't imply continuous data it doesn't have. */
   let skipped=0;

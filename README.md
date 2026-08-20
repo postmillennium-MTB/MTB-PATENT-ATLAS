@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 253 patents and applications spanning 1890 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 256 patents and applications spanning 1884 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 253 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 253 |
-| **Year range** | 1890 – 2026 |
+| **Total entries** | 256 |
+| **Year range** | 1884 – 2026 |
 | **Active patents** | 126 |
-| **Expired patents** | 82 |
+| **Expired patents** | 85 |
 | **Pending applications** | 38 |
 | **Litigated entries** | 22 |
 | **Patent Fights (named rivalries)** | 7 |
 | **Brands** | 137 |
-| **Named inventors** | 44 |
+| **Named inventors** | 48 |
 | **Non-US jurisdictions** | 15 (AU, BE, CH, CN, DE, EP, ES, FR, GB, IS, IT, NZ, PL, SE, ZA) |
-| **Verified entries** | 140 |
-| **Medium confidence** | 56 |
+| **Verified entries** | 141 |
+| **Medium confidence** | 58 |
 | **Draft / in progress** | 57 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -95,7 +95,7 @@ A "PMR ↗" button in the header top-right returns to [postmillenniumrenaissance
 
 ## Named inventors
 
-Canfield (Lance & Chris) · Dave Weagle · Horst Leitner · Joe Breeze · Josh Angell · Paul Turner · Jo Klieber · David Earle · Wayne Lumpkin · Gavin Vos · Cal Phillips · Richard Bryne · Brian Scura · Charles Curnutt · Damon Madsen · Scot Breithaupt · Sam Garrett · Adam Krefting · Benedikt Skulason · Owen Pemberton · Mic Williams · Bill Shook · Frank W. Schwinn · Frank P. Brilando · McKay H. Davis · Jim Busby · Mert Lawwill · Tony Ellsworth · Gary Ewing · Doug Bradbury · Cedric Eveleigh · Wayne Sicz · John Rader · John Castellano · Stefan Sack · Joseph N. Newsom · Alan Coté · Manuel Martínez Guillén · Hugh McLeay · Keith Scott · Kent Eriksen · Robert L. Seals · Steve Smilanick · John J. Tower
+Canfield (Lance & Chris) · Dave Weagle · Horst Leitner · Joe Breeze · Josh Angell · Paul Turner · Jo Klieber · David Earle · Wayne Lumpkin · Gavin Vos · Cal Phillips · Richard Bryne · Brian Scura · Charles Curnutt · Damon Madsen · Scot Breithaupt · Sam Garrett · Adam Krefting · Benedikt Skulason · Owen Pemberton · Mic Williams · Bill Shook · Frank W. Schwinn · Frank P. Brilando · McKay H. Davis · Jim Busby · Mert Lawwill · Tony Ellsworth · Gary Ewing · Doug Bradbury · Cedric Eveleigh · Wayne Sicz · John Rader · John Castellano · Stefan Sack · Joseph N. Newsom · Alan Coté · Manuel Martínez Guillén · Hugh McLeay · Keith Scott · Kent Eriksen · Robert L. Seals · Steve Smilanick · John J. Tower · William S. Kelley · John G. Blount · Alexander H. Mackinnon · Stuart M. Gage
 
 ---
 
@@ -244,6 +244,9 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **Six more entries added or verified from user-supplied leads:** the **DW-Link family** entry now also cites US 7,661,503 ("Vehicle suspension system for stable squat magnitude responses," 56 sheets, extending the DW-Link method to motorcycles/ATVs), confirmed as DW-Link Incorporated/David Weagle IP and bumped to `v`. New entry: **Trek rearward-axle-path suspension (US 6,203,042)**, filed 1999 under Weston M. Wilcox — five years before Active Braking Pivot, Trek was already patenting rearward axle-path behavior through a different mechanism (linkage geometry, not a concentric pivot). New entry: **BMX/MTB starting gate (US 7,665,929)**, Prostuff LLC — the atlas's first patent on racing infrastructure rather than a bike itself. New entry: **Banshee KS-Link / KS2 (no patent)** — confirmed via Banshee's own public statements that engineer/co-owner Keith Scott's dual-link design was deliberately never patented, the same strategic-non-patent story as the existing SE Quadangle entry; this is also why searching "Keith Scott" previously returned nothing, and now it won't. **Two more images wired in:** `US11090977B2.png` onto the existing Reynolds wheel-patent entry, and `US7661503B2.png` onto the DW-Link entry.
 - **Two source pages the user asked about, both blocked in this sandbox:** Rocky Mountain's own patent-marking page (bikes.com/pages/patents) and OneUp Components' IP page (oneupcomponents.com/pages/ip). Neither could be fetched directly — flagged back to the user to paste, the same way the Yeti and GoPro marking-page content came in earlier.
 - **Five entries from user-supplied leads, two of them genuine gaps left honestly open rather than guessed at.** Verified and added: **Cool Tool** (US 4,967,435, "Multipurpose bicycle tool kit," Robert L. Seals) — the original folding multitool, later reissued as US RE35,424; **S&S Bicycle Torque Coupling** (US 5,586,652, Steve-Frank Smilanick / S&S Machine, filed 1993, granted Dec 1996) — the frame-splitting travel coupling now used by 100+ frame builders, with `US5586652A.png` wired in; and **Safety Bicycle Wrench** (USD 20,932, John J. Tower, issued July 14, 1891) — one of the atlas's oldest entries, a wrench-*handle* design patent from the earliest years bicycles existed. Left open: Kent Eriksen's two Moots inventions — the **Moots Mount** adjustable cantilever brake stud ("patented in 1980" per the Marin Museum of Bicycling and Mountain Bike Hall of Fame's own induction writeup) and the **YBB pivotless soft-tail** suspension — for which no matching patent number could be found in this pass despite both being within the full-text-searchable era. Added both as real entries (`num:null`, `conf:"l"`) with the technology and sourcing fully documented, rather than omitting them or guessing a number, so the gap is visible and correctable rather than silently missing.
+- **Three 19th-century patents added, which pushed the atlas's year range back six years (1890 → 1884) and required updating every hardcoded '1890' reference across the file** — the meta description tags, the live result-count string, and a code comment that assumed a single isolated 1890 entry. New entries: **Kelley strap-drum bicycle drive** (US 321,932, William S. Kelley, filed 1884/granted 1885) — a foot-lever-and-drum alternative to crank-and-pedal drive, now the atlas's oldest verified entry; **Blount bicycle frame/steering patent** (US 323,289, John G. Blount, 1885) — bibliographic facts confirmed, exact claimed mechanism left as an open question since this pre-1900s filing has no searchable specification text, described from the drawing itself rather than guessed at; and **Mackinnon & Gage saddle-spring suspension** (US 566,201, 1896) — a spring-looped saddle mount shown on a full chain-drive safety bicycle. **Worth flagging directly:** the third patent was submitted labeled as a William S. Kelley filing, but the patent document itself names Alexander H. Mackinnon and Stuart M. Gage as inventors — the entry follows the primary source (the drawing) rather than the label it arrived with, and says so in the card itself.
+- **K.I.S. steering stabilizer entry updated with a possible-link patent, kept honestly uncertain.** US 6,394,694 B1, "Connection clamp, in particular for handlebar and front mounting units of bicycles and the like," granted May 2002 to Jo Klieber GmbH, is genuine Klieber IP — but it's clamp/mounting hardware from two decades before K.I.S. launched, not confirmed as the specific patent behind K.I.S.'s centering-spring mechanism. Added as context rather than as K.I.S.'s own patent number, which stays unconfirmed.
+- **RideWrap entry updated:** in May 2025 RideWrap acquired the assets of Velocity Hucking Systems (VHS), maker of the cult-favorite "Slapper Tape" chain-slap dampener, relaunching it as the VHS V-3 in July 2025. Noted the acquisition wasn't quiet — VHS's founder publicly alleged corporate sabotage involving a co-owner of competing brand Dyedbro in the run-up to the sale — flagged as worth its own entry if the allegations firm up into something citable.
 
 ---
 
