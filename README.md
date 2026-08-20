@@ -14,19 +14,19 @@ An interactive timeline of mountain bike intellectual property: 244 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 238 |
+| **Total entries** | 244 |
 | **Year range** | 1890 – 2026 |
-| **Active patents** | 117 |
-| **Expired patents** | 79 |
+| **Active patents** | 122 |
+| **Expired patents** | 80 |
 | **Pending applications** | 38 |
 | **Litigated entries** | 22 |
 | **Patent Fights (named rivalries)** | 7 |
-| **Brands** | 123 |
-| **Named inventors** | 36 |
+| **Brands** | 134 |
+| **Named inventors** | 39 |
 | **Non-US jurisdictions** | 15 (AU, BE, CH, CN, DE, EP, ES, FR, GB, IS, IT, NZ, PL, SE, ZA) |
-| **Verified entries** | 117 |
-| **Medium confidence** | 65 |
-| **Draft / in progress** | 56 |
+| **Verified entries** | 130 |
+| **Medium confidence** | 59 |
+| **Draft / in progress** | 55 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -95,7 +95,7 @@ A "PMR ↗" button in the header top-right returns to [postmillenniumrenaissance
 
 ## Named inventors
 
-Canfield (Lance & Chris) · Dave Weagle · Horst Leitner · Joe Breeze · Paul Turner · Jo Klieber · David Earle · Wayne Lumpkin · Gavin Vos · Cal Phillips · Richard Bryne · Brian Scura · Charles Curnutt · Damon Madsen · Scot Breithaupt · Sam Garrett · Adam Krefting · Benedikt Skulason · Owen Pemberton · Mic Williams · Bill Shook · Frank W. Schwinn · Frank P. Brilando · McKay H. Davis · Jim Busby · Mert Lawwill · Tony Ellsworth · Gary Ewing · Doug Bradbury · Cedric Eveleigh · Wayne Sicz · John Rader · John Castellano · Stefan Sack
+Canfield (Lance & Chris) · Dave Weagle · Horst Leitner · Joe Breeze · Josh Angell · Paul Turner · Jo Klieber · David Earle · Wayne Lumpkin · Gavin Vos · Cal Phillips · Richard Bryne · Brian Scura · Charles Curnutt · Damon Madsen · Scot Breithaupt · Sam Garrett · Adam Krefting · Benedikt Skulason · Owen Pemberton · Mic Williams · Bill Shook · Frank W. Schwinn · Frank P. Brilando · McKay H. Davis · Jim Busby · Mert Lawwill · Tony Ellsworth · Gary Ewing · Doug Bradbury · Cedric Eveleigh · Wayne Sicz · John Rader · John Castellano · Stefan Sack · Joseph N. Newsom · Alan Coté · Manuel Martínez Guillén · Hugh McLeay
 
 ---
 
