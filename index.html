@@ -7,15 +7,15 @@
 <link rel="icon" type="image/png" href="favicon-32x32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>MTB Patent Atlas — 45 Years of Mountain Bike Innovation</title>
-<meta name="description" content="An interactive timeline of 243 mountain bike patents and applications, 1890 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta name="description" content="An interactive timeline of 256 mountain bike patents and applications, 1884 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MTB Patent Atlas — 45 Years of Mountain Bike Innovation">
-<meta property="og:description" content="An interactive timeline of 243 mountain bike patents and applications, 1890 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta property="og:description" content="An interactive timeline of 256 mountain bike patents and applications, 1884 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta property="og:url" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/">
 <meta property="og:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/apple-touch-icon.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MTB Patent Atlas — 45 Years of Mountain Bike Innovation">
-<meta name="twitter:description" content="An interactive timeline of 243 mountain bike patents and applications, 1890 to present.">
+<meta name="twitter:description" content="An interactive timeline of 256 mountain bike patents and applications, 1884 to present.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -91,7 +91,23 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
 .mini-btn{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.04em;background:var(--surface);border:1px solid var(--card-border);color:var(--ink);border-radius:999px;padding:5px 11px;min-height:30px;white-space:nowrap;transition:border-color .15s,background .15s}
 .mini-btn:hover{border-color:var(--primary)}
 .mini-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+/* Brief solid-fill confirmation state after a successful copy — same
+   ANIMATION_CLEANUP_MS timeout the deep-link card-flash uses, so every
+   "did that work?" confirmation in the app lasts the same 1.6s. */
+.mini-btn.flash{background:var(--primary);color:#fff;border-color:var(--primary)}
 @media(max-width:480px){.mini-btn{font-size:10px;padding:4px 8px}}
+/* ---------- Per-card share button ----------
+   A small icon-only button sitting beside .chead rather than inside it —
+   .chead is itself a <button> (the expand/collapse toggle), and buttons
+   can't nest, so the two live as flex siblings in .chead-row instead. */
+.chead-row{display:flex;align-items:flex-start}
+.chead-row .chead{flex:1;width:auto}
+.card-share-btn{flex:0 0 auto;width:30px;height:30px;margin:11px 12px 0 0;border-radius:50%;border:1px solid var(--card-border);background:var(--surface);color:var(--ink-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:color .15s,border-color .15s,background .15s}
+.card-share-btn:hover{color:var(--primary);border-color:var(--primary)}
+.card-share-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.card-share-btn svg{width:15px;height:15px;pointer-events:none}
+.card-share-btn.copied{color:#fff;background:var(--primary);border-color:var(--primary)}
+@media(max-width:480px){.card-share-btn{width:28px;height:28px;margin:10px 8px 0 0}}
 /* ---------- Surprise me shimmer ----------
    A light sweep passes across the button at random intervals (see JS) to hint
    that it's interactive. Deliberately subtle: a soft highlight, no color or
@@ -440,8 +456,9 @@ html,body{overflow-x:hidden;max-width:100%}
     <span class="fmeta-actions">
       <button class="mini-btn" id="surpriseBtn" title="Jump to a random patent">🎲 Surprise me</button>
       <details class="share-menu" id="shareMenu">
-        <summary class="mini-btn" title="Share this page">🔗 Share</summary>
+        <summary class="mini-btn" title="Share this view">🔗 Share</summary>
         <div class="share-panel" role="menu">
+          <button class="share-opt" data-share="copy" role="menuitem">📋 Copy link</button>
           <button class="share-opt" data-share="x" role="menuitem">𝕏 Share on X</button>
           <button class="share-opt" data-share="facebook" role="menuitem">📘 Share on Facebook</button>
           <button class="share-opt" data-share="reddit" role="menuitem">👽 Share on Reddit</button>
@@ -580,13 +597,22 @@ const INVENTORS = [
   {label:"Alan Coté",key:"Alan Coté"},
   {label:"Manuel Martínez Guillén",key:"Manuel Martínez Guillén"},
   {label:"Hugh McLeay",key:"Hugh McLeay"},
+  {label:"Keith Scott",key:"Keith Scott"},
+  {label:"Kent Eriksen",key:"Kent Eriksen"},
+  {label:"Robert L. Seals",key:"Robert L. Seals"},
+  {label:"Steve Smilanick",key:"Steve Smilanick"},
+  {label:"John J. Tower",key:"John J. Tower"},
+  {label:"William S. Kelley",key:"William S. Kelley"},
+  {label:"John G. Blount",key:"John G. Blount"},
+  {label:"Alexander H. Mackinnon",key:"Alexander H. Mackinnon"},
+  {label:"Stuart M. Gage",key:"Stuart M. Gage"},
 ];
 const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff","Hayes","Manitou","SUNringlé","Reynolds","MRP","Nicolai","KOM","Antidote","OPEN","Speedplay","Wahoo Fitness","Onyx","Classified","Foes","EXT","Spot","Reeb","Revel","Odyssey","Mongoose","SE Racing","Canyon","Priority","Ari","Knolly","Intense","WRP","Vittoria","Lauf","BikeYoke","Forbidden","OneUp","Garbaruk","AMS","RideWrap","Aenomaly","BMC","SCOR","Avinox","American Classic","GoPro","Insta360","Sopro Mounts","Schwinn","VelociRAX","Rocky Mountain","Yoshimura",
 "Cannondale","Marzocchi","Scott","Rimpact","Gehl Company","Pinion","Effigear","Lal Bikes","Mavic","Michelin","Hutchinson",
 "CushCore","Maxxis","Schwalbe","Continental","Industry Nine","Berd","Hadley Racing","Kind Shock","Crankbrothers","ODI",
 "Magura","TQ","Fazua","Atherton","Robot Bike Co.","Guerrilla Gravity","Allite","Mondraker","e*thirteen","I-Track Suspension",
 "Auckland Cycle Works","Dia-Compe","Cane Creek","Truvativ","Race Face","Bontrager","Answer","Bold Cycles","Reserve Wheels","Peaty's","Foxfolk","milKit","Clik","Park Tool","Norco","Craftworks",
-"Taken","Velduro","Vampire Bike Co","Archibald Cycles","Terra Bikes","NS Bikes","Pyga","Trinity MTB"];
+"Taken","Velduro","Vampire Bike Co","Archibald Cycles","Terra Bikes","NS Bikes","Pyga","Trinity MTB","Forcite","Banshee","Prostuff","Moots","Velocity Hucking Systems","Dyedbro"];
 
 const D = [
 /* ---- Rear Suspension ---- */
@@ -608,9 +634,14 @@ const D = [
 {y:1999,g:2001,t:"Counter-rotating links / VPP (US 6,206,397)",a:"Santa Cruz (Intense licensed)",num:"6206397",cat:"susp",st:"expired",exp:2019,b:["acquired","licensor"],who:["Santa Cruz"],conf:"v",
  s:"The key VPP-era patent covering counter-rotating dual links, deployed on the original V10 and Intense M3 in 2002.",
  w:"Expiration around 2016–19 freed dual-link layouts — Diamondback's Level Link and others followed. SCOR, the gravity-focused offshoot BMC Switzerland launched after the patent lapsed, builds its whole range on a counter-rotating VPP-style lower link without any SCOR- or BMC-branded suspension patent of its own — a clean example of expired IP simply becoming the industry's shared vocabulary."},
-{y:2003,g:2006,t:"DW-Link patent family",a:"Dave Weagle → Ibis, Pivot, Turner, Iron Horse",num:"7128329",cat:"susp",st:"expired",exp:2025,b:["licensor"],who:["Dave Weagle"],conf:"m",
- s:"Anti-squat-focused dual-link design controlling pedaling behavior via instant-center placement; licensed rather than sold, the model Weagle made famous.",
+{y:2003,g:2006,t:"DW-Link patent family (US 7,128,329 + 7,661,503)",a:"David Weagle / DW-Link Incorporated → Ibis, Pivot, Turner, Iron Horse",num:"7128329",nums:["7128329","7661503"],cat:"susp",st:"expired",exp:2025,b:["licensor"],who:["Dave Weagle"],conf:"v",
+ s:"Anti-squat-focused dual-link design controlling pedaling behavior via instant-center placement; licensed rather than sold, the model Weagle made famous. US 7,128,329 introduced the underlying method — graphing anti-squat as a curve against compressive travel rather than a single static number — and US 7,661,503, 'Vehicle suspension system for stable squat magnitude responses' (56 sheets of drawings), extends the same framework to motorcycles, ATVs and other powered vehicles alongside bicycles.",
+ img:"pictures/US7661503B2.png",
+ imgAlt:"DW-Link patent drawing, Fig. 1a, the instant-center geometric construction behind the squat-curve method",
  w:"Protection ending now — the industry is watching what unlicensed DW-style bikes appear next."},
+{y:2004,g:null,t:"Banshee KS-Link / KS2 (no patent)",a:"Keith Scott / Banshee Bikes",num:null,cat:"susp",st:"unknown",exp:null,b:["priorart"],who:["Keith Scott","Banshee"],conf:"v",
+ s:"A short, rotating dual-link layout — VF4B on the original 2005 Pyre, evolved into the KS-Link and then the current KS2 — engineered by Banshee co-owner Keith Scott with unique instant-center migration paths distinct enough to avoid reading on DW-Link or VPP's claims. Banshee has said directly that it never patented the design: doing so would have locked the company into defending one specific geometry indefinitely instead of continuing to evolve it bike to bike.",
+ w:"Same philosophy as the SE Quadangle entry elsewhere in this atlas — a maker choosing not to patent as a deliberate strategy, not an oversight, so a search for 'Keith Scott' or 'Banshee' patents will and should come back empty. Also a real-world case study in how tightly DW-Link and VPP's claims constrained instant-center placement: Banshee's stated design goal wasn't just performance, it was staying provably outside those patents' claims while they were still in force."},
 {y:2006,g:2010,t:"Split Pivot (US 7,717,212)",a:"Dave Weagle → Devinci, Salsa, Morewood",num:"7717212",cat:"susp",st:"expired",exp:2026,b:["licensor","litigated"],who:["Dave Weagle","Devinci"],conf:"v",
  s:"A rear pivot concentric with the wheel axle, decoupling braking from suspension while freeing main-pivot placement for acceleration performance.",
  w:"Devinci was the first licensee and built its whole full-suspension identity on it."},
@@ -663,12 +694,20 @@ const D = [
 {y:2014,g:2018,t:"Image processing & field of view — SuperView / OverCapture (bundle)",a:"GoPro",num:"10015413",cat:"comp",st:"active",exp:2034,b:[],who:["GoPro"],conf:"m",
  s:"A representative filing from GoPro's FOV-manipulation family, covering the dynamic stretch of a taller 4:3 sensor capture into a 16:9 frame while keeping the image center undistorted and pushing distortion to the edges. The related OverCapture family covers reframing a flat crop out of a spherical 360° canvas in post. Grouped here as a category rather than enumerated — GoPro holds 1,600+ granted patents globally, 1,000+ in the US.",
  w:"Bundled deliberately: an atlas entry per GoPro patent would swamp the drivetrain and suspension categories combined. The lesson is that the action camera became a mountain bike component through software claims, not optics."},
-{y:2016,g:2019,t:"Stabilization & horizon leveling — HyperSmooth (bundle)",a:"GoPro",num:null,cat:"comp",st:"active",exp:2036,b:["litigated"],who:["GoPro","Insta360"],conf:"l",
- s:"GoPro's most aggressively defended family: electronic image stabilization that analyzes camera motion and crops the sensor in real time to cancel vibration and impacts, plus horizon leveling that uses the internal accelerometers and gyroscopes to hold the horizon flat through full camera rotation. Specific numbers not individually verified for this entry.",
- w:"This is why bar-mounted footage stopped looking like a paint shaker. It's also the sharp end of GoPro's IP: stabilization and leveling were central to the 2024 ITC complaint against Insta360."},
+{y:2019,g:2021,t:"Stabilization & horizon leveling — HyperSmooth (US 10,574,894 + 10,958,840)",a:"César Douady, Thomas Derbanne & Maxim Karpushin / GoPro",num:"10574894",nums:["10574894","10958840"],cat:"comp",st:"active",exp:2039,b:["litigated"],who:["GoPro","Insta360"],conf:"v",
+ s:"Both titled 'Systems and methods for stabilizing videos': US 10,574,894 (filed August 2019, granted February 2020) and US 10,958,840 (filed December 2019, granted March 2021) cover the electronic image stabilization that analyzes camera motion and crops the sensor in real time to cancel vibration and impacts, plus horizon leveling that uses the onboard accelerometers and gyroscopes to hold the horizon flat through full camera rotation.",
+ w:"This is why bar-mounted footage stopped looking like a paint shaker. It's also the entry where GoPro's Insta360 fight gets genuinely nuanced rather than a clean win: in a February 26, 2026 final determination, the ITC reaffirmed infringement of GoPro's HERO design patent (see the entry above) and issued an exclusion order — but simultaneously dismissed all five of GoPro's utility-patent infringement claims, including these HyperSmooth/horizon-leveling patents. That's a different, earlier PTAB proceeding upholding the patents' validity against Insta360's invalidity challenges — 'valid patent' and 'infringement proven' are two separate questions, and GoPro went 2-for-2 on the first and 0-for-5 on the second in the same case. The shape won; the software claims didn't."},
 {y:2014,g:null,t:"Hardware, form factor & acoustics — HERO design + mounts (bundle)",a:"GoPro",num:"12167211",cat:"comp",st:"active",exp:null,b:["litigated"],who:["GoPro"],conf:"l",
  s:"Design patents on the boxy HERO chassis — lens placement, dual screens, overall geometry — alongside utility filings on multi-microphone wind-noise mitigation (US 12,167,211 cited as representative) and on the integrated folding mounting fingers that collapse into the frame. The underlying two-prong mount interface has become a quasi-open standard the industry builds to freely.",
- w:"The clearest live demonstration in the atlas that a design patent has teeth: the ITC ruled for GoPro on the physical HERO design, producing an import ban on certain Insta360 models judged too close to the silhouette. Mirrors the atlas's existing 'not all IP is a utility patent' thread — the shape was defensible, while the mount interface everyone actually depends on was effectively given away."},
+ w:"The clearest live demonstration in the atlas that a design patent has teeth: the ITC ruled for GoPro on the physical HERO design, producing an import ban on certain Insta360 models judged too close to the silhouette — reaffirmed in a final Commission determination on February 26, 2026, with a Limited Exclusion Order and Cease and Desist Order issued against Insta360. Mirrors the atlas's existing 'not all IP is a utility patent' thread — the shape was defensible, while the mount interface everyone actually depends on was effectively given away. See the HyperSmooth entry below for the flip side of that same February 2026 ruling: GoPro's utility-patent infringement claims on the same case were all dismissed."},
+{y:2021,g:2024,t:"Forcite smart helmet electronics (US 12,016,421)",a:"Forcite Helmet Systems (Australia) → GoPro",num:"12016421",cat:"comp",st:"active",exp:2041,b:["acquired"],who:["GoPro","Forcite"],conf:"m",
+ s:"GoPro's patents page lists US 12,016,421 under Forcite, the Australian smart-motorcycle-helmet maker (integrated HUD, chin-mounted camera, Bluetooth connectivity) GoPro acquired in a deal announced January 2024 and closed that Q1. Exact title, filing date and claims not independently confirmed this pass — this sandbox couldn't reach Google Patents or USPTO directly to verify beyond the number itself and its Forcite/GoPro association; grant year is an estimate from USPTO numbering pace (patents crossed 12,000,000 in May 2024), not a confirmed date.",
+ w:"Included despite being a motorcycle helmet, not a mountain bike part — the same edge-of-scope call the atlas already makes for Mavic's road-e-bike X-Tend motor: it's here because GoPro's 2024 acquisition folds Forcite's IP directly into the same patent portfolio backing the action-camera entries above, extending GoPro's footprint from 'camera you strap to a helmet' to 'the helmet itself.' Worth a follow-up pass once primary-source patent data is reachable."},
+{y:2019,g:2021,t:"Multi-camera wireless sync (US 11,019,237)",a:"GoPro",num:"11019237",cat:"comp",st:"active",exp:2039,b:[],who:["GoPro"],conf:"m",
+ s:"A wireless synchronization scheme letting multiple cameras — the patent's own figures label them camera A, B and C — pair up and share timing over a wireless link so footage shot simultaneously from different angles lines up automatically in post, without a wired genlock connection or manual clap-sync. Granted May 25, 2021. Title and exact filing date not independently confirmed via search this pass; drawn from the patent drawing itself (patent number, grant date and sheet number all printed on the sheet) and the user's identification of it as GoPro IP.",
+ img:"pictures/US11019237B2.png",
+ imgAlt:"Multi-camera wireless synchronization patent drawing, Figs. 3A–3C, showing wireless pairing links between camera A, camera B and camera C",
+ w:"The mountain-biking use case writes itself: a helmet cam and a bar cam (or a buddy's camera on the next line down the trail) shooting the same run from different angles, synced automatically rather than hand-aligned by an editor hunting for a shared clap or crash. Sits alongside the atlas's other GoPro bundles as the multi-camera-specific slice of that portfolio."},
 {y:2015,g:null,t:"Data & telemetry — GPS overlay + depth analysis (bundle)",a:"GoPro",num:null,cat:"emtb",st:"active",exp:null,b:["acquired"],who:["GoPro"],conf:"l",
  s:"Methods for capturing telemetry — GPS, speed, altitude, G-force — and time-aligning it precisely to the video track, which is what makes speedometer and track-map overlays on a downhill run possible. A related family covers structure-from-motion depth mapping from a single 2D lens. Separately, GoPro sold 114 drone flight-control, spatial-navigation and vehicle-guidance patents to Skydio after winding down the Karma program.",
  w:"Filed under E-MTB & Electronics rather than Components because this is data infrastructure, not a part you bolt on — it's the same sensor-fusion stack that suspension telemetry and e-bike control systems are converging on. The Skydio sale is the instructive move: GoPro kept the IP that defends the camera and sold the IP that defended a business it exited."},
@@ -731,9 +770,9 @@ const D = [
 {y:2014,g:2016,t:"Living Link leaf-spring suspension (4 patents)",a:"Wayne Lumpkin / Spot Brand (Golden, CO)",num:"9701361",nums:["9701361","9359039","9156521","8740239"],cat:"susp",st:"active",exp:2034,b:["licensor"],who:["Wayne Lumpkin","Spot","Gates"],conf:"m",
  s:"A titanium leaf spring built into the lower linkage — four patents (US 9,701,361, 9,359,039, 9,156,521, 8,740,239) — designed to return energy into the pedal stroke at the right moment.",
  w:"Wayne Lumpkin's third atlas appearance: founder of Avid brakes (sold to SRAM), patentee of Gates' CenterTrack, and now a suspension inventor. In 2024 his Spot Brand sued Gates in Denver District Court over the belt-drive Drop-Out dropout patent — see that entry. Golden, Colorado's quiet patent machine, now in court with a Denver company."},
-{y:2010,g:2012,t:"Switch Technology (eccentric pivot)",a:"Yeti Cycles",num:null,cat:"susp",st:"expired",exp:2030,b:[],who:["Yeti","David Earle"],conf:"m",
- s:"The pre-Infinity Switch: an eccentric mechanism on the SB66/SB75/SB95 that reverses direction through travel — the conceptual ancestor of the translating-rail Switch Infinity that replaced it in 2014.",
- w:"Designed under the patent constraints of the dual-link era; both its successor and the designer's later workaround (Sine) are in this atlas."},
+{y:2009,g:2011,t:"Switch Technology (eccentric pivot) — US 8,066,297 + 8,201,841",a:"Luther M. Beale & David M. Earle / Sotto Group LLC → Sine Suspension LLC (licensed to Yeti)",num:"8066297",nums:["8066297","8201841"],cat:"susp",st:"active",exp:2029,b:["licensor"],who:["Yeti","David Earle"],conf:"v",
+ s:"The pre-Infinity Switch: an eccentric mechanism on the SB66/SB75/SB95 that reverses direction through travel — the conceptual ancestor of the translating-rail Switch Infinity that replaced it in 2014. Both 'Bicycle rear suspension linkage,' US 8,066,297 (filed 2009, granted Nov 2011) and US 8,201,841 (granted 2012), credit Sotto Group's Luther Beale and David Earle. This is the answer to why it wasn't on Yeti's own patent-marking page alongside every other entry in this thread: Yeti never owned it — Sotto Group licensed it to Yeti exclusively, then reassigned the whole family to Earle's own Sine Suspension LLC in 2020. A virtual-marking page only lists what its owner holds; Yeti's genuinely does list everything Yeti owns, this patent just isn't one of those.",
+ w:"Designed under the patent constraints of the dual-link era; both its successor and the designer's later workaround (Sine) are in this atlas — and now this entry closes the loop: the same David Earle who designed the original VPP (Outland/Santa Cruz), engineered Yeti's Switch through Sotto, and built Sine Suspension once his own reclaimed IP and the old VPP patents had both cleared, shows up as inventor, licensor, and company founder across four separate atlas entries."},
 {y:2013,g:2015,t:"I-Track Virtual High Pivot (AU 2013225624)",a:"Hugh McLeay / I-Track Suspension (Australia)",num:"AU2013225624",nums:["AU2013225624","US9168977","EP2819915","CA2865915","NZ629818"],cat:"susp",st:"active",exp:2033,j:"AU",b:["licensor"],who:["I-Track Suspension","Hugh McLeay","Norco","Taken","Velduro","Vampire Bike Co","Canfield","Archibald Cycles","Terra Bikes","Intense","NS Bikes","Pyga","Craftworks","Trinity MTB","Mic Williams","WRP"],conf:"v",
  s:"Designed by Australian engineer Hugh McLeay and filed from a single March 2013 priority date, this is a five-jurisdiction family, not just the AU grant its title names: AU 2,013,225,624, US 9,168,977, EP 2,819,915, CA 2,865,915 and NZ 629,818, all descending from the same WO 2013/126968 PCT application. In the company's own words: \"At the heart of i-track, is a dynamic idler pulley that engages with the power transmitting segment of the chain. This idler pulley is attached to a member of the suspension linkage, so that it moves relative to the bottom bracket and the rear axle, as the suspension is compressed. When using this technology, a suspension designer is able to strategically control the dynamic movement of the idler pulley relative to the other drivetrain elements (front chainring and rear cassette), to achieve their desired targets for chain growth or shrinkage. This provides independent control of the anti-squat characteristic, allowing it to be tuned independently of axle path and other kinematic properties.\" i-track's own partners page lists eleven partners across six countries: Norco (Canada — Range, Sight, Optic, and the earlier Aurum HSP), Taken Cycles (Boise, Idaho — stacking i-track's idler on top of its own separately-licensed CBF suspension), Velduro (New Zealand/China — the Avinox-powered Rogue e-MTB), Vampire Bike Co (Utah — Chris Canfield's own brand, a second atlas entry for the Canfield name alongside CBF itself), Archibald Cycles (Delta, BC — the gearbox-compatible AC1), Terra Bikes (Italy — the steel gearbox freerider Nera), Pyga Mountain Bikes (South Africa), Craftworks Cycles (McLeay's own house brand), and Trinity MTB (Mic Williams/WRP, Geelong — see the CentreHub entry), plus two World Cup DH factory teams, Intense Factory Racing (2022) and the NS Bikes UR Team (16th at the 2023 World Championships). <a class=\"gp gp-secondary\" href=\"https://i-tracksuspension.com\" target=\"_blank\" rel=\"noopener\">i-tracksuspension.com →</a> <a class=\"gp gp-secondary\" href=\"https://i-tracksuspension.com/patents/\" target=\"_blank\" rel=\"noopener\">Patents page →</a> <a class=\"gp gp-secondary\" href=\"https://i-tracksuspension.com/partners/\" target=\"_blank\" rel=\"noopener\">Partners page →</a>",
  w:"Norco is the name that makes this card findable: the Range, Sight and Optic all license i-track's floating-idler layout, so a search for \"Norco\" in this atlas should surface this Australian solo inventor's patent family rather than come up empty. The fuller partner list is the better story, though — one small Australian IP holder licensing the identical mechanism to a Canadian mass-market brand, a South African boutique, an Italian steel-frame builder, a New Zealand e-MTB startup, two small US brands (one run by a co-inventor of CBF, itself elsewhere in this atlas), a fellow Australian gearbox bike from Geelong, and two World Cup DH factory teams — a compact case study in how far one non-exclusive patent license can travel when the inventor keeps ownership and licenses rather than sells."},
@@ -792,9 +831,11 @@ const D = [
 {y:1993,g:1995,t:"AMP F1/BLT linkage fork + through-shaft damper (US 5,462,302)",a:"Horst Leitner / AMP Research",num:"5462302",cat:"fork",st:"expired",exp:2013,b:["licensor"],who:["Horst Leitner"],conf:"v",
  s:"A parallelogram double-swingarm fork derived from Leitner's moto designs — filed as 'Double swingarm front suspension for bicycles and motorcycles,' pairing a spring-and-elastomer combination with a through-shaft hydraulic damper sealed at both ends — frame, fork and shock all built in-house at AMP in Laguna Beach.",
  w:"Proof AMP was a complete suspension house, not just the Horst Link company — the entire B2 was AMP-designed and manufactured. This is the same era in which Leitner's other AMP filings covered a bicycle disc brake (US 5,632,362, assigned to RockShox), the other suspension corner of the bike he was quietly patenting all at once."},
-{y:1993,g:1995,t:"Precision suspension fork family (US 5,470,090 et al.)",a:"Assignee under verification",num:"5470090",cat:"fork",st:"expired",exp:2015,b:[],who:[],conf:"m",
+{y:1993,g:1995,t:"Precision suspension fork family (US 5,470,090 et al.)",a:"Assignee under verification",num:"5470090",nums:["5470090","5445401","5509677"],cat:"fork",st:"expired",exp:2015,b:[],who:[],conf:"m",
  s:"A commonly-assigned early-90s fork patent family (5,470,090; 5,445,401; 5,509,677) covering elastomer stacks and dual fluid-based dampers in telescoping forks.",
- w:"Trivia for the patent nerds: US 5,509,677 was granted the same day as Leitner's 5,509,679 — two serial numbers apart."},
+ img:"pictures/US5509677A.png",
+ imgAlt:"Precision suspension fork family patent drawing, US 5,509,677, Fig. 1, showing the telescoping fork legs and crown",
+ w:"Trivia for the patent nerds: US 5,509,677 was granted April 23, 1996 — the same day as Leitner's 5,509,679 — two serial numbers apart. The patent drawing confirms the number and date; the assignee behind this family is still unconfirmed."},
 {y:2024,g:null,t:"Frequency-adjustable tuned mass damper (US 2024/0229892 A1)",a:"Fox Factory",num:"20240229892",cat:"fork",st:"pending",exp:null,b:[],who:["Fox"],conf:"v",
  s:"A weight suspended between springs targeting 22–26Hz wheel oscillation — the frequency range above where conventional suspension stops working but where the fork oscillates against the ground. Published July 2024.",
  w:"Fox filed after Rimpact had already proven the concept in World Cup racing. Small-company-first, giant-files-second — the inverse of the usual story in this atlas."},
@@ -807,8 +848,10 @@ const D = [
 {y:2003,g:2005,t:"TTX twin-tube damper",a:"Öhlins (Sweden) → licensed to Cane Creek",num:null,cat:"fork",st:"active",exp:2025,j:"SE",b:["licensor"],who:["Öhlins"],conf:"m",
  s:"Motorsport-derived twin-tube damping that keeps oil pressure above gas pressure to eliminate cavitation. Öhlins co-developed the Cane Creek Double Barrel (2005) — the first mass-market twin-tube MTB shock — before launching its own TTX line.",
  w:"Swedish motorsport IP licensed into mountain biking — the damper architecture much of the World Cup paddock has rolled on for two decades."},
-{y:2002,g:2004,t:"Reverse Arch fork chassis",a:"Manitou",num:null,cat:"fork",st:"expired",exp:2022,b:[],who:["Manitou"],conf:"m",
- s:"Manitou's signature rearward-facing arch — patented, claimed to better resist braking loads, and instantly recognizable on every Manitou fork since.",
+{y:2001,g:2003,t:"Reverse Arch fork chassis (US 6,607,185)",a:"Answer Products, Inc. → Manitou / Hayes",num:"6607185",cat:"fork",st:"expired",exp:2021,b:[],who:["Manitou"],conf:"v",
+ s:"'Suspension fork having reversed arch' — filed October 17, 2001, granted April 17, 2003. Manitou's signature rearward-facing arch, inclined behind the fork legs to clear brake hardware and better resist braking loads — instantly recognizable on every Manitou fork since.",
+ img:"pictures/US6607185B2.png",
+ imgAlt:"Manitou Reverse Arch fork patent drawing, showing the rearward-inclined arch and brake-hardware clearance",
  w:"A patent you can identify at fifty yards. Structural choice as brand identity."},
 {y:2016,g:null,t:"PSST pressure-relief valves (prior art)",a:"MRP (Grand Junction, CO)",num:null,cat:"fork",st:"unknown",exp:null,b:["priorart"],who:["MRP"],conf:"l",
  s:"Push-button bleed valves on the Ribbon fork's lower legs (2016), equalizing trapped air at altitude — shipped four years before Fox was granted a patent on the same concept.",
@@ -874,9 +917,24 @@ const D = [
 {y:2008,g:2010,t:"Gates Carbon Drive / CDX CenterTrack",a:"Gates (CenterTrack: Wayne Lumpkin)",num:null,cat:"drive",st:"active",exp:2030,b:["licensor","litigated"],who:["Gates","Wayne Lumpkin","Spot"],conf:"m",
  s:"Carbon tensile-cord belts plus the CenterTrack center-rib sprocket system — designed and patented by Wayne Lumpkin, the founder of Avid Brakes, to fix the first-generation belt's alignment and tension problems. A separate 'Drop-Out' frame patent (a split dropout that lets a one-piece belt pass into the rear triangle) sits at the center of a 2024 lawsuit.",
  w:"The Avid founder reappearing in belt drives is the kind of cross-category inventor thread this atlas exists to surface. In 2024 Spot Brand sued Gates in Denver District Court, alleging a 2008 royalty deal (8% of net sales) went unpaid as 30-plus brands across 100-plus models adopted the Drop-Out design; a Denver judge has since declined to invalidate the patent, clearing the way to trial."},
+{y:1884,g:1885,t:"Kelley strap-drum bicycle drive (US 321,932)",a:"William S. Kelley (Smithville, NJ)",num:"321932",cat:"drive",st:"expired",exp:1902,b:["priorart"],who:["William S. Kelley"],conf:"v",
+ s:"Filed March 24, 1884, granted July 7, 1885, titled simply 'Bicycle.' The specification describes the driving wheel actuated by a clutch/ratchet mechanism from a drum wound forward by a strap connected to a foot lever, and turned back by a spring when the lever releases — a treadle-and-drum alternative to the crank-and-pedal drive that eventually won out, on a high-wheel 'ordinary.'",
+ img:"pictures/US321932A.png",
+ imgAlt:"William S. Kelley bicycle patent drawing, Fig. 1 and Fig. 4, showing the high-wheel ordinary and the spring-loaded ratchet drum detail",
+ w:"Now the atlas's oldest verified drivetrain patent — nearly 140 years before the current dominant crank-and-chain arrangement, someone was patenting a foot-lever alternative to it. The mechanism lost, but the instinct (there's more than one way to turn a wheel) is the same one behind gearboxes and belt drives today."},
+{y:1885,g:1885,t:"Blount bicycle frame/steering patent (US 323,289)",a:"John G. Blount (Boston, MA)",num:"323289",cat:"frame",st:"expired",exp:1902,b:["priorart"],who:["John G. Blount"],conf:"m",
+ s:"Granted July 28, 1885, titled simply 'Bicycle' on a high-wheel 'ordinary.' The drawing shows a bracing/linkage system running from the head tube area down toward the small trailing wheel; the exact claimed mechanism isn't independently confirmed this pass — Google Patents doesn't carry searchable specification text for this one, and the description here is read directly from the drawing rather than the claims.",
+ img:"pictures/US323289A.png",
+ imgAlt:"John G. Blount bicycle patent drawing, Fig. 1, showing the high-wheel ordinary with head-tube-to-rear-wheel bracing",
+ w:"One of the honest-gap entries: the drawing and bibliographic facts (inventor, date, number) are solid, but what exactly Blount was claiming is a question left open for whoever reads the original specification next."},
+{y:1896,g:1896,t:"Mackinnon & Gage saddle-spring suspension (US 566,201)",a:"Alexander H. Mackinnon & Stuart M. Gage",num:"566201",cat:"comp",st:"expired",exp:1913,b:[],who:["Alexander H. Mackinnon","Stuart M. Gage"],conf:"m",
+ s:"Granted August 18, 1896, titled 'Bicycle.' A looped spring assembly under the saddle, connecting it to the seatpost so the seat itself absorbs shock independently of the frame — shown mounted on a full chain-drive safety bicycle in the patent's second figure, not a high-wheeler. Read directly from the drawing; the specification text wasn't independently confirmed this pass.",
+ img:"pictures/US566201A.png",
+ imgAlt:"Mackinnon and Gage bicycle patent drawing, Fig. 1 and Fig. 2, showing the spring-looped saddle mount and the complete safety bicycle",
+ w:"Worth flagging directly: this entry was submitted labeled as a William S. Kelley patent, but the patent document itself names Alexander H. Mackinnon and Stuart M. Gage as inventors — corrected here to match the primary source rather than the label it arrived with. Also a reminder that saddle suspension is nearly as old as the safety bicycle itself, a full century before dropper posts and suspension seatposts reinvented the idea."},
 {y:1890,g:1890,t:"Belt-driven bicycle (the 1890 patent)",a:"19th-century inventor",num:null,cat:"drive",st:"expired",exp:1910,b:["priorart"],who:[],conf:"l",
  s:"A belt-drive bicycle patent was filed in 1890; the idea waited over a century for materials stiff enough to make it practical.",
- w:"The oldest entry in the atlas — some 'innovations' are just patents waiting for materials science to catch up."},
+ w:"Some 'innovations' are just patents waiting for materials science to catch up — though it's no longer the atlas's oldest entry now that Kelley's 1884 filing is on record."},
 {y:2002,g:2004,t:"Honda RN-01 gearboxes (3 generations)",a:"Honda",num:null,cat:"drive",st:"expired",exp:2024,b:["priorart"],who:["Honda"],conf:"m",
  s:"The first two generations were CVTs using a camshaft and levers with no fixed ratios — known mostly through their patents. Gen 3 enclosed a derailleur and cassette with a front freewheel, letting Greg Minnaar shift without pedaling. Mechanics removed the gearbox after races.",
  w:"Patented technology that existed solely to win World Cups and was never sold — the most secretive drivetrain in MTB history."},
@@ -991,9 +1049,11 @@ const D = [
 {y:1984,g:1986,t:"Hite-Rite — Quick adjusting saddle locator (US 4,580,835)",a:"Joshua J. Angell & Joseph T. Breeze",num:"4580835",nums:["4580835","CA1265548"],cat:"comp",st:"expired",exp:1994,b:["priorart"],who:["Joe Breeze","Josh Angell"],conf:"v",
  s:"Filed and granted under the plain title ‘Quick adjusting saddle locator,’ with Josh Angell named first and Joe Breeze — builder of the first purpose-built mountain bike — second. Not a dropper post in the modern sense: it is an external spring bridging the seat collar and a clamp on the post, working with an ordinary quick-release. Crack the QR lever and the spring pushes the saddle back to a preset upper stop; sit down, close the lever, and it holds at a preset lower stop. The patent claims a torsion spring specifically, because a torsion spring expands in a plane — keeping the saddle square to the frame during the move and staying out of the gap between clamp and frame, which is what preserves full drop. The stated goal was a device that retrofits to any bike without modifying the frame, in deliberate contrast to the in-tube sprung and hydraulic posts it cites as prior art. Filed in Canada in parallel as CA 1,265,548.",
  w:"The correction to the usual telling: this patent did not run its term. Maintenance fees went unpaid and it lapsed on 10 April 1994, eight years after grant and a decade before its anticipated 2004 expiry. So the idea was free for anyone to build from 1994 onward — and still nobody did, at scale, until droppers took off around 2010. That makes the delay a market and manufacturing story rather than a patent-blocking one, which is the opposite of the assumption the timeline usually invites. The citation trail shows the industry noticed early even so: Schwinn’s 1988 adjustable seat post and Maeda’s 1990 saddle support both cite it."},
-{y:2002,g:2004,t:"Gravity Dropper (first modern dropper)",a:"Wayne Sicz",num:null,cat:"comp",st:"expired",exp:2022,b:[],who:["Wayne Sicz"],conf:"m",
- s:"After RockShox hung up on his pitch, Sicz bought a CNC machine and brought the Descender and Gravity Dropper Classic to Interbike 2000–03.",
- w:"The garage-inventor chapter of the dropper story — first to the modern market."},
+{y:2007,g:2008,t:"Gravity Dropper (first modern dropper) — US 7,422,224",a:"Wayne Sicz & Arlen Wisseman / Kimir Seatpost",num:"7422224",nums:["7422224","WO2007117884A2"],cat:"comp",st:"active",exp:2027,b:[],who:["Wayne Sicz"],conf:"v",
+ s:"After RockShox hung up on his pitch, Sicz bought a CNC machine and brought the Descender and Gravity Dropper Classic to Interbike 2000–03 — years before the patent itself: 'Adjustable bicycle seat post assembly,' filed through Kimir Seatpost (Sicz and co-inventor Arlen Wisseman) as PCT application WO 2007/117884 in March 2007, entering the US as granted patent US 7,422,224 in September 2008.",
+ img:"pictures/WO2007117884A2.png",
+ imgAlt:"Kimir Seatpost adjustable bicycle seat post assembly patent drawing, showing the telescoping post and lever-actuated locking mechanism",
+ w:"The garage-inventor chapter of the dropper story — first to the modern market, years before the patent paperwork caught up. Unlike most patents in this atlas, this one hasn't expired yet — it's still active through 2027."},
 {y:2007,g:2009,t:"Kind Shock dropper patent",a:"KS",num:null,cat:"comp",st:"expired",exp:2027,b:[],who:["Kind Shock"],conf:"v",
  s:"KS prototyped a dropper from an office-chair pneumatic lift in 1998 but its earliest English-language dropper patent dates to ~2007.",
  w:"A 12-year gap between prototype and patent — timing the market matters as much as inventing."},
@@ -1021,8 +1081,8 @@ const D = [
 {y:2000,g:2002,t:"Eggbeater pedal",a:"Crankbrothers",num:null,cat:"comp",st:"expired",exp:2022,b:[],who:["Crankbrothers"],conf:"m",
  s:"Four-sided entry and open mud-shedding architecture, patented around the wing-and-spring mechanism.",
  w:"A design-patent-meets-utility-patent case — the look and the mechanism protected together."},
-{y:2003,g:2005,t:"Lock-On grip system",a:"ODI",num:null,cat:"comp",st:"expired",exp:2025,b:["licensor","litigated"],who:["ODI"],conf:"m",
- s:"Clamp-collar grips that don't twist or slip, licensed and enforced through the 2000s.",
+{y:1997,g:2001,t:"Lock-On grip system (US 6,263,759 + 6,035,742)",a:"ODI",num:"6263759",nums:["6035742","6263759"],cat:"comp",st:"expired",exp:2017,b:["licensor","litigated"],who:["ODI"],conf:"v",
+ s:"Clamp-collar grips that don't twist or slip, licensed and enforced through the 2000s: US 6,035,742 ('Handlebar grip assembly,' filed 1997) and its continuation-in-part US 6,263,759 ('Removable, non-turning handlebar grip,' filed 1999) — an inner rigid shell with end protrusions, clamped in place by a pair of rigid clamps, with the soft grip material affixed over the outside.",
  w:"A tiny part, a huge patent — almost every performance grip today descends from it."},
 {y:2009,g:2010,t:"Crampon convex pedal platform (US D615,003 S)",a:"Lance & Chris Canfield / Canfield Brothers",num:"615003",pt:"design",cat:"comp",st:"expired",exp:2024,b:[],who:["Canfield"],conf:"v",
  s:"A patented convex (dome-up) platform that tapers to 6mm leading edges — the opposite of every concave pedal on the market. Covers all Crampon variants (Ultimate, Mountain, Magnesium). Patent number D615,003 S published on Canfield's own FAQ page.",
@@ -1051,6 +1111,11 @@ const D = [
 {y:2004,g:2006,t:"Leatt-Brace cervical spine protection",a:"Dr. Christopher Leatt / Leatt Corporation (South Africa)",num:null,cat:"comp",st:"active",exp:null,j:"ZA",b:["licensor"],who:["Leatt"],conf:"m",
  s:"A neck brace creating an alternative load path that redirects helmet impact forces away from the cervical spine — developed by Dr. Christopher Leatt, a physician, after witnessing a fatal neck injury at a motorcycle race in 2001. Leatt holds 30+ international patents spanning the brace mechanism and the later 360° Turbine helmet technology (energy-absorbing discs reducing rotational acceleration).",
  w:"The atlas's first medical-degree inventor. Leatt built an entire protection company on patented biomechanics — and 360° Turbine is the in-house answer to the same rotational-impact problem MIPS licenses to everyone else."},
+{y:2007,g:2010,t:"BMX/MTB starting gate (US 7,665,929)",a:"Prostuff LLC",num:"7665929",cat:"comp",st:"active",exp:2027,b:[],who:["Prostuff"],conf:"v",
+ s:"'Starting gate for BMX and mountain bike racing' — granted February 23, 2010 to Prostuff LLC. A spring-loaded, simultaneously-releasing gate spanning multiple racing lanes, the same basic mechanism behind the start-hill gates at every BMX track and MTB dual-slalom/four-cross course.",
+ img:"pictures/US7665929B2.png",
+ imgAlt:"BMX and mountain bike starting gate patent drawing, Fig. 1, showing the multi-lane spring-released gate assembly on the starting ramp",
+ w:"Racing infrastructure rather than a bike part — the atlas's first patent on the equipment riders line up behind rather than anything they ride. A reminder that 'mountain bike IP' extends past the bikes themselves into the sport's built environment."},
 {y:1968,g:1970,t:"Park Tool repair stand clamp (US 3,514,091)",a:"Park Tool Co. (St. Paul, MN)",num:"3514091",cat:"comp",st:"expired",exp:1987,b:[],who:["Park Tool"],conf:"m",
  img:"pictures/US3514091A.png",
  imgAlt:"Park Tool clamping device patent drawing, showing the clamp mechanism and base standard",
@@ -1059,6 +1124,23 @@ const D = [
 {y:1984,g:1986,t:"Bicycle sprocket chain scrubber (US 4,593,923)",a:"Park Tool Co.",num:"4593923",cat:"comp",st:"expired",exp:2006,b:[],who:["Park Tool"],conf:"l",
  s:"The sealed chain-cleaning box: a housing that clips around the chain with internal brushes and a solvent bath, so the chain is scrubbed in place while being back-pedaled rather than removed and soaked. The design became the template for essentially every chain cleaner sold since, Park’s own CM-series included.",
  w:"Draft confidence: the number and subject matter are as supplied, but I could not independently confirm the assignee against USPTO records — several chain-cleaner patents from this era have similar titles and different owners. Worth verifying before this one gets cited anywhere load-bearing."},
+{y:1989,g:1990,t:"Cool Tool multi-function bike tool (US 4,967,435)",a:"Robert L. Seals",num:"4967435",cat:"comp",st:"expired",exp:2010,b:["licensor"],who:["Robert L. Seals"],conf:"v",
+ s:"'Multipurpose bicycle tool kit' — the original folding multitool that collapsed a full shop's worth of hex keys, spoke wrenches and screwdrivers into one pocketable body, later reissued as US RE35,424. Ownership eventually passed through Alterra Holdings to Fiskars.",
+ w:"Robert Seals — the godfather of the modern multi-function bike tool. Nearly every folding multitool on the market today, from the cheapest bar-end wrench set to Topeak's and Crankbrothers' current lineups, is a descendant of this one filing."},
+{y:1993,g:1996,t:"S&S Bicycle Torque Coupling (US 5,586,652)",a:"Steve-Frank Smilanick / S&S Machine",num:"5586652",cat:"frame",st:"expired",exp:2013,b:["licensor"],who:["Steve Smilanick"],conf:"v",
+ s:"'Bicycle torque coupling' — a precision-machined, clutch-toothed locking joint that lets a frame's top and down tubes be split and rejoined without losing alignment or strength, so a full-size bike packs into a standard airline travel case. Filed July 12, 1993 after Smilanick wanted to bring his own bike on a Mediterranean cruise; granted December 24, 1996. Now used by well over 100 frame builders worldwide under the S&S / BTC name.",
+ img:"pictures/US5586652A.png",
+ imgAlt:"S&S Bicycle Torque Coupling patent drawing, Fig. 18, showing the coupling joints on a full bicycle frame",
+ w:"A patent solving a travel problem, not a performance one — and one of the rare atlas entries where the invention's origin story is 'I wanted to take my bike on vacation,' not a race result."},
+{y:1891,g:1891,t:"Safety Bicycle Wrench design (USD 20,932)",a:"John J. Tower (Brooklyn, NY) / Tower & Lyon",num:"20932",pt:"design",cat:"comp",st:"expired",exp:1905,b:[],who:["John J. Tower"],conf:"v",
+ s:"'Design for a wrench-handle' — issued July 14, 1891, for the flat-sided, compound-curved, rounded-end handle shape sold as the T&L Safety pocket wrench. One of the atlas's oldest entries, from an era when a bicycle wrench's handle profile itself was considered worth a design patent.",
+ w:"Nineteenth-century proof that tool ergonomics were already patentable IP a full century before multitool patents like the Cool Tool above — 'how it's held,' not just 'what it does,' has been protectable since the bicycle boom's earliest years."},
+{y:1980,g:null,t:"Moots Mount adjustable cantilever brake stud",a:"Kent Eriksen / Moots Cycles",num:null,cat:"comp",st:"unknown",exp:null,b:["priorart"],who:["Kent Eriksen","Moots"],conf:"l",
+ s:"Clamp-on cantilever brake posts, held to the seatstays, chainstays or fork legs by steel bands and slidable up or down with just an Allen wrench, so a rider could run cantilever, roller-cam or U-brakes off the same mounts. Per the Marin Museum of Bicycling and Mountain Bike Hall of Fame's 1996 induction writeup, Eriksen's invention was 'patented in 1980' — but no matching patent number turned up in USPTO/Google Patents full-text search this pass, despite 1980 being within the full-text-searchable era. Left as a gap rather than a guess.",
+ w:"The mount that let Eriksen's 1981 Moots Mountaineer win the first NORBA Off-Road National Championship at Solvang. If a reader can locate the actual grant, this is exactly the kind of correction this atlas wants — the technology and its date are well documented, only the number is missing."},
+{y:1986,g:null,t:"Moots YBB ('Why Be Beat') pivotless soft-tail",a:"Kent Eriksen / Moots Cycles",num:null,cat:"susp",st:"unknown",exp:null,b:["priorart"],who:["Kent Eriksen","Moots"],conf:"l",
+ s:"A spring-and-elastomer unit housed an inch or two below the seat collar, giving the rear triangle a small amount of travel purely through the natural flex of the titanium chainstays — no pivot anywhere on the frame. Still sold today on the Routt YBB gravel bike, decades after its mountain-bike debut. No patent number located this pass; it's unclear from available sources whether YBB was ever formally patented or relied on titanium-flex know-how that's hard to claim narrowly enough to patent.",
+ w:"One of the longest-running unbroken product names in the atlas — a mid-80s mountain bike idea still shipping on a 2020s gravel bike, seemingly on trade name and manufacturing know-how rather than an enforceable patent. If it turns out there's no patent at all, that would put YBB in the same 'deliberately or effectively unpatented' company as the SE Quadangle and Banshee KS-Link entries elsewhere in this atlas."},
 {y:2022,g:2024,t:"PCS-9.3 stand — four-jurisdiction design registrations",a:"Park Tool Co.",num:"D1036319",nums:["D1036319"],cat:"comp",st:"active",exp:2039,b:[],who:["Park Tool"],conf:"m",
  s:"The Home Mechanic stand, protected as an industrial design rather than a utility invention, in four jurisdictions at once: US design patent D1,036,319; UK 6185856; EU (RCD) 8827018-0007; and China ZL 2022 3 0067816.1. Design rights cover how the stand looks — proportions, the shape of the clamp head and leg geometry — not how the clamp works, which is long out of patent.",
  w:"A useful contrast with the 1968 clamp entry above. When the mechanism itself is public domain, the defensible asset shifts to appearance and brand, and the filing strategy shifts with it: four jurisdictions, design rights rather than utility, aimed squarely at look-alike imports. The same move Chris King and CushCore make elsewhere in this atlas with design patents alongside their utility filings."},
@@ -1158,8 +1240,8 @@ const D = [
  s:"Lower-link grease ports, sealed pivot architectures and lifetime-bearing programs with assorted filings.",
  w:"Unsexy patents that decide whether your bike survives a Pacific Northwest winter."},
 {y:2021,g:2022,t:"K.I.S. steering stabilizer",a:"Jo Klieber / Syntace (Germany) → Canyon exclusive",num:null,cat:"frame",st:"active",exp:2041,j:"DE",b:["licensor"],who:["Jo Klieber"],conf:"m",
- s:"A polymer cam ring on the steerer connected via high-strength fiber bands to springs inside the top tube — tunable centering force without friction or steering restriction. Invented by Jo Klieber at Syntace/Liteville, licensed to Canyon with a 12-month exclusive from late 2022.",
- w:"Jo Klieber designed the X-12 thru-axle standard, sold the Star Ratchet EXP to DT Swiss, and invented K.I.S. — Germany's Dave Weagle, with documented connections across three atlas categories."},
+ s:"A polymer cam ring on the steerer connected via high-strength fiber bands to springs inside the top tube — tunable centering force without friction or steering restriction. Invented by Jo Klieber at Syntace/Liteville, licensed to Canyon with a 12-month exclusive from late 2022. A possible link worth noting: US 6,394,694 B1, 'Connection clamp, in particular for handlebar and front mounting units of bicycles and the like,' granted May 28, 2002 to Jo Klieber GmbH, covers earlier clamp/mounting hardware from the same inventor and company two decades before K.I.S. — genuine Klieber IP, but not independently confirmed as the specific patent behind K.I.S.'s centering-spring mechanism itself, so K.I.S.'s own number stays unconfirmed here.",
+ w:"Jo Klieber designed the X-12 thru-axle standard, sold the Star Ratchet EXP to DT Swiss, and invented K.I.S. — Germany's Dave Weagle, with documented connections across three atlas categories, and now a fourth-generation patent trail (this clamp patent) reaching back to the early 2000s."},
 {y:2018,g:2020,t:"Rim shape determination method (US 10,733,795)",a:"Trek Bicycle",num:"10733795",cat:"frame",st:"active",exp:2038,b:[],who:["Trek"],conf:"v",
  s:"A computer-based system using computational fluid dynamics and Pareto-front optimization to generate optimal rim cross-sections — minimizing drag and lateral stability forces simultaneously. Trek patented the design *process*, not a physical rim.",
  w:"One of only two method patents in this atlas, alongside the geometry formula patent — both protect math, not hardware. Trek declined to comment when the trade press reported it."},
@@ -1200,6 +1282,8 @@ const D = [
  w:"The only patent in this atlas claimed simultaneously by two listed companies: Stan's holds and has litigated 7,334,846, while Hayes lists the same number on SUNringlé's own marking page — a licensing arrangement neither party explains in public."},
 {y:2018,g:2021,t:"Reynolds wheel patent (US 11,090,977)",a:"Hayes Bicycle Group (Reynolds)",num:"11090977",cat:"wheel",st:"active",exp:2038,b:[],who:["Reynolds","Hayes"],conf:"v",
  s:"Reynolds' DH-focused A307/A309 and Blacklabel rims are covered by US 11,090,977, the same patent SUNringlé lists for its own wheelsets — confirming the number is shared IP across Hayes' wheel brands rather than a typo.",
+ img:"pictures/US11090977B2.png",
+ imgAlt:"Hayes/Reynolds wheel patent drawing, Fig. 2B and Fig. 3, showing the rear hub exploded assembly",
  w:"Hayes Bicycle Group treats Reynolds and SUNringlé as one wheel-engineering pool: build the rim tech once, mark every brand that uses it."},
 {y:2012,g:2014,t:"Manitou fork & shock portfolio (9 patents)",a:"Hayes Bicycle Group (Manitou)",num:"9376160",nums:["RE45684","9376160","9758210","9988124","10597112","11273886","11639212","TWI386342","TWI640440"],cat:"fork",st:"active",exp:2034,b:[],who:["Manitou","Hayes"],conf:"v",
  s:"Manitou's own patent grid lists nine numbers spanning the Mattoc, Mara, Mastodon and Minute lines, including a US reissue patent (RE45684) and two Taiwan grants — the broadest single-brand fork portfolio in this atlas.",
@@ -1249,18 +1333,25 @@ const D = [
  w:"Founded by the late Franco Fratton, a motorsport-suspension veteran — EXT is one of several European suspension houses whose IP is real but nearly invisible to US patent search, an honest gap this atlas flags rather than papers over."},
 {y:1994,g:1995,t:"Unified Rear Triangle / Sweet Spot (US 5,474,318)",a:"John Castellano",num:"5474318",cat:"susp",st:"expired",exp:2015,b:["licensor"],who:["John Castellano"],conf:"v",
  s:"John Castellano's 'Sweet Spot' Unified Rear Triangle mounted the bottom bracket on the swingarm so chain forces stayed neutral through travel — granted December 12, 1995 as 'long-travel rear suspension.' Licensed to Ibis (the Bow-Ti and Szazbo), Schwinn, Mountain Cycle, WTB, Rocky Mountain and Joe Breeze's own bikes through the 1990s.",
+ img:"pictures/US5474318A.png",
+ imgAlt:"John Castellano Sweet Spot Unified Rear Triangle patent drawing, showing the bottom-bracket-on-swingarm frame layout",
  w:"The URT idea Trek's Y-bike is usually credited with actually originates here — Castellano patented it first and licensed it widely. The next entry is Trek deliberately designing around this patent rather than paying to license it."},
 {y:1995,g:1997,t:"Trek Y-bike Y-frame suspension (US 5,685,553)",a:"Trek Bicycle",num:"5685553",cat:"susp",st:"expired",exp:2017,b:[],who:["Trek"],conf:"v",
  s:"Trek's patent on the iconic Y-shaped mainframe and its unified-rear-triangle suspension. The Y-bike became one of the best-known mass-market full-suspension shapes of the late 1990s.",
  w:"Read alongside the Castellano entry, this is a textbook 'design-around': URT suspension was already patented, so Trek engineered a distinct Y-shaped frame geometry it could patent and sell without licensing the original. The shape sold the bike; the patent protected the workaround."},
+{y:1999,g:2001,t:"Trek rearward-axle-path suspension (US 6,203,042)",a:"Weston M. Wilcox / Trek Bicycle Corporation",num:"6203042",cat:"susp",st:"expired",exp:2019,b:[],who:["Trek"],conf:"m",
+ s:"'Bicycle rear suspension system providing relative rearward motion of rear axle' — a chain stay, seat stay, chain stay link and seat stay link assembled to the main front frame so the rear axle moves rearward as the suspension compresses, ahead of a shock absorber connecting the two links. Application filed under Weston M. Wilcox, assigned to Trek. Exact grant date estimated from patent-number sequencing rather than independently confirmed this pass.",
+ w:"A full five years before Active Braking Pivot, Trek was already patenting rearward axle-path behavior — just through a linkage geometry rather than ABP's concentric pivot. Worth reading next to the ABP and Split Pivot entries: three different Trek-adjacent attempts, a decade apart, at the same rearward-motion goal."},
 {y:2019,g:2022,t:"Trek Supercaliber IsoStrut (US 11,242,110)",a:"Trek Bicycle",num:"11242110",cat:"susp",st:"active",exp:2039,b:[],who:["Trek"],conf:"m",
  s:"An integrated shock-in-top-tube unit for Trek's short-travel XC race bike, packaging a stroke-limited shock into the frame's main beam for a stiffer, lighter rear end than a conventional linkage.",
  w:"Trek's current marking page also lists newer continuation patents extending its older ABP technology — the brand keeps re-filing on suspension ideas decades after the originals, the same pattern visible across Weagle and Specialized entries here."},
 {y:2011,g:2014,t:"Trek DRCV dual-chamber air shock (US 8,894,083)",a:"Trek Bicycle (with Fox)",num:"8894083",cat:"fork",st:"active",exp:2031,b:[],who:["Trek","Fox"],conf:"m",
  s:"Dual Rate Control Valve — a two-chamber air shock co-developed with Fox that opens a second air volume partway through travel, giving a supple beginning and supportive end without a piggyback.",
  w:"A rare co-developed-patent entry: a frame brand and a suspension brand sharing IP on a single shock, prefiguring the deeper Trek–Fox collaborations that followed."},
-{y:1986,g:null,t:"BMX Gyro detangler (Taiwan-origin, US refinements)",a:"Brian Scura / Odyssey BMX",num:"6968927",nums:["6968927","5829314","6164153","6205635"],cat:"comp",st:"active",exp:2023,b:["licensor"],who:["Brian Scura","Odyssey"],conf:"m",
- s:"The Gyro lets BMX handlebars spin 360° without tangling the rear-brake cable, via a split dual-cable system around a rotating bearing. Brian Scura designed it; the original mechanism traces to a Taiwanese filing commercialized by Odyssey (Bear Corp), while Scura's well-documented US portfolio (5,829,314; 6,164,153; 6,205,635; 6,968,927) covers anti-flop and cable-balancing refinements over the following 15 years.",
+{y:1986,g:2000,t:"BMX Gyro detangler (Taiwan-origin, US refinements)",a:"Brian Scura / Odyssey BMX",num:"6968927",nums:["6968927","5829314","6164153","6205635"],cat:"comp",st:"active",exp:2023,b:["licensor"],who:["Brian Scura","Odyssey"],conf:"v",
+ s:"The Gyro lets BMX handlebars spin 360° without tangling the rear-brake cable, via a split dual-cable system around a rotating bearing. Brian Scura designed it; the original mechanism traces to a Taiwanese filing commercialized by Odyssey (Bear Corp), while Scura's well-documented US portfolio covers anti-flop and cable-balancing refinements over the following 15 years: US 5,829,314, US 6,164,153 (granted December 26, 2000 — 'Method for adjusting cable detangler systems,' mounted at the stem/headset), US 6,205,635, and US 6,968,927 ('Bicycle force balancing mechanism').",
+ img:"pictures/US6164153A.png",
+ imgAlt:"Brian Scura BMX Gyro detangler patent drawing, Fig. 1, showing the stem-mounted cable-balancing mechanism",
  w:"'Gyro' is an Odyssey trademark, not a patent. The cleaner story isn't 'Odyssey patented the Gyro in the US' — it's that the original protection was Taiwanese, and the inventor spent the next decade-plus re-patenting improvements in the US. A reminder that famous product names and actual patent chains rarely line up neatly."},
 {y:1974,g:1975,t:"Mongoose Motomag cast wheel (US D236,609)",a:"BMX Products, Inc. (Mongoose)",num:"D236609",cat:"wheel",st:"expired",exp:1989,b:[],who:["Mongoose"],conf:"v",
  s:"The original cast-magnesium (later aluminum) Motomag wheel — a design patent on the five-spoke 'mag' shape that defined mid-1970s BMX and became one of the most recognizable wheels in the sport.",
@@ -1348,9 +1439,9 @@ const D = [
 {y:2021,g:null,t:"AMS Rise Grips (patent pending)",a:"All Mountain Style (Barcelona, Spain)",num:null,cat:"comp",st:"pending",exp:null,j:"ES",b:[],who:["AMS"],conf:"l",
  s:"AMS's Rise Grips carry patent-pending status, alongside other modular accessories like the AMS Adjustable Kickstand, also listed as patent pending.",
  w:"A small Barcelona accessories brand filing on grips and a kickstand — proof patent activity in this industry isn't confined to suspension and drivetrains; even the smallest touchpoints get IP attention now."},
-{y:2019,g:null,t:"RideWrap frame protection film (proprietary, no patent located)",a:"RideWrap (Whistler, BC)",num:null,cat:"frame",st:"unknown",exp:null,b:[],who:["RideWrap"],conf:"l",
- s:"RideWrap engineers its own 9-mil TPU film in-house (Lotus Pro), paired with proprietary frame-mapping software for near-complete coverage, a self-healing ceramic top coat, and hydrophobic surface properties — described throughout as proprietary engineering rather than patented invention.",
- w:"Included as a deliberate contrast to the patent-heavy entries around it: a real, differentiated product built on trade secrets and in-house process rather than a single defensible patent claim."},
+{y:2019,g:null,t:"RideWrap frame protection film (proprietary, no patent located)",a:"RideWrap (Whistler, BC)",num:null,cat:"frame",st:"unknown",exp:null,b:[],who:["RideWrap","Velocity Hucking Systems","Dyedbro"],conf:"l",
+ s:"RideWrap engineers its own 9-mil TPU film in-house (Lotus Pro), paired with proprietary frame-mapping software for near-complete coverage, a self-healing ceramic top coat, and hydrophobic surface properties — described throughout as proprietary engineering rather than patented invention. In May 2025 RideWrap acquired the assets of Velocity Hucking Systems Limited (VHS), the cult-favorite maker of the 'Slapper Tape' chain-slap dampener — a malleable silicone strip with low-profile air-cushioned bubbles that absorbs chain impact and kills chainstay noise — relaunching the line as the VHS V-3 in July 2025.",
+ w:"Included as a deliberate contrast to the patent-heavy entries around it: a real, differentiated product built on trade secrets and in-house process rather than a single defensible patent claim. The VHS acquisition wasn't a quiet one either — VHS founder Ferris Fairbairn publicly alleged corporate sabotage in the run-up to the sale, naming a Dyedbro co-owner (maker of the competing SHUSH dampener) as involved. Worth its own entry if the allegations firm up into something citable, but noted here since it's directly downstream of a RideWrap acquisition."},
 {y:2023,g:2025,t:"SwitchGrade saddle-angle adjuster (US 12,448,072)",a:"Aenomaly Constructs",num:"12448072",cat:"comp",st:"active",exp:2045,b:[],who:["Aenomaly"],conf:"v",
  s:"A mechanism fitting between the saddle rails and dropper post that lets a rider toggle saddle angle on the fly — nose-down for climbing, level for flats, nose-up for descending — via a single lever, with 2 to 8 discrete positions depending on model.",
  w:"A genuinely new touchpoint in the bike's adjustability stack: geometry has gotten size-specific, suspension has gotten tunable, and now saddle angle itself is becoming a mid-ride control rather than a fixed setup choice."}
@@ -1837,7 +1928,9 @@ function cardHTML(d){
       <img src="${f.src}" alt="${f.alt || `Original patent drawing for ${d.t.replace(/\(.*?\)/g,'').trim()}`}" loading="lazy">
       <figcaption><span>${f.caption||"Fig. from original filing"}</span>${f.link?`<a href="${f.link}" target="_blank" rel="noopener">View full patent →</a>`:(d.num?`<a href="${patentUrl(d.num,jur)}" target="_blank" rel="noopener">View full patent →</a>`:"")}</figcaption>
     </figure>`).join("") : "";
-  return `<article class="card ${d.st==='pending'?'pending-card':''} ${(d.b&&d.b.includes('litigated'))?'lit-card':''}" data-y="${d.y}" id="p-${cardRef(d)}">
+  const ref=cardRef(d);
+  return `<article class="card ${d.st==='pending'?'pending-card':''} ${(d.b&&d.b.includes('litigated'))?'lit-card':''}" data-y="${d.y}" id="p-${ref}">
+    <div class="chead-row">
     <button class="chead" aria-expanded="false">
       <span class="yr">${d.y}</span>${showJurTag?`<span class="jtag">${jur}</span>`:''}
       <span class="ct">
@@ -1848,6 +1941,10 @@ function cardHTML(d){
       </span>
       <span class="caret">▼</span>
     </button>
+    <button class="card-share-btn" data-ref="${ref}" aria-label="Copy link to this patent" title="Copy link to this patent">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+    </button>
+    </div>
     <div class="cbody">
       <p>${d.s}</p>
       ${figHTML}
@@ -2055,10 +2152,20 @@ function render(){
   tl.querySelectorAll(".co-link").forEach(b=>{
     b.onclick=(e)=>{ e.stopPropagation(); openColorado(); };
   });
+  tl.querySelectorAll(".card-share-btn").forEach(b=>{
+    b.onclick=async(e)=>{
+      e.stopPropagation();
+      const url=`${location.origin}${location.pathname}${location.search}#p=${encodeURIComponent(b.dataset.ref)}`;
+      if(await copyToClipboard(url)){
+        b.classList.add("copied");
+        setTimeout(()=>b.classList.remove("copied"),ANIMATION_CLEANUP_MS);
+      }
+    };
+  });
   // counts + clear
   const total=D.length, n=list.length;
   const anyFilter=Object.values(state).some(s=>s.size)||searchQ;
-  $("#resultCount").textContent = anyFilter?`${n} of ${total} entries`:`${total} entries · 1890–${NOW}`;
+  $("#resultCount").textContent = anyFilter?`${n} of ${total} entries`:`${total} entries · 1884–${NOW}`;
   $("#clearAll").hidden=!anyFilter;
   updateTabDots();
   renderBars(list);
@@ -2077,7 +2184,7 @@ function renderBars(list){
   const minW=stepYr===1?"3px":stepYr===2?"5px":"8px";
   const max=Math.max(...eras.map(e=>D.filter(d=>d.y>=e.from&&d.y<=e.to).length),1);
   /* Empty brackets are skipped rather than drawn, which would otherwise place
-     the lone 1890 entry flush against 1974 as if they were adjacent. Where a
+     the 1880s-90s cluster flush against 1974 as if they were adjacent. Where a
      run of 2+ empty brackets is skipped, insert a visible gap marker so the
      axis doesn't imply continuous data it doesn't have. */
   let skipped=0;
@@ -2185,24 +2292,59 @@ document.getElementById("surpriseBtn").addEventListener("click",()=>{
   if(pick) jumpToCard(cardRef(pick));
 });
 
+/* ======== SHARE (unified toolbar menu + per-card share buttons) ========
+   One clipboard helper backs both the "Copy link" option in the toolbar
+   share menu below and each card's own send-icon copy-link button. Layered
+   fallback because this tool is designed to run inside a cross-origin
+   Pinkbike iframe, where the Clipboard API is frequently blocked by the
+   embedding page's permissions policy:
+     1. navigator.clipboard.writeText — the normal path
+     2. a hidden textarea + execCommand("copy") — works in more iframe
+        contexts than the Clipboard API does
+     3. window.prompt — always works, just requires a manual copy */
+async function copyToClipboard(text){
+  try{
+    if(navigator.clipboard&&navigator.clipboard.writeText){ await navigator.clipboard.writeText(text); return true; }
+  }catch(e){ /* fall through to the execCommand fallback */ }
+  try{
+    const ta=document.createElement("textarea");
+    ta.value=text; ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.select();
+    const ok=document.execCommand("copy");
+    document.body.removeChild(ta);
+    if(ok) return true;
+  }catch(e){ /* fall through to the prompt fallback */ }
+  try{ window.prompt("Copy this link:",text); }catch(e){}
+  return false;
+}
+
 /* ======== SHARE MENU ========
-   Builds each platform's share-intent URL from whatever's on screen right
-   now — location.href already carries the live filter/search/tab state via
-   syncHash() (see DEEP LINKS above), so sharing mid-filter shares that exact
-   view, not just the bare site. No clipboard permission or Web Share API
-   needed: these are plain link-outs, opened in a small popup so sharing
-   doesn't navigate the tool away from itself. */
+   Builds each option from whatever's on screen right now — location.href
+   already carries the live filter/search/tab state via syncHash() (see
+   DEEP LINKS above), so sharing mid-filter shares that exact view, not just
+   the bare site. "Copy link" uses copyToClipboard() above; the three
+   platform options are plain share-intent link-outs opened in a small
+   popup, no SDK or Web Share API needed. */
 (()=>{
   const menu=document.getElementById("shareMenu");
   if(!menu) return;
-  const SHARE_TEXT="MTB Patent Atlas — 243 mountain bike patents and applications, 1890 to present.";
+  const SHARE_TEXT="MTB Patent Atlas — 256 mountain bike patents and applications, 1884 to present.";
   const INTENTS={
     x:      url=>`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(SHARE_TEXT)}`,
     facebook:url=>`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
     reddit: url=>`https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(SHARE_TEXT)}`
   };
   menu.querySelectorAll(".share-opt").forEach(btn=>{
-    btn.addEventListener("click",()=>{
+    btn.addEventListener("click",async()=>{
+      syncHash();
+      if(btn.dataset.share==="copy"){
+        const ok=await copyToClipboard(location.href);
+        const old=btn.textContent;
+        btn.textContent=ok?"✓ Copied":"Copy the link shown";
+        setTimeout(()=>{ btn.textContent=old; },ANIMATION_CLEANUP_MS);
+        setTimeout(()=>{ menu.open=false; },ANIMATION_CLEANUP_MS);
+        return;
+      }
       const build=INTENTS[btn.dataset.share];
       if(build) window.open(build(location.href),"_blank","noopener,noreferrer,width=600,height=520");
       menu.open=false;
