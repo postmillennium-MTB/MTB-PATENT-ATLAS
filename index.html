@@ -7,15 +7,15 @@
 <link rel="icon" type="image/png" href="favicon-32x32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>MTB Patent Atlas — 45 Years of Mountain Bike Innovation</title>
-<meta name="description" content="An interactive timeline of 228+ mountain bike patents and applications, 1890 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta name="description" content="An interactive timeline of 243 mountain bike patents and applications, 1890 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MTB Patent Atlas — 45 Years of Mountain Bike Innovation">
-<meta property="og:description" content="An interactive timeline of 228+ mountain bike patents and applications, 1890 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta property="og:description" content="An interactive timeline of 243 mountain bike patents and applications, 1890 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta property="og:url" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/">
 <meta property="og:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/apple-touch-icon.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MTB Patent Atlas — 45 Years of Mountain Bike Innovation">
-<meta name="twitter:description" content="An interactive timeline of 228+ mountain bike patents and applications, 1890 to present.">
+<meta name="twitter:description" content="An interactive timeline of 243 mountain bike patents and applications, 1890 to present.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -116,6 +116,19 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
 @media(prefers-reduced-motion:reduce){
   .mini-btn.shimmer::after{animation:none;display:none}
 }
+/* ---------- Share menu ----------
+   A native <details> disclosure (same zero-JS-to-open pattern as .gp-list
+   below the fold on each card) rather than a JS-managed dropdown — the
+   summary IS the toggle, so there's no open/close state to track by hand.
+   JS only builds the three intent URLs and closes the menu after a click. */
+.share-menu{position:relative;display:inline-block}
+.share-menu summary{list-style:none}
+.share-menu summary::-webkit-details-marker{display:none}
+.share-panel{position:absolute;top:calc(100% + 6px);right:0;z-index:40;display:flex;flex-direction:column;gap:2px;min-width:180px;background:var(--surface);border:1px solid var(--card-border);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.16);padding:6px;animation:sharePop .12s ease}
+@keyframes sharePop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.share-opt{display:flex;align-items:center;gap:8px;width:100%;background:none;border:none;border-radius:6px;padding:7px 9px;font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--ink);text-align:left;white-space:nowrap;cursor:pointer;transition:background .12s}
+.share-opt:hover,.share-opt:focus-visible{background:color-mix(in srgb, var(--primary) 12%, transparent);outline:none}
+@media(prefers-reduced-motion:reduce){.share-panel{animation:none}}
 /* ---------- Going free soon ---------- */
 .pill.soon{background:transparent;color:var(--st-pending);border:1.5px solid var(--st-pending)}
 .chip.chip-soon{border-style:dashed}
@@ -426,6 +439,14 @@ html,body{overflow-x:hidden;max-width:100%}
     <span id="resultCount"></span>
     <span class="fmeta-actions">
       <button class="mini-btn" id="surpriseBtn" title="Jump to a random patent">🎲 Surprise me</button>
+      <details class="share-menu" id="shareMenu">
+        <summary class="mini-btn" title="Share this page">🔗 Share</summary>
+        <div class="share-panel" role="menu">
+          <button class="share-opt" data-share="x" role="menuitem">𝕏 Share on X</button>
+          <button class="share-opt" data-share="facebook" role="menuitem">📘 Share on Facebook</button>
+          <button class="share-opt" data-share="reddit" role="menuitem">👽 Share on Reddit</button>
+        </div>
+      </details>
       <button class="clearbtn" id="clearAll" hidden>Clear filters</button>
     </span>
   </div>
@@ -2163,6 +2184,34 @@ document.getElementById("surpriseBtn").addEventListener("click",()=>{
   const pick=(pool.length?pool:D)[Math.floor(Math.random()*(pool.length?pool.length:D.length))];
   if(pick) jumpToCard(cardRef(pick));
 });
+
+/* ======== SHARE MENU ========
+   Builds each platform's share-intent URL from whatever's on screen right
+   now — location.href already carries the live filter/search/tab state via
+   syncHash() (see DEEP LINKS above), so sharing mid-filter shares that exact
+   view, not just the bare site. No clipboard permission or Web Share API
+   needed: these are plain link-outs, opened in a small popup so sharing
+   doesn't navigate the tool away from itself. */
+(()=>{
+  const menu=document.getElementById("shareMenu");
+  if(!menu) return;
+  const SHARE_TEXT="MTB Patent Atlas — 243 mountain bike patents and applications, 1890 to present.";
+  const INTENTS={
+    x:      url=>`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(SHARE_TEXT)}`,
+    facebook:url=>`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+    reddit: url=>`https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(SHARE_TEXT)}`
+  };
+  menu.querySelectorAll(".share-opt").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const build=INTENTS[btn.dataset.share];
+      if(build) window.open(build(location.href),"_blank","noopener,noreferrer,width=600,height=520");
+      menu.open=false;
+    });
+  });
+  // Native <details> doesn't close on an outside click by itself.
+  document.addEventListener("click",e=>{ if(menu.open && !menu.contains(e.target)) menu.open=false; });
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape" && menu.open) menu.open=false; });
+})();
 
 /* ======== SURPRISE ME — periodic shimmer ========
    Sweeps the button at a random interval between 20s and 90s so it catches the
