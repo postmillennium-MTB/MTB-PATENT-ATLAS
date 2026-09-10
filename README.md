@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 256 patents and applications spanning 1884 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 257 patents and applications spanning 1884 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 256 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 256 |
+| **Total entries** | 257 |
 | **Year range** | 1884 – 2026 |
-| **Active patents** | 126 |
+| **Active patents** | 127 |
 | **Expired patents** | 85 |
 | **Pending applications** | 38 |
 | **Litigated entries** | 22 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 256 patents and 
 | **Brands** | 137 |
 | **Named inventors** | 48 |
 | **Non-US jurisdictions** | 15 (AU, BE, CH, CN, DE, EP, ES, FR, GB, IS, IT, NZ, PL, SE, ZA) |
-| **Verified entries** | 141 |
+| **Verified entries** | 142 |
 | **Medium confidence** | 58 |
 | **Draft / in progress** | 57 |
 
@@ -247,6 +247,7 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **Three 19th-century patents added, which pushed the atlas's year range back six years (1890 → 1884) and required updating every hardcoded '1890' reference across the file** — the meta description tags, the live result-count string, and a code comment that assumed a single isolated 1890 entry. New entries: **Kelley strap-drum bicycle drive** (US 321,932, William S. Kelley, filed 1884/granted 1885) — a foot-lever-and-drum alternative to crank-and-pedal drive, now the atlas's oldest verified entry; **Blount bicycle frame/steering patent** (US 323,289, John G. Blount, 1885) — bibliographic facts confirmed, exact claimed mechanism left as an open question since this pre-1900s filing has no searchable specification text, described from the drawing itself rather than guessed at; and **Mackinnon & Gage saddle-spring suspension** (US 566,201, 1896) — a spring-looped saddle mount shown on a full chain-drive safety bicycle. **Worth flagging directly:** the third patent was submitted labeled as a William S. Kelley filing, but the patent document itself names Alexander H. Mackinnon and Stuart M. Gage as inventors — the entry follows the primary source (the drawing) rather than the label it arrived with, and says so in the card itself.
 - **K.I.S. steering stabilizer entry updated with a possible-link patent, kept honestly uncertain.** US 6,394,694 B1, "Connection clamp, in particular for handlebar and front mounting units of bicycles and the like," granted May 2002 to Jo Klieber GmbH, is genuine Klieber IP — but it's clamp/mounting hardware from two decades before K.I.S. launched, not confirmed as the specific patent behind K.I.S.'s centering-spring mechanism. Added as context rather than as K.I.S.'s own patent number, which stays unconfirmed.
 - **RideWrap entry updated:** in May 2025 RideWrap acquired the assets of Velocity Hucking Systems (VHS), maker of the cult-favorite "Slapper Tape" chain-slap dampener, relaunching it as the VHS V-3 in July 2025. Noted the acquisition wasn't quiet — VHS's founder publicly alleged corporate sabotage involving a co-owner of competing brand Dyedbro in the run-up to the sale — flagged as worth its own entry if the allegations firm up into something citable.
+- **New entry: Shimano Ice Tech clad disc brake rotor (US 9,234,553).** "Bicycle disc brake rotor" — filed Dec 29, 2011 by Toru Iwai and Makoto Souwa, published as US 2013/0168193 A1 on July 4, 2013, granted Jan 12, 2016. Covers the three-layer clad rotor construction (stainless steel braking surfaces bonded to either side of an aluminum core, with the core exposed as a radiator fin at the inner diameter) that underpins Shimano's Ice Tech and Ice Tech Freeza rotor lines. Filing/grant dates, inventor names, and the granted number were cross-confirmed across independent search results referencing the Google Patents and USPTO record (this sandbox's network egress proxy blocks patents.google.com, freepatentsonline.com, patents.justia.com, and uspto.report directly, so the underlying pages could not be fetched and read in full — worth a direct primary-source check when that access is available). Shipped at `conf:"v"` on the strength of that cross-confirmation; `exp` set to 2031 (filing + 20 years, the standard post-1995 rule already used throughout the atlas). Slotted next to the existing Servo Wave lever-cam entry in the Shimano brake cluster.
 
 ---
 
