@@ -1914,10 +1914,37 @@ function applyStaticI18n(){
    switcher's own localStorage pattern) — the tool works fine if storage is
    unavailable or empty, it just starts in English. */
 const LANG_STORAGE_KEY="pmr-patent-atlas-lang";
+/* A bare #fr or #en in the URL — e.g. postmillenniumrenaissance.com/atlas/#fr
+   as the iframe/link target — opens directly in that language, overriding
+   any saved preference. Also accepts lang=fr/lang=en as one of the normal
+   &-separated deep-link params (see DEEP LINKS below), so it can combine
+   with a #cat=…&lang=fr style link; the bare form is checked first since
+   that's the plain "#fr" case this exists for. Read here, before
+   initLanguage() picks a language and the chip rows below get built, so
+   the page never flashes English before switching. */
+function langFromHash(){
+  const h=(location.hash||"").slice(1);
+  if(!h) return null;
+  if(h.trim().toLowerCase()==="fr") return "fr";
+  if(h.trim().toLowerCase()==="en") return "en";
+  try{
+    const v=new URLSearchParams(h).get("lang");
+    if(v==="fr"||v==="en") return v;
+  }catch(e){ /* malformed hash — ignore, fall through to saved/default */ }
+  return null;
+}
 (function initLanguage(){
   let saved=null;
   try{ saved=localStorage.getItem(LANG_STORAGE_KEY); }catch(e){ /* storage blocked — default to English */ }
   if(saved==="fr") state.lang="fr";
+  const hashLang=langFromHash();
+  if(hashLang){
+    state.lang=hashLang;
+    /* Treat an explicit #fr/#en link the same as clicking the toggle: it
+       becomes the remembered preference too, so a later plain visit (no
+       hash) keeps the language the link asked for. */
+    try{ localStorage.setItem(LANG_STORAGE_KEY,state.lang); }catch(e){ /* storage blocked — language still applies for this session */ }
+  }
 })();
 document.querySelectorAll(".langbtn").forEach(b=>{
   b.onclick=()=>{
