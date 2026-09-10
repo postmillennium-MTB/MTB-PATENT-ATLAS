@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 257 patents and applications spanning 1884 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 260 patents and applications spanning 1884 to 2026, organized into eight categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 257 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 257 |
+| **Total entries** | 260 |
 | **Year range** | 1884 – 2026 |
-| **Active patents** | 127 |
-| **Expired patents** | 85 |
+| **Active patents** | 128 |
+| **Expired patents** | 87 |
 | **Pending applications** | 38 |
-| **Litigated entries** | 22 |
-| **Patent Fights (named rivalries)** | 7 |
-| **Brands** | 137 |
-| **Named inventors** | 48 |
+| **Litigated entries** | 25 |
+| **Patent Fights (named rivalries)** | 8 |
+| **Brands** | 143 |
+| **Named inventors** | 49 |
 | **Non-US jurisdictions** | 15 (AU, BE, CH, CN, DE, EP, ES, FR, GB, IS, IT, NZ, PL, SE, ZA) |
-| **Verified entries** | 142 |
-| **Medium confidence** | 58 |
+| **Verified entries** | 144 |
+| **Medium confidence** | 59 |
 | **Draft / in progress** | 57 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -248,6 +248,7 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **K.I.S. steering stabilizer entry updated with a possible-link patent, kept honestly uncertain.** US 6,394,694 B1, "Connection clamp, in particular for handlebar and front mounting units of bicycles and the like," granted May 2002 to Jo Klieber GmbH, is genuine Klieber IP — but it's clamp/mounting hardware from two decades before K.I.S. launched, not confirmed as the specific patent behind K.I.S.'s centering-spring mechanism. Added as context rather than as K.I.S.'s own patent number, which stays unconfirmed.
 - **RideWrap entry updated:** in May 2025 RideWrap acquired the assets of Velocity Hucking Systems (VHS), maker of the cult-favorite "Slapper Tape" chain-slap dampener, relaunching it as the VHS V-3 in July 2025. Noted the acquisition wasn't quiet — VHS's founder publicly alleged corporate sabotage involving a co-owner of competing brand Dyedbro in the run-up to the sale — flagged as worth its own entry if the allegations firm up into something citable.
 - **New entry: Shimano Ice Tech clad disc brake rotor (US 9,234,553).** "Bicycle disc brake rotor" — filed Dec 29, 2011 by Toru Iwai and Makoto Souwa, published as US 2013/0168193 A1 on July 4, 2013, granted Jan 12, 2016. Covers the three-layer clad rotor construction (stainless steel braking surfaces bonded to either side of an aluminum core, with the core exposed as a radiator fin at the inner diameter) that underpins Shimano's Ice Tech and Ice Tech Freeza rotor lines. Filing/grant dates, inventor names, and the granted number were cross-confirmed across independent search results referencing the Google Patents and USPTO record (this sandbox's network egress proxy blocks patents.google.com, freepatentsonline.com, patents.justia.com, and uspto.report directly, so the underlying pages could not be fetched and read in full — worth a direct primary-source check when that access is available). Shipped at `conf:"v"` on the strength of that cross-confirmation; `exp` set to 2031 (filing + 20 years, the standard post-1995 rule already used throughout the atlas). Slotted next to the existing Servo Wave lever-cam entry in the Shimano brake cluster.
+- **RampWerks v. absoluteBLACK & Playtri — new litigation entry, two new patent entries, and a corrected long-standing Brands count.** RampWerks, LLC (a holding company WickWerks, LLC assigned its ramped-tooth chainring patents to on May 22, 2023 — four days before the suit) sued absoluteBLACK and multi-sport retailer Playtri in the Eastern District of Texas (Case No. 2:23-cv-00236, filed May 26, 2023) over three patents: US 10,677,338, US 10,711,875, and US 11,460,099. Added the first two as full entries — both real "Bicycle chain rings" continuations, confirmed inventor Christopher A. Wickliffe (added as a named inventor), confirmed WickWerks→RampWerks assignment chain — and a new Patent Fight, "RampWerks v. absoluteBLACK." **Worth flagging directly, a genuinely interesting continuation-chain wrinkle:** the two patents share a title and inventor but sit in *separate* continuation lineages with materially different real expiration dates — 10,677,338 traces to an April 2006 non-provisional parent (making its actual 20-year term run out around 2026, not the 2037 a naive filing-year calculation on its own 2017 filing date would suggest), while 10,711,875 traces to a 2011 parent (expiring 2031). That's not a rounding error; it's the difference between "expired" and "active," so both `exp` values are computed from the correct governing priority date rather than each continuation's own later filing year, with the reasoning spelled out in each card. **Left out, honestly:** the third patent, US 11,460,099, is real and part of the same litigated family (also confirmed via the RampWerks-vs-REI complaint), but this pass couldn't independently pin down its own filing/grant dates or priority chain — rather than guess, it's named in the litigation entry's text but not given its own card. It's referenced, not catalogued — a clean gap for a future pass. **Also left out:** two related suits surfaced during research — RampWerks v. J&B Importers (a Florida AbsoluteBlack distributor, filed 2023) and a second, separate RampWerks v. absoluteBLACK case (2:24-cv-00695, filed August 2024) — noted in the new entries' text as context but not added as their own cards; flagging both as candidates if this campaign gets its own deeper pass later. **A sourcing caveat on the resolution itself:** the "voluntarily dismissed without prejudice, June 2026" outcome came from user-supplied sources (PatSnap and GreyB litigation trackers); this session's network access to patents.google.com, courtlistener.com, dockets.justia.com, pacermonitor.com, insight.rpxcorp.com, portal.unifiedpatents.com, and lens.org was blocked, so none of those primary/aggregator sources could be independently reopened to re-confirm the dismissal — the litigation entry ships at `conf:"m"` rather than `"v"` for exactly that reason, and says so in its own text. The patent numbers, filing dates, inventor, and assignment chain for the two catalogued patents, by contrast, were cross-confirmed across multiple independent search results and ship at `conf:"v"`. **Also corrected:** the "Brands" count in the At-a-glance table, which had drifted to 137 against an actual `BRANDS.length` of 139 before this pass (now 143 including the four brands this update adds) — a stale figure from an earlier session that nothing had caught since.
 
 ---
 
