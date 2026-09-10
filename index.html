@@ -2315,7 +2315,7 @@ function cardHTML(d){
     gp=`<a class="gp" href="${url}" target="_blank" rel="noopener">${t("viewOnGP",pretty)}</a>${transNote}`;
   } else if(jur!=="US"){
     const espUrl=`https://worldwide.espacenet.com/patent/search?q=${externalSearchQuery}`;
-    const natLink=natOfficeFull(jur)?`<a class="gp gp-secondary" href="${NATOFFICE[jur].url}" target="_blank" rel="noopener">${t("searchNatOffice",natOfficeFull(jur))} →</a>`:"";
+    const natLink=natOfficeFull(jur)?`<a class="gp gp-secondary" href="${NATOFFICE[jur].url}" target="_blank" rel="noopener">${t("searchNatOffice",natOfficeFull(jur))}</a>`:"";
     gp=`<a class="gp" href="${espUrl}" target="_blank" rel="noopener">${t("searchEspacenet")}</a>${natLink}${transNote}`;
   } else {
     gp=`<a class="gp" href="https://patents.google.com/?q=${externalSearchQuery}" target="_blank" rel="noopener">${t("searchRelatedGP")}</a>`;
