@@ -82,6 +82,9 @@ Each theme has its own structural personality — not just a different color, bu
 | **CAMBA** | California Mountain Bike Association | Bold racing / high-contrast — 0px sharp corners, hard offset shadows, square pills, red left-edge accent on litigated cards |
 | **CAMBR** | Chicago Area Mountain Bike Riders | Technical blueprint — navy structure, orange accents, 6px corners, mono-forward |
 
+### 🌐 Language switcher (English / French)
+An EN/FR toggle sits in the header next to the theme switcher. Every piece of UI chrome — filter labels, tabs, buttons, tooltips, the Stats and Patent Fights view copy, the footer, and the Colorado MTB Innovation panel — is fully translated. **The French text for the 256 patent write-ups themselves (titles, summaries, and "why it matters" analysis) is AI-drafted and has not yet been checked by a French speaker against the English original** — a banner says so on-page for as long as that's true, and stays until a real review happens. This is a deliberate, disclosed tradeoff, not an oversight: patent-law and suspension-engineering terminology is exactly the kind of text where a wrong word is worse than no word, so it's flagged rather than presented as finished. Language choice is remembered per-browser via `localStorage` (a preference only — the tool works fine with it empty), the page opens in English by default, and every deep link (`#p=...`) and Patent Fights jump-link resolves to the same card regardless of which language is active.
+
 ### Scrollable filter tabs
 Eight tabs across the top of the filter bar: Category · Status · Story · Inventors · Brands · All · 📊 Stats · ⚔ Fights. The Inventors and Brands rows (the long ones) have left/right scroll arrows that appear only when content overflows, soft fade-edge cues, and a "Show all" button that wraps everything onto multiple lines for full at-a-glance access.
 
@@ -200,6 +203,14 @@ Expiration dates are estimated as filing year + 20 years and do not account for 
 For patents that issued before June 8, 1995 (when US law switched to a 20-years-from-filing term), `exp` is instead estimated as **grant year + 17 years** for utility patents or **grant year + 14 years** for design patents, matching the actual pre-GATT statutory term. The atlas's three Schwinn entries (1938–1966) are the only current cases old enough for this to matter, but it's the correct rule for any pre-1995 filing added later.
 
 Corrections, additional patents, and better sourcing are welcome — open an issue or PR.
+
+---
+
+## Recent updates (September 2026)
+
+- **Added a language switcher: English / French.** EN/FR buttons sit next to the theme switcher in the header. All UI chrome (filter labels, buttons, tooltips, the Stats and Patent Fights view copy, the footer, and the Colorado MTB Innovation panel) is translated and wired through a `T[lang]` registry, with helper accessors (`t()` for chrome strings, `tx()` for data fields) that fall back to English if a translation is ever missing. Every `t`/`s`/`w` field — plus image alt text and captions — across all 256 patent entries, and the `title`/`sub`/`stakes`/`outcome` fields on all 7 Patent Fights, was converted from a plain string to a `{en, fr}` object. Deep links (`#p=...`) and Patent Fights → card jump-links use a stable, English-derived slug so they keep working regardless of which language is active when a link is generated or opened; free-text search checks both languages at once so switching languages mid-session never breaks a query already typed. Language choice persists via `localStorage` (a preference only — same pattern as the theme switcher, the tool works fine with it empty) and the page defaults to English.
+- **The French translation of the 256 entries is AI-drafted and unreviewed.** A banner says so on-page whenever French is selected (dismissible for that page view, but it comes back on reload or re-selecting French, rather than being permanently silenced) and stays until a French speaker has actually checked the technical/legal terminology against the English source — patent-law and suspension-engineering vocabulary is exactly the kind of text where a wrong word is worse than no word. Treat the French data as a first draft, not a verified translation, until that review happens.
+- **Scope note for future language additions:** the `T` registry and the `{en, fr}` field pattern are built to extend to more languages (add a language button, a `T.xx` chrome block, and an `xx` key on each `{en, fr}` data field) without another structural pass — but no German, Spanish, or other-language content has been drafted yet.
 
 ---
 
