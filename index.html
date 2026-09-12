@@ -541,8 +541,11 @@ html,body{overflow-x:hidden;max-width:100%}
 status: active | expired | pending | unknown
 conf: v (verified) | m (medium) | l (draft)
 badges: licensor | acquired | givenaway | litigated | priorart
-cat keys: susp fork drive wheel comp emtb frame
-j: jurisdiction of filing — omit for US (default). EP | DE | FR | GB | CA | CH
+cat keys: susp fork drive wheel comp emtb frame transport — see CATS below
+j: jurisdiction of filing — omit for US (default). See NATOFFICE below for
+   the full current list and what each code links to; EU is EUIPO design
+   registrations (not the EPO patents "EP" covers) and always pairs with
+   num:null — see the comment on NATOFFICE.EU, below, for why.
 pt: patent type — omit for utility (default). design | trademark
 */
 const CATS = {
@@ -1762,6 +1765,7 @@ const T = {
     searchRelatedGP:"Search related patents on Google Patents →",
     patentTextIn:lang=>`Patent text in ${lang} — machine translation available via Google Patents or Espacenet`,
     figCaptionDefault:"Fig. from original filing", viewFullPatent:"View full patent →",
+    origDrawingFor:title=>`Original patent drawing for ${title}`,
     coPanelTitle:"📍 Colorado MTB Innovation", coLinkBtn:"📍 Colorado MTB innovation", coAriaLabel:"Colorado MTB innovation",
     minimize:"Minimize", close:"Close", dismiss:"Dismiss",
     eraCount:n=>`${n} ${n===1?"entry":"entries"}`,
@@ -1834,6 +1838,7 @@ const T = {
     searchRelatedGP:"Rechercher les brevets liés sur Google Patents →",
     patentTextIn:lang=>`Texte du brevet en ${lang} — traduction automatique disponible via Google Patents ou Espacenet`,
     figCaptionDefault:"Fig. du dépôt original", viewFullPatent:"Voir le brevet complet →",
+    origDrawingFor:title=>`Dessin de brevet original pour ${title}`,
     coPanelTitle:"📍 Innovation VTT du Colorado", coLinkBtn:"📍 Innovation VTT du Colorado", coAriaLabel:"Innovation VTT du Colorado",
     minimize:"Réduire", close:"Fermer", dismiss:"Fermer",
     eraCount:n=>`${n} entrée${n===1?"":"s"}`,
@@ -1909,7 +1914,7 @@ function applyStaticI18n(){
     if(tip){ el.title=tip; el.setAttribute("aria-description",tip); }
   });
   const wmbc=$(".sw-wmbc"), comba=$(".sw-comba"), camba=$(".sw-camba"), cambr=$(".sw-cambr");
-  const themeWord=state.lang==="fr"?"Thème":"Theme";
+  const themeWord=t("themeLabel");
   if(wmbc) wmbc.setAttribute("aria-label",`${themeWord} WMBC`);
   if(comba) comba.setAttribute("aria-label",`${themeWord} COMBA`);
   if(camba) camba.setAttribute("aria-label",`${themeWord} CAMBA`);
@@ -2377,7 +2382,7 @@ function cardHTML(d){
      array shape means there's only one rendering path to maintain. */
   const figList = d.imgs || (d.img ? [{src:d.img, alt:d.imgAlt}] : []);
   const figHTML = figList.length ? figList.map(f=>`<figure class="patent-fig">
-      <img src="${f.src}" alt="${tx(f.alt) || `${state.lang==="fr"?"Dessin de brevet original pour":"Original patent drawing for"} ${titleShown.replace(/\(.*?\)/g,'').trim()}`}" loading="lazy">
+      <img src="${f.src}" alt="${tx(f.alt) || t("origDrawingFor", titleShown.replace(/\(.*?\)/g,'').trim())}" loading="lazy">
       <figcaption><span>${tx(f.caption)||t("figCaptionDefault")}</span>${f.link?`<a href="${f.link}" target="_blank" rel="noopener">${t("viewFullPatent")}</a>`:(d.num?`<a href="${patentUrl(d.num,jur)}" target="_blank" rel="noopener">${t("viewFullPatent")}</a>`:"")}</figcaption>
     </figure>`).join("") : "";
   const ref=cardRef(d);
