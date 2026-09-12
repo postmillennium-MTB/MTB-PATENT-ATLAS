@@ -188,6 +188,24 @@ baked in except where the prefix *is* the number's identity:
 | WO (PCT) publication | `"WO2025003104"` | WO 2025/003,104 |
 | US published application (no grant yet) | `"20190136918"` | US 20190136918 |
 | **EU Registered Community Design (RCD)** | **`num: null`, always** | cite the RCD number(s) in `s` prose instead |
+| **Pre-1916 British patent** | **`num: null`, always** | cite the number ("No. NNNN of YYYY") in `s` prose instead |
+
+**Pre-1916 British patents are a second exception, same shape as the EU RCD
+one.** Before the Patents and Designs Act 1907 took effect (1916 in
+practice), UK patents were numbered sequentially *within each calendar
+year*, restarting at 1 every January — "No. 2236 of 1870" and a modern
+"No. 2236" (this atlas's `numLink()`/`patentUrl()` only handle the
+post-1915 forever-incrementing scheme) are two completely different
+patents. Storing the bare number would auto-generate a Google Patents link
+to a real but *wrong* 20th/21st-century GB patent — worse than no link,
+since a wrong link reads as confirmed when it isn't. Keep `j:"GB"` (still
+correct for search/filter purposes) and `num: null`, and cite the
+year-qualified number in prose ("British patent No. 2236, taken out August
+11, 1870") the same way an EU RCD's number lives in `s` rather than `num`.
+The 1870 Starley & Hillman wheel entry is the first case of this in the
+dataset — if EPO/Espacenet ever exposes a working per-record deep link for
+this pre-1916 numbering scheme, wiring it in would be a genuine code
+change, same call as the EU RCD deep-link idea above.
 
 **EU RCDs are a real exception to "always fill `num` when you have a real
 number."** An EUIPO Registered Community Design (format `NNNNNNNNN-NNNN`) is

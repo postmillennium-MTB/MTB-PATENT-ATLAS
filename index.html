@@ -7,17 +7,17 @@
 <link rel="icon" type="image/png" href="favicon-32x32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>MTB Patent Atlas — 45 Years of Mountain Bike Innovation</title>
-<meta name="description" content="An interactive timeline of 267 mountain bike patents and applications, 1884 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta name="description" content="An interactive timeline of 269 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MTB Patent Atlas — 45 Years of Mountain Bike Innovation">
-<meta property="og:description" content="An interactive timeline of 267 mountain bike patents and applications, 1884 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta property="og:description" content="An interactive timeline of 269 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta property="og:url" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/">
 <meta property="og:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/social-preview.png">
 <meta property="og:image:width" content="1000">
 <meta property="og:image:height" content="852">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MTB Patent Atlas — 45 Years of Mountain Bike Innovation">
-<meta name="twitter:description" content="An interactive timeline of 267 mountain bike patents and applications, 1884 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta name="twitter:description" content="An interactive timeline of 269 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta name="twitter:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/social-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
@@ -242,7 +242,7 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .langbtn.on{background:#fff;border-color:#fff;color:var(--deep)}
 .langbtn:focus-visible{outline:2px solid #fff;outline-offset:2px}
 /* ---------- Machine-translation disclaimer banner ----------
-   Shown only while state.lang!=="en". The 267-entry data block is AI-
+   Shown only while state.lang!=="en". The 269-entry data block is AI-
    translated and not yet reviewed by a French speaker — this stays visible
    (session-dismissible only, never permanently) rather than a one-time
    toast, because the accuracy caveat applies to every card on every visit
@@ -752,6 +752,8 @@ const INVENTORS = [
   {label:"John G. Blount",key:"John G. Blount"},
   {label:"Alexander H. Mackinnon",key:"Alexander H. Mackinnon"},
   {label:"Stuart M. Gage",key:"Stuart M. Gage"},
+  {label:"Eugène Meyer",key:"Eugène Meyer"},
+  {label:"James Starley",key:"James Starley"},
   {label:"Christopher A. Wickliffe",key:"Christopher A. Wickliffe"},
   {label:"Fabrizio Dragoni",key:"Fabrizio Dragoni"},
 ];
@@ -1090,7 +1092,7 @@ const D = [
  img:"pictures/US566201A.png",
  imgAlt:{en:"Mackinnon and Gage bicycle patent drawing, Fig. 1 and Fig. 2, showing the spring-looped saddle mount and the complete safety bicycle",fr:"Dessin de brevet du vélo de Mackinnon et Gage, Fig. 1 et Fig. 2, montrant la fixation de selle à ressort en boucle et le vélo de sécurité complet"},
  w:{en:"Worth flagging directly: this entry was submitted labeled as a William S. Kelley patent, but the patent document itself names Alexander H. Mackinnon and Stuart M. Gage as inventors — corrected here to match the primary source rather than the label it arrived with. Also a reminder that saddle suspension is nearly as old as the safety bicycle itself, a full century before dropper posts and suspension seatposts reinvented the idea.",fr:"À signaler directement : cette fiche avait été soumise comme brevet de William S. Kelley, mais le document de brevet lui-même nomme Alexander H. Mackinnon et Stuart M. Gage comme inventeurs — corrigé ici pour correspondre à la source primaire plutôt qu'à l'étiquette avec laquelle elle est arrivée. Aussi un rappel que la suspension de selle est presque aussi ancienne que le vélo de sécurité lui-même, un siècle complet avant que les tiges de selle télescopiques et à suspension ne réinventent l'idée."}},
-{y:1890,g:1890,t:{en:"Belt-driven bicycle (the 1890 patent)",fr:"Vélo à transmission par courroie (le brevet de 1890)"},a:"19th-century inventor",num:null,cat:"drive",st:"expired",exp:1910,b:["priorart"],who:[],conf:"l",
+{y:1890,g:1890,t:{en:"Belt-driven bicycle (the 1890 patent)",fr:"Vélo à transmission par courroie (le brevet de 1890)"},a:"19th-century inventor",num:null,cat:"drive",st:"expired",exp:1907,b:["priorart"],who:[],conf:"l",
  s:{en:"A belt-drive bicycle patent was filed in 1890; the idea waited over a century for materials stiff enough to make it practical.",fr:"Un brevet de vélo à transmission par courroie a été déposé en 1890 ; l'idée a attendu plus d'un siècle des matériaux assez rigides pour la rendre pratique."},
  w:{en:"Some 'innovations' are just patents waiting for materials science to catch up — though it's no longer the atlas's oldest entry now that Kelley's 1884 filing is on record.",fr:"Certaines « innovations » ne sont que des brevets attendant que la science des matériaux les rattrape — même si ce n'est plus la plus ancienne fiche de l'atlas maintenant que le dépôt de Kelley de 1884 est répertorié."}},
 {y:2002,g:2004,t:{en:"Honda RN-01 gearboxes (3 generations)",fr:"Boîtes de vitesses Honda RN-01 (3 générations)"},a:"Honda",num:null,cat:"drive",st:"expired",exp:2024,b:["priorart"],who:["Honda"],conf:"m",
@@ -1124,6 +1126,18 @@ const D = [
  s:{en:"Fourteen published patents — including US 9,404,565, the 9,581,229–231 family, 11,235,827 and two design patents — covering Drop-Stop chainring profiles, the CAMO modular interface and the Resolve dropper. All listed on Wolf Tooth's own patent page.",fr:"Quatorze brevets publiés — dont l'US 9,404,565, la famille 9,581,229-231, le 11,235,827 et deux brevets de dessin — couvrant les profils de plateau Drop-Stop, l'interface modulaire CAMO et la tige télescopique Resolve. Tous listés sur la propre page de brevets de Wolf Tooth."},
  w:{en:"The company SRAM sued over narrow-wide held its own patents in the same space — and pairs its IP list with a public right-to-repair pledge. Small-company patenting done in the open.",fr:"L'entreprise que SRAM a poursuivie au sujet du narrow-wide détenait ses propres brevets dans le même domaine — et associe sa liste de propriété intellectuelle à un engagement public en faveur du droit à la réparation. Du dépôt de brevets par une petite entreprise, en toute transparence."}},
 /* ---- Wheels & Tires ---- */
+/* The two entries below are this category's own historical root — the wire-
+   spoke tension wheel that made a genuinely large, lightweight front wheel
+   structurally possible, and the patent that turned it into a commercial
+   high-wheel bicycle. Placed first in this section (chronologically first
+   overall, not just in Wheels) rather than folded into the modern tubeless/
+   hub subsections below, which are thematically distinct stories. */
+{y:1869,g:1869,t:{en:"Meyer wire-spoke tension wheel (FR 86,705)",fr:"Roue à rayons tendus de Meyer (FR 86 705)"},a:"Eugène Meyer",num:"FR86705",cat:"wheel",j:"FR",st:"expired",exp:1886,b:["priorart"],who:["Eugène Meyer"],conf:"v",
+ s:{en:"French mechanic Eugène Meyer patented a wire-spoke tension wheel — individually adjustable spokes anchored at the hub and threaded through the rim, all-metal construction using hollow tubing — as French patent No. 86,705, dated August 4, 1869. It cut roughly a third of the weight off contemporary velocipede wheels and removed the ~48-inch diameter ceiling wooden-wheel construction had imposed, the two changes that made a genuinely large front wheel structurally practical for the first time.",fr:"Le mécanicien français Eugène Meyer a breveté une roue à rayons tendus — rayons individuellement réglables ancrés au moyeu et enfilés à travers la jante, construction entièrement métallique utilisant des tubes creux — sous le brevet français n° 86 705, daté du 4 août 1869. Elle a réduit d'environ un tiers le poids des roues de vélocipède de l'époque et supprimé le plafond d'environ 48 pouces de diamètre qu'imposait la construction en bois, les deux changements qui ont rendu une grande roue avant réellement viable structurellement pour la première fois."},
+ w:{en:"Meyer raced his own wheels to prove them out — 10th place at the 1869 Paris–Rouen race — and a Meyer-wheeled high-wheeler ridden by James Moore at the 1870 Midland Counties Championship in Wolverhampton is credited with introducing the design to England, a year before James Starley and William Hillman's own lever-tension wheel patent (next entry) turned it into a commercial machine, the Ariel. Cycling historians increasingly credit Meyer as the wire wheel's actual originator — a title popular history more often gives to the bicycle he made possible than to the inventor himself.",fr:"Meyer a couru sur ses propres roues pour en faire la preuve — 10e place à la course Paris-Rouen de 1869 — et un grand-bi à roues Meyer piloté par James Moore au championnat des Midland Counties à Wolverhampton en 1870 aurait introduit ce modèle en Angleterre, un an avant que le brevet de roue à tension par levier de James Starley et William Hillman (fiche suivante) n'en fasse une machine commerciale, l'Ariel. Les historiens du cyclisme créditent de plus en plus Meyer comme le véritable inventeur de la roue à rayons métalliques — un titre que l'histoire populaire attribue plus souvent au vélo qu'il a rendu possible qu'à l'inventeur lui-même."}},
+{y:1870,g:1870,t:{en:"Starley & Hillman lever-tension wheel & driving gear (GB patent, 1870)",fr:"Roue à tension par levier et engrenage d'entraînement de Starley et Hillman (brevet britannique, 1870)"},a:"James Starley & William Hillman / Coventry Machinists' Company",num:null,cat:"wheel",j:"GB",st:"expired",exp:1887,b:["priorart"],who:["James Starley"],conf:"v",
+ s:{en:"James Starley and William Hillman, both then employed at the Coventry Machinists' Company, patented improvements to wheel construction and driving gear for velocipedes as British patent No. 2236, taken out August 11, 1870. The wheel used V-shaped wire spokes anchored in the hub flange and threaded through rim eyelets, all tensioned at once by turning a lever at the hub center — the 'Lever Tension Wheel.' Starley left CMC that November to found Starley & Co. and brought the design to market in 1871 as the Ariel, widely regarded as the first successful all-metal, high-wheel bicycle.",fr:"James Starley et William Hillman, alors tous deux employés par la Coventry Machinists' Company, ont breveté des améliorations à la construction des roues et à l'engrenage d'entraînement des vélocipèdes sous le brevet britannique n° 2236, déposé le 11 août 1870. La roue utilisait des rayons métalliques en V ancrés dans la collerette du moyeu et enfilés à travers des œillets de jante, tous mis en tension simultanément en tournant un levier au centre du moyeu — la « roue à tension par levier ». Starley a quitté la CMC en novembre de la même année pour fonder Starley & Co. et a commercialisé le modèle en 1871 sous le nom d'Ariel, largement considéré comme le premier grand-bi entièrement métallique à connaître le succès."},
+ w:{en:"The Ariel is the machine the 'penny-farthing' silhouette is named for — a large front wheel sized to a rider's leg-stroke, direct drive with no chain or gearing, riding on Starley's own tensioned wire wheel rather than Meyer's original French design (above). High-wheel 'ordinaries' dominated cycling roughly 1874 to the mid-1880s, until Starley's own nephew, John Kemp Starley, displaced them for good with the chain-driven, diamond-framed Rover safety bicycle (1885) — a wheel-size-and-drivetrain reversal this atlas's own frame and drivetrain categories eventually pick back up.",fr:"L'Ariel est la machine qui donne son nom à la silhouette du « grand-bi » (penny-farthing) — une grande roue avant dimensionnée à la foulée du cycliste, en prise directe sans chaîne ni engrenage, montée sur la propre roue à rayons tendus de Starley plutôt que sur le modèle français original de Meyer (ci-dessus). Les « bicycles ordinaires » à grande roue ont dominé le cyclisme d'environ 1874 jusqu'au milieu des années 1880, jusqu'à ce que le propre neveu de Starley, John Kemp Starley, les supplante définitivement avec la bicyclette de sécurité Rover (1885), à chaîne et cadre en losange — un renversement de la taille des roues et de la transmission que les catégories cadre et transmission de cet atlas reprennent d'ailleurs plus tard."}},
 {y:2003,g:2008,t:{en:"Bead Socket Technology (US 7,334,846)",fr:"Bead Socket Technology (US 7,334,846)"},a:"Stan Koziatek / Stan's NoTubes",num:"7334846",cat:"wheel",st:"active",exp:2023,b:["litigated"],who:["Stan's"],conf:"v",
  s:{en:"A rim bead-seat geometry enabling low-pressure tubeless with standard tires — one of four patents in Stan's ZTR portfolio.",fr:"Une géométrie de siège de talon de jante permettant le tubeless basse pression avec des pneus standards — l'un des quatre brevets du portefeuille ZTR de Stan's."},
  w:{en:"Stan's sued Specialized over infringing rims and won, affirmed by the Federal Circuit in 2016. David beat Goliath.",fr:"Stan's a poursuivi Specialized pour contrefaçon sur ses jantes et a gagné, confirmé par la Cour d'appel du circuit fédéral en 2016. David a battu Goliath."}},
@@ -1860,7 +1874,7 @@ const T = {
     shareBtn:"🔗 Share", shareTip:"Share this view",
     copyLink:"📋 Copy link", shareX:"𝕏 Share on X", shareFacebook:"📘 Share on Facebook", shareReddit:"👽 Share on Reddit",
     copiedConfirm:"✓ Copied", copyLinkShown:"Copy the link shown",
-    shareText:"MTB Patent Atlas — 267 mountain bike patents and applications, 1884 to present.",
+    shareText:"MTB Patent Atlas — 269 mountain bike patents and applications, 1869 to present.",
     clearFilters:"Clear filters",
     goingFreeSoonChip:"⏳ Going free soon",
     goingFreeSoonTip:"Active patents whose estimated expiration falls within the next 2 years — technology about to become free for everyone to use.",
@@ -1920,7 +1934,7 @@ const T = {
     citeFiledGranted:(y,g)=>`filed ${y}, granted ${g}`,
     citeFiledPending:y=>`filed ${y}, pending`,
     citeSource:"MTB Patent Atlas",
-    mtBannerText:"🌐 Machine translation: this atlas's French content (all 267 patent entries) was AI-generated and has not yet been reviewed by a French speaker. Legal and technical terminology may be imprecise — check the English entry or primary source before relying on it.",
+    mtBannerText:"🌐 Machine translation: this atlas's French content (all 269 patent entries) was AI-generated and has not yet been reviewed by a French speaker. Legal and technical terminology may be imprecise — check the English entry or primary source before relying on it.",
     footerAbout:`<strong>About the data.</strong> Compiled from industry reporting, USPTO records, and manufacturer disclosures. Entries marked "unverified" or "draft" are documented technologies whose exact patent numbers are still being confirmed — corrections welcome. Expiration dates are estimated as filing date + 20 years and do not account for terminal disclaimers or fee lapses. Nothing here is legal advice.`,
     footerCredit:"A RedFoxRun / PostMillennium MTB project.",
     coBody:`<p>Mountain-bike innovation runs deep in Colorado — a mix of famous patented suspension designs, homegrown technology, and high-profile, multi-million-dollar intellectual-property disputes playing out in the state's courts.</p>
@@ -1948,7 +1962,7 @@ const T = {
     shareBtn:"🔗 Partager", shareTip:"Partager cette vue",
     copyLink:"📋 Copier le lien", shareX:"𝕏 Partager sur X", shareFacebook:"📘 Partager sur Facebook", shareReddit:"👽 Partager sur Reddit",
     copiedConfirm:"✓ Copié", copyLinkShown:"Copier le lien affiché",
-    shareText:"MTB Patent Atlas — 267 brevets et demandes de brevets liés au VTT, de 1884 à aujourd'hui.",
+    shareText:"MTB Patent Atlas — 269 brevets et demandes de brevets liés au VTT, de 1869 à aujourd'hui.",
     clearFilters:"Effacer les filtres",
     goingFreeSoonChip:"⏳ Bientôt libre de droits",
     goingFreeSoonTip:"Brevets actifs dont l'expiration estimée survient dans les 2 prochaines années — une technologie sur le point de devenir libre d'usage pour tous.",
@@ -2008,7 +2022,7 @@ const T = {
     citeFiledGranted:(y,g)=>`déposé en ${y}, délivré en ${g}`,
     citeFiledPending:y=>`déposé en ${y}, en instance`,
     citeSource:"MTB Patent Atlas",
-    mtBannerText:"🌐 Traduction automatique : le contenu français de cet atlas (les 267 fiches de brevets) a été généré par IA et n'a pas encore été relu par un locuteur francophone. La terminologie juridique et technique peut être imprécise — vérifiez la fiche anglaise ou la source primaire avant de vous y fier.",
+    mtBannerText:"🌐 Traduction automatique : le contenu français de cet atlas (les 269 fiches de brevets) a été généré par IA et n'a pas encore été relu par un locuteur francophone. La terminologie juridique et technique peut être imprécise — vérifiez la fiche anglaise ou la source primaire avant de vous y fier.",
     footerAbout:`<strong>À propos des données.</strong> Compilées à partir de la presse spécialisée, des dossiers de l'USPTO et des communications des fabricants. Les entrées marquées « non vérifié » ou « provisoire » désignent des technologies documentées dont le numéro de brevet exact reste à confirmer — les corrections sont bienvenues. Les dates d'expiration sont estimées à date de dépôt + 20 ans et ne tiennent pas compte des déclarations terminales ni des défauts de paiement des annuités. Rien ici ne constitue un avis juridique.`,
     footerCredit:"Un projet RedFoxRun / PostMillennium MTB.",
     coBody:`<p>L'innovation VTT est profondément enracinée dans le Colorado — un mélange de designs de suspension brevetés célèbres, de technologies locales et de litiges de propriété intellectuelle très médiatisés, à plusieurs millions de dollars, qui se jouent devant les tribunaux de l'État.</p>
