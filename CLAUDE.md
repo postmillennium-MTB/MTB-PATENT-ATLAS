@@ -68,28 +68,88 @@ Everything a reader sees comes from four things defined near the top of the
 `INVENTORS`, `BRANDS`, the `D` array, and `FIGHTS`. `grep -n "const CATS\|const D = \|const FIGHTS"`
 to relocate them — they move as the file grows.
 
+### The atlas is bilingual (English/French) — every text field is `{en, fr}`
+
+As of a language-switcher feature merged 2026-09-10, every reader-facing text
+field — `t`, `s`, `w`, `imgAlt` on `D` entries; `title`, `sub`, `stakes`,
+`outcome` on `FIGHTS`; the `CATS`/`BADGES`/`BADGE_TIPS`/`STATUS_WORD`/
+`NATOFFICE.full`/`JUR_LANG` registries — is stored as `{en: "...", fr: "..."}`,
+not a plain string:
+
+```js
+t: {en:"Title (US 1,234,567)", fr:"Titre (US 1 234 567)"},
+```
+
+Fields that are **not** translated and stay plain strings: `a` (assignee,
+mostly proper nouns), `num`/`nums`/`j`/`pt`/`cat`/`st`/`exp`/`b`/`who`/`conf`/
+`img` (all codes or file paths, not prose), and on `FIGHTS`, `combatants`/
+`era` (same reasoning).
+
+**Read a field with `tx(field)`**, never `field` directly or `field.en`
+directly — `tx()` returns the current-language string, falls back to English
+if the current language's translation is missing, and — critically —
+**returns the value unchanged if it's still a plain string**, so an entry
+added before this feature (or before you've written its French) renders
+correctly rather than breaking:
+
+```js
+function tx(field){
+  if(field==null) return field;
+  if(typeof field==="object") return field[state.lang] ?? field.en ?? "";
+  return field; // not yet converted to {en,fr} — render the plain string as-is
+}
+```
+
+Use `txEN(field)` instead of `tx()` only for the handful of places that must
+stay stable across a language switch: the deep-link/DOM-id slug (`_REF`) and
+the literal English substrings `FIGHTS[].cards` matches titles against
+(`fightCardMatches`). `catLabel()`/`badgeLabel()`/`badgeTip()`/`statusWord()`/
+`natOfficeFull()`/`jurLangName()` are the equivalent accessors for those
+registries. Chrome strings (buttons, labels, tooltips — not entry data) live
+in a separate `T = {en:{...}, fr:{...}}` object read via `t(key, ...args)`.
+
+**A page-level banner** (`MT_UNREVIEWED = true`, shown via `#mtBanner`) tells
+readers the French entry text is AI-drafted and hasn't been checked by a
+French speaker against the English original — this is the atlas's own
+"never inflate certainty" discipline applied to itself, and it says so in
+both languages. **Do not remove the banner or flip `MT_UNREVIEWED` to
+`false`** without an actual review pass confirming the French is accurate.
+The banner text (`mtBannerText`, in both `T.en` and `T.fr`) hardcodes the
+current entry count ("all N patent entries") — it's a hardcoded count string
+like the four described in **Keeping counts in sync** below, and needs to
+move in step with them.
+
+**When adding a new entry:** write both `en` and `fr` from the start —
+that's the current convention, decided explicitly when this note was last
+updated (ask the user again if it's been a while and the codebase's own
+practice looks like it's drifted). Writing English-only and leaving French
+to a later pass is not an error — `tx()`'s fallback renders it correctly —
+but it reopens the exact gap a full translation pass just closed, so treat
+it as a deliberate exception to flag in the changelog, not a shortcut to
+take by default.
+
 ### `D` — the patent entries (this is what you'll edit most)
 
 ```js
 {
   y: 1996,                    // year filed (required)
   g: 1997,                    // year granted, or null if still pending
-  t: "Title (US 1,234,567)",  // put the headline patent number in the title when one exists
-  a: "Assignee / inventor",   // free text, shown on the card
+  t: {en:"Title (US 1,234,567)", fr:"Titre (US 1 234 567)"}, // headline patent number in the title when one exists
+  a: "Assignee / inventor",   // free text, shown on the card — NOT translated (see above)
   num: "1234567",             // primary patent number — plain digits, no commas, no "US" prefix
   nums: ["1234567","7654321"],// OPTIONAL — only when a real portfolio needs multiple linked numbers
   pt: "design",               // OPTIONAL — omit for utility patents; "design" changes the exp-term math
   cat: "susp",                // susp | fork | drive | wheel | comp | emtb | frame | transport
   st: "active",               // active | expired | pending | unknown
   exp: 2017,                  // estimated expiry year, or null — see the expiration rule below
-  j: "DE",                    // OPTIONAL — omit entirely for US filings
+  j: "DE",                    // OPTIONAL — omit entirely for US filings; see the jurisdiction table below
   b: ["litigated"],           // zero or more of: licensor | acquired | givenaway | litigated | priorart
   who: ["Trek"],              // filter tags — every value MUST already exist in BRANDS or INVENTORS
   conf: "v",                  // v = verified | m = story confirmed, number unverified | l = draft
-  s: "Factual summary...",    // 1–3 sentences: what the patent covers and its concrete history
-  w: "Why it matters..."      // editorial payoff — what changed in the market because of this patent
-  // img: "pictures/US1234567A.png",   // OPTIONAL — only if a drawing was actually sourced and viewed
-  // imgAlt: "…"                       // required alongside img — describe what figure/number is shown
+  s: {en:"Factual summary...", fr:"Résumé factuel..."},   // 1–3 sentences: what the patent covers and its history
+  w: {en:"Why it matters...", fr:"Pourquoi c'est important..."} // editorial payoff — what changed because of this patent
+  // img: "pictures/US1234567A.png",   // OPTIONAL — only if a drawing was actually sourced and viewed — NOT translated
+  // imgAlt: {en:"…", fr:"…"},         // required alongside img — describe what figure/number is shown, both languages
 }
 ```
 
@@ -100,6 +160,17 @@ to relocate them — they move as the file grows.
   (design, `pt:"design"`). This has mattered exactly three times so far (the
   Schwinn entries), but apply it correctly to any old filing added later —
   filing+20 would understate the real term by years.
+- **Continuations inherit their parent application's filing date**, not their
+  own later one — the 20-year clock runs from the earliest non-provisional
+  U.S. filing in the priority chain (a provisional alone doesn't count). Two
+  WickWerks/RampWerks chainring patents share a title and inventor but sit in
+  *separate* continuation lineages rooted in 2006 and 2011 respectively —
+  computing `exp` from each one's own later filing year (2017/2014) would
+  have overstated both terms by roughly a decade. When a continuation's
+  ancestry is documented in its own text (a "Ser. No." trail, a stated
+  priority date), use the earliest one for `exp`, not the specific document's
+  own filing date, and say so in the entry's own `s`/`w` text — this is
+  exactly the kind of thing a reader has no way to sanity-check themselves.
 - `exp` isn't decorative: it drives the **Going free soon** filter and the
   Stats-view watchlist automatically for any `active` entry expiring within
   two years. Getting it wrong misfires a real feature, not just a label.
@@ -116,6 +187,21 @@ baked in except where the prefix *is* the number's identity:
 | Foreign, 3-letter prefix | `"TWI386342"` | TWI 386,342 |
 | WO (PCT) publication | `"WO2025003104"` | WO 2025/003,104 |
 | US published application (no grant yet) | `"20190136918"` | US 20190136918 |
+| **EU Registered Community Design (RCD)** | **`num: null`, always** | cite the RCD number(s) in `s` prose instead |
+
+**EU RCDs are a real exception to "always fill `num` when you have a real
+number."** An EUIPO Registered Community Design (format `NNNNNNNNN-NNNN`) is
+an industrial-design registration, not a utility or design *patent* — a
+different legal instrument, administered by EUIPO rather than a patent
+office, and not indexed by Google Patents at all. `numLink()`/`patentUrl()`
+are Google-Patents-only and have no branch for this format; forcing the raw
+number into `num` produces a wrong, dead link rather than a merely
+oddly-formatted one. Use `j:"EU"` (distinct from `j:"EP"`, which is the EPO —
+*patents*) to get a generic "search EUIPO" link via `NATOFFICE.EU`, keep
+`num: null`, and cite the actual RCD number(s) in the entry's own `s` text. A
+real per-record EUIPO deep link (parsing the `NNNNNNNNN-NNNN` format into a
+proper eSearch URL) would be a genuine, worthwhile code change — flag it as
+a design decision rather than doing it inline with a data addition.
 
 The `numLink`/`patentUrl` functions in the script detect these prefixes and
 build both the display label and the outbound Google Patents / national
@@ -202,6 +288,14 @@ plan for it:
 
 ## Workflow: adding one or more new patent entries
 
+0. **`git fetch origin main` and diff against it before touching anything** —
+   don't assume your local checkout (or this file's schema description) is
+   current. This repo is edited by multiple concurrent sessions and directly
+   through GitHub's web UI; a 12-commit gap containing a full schema change
+   (see the bilingual section above) landed on `main` once already without
+   this session noticing until it went looking. A stale local file doesn't
+   just risk a bad merge — it risks writing an entry against a schema that's
+   no longer accurate.
 1. **Verify** per *Sourcing discipline* above: real invention, real
    number/date/inventor, resolvable link.
 2. **Decide placement in `D`.** Entries are *not* strictly chronological —
@@ -226,10 +320,14 @@ plan for it:
      litigated, verified, medium, draft, brands, inventors, jurisdictions —
      whichever your change actually affected) and the intro-paragraph patent
      count.
-   - `index.html` → four hardcoded strings that do **not** derive from
+   - `index.html` → six hardcoded strings that do **not** derive from
      `D.length` at render time: the `<meta name="description">` tag, the
      `<meta property="og:description">` tag, the `<meta name="twitter:description">`
-     tag, and the `SHARE_TEXT` JS constant used by the Share menu.
+     tag, `T.en.shareText` and `T.fr.shareText` (the Share menu text, one per
+     language since the bilingual conversion — it used to be a single
+     `SHARE_TEXT` constant), and `T.en.mtBannerText`/`T.fr.mtBannerText` (the
+     French-translation-disclosure banner, which also states the entry count
+     — easy to miss since it reads as a disclaimer, not a counter).
 7. **Add a changelog bullet** to README's "Recent updates" section (append
    at the end — it's chronological, oldest-to-newest, and the section header
    date doesn't need to be bumped for every entry; that's established
@@ -268,6 +366,21 @@ unclosed string, a stray brace) — fix it before committing; a parse failure
 in `D` breaks the entire page, not just one card. For a `BRANDS`/`INVENTORS`
 change, the same pattern works against `const BRANDS = \[([\s\S]*?)\];` /
 `const INVENTORS = \[([\s\S]*?)\n\];`.
+
+**Bilingual completeness check** — if the current convention is to write
+entries bilingual (see above), confirm nothing slipped through as a plain
+string, and that no `who[]` value is unregistered, by extending the same
+script:
+
+```js
+let notBilingual=[]; D.forEach(d=>['t','s','w'].forEach(f=>{
+  if(d[f]!=null && typeof d[f] !== 'object') notBilingual.push([d.num||d.t, f]);
+}));
+console.log('still-plain-string fields:', notBilingual);
+```
+
+An empty array is what a fully-bilingual dataset looks like; a non-empty one
+is either a deliberate, changelog-flagged exception or a field you forgot.
 
 There's no visual/rendering check available without a browser — if a change
 touches layout, CSS, or interactive behavior rather than just `D`, say
