@@ -105,12 +105,18 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
    can't nest, so the two live as flex siblings in .chead-row instead. */
 .chead-row{display:flex;align-items:flex-start}
 .chead-row .chead{flex:1;width:auto}
-.card-share-btn{flex:0 0 auto;width:30px;height:30px;margin:11px 12px 0 0;border-radius:50%;border:1px solid var(--card-border);background:var(--surface);color:var(--ink-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:color .15s,border-color .15s,background .15s}
-.card-share-btn:hover{color:var(--primary);border-color:var(--primary)}
-.card-share-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
-.card-share-btn svg{width:15px;height:15px;pointer-events:none}
-.card-share-btn.copied{color:#fff;background:var(--primary);border-color:var(--primary)}
-@media(max-width:480px){.card-share-btn{width:28px;height:28px;margin:10px 8px 0 0}}
+/* Base for every small circular icon-button in the card header row
+   (copy-link, cite) — one shared rule set rather than duplicating it per
+   button, with only the last one in the row carrying the bigger
+   outer-edge margin so multiple icons sit close together but the row as
+   a whole keeps its clearance from the card's right edge. */
+.card-icon-btn{flex:0 0 auto;width:30px;height:30px;margin:11px 6px 0 0;border-radius:50%;border:1px solid var(--card-border);background:var(--surface);color:var(--ink-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:color .15s,border-color .15s,background .15s}
+.card-icon-btn:last-child{margin-right:12px}
+.card-icon-btn:hover{color:var(--primary);border-color:var(--primary)}
+.card-icon-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.card-icon-btn svg{width:15px;height:15px;pointer-events:none}
+.card-icon-btn.copied{color:#fff;background:var(--primary);border-color:var(--primary)}
+@media(max-width:480px){.card-icon-btn{width:28px;height:28px;margin:10px 4px 0 0}.card-icon-btn:last-child{margin-right:8px}}
 /* ---------- Surprise me shimmer ----------
    A light sweep passes across the button at random intervals (see JS) to hint
    that it's interactive. Deliberately subtle: a soft highlight, no color or
@@ -154,6 +160,13 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
 /* ---------- Stats view ---------- */
 .stats-wrap{max-width:880px;margin:0 auto;padding:18px 16px 30px}
 .stats-h{font-family:var(--font-display);font-weight:700;font-size:clamp(24px,5vw,34px);text-transform:uppercase;letter-spacing:.01em}
+/* Puts the Stats tab's own title block beside the Export data menu — the
+   .share-menu <details> pattern (see its own comment above) reused here
+   rather than a second dropdown mechanism. Wraps to two lines on a narrow
+   screen instead of squeezing; the menu's own flex-shrink:0 keeps its
+   width stable when that happens. */
+.stats-h-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.stats-h-row .share-menu{flex-shrink:0}
 .stats-intro{font-size:14px;color:var(--ink-soft);max-width:560px;margin:4px 0 18px}
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:22px}
 .stat-box{background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:12px 14px}
@@ -161,6 +174,12 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
 .stat-lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
 .stats-sec{margin-bottom:22px}
 .stats-sec h3{font-family:var(--font-display);font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:8px}
+/* Wraps an <h3> plus one small control (e.g. the category-timeline's
+   Count/Share toggle) on the same line, wrapping to two lines on a narrow
+   screen rather than crowding — the h3 keeps its own margin-bottom above,
+   so this only needs to align the row itself. */
+.stats-sec-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.stats-sec-head h3{margin-bottom:0}
 .hbar-row{display:grid;grid-template-columns:150px 1fr 34px;gap:8px;align-items:center;margin-bottom:5px;font-size:13px}
 .hbar-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right;color:var(--ink)}
 .hbar-track{background:var(--chip-bg);border-radius:4px;height:16px;overflow:hidden}
@@ -173,28 +192,31 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
 .stack-seg{height:100%}
 .stack-legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--ink-soft);margin-top:4px}
 .stack-legend .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
-/* "Patents by category over time" (Stats tab) — see catTimelineHTML().
-   Two parallel flex rows (bars, then labels) sharing the same flex-basis/
-   gap so columns line up, rather than one absolutely-positioned label per
-   bar the way the top nav chart does it — that trick needs the bar to have
-   no overflow:hidden, and .cat-col needs overflow:hidden so a variable top
-   segment still gets a clean rounded corner regardless of which category
-   happens to be tallest in that particular bracket. */
-.cat-timeline-wrap{margin:10px 0 4px}
-.cat-timeline{display:flex;align-items:flex-end;gap:3px;height:120px}
-.cat-col{flex:1;min-width:5px;position:relative;display:flex;flex-direction:column-reverse;border-radius:4px 4px 0 0;overflow:hidden;background:var(--chip-bg)}
-.cat-seg{width:100%;box-sizing:border-box}
-.cat-seg:not(:first-child){border-bottom:2px solid var(--surface)}
-.cat-timeline-labels{display:flex;gap:3px;margin-top:4px}
-.cat-timeline-labels span{flex:1;min-width:5px;text-align:center;font-family:var(--font-mono);font-size:10px;color:var(--ink-soft);white-space:nowrap}
-.cat-legend{margin-top:10px}
+/* Shared by the Stats tab's two "over time" charts — "Patents by category
+   over time" (catTimelineHTML()) and "Litigation over time"
+   (litTimelineHTML()) — since both are the same stacked-column shape over
+   the same STATS_TIMELINE_* buckets, just with different segment data and
+   colors. Two parallel flex rows (bars, then labels) sharing the same
+   flex-basis/gap so columns line up, rather than one absolutely-positioned
+   label per bar the way the top nav chart does it — that trick needs the
+   bar to have no overflow:hidden, and .stats-col needs overflow:hidden so
+   a variable top segment still gets a clean rounded corner regardless of
+   which segment happens to be tallest in that particular bracket. */
+.stats-timeline-wrap{margin:10px 0 4px}
+.stats-timeline{display:flex;align-items:flex-end;gap:3px;height:120px}
+.stats-col{flex:1;min-width:5px;position:relative;display:flex;flex-direction:column-reverse;border-radius:4px 4px 0 0;overflow:hidden;background:var(--chip-bg)}
+.stats-seg{width:100%;box-sizing:border-box}
+.stats-seg:not(:first-child){border-bottom:2px solid var(--surface)}
+.stats-timeline-labels{display:flex;gap:3px;margin-top:4px}
+.stats-timeline-labels span{flex:1;min-width:5px;text-align:center;font-family:var(--font-mono);font-size:10px;color:var(--ink-soft);white-space:nowrap}
+.timeline-legend{margin-top:10px}
 .soon-list{list-style:none;margin-top:4px}
 .soon-list li{background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:9px 12px;margin-bottom:6px;font-size:13.5px;display:flex;gap:10px;align-items:baseline;cursor:pointer;transition:border-color .15s}
 .soon-list li:hover{border-color:var(--primary)}
 .soon-yr{font-family:var(--font-mono);font-weight:700;color:var(--st-pending);flex:0 0 auto}
 .stats-note{font-size:12px;color:var(--ink-soft);margin-top:14px}
 @media(max-width:480px){.hbar-row{grid-template-columns:110px 1fr 30px;font-size:12px}
-  .cat-timeline{height:90px;gap:2px} .cat-timeline-labels{gap:2px} .cat-timeline-labels span{font-size:9px}}
+  .stats-timeline{height:90px;gap:2px} .stats-timeline-labels{gap:2px} .stats-timeline-labels span{font-size:9px}}
 h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clamp(30px,6vw,46px);line-height:1.02;letter-spacing:var(--head-spacing);text-transform:var(--head-transform)}
 .sub{font-size:14px;opacity:.85;max-width:560px;margin-top:4px}
 .themes{display:flex;gap:8px;margin-top:12px;align-items:center}
@@ -572,24 +594,49 @@ const CATS = {
   comp:{en:"Components",fr:"Composants"},
   emtb:{en:"E-MTB & Electronics",fr:"VTTAE et électronique"},
   frame:{en:"Frame & Standards",fr:"Cadre et standards"},
-  transport:{en:"Bike Transport",fr:"Transport de vélos"}
+  transport:{en:"Bike Transport",fr:"Transport de vélos"},
+  /* Added 2026-09 — resolves the "Tech category question" the README had
+     flagged as open since July. Scope test applied when migrating entries
+     into this category: does the invention control/modify how the BIKE
+     itself functions (shifting, damping, dropper actuation, motor drive,
+     braking)? If yes it stays in its functional category regardless of
+     being electronic (Di2, AXS, Flight Attendant, Bosch drive units, etc.
+     all stayed put). If the invention is a rider-worn camera/data-capture
+     accessory that's orthogonal to the bike's own systems (action cams,
+     smart-helmet electronics, ride telemetry), it moved here. Only the
+     GoPro-family entries (7, up from the 5 the README's note counted
+     before two more were added this session) met that bar at this pass. */
+  tech:{en:"Cameras & Wearables",fr:"Caméras et objets connectés"}
 };
 /* Categorical color for the "Patents by category over time" stacked chart
    (Stats tab) — the ONLY place category identity is color-coded, so this is
-   the one registry in the file that exists purely for a chart. Assigned in
-   this fixed order (matching CATS' own key order above) from a validated
-   8-hue categorical palette: adjacent-pair CVD ΔE ≥8 (target) and ≥15
-   (normal-vision floor) in OKLab, checked with the dataviz skill's
-   validate_palette.js against both #FFFFFF and #FBF6EC — the two card/
-   surface colors the four themes actually use. The ORDER is the safety
+   the one registry in the file that exists purely for a chart. The first 8
+   slots are assigned in fixed order (matching CATS' own key order above)
+   from a validated 8-hue categorical palette: adjacent-pair CVD ΔE ≥8
+   (target) and ≥15 (normal-vision floor) in OKLab, checked with the dataviz
+   skill's validate_palette.js against both #FFFFFF and #FBF6EC — the two
+   card/surface colors the four themes actually use. The ORDER is the safety
    mechanism (only neighbors touch in a stack) — re-tier a hue if you ever
    swap two categories' colors, don't just reshuffle freely. Three slots
    (drive, wheel, comp) read under 3:1 contrast on a light surface by
    design — never used for text, only as the segment fill + a legend swatch
-   with a real text label beside it, which is the required relief channel. */
+   with a real text label beside it, which is the required relief channel.
+   `tech` is deliberately NOT a 9th categorical hue — the dataviz skill's
+   palette is structurally an 8-hue set (never cycled, never extended;
+   see references/color-formula.md's "Fixed hue anchors" check), and `tech`
+   is also the atlas's thinnest, newest category (7 entries). It gets the
+   skill's own prescribed treatment for exactly this situation: an overflow
+   slot folds to a neutral "Other"-style gray rather than manufacturing a
+   competing hue. #898781 is the skill's own documented muted/axis-label
+   gray (references/palette.md's "Chart chrome & ink" table) — contrast-
+   checked here at 3.59:1 on #FFFFFF and 3.33:1 on #FBF6EC, both clearing
+   the 3:1 mark. If `tech` ever grows into a real second-order
+   cluster, revisit — a bigger, more settled category might earn re-running
+   the validator on a fresh 8-hue order rather than staying the gray. */
 const CAT_COLORS = {
   susp:"#2a78d6", fork:"#eb6834", drive:"#1baf7a", wheel:"#eda100",
-  comp:"#e87ba4", emtb:"#008300", frame:"#4a3aa7", transport:"#e34948"
+  comp:"#e87ba4", emtb:"#008300", frame:"#4a3aa7", transport:"#e34948",
+  tech:"#898781"
 };
 /* Bilingual accessor for CATS/BADGES/BADGE_TIPS — falls back to English if
    the current language key is missing, so a not-yet-translated string never
@@ -791,27 +838,27 @@ const D = [
 {y:2021,g:2024,t:{en:"Shock Extension (US D1,023,842, design patent)",fr:"Shock Extension (US D1,023,842, brevet de dessin)"},a:"Peter Zawistowski / Yeti Cycling LLC",num:"1023842",pt:"design",cat:"susp",st:"active",exp:2039,b:[],who:["Yeti"],conf:"v",
  s:{en:"A design patent on the ornamental shape of the shock-extension hardware referenced in the Vehicle Suspension Linkage utility patents above — filed February 2021, granted April 2024. Marked on the same SB130-through-SB165-MIX band as its utility-patent companion, not on SB115 or the six-bar 160e/MTE/LTE models.",fr:"Un brevet de dessin sur la forme ornementale du matériel d'extension d'amortisseur mentionné dans les brevets d'utilité Vehicle Suspension Linkage ci-dessus — déposé en février 2021, délivré en avril 2024. Appliqué à la même plage SB130-à-SB165-MIX que son brevet d'utilité compagnon, pas au SB115 ni aux modèles six-barres 160e/MTE/LTE."},
  w:{en:"Design and utility patents protecting the same physical part from two different angles — how it works (10,926,830) and how it looks (D1,023,842) — filed three years apart by the same inventor.",fr:"Des brevets de dessin et d'utilité protégeant la même pièce physique sous deux angles différents — comment elle fonctionne (10,926,830) et à quoi elle ressemble (D1,023,842) — déposés à trois ans d'intervalle par le même inventeur."}},
-{y:2015,g:2018,t:{en:"Helmet-chin mount for accessories, including cameras (US 10,021,931)",fr:"Fixation menton de casque pour accessoires, dont les caméras (US 10,021,931)"},a:"Eric Brock Tulley / Sopro Mounts Inc.",num:"10021931",cat:"comp",st:"expired",exp:2035,b:[],who:["Sopro Mounts","GoPro"],conf:"v",
+{y:2015,g:2018,t:{en:"Helmet-chin mount for accessories, including cameras (US 10,021,931)",fr:"Fixation menton de casque pour accessoires, dont les caméras (US 10,021,931)"},a:"Eric Brock Tulley / Sopro Mounts Inc.",num:"10021931",cat:"tech",st:"expired",exp:2035,b:[],who:["Sopro Mounts","GoPro"],conf:"v",
  s:{en:"A Y-shaped accessory mount that straps to the chin bar of a full-face helmet, claiming the mount, a removable fastener such as a quick-release buckle, and the strap-and-slit retention geometry. Claims cover full-face, off-road/motocross and modular/flip-up helmets, and the accessory may be a camera, video recorder, phone or flashlight. Filed 2015 by Eric Brock Tulley and assigned to Sopro Mounts Inc.; the record now shows expired/fee-related status rather than running to its ~2035 term.",fr:"Une fixation d'accessoire en forme de Y qui se sangle à la mentonnière d'un casque intégral, revendiquant la fixation, une attache amovible telle qu'une boucle à dégagement rapide, et la géométrie de rétention par sangle et fente. Les revendications couvrent les casques intégraux, tout-terrain/motocross et modulables/à mentonnière relevable, et l'accessoire peut être une caméra, un enregistreur vidéo, un téléphone ou une lampe torche. Déposé en 2015 par Eric Brock Tulley et cédé à Sopro Mounts Inc. ; le dossier indique désormais un statut expiré/lié aux annuités plutôt qu'une durée jusqu'à son terme d'environ 2035."},
  w:{en:"The chin-mount POV angle is now the default look of MTB and moto edits, but the patent covering it lapsed rather than being enforced into a licensing regime. Note the correction worth making here: the popular retailer chinmounts.com sells 60+ helmet-specific adhesive mounts and is a separate business — no public filing ties it to this patent, and its helmet-specific fitments read as a tooling-and-catalogue moat rather than an IP one. Much of the category does effectively operate on 'patent pending' or on no protection at all, which is exactly why a lapsed 2015 patent didn't stop anyone.",fr:"L'angle de vue mentonnière est aujourd'hui l'esthétique par défaut des montages vidéo VTT et moto, mais le brevet qui la couvrait s'est éteint plutôt que d'être mis en application dans un régime de licences. À noter, une correction qui vaut la peine d'être faite ici : le détaillant populaire chinmounts.com vend plus de 60 fixations adhésives spécifiques à des casques et constitue une entreprise distincte — aucun dépôt public ne le relie à ce brevet, et ses ajustements spécifiques aux casques se lisent davantage comme une barrière à l'entrée fondée sur l'outillage et le catalogue que sur la propriété intellectuelle. Une grande partie de la catégorie fonctionne effectivement en mode « brevet en instance » ou sans aucune protection, ce qui explique précisément pourquoi un brevet expiré de 2015 n'a arrêté personne."}},
-{y:2014,g:2018,t:{en:"Image processing & field of view — SuperView / OverCapture (bundle)",fr:"Traitement d'image et champ de vision — SuperView / OverCapture (regroupement)"},a:"GoPro",num:"10015413",cat:"comp",st:"active",exp:2034,b:[],who:["GoPro"],conf:"m",
+{y:2014,g:2018,t:{en:"Image processing & field of view — SuperView / OverCapture (bundle)",fr:"Traitement d'image et champ de vision — SuperView / OverCapture (regroupement)"},a:"GoPro",num:"10015413",cat:"tech",st:"active",exp:2034,b:[],who:["GoPro"],conf:"m",
  s:{en:"A representative filing from GoPro's FOV-manipulation family, covering the dynamic stretch of a taller 4:3 sensor capture into a 16:9 frame while keeping the image center undistorted and pushing distortion to the edges. The related OverCapture family covers reframing a flat crop out of a spherical 360° canvas in post. Grouped here as a category rather than enumerated — GoPro holds 1,600+ granted patents globally, 1,000+ in the US.",fr:"Un dépôt représentatif de la famille de manipulation du champ de vision de GoPro, couvrant l'étirement dynamique d'une capture de capteur 4:3 plus haute vers un cadre 16:9 tout en gardant le centre de l'image non déformé et en repoussant la distorsion vers les bords. La famille apparentée OverCapture couvre le recadrage en post-production d'un cadre plat extrait d'une image sphérique à 360°. Regroupé ici comme catégorie plutôt qu'énuméré — GoPro détient plus de 1 600 brevets délivrés dans le monde, plus de 1 000 aux États-Unis."},
  w:{en:"Bundled deliberately: an atlas entry per GoPro patent would swamp the drivetrain and suspension categories combined. The lesson is that the action camera became a mountain bike component through software claims, not optics.",fr:"Regroupement délibéré : une fiche d'atlas par brevet GoPro noierait à elle seule les catégories transmission et suspension réunies. La leçon est que la caméra d'action est devenue un composant de vélo de montagne par des revendications logicielles, pas optiques."}},
-{y:2019,g:2021,t:{en:"Stabilization & horizon leveling — HyperSmooth (US 10,574,894 + 10,958,840)",fr:"Stabilisation et mise à niveau de l'horizon — HyperSmooth (US 10,574,894 + 10,958,840)"},a:"César Douady, Thomas Derbanne & Maxim Karpushin / GoPro",num:"10574894",nums:["10574894","10958840"],cat:"comp",st:"active",exp:2039,b:["litigated"],who:["GoPro","Insta360"],conf:"v",
+{y:2019,g:2021,t:{en:"Stabilization & horizon leveling — HyperSmooth (US 10,574,894 + 10,958,840)",fr:"Stabilisation et mise à niveau de l'horizon — HyperSmooth (US 10,574,894 + 10,958,840)"},a:"César Douady, Thomas Derbanne & Maxim Karpushin / GoPro",num:"10574894",nums:["10574894","10958840"],cat:"tech",st:"active",exp:2039,b:["litigated"],who:["GoPro","Insta360"],conf:"v",
  s:{en:"Both titled 'Systems and methods for stabilizing videos': US 10,574,894 (filed August 2019, granted February 2020) and US 10,958,840 (filed December 2019, granted March 2021) cover the electronic image stabilization that analyzes camera motion and crops the sensor in real time to cancel vibration and impacts, plus horizon leveling that uses the onboard accelerometers and gyroscopes to hold the horizon flat through full camera rotation.",fr:"Tous deux intitulés « Systems and methods for stabilizing videos » : US 10,574,894 (déposé en août 2019, délivré en février 2020) et US 10,958,840 (déposé en décembre 2019, délivré en mars 2021) couvrent la stabilisation d'image électronique qui analyse le mouvement de la caméra et recadre le capteur en temps réel pour annuler vibrations et impacts, plus la mise à niveau de l'horizon qui utilise les accéléromètres et gyroscopes embarqués pour garder l'horizon à plat malgré une rotation complète de la caméra."},
  w:{en:"This is why bar-mounted footage stopped looking like a paint shaker. It's also the entry where GoPro's Insta360 fight gets genuinely nuanced rather than a clean win: in a February 26, 2026 final determination, the ITC reaffirmed infringement of GoPro's HERO design patent (see the entry above) and issued an exclusion order — but simultaneously dismissed all five of GoPro's utility-patent infringement claims, including these HyperSmooth/horizon-leveling patents. That's a different, earlier PTAB proceeding upholding the patents' validity against Insta360's invalidity challenges — 'valid patent' and 'infringement proven' are two separate questions, and GoPro went 2-for-2 on the first and 0-for-5 on the second in the same case. The shape won; the software claims didn't.",fr:"C'est pour cela que les images montées sur cintre ont cessé de ressembler à un shaker à peinture. C'est aussi la fiche où le conflit de GoPro contre Insta360 devient véritablement nuancé plutôt qu'une victoire nette : dans une détermination finale du 26 février 2026, l'ITC a réaffirmé la contrefaçon du brevet de dessin HERO de GoPro (voir la fiche ci-dessus) et prononcé une ordonnance d'exclusion — mais a simultanément rejeté les cinq revendications de contrefaçon de brevets d'utilité de GoPro, y compris ces brevets HyperSmooth/mise à niveau de l'horizon. Il s'agit d'une procédure PTAB distincte et antérieure ayant confirmé la validité des brevets face aux contestations de nullité d'Insta360 — « brevet valide » et « contrefaçon prouvée » sont deux questions séparées, et GoPro a obtenu 2 victoires sur 2 pour la première et 0 sur 5 pour la seconde dans la même affaire. La forme a gagné ; les revendications logicielles non."}},
-{y:2014,g:null,t:{en:"Hardware, form factor & acoustics — HERO design + mounts (bundle)",fr:"Matériel, format et acoustique — dessin HERO et fixations (regroupement)"},a:"GoPro",num:"12167211",cat:"comp",st:"active",exp:null,b:["litigated"],who:["GoPro"],conf:"l",
+{y:2014,g:null,t:{en:"Hardware, form factor & acoustics — HERO design + mounts (bundle)",fr:"Matériel, format et acoustique — dessin HERO et fixations (regroupement)"},a:"GoPro",num:"12167211",cat:"tech",st:"active",exp:null,b:["litigated"],who:["GoPro"],conf:"l",
  s:{en:"Design patents on the boxy HERO chassis — lens placement, dual screens, overall geometry — alongside utility filings on multi-microphone wind-noise mitigation (US 12,167,211 cited as representative) and on the integrated folding mounting fingers that collapse into the frame. The underlying two-prong mount interface has become a quasi-open standard the industry builds to freely.",fr:"Des brevets de dessin sur le châssis carré du HERO — placement de l'objectif, doubles écrans, géométrie générale — ainsi que des dépôts d'utilité sur l'atténuation du bruit du vent à microphones multiples (US 12,167,211 cité à titre représentatif) et sur les languettes de fixation pliantes intégrées qui se replient dans le boîtier. L'interface de fixation à deux ergots sous-jacente est devenue une quasi-norme ouverte que l'industrie utilise librement."},
  w:{en:"The clearest live demonstration in the atlas that a design patent has teeth: the ITC ruled for GoPro on the physical HERO design, producing an import ban on certain Insta360 models judged too close to the silhouette — reaffirmed in a final Commission determination on February 26, 2026, with a Limited Exclusion Order and Cease and Desist Order issued against Insta360. Mirrors the atlas's existing 'not all IP is a utility patent' thread — the shape was defensible, while the mount interface everyone actually depends on was effectively given away. See the HyperSmooth entry below for the flip side of that same February 2026 ruling: GoPro's utility-patent infringement claims on the same case were all dismissed.",fr:"La démonstration la plus claire dans cet atlas qu'un brevet de dessin a du mordant : l'ITC a tranché en faveur de GoPro sur le dessin physique du HERO, produisant une interdiction d'importation sur certains modèles Insta360 jugés trop proches de la silhouette — réaffirmée dans une détermination finale de la Commission le 26 février 2026, avec une ordonnance d'exclusion limitée et une ordonnance de cessation et d'abstention prononcées contre Insta360. Cela fait écho au fil conducteur déjà présent dans l'atlas selon lequel « toute propriété intellectuelle n'est pas un brevet d'utilité » — la forme était défendable, tandis que l'interface de fixation dont tout le monde dépend réellement a été effectivement cédée librement. Voir la fiche HyperSmooth ci-dessous pour l'autre facette de cette même décision de février 2026 : les revendications de contrefaçon de brevets d'utilité de GoPro dans la même affaire ont toutes été rejetées."}},
-{y:2021,g:2024,t:{en:"Forcite smart helmet electronics (US 12,016,421)",fr:"Électronique de casque intelligent Forcite (US 12,016,421)"},a:"Forcite Helmet Systems (Australia) → GoPro",num:"12016421",cat:"comp",st:"active",exp:2041,b:["acquired"],who:["GoPro","Forcite"],conf:"m",
+{y:2021,g:2024,t:{en:"Forcite smart helmet electronics (US 12,016,421)",fr:"Électronique de casque intelligent Forcite (US 12,016,421)"},a:"Forcite Helmet Systems (Australia) → GoPro",num:"12016421",cat:"tech",st:"active",exp:2041,b:["acquired"],who:["GoPro","Forcite"],conf:"m",
  s:{en:"GoPro's patents page lists US 12,016,421 under Forcite, the Australian smart-motorcycle-helmet maker (integrated HUD, chin-mounted camera, Bluetooth connectivity) GoPro acquired in a deal announced January 2024 and closed that Q1. Exact title, filing date and claims not independently confirmed this pass — this sandbox couldn't reach Google Patents or USPTO directly to verify beyond the number itself and its Forcite/GoPro association; grant year is an estimate from USPTO numbering pace (patents crossed 12,000,000 in May 2024), not a confirmed date.",fr:"La page de brevets de GoPro liste l'US 12,016,421 sous Forcite, le fabricant australien de casques de moto intelligents (affichage tête haute intégré, caméra montée au menton, connectivité Bluetooth) que GoPro a acquis dans le cadre d'un accord annoncé en janvier 2024 et conclu ce même trimestre. Le titre exact, la date de dépôt et les revendications ne sont pas confirmés de façon indépendante à ce stade — cet environnement n'a pas pu accéder directement à Google Patents ou à l'USPTO pour vérifier au-delà du numéro lui-même et de son association Forcite/GoPro ; l'année de délivrance est une estimation fondée sur le rythme de numérotation de l'USPTO (les brevets ont franchi la barre des 12 000 000 en mai 2024), pas une date confirmée."},
  w:{en:"Included despite being a motorcycle helmet, not a mountain bike part — the same edge-of-scope call the atlas already makes for Mavic's road-e-bike X-Tend motor: it's here because GoPro's 2024 acquisition folds Forcite's IP directly into the same patent portfolio backing the action-camera entries above, extending GoPro's footprint from 'camera you strap to a helmet' to 'the helmet itself.' Worth a follow-up pass once primary-source patent data is reachable.",fr:"Inclus bien qu'il s'agisse d'un casque de moto, pas d'une pièce de VTT — le même arbitrage en marge du périmètre que l'atlas applique déjà au moteur de vélo électrique de route X-Tend de Mavic : il figure ici parce que l'acquisition de Forcite par GoPro en 2024 intègre directement sa propriété intellectuelle dans le même portefeuille de brevets qui soutient les fiches caméras d'action ci-dessus, étendant l'empreinte de GoPro de « caméra qu'on sangle à un casque » à « le casque lui-même ». Mérite un suivi une fois les données de brevets de source primaire accessibles."}},
-{y:2019,g:2021,t:{en:"Multi-camera wireless sync (US 11,019,237)",fr:"Synchronisation sans fil multi-caméras (US 11,019,237)"},a:"GoPro",num:"11019237",cat:"comp",st:"active",exp:2039,b:[],who:["GoPro"],conf:"m",
+{y:2019,g:2021,t:{en:"Multi-camera wireless sync (US 11,019,237)",fr:"Synchronisation sans fil multi-caméras (US 11,019,237)"},a:"GoPro",num:"11019237",cat:"tech",st:"active",exp:2039,b:[],who:["GoPro"],conf:"m",
  s:{en:"A wireless synchronization scheme letting multiple cameras — the patent's own figures label them camera A, B and C — pair up and share timing over a wireless link so footage shot simultaneously from different angles lines up automatically in post, without a wired genlock connection or manual clap-sync. Granted May 25, 2021. Title and exact filing date not independently confirmed via search this pass; drawn from the patent drawing itself (patent number, grant date and sheet number all printed on the sheet) and the user's identification of it as GoPro IP.",fr:"Un système de synchronisation sans fil permettant à plusieurs caméras — les propres figures du brevet les nomment caméra A, B et C — de s'apparier et de partager leur référence temporelle via une liaison sans fil afin que des images tournées simultanément sous différents angles s'alignent automatiquement en post-production, sans connexion genlock filaire ni synchronisation manuelle par clap. Délivré le 25 mai 2021. Le titre et la date de dépôt exacte ne sont pas confirmés de façon indépendante par recherche à ce stade ; tirés du dessin de brevet lui-même (numéro de brevet, date de délivrance et numéro de planche tous imprimés sur la feuille) et de l'identification par l'utilisateur comme propriété intellectuelle de GoPro."},
  img:"pictures/US11019237B2.png",
  imgAlt:{en:"Multi-camera wireless synchronization patent drawing, Figs. 3A–3C, showing wireless pairing links between camera A, camera B and camera C",fr:"Dessin de brevet de synchronisation sans fil multi-caméras, Fig. 3A–3C, montrant les liaisons d'appariement sans fil entre la caméra A, la caméra B et la caméra C"},
  w:{en:"The mountain-biking use case writes itself: a helmet cam and a bar cam (or a buddy's camera on the next line down the trail) shooting the same run from different angles, synced automatically rather than hand-aligned by an editor hunting for a shared clap or crash. Sits alongside the atlas's other GoPro bundles as the multi-camera-specific slice of that portfolio.",fr:"Le cas d'usage en VTT s'écrit de lui-même : une caméra de casque et une caméra de cintre (ou la caméra d'un compagnon de sortie sur la ligne suivante) filmant la même descente sous des angles différents, synchronisées automatiquement plutôt qu'alignées à la main par un monteur en quête d'un clap ou d'une chute partagés. Se range aux côtés des autres regroupements GoPro de l'atlas comme la tranche spécifiquement multi-caméras de ce portefeuille."}},
-{y:2015,g:null,t:{en:"Data & telemetry — GPS overlay + depth analysis (bundle)",fr:"Données et télémétrie — superposition GPS et analyse de profondeur (regroupement)"},a:"GoPro",num:null,cat:"emtb",st:"active",exp:null,b:["acquired"],who:["GoPro"],conf:"l",
+{y:2015,g:null,t:{en:"Data & telemetry — GPS overlay + depth analysis (bundle)",fr:"Données et télémétrie — superposition GPS et analyse de profondeur (regroupement)"},a:"GoPro",num:null,cat:"tech",st:"active",exp:null,b:["acquired"],who:["GoPro"],conf:"l",
  s:{en:"Methods for capturing telemetry — GPS, speed, altitude, G-force — and time-aligning it precisely to the video track, which is what makes speedometer and track-map overlays on a downhill run possible. A related family covers structure-from-motion depth mapping from a single 2D lens. Separately, GoPro sold 114 drone flight-control, spatial-navigation and vehicle-guidance patents to Skydio after winding down the Karma program.",fr:"Des méthodes pour capturer la télémétrie — GPS, vitesse, altitude, force G — et l'aligner précisément dans le temps avec la piste vidéo, ce qui rend possibles les superpositions de compteur de vitesse et de carte de parcours sur une descente. Une famille apparentée couvre la cartographie de profondeur par structure-from-motion à partir d'un seul objectif 2D. Séparément, GoPro a vendu 114 brevets de contrôle de vol de drone, de navigation spatiale et de guidage de véhicule à Skydio après avoir arrêté le programme Karma."},
  w:{en:"Filed under E-MTB & Electronics rather than Components because this is data infrastructure, not a part you bolt on — it's the same sensor-fusion stack that suspension telemetry and e-bike control systems are converging on. The Skydio sale is the instructive move: GoPro kept the IP that defends the camera and sold the IP that defended a business it exited.",fr:"Classé sous VTTAE et électronique plutôt que Composants parce qu'il s'agit d'infrastructure de données, pas d'une pièce qu'on boulonne — c'est la même pile de fusion de capteurs vers laquelle convergent la télémétrie de suspension et les systèmes de contrôle des vélos électriques. La vente à Skydio est le geste instructif : GoPro a gardé la propriété intellectuelle qui défend la caméra et a vendu celle qui défendait une activité dont elle se retirait."}},
 {y:1997,g:1999,t:{en:"GT i-Drive independent drivetrain",fr:"Transmission indépendante i-Drive de GT"},a:"Jim Busby → GT",num:null,cat:"susp",st:"expired",exp:2019,b:[],who:["Jim Busby","GT"],conf:"m",
@@ -1688,6 +1735,13 @@ function anyFilterActive(){ return FILTER_KEYS.some(k=>state[k].size>0); }
 /* Year-bracket step (5 | 2 | 1) and search query. Default: 2yr. */
 let stepYr  = 2;
 let searchQ = '';
+/* "Count" (bar height = total volume, the default) vs "Share" (every bar
+   full height, only the category mix varies) for the Stats tab's
+   "Patents by category over time" chart — see catTimelineHTML(). Kept as
+   its own state var rather than folded into stepYr since it's an
+   orthogonal axis (both charts can independently vary bracket size and,
+   for this one, height-encoding). */
+let catTimelineMode = "count";
 
 /* ======== HELPERS ======== */
 const $ = s => document.querySelector(s);
@@ -1701,27 +1755,32 @@ const NOW = new Date().getFullYear();
    breakpoint ever changes, update this to match — CSS custom properties
    can't be read inside @media queries, so this can't be linked automatically. */
 const NARROW_BREAKPOINT_PX = 480;
-/* Fixed bucket size for the "Patents by category over time" chart in Stats,
-   independent of the top nav chart's 2yr/1yr/5yr toggle (stepYr). That chart
-   spans the full page width and is built to be dense; this one lives in the
-   880px-max-width .stats-wrap column and needs every bucket to carry enough
-   volume for an 8-way categorical stack to actually read — 2yr or 1yr would
+/* Fixed bucket size shared by the Stats tab's two "over time" charts —
+   "Patents by category over time" and "Litigation over time" — independent
+   of the top nav chart's 2yr/1yr/5yr toggle (stepYr). That chart spans the
+   full page width and is built to be dense; these two live in the
+   880px-max-width .stats-wrap column and need every bucket to carry enough
+   volume for a multi-segment stack to actually read — 2yr or 1yr would
    leave most pre-1990s buckets showing one sliver of one color. 5 years is
    the same bracket size the top chart already offers, just pinned here
-   rather than left to whatever the user last toggled. */
-const CATEGORY_TIMELINE_STEP_YR = 5;
-/* Where the "Patents by category over time" chart's regular 5-year grid
-   begins. Entries filed earlier (16 as of this writing — scattered
+   rather than left to whatever the user last toggled. Originally
+   category-only (hence the name); renamed when the litigation chart
+   started reusing the exact same bucketing rather than inventing its own,
+   since both charts genuinely want the same eras — a reader comparing them
+   shouldn't have to mentally re-align two different grids. */
+const STATS_TIMELINE_STEP_YR = 5;
+/* Where both "over time" charts' regular 5-year grid begins. Entries filed
+   earlier (16 as of this writing, for the category chart — scattered
    19th/early-20th-century bicycle-mechanics patents with decades of
    silence between them, e.g. 1884 to 1890 to 1896) don't disappear: they
    still get counted, folded into one leading "before" column (see
-   catTimelineHTML) rather than either stretching the grid back to 1884
-   (mostly-dead space, and the handful of real bars too thin to read as an
-   8-way category stack) or being silently dropped from the chart's total.
-   1980 is a multiple of CATEGORY_TIMELINE_STEP_YR, which is what lets the
-   regular buckets below it align cleanly on the calendar grid — change
-   both together if either ever moves. */
-const CATEGORY_TIMELINE_START_YR = 1980;
+   catTimelineHTML/litTimelineHTML) rather than either stretching the grid
+   back to 1884 (mostly-dead space, and the handful of real bars too thin
+   to read as a multi-segment stack) or being silently dropped from either
+   chart's total. 1980 is a multiple of STATS_TIMELINE_STEP_YR, which is
+   what lets the regular buckets below it align cleanly on the calendar
+   grid — change both together if either ever moves. */
+const STATS_TIMELINE_START_YR = 1980;
 
 /* ===== Timing constants =====
    Named individually rather than collapsed into shared values, because a
@@ -1834,6 +1893,8 @@ const T = {
     vsWord:"v.",
     statsTitle:"Atlas by the numbers",
     statsIntro:"Everything below is computed live from the atlas data — it updates automatically as entries are added.",
+    exportBtn:"⬇ Export data", exportTip:"Download the underlying dataset",
+    exportJSON:"🗂️ Download JSON (full data)", exportCSV:"📊 Download CSV (spreadsheet)",
     totalEntriesLbl:"Total entries", activeLbl:"Active", expiredFreeLbl:"Expired — free to use", litigatedLbl:"Litigated",
     statusSplit:"Status split",
     goingFreeSoonH3:"⏳ Going free soon",
@@ -1842,13 +1903,23 @@ const T = {
     byCategory:"Entries by category",
     catTimelineTitle:"Patents by category, over time",
     catTimelineIntro:yrs=>`Each bar is a ${yrs}-year bracket, stacked by category — bar height is total volume, segment color is the mix. Hover a segment for its exact count. Entries before 1980 are folded into one leading bar.`,
-    catTimelinePreTip:yr=>`Before ${yr}`,
+    statsTimelinePreTip:yr=>`Before ${yr}`,
+    catTimelineModeLabel:mode=>mode==="share"?"Share":"Count",
+    catTimelineModeTip:"Toggle between total count (bar height = volume) and % share (bar height fixed, only the mix varies)",
+    litTimelineTitle:"Litigation over time",
+    litTimelineIntro:yrs=>`Same ${yrs}-year brackets as the chart above, but split litigated vs. not — hover a segment for its exact count. Most legal fights in this dataset are recent; this shows whether that's actually true or just recency bias in what got reported.`,
+    notLitigatedWord:"not litigated",
     mostPatented:"Most-patented names",
     mostPatentedIntro:"Brands and inventors by number of atlas entries, not their real-world patent totals — a handful of names (GoPro, SRAM, Shimano, Fox) hold far larger portfolios than are individually cataloged here. Tap a bar to filter the timeline.",
     statsNote:"Expiration estimates don't account for terminal disclaimers or fee lapses — see the note in the footer.",
     noGapEra:n=>`no entries for ${n} years`,
     eraJumpAria:(label,cur,full)=>`${label}: ${cur} matching of ${full} patents — jump to era`,
     copyLinkTitle:"Copy link to this patent",
+    citeTitle:"Copy a citation for this entry",
+    citeNumUnconfirmed:"patent number not yet confirmed",
+    citeFiledGranted:(y,g)=>`filed ${y}, granted ${g}`,
+    citeFiledPending:y=>`filed ${y}, pending`,
+    citeSource:"MTB Patent Atlas",
     mtBannerText:"🌐 Machine translation: this atlas's French content (all 267 patent entries) was AI-generated and has not yet been reviewed by a French speaker. Legal and technical terminology may be imprecise — check the English entry or primary source before relying on it.",
     footerAbout:`<strong>About the data.</strong> Compiled from industry reporting, USPTO records, and manufacturer disclosures. Entries marked "unverified" or "draft" are documented technologies whose exact patent numbers are still being confirmed — corrections welcome. Expiration dates are estimated as filing date + 20 years and do not account for terminal disclaimers or fee lapses. Nothing here is legal advice.`,
     footerCredit:"A RedFoxRun / PostMillennium MTB project.",
@@ -1910,6 +1981,8 @@ const T = {
     vsWord:"c.",
     statsTitle:"L'atlas en chiffres",
     statsIntro:"Tout ce qui suit est calculé en direct à partir des données de l'atlas — la mise à jour est automatique à chaque nouvelle entrée.",
+    exportBtn:"⬇ Exporter les données", exportTip:"Télécharger le jeu de données sous-jacent",
+    exportJSON:"🗂️ Télécharger en JSON (données complètes)", exportCSV:"📊 Télécharger en CSV (tableur)",
     totalEntriesLbl:"Entrées totales", activeLbl:"Actifs", expiredFreeLbl:"Expirés — libres d'usage", litigatedLbl:"En litige",
     statusSplit:"Répartition par statut",
     goingFreeSoonH3:"⏳ Bientôt libres de droits",
@@ -1918,13 +1991,23 @@ const T = {
     byCategory:"Entrées par catégorie",
     catTimelineTitle:"Brevets par catégorie, dans le temps",
     catTimelineIntro:yrs=>`Chaque barre représente une tranche de ${yrs} ans, empilée par catégorie — la hauteur de la barre est le volume total, la couleur des segments en montre la composition. Survolez un segment pour son nombre exact. Les brevets antérieurs à 1980 sont regroupés dans une première barre.`,
-    catTimelinePreTip:yr=>`Avant ${yr}`,
+    statsTimelinePreTip:yr=>`Avant ${yr}`,
+    catTimelineModeLabel:mode=>mode==="share"?"Part":"Nombre",
+    catTimelineModeTip:"Basculer entre le nombre total (hauteur = volume) et la part en % (hauteur fixe, seule la composition varie)",
+    litTimelineTitle:"Litige, dans le temps",
+    litTimelineIntro:yrs=>`Mêmes tranches de ${yrs} ans que le graphique ci-dessus, mais réparties entre litigieux et non litigieux — survolez un segment pour son nombre exact. La plupart des litiges de ce jeu de données sont récents ; ce graphique montre si c'est réellement le cas ou seulement un biais de récence dans ce qui a été rapporté.`,
+    notLitigatedWord:"non litigieux",
     mostPatented:"Noms les plus brevetés",
     mostPatentedIntro:"Marques et inventeurs par nombre d'entrées de l'atlas, pas par nombre réel de brevets détenus — certaines marques (GoPro, SRAM, Shimano, Fox) possèdent des portefeuilles bien plus vastes que ce qui est répertorié ici. Touchez une barre pour filtrer la chronologie.",
     statsNote:"Les estimations d'expiration ne tiennent pas compte des déclarations terminales ni des défauts de paiement des annuités — voir la note en pied de page.",
     noGapEra:n=>`aucune entrée pendant ${n} ans`,
     eraJumpAria:(label,cur,full)=>`${label} : ${cur} correspondance(s) sur ${full} brevets — aller à cette époque`,
     copyLinkTitle:"Copier le lien vers ce brevet",
+    citeTitle:"Copier une citation de cette fiche",
+    citeNumUnconfirmed:"numéro de brevet non encore confirmé",
+    citeFiledGranted:(y,g)=>`déposé en ${y}, délivré en ${g}`,
+    citeFiledPending:y=>`déposé en ${y}, en instance`,
+    citeSource:"MTB Patent Atlas",
     mtBannerText:"🌐 Traduction automatique : le contenu français de cet atlas (les 267 fiches de brevets) a été généré par IA et n'a pas encore été relu par un locuteur francophone. La terminologie juridique et technique peut être imprécise — vérifiez la fiche anglaise ou la source primaire avant de vous y fier.",
     footerAbout:`<strong>À propos des données.</strong> Compilées à partir de la presse spécialisée, des dossiers de l'USPTO et des communications des fabricants. Les entrées marquées « non vérifié » ou « provisoire » désignent des technologies documentées dont le numéro de brevet exact reste à confirmer — les corrections sont bienvenues. Les dates d'expiration sont estimées à date de dépôt + 20 ans et ne tiennent pas compte des déclarations terminales ni des défauts de paiement des annuités. Rien ici ne constitue un avis juridique.`,
     footerCredit:"Un projet RedFoxRun / PostMillennium MTB.",
@@ -2045,10 +2128,10 @@ $("#mtBannerClose")?.addEventListener("click",()=>{ const b=$("#mtBanner"); if(b
 applyStaticI18n(); // apply restored/default language to static markup before the chip rows below get built
 
 /* Era-bucketing core, parameterized on step size — shared by getEras() (the
-   top nav chart, reading the user's 2yr/1yr/5yr toggle) and the "Patents by
-   category over time" chart in Stats (below), which always buckets at
-   CATEGORY_TIMELINE_STEP_YR regardless of that toggle. One bucketing
-   implementation, two call sites, rather than two copies that could drift.
+   top nav chart, reading the user's 2yr/1yr/5yr toggle) and the Stats tab's
+   two "over time" charts (category and litigation, below), which always
+   bucket at STATS_TIMELINE_STEP_YR regardless of that toggle. One bucketing
+   implementation, three call sites, rather than copies that could drift.
    step 1  -> one bar per year
    step 2  -> 2-year brackets aligned to even years (1990–91, 1992–93, …)
    step 5  -> 5-year brackets aligned to the half-decade (1990–94, 1995–99, …)
@@ -2410,6 +2493,7 @@ function cardHTML(d){
     return {url,label};
   }
   const titleEN=txEN(d.t), titleShown=tx(d.t);
+  const ref=cardRef(d);
   const externalSearchQuery=encodeURIComponent('bicycle '+(d.a.split(/[\/→(]/)[0].trim())+' '+titleEN.replace(/\(.*?\)/g,'').split('—')[0].trim());
   /* Derived from BRAND_HQ rather than a separate hardcoded list, so this and
      the search-location fix can't drift out of sync with each other. City
@@ -2441,6 +2525,29 @@ function cardHTML(d){
   } else {
     gp=`<a class="gp" href="https://patents.google.com/?q=${externalSearchQuery}" target="_blank" rel="noopener">${t("searchRelatedGP")}</a>`;
   }
+  /* "Cite this entry" — a plain-text citation string for readers who want
+     to reference a specific patent outside the tool (this atlas is built
+     for exactly that use — see CLAUDE.md's "Sourcing discipline"). The
+     number portion mirrors gp's own three-way branching just above
+     (multi-num / single-num / nothing confirmed yet), since citation text
+     needs the same distinction; an honest "number not yet confirmed"
+     beats inventing one, same rule as everywhere else in this dataset.
+     Built once here and stashed in a data attribute (see the card-cite-btn
+     button below) rather than recomputed in the click handler, so the
+     citation always matches what was actually on screen when rendered. */
+  let citeNum;
+  if(d.nums&&d.nums.length>1){
+    citeNum=d.nums.map(n=>numLink(n).label).join(" + ");
+  } else if(d.num){
+    const isD=pt==="design";
+    const raw=isD?`D${d.num}`:d.num;
+    citeNum=/^[A-Z]{2}/.test(raw)?raw:`US ${raw.replace(/(\d{1,2})(\d{3})(\d{3})$/,"$1,$2,$3")}`;
+  } else {
+    citeNum=t("citeNumUnconfirmed");
+  }
+  const citeDates=d.g?t("citeFiledGranted",d.y,d.g):t("citeFiledPending",d.y);
+  const citeUrl=`${location.origin}${location.pathname}${location.search}#p=${encodeURIComponent(ref)}`;
+  const citeText=`${citeNum} — ${titleShown.replace(/\s*\(.*?\)\s*$/,'')} (${citeDates}) — ${d.a}. ${t("citeSource")}: ${citeUrl}`;
   /* Most entries have zero or one drawing (d.img/d.imgAlt). A merged multi-patent
      entry can have more than one — d.imgs, an array of {src,alt,caption,link} —
      which takes priority when present. Wrapping the singular case in the same
@@ -2450,7 +2557,6 @@ function cardHTML(d){
       <img src="${f.src}" alt="${tx(f.alt) || t("origDrawingFor", titleShown.replace(/\(.*?\)/g,'').trim())}" loading="lazy">
       <figcaption><span>${tx(f.caption)||t("figCaptionDefault")}</span>${f.link?`<a href="${f.link}" target="_blank" rel="noopener">${t("viewFullPatent")}</a>`:(d.num?`<a href="${patentUrl(d.num,jur)}" target="_blank" rel="noopener">${t("viewFullPatent")}</a>`:"")}</figcaption>
     </figure>`).join("") : "";
-  const ref=cardRef(d);
   return `<article class="card ${d.st==='pending'?'pending-card':''} ${(d.b&&d.b.includes('litigated'))?'lit-card':''}" data-y="${d.y}" id="p-${ref}">
     <div class="chead-row">
     <button class="chead" aria-expanded="false">
@@ -2463,8 +2569,11 @@ function cardHTML(d){
       </span>
       <span class="caret">▼</span>
     </button>
-    <button class="card-share-btn" data-ref="${ref}" aria-label="${t('copyLinkTitle')}" title="${t('copyLinkTitle')}">
+    <button class="card-icon-btn card-share-btn" data-ref="${ref}" aria-label="${t('copyLinkTitle')}" title="${t('copyLinkTitle')}">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+    </button>
+    <button class="card-icon-btn card-cite-btn" data-cite="${encodeURIComponent(citeText)}" aria-label="${t('citeTitle')}" title="${t('citeTitle')}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy-icon lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
     </button>
     </div>
     <div class="cbody">
@@ -2572,39 +2681,43 @@ function hbarRow(name, value, max, {dataAttr, dataVal, variant=""} = {}){
       <span class="hbar-val">${value}</span></div>`;
 }
 
-/* "Patents by category over time" — a stacked bar chart, one column per
-   CATEGORY_TIMELINE_STEP_YR-year bracket from CATEGORY_TIMELINE_START_YR
-   onward, plus one leading column folding in everything before that (see
-   the constant's own comment for why). Each column is a fixed-order stack
-   of up to 8 colored segments (CAT_COLORS, same order as CATS — the
-   ordering IS the CVD-safety mechanism per the dataviz skill, so segments
-   always stack in that order, never sorted by size). Column height is
-   scaled against the single busiest bracket, so bars stay comparable
-   across the whole chart the way the top nav chart's bars are. No inline
-   segment labels — with up to 8 slivers per column there's rarely room,
-   and three of the eight hues (drive/wheel/comp) read under 3:1 on a
-   light surface by design (see CAT_COLORS) — the legend below and each
-   segment's hover title are the required relief channel, never the fill
-   color alone. */
-function catTimelineHTML(){
-  const catKeys=Object.keys(CATS);
-  const preItems=D.filter(d=>typeof d.y==="number"&&isFinite(d.y)&&d.y<CATEGORY_TIMELINE_START_YR);
-  const regularEras=buildEras(CATEGORY_TIMELINE_STEP_YR).filter(e=>e.from>=CATEGORY_TIMELINE_START_YR);
-  if(!regularEras.length) return "";
-  /* Buckets are a superset of buildEras()'s shape (axis label + tooltip
-     text + from-year for the label-thinning check), with one synthetic
-     leading bucket for the pre-1980 fold-in when there's anything to fold. */
-  const buckets=[
+/* Shared bucket-builder for the Stats tab's two "over time" charts
+   (catTimelineHTML, litTimelineHTML below). Buckets are a superset of
+   buildEras()'s shape (axis label + tooltip text + from-year for the
+   label-thinning check), with one synthetic leading bucket folding in
+   everything before STATS_TIMELINE_START_YR when there's anything to
+   fold (see that constant's own comment for why) — each chart maps its
+   own `items` list into whatever counts/segments it needs; this function
+   only decides WHICH entries land in which time bracket, not how a chart
+   colors or labels them. */
+function buildStatsTimelineBuckets(){
+  const preItems=D.filter(d=>typeof d.y==="number"&&isFinite(d.y)&&d.y<STATS_TIMELINE_START_YR);
+  const regularEras=buildEras(STATS_TIMELINE_STEP_YR).filter(e=>e.from>=STATS_TIMELINE_START_YR);
+  if(!regularEras.length) return [];
+  return [
     ...(preItems.length ? [{
-      axis:`<${CATEGORY_TIMELINE_START_YR}`, tip:t("catTimelinePreTip",CATEGORY_TIMELINE_START_YR),
+      axis:`<${STATS_TIMELINE_START_YR}`, tip:t("statsTimelinePreTip",STATS_TIMELINE_START_YR),
       items:preItems, alwaysLabel:true
     }] : []),
     ...regularEras.map(e=>({ axis:`${e.from}`, tip:e.label, items:D.filter(d=>d.y>=e.from&&d.y<=e.to), from:e.from }))
   ];
-  const perBucket=buckets.map(b=>{
-    const counts=catKeys.map(k=>b.items.filter(d=>d.cat===k).length);
-    return {...b, counts, total:b.items.length};
-  });
+}
+/* Renders one chart from a list of {axis,tip,items,from,alwaysLabel} buckets
+   (buildStatsTimelineBuckets()'s shape) — shared rendering for both
+   catTimelineHTML and litTimelineHTML so the two "over time" charts stay
+   visually identical (same column/label/legend structure) with only their
+   segment data and colors differing. `segmentsFor(items)` returns this
+   bucket's array of {color,count,label} segments in a FIXED order (the
+   caller's responsibility — order is the CVD-safety mechanism per the
+   dataviz skill, so this function never sorts by size); `mode` is
+   "count" (column height = share of the busiest bucket, a real reading of
+   volume) or "share" (every column full height, so only segment
+   proportions vary — isolating composition from volume, useful when a
+   quiet era and a booming one would otherwise be hard to compare for mix
+   alone); `legendItems` is the fixed {color,label} list shown below,
+   independent of which segments happen to be non-zero in view right now. */
+function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems){
+  const perBucket=buckets.map(b=>({ ...b, segs:segmentsFor(b.items), total:b.items.length }));
   const maxTotal=Math.max(...perBucket.map(b=>b.total),1);
   const narrow = (typeof window!=="undefined" && window.innerWidth) ? window.innerWidth<NARROW_BREAKPOINT_PX : false;
   /* Two parallel flex rows (bars, then labels) with identical flex-basis/gap
@@ -2614,23 +2727,80 @@ function catTimelineHTML(){
      still gets a clean rounded corner. Two aligned rows sidesteps the clash
      entirely instead of fighting it. */
   const cols=perBucket.map(b=>{
-    const segs=catKeys.map((k,i)=>{
-      const n=b.counts[i];
-      if(!n) return "";
-      return `<div class="cat-seg" style="height:${pct(n,b.total).toFixed(1)}%;background:${CAT_COLORS[k]}" title="${catLabel(k)} — ${n} · ${b.tip}"></div>`;
+    const segHTML=b.segs.map(s=>{
+      if(!s.count) return "";
+      return `<div class="stats-seg" style="height:${pct(s.count,b.total).toFixed(1)}%;background:${s.color}" title="${s.label} — ${s.count} · ${b.tip}"></div>`;
     }).join("");
-    return `<div class="cat-col" style="height:${Math.max(3,pct(b.total,maxTotal)).toFixed(1)}%" title="${b.tip} — ${b.total}">${segs}</div>`;
+    /* Count mode scales column height to that bucket's share of the
+       busiest bucket, so volume is readable at a glance. Share mode holds
+       every column at full height — segments (already sized as a % of
+       their own column's total, above) are then the only thing that
+       varies, isolating mix from volume so composition across eras
+       compares directly. */
+    const colHeight = mode==="share" ? 100 : Math.max(3,pct(b.total,maxTotal));
+    return `<div class="stats-col" style="height:${colHeight.toFixed(1)}%" title="${b.tip} — ${b.total}">${segHTML}</div>`;
   }).join("");
   const labels=perBucket.map(b=>{
     const showLbl = b.alwaysLabel || (narrow ? b.from%20===0 : b.from%10===0);
     return `<span>${showLbl?b.axis:""}</span>`;
   }).join("");
-  const legend=catKeys.map(k=>`<span><span class="dot" style="background:${CAT_COLORS[k]}"></span>${catLabel(k)}</span>`).join("");
-  return `<div class="cat-timeline-wrap">
-    <div class="cat-timeline">${cols}</div>
-    <div class="cat-timeline-labels">${labels}</div>
-    <div class="stack-legend cat-legend">${legend}</div>
+  const legend=legendItems.map(({color,label})=>`<span><span class="dot" style="background:${color}"></span>${label}</span>`).join("");
+  return `<div class="stats-timeline-wrap">
+    <div class="stats-timeline">${cols}</div>
+    <div class="stats-timeline-labels">${labels}</div>
+    <div class="stack-legend timeline-legend">${legend}</div>
   </div>`;
+}
+/* "Patents by category over time" — each column a fixed-order stack of
+   colored segments (CAT_COLORS, same order as CATS — the ordering IS the
+   CVD-safety mechanism per the dataviz skill, so segments always stack in
+   that order, never sorted by size). No inline segment labels — with up
+   to 9 slivers per column there's rarely room, and several of the hues
+   read under 3:1 on a light surface by design (see CAT_COLORS) — the
+   legend below and each segment's hover title are the required relief
+   channel, never the fill color alone.
+   catTimelineMode ("count" | "share", toggled in the chart's own header)
+   picks what column HEIGHT encodes — see renderStatsTimelineChart()'s own
+   comment for the count-vs-share tradeoff. */
+function catTimelineHTML(){
+  const catKeys=Object.keys(CATS);
+  const buckets=buildStatsTimelineBuckets();
+  if(!buckets.length) return "";
+  const segmentsFor=items=>catKeys.map(k=>({
+    color:CAT_COLORS[k], count:items.filter(d=>d.cat===k).length, label:catLabel(k)
+  }));
+  const legendItems=catKeys.map(k=>({color:CAT_COLORS[k], label:catLabel(k)}));
+  return renderStatsTimelineChart(buckets, segmentsFor, catTimelineMode, legendItems);
+}
+/* "Litigation over time" — a 2-segment stack per bracket (litigated vs.
+   not), reusing the exact same STATS_TIMELINE_* buckets as the category
+   chart above so the two charts' eras line up for a reader comparing them.
+   Only 2 series, so this sits nowhere near the dataviz skill's 8-hue
+   categorical cap or its CVD-separation concerns — it reuses --st-lit
+   (the same red already meaning "litigated" on every card pill and the
+   Fights tab) for the litigated segment, so the color means the same
+   thing everywhere in the tool rather than introducing a second "red."
+   The "not litigated" segment deliberately does NOT reuse --chip-bg (the
+   column's own idle background, per .stats-col) — a segment colored the
+   same as the box it sits in would render as if it weren't there at all,
+   and its legend swatch would be invisible against the page. It reuses
+   CAT_COLORS.tech's neutral gray instead: already contrast-checked
+   against both surfaces this tool renders on, and thematically the same
+   "present, but deliberately not competing for attention" role. */
+function litTimelineHTML(){
+  const buckets=buildStatsTimelineBuckets();
+  if(!buckets.length) return "";
+  const litColor=getComputedStyle(document.documentElement).getPropertyValue("--st-lit").trim()||"#B5532A";
+  const notColor=CAT_COLORS.tech;
+  const segmentsFor=items=>{
+    const lit=items.filter(d=>(d.b||[]).includes("litigated")).length;
+    return [
+      {color:litColor, count:lit, label:t("litigatedWord")},
+      {color:notColor, count:items.length-lit, label:t("notLitigatedWord")}
+    ];
+  };
+  const legendItems=[{color:litColor,label:t("litigatedWord")},{color:notColor,label:t("notLitigatedWord")}];
+  return renderStatsTimelineChart(buckets, segmentsFor, "count", legendItems);
 }
 
 function renderStats(){
@@ -2659,8 +2829,19 @@ function renderStats(){
       `<li data-jumpref="${cardRef(d)}"><span class="soon-yr">${d.exp}</span><span>${tx(d.t)} — ${d.a}</span></li>`).join("")}</ul>`
     :`<p class="stats-intro">${t("noneFreeSoon")}</p>`;
   tl.innerHTML=`<div class="stats-wrap">
-    <h2 class="stats-h">${t("statsTitle")}</h2>
-    <p class="stats-intro">${t("statsIntro")}</p>
+    <div class="stats-h-row">
+      <div>
+        <h2 class="stats-h">${t("statsTitle")}</h2>
+        <p class="stats-intro">${t("statsIntro")}</p>
+      </div>
+      <details class="share-menu" id="exportMenu">
+        <summary class="mini-btn" title="${t('exportTip')}">${t('exportBtn')}</summary>
+        <div class="share-panel" role="menu">
+          <button class="share-opt" data-export="json" role="menuitem">${t('exportJSON')}</button>
+          <button class="share-opt" data-export="csv" role="menuitem">${t('exportCSV')}</button>
+        </div>
+      </details>
+    </div>
     <div class="stat-grid">
       <div class="stat-box"><div class="stat-num">${total}</div><div class="stat-lbl">${t("totalEntriesLbl")}</div></div>
       <div class="stat-box"><div class="stat-num">${stCounts.active}</div><div class="stat-lbl">${t("activeLbl")}</div></div>
@@ -2677,9 +2858,17 @@ function renderStats(){
       ${catBars}
     </div>
     <div class="stats-sec">
-      <h3>${t("catTimelineTitle")}</h3>
-      <p class="stats-intro">${t("catTimelineIntro",CATEGORY_TIMELINE_STEP_YR)}</p>
+      <div class="stats-sec-head">
+        <h3>${t("catTimelineTitle")}</h3>
+        <button class="mini-btn" id="catTimelineModeToggle" title="${t('catTimelineModeTip')}">${t('catTimelineModeLabel',catTimelineMode)}</button>
+      </div>
+      <p class="stats-intro">${t("catTimelineIntro",STATS_TIMELINE_STEP_YR)}</p>
       ${catTimelineHTML()}
+    </div>
+    <div class="stats-sec">
+      <h3>${t("litTimelineTitle")}</h3>
+      <p class="stats-intro">${t("litTimelineIntro",STATS_TIMELINE_STEP_YR)}</p>
+      ${litTimelineHTML()}
     </div>
     <div class="stats-sec">
       <h3>${t("mostPatented")}</h3>
@@ -2707,6 +2896,18 @@ function renderStats(){
     syncChipsToState(); activeTab="all"; renderTabs(); render();
     window.scrollTo({top:0,behavior:"smooth"});
   };});
+  const catModeBtn=$("#catTimelineModeToggle");
+  if(catModeBtn) catModeBtn.onclick=()=>{
+    catTimelineMode = catTimelineMode==="count" ? "share" : "count";
+    renderStats(); // cheap: only this tab's own chart depends on the mode
+  };
+  tl.querySelectorAll("[data-export]").forEach(btn=>{
+    btn.onclick=()=>{
+      if(btn.dataset.export==="json") downloadBlob(EXPORT_FILENAME.json,"application/json;charset=utf-8",JSON.stringify(D,null,2));
+      else downloadBlob(EXPORT_FILENAME.csv,"text/csv;charset=utf-8",buildExportCSV());
+      btn.closest("details")?.removeAttribute("open");
+    };
+  });
   $("#resultCount").textContent=t("entriesAnalyzed",total);
   $("#clearAll").hidden=true;
   updateTabDots();
@@ -2746,6 +2947,15 @@ function render(){
       e.stopPropagation();
       const url=`${location.origin}${location.pathname}${location.search}#p=${encodeURIComponent(b.dataset.ref)}`;
       if(await copyToClipboard(url)){
+        b.classList.add("copied");
+        setTimeout(()=>b.classList.remove("copied"),ANIMATION_CLEANUP_MS);
+      }
+    };
+  });
+  tl.querySelectorAll(".card-cite-btn").forEach(b=>{
+    b.onclick=async(e)=>{
+      e.stopPropagation();
+      if(await copyToClipboard(decodeURIComponent(b.dataset.cite))){
         b.classList.add("copied");
         setTimeout(()=>b.classList.remove("copied"),ANIMATION_CLEANUP_MS);
       }
@@ -2905,6 +3115,61 @@ async function copyToClipboard(text){
   }catch(e){ /* fall through to the prompt fallback */ }
   try{ window.prompt("Copy this link:",text); }catch(e){}
   return false;
+}
+
+/* ======== EXPORT DATA (Stats tab) ========
+   A credibility feature for an advocacy tool, not just a nicety: lets a
+   reader verify or reuse the raw dataset without scraping the page. Scope
+   is D only (the patent entries) — BRANDS/INVENTORS/FIGHTS are supporting
+   registries, not the dataset itself.
+   Standard client-side download: a Blob + object URL + a temporary
+   <a download> click, no server and no new dependency. One real caveat,
+   stated plainly rather than silently assumed away: this tool is designed
+   to run inside a cross-origin iframe (Pinkbike embeds, postmillennium-
+   renaissance.com), and a strictly `sandbox`-ed iframe without
+   `allow-downloads` can block the actual save-to-disk step even though
+   the Blob itself is created fine — in that case the browser typically
+   just navigates to the blob URL instead of downloading, which still
+   lets a reader see and copy the raw text, so the fallback is degraded,
+   not broken. */
+const EXPORT_FILENAME = { json:"mtb-patent-atlas-data.json", csv:"mtb-patent-atlas-data.csv" };
+function downloadBlob(filename, mime, content){
+  const blob=new Blob([content],{type:mime});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url; a.download=filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(url), 1000);
+}
+/* RFC 4180 quoting: wrap in quotes and double any internal quote whenever
+   a value contains a comma, quote, or newline — otherwise leave it bare. */
+function csvEscape(v){
+  const s=v==null?"":String(v);
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g,'""')}"` : s;
+}
+/* Flattens D into a spreadsheet-friendly CSV. Bilingual fields are
+   flattened to their English (txEN) text — a spreadsheet needs one
+   deterministic language regardless of the page's current toggle, and
+   English is this atlas's source-of-truth language (see CLAUDE.md's
+   bilingual section). Array fields (nums/b/who) join with "; " since CSV
+   has no native list type. The JSON export is the full-fidelity
+   alternative for anyone who wants the real {en,fr} structure back. */
+function buildExportCSV(){
+  const headers=["Year Filed","Year Granted","Title","Assignee","Patent Number(s)","Category","Status","Est. Expiry","Jurisdiction","Type","Badges","Who/Brands","Confidence","Summary","Why It Matters"];
+  const rows=D.map(d=>[
+    d.y, d.g??"",
+    txEN(d.t), d.a,
+    (d.nums&&d.nums.length?d.nums:(d.num?[d.num]:[])).join("; "),
+    (CATS[d.cat]&&CATS[d.cat].en)||d.cat,
+    d.st, d.exp??"",
+    d.j??"US",
+    d.pt??"utility",
+    (d.b||[]).join("; "),
+    (d.who||[]).join("; "),
+    d.conf,
+    txEN(d.s), txEN(d.w)
+  ]);
+  return [headers,...rows].map(r=>r.map(csvEscape).join(",")).join("\r\n");
 }
 
 /* ======== SHARE MENU ========
