@@ -173,12 +173,28 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
 .stack-seg{height:100%}
 .stack-legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--ink-soft);margin-top:4px}
 .stack-legend .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+/* "Patents by category over time" (Stats tab) — see catTimelineHTML().
+   Two parallel flex rows (bars, then labels) sharing the same flex-basis/
+   gap so columns line up, rather than one absolutely-positioned label per
+   bar the way the top nav chart does it — that trick needs the bar to have
+   no overflow:hidden, and .cat-col needs overflow:hidden so a variable top
+   segment still gets a clean rounded corner regardless of which category
+   happens to be tallest in that particular bracket. */
+.cat-timeline-wrap{margin:10px 0 4px}
+.cat-timeline{display:flex;align-items:flex-end;gap:3px;height:120px}
+.cat-col{flex:1;min-width:5px;position:relative;display:flex;flex-direction:column-reverse;border-radius:4px 4px 0 0;overflow:hidden;background:var(--chip-bg)}
+.cat-seg{width:100%;box-sizing:border-box}
+.cat-seg:not(:first-child){border-bottom:2px solid var(--surface)}
+.cat-timeline-labels{display:flex;gap:3px;margin-top:4px}
+.cat-timeline-labels span{flex:1;min-width:5px;text-align:center;font-family:var(--font-mono);font-size:10px;color:var(--ink-soft);white-space:nowrap}
+.cat-legend{margin-top:10px}
 .soon-list{list-style:none;margin-top:4px}
 .soon-list li{background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:9px 12px;margin-bottom:6px;font-size:13.5px;display:flex;gap:10px;align-items:baseline;cursor:pointer;transition:border-color .15s}
 .soon-list li:hover{border-color:var(--primary)}
 .soon-yr{font-family:var(--font-mono);font-weight:700;color:var(--st-pending);flex:0 0 auto}
 .stats-note{font-size:12px;color:var(--ink-soft);margin-top:14px}
-@media(max-width:480px){.hbar-row{grid-template-columns:110px 1fr 30px;font-size:12px}}
+@media(max-width:480px){.hbar-row{grid-template-columns:110px 1fr 30px;font-size:12px}
+  .cat-timeline{height:90px;gap:2px} .cat-timeline-labels{gap:2px} .cat-timeline-labels span{font-size:9px}}
 h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clamp(30px,6vw,46px);line-height:1.02;letter-spacing:var(--head-spacing);text-transform:var(--head-transform)}
 .sub{font-size:14px;opacity:.85;max-width:560px;margin-top:4px}
 .themes{display:flex;gap:8px;margin-top:12px;align-items:center}
@@ -557,6 +573,23 @@ const CATS = {
   emtb:{en:"E-MTB & Electronics",fr:"VTTAE et électronique"},
   frame:{en:"Frame & Standards",fr:"Cadre et standards"},
   transport:{en:"Bike Transport",fr:"Transport de vélos"}
+};
+/* Categorical color for the "Patents by category over time" stacked chart
+   (Stats tab) — the ONLY place category identity is color-coded, so this is
+   the one registry in the file that exists purely for a chart. Assigned in
+   this fixed order (matching CATS' own key order above) from a validated
+   8-hue categorical palette: adjacent-pair CVD ΔE ≥8 (target) and ≥15
+   (normal-vision floor) in OKLab, checked with the dataviz skill's
+   validate_palette.js against both #FFFFFF and #FBF6EC — the two card/
+   surface colors the four themes actually use. The ORDER is the safety
+   mechanism (only neighbors touch in a stack) — re-tier a hue if you ever
+   swap two categories' colors, don't just reshuffle freely. Three slots
+   (drive, wheel, comp) read under 3:1 contrast on a light surface by
+   design — never used for text, only as the segment fill + a legend swatch
+   with a real text label beside it, which is the required relief channel. */
+const CAT_COLORS = {
+  susp:"#2a78d6", fork:"#eb6834", drive:"#1baf7a", wheel:"#eda100",
+  comp:"#e87ba4", emtb:"#008300", frame:"#4a3aa7", transport:"#e34948"
 };
 /* Bilingual accessor for CATS/BADGES/BADGE_TIPS — falls back to English if
    the current language key is missing, so a not-yet-translated string never
@@ -1668,6 +1701,15 @@ const NOW = new Date().getFullYear();
    breakpoint ever changes, update this to match — CSS custom properties
    can't be read inside @media queries, so this can't be linked automatically. */
 const NARROW_BREAKPOINT_PX = 480;
+/* Fixed bucket size for the "Patents by category over time" chart in Stats,
+   independent of the top nav chart's 2yr/1yr/5yr toggle (stepYr). That chart
+   spans the full page width and is built to be dense; this one lives in the
+   880px-max-width .stats-wrap column and needs every bucket to carry enough
+   volume for an 8-way categorical stack to actually read — 2yr or 1yr would
+   leave most pre-1990s buckets showing one sliver of one color. 5 years is
+   the same bracket size the top chart already offers, just pinned here
+   rather than left to whatever the user last toggled. */
+const CATEGORY_TIMELINE_STEP_YR = 5;
 
 /* ===== Timing constants =====
    Named individually rather than collapsed into shared values, because a
@@ -1786,6 +1828,8 @@ const T = {
     goingFreeSoonIntro:yr=>`Active patents whose estimated expiration (filing + 20 yrs) falls by ${yr}. Tap one to jump to its card.`,
     noneFreeSoon:"No active patents in the atlas are estimated to expire within the next two years.",
     byCategory:"Entries by category",
+    catTimelineTitle:"Patents by category, over time",
+    catTimelineIntro:yrs=>`Each bar is a ${yrs}-year bracket, stacked by category — bar height is total volume, segment color is the mix. Hover a segment for its exact count.`,
     mostPatented:"Most-patented names",
     mostPatentedIntro:"Brands and inventors by number of entries. Tap a bar to filter the timeline.",
     statsNote:"Expiration estimates don't account for terminal disclaimers or fee lapses — see the note in the footer.",
@@ -1859,6 +1903,8 @@ const T = {
     goingFreeSoonIntro:yr=>`Brevets actifs dont l'expiration estimée (dépôt + 20 ans) survient d'ici ${yr}. Touchez-en un pour aller à sa fiche.`,
     noneFreeSoon:"Aucun brevet actif de l'atlas n'est estimé expirer dans les deux prochaines années.",
     byCategory:"Entrées par catégorie",
+    catTimelineTitle:"Brevets par catégorie, dans le temps",
+    catTimelineIntro:yrs=>`Chaque barre représente une tranche de ${yrs} ans, empilée par catégorie — la hauteur de la barre est le volume total, la couleur des segments en montre la composition. Survolez un segment pour son nombre exact.`,
     mostPatented:"Noms les plus brevetés",
     mostPatentedIntro:"Marques et inventeurs par nombre d'entrées. Touchez une barre pour filtrer la chronologie.",
     statsNote:"Les estimations d'expiration ne tiennent pas compte des déclarations terminales ni des défauts de paiement des annuités — voir la note en pied de page.",
@@ -1984,20 +2030,24 @@ document.querySelectorAll(".langbtn").forEach(b=>{
 $("#mtBannerClose")?.addEventListener("click",()=>{ const b=$("#mtBanner"); if(b) b.hidden=true; });
 applyStaticI18n(); // apply restored/default language to static markup before the chip rows below get built
 
-/* Returns era array for current stepYr.
-   stepYr 1  -> one bar per year
-   stepYr 2  -> 2-year brackets aligned to even years (1990–91, 1992–93, …)
-   stepYr 5  -> 5-year brackets aligned to the half-decade (1990–94, 1995–99, …)
-   Buckets are aligned to the calendar (floor to a multiple of stepYr) rather than
+/* Era-bucketing core, parameterized on step size — shared by getEras() (the
+   top nav chart, reading the user's 2yr/1yr/5yr toggle) and the "Patents by
+   category over time" chart in Stats (below), which always buckets at
+   CATEGORY_TIMELINE_STEP_YR regardless of that toggle. One bucketing
+   implementation, two call sites, rather than two copies that could drift.
+   step 1  -> one bar per year
+   step 2  -> 2-year brackets aligned to even years (1990–91, 1992–93, …)
+   step 5  -> 5-year brackets aligned to the half-decade (1990–94, 1995–99, …)
+   Buckets are aligned to the calendar (floor to a multiple of step) rather than
    to the earliest data point, so the brackets stay stable as data is added. */
-function getEras(){
+function buildEras(step){
   const ys=D.map(d=>d.y).filter(y=>typeof y==="number"&&isFinite(y));
   if(!ys.length) return [];
-  const lo=Math.floor(Math.min(...ys)/stepYr)*stepYr;
+  const lo=Math.floor(Math.min(...ys)/step)*step;
   const hi=Math.max(...ys);
   const eras=[];
-  for(let y=lo;y<=hi;y+=stepYr){
-    const end=y+stepYr-1;
+  for(let y=lo;y<=hi;y+=step){
+    const end=y+step-1;
     /* Clamp the closing bucket's label to the last year we actually have data
        for, so the axis never advertises years that haven't happened yet
        (e.g. "2025–2029" in 2026). `to` stays unclamped so filtering still
@@ -2005,13 +2055,14 @@ function getEras(){
     const shownEnd=Math.min(end,hi);
     eras.push({
       k:`era${y}`,
-      label: stepYr===1 ? `${y}` : (shownEnd>y ? `${y}–${shownEnd}` : `${y}`),
+      label: step===1 ? `${y}` : (shownEnd>y ? `${y}–${shownEnd}` : `${y}`),
       from:y,
       to:end
     });
   }
   return eras;
 }
+function getEras(){ return buildEras(stepYr); }
 
 /* ======== FILTER CHIPS ======== */
 function chip(label,set,key,row,setName){
@@ -2507,6 +2558,54 @@ function hbarRow(name, value, max, {dataAttr, dataVal, variant=""} = {}){
       <span class="hbar-val">${value}</span></div>`;
 }
 
+/* "Patents by category over time" — a stacked bar chart, one column per
+   CATEGORY_TIMELINE_STEP_YR-year bracket, each column a fixed-order stack of
+   up to 8 colored segments (CAT_COLORS, same order as CATS — the ordering
+   IS the CVD-safety mechanism per the dataviz skill, so segments always
+   stack in that order, never sorted by size). Column height is scaled
+   against the single busiest bracket, so bars stay comparable across the
+   whole chart the way the top nav chart's bars are. No inline segment
+   labels — with up to 8 slivers per column there's rarely room, and three
+   of the eight hues (drive/wheel/comp) read under 3:1 on a light surface by
+   design (see CAT_COLORS) — the legend below and each segment's hover title
+   are the required relief channel, never the fill color alone. */
+function catTimelineHTML(){
+  const eras=buildEras(CATEGORY_TIMELINE_STEP_YR);
+  if(!eras.length) return "";
+  const catKeys=Object.keys(CATS);
+  const perEra=eras.map(e=>{
+    const items=D.filter(d=>d.y>=e.from&&d.y<=e.to);
+    const counts=catKeys.map(k=>items.filter(d=>d.cat===k).length);
+    return {era:e, counts, total:items.length};
+  });
+  const maxTotal=Math.max(...perEra.map(e=>e.total),1);
+  const narrow = (typeof window!=="undefined" && window.innerWidth) ? window.innerWidth<NARROW_BREAKPOINT_PX : false;
+  /* Two parallel flex rows (bars, then labels) with identical flex-basis/gap
+     rather than one absolutely-positioned label per bar (the top nav chart's
+     trick) — that trick relies on the bar having no overflow:hidden, and this
+     chart needs overflow:hidden on every column so a variable top segment
+     still gets a clean rounded corner. Two aligned rows sidesteps the clash
+     entirely instead of fighting it. */
+  const cols=perEra.map(({era,counts,total})=>{
+    const segs=catKeys.map((k,i)=>{
+      const n=counts[i];
+      if(!n) return "";
+      return `<div class="cat-seg" style="height:${pct(n,total).toFixed(1)}%;background:${CAT_COLORS[k]}" title="${catLabel(k)} — ${n} · ${era.label}"></div>`;
+    }).join("");
+    return `<div class="cat-col" style="height:${Math.max(3,pct(total,maxTotal)).toFixed(1)}%" title="${era.label} — ${total}">${segs}</div>`;
+  }).join("");
+  const labels=perEra.map(({era})=>{
+    const showLbl = narrow ? era.from%20===0 : era.from%10===0;
+    return `<span>${showLbl?era.from:""}</span>`;
+  }).join("");
+  const legend=catKeys.map(k=>`<span><span class="dot" style="background:${CAT_COLORS[k]}"></span>${catLabel(k)}</span>`).join("");
+  return `<div class="cat-timeline-wrap">
+    <div class="cat-timeline">${cols}</div>
+    <div class="cat-timeline-labels">${labels}</div>
+    <div class="stack-legend cat-legend">${legend}</div>
+  </div>`;
+}
+
 function renderStats(){
   const tl=$("#timeline");
   const total=D.length;
@@ -2554,6 +2653,11 @@ function renderStats(){
     <div class="stats-sec">
       <h3>${t("byCategory")}</h3>
       ${catBars}
+    </div>
+    <div class="stats-sec">
+      <h3>${t("catTimelineTitle")}</h3>
+      <p class="stats-intro">${t("catTimelineIntro",CATEGORY_TIMELINE_STEP_YR)}</p>
+      ${catTimelineHTML()}
     </div>
     <div class="stats-sec">
       <h3>${t("mostPatented")}</h3>
@@ -2848,12 +2952,20 @@ document.getElementById("stepToggle").addEventListener("click",()=>{
 });
 
 /* Re-render bars on resize so label density matches the viewport
-   (debounced — renderBars is cheap but resize fires constantly). */
+   (debounced — renderBars is cheap but resize fires constantly). Also
+   re-renders the whole Stats view when it's the active tab, since
+   catTimelineHTML()'s own label thinning reads the same narrow-viewport
+   check and has no other way to hear about a resize. */
 (()=>{
   let rt;
   window.addEventListener("resize",()=>{
     clearTimeout(rt);
-    rt=setTimeout(()=>{ try{ renderBars(D.filter(passes)); }catch(e){} },RESIZE_DEBOUNCE_MS);
+    rt=setTimeout(()=>{
+      try{
+        if(typeof activeTab!=="undefined" && activeTab==="stats") renderStats();
+        else renderBars(D.filter(passes));
+      }catch(e){}
+    },RESIZE_DEBOUNCE_MS);
   });
 })();
 
