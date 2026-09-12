@@ -2673,11 +2673,6 @@ function renderStats(){
       <div class="stack-legend">${stackLegend}</div>
     </div>
     <div class="stats-sec">
-      <h3>${t("goingFreeSoonH3")}</h3>
-      <p class="stats-intro">${t("goingFreeSoonIntro",NOW+2)}</p>
-      ${soonList}
-    </div>
-    <div class="stats-sec">
       <h3>${t("byCategory")}</h3>
       ${catBars}
     </div>
@@ -2690,6 +2685,11 @@ function renderStats(){
       <h3>${t("mostPatented")}</h3>
       <p class="stats-intro">${t("mostPatentedIntro")}</p>
       ${whoBars}
+    </div>
+    <div class="stats-sec">
+      <h3>${t("goingFreeSoonH3")}</h3>
+      <p class="stats-intro">${t("goingFreeSoonIntro",NOW+2)}</p>
+      ${soonList}
     </div>
     <p class="stats-note">${t("statsNote")}</p>
   </div>`;
