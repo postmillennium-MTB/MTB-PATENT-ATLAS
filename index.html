@@ -2577,7 +2577,7 @@ function cardHTML(d){
     citeNum=t("citeNumUnconfirmed");
   }
   const citeDates=d.g?t("citeFiledGranted",d.y,d.g):t("citeFiledPending",d.y);
-  const citeUrl=`${location.origin}${location.pathname}${location.search}#p=${encodeURIComponent(ref)}`;
+  const citeUrl=`${SHARE_BASE_URL}#p=${encodeURIComponent(ref)}`;
   const citeText=`${citeNum} — ${titleShown.replace(/\s*\(.*?\)\s*$/,'')} (${citeDates}) — ${d.a}. ${t("citeSource")}: ${citeUrl}`;
   /* Most entries have zero or one drawing (d.img/d.imgAlt). A merged multi-patent
      entry can have more than one — d.imgs, an array of {src,alt,caption,link} —
@@ -2976,7 +2976,7 @@ function render(){
   tl.querySelectorAll(".card-share-btn").forEach(b=>{
     b.onclick=async(e)=>{
       e.stopPropagation();
-      const url=`${location.origin}${location.pathname}${location.search}#p=${encodeURIComponent(b.dataset.ref)}`;
+      const url=`${SHARE_BASE_URL}#p=${encodeURIComponent(b.dataset.ref)}`;
       if(await copyToClipboard(url)){
         b.classList.add("copied");
         setTimeout(()=>b.classList.remove("copied"),ANIMATION_CLEANUP_MS);
@@ -3054,6 +3054,15 @@ function renderBars(list){
 
 /* ======== DEEP LINKS (shareable URLs) ======== */
 /* Hash format: #tab=all&cat=susp,fork&st=active&q=weagle&p=5509679 */
+/* Every public-facing share/copy/cite link is built against this fixed base rather than
+   location.origin+pathname — that reflects wherever THIS document actually loaded from
+   (postmillennium-mtb.github.io when standalone, or the iframe's own address when embedded),
+   an implementation detail, not the tool's public address. pmr-website's own /atlas/ page
+   already reads its own location.hash on load and appends it straight onto this tool's
+   iframe src, so any #p=... / #cat=...&q=... link built against this base resolves and
+   deep-links correctly the same way a bare github.io link always has. Bare domain (no
+   "www"), matching og:url on every other page across pmr-website, including this one. */
+const SHARE_BASE_URL="https://postmillenniumrenaissance.com/atlas/";
 const HASH_SETS=["cat","st","badge","inv","brand"];
 let pendingCardRef=null;
 
@@ -3204,10 +3213,12 @@ function buildExportCSV(){
 }
 
 /* ======== SHARE MENU ========
-   Builds each option from whatever's on screen right now — location.href
-   already carries the live filter/search/tab state via syncHash() (see
-   DEEP LINKS above), so sharing mid-filter shares that exact view, not just
-   the bare site. "Copy link" uses copyToClipboard() above; the three
+   Builds each option from whatever's on screen right now — syncHash() (see
+   DEEP LINKS above) writes the live filter/search/tab state into this
+   document's own location.hash, which is then appended to SHARE_BASE_URL
+   rather than this document's own origin+pathname (see the comment on
+   SHARE_BASE_URL above), so sharing mid-filter shares that exact view, not
+   just the bare site. "Copy link" uses copyToClipboard() above; the three
    platform options are plain share-intent link-outs opened in a small
    popup, no SDK or Web Share API needed. */
 (()=>{
@@ -3221,8 +3232,9 @@ function buildExportCSV(){
   menu.querySelectorAll(".share-opt").forEach(btn=>{
     btn.addEventListener("click",async()=>{
       syncHash();
+      const shareUrl=SHARE_BASE_URL+location.hash;
       if(btn.dataset.share==="copy"){
-        const ok=await copyToClipboard(location.href);
+        const ok=await copyToClipboard(shareUrl);
         const old=btn.textContent;
         btn.textContent=ok?t("copiedConfirm"):t("copyLinkShown");
         setTimeout(()=>{ btn.textContent=old; },ANIMATION_CLEANUP_MS);
@@ -3230,7 +3242,7 @@ function buildExportCSV(){
         return;
       }
       const build=INTENTS[btn.dataset.share];
-      if(build) window.open(build(location.href),"_blank","noopener,noreferrer,width=600,height=520");
+      if(build) window.open(build(shareUrl),"_blank","noopener,noreferrer,width=600,height=520");
       menu.open=false;
     });
   });
