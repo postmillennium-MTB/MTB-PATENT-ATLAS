@@ -99,6 +99,16 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
    "did that work?" confirmation in the app lasts the same 1.6s. */
 .mini-btn.flash{background:var(--primary);color:#fff;border-color:var(--primary)}
 @media(max-width:480px){.mini-btn{font-size:10px;padding:4px 8px}}
+/* Small inline Lucide-style SVG icons swapped in for a few buttons/tabs
+   that used to carry an emoji instead. Sized to sit on the text baseline
+   next to the label they're paired with (mini-btn's 11px / tab-btn's
+   14px) rather than at their native 24x24. currentColor/no fill lets
+   each one inherit whatever color context it's placed in (including
+   .tab-fights's own red), so there's no separate icon-color to keep in
+   sync with a theme. aria-hidden'd on every instance since the adjacent
+   text label already says the same thing. */
+.icon-inline{width:14px;height:14px;vertical-align:-2px;margin-right:4px;flex-shrink:0}
+.tab-btn .icon-inline{width:15px;height:15px;margin-right:5px}
 /* ---------- Per-card share button ----------
    A small icon-only button sitting beside .chead rather than inside it —
    .chead is itself a <button> (the expand/collapse toggle), and buttons
@@ -147,6 +157,7 @@ header{background:var(--header-bg);color:#fff;padding:18px 16px 14px}
    summary IS the toggle, so there's no open/close state to track by hand.
    JS only builds the three intent URLs and closes the menu after a click. */
 .share-menu{position:relative;display:inline-block}
+.share-menu[hidden]{display:none} /* .share-menu's own display:inline-block above beats the browser's default [hidden]{display:none} rule (author origin always wins over UA origin, same specificity or not) -- needed so the disabled Export-data menu (see renderStats()) actually disappears rather than silently ignoring its own hidden attribute. */
 .share-menu summary{list-style:none}
 .share-menu summary::-webkit-details-marker{display:none}
 .share-panel{position:absolute;top:calc(100% + 6px);right:0;z-index:40;display:flex;flex-direction:column;gap:2px;min-width:180px;background:var(--surface);border:1px solid var(--card-border);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.16);padding:6px;animation:sharePop .12s ease}
@@ -537,9 +548,9 @@ html,body{overflow-x:hidden;max-width:100%}
   <div class="fmeta">
     <span id="resultCount"></span>
     <span class="fmeta-actions">
-      <button class="mini-btn" id="surpriseBtn" data-i18n-title="surpriseTip" title="Jump to a random patent"><span data-i18n="surpriseBtn">🎲 Surprise me</span></button>
+      <button class="mini-btn" id="surpriseBtn" data-i18n-title="surpriseTip" title="Jump to a random patent"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dices icon-inline" aria-hidden="true" focusable="false"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg><span data-i18n="surpriseBtn">Surprise me</span></button>
       <details class="share-menu" id="shareMenu">
-        <summary class="mini-btn" data-i18n-title="shareTip" title="Share this view"><span data-i18n="shareBtn">🔗 Share</span></summary>
+        <summary class="mini-btn" data-i18n-title="shareTip" title="Share this view"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link icon-inline" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span data-i18n="shareBtn">Share</span></summary>
         <div class="share-panel" role="menu">
           <button class="share-opt" data-share="copy" role="menuitem" data-i18n="copyLink">📋 Copy link</button>
           <button class="share-opt" data-share="x" role="menuitem" data-i18n="shareX">𝕏 Share on X</button>
@@ -1890,6 +1901,21 @@ function t(key,...args){
   const v=src[key];
   return typeof v==="function" ? v(...args) : v;
 }
+/* ======== ICONS ========
+   Inline Lucide SVGs swapped in for a handful of buttons/tabs that used
+   to carry an emoji instead — requested directly, icon by icon. Each is
+   declared once here rather than baked into both T.en/T.fr (none of
+   these carry translatable text) and kept OUT of the data-i18n span it
+   sits next to wherever a language switch would otherwise wipe it —
+   applyStaticI18n()'s generic [data-i18n] handler does el.textContent=,
+   which would turn a baked-in <svg> into literal on-screen markup. See
+   the .icon-inline CSS rule above for sizing. */
+const ICON_HOURGLASS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-hourglass icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 22h14\"/><path d=\"M5 2h14\"/><path d=\"M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22\"/><path d=\"M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2\"/></svg>";
+const ICON_HOURGLASS_COG = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-hourglass-cog icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m14.305 19.53.923-.382\"/><path d=\"m15.228 16.852-.923-.383\"/><path d=\"m16.852 15.228-.383-.923\"/><path d=\"m16.852 20.772-.383.924\"/><path d=\"M17 2v4.172a2 2 0 0 1-.586 1.414l-8.828 8.828A2 2 0 0 0 7 17.828V22\"/><path d=\"m19.148 15.228.383-.923\"/><path d=\"m19.53 21.696-.382-.924\"/><path d=\"m20.772 16.852.924-.383\"/><path d=\"m20.772 19.148.924.383\"/><path d=\"M5 22h6.159\"/><path d=\"M5 2h14\"/><path d=\"M7 2v4.172a2 2 0 0 0 .586 1.414l5.188 5.188\"/><circle cx=\"18\" cy=\"18\" r=\"3\"/></svg>";
+const ICON_DICE = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-dices icon-inline\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"12\" height=\"12\" x=\"2\" y=\"10\" rx=\"2\" ry=\"2\"/><path d=\"m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6\"/><path d=\"M6 18h.01\"/><path d=\"M10 14h.01\"/><path d=\"M15 6h.01\"/><path d=\"M18 9h.01\"/></svg>";
+const ICON_LINK = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-link icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"/><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"/></svg>";
+const ICON_SWORDS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-swords icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m13 19 6-6\"/><path d=\"M14.5 17.5 3.586 6.586A2 2 0 013 5.172V3h2.172a2 2 0 011.414.586L17.5 14.5\"/><path d=\"m14.828 6.172 2.586-2.586A2 2 0 0118.828 3H21v2.172a2 2 0 01-.586 1.414l-2.586 2.586\"/><path d=\"m16 16 4 4\"/><path d=\"m19 21 2-2\"/><path d=\"m5 14 4 4\"/><path d=\"m5 21-2-2\"/><path d=\"M7.5 16.5 4 20\"/></svg>";
+const ICON_CHART = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chart-no-axes-combined icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 16v5\"/><path d=\"M16 14.639V21\"/><path d=\"M20 10.656V21\"/><path d=\"m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15\"/><path d=\"M4 18.463V21\"/><path d=\"M8 14.656V21\"/></svg>";
 const T = {
   en:{
     themeLabel:"Theme", langLabel:"Language", colorScheme:"Color scheme", langGroup:"Language",
@@ -1900,16 +1926,16 @@ const T = {
     timelineEras:"Timeline eras",
     searchPlaceholder:"Search — title, inventor, brand, patent number…",
     tabCategory:"Category", tabStatus:"Status", tabStory:"Story", tabInventors:"Inventors", tabBrands:"Brands",
-    tabAll:"All", tabStats:"📊 Stats", tabFights:"⚔ Fights",
+    tabAll:"All", tabStats:"Stats", tabFights:"Fights",
     scrollLeft:"Scroll left", scrollRight:"Scroll right",
     showAll:"Show all", collapse:"Collapse",
-    surpriseBtn:"🎲 Surprise me", surpriseTip:"Jump to a random patent",
-    shareBtn:"🔗 Share", shareTip:"Share this view",
+    surpriseBtn:"Surprise me", surpriseTip:"Jump to a random patent",
+    shareBtn:"Share", shareTip:"Share this view",
     copyLink:"📋 Copy link", shareX:"𝕏 Share on X", shareFacebook:"📘 Share on Facebook", shareReddit:"👽 Share on Reddit",
     copiedConfirm:"✓ Copied", copyLinkShown:"Copy the link shown",
     shareText:"MTB Patent Atlas — 274 mountain bike patents and applications, 1869 to present.",
     clearFilters:"Clear filters",
-    goingFreeSoonChip:"⏳ Going free soon",
+    goingFreeSoonChip:"Expiring soon",
     goingFreeSoonTip:"Active patents whose estimated expiration falls within the next 2 years — technology about to become free for everyone to use.",
     statusLabelActive:"Active", statusLabelExpired:"Expired", statusLabelPending:"Pending",
     freeBy:y=>`⏳ free by ${y}`,
@@ -1944,7 +1970,7 @@ const T = {
     exportJSON:"🗂️ Download JSON (full data)", exportCSV:"📊 Download CSV (spreadsheet)",
     totalEntriesLbl:"Total entries", activeLbl:"Active", expiredFreeLbl:"Expired — free to use", litigatedLbl:"Litigated",
     statusSplit:"Status split",
-    goingFreeSoonH3:"⏳ Going free soon",
+    goingFreeSoonH3:"Expiring soon",
     goingFreeSoonIntro:yr=>`Active patents whose estimated expiration (filing + 20 yrs) falls by ${yr}. Tap one to jump to its card.`,
     noneFreeSoon:"No active patents in the atlas are estimated to expire within the next two years.",
     byCategory:"Entries by category",
@@ -1988,16 +2014,16 @@ const T = {
     timelineEras:"Chronologie des époques",
     searchPlaceholder:"Rechercher — titre, inventeur, marque, numéro de brevet…",
     tabCategory:"Catégorie", tabStatus:"Statut", tabStory:"Histoire", tabInventors:"Inventeurs", tabBrands:"Marques",
-    tabAll:"Tout", tabStats:"📊 Stats", tabFights:"⚔ Batailles",
+    tabAll:"Tout", tabStats:"Stats", tabFights:"Batailles",
     scrollLeft:"Défiler vers la gauche", scrollRight:"Défiler vers la droite",
     showAll:"Tout afficher", collapse:"Réduire",
-    surpriseBtn:"🎲 Surprends-moi", surpriseTip:"Aller à un brevet au hasard",
-    shareBtn:"🔗 Partager", shareTip:"Partager cette vue",
+    surpriseBtn:"Surprends-moi", surpriseTip:"Aller à un brevet au hasard",
+    shareBtn:"Partager", shareTip:"Partager cette vue",
     copyLink:"📋 Copier le lien", shareX:"𝕏 Partager sur X", shareFacebook:"📘 Partager sur Facebook", shareReddit:"👽 Partager sur Reddit",
     copiedConfirm:"✓ Copié", copyLinkShown:"Copier le lien affiché",
     shareText:"MTB Patent Atlas — 274 brevets et demandes de brevets liés au VTT, de 1869 à aujourd'hui.",
     clearFilters:"Effacer les filtres",
-    goingFreeSoonChip:"⏳ Bientôt libre de droits",
+    goingFreeSoonChip:"Expire bientôt",
     goingFreeSoonTip:"Brevets actifs dont l'expiration estimée survient dans les 2 prochaines années — une technologie sur le point de devenir libre d'usage pour tous.",
     statusLabelActive:"Actif", statusLabelExpired:"Expiré", statusLabelPending:"En attente",
     freeBy:y=>`⏳ libre dès ${y}`,
@@ -2032,7 +2058,7 @@ const T = {
     exportJSON:"🗂️ Télécharger en JSON (données complètes)", exportCSV:"📊 Télécharger en CSV (tableur)",
     totalEntriesLbl:"Entrées totales", activeLbl:"Actifs", expiredFreeLbl:"Expirés — libres d'usage", litigatedLbl:"En litige",
     statusSplit:"Répartition par statut",
-    goingFreeSoonH3:"⏳ Bientôt libres de droits",
+    goingFreeSoonH3:"Expire bientôt",
     goingFreeSoonIntro:yr=>`Brevets actifs dont l'expiration estimée (dépôt + 20 ans) survient d'ici ${yr}. Touchez-en un pour aller à sa fiche.`,
     noneFreeSoon:"Aucun brevet actif de l'atlas n'est estimé expirer dans les deux prochaines années.",
     byCategory:"Entrées par catégorie",
@@ -2231,7 +2257,7 @@ Object.entries(CATS).forEach(([k])=>{
 (()=>{
   const b=chip(t("goingFreeSoonChip"),state.st,"soon",$("#rowStatus"),"st");
   b.classList.add("chip-soon");
-  b.dataset.i18n="goingFreeSoonChip";
+  b.innerHTML=`${ICON_HOURGLASS_COG}<span data-i18n="goingFreeSoonChip">${t("goingFreeSoonChip")}</span>`;
   b.dataset.i18nTitle="goingFreeSoonTip";
   b.title=t("goingFreeSoonTip");
   b.setAttribute("aria-description",b.title);
@@ -2305,13 +2331,21 @@ const TAB_DEFS=[
 const paneEls={cat:$("#rowCat"),st:$("#rowStatus"),badge:$("#rowBadge"),inv:$("#rowInv"),brand:$("#rowBrand")};
 let activeTab="cat";
 const tabRow=$("#filterTabs");
+/* Icons for the two tabs that carry one (Stats/Fights used to carry an
+   emoji in their T-registry label instead) — kept out of the T registry
+   itself and out of the data-i18n span below for the same reason as the
+   ICONS section's own comment: a language switch's textContent reset
+   would turn a baked-in <svg> into literal on-screen markup. */
+const TAB_ICONS={stats:ICON_CHART, fights:ICON_SWORDS};
 TAB_DEFS.concat([{key:"all",tkey:"tabAll"},{key:"stats",tkey:"tabStats"},{key:"fights",tkey:"tabFights"}]).forEach(tabDef=>{
   const btn=document.createElement("button");
   btn.className="tab-btn"+(tabDef.key===activeTab?" on":"")+(tabDef.key==="fights"?" tab-fights":"");
   /* Label lives in its own span (relabeled by applyStaticI18n's generic
-     [data-i18n] handler on a language switch) so the tab-dot sibling never
-     gets clobbered by a textContent/innerHTML reset. */
-  btn.innerHTML=`<span data-i18n="${tabDef.tkey}">${t(tabDef.tkey)}</span><span class="tab-dot" data-dot="${tabDef.key}"></span>`;
+     [data-i18n] handler on a language switch) so the tab-dot sibling (and
+     the icon, for stats/fights) never get clobbered by a textContent/
+     innerHTML reset. */
+  const icon=TAB_ICONS[tabDef.key]||"";
+  btn.innerHTML=`${icon}<span data-i18n="${tabDef.tkey}">${t(tabDef.tkey)}</span><span class="tab-dot" data-dot="${tabDef.key}"></span>`;
   btn.dataset.tab=tabDef.key;
   btn.setAttribute("aria-pressed",tabDef.key===activeTab?"true":"false");
   btn.onclick=()=>{ activeTab=tabDef.key; renderTabs(); render(); };
@@ -2764,7 +2798,7 @@ function buildStatsTimelineBuckets(){
    quiet era and a booming one would otherwise be hard to compare for mix
    alone); `legendItems` is the fixed {color,label} list shown below,
    independent of which segments happen to be non-zero in view right now. */
-function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems){
+function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems, denseLabels){
   const perBucket=buckets.map(b=>({ ...b, segs:segmentsFor(b.items), total:b.items.length }));
   const maxTotal=Math.max(...perBucket.map(b=>b.total),1);
   const narrow = (typeof window!=="undefined" && window.innerWidth) ? window.innerWidth<NARROW_BREAKPOINT_PX : false;
@@ -2789,7 +2823,10 @@ function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems){
     return `<div class="stats-col" style="height:${colHeight.toFixed(1)}%" title="${b.tip} — ${b.total}">${segHTML}</div>`;
   }).join("");
   const labels=perBucket.map(b=>{
-    const showLbl = b.alwaysLabel || (narrow ? b.from%20===0 : b.from%10===0);
+    /* denseLabels (litigation chart only, see litTimelineHTML below) shows
+       every bucket's year on a normal-width screen -- the category chart
+       keeps its original every-10-years thinning either way. */
+    const showLbl = b.alwaysLabel || (narrow ? b.from%(denseLabels?10:20)===0 : (denseLabels || b.from%10===0));
     return `<span>${showLbl?b.axis:""}</span>`;
   }).join("");
   const legend=legendItems.map(({color,label})=>`<span><span class="dot" style="background:${color}"></span>${label}</span>`).join("");
@@ -2848,7 +2885,7 @@ function litTimelineHTML(){
     ];
   };
   const legendItems=[{color:litColor,label:t("litigatedWord")},{color:notColor,label:t("notLitigatedWord")}];
-  return renderStatsTimelineChart(buckets, segmentsFor, "count", legendItems);
+  return renderStatsTimelineChart(buckets, segmentsFor, "count", legendItems, true);
 }
 
 function renderStats(){
@@ -2882,7 +2919,7 @@ function renderStats(){
         <h2 class="stats-h">${t("statsTitle")}</h2>
         <p class="stats-intro">${t("statsIntro")}</p>
       </div>
-      <details class="share-menu" id="exportMenu">
+      <details class="share-menu" id="exportMenu" hidden>
         <summary class="mini-btn" title="${t('exportTip')}">${t('exportBtn')}</summary>
         <div class="share-panel" role="menu">
           <button class="share-opt" data-export="json" role="menuitem">${t('exportJSON')}</button>
@@ -2924,7 +2961,7 @@ function renderStats(){
       ${whoBars}
     </div>
     <div class="stats-sec">
-      <h3>${t("goingFreeSoonH3")}</h3>
+      <h3>${ICON_HOURGLASS}${t("goingFreeSoonH3")}</h3>
       <p class="stats-intro">${t("goingFreeSoonIntro",NOW+2)}</p>
       ${soonList}
     </div>
