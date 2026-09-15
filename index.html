@@ -2153,6 +2153,7 @@ document.querySelectorAll(".langbtn").forEach(b=>{
     try{ localStorage.setItem(LANG_STORAGE_KEY,state.lang); }catch(e){ /* storage blocked — language still switches for this session */ }
     applyStaticI18n();
     renderTabs(); render();
+    syncHash(); // keep the address bar's own &lang= in step immediately, not just at share-time
   };
 });
 $("#mtBannerClose")?.addEventListener("click",()=>{ const b=$("#mtBanner"); if(b) b.hidden=true; });
@@ -2577,7 +2578,7 @@ function cardHTML(d){
     citeNum=t("citeNumUnconfirmed");
   }
   const citeDates=d.g?t("citeFiledGranted",d.y,d.g):t("citeFiledPending",d.y);
-  const citeUrl=`${SHARE_BASE_URL}#p=${encodeURIComponent(ref)}`;
+  const citeUrl=`${SHARE_BASE_URL}${withLang(`#p=${encodeURIComponent(ref)}`)}`;
   const citeText=`${citeNum} — ${titleShown.replace(/\s*\(.*?\)\s*$/,'')} (${citeDates}) — ${d.a}. ${t("citeSource")}: ${citeUrl}`;
   /* Most entries have zero or one drawing (d.img/d.imgAlt). A merged multi-patent
      entry can have more than one — d.imgs, an array of {src,alt,caption,link} —
@@ -2976,7 +2977,7 @@ function render(){
   tl.querySelectorAll(".card-share-btn").forEach(b=>{
     b.onclick=async(e)=>{
       e.stopPropagation();
-      const url=`${SHARE_BASE_URL}#p=${encodeURIComponent(b.dataset.ref)}`;
+      const url=`${SHARE_BASE_URL}${withLang(`#p=${encodeURIComponent(b.dataset.ref)}`)}`;
       if(await copyToClipboard(url)){
         b.classList.add("copied");
         setTimeout(()=>b.classList.remove("copied"),ANIMATION_CLEANUP_MS);
@@ -3065,6 +3066,16 @@ function renderBars(list){
 const SHARE_BASE_URL="https://postmillenniumrenaissance.com/atlas/";
 const HASH_SETS=["cat","st","badge","inv","brand"];
 let pendingCardRef=null;
+/* Appends &lang=fr to a hand-built #p=... deep link when the reader is currently in
+   French — langFromHash() (below) already reads a #cat=...&lang=fr param combo, that
+   half of the mechanism has existed since the language switcher shipped, but nothing
+   on the WRITE side ever set it, so a card shared while browsing in French silently
+   reopened in English. Only #p=... links (cardHTML's citeUrl and the per-card share
+   button) need this helper; the general Share menu gets the same fix for free once
+   syncHash() (below) starts writing lang itself, since that menu builds its link from
+   location.hash after calling syncHash(). Omitted for English (the default) so a plain
+   #p=slug link, the overwhelmingly common case, doesn't grow a redundant &lang=en. */
+function withLang(hash){ return state.lang!=="en" ? hash+"&lang="+state.lang : hash; }
 
 function syncChipsToState(){
   document.querySelectorAll(".chip[data-fset]").forEach(b=>{
@@ -3078,6 +3089,7 @@ function syncHash(){
   if(activeTab!=="cat") p.set("tab",activeTab);
   HASH_SETS.forEach(k=>{ if(state[k].size) p.set(k,[...state[k]].join(",")); });
   if(searchQ) p.set("q",searchQ);
+  if(state.lang!=="en") p.set("lang",state.lang); // langFromHash() already reads this back
   const s=p.toString();
   try{
     history.replaceState(null,"", s?("#"+s):location.pathname+location.search);
