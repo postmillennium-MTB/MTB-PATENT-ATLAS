@@ -7,17 +7,17 @@
 <link rel="icon" type="image/png" href="favicon-32x32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>MTB Patent Atlas — 45 Years of Mountain Bike Innovation</title>
-<meta name="description" content="An interactive timeline of 273 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta name="description" content="An interactive timeline of 274 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MTB Patent Atlas — 45 Years of Mountain Bike Innovation">
-<meta property="og:description" content="An interactive timeline of 273 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta property="og:description" content="An interactive timeline of 274 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta property="og:url" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/">
 <meta property="og:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/social-preview.png">
 <meta property="og:image:width" content="1000">
 <meta property="og:image:height" content="852">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MTB Patent Atlas — 45 Years of Mountain Bike Innovation">
-<meta name="twitter:description" content="An interactive timeline of 273 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta name="twitter:description" content="An interactive timeline of 274 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta name="twitter:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/social-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
@@ -242,7 +242,7 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .langbtn.on{background:#fff;border-color:#fff;color:var(--deep)}
 .langbtn:focus-visible{outline:2px solid #fff;outline-offset:2px}
 /* ---------- Machine-translation disclaimer banner ----------
-   Shown only while state.lang!=="en". The 273-entry data block is AI-
+   Shown only while state.lang!=="en". The 274-entry data block is AI-
    translated and not yet reviewed by a French speaker — this stays visible
    (session-dismissible only, never permanently) rather than a one-time
    toast, because the accuracy caveat applies to every card on every visit
@@ -671,7 +671,8 @@ const BRAND_HQ = {
   Schwinn:"Illinois", SRAM:"Illinois",
   VelociRAX:"Utah", "McKay H. Davis":"Utah",
   Shimano:"Japan",
-  "Rocky Mountain":"British Columbia, Canada"
+  "Rocky Mountain":"British Columbia, Canada",
+  Fatback:"Alaska"
 };
 const BADGES = {
   licensor:{en:"Inventor-licensor",fr:"Inventeur-concédant"},
@@ -757,13 +758,14 @@ const INVENTORS = [
   {label:"Hugo Auguste Becker",key:"Hugo Auguste Becker"},
   {label:"Christopher A. Wickliffe",key:"Christopher A. Wickliffe"},
   {label:"Fabrizio Dragoni",key:"Fabrizio Dragoni"},
+  {label:"Greg Matyas",key:"Greg Matyas"},
 ];
 const BRANDS = ["SRAM","Shimano","Specialized","Trek","Santa Cruz","Yeti","Devinci","Fox","RockShox","Stan's","Bosch","Giant","Chris King","Gates","Honda","GT","DT Swiss","Rohloff","Lapierre","Öhlins","Hope","Wolf Tooth","Porsche","Leatt","MIPS","1UP USA","Lolo","Kuat","Saris","Thule","QuikrStuff","Hayes","Manitou","SUNringlé","Reynolds","MRP","Nicolai","KOM","Antidote","OPEN","Speedplay","Wahoo Fitness","Onyx","Classified","Foes","EXT","Spot","Reeb","Revel","Odyssey","Mongoose","SE Racing","Canyon","Priority","Ari","Knolly","Intense","WRP","Vittoria","Lauf","BikeYoke","Forbidden","OneUp","Garbaruk","AMS","RideWrap","Aenomaly","BMC","SCOR","Avinox","American Classic","GoPro","Insta360","Sopro Mounts","Schwinn","VelociRAX","Rocky Mountain","Yoshimura",
 "Cannondale","Marzocchi","Scott","Rimpact","Gehl Company","Pinion","Effigear","Lal Bikes","Mavic","Michelin","Hutchinson",
 "CushCore","Maxxis","Schwalbe","Continental","Industry Nine","Berd","Hadley Racing","Kind Shock","Crankbrothers","ODI",
 "Magura","TQ","Fazua","Atherton","Robot Bike Co.","Guerrilla Gravity","Allite","Mondraker","e*thirteen","I-Track Suspension",
 "Auckland Cycle Works","Dia-Compe","Cane Creek","Truvativ","Race Face","Bontrager","Answer","Bold Cycles","Reserve Wheels","Peaty's","Foxfolk","milKit","Clik","Park Tool","Norco","Craftworks",
-"Taken","Velduro","Vampire Bike Co","Archibald Cycles","Terra Bikes","NS Bikes","Pyga","Trinity MTB","Forcite","Banshee","Prostuff","Moots","Velocity Hucking Systems","Dyedbro","RampWerks","WickWerks","absoluteBLACK","Playtri","Sotto Group","Sine Suspension","Apro","Praxis","Ochain","myStromer","Revolt Zycling","Rut Rack"];
+"Taken","Velduro","Vampire Bike Co","Archibald Cycles","Terra Bikes","NS Bikes","Pyga","Trinity MTB","Forcite","Banshee","Prostuff","Moots","Velocity Hucking Systems","Dyedbro","RampWerks","WickWerks","absoluteBLACK","Playtri","Sotto Group","Sine Suspension","Apro","Praxis","Ochain","myStromer","Revolt Zycling","Rut Rack","Fatback"];
 
 const D = [
 /* ---- Rear Suspension ---- */
@@ -1224,6 +1226,9 @@ const D = [
 {y:1995,g:1997,t:{en:"Multi-pawl 72-point engagement hub",fr:"Moyeu à engagement 72 points multi-cliquets"},a:"Hadley Racing (California)",num:null,cat:"wheel",st:"expired",exp:2017,b:[],who:["Hadley Racing"],conf:"l",
  s:{en:"Hadley's patented phased multi-pawl mechanism delivering 72 points of engagement — a BMX-and-DH cult favorite, machined in small batches for decades.",fr:"Le mécanisme multi-cliquets déphasés breveté de Hadley offrant 72 points d'engagement — un favori culte du BMX et de la DH, usiné en petites séries depuis des décennies."},
  w:{en:"The boutique hub patent that predates the engagement-count arms race Industry Nine and Onyx later ran.",fr:"Le brevet de moyeu artisanal qui précède la course aux armements du nombre de points d'engagement que Industry Nine et Onyx ont menée plus tard."}},
+{y:2008,g:null,t:{en:"Fatback symmetric fat-bike hub spacing — 170/177x12 & 190/197x12 (no patent)",fr:"Espacement de moyeu symétrique Fatback pour fatbike — 170/177x12 et 190/197x12 (sans brevet)"},a:"Greg Matyas / Fatback Bikes (Anchorage, AK)",num:null,cat:"wheel",st:"unknown",exp:null,b:["priorart"],who:["Fatback","Greg Matyas"],conf:"v",
+ s:{en:"Greg Matyas founded Fatback Bikes in Anchorage, Alaska in 2007 to build the first fat bike engineered around a genuinely symmetric rear triangle, rather than the bent, offset frames other early fat-bike makers used to clear a wide tire around a narrower, dished wheel. Specifying a symmetric 170mm rear hub (2008) let the wheel build dish-free and true, and the width was adopted industry-wide as the fat-bike standard, later formalized alongside its 12mm-thru-axle counterpart, 177mm. In 2012 Fatback repeated the move at a wider stance — 190mm quick-release / 197mm thru-axle — to clear 5\" tires, which became that segment's standard in turn. No patent application for either spacing turned up in a USPTO inventor search for Matyas. Dates and attribution are cross-confirmed across the author's own Pinkbike profile of Matyas and independent reporting, including fat-bike.com's 'Father of the Modern Alaskan Fat-Bike' profile — this session's network access couldn't open either page directly (both domains are blocked to this sandbox), so the cross-confirmation is from search results rather than a full read of either piece.",fr:"Greg Matyas a fondé Fatback Bikes à Anchorage, en Alaska, en 2007 pour construire le premier fatbike conçu autour d'un triangle arrière véritablement symétrique, plutôt que les cadres coudés et décentrés qu'utilisaient alors les autres fabricants de fatbike pour loger un pneu large autour d'une roue plus étroite et déportée. La spécification d'un moyeu arrière symétrique de 170 mm (2008) a permis de monter la roue sans déport et parfaitement droite, et cette largeur a été adoptée dans toute l'industrie comme standard du fatbike, formalisée plus tard aux côtés de son équivalent en axe traversant de 12 mm, le 177 mm. En 2012, Fatback a répété l'opération avec un empattement plus large — 190 mm en attache rapide / 197 mm en axe traversant — pour loger des pneus de 5 po, qui est à son tour devenu le standard de ce segment. Aucune demande de brevet pour l'un ou l'autre espacement n'est ressortie d'une recherche par inventeur à l'USPTO au nom de Matyas. Les dates et l'attribution sont recoupées entre le propre article Pinkbike de l'auteur sur Matyas et des reportages indépendants, dont le profil « Father of the Modern Alaskan Fat-Bike » de fat-bike.com — l'accès réseau de cette session n'a pas permis d'ouvrir directement l'une ou l'autre page (les deux domaines sont bloqués pour ce bac à sable), si bien que le recoupement provient des résultats de recherche plutôt que d'une lecture complète de l'un ou l'autre article."},
+ w:{en:"Two width standards spreading industry-wide off first-to-ship adoption rather than an enforceable claim — the same 'no patent, no lock-in' pattern the Banshee KS-Link entry elsewhere in this atlas tells from a suspension angle, here playing out in millimeters of hub-flange spacing instead of instant-center geometry. A dish-free, truly symmetric wheel builds stronger than an offset-frame equivalent, and once Fatback shipped the dimension first, every hub and frame maker chasing fat-bike compatibility had a practical reason to match it rather than pick their own number.",fr:"Deux standards de largeur qui se sont propagés dans toute l'industrie par adoption de fait plutôt que par une revendication opposable — le même schéma « pas de brevet, pas de verrouillage » que raconte ailleurs dans cet atlas la fiche Banshee KS-Link, sous l'angle de la suspension, ici transposé en millimètres d'espacement de flasque de moyeu plutôt qu'en géométrie de centre instantané. Une roue véritablement symétrique et sans déport se construit plus solide qu'un équivalent à cadre décentré, et une fois que Fatback a été le premier à livrer cette cote, tout fabricant de moyeux ou de cadres visant la compatibilité fatbike avait une raison pratique de s'y aligner plutôt que de choisir son propre chiffre."}},
 /* ---- Components ---- */
 {y:1994,g:1995,t:{en:"Water-bottle-cage battery light system (US 5,426,570)",fr:"Système d'éclairage à batterie logé en porte-bidon (US 5,426,570)"},a:"McKay H. Davis (Salt Lake City, UT)",num:"5426570",cat:"comp",st:"expired",exp:2012,b:[],who:["McKay H. Davis"],conf:"v",
  s:{en:"A high-power battery pack encased in a compressible sleeve, sized to force-fit into a standard water bottle cage in place of a bottle and wired to a mountain bike's headlight — filed March 1994, granted June 1995. Two continuations (US 5,523,924 and US 5,597,225) refined the same cage-mounted approach through the late 1990s.",fr:"Un bloc-batterie haute puissance enfermé dans un manchon compressible, dimensionné pour se loger de force dans un porte-bidon standard à la place d'une gourde et relié par câble au phare avant du VTT — déposé en mars 1994, délivré en juin 1995. Deux continuations (US 5,523,924 et US 5,597,225) ont affiné la même approche montée en porte-bidon jusqu'à la fin des années 1990."},
@@ -1891,7 +1896,7 @@ const T = {
     shareBtn:"🔗 Share", shareTip:"Share this view",
     copyLink:"📋 Copy link", shareX:"𝕏 Share on X", shareFacebook:"📘 Share on Facebook", shareReddit:"👽 Share on Reddit",
     copiedConfirm:"✓ Copied", copyLinkShown:"Copy the link shown",
-    shareText:"MTB Patent Atlas — 273 mountain bike patents and applications, 1869 to present.",
+    shareText:"MTB Patent Atlas — 274 mountain bike patents and applications, 1869 to present.",
     clearFilters:"Clear filters",
     goingFreeSoonChip:"⏳ Going free soon",
     goingFreeSoonTip:"Active patents whose estimated expiration falls within the next 2 years — technology about to become free for everyone to use.",
@@ -1951,7 +1956,7 @@ const T = {
     citeFiledGranted:(y,g)=>`filed ${y}, granted ${g}`,
     citeFiledPending:y=>`filed ${y}, pending`,
     citeSource:"MTB Patent Atlas",
-    mtBannerText:"🌐 Machine translation: this atlas's French content (all 273 patent entries) was AI-generated and has not yet been reviewed by a French speaker. Legal and technical terminology may be imprecise — check the English entry or primary source before relying on it.",
+    mtBannerText:"🌐 Machine translation: this atlas's French content (all 274 patent entries) was AI-generated and has not yet been reviewed by a French speaker. Legal and technical terminology may be imprecise — check the English entry or primary source before relying on it.",
     footerAbout:`<strong>About the data.</strong> Compiled from industry reporting, USPTO records, and manufacturer disclosures. Entries marked "unverified" or "draft" are documented technologies whose exact patent numbers are still being confirmed — corrections welcome. Expiration dates are estimated as filing date + 20 years and do not account for terminal disclaimers or fee lapses. Nothing here is legal advice.`,
     footerCredit:"A RedFoxRun / PostMillennium MTB project.",
     coBody:`<p>Mountain-bike innovation runs deep in Colorado — a mix of famous patented suspension designs, homegrown technology, and high-profile, multi-million-dollar intellectual-property disputes playing out in the state's courts.</p>
@@ -1979,7 +1984,7 @@ const T = {
     shareBtn:"🔗 Partager", shareTip:"Partager cette vue",
     copyLink:"📋 Copier le lien", shareX:"𝕏 Partager sur X", shareFacebook:"📘 Partager sur Facebook", shareReddit:"👽 Partager sur Reddit",
     copiedConfirm:"✓ Copié", copyLinkShown:"Copier le lien affiché",
-    shareText:"MTB Patent Atlas — 273 brevets et demandes de brevets liés au VTT, de 1869 à aujourd'hui.",
+    shareText:"MTB Patent Atlas — 274 brevets et demandes de brevets liés au VTT, de 1869 à aujourd'hui.",
     clearFilters:"Effacer les filtres",
     goingFreeSoonChip:"⏳ Bientôt libre de droits",
     goingFreeSoonTip:"Brevets actifs dont l'expiration estimée survient dans les 2 prochaines années — une technologie sur le point de devenir libre d'usage pour tous.",
@@ -2039,7 +2044,7 @@ const T = {
     citeFiledGranted:(y,g)=>`déposé en ${y}, délivré en ${g}`,
     citeFiledPending:y=>`déposé en ${y}, en instance`,
     citeSource:"MTB Patent Atlas",
-    mtBannerText:"🌐 Traduction automatique : le contenu français de cet atlas (les 273 fiches de brevets) a été généré par IA et n'a pas encore été relu par un locuteur francophone. La terminologie juridique et technique peut être imprécise — vérifiez la fiche anglaise ou la source primaire avant de vous y fier.",
+    mtBannerText:"🌐 Traduction automatique : le contenu français de cet atlas (les 274 fiches de brevets) a été généré par IA et n'a pas encore été relu par un locuteur francophone. La terminologie juridique et technique peut être imprécise — vérifiez la fiche anglaise ou la source primaire avant de vous y fier.",
     footerAbout:`<strong>À propos des données.</strong> Compilées à partir de la presse spécialisée, des dossiers de l'USPTO et des communications des fabricants. Les entrées marquées « non vérifié » ou « provisoire » désignent des technologies documentées dont le numéro de brevet exact reste à confirmer — les corrections sont bienvenues. Les dates d'expiration sont estimées à date de dépôt + 20 ans et ne tiennent pas compte des déclarations terminales ni des défauts de paiement des annuités. Rien ici ne constitue un avis juridique.`,
     footerCredit:"Un projet RedFoxRun / PostMillennium MTB.",
     coBody:`<p>L'innovation VTT est profondément enracinée dans le Colorado — un mélange de designs de suspension brevetés célèbres, de technologies locales et de litiges de propriété intellectuelle très médiatisés, à plusieurs millions de dollars, qui se jouent devant les tribunaux de l'État.</p>
