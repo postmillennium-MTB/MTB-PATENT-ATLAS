@@ -15,9 +15,12 @@ right.
 
 import sys
 import os
+import tempfile
+import urllib.error
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fetch_patent_figure import pick_drawing_pages, parse_number  # noqa: E402
+import fetch_patent_figure as F  # noqa: E402
 
 FAILURES = []
 
@@ -78,6 +81,89 @@ try:
     check("garbage input is rejected", "no exception raised", "ValueError")
 except ValueError:
     print("PASS  garbage input is rejected")
+
+# --- kind-code fallback on a Google Patents 404 (mocked, no network) --------
+#
+# US 6,203,042 is the real case this locks in: guessed at "US6203042A" (the
+# generic fallback when a news article doesn't print the exact kind code),
+# it 404'd. The real kind code is B1. This replays that exact sequence
+# against a fake _get() so the recovery is pinned without touching the
+# network -- and so a future change can't silently regress it back to
+# failing loudly on a wrong guess instead of trying the obvious next one.
+
+
+def _install_fake_get(responses):
+    """responses: url -> bytes on success, or url -> an HTTPError to raise.
+    Any url not listed 404s, matching a real unlisted document."""
+    calls = []
+
+    def fake_get(url, referer=None):
+        calls.append(url)
+        r = responses.get(url)
+        if r is None:
+            raise urllib.error.HTTPError(url, 404, "Not Found", None, None)
+        if isinstance(r, Exception):
+            raise r
+        return r
+
+    orig = F._get
+    F._get = fake_get
+    return calls, orig
+
+
+def test_kind_code_fallback_recovers_from_a_wrong_guess():
+    pdf_bytes = b"%PDF-1.4 fake"
+    pdf_url = "https://patentimages.storage.googleapis.com/xx/US6203042B1.pdf"
+    uspto_url = F.USPTO_PDF.format(digits="6203042")
+    bad_page = F.GOOGLE_PATENT_PAGE.format(full="US6203042A")
+    good_page = F.GOOGLE_PATENT_PAGE.format(full="US6203042B1")
+
+    calls, orig = _install_fake_get({
+        uspto_url: urllib.error.HTTPError(uspto_url, 403, "Forbidden", None, None),
+        bad_page: urllib.error.HTTPError(bad_page, 404, "Not Found", None, None),
+        good_page: ('<a href="%s">pdf</a>' % pdf_url).encode(),
+        pdf_url: pdf_bytes,
+    })
+    try:
+        with tempfile.TemporaryDirectory() as td:
+            dest = os.path.join(td, "out.pdf")
+            source = F.download_pdf("6203042", "US6203042A", dest)
+            ok = (source == pdf_url
+                  and open(dest, "rb").read() == pdf_bytes
+                  and bad_page in calls and good_page in calls)
+            check("kind-code fallback recovers from a wrong guess (404)",
+                  ok, True)
+    finally:
+        F._get = orig
+
+
+def test_403_does_not_trigger_kind_code_guessing():
+    uspto_url = F.USPTO_PDF.format(digits="9999999")
+    first_page = F.GOOGLE_PATENT_PAGE.format(full="US9999999A")
+
+    calls, orig = _install_fake_get({
+        uspto_url: urllib.error.HTTPError(uspto_url, 403, "Forbidden", None, None),
+        first_page: urllib.error.HTTPError(first_page, 403, "Forbidden", None, None),
+    })
+    try:
+        with tempfile.TemporaryDirectory() as td:
+            dest = os.path.join(td, "out.pdf")
+            try:
+                F.download_pdf("9999999", "US9999999A", dest)
+                ok = False
+            except RuntimeError:
+                # A 403 means blocked, not "wrong id" -- every kind code would
+                # fail identically, so exactly one Google Patents URL should
+                # have been tried, not all six fallbacks.
+                ok = calls == [uspto_url, first_page]
+            check("a 403 does not trigger kind-code guessing (would be pointless)",
+                  ok, True)
+    finally:
+        F._get = orig
+
+
+test_kind_code_fallback_recovers_from_a_wrong_guess()
+test_403_does_not_trigger_kind_code_guessing()
 
 print()
 if FAILURES:
