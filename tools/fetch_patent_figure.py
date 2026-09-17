@@ -94,12 +94,35 @@ def parse_number(raw):
     return prefix + digits, "US%s%s%s" % (prefix, digits, kind)
 
 
+# Every live run so far -- Forcite, GoPro, Park Tool, the DRCV shock below --
+# has gone through this fallback. The USPTO print endpoint has returned 403
+# on every attempt from a GitHub-hosted runner, whatever the reason (rate
+# limiting, a UA check, geographic policy). It is kept as the first attempt
+# because it costs nothing to try and may start working, but in practice
+# Google Patents is not a fallback here, it is the path.
+#
+# That makes the exact kind code load-bearing in a way a caller often can't
+# get right from secondhand sourcing: a news article about a patent almost
+# never prints "B1" vs "B2" vs "A1", and guessing wrong doesn't 403 (blocked)
+# but 404s (wrong specific document) -- a different failure that is worth
+# recovering from automatically rather than making the caller re-run with a
+# guess-and-check loop of their own. US 6,203,042 (guessed as "...A", the
+# generic fallback when no kind code is known) is the case that exposed this:
+# the real kind code is B1, and Google's own page for a bare "...A" 404s
+# outright rather than redirecting.
+KIND_CODE_FALLBACKS = ["B1", "B2", "A1", "A2", "B", "A"]
+
+
 def _get(url, referer=None):
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     if referer:
         req.add_header("Referer", referer)
     with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT) as r:
         return r.read()
+
+
+def _http_status(exc):
+    return exc.code if isinstance(exc, urllib.error.HTTPError) else None
 
 
 def download_pdf(digits, canonical, dest, direct_url=None):
@@ -136,21 +159,45 @@ def download_pdf(digits, canonical, dest, direct_url=None):
     except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
         attempts.append("%s -> %s" % (url, e))
 
-    page_url = GOOGLE_PATENT_PAGE.format(full=canonical)
-    try:
-        html = _get(page_url).decode("utf-8", "replace")
-        found = PATENTIMAGES_RE.search(html)
-        if not found:
-            attempts.append("%s -> page fetched but no patentimages PDF link" % page_url)
-        else:
+    # Try the caller's own canonical id first, then -- only on a 404, meaning
+    # the *page itself* doesn't exist rather than the whole site being blocked
+    # -- retry the same digits under each common kind code. re-guessing after
+    # a 403 would be pointless (every kind code would fail the same way) and
+    # is deliberately not attempted.
+    m = re.match(r"^(RE|D|PP|H|T)?(\d+)", canonical.removeprefix("US"))
+    prefix, digits = (m.group(1) or "", m.group(2)) if m else ("", "")
+    candidates = [canonical]
+    for kc in KIND_CODE_FALLBACKS:
+        alt = "US%s%s%s" % (prefix, digits, kc)
+        if alt not in candidates:
+            candidates.append(alt)
+
+    for i, cand in enumerate(candidates):
+        page_url = GOOGLE_PATENT_PAGE.format(full=cand)
+        try:
+            html = _get(page_url).decode("utf-8", "replace")
+            found = PATENTIMAGES_RE.search(html)
+            if not found:
+                attempts.append("%s -> page fetched but no patentimages PDF link" % page_url)
+                break  # page exists, so the id was right; a different fault, don't guess further
             pdf_url = found.group(0)
             blob = _get(pdf_url, referer=page_url)
             if blob[:5] == b"%PDF-":
                 open(dest, "wb").write(blob)
+                if i > 0:
+                    print("  note: %s 404'd; %s is the real kind code for this "
+                          "number" % (canonical, cand))
                 return pdf_url
             attempts.append("%s -> not a PDF (%d bytes)" % (pdf_url, len(blob)))
-    except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
-        attempts.append("%s -> %s" % (page_url, e))
+            break  # got a page and a PDF link, just not a real PDF -- not a kind-code problem
+        except urllib.error.HTTPError as e:
+            attempts.append("%s -> %s" % (page_url, e))
+            if _http_status(e) != 404:
+                break  # not a "wrong id" failure (403/5xx/etc) -- retrying other kind codes won't help
+            continue  # 404: plausibly just the wrong kind code, try the next one
+        except (urllib.error.URLError, OSError) as e:
+            attempts.append("%s -> %s" % (page_url, e))
+            break
 
     raise RuntimeError(
         "could not download a PDF for %s. Tried:\n  %s\n\n"

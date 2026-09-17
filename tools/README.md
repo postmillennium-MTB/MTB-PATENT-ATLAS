@@ -97,6 +97,20 @@ rather than tuning the rule until the output looks plausible.
   a mechanism to a reader is an editorial call.
 - **Alt text is not automatable either.** It has to name the real reference
   numerals in the figure actually chosen, in English and French.
+- **Google Patents is not really a fallback, it is the path.** Every live run
+  so far -- Forcite, GoPro, the Park Tool clamp, the Trek DRCV shock below --
+  went through it. The USPTO print endpoint has returned 403 on every attempt
+  from a GitHub-hosted runner. Given that, the exact kind code (`B1` vs `B2`
+  vs `A1`...) is load-bearing, and it's exactly the detail a news article or
+  a forum post never states. Getting it wrong doesn't 403, it 404s -- a
+  different failure, and one the tool now recovers from automatically: on a
+  404 (not a 403 -- that means genuinely blocked, and retrying other kind
+  codes would fail identically) it retries the same digits under B1, B2, A1,
+  A2, B, A in turn. US 6,203,042, guessed at a bare `A` because that was the
+  only kind code known, is the case that found this: the real code is B1,
+  and it now resolves without a second run. Locked in as a mocked test
+  (`test_fetch_patent_figure.py`) that replays exactly this sequence, since
+  the fallback can't be tested against the real network from most sandboxes.
 - **The fetch needs open egress, and is the least proven part.** Both automatic
   sources (`image-ppubs.uspto.gov` and `patents.google.com`) are blocked by the
   egress proxy in the Claude Code sandbox, so the download path has never been
