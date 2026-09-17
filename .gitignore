@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+
+# Scratch output from tools/fetch_patent_figure.py — candidates are reviewed,
+# then the chosen one is renamed into pictures/ and the rest deleted.
+figures-out/
