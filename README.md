@@ -24,8 +24,8 @@ An interactive timeline of mountain bike intellectual property: 274 patents and 
 | **Brands** | 153 |
 | **Named inventors** | 54 |
 | **Non-US jurisdictions** | 16 (AU, BE, CH, CN, DE, EP, ES, EU, FR, GB, IS, IT, NZ, PL, SE, ZA) |
-| **Verified entries** | 159 |
-| **Medium confidence** | 61 |
+| **Verified entries** | 160 |
+| **Medium confidence** | 60 |
 | **Draft / in progress** | 54 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -282,6 +282,7 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **The fetch stage works, and the fallback is what makes it work.** This was the one part of the tool that no session could test, since every patent host is 403 behind the egress proxy. Across three live runs it fetched every patent successfully — but via the Google Patents fallback on `patentimages.storage.googleapis.com`, not the USPTO print endpoint tried first. The two-source design is load-bearing, not belt-and-braces. A worry that did **not** materialise: Google served a GitHub Actions datacenter IP without complaint.
 
 - **Opening the PR needs a repository setting the workflow cannot grant itself.** Runs log `GitHub Actions is not permitted to create or approve pull requests` unless **Settings → Actions → General → Workflow permissions → "Allow GitHub Actions to create and approve pull requests"** is ticked. Rather than let that waste a run, candidates are now uploaded as a workflow **artifact** before the PR is attempted — artifacts need no permissions — the branch `patent-figures/<run id>` is pushed regardless, and a final step prints either the PR link or exactly where the candidates are and which setting to change. Also: an empty report now says **NO TEXT LAYER** explicitly instead of sitting there blank, because a blank report reads as "nothing to check" when it means "nothing could be extracted" — a meaningful difference when the report exists to set a `conf` tier.
+- **Harvested the test runs' output instead of deleting it, which cleared a second backlog entry and added two figures.** The three live workflow runs left candidate images sitting on scratch branches; rather than bin them, the useful ones were reviewed and used. **US 11,019,237 (GoPro multi-camera wireless sync) moves `"m"` → `"v"`.** Its report carried a readable front page — application 16/884,838, filed May 27 2020, granted May 25 2021, to David Newman (San Diego) and Gregory Paul Stewart (San Mateo) for GoPro, Inc. The entry had previously said in its own text that the title and filing date were unconfirmed and had an estimated `y:2019`; corrected to 2020, `exp` 2039 → 2040, and `a` now names the two inventors. **One caveat left standing rather than smoothed over:** a twelve-month grant is fast enough to suggest a continuation, and the related-application data was not legible in the extracted text, so the 2040 expiry is an upper bound — if an earlier parent exists in the chain the real term ends sooner, and that is said in the entry. **US 12,016,421 (Forcite smart-helmet electronics) gains a figure but stays `"m"`**, which is the honest outcome: that PDF is a pure image scan with no text layer, so the report confirmed nothing about the entry and the tier cannot move on the strength of a drawing alone. Its Figures 1(a)/1(b) were rotated upright from the landscape sheet before use. Verified 159 → 160, medium 61 → 60; entries with a figure 42 → 43.
 
 ---
 
