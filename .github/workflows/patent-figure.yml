@@ -66,9 +66,28 @@ jobs:
           if [ "${{ inputs.keep_header }}" = "true" ]; then ARGS+=(--keep-header); fi
           python3 tools/fetch_patent_figure.py "${ARGS[@]}"
 
+      - name: Fail if no candidates were produced
+        run: |
+          shopt -s nullglob
+          files=(figures-out/*.png)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "::error::No candidate images in figures-out/. The fetch step" \
+                 "reported success but produced nothing to open a PR with."
+            exit 1
+          fi
+          echo "${#files[@]} candidate image(s) ready."
+          # A gitignored figures-out/ makes create-pull-request open an empty PR
+          # while every step still reports success. Catch that here rather than
+          # letting a green run mean nothing happened.
+          if git check-ignore -q figures-out; then
+            echo "::error::figures-out/ is gitignored, so the PR would be empty." \
+                 "Remove it from .gitignore."
+            exit 1
+          fi
+
       - name: Open a pull request with the candidates
         if: success()
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           add-paths: figures-out/**
           branch: patent-figures/${{ github.run_id }}
