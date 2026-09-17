@@ -31,6 +31,8 @@ REQUIREMENTS
 USAGE
   python3 tools/fetch_patent_figure.py US12570369B1 US11866114B2
   python3 tools/fetch_patent_figure.py 4733881 --out /tmp/figs --candidates 6
+  python3 tools/fetch_patent_figure.py US12570369B1 --url <pdf link>  # lookup blocked
+  python3 tools/fetch_patent_figure.py US12570369B1 --pdf saved.pdf   # already have it
 
   Accepts "US12570369B1", "12570369", "D1140680", "RE45684".
 """
@@ -100,9 +102,29 @@ def _get(url, referer=None):
         return r.read()
 
 
-def download_pdf(digits, canonical, dest):
-    """Try USPTO, then Google Patents. Raise if neither yields a real PDF."""
+def download_pdf(digits, canonical, dest, direct_url=None):
+    """Try the direct URL if given, then USPTO, then Google Patents.
+
+    Three sources rather than two because the automatic ones can both fail for
+    reasons that have nothing to do with the patent: an egress policy blocking
+    the host, or Google refusing a scrape from a datacenter IP. The direct URL
+    is the escape hatch -- on the Google Patents page for any patent, the PDF
+    link is right there under the title, and pasting it here skips both
+    automatic lookups entirely.
+    """
     attempts = []
+
+    if direct_url:
+        try:
+            blob = _get(direct_url)
+            if blob[:5] == b"%PDF-":
+                open(dest, "wb").write(blob)
+                return direct_url
+            attempts.append("%s -> not a PDF (%d bytes). If this is a Google "
+                            "Patents *page* URL rather than the PDF link on it, "
+                            "use the PDF link." % (direct_url, len(blob)))
+        except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
+            attempts.append("%s -> %s" % (direct_url, e))
 
     url = USPTO_PDF.format(digits=digits)
     try:
@@ -131,10 +153,15 @@ def download_pdf(digits, canonical, dest):
         attempts.append("%s -> %s" % (page_url, e))
 
     raise RuntimeError(
-        "could not download a PDF for %s. Tried:\n  %s\n"
-        "No image was written. If every attempt is a 403, the network this is "
-        "running on blocks patent hosts -- run it on the GitHub Actions runner "
-        "instead (.github/workflows/patent-figure.yml)."
+        "could not download a PDF for %s. Tried:\n  %s\n\n"
+        "No image was written -- this tool never emits a placeholder.\n"
+        "If every attempt is a 403: the network this is running on blocks "
+        "patent hosts. Two ways forward, both of which still skip the manual "
+        "cropping:\n"
+        "  1. run it on the GitHub Actions runner "
+        "(.github/workflows/patent-figure.yml), where egress is open;\n"
+        "  2. open the patent on Google Patents, copy the PDF link under the "
+        "title, and pass it with --url (or the pdf_url input in the workflow)."
         % (canonical, "\n  ".join(attempts))
     )
 
@@ -273,7 +300,7 @@ def crop_sheet(path, strip_header=True):
     return _IO.expand(img, border=CROP_PAD, fill=255)
 
 
-def process(raw, outdir, want, strip_header, local_pdf=None):
+def process(raw, outdir, want, strip_header, local_pdf=None, direct_url=None):
     digits, canonical = parse_number(raw)
     os.makedirs(outdir, exist_ok=True)
     work = tempfile.mkdtemp(prefix="patfig-")
@@ -287,7 +314,7 @@ def process(raw, outdir, want, strip_header, local_pdf=None):
             source = "local file %s" % local_pdf
             print("  using %s" % source)
         else:
-            source = download_pdf(digits, canonical, pdf)
+            source = download_pdf(digits, canonical, pdf, direct_url)
             print("  downloaded %s from %s" % (canonical, source))
 
         lengths = page_text_lengths(pdf, work)
@@ -342,9 +369,18 @@ def main():
                          "Only valid with a single patent number, which is used "
                          "for naming. Lets the cropping half run where the patent "
                          "hosts are unreachable.")
+    ap.add_argument("--url",
+                    help="download the PDF from this exact URL instead of looking "
+                         "it up. Use the PDF link shown under the title on the "
+                         "Google Patents page. Only valid with a single patent "
+                         "number, which is used for naming.")
     args = ap.parse_args()
     if args.pdf and len(args.numbers) != 1:
         sys.exit("error: --pdf takes exactly one patent number, for naming.")
+    if args.url and len(args.numbers) != 1:
+        sys.exit("error: --url takes exactly one patent number, for naming.")
+    if args.pdf and args.url:
+        sys.exit("error: --pdf and --url are alternatives; pass one or neither.")
 
     require_tool("pdftoppm")
     require_tool("pdftotext")
@@ -357,7 +393,8 @@ def main():
     for raw in args.numbers:
         print("\n%s" % raw)
         try:
-            process(raw, args.out, args.candidates, not args.keep_header, args.pdf)
+            process(raw, args.out, args.candidates, not args.keep_header,
+                    args.pdf, args.url)
         except Exception as e:                      # noqa: BLE001
             print("  FAILED: %s" % e)
             failures.append((raw, str(e)))

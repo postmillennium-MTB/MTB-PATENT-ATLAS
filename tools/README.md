@@ -23,6 +23,16 @@ candidate images and the report. Review, keep the one you want, merge.
 
 No local setup, nothing to install, and it works from a phone.
 
+**One prerequisite:** GitHub only shows a `workflow_dispatch` workflow once the
+file is on the **default branch**. Until this is merged to `main`, the Run
+workflow button will not appear.
+
+**If the automatic lookup fails**, the run log says which URLs it tried. Open
+the patent on Google Patents, copy the PDF link under the title, and put it in
+the optional **pdf_url** box with a single patent number. That skips both
+lookups and still does all the cropping, sizing and naming — which is the part
+that actually takes time by hand.
+
 ### The other way: on a computer
 
 ```bash
@@ -31,8 +41,14 @@ sudo apt-get install -y poppler-utils     # macOS: brew install poppler
 
 python3 tools/fetch_patent_figure.py US12570369B1 US11866114B2
 python3 tools/fetch_patent_figure.py 4733881 --out /tmp/figs --candidates 6
+python3 tools/fetch_patent_figure.py US12570369B1 --url <pdf link>  # lookup blocked
 python3 tools/fetch_patent_figure.py US9102197B2 --pdf saved.pdf   # already have the PDF
 ```
+
+Those last two matter more than they look. Downloading a PDF is the one step
+that is easy by hand and hard to automate reliably; cropping, sizing and naming
+is the reverse. `--url` and `--pdf` let you do the easy half yourself and still
+skip the tedious half.
 
 Accepts `US12570369B1`, `12570369`, `D1140680`, `RE45684`.
 
@@ -58,10 +74,16 @@ Accepts `US12570369B1`, `12570369`, `D1140680`, `RE45684`.
   a mechanism to a reader is an editorial call.
 - **Alt text is not automatable either.** It has to name the real reference
   numerals in the figure actually chosen, in English and French.
-- **The fetch needs open egress.** Both sources (`image-ppubs.uspto.gov` and
-  `patents.google.com`) are blocked by the egress proxy in some Claude Code
-  sandboxes; there the script fails loudly, writes nothing, and says to use the
-  workflow instead. It never emits a placeholder.
+- **The fetch needs open egress, and is the least proven part.** Both automatic
+  sources (`image-ppubs.uspto.gov` and `patents.google.com`) are blocked by the
+  egress proxy in the Claude Code sandbox, so the download path has never been
+  run against a live patent — it is written but unverified, unlike the crop and
+  page-classification stages, which were tested. Two specific things that could
+  still bite on a GitHub runner: the USPTO print endpoint could want headers or
+  a session this does not send, and Google may refuse a scrape from a datacenter
+  IP even though it serves a home connection fine. `--url` / `pdf_url` exists
+  precisely so neither is a dead end. Whatever happens, the script fails loudly
+  and writes nothing; it never emits a placeholder.
 - **Design patents** have few sheets and no text columns, so every page after
   the first is offered as a candidate. That is correct, just noisier.
 - **Pre-1920 patents** are scanned images with no text layer, so every page

@@ -22,6 +22,11 @@ on:
         description: "Patent number(s), space-separated. e.g. US12570369B1 D1140680 4733881"
         required: true
         type: string
+      pdf_url:
+        description: "Optional. Exact PDF link (from the Google Patents page) if the automatic lookup fails. One patent number only."
+        required: false
+        default: ""
+        type: string
       candidates:
         description: "Candidate drawing sheets per patent"
         required: false
@@ -56,10 +61,10 @@ jobs:
       - name: Fetch and crop
         id: fetch
         run: |
-          python3 tools/fetch_patent_figure.py ${{ inputs.numbers }} \
-            --out figures-out \
-            --candidates "${{ inputs.candidates }}" \
-            ${{ inputs.keep_header && '--keep-header' || '' }}
+          ARGS=(${{ inputs.numbers }} --out figures-out --candidates "${{ inputs.candidates }}")
+          if [ -n "${{ inputs.pdf_url }}" ]; then ARGS+=(--url "${{ inputs.pdf_url }}"); fi
+          if [ "${{ inputs.keep_header }}" = "true" ]; then ARGS+=(--keep-header); fi
+          python3 tools/fetch_patent_figure.py "${ARGS[@]}"
 
       - name: Open a pull request with the candidates
         if: success()
