@@ -58,6 +58,9 @@ jobs:
           sudo apt-get install -y -qq poppler-utils
           python -m pip install --quiet Pillow
 
+      - name: Self-test the tool before using it
+        run: python3 tools/test_fetch_patent_figure.py
+
       - name: Fetch and crop
         id: fetch
         run: |
@@ -85,8 +88,22 @@ jobs:
             exit 1
           fi
 
+      # Candidates are uploaded before the PR is attempted, because the upload
+      # needs no special permission and the PR does. If a repo has "Allow
+      # GitHub Actions to create and approve pull requests" switched off, the
+      # PR step fails -- but the work is already downloadable from the run's
+      # Artifacts section, so a run is never wasted.
+      - name: Upload candidates as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: patent-figure-candidates
+          path: figures-out/
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Open a pull request with the candidates
-        if: success()
+        id: cpr
+        continue-on-error: true
         uses: peter-evans/create-pull-request@v7
         with:
           add-paths: figures-out/**
@@ -113,3 +130,21 @@ jobs:
             5. Delete the unused candidates and `figures-out/` before merging.
 
             Nothing here has been added to `pictures/` or `index.html`.
+
+      - name: Report how to get the candidates
+        run: |
+          BRANCH="patent-figures/${{ github.run_id }}"
+          if [ "${{ steps.cpr.outcome }}" = "success" ] && [ -n "${{ steps.cpr.outputs.pull-request-url }}" ]; then
+            echo "::notice::Pull request opened: ${{ steps.cpr.outputs.pull-request-url }}"
+            exit 0
+          fi
+          echo "::warning::Could not open the pull request automatically."
+          echo "The candidates are NOT lost. Two ways to get them:"
+          echo "  * Artifacts section of this run: patent-figure-candidates"
+          echo "  * Branch \$BRANCH, if it was pushed -- open a PR at:"
+          echo "    https://github.com/${{ github.repository }}/compare/\$BRANCH?expand=1"
+          echo ""
+          echo "The usual cause is the repository setting that blocks Actions"
+          echo "from opening pull requests. To make this automatic:"
+          echo "  Settings -> Actions -> General -> Workflow permissions ->"
+          echo "  tick 'Allow GitHub Actions to create and approve pull requests'"

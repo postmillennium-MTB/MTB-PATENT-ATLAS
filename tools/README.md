@@ -23,9 +23,20 @@ candidate images and the report. Review, keep the one you want, merge.
 
 No local setup, nothing to install, and it works from a phone.
 
-**One prerequisite:** GitHub only shows a `workflow_dispatch` workflow once the
-file is on the **default branch**. Until this is merged to `main`, the Run
-workflow button will not appear.
+**Two prerequisites:**
+
+1. GitHub only shows a `workflow_dispatch` workflow once the file is on the
+   **default branch**.
+2. To have it open the PR for you, tick **Settings → Actions → General →
+   Workflow permissions → "Allow GitHub Actions to create and approve pull
+   requests."** Without it the run logs `GitHub Actions is not permitted to
+   create or approve pull requests` — the candidates are still produced and
+   still reachable (see below), it just cannot open the PR itself.
+
+**If the PR does not appear**, nothing is lost. Every run uploads the
+candidates to its **Artifacts** section, which needs no permissions at all, and
+the branch `patent-figures/<run id>` is pushed before the PR is attempted — the
+run log prints a one-click compare link for it.
 
 **If the automatic lookup fails**, the run log says which URLs it tried. Open
 the patent on Google Patents, copy the PDF link under the title, and put it in
@@ -68,6 +79,18 @@ Accepts `US12570369B1`, `12570369`, `D1140680`, `RE45684`.
 4. Add `img` and bilingual `imgAlt` to the entry.
 5. Delete the candidates you did not use.
 
+### Self-test
+
+```bash
+python3 tools/test_fetch_patent_figure.py
+```
+
+No network, no dependencies. It pins the page-classification rule against the
+real measured page-length profiles of three patents, plus number parsing. The
+workflow runs it before every fetch. The fixtures are measurements, not
+inventions — if a run turns up a fourth document shape, add its real numbers
+rather than tuning the rule until the output looks plausible.
+
 ### Known limits
 
 - **Figure choice is not automatable in any honest way.** Which drawing explains
@@ -84,9 +107,22 @@ Accepts `US12570369B1`, `12570369`, `D1140680`, `RE45684`.
   IP even though it serves a home connection fine. `--url` / `pdf_url` exists
   precisely so neither is a dead end. Whatever happens, the script fails loudly
   and writes nothing; it never emits a placeholder.
+- **Figure selection is density-based, and patent PDFs come in three shapes.**
+  Measured on real documents:
+  - *Modern grant with a text layer* — bibliographic page 1, then drawing
+    sheets, then specification columns. Cleanly separated; this is the easy case.
+  - *Pure image scan* — every page extracts zero characters, so density says
+    nothing. The tool falls back to "page 1 is the front page, offer the rest",
+    which is usually right but unverified. The report will say **NO TEXT LAYER**
+    rather than sitting there empty, because an empty report reads as "nothing
+    to check" when it means "nothing could be extracted."
+  - *Pre-1970s grant* — **the order is inverted**: the drawing comes first and
+    the specification follows. The first version of this tool skipped page 1
+    unconditionally and so threw away the only drawing in US 3,514,091, then
+    offered four pages of specification text as candidates. Page 1 is now
+    dropped for being text-heavy, never for being page 1. All three shapes are
+    pinned as fixtures in `test_fetch_patent_figure.py`.
 - **Design patents** have few sheets and no text columns, so every page after
   the first is offered as a candidate. That is correct, just noisier.
-- **Pre-1920 patents** are scanned images with no text layer, so every page
-  reads as a drawing sheet. Expect to skip the first candidate by hand.
 - It **cannot confirm the number is the right patent for the entry.** That is
   what the report is for.

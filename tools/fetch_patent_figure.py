@@ -195,15 +195,46 @@ def page_text_lengths(pdf, workdir):
 
 
 def pick_drawing_pages(lengths, want):
-    """Front page is bibliographic, so skip it. Then take the low-text pages.
+    """Pick the drawing sheets by text density. Three real document shapes:
 
-    Falls back to page order if the heuristic finds nothing, so the tool still
-    produces candidates on an unusual document rather than silently giving up.
+      modern grant, text layer  p1 bibliographic (thousands of chars), then
+                                drawing sheets (hundreds), then spec columns
+                                (thousands). US 11,019,237 measured
+                                p1=2400, p2-6=218..705, p7-16=~7500.
+      pure image scan           every page extracts 0 chars, so density says
+                                nothing. US 12,016,421 measured 0 across all
+                                13 pages.
+      pre-~1970s grant          THE ORDER IS INVERTED: drawings come first and
+                                the spec follows. US 3,514,091 measured
+                                p1=175 (the drawing) and p2-5=5455..8388.
+
+    An earlier version skipped page 1 unconditionally, which is right for the
+    first two shapes and exactly wrong for the third -- on US 3,514,091 it
+    discarded the only drawing in the document and then, finding nothing under
+    the threshold, fell back to "every page after the first" and offered four
+    pages of specification text as drawing candidates. Worse than no output,
+    because the candidates looked plausible in a file listing.
+
+    So: page 1 is dropped because it is text-heavy, never because it is page 1.
     """
-    candidates = [p for p in sorted(lengths) if p > 1 and lengths[p] <= DRAWING_TEXT_MAX]
-    if not candidates:
-        candidates = [p for p in sorted(lengths) if p > 1]
-    return candidates[:want]
+    low = [p for p in sorted(lengths) if lengths[p] <= DRAWING_TEXT_MAX]
+
+    if len(low) == len(lengths):
+        # Nothing distinguishes any page -- no text layer anywhere. Density is
+        # useless here, so fall back to the one structural fact that still
+        # holds for a modern grant: page 1 is the bibliographic front page.
+        return [p for p in sorted(lengths) if p > 1][:want]
+
+    if low:
+        # Some pages are text-heavy and some are not, so the split is real.
+        # Keep page 1 if it landed on the sparse side: that means it is a
+        # drawing (the inverted old-patent shape), not a front page.
+        return low[:want]
+
+    # Every page is text-heavy. Rank by relative sparseness instead of an
+    # absolute threshold, so the least text-like pages still surface rather
+    # than handing back the first N pages in document order.
+    return sorted(sorted(lengths), key=lambda p: lengths[p])[:want]
 
 
 def render_page(pdf, page, workdir):
@@ -332,8 +363,25 @@ def process(raw, outdir, want, strip_header, local_pdf=None, direct_url=None):
             fh.write("patent: %s\nsource: %s\npages: %d\n" % (canonical, source, len(lengths)))
             fh.write("per-page extracted text length: %s\n\n" % lengths)
             fh.write("=== FRONT PAGE TEXT (primary source -- check the entry against this) ===\n")
+            front_text = ""
             if os.path.exists(front):
-                fh.write(open(front, encoding="utf-8", errors="replace").read())
+                front_text = open(front, encoding="utf-8", errors="replace").read()
+            if front_text.strip():
+                fh.write(front_text)
+            else:
+                # An empty report reads as "nothing to check" rather than
+                # "nothing could be extracted", which are very different things
+                # when the report exists to verify an entry's conf tier.
+                fh.write(
+                    "(NO TEXT LAYER -- this PDF is a pure image scan, so no "
+                    "bibliographic text could be extracted.)\n\n"
+                    "The front page cannot be checked automatically here. Read "
+                    "the first rendered page by eye, or open the patent on "
+                    "Google Patents, before setting this entry's conf tier. Do "
+                    "not treat the absence of a contradiction as confirmation.\n"
+                )
+                print("  NOTE: no text layer -- the report has no front-page "
+                      "text to verify the entry against.")
         print("  wrote %s" % report)
 
         made = []
