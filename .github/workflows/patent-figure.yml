@@ -1,0 +1,91 @@
+# Fetch patent drawings without leaving the GitHub web UI.
+#
+# Actions tab -> "Fetch patent figure" -> "Run workflow" -> type one or more
+# patent numbers -> Run. It opens a pull request containing candidate crops for
+# each patent plus a report of the PDF's own front-page text. Nothing reaches
+# main until that PR is reviewed and merged.
+#
+# Why a workflow and not a local script: GitHub's runners can reach
+# patents.google.com and the USPTO print endpoint. Some networks -- including
+# the sandbox some Claude Code sessions run in -- are blocked from both by an
+# egress policy, so the fetch has to happen somewhere with open egress.
+#
+# This adds no runtime dependency to index.html. It never runs on push, only
+# when a person clicks Run, and deleting this file removes the feature cleanly.
+
+name: Fetch patent figure
+
+on:
+  workflow_dispatch:
+    inputs:
+      numbers:
+        description: "Patent number(s), space-separated. e.g. US12570369B1 D1140680 4733881"
+        required: true
+        type: string
+      candidates:
+        description: "Candidate drawing sheets per patent"
+        required: false
+        default: "4"
+        type: string
+      keep_header:
+        description: "Keep the 'U.S. Patent / Sheet n of m' header band"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+          python -m pip install --quiet Pillow
+
+      - name: Fetch and crop
+        id: fetch
+        run: |
+          python3 tools/fetch_patent_figure.py ${{ inputs.numbers }} \
+            --out figures-out \
+            --candidates "${{ inputs.candidates }}" \
+            ${{ inputs.keep_header && '--keep-header' || '' }}
+
+      - name: Open a pull request with the candidates
+        if: success()
+        uses: peter-evans/create-pull-request@v6
+        with:
+          add-paths: figures-out/**
+          branch: patent-figures/${{ github.run_id }}
+          commit-message: "Candidate patent figures: ${{ inputs.numbers }}"
+          title: "Candidate patent figures: ${{ inputs.numbers }}"
+          body: |
+            Automated candidate crops for: `${{ inputs.numbers }}`
+
+            These are **candidates**, not finished entries. To use one:
+
+            1. Look at the images in `figures-out/` and pick the figure that
+               actually shows the mechanism. The first drawing sheet is often
+               not the best one.
+            2. Rename it to `US<number><kind>.png` and move it into `pictures/`.
+            3. Open the matching `*.report.txt`. It contains the PDF's own front
+               page — title, inventor, assignee, filing and grant dates. Check
+               the atlas entry against it, and set `conf` from what that page
+               actually confirms.
+            4. Add `img` and bilingual `imgAlt` to the entry in `index.html`.
+               The alt text has to describe the figure you chose, with its real
+               reference numerals, so it has to be written by someone looking at
+               the image.
+            5. Delete the unused candidates and `figures-out/` before merging.
+
+            Nothing here has been added to `pictures/` or `index.html`.

@@ -57,6 +57,7 @@ UI, not a local git client. That has concrete consequences:
 |---|---|
 | `index.html` | Everything: `<head>` meta/SEO tags (lines ~1–20), `<style>` (~21–400), body markup (~402–503), `<script>` (~504–end) — which itself opens with the data registries (`CATS`, `BRAND_HQ`, `BADGES`, `BADGE_TIPS`, `INVENTORS`, `BRANDS`, then the `D` array of patent entries, then `FIGHTS`) before the rendering/filtering logic. **Line numbers drift with every edit — `grep -n` for the constant name rather than trusting a remembered line number.** |
 | `README.md` | Full public documentation: at-a-glance stats table, feature tour, data schema reference, confidence-tier and sourcing rules, methodology, and a chronological "Recent updates" changelog that's the closest thing this repo has to commit history in prose. |
+| `tools/` | Repo tooling, not runtime: `fetch_patent_figure.py` (downloads a patent PDF, picks out the drawing sheets, crops the margin and the "U.S. Patent / Sheet n of m" header, emits candidate PNGs plus a report of the PDF's own front page) and its `tools/README.md`. Paired with `.github/workflows/patent-figure.yml`, a `workflow_dispatch`-only job so the whole thing is runnable from the GitHub web UI. Deliberately stops short of choosing which figure to use or writing `imgAlt` — both are editorial. Nothing here is loaded by `index.html`; deleting the directory changes nothing a reader sees, so it does not breach the single-file rule. |
 | `pictures/` | Patent drawing images referenced by individual entries' `img` field. Two naming patterns coexist: `US<number><kindcode>.png` (e.g. `US7665929B2.png` — the majority pattern) and a few bare-number files from an earlier pass (`9102378.png`). Prefer the full `US<number><kind>.png` form for anything new. |
 | `favicon.ico`, `favicon-32x32.png`, `apple-touch-icon.png` | Site favicons. No reason to touch these for a data addition. |
 | `social-preview.png` | The `og:image`/`twitter:image` social-card asset (1000×852), referenced by absolute URL in `index.html`'s `<head>`. Not a runtime dependency of the page itself — only fetched by link-preview bots — so it doesn't violate the zero-dependency rule above. |
@@ -181,7 +182,8 @@ baked in except where the prefix *is* the number's identity:
 | Type | Store as | Renders as |
 |---|---|---|
 | Standard US grant | `"7334846"` | US 7,334,846 |
-| US design patent | `"D896132"` | US D 896,132 |
+| US design patent (single `num`) | `"1140680"` + `pt:"design"` | US D1,140,680 |
+| US design patent (inside `nums[]`) | `"D896132"` | US D 896,132 |
 | US reissue | `"RE45684"` | US RE 45,684 |
 | Foreign, 2-letter prefix | `"EP3111109"` | EP 3,111,109 |
 | Foreign, 3-letter prefix | `"TWI386342"` | TWI 386,342 |
@@ -220,6 +222,20 @@ oddly-formatted one. Use `j:"EU"` (distinct from `j:"EP"`, which is the EPO —
 real per-record EUIPO deep link (parsing the `NNNNNNNNN-NNNN` format into a
 proper eSearch URL) would be a genuine, worthwhile code change — flag it as
 a design decision rather than doing it inline with a data addition.
+
+**Design patents are stored differently depending on which field they live in,
+and getting it backwards produces a broken link both ways.** A single `num` on a
+`pt:"design"` entry holds *bare digits* — the rendering code prepends the `D`
+itself, for the display label and for the Google Patents URL (which needs
+`USD1140680`, not `US1140680`). Writing `num:"D1140680"` alongside `pt:"design"`
+doubles it into `DD1140680`; that has been caught twice. Inside a `nums[]` array
+the opposite holds: `numLink()` format-sniffs each entry independently and has no
+per-entry `pt`, so a design patent there carries its own `D` (see OneUp's
+`"D896132"`). All three consumers of the single-`num` form — the Google Patents
+button, the "cite this entry" string, and the figure caption's "view full patent"
+link — now read one hoisted `numForUrl`/`numPretty` pair rather than recomputing
+the prefix; the figure-caption link was the copy that got forgotten, and pointed
+design entries at the wrong patent until 2026-09-17.
 
 The `numLink`/`patentUrl` functions in the script detect these prefixes and
 build both the display label and the outbound Google Patents / national
@@ -288,7 +304,26 @@ Sessions in this environment run behind a network egress proxy that has, in
 practice, blocked direct fetches to `patents.google.com`, `www.google.com`,
 `www.freepatentsonline.com`, `patents.justia.com`, and `uspto.report`. Don't
 assume this is fixed by the time you're reading this — check first — but
-plan for it:
+plan for it.
+
+A 2026-09-17 session probed this properly and found it wider than the list
+above: `image-ppubs.uspto.gov`, `patentsgazette.uspto.gov`, `api.patentsview.org`
+and `search.patentsview.org`, `worldwide.espacenet.com`, `register.epo.org`,
+`patentscope.wipo.int`, `dockets.justia.com`, `www.patsnap.com`, and even
+`singletracks.com` (which mirrors some eGrant PDFs) all returned **403 at
+CONNECT** — an organization egress-policy denial, not a transient failure.
+Two things worth knowing before you spend a session's budget on this:
+
+- **`WebFetch` is blocked on the same hosts as `curl`.** It is not a way around
+  the proxy; it returns `EGRESS_BLOCKED`. `WebSearch` is the only external
+  source that works, because it does not egress from the sandbox at all.
+- **Don't try to route around a 403.** `/root/.ccr/README.md` says to report a
+  policy denial rather than retry it. The right move is to say plainly that the
+  primary source was unreachable, tier accordingly, and — for figures — use the
+  `Fetch patent figure` GitHub Actions workflow (see `tools/README.md`), which
+  runs on GitHub's runners where egress is open.
+
+Given that:
 
 - **`WebSearch` still works and its result snippets often quote the blocked
   page's own content directly** (title, filing/grant dates, inventor names,
