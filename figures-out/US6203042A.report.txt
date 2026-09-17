@@ -1,0 +1,231 @@
+patent: US6203042A
+source: https://patentimages.storage.googleapis.com/bc/0f/5d/f1ce7b7d38713b/US6203042.pdf
+pages: 11
+per-page extracted text length: {1: 3780, 2: 3436, 3: 57, 4: 57, 5: 57, 6: 57, 7: 7260, 8: 7150, 9: 7769, 10: 6768, 11: 910}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6203042B1
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Wilcox
+(54) BICYCLE REAR SUSPENSION SYSTEM
+
+4,265,329
+
+PROVIDING RELATIVE REARWARD
+
+FOREIGN PATENT DOCUMENTS
+
+(US)
+
+(73) Assignee: Trek Bicycle Corporation, Waterloo,
+WI (US)
+
+497.017
+923.235
+
+2/1919 (FR).
+... 280/284
+10/1947 (FR) ..................................... 280/284
+
+2 395 879
+2395-879
+
+7/1977 (FR) .............................. B62K/11/02
+3/1979 (FR).
+
+17336
+
+24918
+Subject to any disclaimer, the term of this
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+wo so.7,
+
+421.518
+423515
+540821
+
+(21) Appl. No.: 09/246,439
+22) Filled:
+
+10/1913 (GB) .................................... 280/284
+9/1918 (GB) .................................... 280/284
+000 8 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - B62K/25/OO
+
+3/1947 (IT).
+7/1947 (IT) ...................................... 280/284
+
+3/1956 (IT) ...................................... 280/284
+
+OTHER PUBLICATIONS
+
+Feb. 8, 1999
+
+(22) File
+
+t
+
+(List continued on next page.)
+
+(75) Inventor: Weston M. Wilcox, Sun Prairie, WI
+
+Notice:
+
+Mar. 20, 2001
+
+5/1981 de Cortanze ......................... 180/219
+List continued
+
+MOTION OF REAR AXLE
+
+(*)
+
+US 6,203,042 B1
+
+(45) Date of Patent:
+
+eD. 5,
+
+Simultaneous submission: U.S. Utility Patent Application
+
+Related U.S. Application Data
+(60) Provisional application No. 60/075.427, filed on Feb. 20,
+
+for Variable Reduction CroSS-Linkage for Rear Suspension
+Bicycle, Wilcox.
+
+1998.
+
+7
+
+Primary Examiner-Lanna Mai
+
+(51) Int. Cl." ............................ B62K 25/04; B62K 25/30
+
+ASSistant Examiner-Hau Phan
+
+(52) U.S. Cl. ........................... 280/284; 280/275; 280/283
+(58) Field of Search ..................................... 280/284, 286,
+
+(74) Attorney, Agent, or Firm-Boyle Fredrickson
+Newholm Stein & Gratz S.C.; James F. Boyle
+
+280/275. 283 285 281.1
+/275,
+
+(56)
+
+s
+
+s
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+D. 364,365
+D. 368,880
+
+739.237
+
+1130,828
+
+1412012
+2 : - 12
+
+(57)
+
+ABSTRACT
+
+11/1995 Lin et al. ............................. D12/111
+
+A bicycle rear Suspension System providing rearward rela
+tive motion of the rear axle includes a chain stay, seat stay,
+chain stay link, Seat stay link and shock absorber, with those
+components being assembled to a main front frame. The
+
+4/1996
+
+frame includes a head tube for Supporting a front Steering
+
+Harrington - - - - - - - - - - - - - - - - - - - - - - - - - - D12/117
+
+9/1903 Travis.
+
+fork, a Seat tube for Supporting a Seat, and a bottom bracket
+
+4f1922 Bruno.
+
+for Supporting a pedal crank and chain drive mechanism, the
+
+3/1915 Kuehn.
+
+s
+
+2,132,317 10/1938 Pease ................................... 280,284
+
+pporting a seal, an
+
+seat tube and bottom bracket being Supported so that there
+
+2,283,671
+2,446,731
+3,907,332
+3,942,821
+
+5/1942 Finlay et al...
+... 280/284
+8/1948 Wheler ................................. 280/284
+9/1975 Richardson .......................... 280/285
+3/1976 Bock .....................
+... 280/277
+
+3,948.543
+
+4/1976 MacDonald et al. .
+
+... 280/284
+
+upward movement of the chain stay, the chain stay link
+
+E.
+2 --- 2
+
+1979 Sh
+et
+---- --- --- cuonegle ...
+
+3:
+-- --
+
+pivots to cause the chain stay and thus the rear axle Sup
+
+4,046,396
+
+9/1977 Taylor et al. .................... 280/281 R
+
+4,058,181
+
+11/1977 Buell ...................................... 180/32
+
+4,147,370
+4,170,369
+
+4/1979 Lindsey, Jr. ...
+... 280/234
+10/1979 Strutman .............................. 280/261
+
+is a vertical Space between them. The components of the rear
+Suspension System are assembled to the frame within the
+space between the seat tube and bottom bracket. The chain
+Stay link is pivotally attached to the frame So that, upon
+
+t thereon to move slightly rearwardly relative to the
+16 Claims, 4 Drawing Sheets
+
+

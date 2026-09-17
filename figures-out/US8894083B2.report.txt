@@ -1,0 +1,172 @@
+patent: US8894083B2
+source: https://patentimages.storage.googleapis.com/d9/8c/d2/73534228a1b3ec/US8894083.pdf
+pages: 20
+per-page extracted text length: {1: 2596, 2: 2219, 3: 57, 4: 57, 5: 73, 6: 63, 7: 57, 8: 62, 9: 145, 10: 0, 11: 136, 12: 7378, 13: 7637, 14: 6996, 15: 7773, 16: 7680, 17: 7673, 18: 7905, 19: 6838, 20: 1758}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO8894083B2
+
+(12) United States Patent
+Gonzales et al.
+(54) BICYCLE AIRSHOCKASSEMBLIES WITH
+
+(10) Patent No.:
+
+US 8,894,083 B2
+
+(45) Date of Patent:
+
+*Nov. 25, 2014
+
+(52) U.S. Cl.
+
+TUNABLE SUSPENSION PERFORMANCE
+
+CPC ........... B62K 25/08 (2013.01); B62K 2025/048
+
+(2013.01); B62K 25/04 (2013.01)
+
+(71) Applicants: Jose L. Gonzales, Santa Clarita, CA
+
+USPC ........................................ 280/276; 188/266.2
+
+(US); Gregory Paul Buhl, Pasadena, CA
+
+(US); James Colegrove, Lake Mills, WI
+(US)
+
+(72) Inventors: Jose L. Gonzales, Santa Clarita, CA
+
+(US); Gregory Paul Buhl, Pasadena, CA
+
+(58) Field of Classification Search
+
+USPC ................. 188/282.6, 319.2, 322.15, 322.22,
+188/266.2, 315; 280/275,276
+
+See application file for complete search history.
+
+(56)
+
+References Cited
+
+SS James Colegrove, Lake Mills, WI
+
+U.S. PATENT DOCUMENTS
+3,706,362 A * 12, 1972 Faure ......................... 188,282.8
+
+(73) Assignee: Trek Bicycle Corporation, Waterloo,
+
+3.726,368 A * 4/1973 Taylor ........................... 188,316
+
+WI (US)
+(*) Notice:
+
+(Continued)
+
+Subject to any disclaimer, the term of this
+
+FOREIGN PATENT DOCUMENTS
+
+patent is extended or adjusted under 35
+
+U.S.C. 154(b) by 0 days.
+This patent is Subject to a terminal disclaimer.
+
+EP
+EP
+
+1687,197 B1
+8/2006
+1970593 A1 9, 2008
+(Continued)
+OTHER PUBLICATIONS
+
+(21) Appl. No.: 13/971818
+(22) Filed:
+
+Corrected European Search Report (Application No. EP 11 152598)
+dated Jan. 2, 2013.
+
+Aug. 20, 2013
+
+(65)
+
+Prior Publication Data
+
+US 2013/0334788 A1
+
+(Continued)
+
+Dec. 19, 2013
+
+Primary Examiner – Christopher Schwartz
+(57)
+
+Related U.S. Application Data
+(63) Continuation of application No. 12/704.292, filed on
+Feb. 11, 2010, now Pat. No. 8.511,448.
+s
+
+s
+
+sa- - us
+
+(2006.01)
+(2006.01)
+
+B62K 25/08
+
+(2006.01)
+
+B62K 25/04
+
+(2006.01)
+
+A bicycle air shock absorber assembly that includes a hollow
+p1ston rod that is telescopically associated with a hollow
+
+compression rod. The piston rod and compression rod are
+
+positioned within the casing of the shock assembly. A piston
+
+(60) Provisional application No. 61/300,182, filed on Feb.
+1, 2010.
+(51) Int. Cl.
+B62K 25/00
+FI6F 9/34
+
+ABSTRACT
+
+is supported by the piston rod and divides the volume of the
+compression rod to form a negative air spring chamber and a
+positive air spring chamber that includes the volume of the
+piston rod. An optional coil spring is positioned within the
+casing and contributes in parallel with the positive air spring
+chamber to resist compression of the shock assembly.
+19 Claims, 9 Drawing Sheets
+se
+
+2.
+
+s
+
+as
+
+ar
+e-A
+
+2.
+ae -
+
+Mé
+
+5.
+
+i
+
+S-3
+
+a
+
+
