@@ -1,0 +1,133 @@
+patent: US5509674
+source: https://patentimages.storage.googleapis.com/5d/68/04/2e10a546c5cd66/US5509674.pdf
+pages: 8
+per-page extracted text length: {1: 3259, 2: 51, 3: 81, 4: 0, 5: 6901, 6: 7695, 7: 5565, 8: 615}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+|||||||III
+US005509674A
+United States Patent (19)
+
+11) Patent Number:
+(45) Date of Patent:
+
+Browning
+
+5,509,674
+Apr. 23, 1996
+
+(54) BICYCLE SUSPENSION SYSTEM
+
+4,576,393 3/1986 Moulton et al. ........................ 280/276
+4,609,202 9/1986 Miyakoshi et al.
+
+(75 Inventor: Michael Ronald S. Browning,
+Blackwater, England
+
+4,679,811 7/1987 Shuler ........
+... 280/284
+4,721,322 1/1988 Hawkins ................................. 280/276
+4,735,276 4/1988 Burton .................................... 180/219
+4,881,750 11/1989 Hartmann ................................ 280/276
+4,960,344 10/1990 Geisthoff et al. ....................... 403/316
+4,971,344 11/1990 Turner ..................................... 280/276
+5,044,648 9/1991 Knapp ..................................... 280/283
+5,097,928 3/1992 Enders et al. ........................... 188/300
+5,308,099 5/1994 Browning ............................. 267/64.5
+FOREIGN PATENT DOCUMENTS
+
+73) Assignee: Cannondale Corporation, Georgetown,
+Conn.
+
+(21) Appl. No.: 236,970
+22 Filed:
+May 2, 1994
+Related U.S. Application Data
+
+0063635 4/1981 European Pat. Off..
+362919 2/1906 France.
+0611961 10/1926 France ................................... 280/276
+0677737 3/1930 France ................................... 280/276
+
+62) Division of Ser. No. 588,160, Sep. 26, 1990, Pat. No.
+5,308,099.
+
+(30)
+
+Foreign Application Priority Data
+
+Sep. 26, 1989 (GB)
+
+2805578 8/1979 Germany.
+365568 12/1938 Italy ....................................... 280/276
+
+United Kingdom ................... 892.1962
+
+433156 4/1948 Italy.
+571871 1/1958 Italy ........
+
+(51) Int. Cl." ................................... B62K 17/00
+52 U.S. Cl. ...
+280/276; 267/201; 267/205
+58) Field of Search ..................................... 280/276, 277,
+280/279, 283, 286; 267/196, 201, 202,
+
+0.133362
+
+References Cited
+
+5/1929 Switzerland ........................... 280/276
+
+264003 1/1927 United Kingdom.
+469697 7/1937 United Kingdom.
+529305 11/1940 United Kingdom.
+0568263 3/1945 United Kingdom ................... 280/276
+
+205, 206, 208, 215, 135, 136; 188/319
+56)
+
+... 280/276
+... 188/319
+
+585122
+
+1/1947 United Kingdom.
+
+Primary Examiner-Anne Marie Boehler
+
+Attorney, Agent, or Firm-Pennie & Edmonds
+
+U.S. PATENT DOCUMENTS
+
+1,205,433 11/1916 Christman ............................... 188/300
+
+57
+
+3,083,038 3/1963 Moulton .................................. 280/276
+3,208,767 9/1965 Moulton .................................. 280/276
+3,984,119 10/1976 Okazima ................................. 280/276
+4,057,264 11/1977 Suzuki et al. ........................... 280/276
+4,153,266 5/1979 Uhls ........................................ 280/276
+4,313,529 2/1982 Kato et al. .............................. 188/319
+4,367,882 1/1983 Alexander et al. ..................... 280/276
+
+A bicycle suspension system is provided that may be located
+in the head tube at the front of the bicycle frame. The system
+may be hydraulic, hydro-pneumatic or spring based, but in
+each case the degree of damping provided may be adjusted
+by a rotatable knob at the top of the head tube that is easily
+operable by a rider.
+
+4,392,664 7/1983 Tsuchiya et al. ....................... 280/276
+4,524,944 6/1985
+
+9 Claims, 3 Drawing Sheets
+
+2,550,876 5/1951 Spencer.
+
+Ill
+7
+
+ABSTRACT
+
+

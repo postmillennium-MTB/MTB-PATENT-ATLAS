@@ -1,0 +1,83 @@
+patent: US5308099
+source: https://patentimages.storage.googleapis.com/96/cf/4c/d7adc130219f7b/US5308099.pdf
+pages: 7
+per-page extracted text length: {1: 1931, 2: 49, 3: 56, 4: 0, 5: 6450, 6: 7253, 7: 5868}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+|||||||||||||||
+US005308099A
+
+United States Patent (19)
+
+11 Patent Number:
+(45) Date of Patent:
+
+Browning
+
+4,881,750 l/1989 Hartmann ........................... 280/276
+4.960,344 10/1990 Geisthoff et al. ................... 403/328
+5,097,928 3/1992 Enders et al. .................... 267/64.15
+
+(54) BICYCLE SUSPENSION SYSTEM
+76 Inventor: Michael R. S. Browning, 7 Belgrave
+Ct., Blackwater, Camberley GU17
+9JE, England
+21 Appl. No.: 588,160
+(22) Filed:
+Sep. 26, 1990
+(30)
+
+5,308,099
+May 3, 1994
+
+FOREIGN PATENT DOCUMENTS
+0063635 4/1981 European Pat. Off. ......... 267/64.15
+
+2805578 8/1979 Fed. Rep. of Germany ... 280/276
+365568 12/1938 Italy .................................... 280/276
+433 156 4/1948 Italy .................................... 280/276
+571871 1/1958 Italy .................................... 188/319
+
+Foreign Application Priority Data
+
+Sep. 26, 1989 (GB) United Kingdom ................. 892.962
+
+Primary Examiner-Margaret A. Focarino
+
+51) Int. Cl............................................... B62K 25/08
+52 U.S. Cl. .................................... 280/276; 188/319;
+267/64.15; 403/328
+58) Field of Search ............... 280/276, 279, 283, 277;
+188/319; 403/96, 328; 267/64.15, 64.23
+
+Assistant Examiner-Anne Marie Boehler
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+1,205.433 1 1/1916 Christman ........................... 188/319
+3,083,038 3/1963 Moulton ......
+... 280/276
+4,026,605 5/1977 Emmerich ...
+... 403/328
+4,313,529 2/1982 Kato et al. .......................... 188/319
+
+Attorney, Agent, or Firm-Chilton, Alix & Van Kirk
+57
+
+ABSTRACT
+
+A bicycle suspension system is provided that may be
+located in the head tube at the front of the bicycle
+frame. The system may be hydraulic, hydro-pneumatic
+or spring based, but in each case the degree of damping
+provided may be adjusted by a rotatable knob at the top
+of the head tube that is easily operable by a rider.
+8 Claims, 3 Drawing Sheets
+
+s
+
+2
+
+
