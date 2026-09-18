@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 274 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 273 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 274 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 274 |
+| **Total entries** | 273 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 133 |
+| **Active patents** | 132 |
 | **Expired patents** | 90 |
 | **Pending applications** | 40 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
 | **Brands** | 153 |
 | **Named inventors** | 54 |
-| **Non-US jurisdictions** | 15 (AU, BE, CH, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, ZA) |
-| **Verified entries** | 162 |
+| **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, ZA) |
+| **Verified entries** | 161 |
 | **Medium confidence** | 58 |
 | **Draft / in progress** | 54 |
 
@@ -300,6 +300,12 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
   Actions was again blocked from opening its own PR by the same repository setting noted in every run above — each candidates branch pushed fine and the PRs were opened by hand. Entries with a figure 48 → 55; verified 162 (unchanged, no tier changed — every correction here was a date/term fix within an already-`"v"` entry, not a tier promotion).
 
 - **A user-supplied patent number turned out to name a different invention than the article it was pasted alongside — worth recording because it's exactly the kind of mismatch the sourcing discipline exists to catch before it becomes a fabricated entry.** Asked to add `US20220402572A1`, cited next to two articles: one about a Lauf freehub with flexible leaf-spring pawls, one about a Lauf leaf-spring rear suspension for gravel bikes. Fetching the actual PDF (egress to Google Patents is blocked from this sandbox, so this went through the same GitHub Actions figure-fetch tool used for every other verification in this doc) showed the number is the **rear suspension** application, not the freehub — 'A rear wheel suspension system for a bike,' filed by Lauf Forks hf. (Reykjavik), inventors Benedikt Skulason and Bergur Benediktsson. No new entry was created: this exact invention was already covered, bundled with the Lauf fork and the freehub, in the existing "Lauf pivotless leaf-spring fork & rear suspension" entry (`conf:"m"`, `num:null` for lack of a confirmed number). That entry now carries the verified number, its first figure (Fig. 1, the leaf-spring rear triangle), and a corrected EP priority reference — the front page shows PCT/EP2020/074808 filed September 4, 2020, priority to EP 19209794.7 filed November 18, 2019, entering the US national phase May 17, 2022 and publishing December 22, 2022 — replacing an unverifiable 'EP application 22173EP01' reference that didn't match standard EP numbering. `conf` deliberately stays `"m"` for the entry as a whole rather than moving to `"v"`: the fork itself (the entry's main subject, a decade patent-pending) and the freehub still have no confirmed number between them, and upgrading the whole entry on the strength of one now-verified sub-claim would overstate how much of it was actually checked. Because the verified number is a US filing, `j:"IS"` — previously carrying the entry's only jurisdiction tag — was dropped per the schema's own rule to omit `j` for US filings; it was the only entry using Iceland, so the "At a glance" jurisdiction count and list both move 16 → 15. The freehub patent itself remains a genuine gap: contemporary coverage describes it as filed but, as of its own reporting, not yet published to any public database, so there is still no number to verify it against — a real entry for it stays out of scope until one surfaces.
+
+- **A second seven-patent figure run, again picked freely across categories to add art to already-`"v"` entries: US 6,843,494 (Rocky Mountain's foundational rear-suspension linkage), US 2,160,034 (Schwinn Knee-Action Spring Fork), US 7,712,566 (Schlumpf → SRAM HammerSchmidt), US 8,757,341 (Star Ratchet EXP), US D204,121 (Schwinn Sting-Ray banana seat), US 5,833,074 (QuikRack), and US 10,021,931 (helmet-chin camera mount, the `tech` category's first-ever figure).** The candidate query surfaced something the original seventh pick couldn't use: US 7,665,929 (a BMX/MTB starting gate) turned out to have **two separate entries for the same number** — one full and already pictured (`comp`, Prostuff LLC, filed 2007/granted 2010, exp 2027) and one thinner duplicate (`frame`, no assignee, filed 2006/granted 2010, exp 2026) that had drifted to a conflicting filing year and expiry without ever being caught. Nothing referenced the thinner one (no `FIGHTS` card, no shared `who[]` registrant), so it was removed outright rather than illustrated a second time, and US 10,021,931 substituted in as the seventh pick.
+
+  Reading each front page against its entry caught three more real discrepancies, same discipline as the run before this one. **US 7,712,566** was catalogued as Florian Schlumpf's own 1988-filed/1992-granted Swiss patent (`j:"CH"`); the actual document is SRAM's own later "Bicycle transmission" continuation, invented by Brian Jordan, Kevin Wesling and Christopher Shipman — filed August 8, 2008 as a continuation of an April 11, 2007 application, granted May 11, 2010. `y` 1988 → 2008, `g` 1992 → 2010, `j:"CH"` dropped (it's a plain US number, not a Swiss one), and `exp` corrected 2030 → 2027 per the continuation-term rule: term runs from the 2007 parent filing, not this document's own 2008 filing. The Schlumpf-to-SRAM acquisition narrative in the entry's prose and `a` field is carried forward as prior research, not re-verified this pass. **US 8,757,341 (Star Ratchet EXP)** was stated as filed 2012/granted 2013; the front page — independently cross-checked, since its two-column layout extracted too scrambled to trust on its own — gives filed August 2, 2011/granted June 24, 2014. `y` 2012 → 2011, `g` 2013 → 2014; `exp` stays 2032, which turns out to already be right on its own terms, since the grant carries a 296-day patent term adjustment past the flat 20-year date — now stated explicitly in the entry rather than landing on the correct number by coincidence. **US 5,833,074 (QuikRack)** carried `exp:2016`; filed April 6, 1995 — three months before the June 8, 1995 GATT cutoff — falls under the pre-GATT rule (grant + 17, not filing + 20), giving 2015, not 2016, corrected in both the field and the prose sentence that had referenced the wrong year directly. Also checked and left alone: the helmet-chin-mount entry (US 10,021,931) carries `st:"expired"` against an `exp:2035` nine years out, which read like the same kind of bug on sight — but its own text already explains this correctly (a documented USPTO maintenance-fee lapse, not a term expiration), so it was left as-is rather than "fixed" into a wrong state.
+
+  Actions was blocked from opening its own PR again, the same recurring repository-permission gap as every run before it; the candidate branch pushed fine and the PR was opened by hand. Entries with a figure 50 → 57; total entries 274 → 273 (the removed duplicate); active 133 → 132; verified 162 → 161; non-US jurisdictions 15 → 14 (CH's only remaining entry was the corrected Schlumpf one, above).
 
 ---
 
