@@ -1,0 +1,103 @@
+patent: US20220402572A1
+source: https://patentimages.storage.googleapis.com/8a/8b/fd/2e790abc756495/US20220402572A1.pdf
+pages: 49
+per-page extracted text length: {1: 1521, 2: 139, 3: 95, 4: 94, 5: 94, 6: 96, 7: 98, 8: 132, 9: 95, 10: 95, 11: 93, 12: 101, 13: 98, 14: 97, 15: 98, 16: 107, 17: 159, 18: 131, 19: 150, 20: 122, 21: 107, 22: 104, 23: 105, 24: 113, 25: 109, 26: 107, 27: 115, 28: 101, 29: 106, 30: 98, 31: 95, 32: 99, 33: 95, 34: 98, 35: 99, 36: 95, 37: 6927, 38: 7014, 39: 7512, 40: 7235, 41: 7332, 42: 6488, 43: 7175, 44: 7399, 45: 7241, 46: 7345, 47: 6723, 48: 6771, 49: 318}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US 20220402572A1
+
+INI
+
+( 19) United States
+
+( 12)) SKULASON
+Patent Application
+Publication ((4310)) Pub
+Pub... Date
+No .: :US 2022/0402572
+A1
+et al .
+Dec. 22 , 2022
+Publication Classification
+
+( 54 ) A REAR WHEEL SUSPENSION SYSTEM
+FOR A BIKE
+
+(51 ) Int. CI .
+
+( 71 ) Applicant: LAUF FORKS HF ., Reykjavik (IS )
+( 72 ) Inventors : Benedikt SKULASON , Reykjavik ( IS ) ;
+Bergur BENEDIKTSSON , Reykjavik
+( IS )
+
+(21 ) Appl . No.:
+
+(22 ) PCT Filed :
+( 86) PCT No .:
+§ 371 (c ) ( 1 ) ,
+May 17, 2022
+(2 ) Date :
+Foreign Application Priority Data
+( 30 )
+
+( 2013.01 ) ; B62K 2201/06 ( 2013.01 )
+
+(57 )
+
+ABSTRACT
+
+bottom surfaces of the leaf spring to allow flex of the leaf
+spring towards the seat tube and thus vertical flex of said
+flexible chainstays.
+
+111
+R
+
+104
+
+CP
+102
+
+108
+
+110
+103
+
+109
+
+B62K 25/04 (2013.01 ) ; B62K 2025/041
+
+to the seat tube in a direction perpendicular to top and
+
+19209794.7
+
+101
+
+CPC
+
+( 2006.01 )
+
+A rear wheel suspension system for a bike, includes a seat
+tube, left and right side flexible chainstays , left and right side
+seatstays . A leaf spring interconnects the seatstays and the
+seat tube, wherein one end of the leaf spring is connected to
+the upper end area of said seatstays, the leaf spring extend
+ing upwardly from its point of connection to the upper end
+area of the seatstays to a point of connection to the seat tube
+of said bicycle . The leaf spring is arranged at a distance D
+
+17 /777,468
+Sep. 4 , 2020
+PCT/EP2020/ 074808
+
+Nov. 18 , 2019 (EP)
+
+B62K 25/04
+
+(52 ) U.S. CI .
+
+106
+
+105
+
+
