@@ -1,0 +1,183 @@
+patent: US9234553
+source: https://patentimages.storage.googleapis.com/d8/7f/2c/5ce5f543491fd1/US9234553.pdf
+pages: 15
+per-page extracted text length: {1: 2759, 2: 57, 3: 74, 4: 97, 5: 57, 6: 57, 7: 247, 8: 57, 9: 140, 10: 57, 11: 6758, 12: 8060, 13: 7698, 14: 7094, 15: 670}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO9234553B2
+
+(12) United States Patent
+Iwai et al.
+
+(10) Patent No.:
+
+(54) BICYCLE BRAKE DISC
+
+(56)
+
+(75) Inventors: Toru Iwai, Osaka (JP); Makoto Souwa,
+
+Jan. 12, 2016
+
+References Cited
+
+U.S. PATENT DOCUMENTS
+
+Osaka (JP)
+
+(73) Assignee: Shimano Inc., Osaka (JP)
+
+(*) Notice:
+
+US 9.234,553 B2
+
+(45) Date of Patent:
+
+2,710,078 A *
+
+6/1955 Cardwell ...................... 188,366
+
+4,036,334 A *
+
+7/1977 Brown ...........
+
+5,327,034 A
+
+7, 1994 Couture et al.
+
+... 188.264 A
+
+4,913,266 A * 4/1990 Russell et al. .............. 188, 18A
+
+Subject to any disclaimer, the term of this
+
+6,386,340 B1* 5/2002 Milesi et al. ............ 188,218 XL
+
+patent is extended or adjusted under 35
+
+g R.
+
+U.S.C. 154(b) by 58 days.
+
+23: St. . . . . . . . . . . . . . . . . . . . 1st,
+
+ago et al. . . . . . . . . . . . . . . . . . . . . . .
+
+7.219,777 B2* 5/2007 Lin ......................... 188,218 XL
+
+(21) Appl. No.: 13/339,651
+
+7,281,613 B2 * 10/2007 Weiss ........................ 188,264 A
+2003/0178265 A1
+9, 2003 Chen
+2007,0199778 A1*
+
+8, 2007 Lee ......................... 188,218 XL
+
+(22) Filed:
+
+2008/0073165 A1
+
+3/2008 Rau et al. ................ 188,218 XL
+
+Dec. 29, 2011
+
+2008/O142319 A1*
+
+(65)
+
+Prior Publication Data
+
+US 2013/O1681.93 A1
+
+Jul. 4, 2013
+
+(51) Int. C.
+
+6/2008 Manter ................... 188,218 XL
+2008/0202867 A1* 8, 2008 Danzer et al. ................... 18826
+2008/0289918 A1* 11/2008 Boike et al. ............. 188,218 XL
+2010/0258.394 A1* 10/2010 Hanna et al. .............. 188,264 A
+2011/0240420 A1 10/2011 Souwa et al.
+
+2012fOOOO736 A1
+
+FI6D 65/T2
+
+2006.O1
+
+FI6D 65/847
+
+30: 8:
+
+B62L I/00
+FI6D 55/OO
+FI6D 65/02
+
+(2006.01)
+(2006.01)
+(2006.01)
+
+(52) U.S. Cl.
+
+CPC ............... F16D 65/847 (2013.01); B62L I/005
+
+(2013.01); FI6D 65/12 (2013.01); F16D
+2055/0004 (2013.01); F16D 2065/132
+(2013 oi).
+Fiopsi?, 2013 officio
+2065/1332 (2013.01); F16D 2200/003
+(2013.01); F16D 2200/0017 (2013.01)
+(58) Field of Classification Search
+
+1/2012 Koshiyama
+
+FOREIGN PATENT DOCUMENTS
+DE
+TW
+TW
+
+103 34555 A1
+276,769 I
+243427
+
+2/2005
+12/1992
+3, 1995
+
+TW
+
+407 172 U1
+
+7, 2011
+
+cited by examiner
+
+Primary Examiner Melody Burch
+
+(74) Attorney, Agent, or Firm — Global IP Counselors
+(57)
+
+ABSTRACT
+
+CPC ......... F1 65. sRise...to's
+
+A bicycle disc brake rotor basically has an outer portion and
+
+F16D 65/128 F16D 2065/13 F16D
+2O65/1304: F16D 2065/134: F16D 65/78:
+F16D 65/84: F16D 2065/1332: F16D 65/847:
+s
+Fl 6D 2065/131 6
+USPC ... 188/18 A, 218 XL, 264 R, 264 A, 264 AA
+
+a cooling fin. The outer portion has first and second base
+Surfaces facing in opposite axial directions. The cooling finis
+disposed radially offset from at least one of the first and
+second braking Surfaces.
+
+See application file for complete search history.
+
+20 Claims, 9 Drawing Sheets
+
+

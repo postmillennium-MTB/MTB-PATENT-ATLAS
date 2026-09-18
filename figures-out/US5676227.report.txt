@@ -1,0 +1,154 @@
+patent: US5676227
+source: https://patentimages.storage.googleapis.com/24/1c/7e/f18ad63617f4b0/US5676227.pdf
+pages: 6
+per-page extracted text length: {1: 2092, 2: 72, 3: 65, 4: 6631, 5: 6747, 6: 1708}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+III USOO5676227A
+III
+United States Patent (19)
+
+11 Patent Number:
+45 Date of Patent:
+
+Higi
+54 FREE-WHEEL HUB FOR BICYCLES
+75) Inventor: Wilfried Higi, Morschach, Switzerland
+73) Assignee: DT-Bike Technology AG), Biel,
+
+5,676,227
+Oct. 14, 1997
+
+FOREIGN PATENT DOCUMENTS
+
+522983 1/1993 European Pat. Off. ................. 192A46
+4494.75 6/1949 Italy ......................................... 192/64
+666454
+
+7/1988 Switzerland.
+
+Switzerland
+
+21 Appl. No.: 565,004
+
+Primary Examiner-Richard M. Lorence
+Attorney, Agent, or Firm-Ladas & Parry
+
+22 Filed:
+
+57
+
+30
+
+Nov.30, 1995
+
+Foreign Application Priority Data
+
+Dec. 2, 1994 (DE) Germany. 9419357 U
+(51 int. C. ... F6D 41/24
+I52) U.S. Cl. ........................... 192/64; 192/46; 301/110.5;
+301/124.2
+
+58
+
+Field of Search ........................... 192/64, 46, 110 B,
+192/69.81: 301/105.1, 110.5, 111, 124.2
+
+56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+2,211,548 8/1940 Schwinn ................................... 192/64
+4,567,973
+
+2/1986 Butz .........
+
+ABSTRACT
+
+A wheel hub for a bicycle wheel has a hub shell for receiving
+spokes of the wheel and a sprocket body receives the
+sprockets. The wheel hub and the sprocket body are con
+nected through a free-wheel clutch. The roller bearings of
+the sprocket body are freely axially displaceable on the axle.
+An end member of the hub is screwed onto the sprocket-side
+end of the axle and acts as a locking device for pressing the
+sprocket body against the hub shell. To access the clutch and
+for disassembling the hub, the end member can be screwed
+off and the sprocket body can be pulled off the axle by hand.
+This simplifies assembly, disassembly and maintenance of
+the hub.
+
+... 192/64
+
+15 Claims, 2 Drawing Sheets
+
+4,580,670 4/1986 Nagano ..................................... 192/64
+t
+
+f
+
+2.
+
+3
+
+|
+
+|
+
+27 24, 24 25 3. 3O
+
+a | || || | |
+< 2Eith
+E.J.
+N. s J. Six
+SixS.L.EZ
+N4
+(NeXS
+2XSS
+Z2 4.
+9N3, 1642 44
+att
+sixKyNxS
+TV1 TeV.E NzzN 7227-7774)
+k
+
+-----
+
+- - - -nor
+
+- r- - - - -
+
+N
+
+?ay- SNNY
+
+(OEEE T. s
+
+4.
+
+--------E
+
+N
+
+3.
+
+2O
+
+2ZZZZZZZZZZZZZZZZZZ2
+A&
+
+9.
+
+33
+
+3
+
+&
+
+15 - 22 22, 2
+
+3
+
+11
+
+
