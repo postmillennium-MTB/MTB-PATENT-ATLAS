@@ -1,0 +1,170 @@
+patent: US7334846
+source: https://patentimages.storage.googleapis.com/21/e0/05/ff76793e8b7c7b/US7334846.pdf
+pages: 9
+per-page extracted text length: {1: 3045, 2: 84, 3: 57, 4: 62, 5: 71, 6: 7333, 7: 7137, 8: 6630, 9: 2056}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO7334846B2
+
+(12) United States Patent
+Koziatek
+
+(10) Patent No.:
+
+US 7,334,846 B2
+
+(45) Date of Patent:
+
+Feb. 26, 2008
+
+(54) BICYCLE WHEEL RIM
+
+6,568,766 B1* 5/2003 Okajima et al. ....... 301/95.104
+6,736.462 B1
+
+5/2004 Okajima
+
+(76) Inventor: Stanley F. Koziatek, 305 River Rd.,
+
+6,752,187 B1
+
+6/2004 Tien
+
+s
+
+6,767,069 B2
+
+7, 2004 Chen
+
+Corning, NY (US) 14830
+
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent 1s sists adjusted under 35
+
+U.S.C. 154(b) by 5 days.
+(21) Appl. No.: 10/959,743
+(22) Filed:
+
+Oct. 6, 2004
+
+(65)
+
+Prior Publication Data
+
+US 2006/007 1540 A1 Apr. 6, 2006
+(51) Int. Cl
+B oB I/02
+(2006.01)
+(52) U.S. Cl. ........................... 301/95.104; 30.
+
+(58) Field of Classification Search .................. 301/58.
+
+301/95.101, 95.104, 95.105.95.106 95.107.
+s 3O1 /95.108. 152f516 520 382
+
+See application file for complete search history
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+1,194,177 A *
+
+8, 1916 Henderson .................. 152/.382
+
+1,316,773 A * 9/1919 Daigre ....................... 152,327
+1,551,445 A * 8/1925 Wagonhorst .
+... 152,381.6
+4,896.921 A
+6,183,047 B1 *
+
+1/1990 Sato et al. ................... 301?5.1
+2/2001 Kuhl .............. ... 301/95.106
+
+6,283,557 B1 * 9/2001 Okajima et al. ....... 301/95.104
+6,402.255 B1*
+6,402.256 B1*
+
+6/2002 Chen ..................... 301/95.101
+6/2002 Mercat .................. 301/95.104
+
+6,428,115 B1
+
+8, 2002 Chen
+
+6,457,501 B1 * 10/2002 Ball ........................ 152,379.3
+
+530
+
+533
+
+536
+542
+541
+
+6,761,847 B2
+
+7/2004 Meggiolan
+
+C R
+3. Shang et al.
+6,817,680 B2 * li?2004 Chen. 301/95.104
+
+6,938,962 B1* 9/2005 Schlanger .................... 301/58
+7,083.239 B2 * 8/2006 Okajima ................ 301/95.108
+
+7,090.307 B2 * 8/2006 Okajima ................ 301/95.107
+
+2003/0025383 A1
+
+2/2003 LaCombe et al. ..... 301/95.101
+
+2003/O150538 A1
+
+8, 2003 Ceretta
+
+2004/0004391 A1
+2004/00950 14 A1*
+
+1/2004 Fioravanti .............. 301/95.104
+5/2004 Veux et al. ................... 301/58
+
+* cited by examiner
+Primary Examiner Russell D. Stormer
+(74) Attorney, Agent, or Firm—Sughrue Mion, PLLC
+(57)
+ABSTRACT
+
+A bicycle wheel rim having a circular base portion including
+
+a proximal Surface and a distal Surface, and a pair of integral
+sidewalls extending generally radially outward from an
+
+intersection region of the proximal Surface and the distal
+
+Surface. The distal Surface of the rim has a central hump, a
+trough contiguous with the central hump extending axially
+outward from the hump, and a flat shelf immediately adja
+cent, contiguous with, and extending axially outward from
+the trough. Another embodiment of the invention is directed
+to a bicycle wheel including the embodied rim, a plurality of
+spokes engaged at respective ends thereof with the rim and
+a hub engaged with the plurality of spoke members at
+opposite ends thereof. Another embodiment of the invention
+is directed to a bicycle wheel assembly comprising the
+embodied wheel and a tube and/or tire mounted on the rim.
+
+29 Claims, 4 Drawing Sheets
+
+500
+536
+520
+
+530
+
+\
+533
+
+

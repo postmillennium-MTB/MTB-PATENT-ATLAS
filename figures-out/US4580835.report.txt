@@ -1,0 +1,80 @@
+patent: US4580835
+source: https://patentimages.storage.googleapis.com/d0/fa/8d/4aad41a4b52c39/US4580835.pdf
+pages: 5
+per-page extracted text length: {1: 1809, 2: 58, 3: 49, 4: 6467, 5: 2742}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+11
+45
+
+Angell et al.
+
+4,156,391 5/1979 Ubezio ............................. 248/162.1
+FOREIGN PATENT DOCUMENTS
+209761 6/1960 Austria ............................. 248/1621
+
+Joseph T. Breeze, 28 Country Club
+
+248/162.1, 404, 411; 267/58, 155
+
+56
+
+References Cited
+U.S. PATENT DOCUMENTS
+510,993 12/1893 Riess .
+585,719 7/1897 Sutton.
+587,672 8/1897 Heyl ................................ 248/404 X
+1,220,890 3/1917 Pronovost ............................. 267/58
+1,405,287 1/1922 Clifford ........
+... 248/61
+
+2,170,098 8/1939 Stephenson ......................... 108/136
+2,890,710 6/1959 Hartman ......................... 267/155 X
+
+3,861,740 1/1975 Tajima et al. .
+
+4,580,835
+Apr. 8, 1986
+
+4,150,851 4/1979 Cienfuegos .
+
+(54) QUICK ADJUSTING SADDLE LOCATOR
+76) Inventors: Joshua J. Angell, 59 Montford Ave.;
+Dr., both of Mill Valley, Calif. 94.941
+21 Appl. No.: 595,811
+Apr. 2, 1984
+22 Filed:
+(51) Int. Cl. ................................................ B62J 1/00
+(52) U.S. C. ..................................... 297/195; 297/.345
+58) Field of Search ....................... 297/195, 345, 347;
+
+Patent Number:
+Date of Patent:
+
+480037 3/967 France .................
+
+... 297/195
+
+242764 11/1925 United Kingdom ................ 267/155
+
+Primary Examiner-William E. Lyddane
+Assistant Examiner-Peter A. Aschenbrenner
+
+Attorney, Agent, or Firm-Manfred M. Warren; Robert
+B. Chickering; Glen R. Grunewald
+57
+
+ABSTRACT
+
+A quick adjusting saddle locator for a bicycle including
+a quick release saddle post holding element and an ex
+ternal spring urging the saddle assembly toward an
+upper position when the saddle is released with a stop
+establishing a pre-set lower position and a pre-set upper
+position being established by the maximum expansion of
+the spring.
+1 Claim, 6 Drawing Figures
+
+

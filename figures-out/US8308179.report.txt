@@ -1,0 +1,115 @@
+patent: US8308179
+source: https://patentimages.storage.googleapis.com/5c/b9/6f/a13436d51df25e/US8308179.pdf
+pages: 12
+per-page extracted text length: {1: 2161, 2: 57, 3: 57, 4: 65, 5: 0, 6: 57, 7: 42, 8: 57, 9: 57, 10: 6916, 11: 7854, 12: 6350}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US0083.08179B2
+
+(12) United States Patent
+Cote et al.
+
+(10) Patent No.:
+
+US 8,308,179 B2
+
+(45) Date of Patent:
+
+(54) BICYCLE WITH INTERNAL STORAGE
+
+(56)
+
+Nov. 13, 2012
+
+References Cited
+
+SYSTEM
+U.S. PATENT DOCUMENTS
+
+(75) Inventors: Mark Cote, Aptos, CA (US); Jean-Luc
+Callahan, San Jose, CA (US);
+
+679,512 A * 7/1901 Rock ............................. 280/201
+2,322,841. A * 6, 1943 Foster .
+280.783
+
+3.269,480 A * 8/1966 Kirby............................ 180,225
+4.513,986 A
+4, 1985 Trimble
+RE33,295 E
+8/1990 Trimble
+
+Christopher P. D'Aluisio, Corralitos,
+CA (US)
+
+5,328,194 A
+
+(73) Assignee: Specialized Bicycle Components, Inc.,
+Morgan Hill, CA (US)
+
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+LLP
+(57)
+
+(21) Appl. No.: 13/087,044
+(22) Filed:
+(65)
+
+Apr. 14, 2011
+Prior Publication Data
+
+US 2012/O261897 A1
+
+(51) Int. Cl.
+B62K 3/02
+
+Oct. 18, 2012
+
+(2006.01)
+
+(52) U.S. Cl. .................................. 280/288.3: 280/288.4
+
+(58) Field of Classification Search .................. 224414
+
+280/201, 288.1, 288.3, 288.4
+
+See application file for complete search history.
+
+7, 1994 Buckler
+
+5,851,017 A 12/1998 Eden
+7,819,413 B2 10, 2010 White
+* cited by examiner
+Primary Examiner — Tony Winner
+(74) Attorney, Agent, or Firm — Michael Best & Friedrich
+ABSTRACT
+
+A bicycle including a front wheel, a rear wheel, and a frame
+supported on the front and rear wheels. The frame includes a
+hollow frame member having a wall with an opening, and a
+flexible bladder positioned in the hollow frame member. A
+stiffening member is positioned along at least a portion of the
+bladder to facilitate insertion of the bladder through the open
+ing and into the frame member. The bicycle further includes
+
+a collar coupled to the open end of the bladder with at least a
+portion of the collar being positioned on an outer Surface of
+the frame member. The bladder includes a first portion adja
+
+cent the open end and generally aligned with a first axis and a
+
+second
+portionaxis
+distalthattoisthenon-parallel
+open end and
+with a second
+to thegenerally
+first axis.aligned
+25 Claims, 8 Drawing Sheets
+
+

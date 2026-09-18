@@ -1,0 +1,163 @@
+patent: US7717212
+source: https://patentimages.storage.googleapis.com/a3/26/ee/589be04ba7d667/US7717212.pdf
+pages: 21
+per-page extracted text length: {1: 2369, 2: 686, 3: 66, 4: 64, 5: 56, 6: 56, 7: 56, 8: 56, 9: 59, 10: 6883, 11: 7803, 12: 8275, 13: 8139, 14: 7866, 15: 7559, 16: 7684, 17: 8021, 18: 8083, 19: 7513, 20: 7105, 21: 4169}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO7717212B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Weagle
+(54) VEHICLE SUSPENSION SYSTEMS FOR
+SEPERATED ACCELERATION RESPONSES
+
+(75) Inventor: David Weagle, Edgartown, MA (US)
+
+Subject to any site the still
+
+patent 1s extended or adjusted under
+
+(22) Filed:
+(65)
+
+8, 2000 Law will et al.
+3/2001 Guenther
+
+6,203,042 B 1
+
+3/2001 Wilcox
+
+3/2001 Klassen et al.
+
+6,237,706 B1
+
+5/2001 Karpiket al.
+
+6,263,994 B1
+
+7, 2001 Eitel
+
+6,378,885 B1
+
+4/2002 Ellsworth et al.
+
+6,471,230 B2
+6,592,108 B1
+
+10/2002 Ellsworth et al.
+7/2003 Luede
+
+6.450,521 B1
+
+U.S.C. 154(b) by 437 days.
+(21) Appl. No.: 11/510,522
+
+May 18, 2010
+
+6,102,421 A
+6,199,886 B1
+6,206,397 B1
+
+(73) Assignee: Split Pivot, Inc., Edgartown, MA (US)
+
+(*) Notice:
+
+US 7,717,212 B2
+
+(45) Date of Patent:
+
+9, 2002 Turner
+
+Aug. 25, 2006
+
+Prior Publication Data
+US 2008/OO67772 A1
+Mar. 20, 2008
+
+(51) Int. Cl.
+B62D 6L/02
+
+(Continued)
+FOREIGN PATENT DOCUMENTS
+FR
+
+(52) U.S. Cl. ....................... 180/227; 280/283; 280/284;
+280/285; 280/286: 280/288
+(58) Field of Classification Search ................. 180/227;
+280/284, 283, 285, 286, 288
+See application file for complete search history.
+(56)
+
+2774966
+
+8, 1999
+
+(2006.01)
+
+References Cited
+U.S. PATENT DOCUMENTS
+439,095 A
+4,789,174 A
+5,121,937 A
+5,217.241 A
+
+10, 1890 Becker
+12/1988 Law will
+6, 1992 Law will
+6, 1993 Girvin
+
+5.244.224 A
+5,306,036 A
+5,409,249 A
+5,441.292 A
+
+9/1993 Busby
+4/1994 Busby
+4/1995 Busby
+8/1995 Busby
+
+5,474,318 A
+5,509,679 A
+5,553,881 A
+5,628,524 A
+5,671,936 A
+5,678,837 A
+5,791.674. A
+5,899,480 A
+
+12/1995 Castellano
+4, 1996 Leitner
+9, 1996 Klassen et al.
+5, 1997 Klassen et al.
+9, 1997 Turner
+10, 1997 Leitner
+8, 1998 DAluisio et al.
+5, 1999 Leitner
+
+(Continued)
+OTHER PUBLICATIONS
+Crestone Peak Bikes, Crestone Peak Bikes '94, printout from website
+http://mombat.org/Crestone.htm, date of publication unknown, 5
+pages, not numbered, publisher name, city and country unknown.
+
+Primary Examiner Lesley Morris
+Assistant Examiner Maurice Williams
+
+(74) Attorney, Agent, or Firm Stahl Law Firm
+(57)
+
+ABSTRACT
+
+The invention relates to Suspension systems comprising, in
+certain embodiments, a pivoting means concentric to a wheel
+rotation axis so that braking forces can be controlled by
+placement of an instant force center, and so that acceleration
+forces can be controlled by a Swinging wheel link.
+64 Claims, 7 Drawing Sheets
+
+16
+
+
