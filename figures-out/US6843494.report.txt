@@ -1,0 +1,136 @@
+patent: US6843494
+source: https://patentimages.storage.googleapis.com/67/ab/ec/976da922ea12fb/US6843494.pdf
+pages: 29
+per-page extracted text length: {1: 2985, 2: 58, 3: 58, 4: 58, 5: 62, 6: 148, 7: 58, 8: 142, 9: 61, 10: 167, 11: 59, 12: 182, 13: 62, 14: 173, 15: 7375, 16: 7734, 17: 7661, 18: 7648, 19: 7991, 20: 7066, 21: 7751, 22: 7729, 23: 7471, 24: 7258, 25: 7076, 26: 7137, 27: 7226, 28: 7174, 29: 4938}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6843494B2
+
+(12) United States Patent
+Lam
+
+(54)
+
+REAR SUSPENSION SYSTEM FOR TWO
+
+WHEELED VEHICLES, PARTICULARLY
+BICYCLES
+
+(75) Inventor: Duhane Lam, Vancouver (CA)
+(73) Assignee: Rocky Mountain Bicycles, Annacis
+Park (CA)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+(21) Appl. No.: 10/222,938
+Aug. 19, 2002
+(22) Filed:
+Prior
+Publication Data
+(65)
+US 2003/0038450 A1 Feb. 27, 2003
+
+Related U.S. Application Data
+Provisional application No. 60/313.802, filed on Aug. 22,
+(60) 2001.
+
+(51) Int. Cl................................................. B62K 25/00
+(52) U.S. Cl. ....................................................... 280/284
+(58) Field of Search ................................. 288/284, 288,
+288/285, 286, 275; 180/227
+
+(56)
+
+(10) Patent No.:
+US 6,843,494 B2
+(45) Date of Patent:
+Jan. 18, 2005
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+4,671,525 A
+6/1987 Ribi
+5,356,165 A 10/1994 Kulhawik et al.
+5,452.910 A
+9/1995 Harris
+5,628,524. A
+5/1997 Klassen et al. ............. 280/284
+5,957,473 A
+9/1999 Law will
+6,102,421. A
+8/2000 Law will et al. ............. 280/284
+6,199,886 B1
+3/2001 Guenther
+6,293,574 B1 9/2001 Storck ........................ 280/284
+6,378,885 B1 * 4/2002 Ellsworth et al............ 280/284
+
+FOREIGN PATENT DOCUMENTS
+DE
+
+G 9416 8O3.2 U1
+
+1/1995
+
+DE
+
+299 11373 U1
+
+11/1999
+
+EP
+EP
+FR
+
+O 827 902 A2
+1 O26 O73 A1
+2774. 966 A1
+
+3/1998
+8/2000
+8/1999
+
+FR
+WO
+
+2 776 981 A3
+WO 99/44880 A1
+
+10/1999
+9/1999
+
+* cited by examiner
+Primary Examiner Lesley D. Morris
+Assistant Examiner Tony Winner
+
+(74) Attorney, Agent, or Firm-Birch, Stewart, Kolasch &
+Birch, LLP.
+(57)
+
+ABSTRACT
+
+In a bicycle comprising a frame having at least a bottom
+bracket, and a rear wheel having a center axis, the improve
+ment including a rear wheel Suspension linkage comprising:
+an upper link member, a lower link member, and a rear Stay
+member; a shock absorber providing compression resistance
+for Said Suspension linkage and having first and Second ends,
+Said rear stay member having upper and lower ends, and
+being adapted to have the rear wheel engaged at Said lower
+end; Said lower link member having front and rear ends, Said
+rear end of Said lower link member being pivotally engaged
+with Said rear Stay member at a point between Said lower and
+upper ends, and Said front end of Said lower link member
+being pivotally engaged with the frame at a first point
+Vertically Spaced from the bottom bracket; Said upper link
+member having a front end, a rear end, and a middle portion,
+Said front end of Said upper link member being pivotally
+engaged with Said first end of Said shock absorber, Said rear
+end being pivotally engaged with Said upper end of Said rear
+Stay member, and Said middle portion being pivotally
+engaged with the frame at a Second point vertically spaced
+from Said first point; and Said Second end of Said shock
+absorber being pivotally engaged with the frame.
+91 Claims, 13 Drawing Sheets
+
+

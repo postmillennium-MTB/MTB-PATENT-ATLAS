@@ -1,0 +1,95 @@
+patent: US5833074
+source: https://patentimages.storage.googleapis.com/7b/ce/43/4e31118ef6e322/US5833074.pdf
+pages: 11
+per-page extracted text length: {1: 1855, 2: 73, 3: 60, 4: 56, 5: 58, 6: 51, 7: 51, 8: 90, 9: 5076, 10: 6479, 11: 4615}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO583.3074A
+
+United States Patent (19)
+
+11 Patent Number:
+
+5,833,074
+
+Phillips
+
+(45) Date of Patent:
+
+Nov. 10, 1998
+
+54
+
+FAST-LOADING, PROTECTIVE BICYCLE
+
+3,861,533 1/1975 Radek ....................................... 211/20
+
+RACK
+
+4.852,779
+
+76
+
+Inventor: Cal M. Phillips, 4435 Jewell La.,
+Platteville, Wis. 53818
+
+21 Appl. No.: 418,586
+22 Filed:
+Apr. 6, 1995
+(51) Int. Cl." ........................................................ A47F 7/00
+
+52 U.S. Cl. ............................... 211/21; 211/17; 2:
+58
+
+Field of Search .................................. 212, 20, 17,
+
+211/22: 224/309,924
+56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+3 7.
+
+2 - a -2
+
+g
+
+SEG
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 2:2.
+
+C-alley . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+3,355,028 11/1967 Mork ......................................... 22
+3,529,737 9/1970 Daugherty ........................... 224/924 X
+3,843,001 10/1974 Willis .................................. 224/924 X
+
+8/1989 Berg .................................... 224/924 X
+
+FOREIGN PATENT DOCUMENTS
+104714
+
+6/1942 Sweden ................................. 224/924
+
+Primary Examiner Robert W. Gibson, Jr.
+Attorney, Agent, or Firm John V. Stewart
+57
+ABSTRACT
+
+A rack for holding bicycles and other velocipeds by their
+tires only. For use as a carrier on motor vehicles, or for
+display racks and the like. Comprises
+
+elongated
+
+U-channel track into which are set the bicycle wheels. An
+inverted U-shaped arm at each end of the track contacts the
+nearest tire of the bicycle above its axle level. At least one
+of the arms pivots, to clamp the tires between the two arms
+and between the arms and the track, restraining the bicycle
+in all directions by its tires, and to quickly release the bicycle
+
+with only one operation.
+7 Claims, 7 Drawing Sheets
+
+

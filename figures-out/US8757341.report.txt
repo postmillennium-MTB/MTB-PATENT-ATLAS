@@ -1,0 +1,168 @@
+patent: US8757341
+source: https://patentimages.storage.googleapis.com/2e/43/66/b9ef0f2bf233e8/US8757341.pdf
+pages: 30
+per-page extracted text length: {1: 2741, 2: 1181, 3: 58, 4: 58, 5: 63, 6: 58, 7: 58, 8: 67, 9: 81, 10: 58, 11: 104, 12: 59, 13: 65, 14: 72, 15: 68, 16: 59, 17: 110, 18: 82, 19: 115, 20: 135, 21: 7174, 22: 7778, 23: 7286, 24: 7316, 25: 6637, 26: 7602, 27: 7655, 28: 7803, 29: 7334, 30: 4208}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US008757341B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Klieber
+(54) HUB WITH STAR RATCHET
+
+(76) Inventor: Jochen Klieber, Tacherting (DE)
+
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+
+Aug. 2, 2011
+
+8E6
+
+Ipagnolo
+
+6.588,564 B1
+
+T/2003 J
+
+tal.
+
+Jager et a
+(Continued)
+
+FOREIGN PATENT DOCUMENTS
+
+(60) Provisional application No. 61/370,375, filed on Aug.
+3, 2010.
+(30)
+Foreign Application Priority Data
+
+CH
+
+558 485
+
+1, 1975
+
+DE
+
+132906
+
+8, 1901
+
+(Continued)
+Primary Examiner — Rodney Bonck
+Attorney, Agent, or Firm — Christie, Parker & Hale,
+
+(DE) ......................... 10 2010 O33 268
+
+Aug. 3, 2010 (DE) ......................... 10 2010os3 272
+
+(57)
+
+ABSTRACT
+
+The present invention relates to a rear wheel hub for a bicycle,
+a rear Wheel
+bicycle, anddaa bicycle. In ord
+order to provid
+proV1de a
+heel for a bicycl
+rear wheel hub which, with a further reduction in weight, still
+allows reliable transmission of force, the hub has a hub body
+(12), an axle body (14), a first bearing device (16) between the
+axle body and the hub body, a freewheel body (18) for accom
+modating at least one sprocket, a second bearing device (20)
+between the axle body and the freewheel body, and a free
+wheel arrangement (22) between the freewheel body and the
+hub body which in a first rotational direction (26) about the
+rotational axis establishes a coupling between the freewheel
+body and the hub body, and in a second rotational direction
+
+(51) Int. Cl
+B60B 27/04
+(2006.01)
+FI6D4L/36
+(2006.01)
+(52) U.S. Cl.
+USPC ........ 192/64; 192/110 B: 301/110.5; 384/545
+(58) Field of Classification Search
+USPC ..................................... 192/64; 384/545, 504
+See application file for complete search history.
+(56)
+
+3:63 A
+
+Feb. 9, 2012
+
+Related U.S. Application Data
+
+Aug. 3, 2010
+
+4, 1981 Barrows
+6, 1986 Ozaki
+5/1996 McConaghy
+
+- ww.
+
+Prior Publication Data
+
+US 2012/OO32498A1
+
+4,261,452 A
+4,593,799 A
+5,515,957 A
+
+6,065,580 A
+5, 2000 Kirk
+6,123,179 A
+9/2000 Chen
+6,309.109 B1 * 10/2001 Chuang ......................... 384.504
+6,478,128 B2 11/2002 Taylor
+6,557.946 B1 5/2003 Gerrit et al.
+
+(21) Appl. No.: 13/196,740
+(65)
+
+Jun. 24,9 2014
+
+5,676.227 A * 10/1997 Hugi ............................... 192,64
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 296 days.
+
+(22) Filed:
+
+US 8,757,341 B2
+
+45) Date of Patent:
+
+References Cited
+U.S. PATENT DOCUMENTS
+295,161 A
+3/1884 Garrood ........................ 384,545
+651,870 A * 6/1900 Little ............................ 384/545
+3,187,870 A
+6, 1965 Sabatini
+3,865,220 A
+2/1975 Thompson, Jr.
+
+(28) which is opposite that of the first rotational direction, the
+freewheel body is freely rotatable with respect to the hub
+body.
+10 Claims, 18 Drawing Sheets
+
+86
+
+90
+
+100
+
+92
+
+91
+
+

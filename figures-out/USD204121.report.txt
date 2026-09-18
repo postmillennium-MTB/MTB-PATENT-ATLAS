@@ -1,0 +1,54 @@
+patent: USD204121
+source: https://patentimages.storage.googleapis.com/65/43/9a/52ceea4c718839/USD204121.pdf
+pages: 1
+per-page extracted text length: {1: 1224}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent Office
+
+Des. 204,121
+Patented Mar. 15, 1966
+
+204,121
+BCYCLE SEAT
+
+Frank P. Brilando, Niles, III., assignor to Arnold, Schwinn
+& Co., Chicago, Ill., a corporation of Illinois
+Filed Jan. 15, 1965, Ser. No. 83,469
+Term of patent 14 years
+(C. D90-16)
+
+FIG. 1 is a side elevational view of a bicycle seat show
+ing my new design, the broken line portions of a bicycle
+being included for illustrative purposes only;
+FIG. 2 is a fragmentary enlarged top plan view thereof;
+FIG. 3 is a fragmentary elevational view of the side
+opposite that shown in FIG. 1;
+FIG. 4 is a fragmentary rear elevational view thereof;
+FIG. 5 is a fragmentary front elevational view thereof;
+
+FIG. 6 is a side elevational view of a modified form of
+
+the bicycle seat shown in FIG. 1.
+I claim:
+
+The ornamental design for a bicycle seat, as shown
+and described.
+
+References Cited by the Examiner
+UNITED STATES PATENTS
+
+D. 200,947
+
+4/1965 Bird --------------- D90-16
+OTHER REFERENCES
+
+American Bicyclist & Motorcyclist, March 1961, page
+54, transversely striped seat cover, bottom of page.
+American Bicyclist & Motorcyclist, June 1963, page 9,
+seat on Schwinn "Sting-Ray.”
+
+WALLACE R. BURKE, Primary Examiner.
+CONRADA, BOUSQUET, Examiner.
+
+

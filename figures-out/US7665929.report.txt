@@ -1,0 +1,129 @@
+patent: US7665929
+source: https://patentimages.storage.googleapis.com/e2/4a/6c/f5217480dbf6a3/US7665929.pdf
+pages: 15
+per-page extracted text length: {1: 2508, 2: 65, 3: 65, 4: 57, 5: 57, 6: 72, 7: 0, 8: 250, 9: 7227, 10: 7387, 11: 7820, 12: 8034, 13: 7900, 14: 7141, 15: 6315}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO7665929B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Barker, III et al.
+
+US 7,665,929 B2
+
+(45) Date of Patent:
+
+(54) STARTING GATE FOR BMX AND MOUNTAIN
+
+Feb. 23, 2010
+
+4,134.230 A * 1/1979 Roy .............................. 49, 49
+
+BKE RACING
+
+5,466,088 A * 11/1995
+
+(75) Inventors: Pierce Barker, III, Cherry Valley, IL
+(US); Edmund W. Doherty,9 Jr.,* ? Oregon
+
+IL (US); Roger Johns, Lisle, IL (US)
+
+2005, OO69383 A1
+2006/0029467 A1
+
+ck
+
+... 404f6
+
+3/2005 Gunderson ..................... 404f6
+2/2006 Johnson ....................... 404/60
+
+2007/0207868 A1* 9/2007 Burry et al. ................... 472/85
+2008/0222960 A1*
+
+9, 2008 Williams et al. .............. 49,324
+
+(73) Assignee: ProStuff LLC, Rockford, IL (US)
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 50 days.
+
+Primary Examiner Gary S Hartmann
+(74) Attorney, Agent, or Firm Reinhart Boerner Van Deuren
+
+(21) Appl. No.: 11/739,977
+(22) Filed:
+Apr. 25, 2007
+(65)
+
+* cited by examiner
+
+(57)
+
+ABSTRACT
+
+Prior Publication Data
+
+US 2007/0248409 A1
+
+Oct. 25, 2007
+
+Related U.S. Application Data
+(60) Provisional application No. 60/745,600, filed on Apr.
+25, 2006.
+
+(51) Int. Cl.
+EOIF I3/04
+(2006.01)
+(52) U.S. Cl. ..................... 404/6: 404/9:404/10; 49/29:
+49/49
+(58) Field of Classification Search ..................... 49/23,
+49/33, 49, 131; 404/6, 9, 10; 256/26, 73
+See application file for complete search history.
+(56)
+References Cited
+
+A starting gate apparatus and method for use in bicycle races
+
+is provided. The starting gate includes a main platform, a
+plurality of gates connected to the main platform and a gate
+actuation arrangement to drive the gates from a bike stopping
+position to a bike releasing position. The gate actuation
+arrangement permits variations in at least one gate actuation
+parameter including an intermediate stopping position along
+a gate travel path, the driving force of the gate along the gate
+travel path, and/or an interval between initiation of an actua
+tion sequence and actuation of the gate of the starting gate.
+Embodiments of the gate actuationarrangement permitagate
+to independently act on an obstruction, provide for reversing,
+momentarily actuation of the gate during gate actuation or
+varying the duration or disposition of the interval of the gate
+actuation sequence.
+
+U.S. PATENT DOCUMENTS
+
+12 Claims, 7 Drawing Sheets
+
+3,994,491 A * 11/1976 Mascotte et al. .............. 472/85
+
+14
+58
+30
+
+64
+
+62
+85
+
+? 72 74
+
+78
+
+44
+
+

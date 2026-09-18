@@ -1,0 +1,151 @@
+patent: US7712566
+source: https://patentimages.storage.googleapis.com/d0/7d/b6/15f5b6476b0146/US7712566.pdf
+pages: 13
+per-page extracted text length: {1: 2178, 2: 56, 3: 59, 4: 42, 5: 302, 6: 56, 7: 56, 8: 56, 9: 56, 10: 56, 11: 6830, 12: 6844, 13: 530}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO7712566B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Jordan et al.
+(54) BICYCLE TRANSMISSION
+
+(75) Inventors: Brian Jordan, Chicago, IL (US); Kevin
+Wesling, Lombard, IL (US);
+is:
+r
+t
+shiftopher Shipman, Chicago, IL
+
+May 11, 2010
+
+2,189,220 A
+4,854,191 A
+
+2, 1940 Osborne ..................... 475/258
+8/1989 Nagano
+
+5,303,942 A
+
+4/1994 Schlumpf
+
+5,609,071 A
+5,620,384 A
+5,895,336 A
+2003. O186776 A1
+
+(73) Assignee: SRAM, LLC, Chicago, IL (US)
+
+(*) Notice:
+
+US 7,712,566 B2
+
+(45) Date of Patent:
+
+3/1997 Schlumpf
+4, 1999 Yoo
+4/1997 Kojima
+
+10, 2003 Wu
+
+FOREIGN PATENT DOCUMENTS
+
+Subject to any disclaimer, the term of this
+
+E.
+
+g
+
+patent is extended or adjusted under 35
+
+WO
+
+WO99.461.59
+
+U.S.C. 154(b) by 0 days.
+
+s f
+
+g
+9, 1999
+
+(21) Appl. No.: 12/188,889
+
+* cited by examiner
+Primary Examiner Kevin Hurley
+
+(22) Filed:
+
+Assistant Examiner—Levon Fiore
+
+Aug. 8, 2008
+
+(74) Attorney, Agent, or Firm Milan Milosevic: Lisa
+(65)
+
+Prior Publication Data
+
+US 2008/O3OOO96A1
+
+Serdynski
+
+Dec. 4, 2008
+
+(57)
+
+ABSTRACT
+
+Related U.S. Application Data
+(63) Continuation of application No. 1 1/734.236, filed on
+
+A bicycle transmission assembly that is mountable to a bot
+tombracket shell of a bicycle frame. The bicycle transmission
+
+(51) Int. Cl.
+
+mounting system. The input crank assembly is mounted to a
+
+Apr. 11, 2007
+• us
+FI6H 7/8
+
+s1 - Ys
+
+(2006.01)
+
+(52) U.S. Cl
+
+rotatable crank axle mounted to the bottom bracket shell. The
+
+180/260
+
+ir grgrrr.
+(58) Field of Classification Seash28.473,333,
+See application file for complete search history s
+
+(56)
+
+assembly includes an input crank assembly, an output chain
+ring, a planetary gear mechanism, a control system and a
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+1,395,067 A * 10, 1921 Warren ....................... 475,312
+
+planetary gear mechanism is mounted to the bottom bracket
+shell and provides a plurality of transmission paths. The plan
+
+etary gear mechanism includes a Sun gear, a ring gear and a
+locking element operatively connecting the Sun gear and the
+ring gear. The control system is operatively connected to the
+planetary gear mechanism for selecting one of the transmis
+sion paths.
+p
+
+12 Claims, 9 Drawing Sheets
+
+
