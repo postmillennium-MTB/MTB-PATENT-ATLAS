@@ -1,0 +1,139 @@
+patent: US6257676B1
+source: https://patentimages.storage.googleapis.com/42/50/7a/c626509ed01f32/US6257676.pdf
+pages: 11
+per-page extracted text length: {1: 3395, 2: 57, 3: 57, 4: 57, 5: 57, 6: 6604, 7: 7502, 8: 7755, 9: 7486, 10: 6389, 11: 2457}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6257676B1
+
+(12) United States Patent
+Lacombe et al.
+
+(10) Patent No.:
+
+4444044
+01.03724
+0615865
+23.51803
+
+(54) BICYCLE RIM PROVIDED FOR A
+
+TUBELESS ASSEMBLY AND BICYCLE
+WHEEL
+
+(75) Inventors: Jean-Pierre Lacombe, Marcellaz
+Albanais, Jean-Mierre Mercat, Saint
+Trivier Sur Moignans, both of (FR)
+(73) Assignee: Mavic S.A., Sur Moignans (FR)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+U.S.C. 154(b) by 0 days.
+(21) Appl. No.: 09/121,704
+(22) Filed:
+Jul. 24, 1998
+(30)
+Foreign Application Priority Data
+Jul. 25, 1997
+
+(FR) .................................................. 97 O9928
+
+(51) Int. Cl." ........................................................ B60B 1/02
+(52) U.S. Cl. ................................................. 301/58; 301/97
+(58) Field of Search .............................. 152/381.3,381.6,
+152/427; 301/58, 55, 95, 96, 97, 98
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+365,091
+6/1887 Owen ................................... 152/246
+2.937,905 * 5/1960 Altenburger ........................... 301/97
+3,008,770 11/1961 Mueller .................................. 29/512
+5,228,756
+7/1993 Krampera ............................... 301/58
+5,490,719
+2/1996 Lew ...................................... 301/5.1
+5,499,864
+3/1996 Klein et al. ............................ 301/95
+5,509,438 * 4/1996 Leonard et al. ..
+... 137/231
+5.538,058
+7/1996 Aloy ..............
+152/381.5
+5,651,591
+7/1997 Mercat et al. ......................... 301/95
+5,653,510
+8/1997 Osborne ................................. 301/95
+5,806,935
+9/1998 Shermeister ........................... 301/58
+5,941,606
+8/1999 Chen ...................................... 301/58
+5,988,764 * 11/1999 Deetz ..................................... 301/95
+FOREIGN PATENT DOCUMENTS
+
+4206311
+
+9/1993 (DE).
+
+US 6,257,676 B1
+
+(45) Date of Patent:
+
+Jul. 10, 2001
+
+6/1996 (DE).
+3/1984 (EP).
+9/1994 (EP).
+12/1977 (FR).
+OTHER PUBLICATIONS
+ss
+
+“Tubeless Tires,” Mountainbike.com, pp. 56-57, Nov.
+2000.*
+
+“Taking Stock in Ourselves,” mbaction.com, p. 36, Jan.
+2001.*
+
+“Mavic Crossroc Tubeless Wheelset,” Mountainbike.com,
+
+pp. 50–54, Feb. 2001.*
+“Wheelset Mavic Crossmax UST Product Reviews.” 13
+pages, Nov. 2000.*
+“Tubeless Wheelset,” Mountain Bike Action, Jan. 2000.*
+“Tubeless Tire, Mountian Bike Action, Jan. 2001.*
+Mountain Bike Action, p. 49, Oct. 2000.*
+Mountain Bike Action, p. 72, Feb. 2001.*
+“Taking a Close Look at High-2001 Wheels,” mbaction
+.com, pp. 108-116, Jan. 2001.*
+Felton, Vernon, “What Goes Round,” Bike, pp. 52-54, Jan.
+2000.*
+
+* cited by examiner
+Primary Examiner S. Joseph Morano
+ASSistant Examiner-Long Bao Nguyen
+
+(74) Attorney, Agent, or Firm-Greenblum & Bernstein
+P.L.C.
+
+(57)
+
+ABSTRACT
+
+A rim for a bicycle wheel that includes, at its periphery, an
+annular channel designed to receive a tire, Such channel
+being demarcated by an upper bridge devoid of openings
+with the exception of the valve opening, and two lateral
+flanges, Such flanges having hooks for gripping the tire. The
+upper bridge has a narrow and recessed central groove
+demarcated by a groove base and two lateral walls, the rim
+well being bordered by two shoulders that are oblique from
+the well towards the flanges. The invention is also related to
+a wheel having Such a rim and a wheel equipped with a tire
+mounted without an air tube and having Such a rim.
+36 Claims, 4 Drawing Sheets
+
+30
+
+

@@ -1,0 +1,154 @@
+patent: US5095770A
+source: https://patentimages.storage.googleapis.com/95/81/a7/7186ad2dfc4bfa/US5095770.pdf
+pages: 9
+per-page extracted text length: {1: 2666, 2: 82, 3: 51, 4: 6417, 5: 6704, 6: 3520, 7: 543, 8: 2107, 9: 236}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+|||||||||||IIIHIIII
+
+O
+
+USO05O9577OA
+
+United States Patent (19)
+
+11 Patent Number:
+
+5,095,770
+
+Rader, III
+
+45) Date of Patent:
+
+Mar. 17, 1992
+
+(54) STEERING
+WHEELED BEARING
+VEHICLE ASSEMBLY FOR
+
+FOREIGN PATENT DOCUMENTS
+O561703 10/1923 France
+
+76
+
+Inventor:
+
+Homer J. Rader, III, 4344
+
+Mockingbird Pkwy., Dallas, Tex.
+75205
+
+(21 Appl. No.: 590,575
+
+1 10558 10/1955 France .
+
+1-68294 5/1987 Japan .
+Primary Examiner-Rodney H. Bonck
+Assistant Examiner-Winnie Yip
+Attorney, Agent, or Firm-David L. McCombs
+
+22 Filed:
+Sep. 28, 1990
+5) Int. Cl. .............................................. B62K 21/12
+52 U.S. Cl. .................................. 74/551.1;74/551.3;
+280/279; 403/24
+58) Field of Search .................... 74/551, 551.1, 551.2,
+
+(57)
+ABSTRACT
+A steering bearing assembly is provided for connecting
+the front wheel and handle bars of a bicycle to the
+frame. The assembly includes a steerer tube, connected
+to the front wheel and passing through a head tube on
+
+56)
+
+References Cited
+
+within the head tube. The upper bearing assembly has a
+
+U.S. PATENT DOCUMENTS
+
+first race connected to the head tube and a second race
+
+681,325 8/1901 Hull t .................................. is
+
+having a tapered contact surface. Above the second
+
+74/551.3; 280/275-280, 403/24, 88
+
+the frame. Bearing assemblies on the upper and lower
+ends of the head tube allow the steerer tube to pivot
+
+2,310,064 2/1943 Conti ................................... 280/279
+3,136,149 6/1964 Klein, Jr. .
+... 74/551.1
+
+race on the steerer tube is a compression ring having a
+gap so the ring can be compressed against the steerer
+
+3,260,535 7/1966 Jaulmes ...................
+
+... 280/279
+
+tube. The connector of a stem is located on the steerer
+
+3,284, 114 1 1/1966 McCord, Jr. et al. ...... ... 287/58
+3,306,684 2/1967 Klein, Jr. .............
+... 280/279
+3.942,822 3/1976 Lewis ...........
+74/551.3
+
+tube above the compression ring. The handle bars of the
+bicycle are connected to the stem. An adjuster nut is
+threaded into the upper end of the steerer tube, exerting
+
+3. 10/1983
+63. St.
+St.
+4,410, 197
+Hillaire.......
+
+sion ring.
+Thethesecond
+compresses
+ring,
+locking
+upperrace
+bearing
+assemblythein compression
+place on the
+
+4,323,263 4/1982 Cook et al.
+
+33.
+
+E.
+
+r 280/275
+
+"- 32.
+E
+
+Eat - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -.3%
+
+4,653,768 3/1987 Keys et al. ...
+
+74/5511
+
+a downward force on the connector and the compres
+
+steerer tube. The connector is then clamped onto the
+
+steerer tube.
+
+4,783,187 1 1/1988 McMurtrey .......................... 403/24
+4,794,815 l/1989 Borromeo .......................... 74/55
+
+10 Claims, 2 Drawing Sheets
+
+s
+
+N
+
+
