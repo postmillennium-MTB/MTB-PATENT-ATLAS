@@ -1,0 +1,148 @@
+patent: US6206397
+source: https://patentimages.storage.googleapis.com/79/72/5c/cdc53b9cc4bb4a/US6206397.pdf
+pages: 41
+per-page extracted text length: {1: 2798, 2: 58, 3: 58, 4: 58, 5: 58, 6: 86, 7: 58, 8: 66, 9: 92, 10: 90, 11: 76, 12: 72, 13: 68, 14: 150, 15: 237, 16: 59, 17: 0, 18: 0, 19: 347, 20: 101, 21: 290, 22: 112, 23: 120, 24: 66, 25: 59, 26: 69, 27: 199, 28: 5448, 29: 6708, 30: 7461, 31: 7414, 32: 7737, 33: 7775, 34: 7472, 35: 6319, 36: 6960, 37: 7244, 38: 7502, 39: 7416, 40: 6080, 41: 4017}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6206397 B1
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Klassen et al.
+(54) BICYCLE WHEEL TRAVEL PATH FOR
+SELECTIVELY APPLYING CHAINSTAY
+LENGTHENING EFFECT AND APPARATUS
+FOR PROVIDING SAME
+
+(76) Inventors: James B. Klassen, 240-200 Woodfield
+
+(*) Notice:
+
+US 6,206,397 B1
+
+(45) Date of Patent:
+
+*Mar. 27, 2001
+
+944,795
+
+12/1909 Leet et al. ............................ 280/284
+
+4,671,525
+4,789,042
+4,789,174
+5,121.937
+
+6/1987 Ribi...................................... 280/284
+12/1988 Pitts .....
+280/284 X
+12/1988 Law will ............................... 280/284
+6/1992 Law will ...
+... 280/284
+
+5,259,637 * 11/1993 Busby .
+
+. . 280/284
+
+P1. S.W., Calgary, Alberta (CA), T2W
+3T8; Jamie W. Calon, #237 1421 7th
+Avenue N.W., Calgary, Alberta (CA)
+
+5,306,036
+4/1994 Busby .
+... 280/284
+5,409.249 * 4/1995 Busby .................................. 280/284
+5,452,910
+9/1995 Harris ..................
+280/283 X
+
+T2N OZ3 . . . .3
+
+5,791,674 * 8/1998 DAluisio et al. ................... 280/284
+
+s
+
+s
+
+Subject to any disclaimer, the term of this
+
+p
+
+is Sh G. adjusted under 35
+
+FOREIGN PATENT DOCUMENTS
+
+692011
+
+5/1940 (DE) ..................................... 280/284
+
+y U dayS.
+
+933079
+
+4/1948 (FR) ..................................... 280/284
+
+This patent is Subject to a terminal dis
+claimer.
+
+* cited by examiner
+
+a --
+
+(21) Appl. No.: 09/039,135
+(22) Filed:
+Mar 13, 1998
+Related U.S. Application Data
+
+Primary Examiner Kevin Hurley
+(74) Attorney, Agent, or Firm-Robert B. Hughes; Hughes
+& Schacht, P.S.
+(57)
+
+ABSTRACT
+
+(63) Siyagiri gig S; Siles
+
+A rear Suspension System for a bicycle. The System directs
+
+ation-in-part of application No. 08/377,931, filed on Jan. 25,
+
+the rear wheel along a predetermined, S-shaped path as the
+
+1997.
+
+is needed to counterbalance the pedal inputs of the rider; at
+
+1995, now Pat. No. 5,553,881.
+(60) Provisional application No. 60/040,702, filed on Mar. 13,
+(51) Int. Cl. ................................................. B62K 25/28
+(52) U.S. Cl. .............................................................. 280/284
+(58) Field of Search ..................................... 280/283, 284,
+280/285, 286, 275
+(56)
+
+References Cited
+
+Suspension is compressed. The path is configured to provide
+a chainstay lengthening effect only at those points where this
+
+those points in the wheel travel path where there is a
+chainstay lengthening effect, the chain tension which results
+from the pedal inputs exerts a downward force on the rear
+wheel, preventing unwanted compression of the Suspension.
+The System employs a dual eccentric crank mechanism
+mounted adjacent the bottom bracket shell to provide the
+desired control characteristics.
+
+U.S. PATENT DOCUMENTS
+
+712,784
+
+11/1902 Ellis ..................................... 280/284
+64
+
+15 Claims, 26 Drawing Sheets
+
+
