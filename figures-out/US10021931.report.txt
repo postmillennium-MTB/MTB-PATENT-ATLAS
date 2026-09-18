@@ -1,0 +1,158 @@
+patent: US10021931
+source: https://patentimages.storage.googleapis.com/e0/87/9b/78e6b5361f1529/US10021931.pdf
+pages: 12
+per-page extracted text length: {1: 2530, 2: 1514, 3: 137, 4: 99, 5: 304, 6: 362, 7: 91, 8: 200, 9: 115, 10: 6574, 11: 7513, 12: 5208}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+TOMONIDAN ||MUL NIIN
+US010021931B2
+
+(12) United
+States Patent
+Tulley
+
+( 10) Patent No.: US 10 ,021,931 B2
+(45 ) Date of Patent:
+
+( 54 ) HELMET-CHIN MOUNT FOR
+
+ACCESSORIES, INCLUDING CAMERAS
+( 71 ) Applicant: Eric Brock Tulley , Bonney Lake, WA
+
+( 56 )
+
+(US )
+
+References Cited
+U .S . PATENT DOCUMENTS
+4,270 ,679 A * 6 /1981 Gildea ............
+
+4,670,912 A * 6 / 1987 Hart
+
+(72 ) Inventor: Eric Brock Tulley , Bonney Lake, WA
+(US )
+(73 ) Assignee : SOPRO MOUNTS INC ., Blaine , WA
+
+A42B 3 /04
+
+2 /422
+A42B 3 /04
+
+2 /422
+4 ,697,783 A * 10 /1987 Kastendieck .......... A42B 3 /042
+2 / 10
+D301,395 S
+6 / 1989 Meldrum
+4 ,953 ,766 A * 9 / 1990 Cruickshank ............ A42B 1/24
+
+(US )
+
+( * ) Notice:
+
+Jul. 17 , 2018
+
+2 /422
+
+(Continued )
+FOREIGN PATENT DOCUMENTS
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+U .S .C . 154 (b ) by 0 days.
+(21) Appl. No.: 14 /669,874
+
+KR
+
+10 - 2010 -0050748 A
+
+5 /2010
+
+OTHER PUBLICATIONS
+
+( 22 ) Filed : Mar. 26 , 2015
+Prior Publication Data
+(65 )
+US 2015 /0282548 A1 Oct. 8 , 2015
+
+International Preliminary Report on Patentability dated Oct. 4 ,
+
+2016 , issued in corresponding International Application No. PCT /
+US2015 /023190 , filed Mar. 27 , 2015 , 8 pages .
+
+(Continued )
+
+Related U .S . Application Data
+
+(60 ) Provisional application No.61/974,271, filed on Apr.
+2 , 2014 .
+
+Primary Examiner - Richale Quinn
+(74 ) Attorney, Agent, or Firm — Christensen O 'Connor
+Johnson Kindness PLLC
+
+ABSTRACT
+
+(57)
+
+The conventional surveillance angle , in which activities are
+observed from a helmet camera mounted at the top , sepa
+
+(51) Int. Ci.
+
+( 2006 .01)
+
+rates a participant of an activity , such as sports , from his
+immediate experience . A different point of view can be taken
+
+??? ............... A42B 3 /042 (2013.01); A42B 3/04
+
+from the camera when it is mounted via the Y - shaped
+accessory mount over the apogee of the helmet chin bar. This
+point of view is a sousveillance in which the observation is
+
+A42B 3 / 04
+A42B 3 / 30
+
+( 2006 .01)
+
+(52) U . S . CI.
+
+(2013 .01 ); A42B 3/306 (2013.01 )
+
+(58 ) Field of Classification Search
+
+CPC ......... A42B 3 /0406 ; A42B 3 /042; A42B 3 /04 ;
+A16M 13/ 00
+
+See application file for complete search history.
+
+down at a human level so as to allow a consumer of the
+
+recorded contents of the sousveillance to connect with the
+sportsman by vicariously undergoing the immediacy of his
+
+sporting experience .
+16 Claims, 7 Drawing Sheets
+
+SE*
+
+??????
+
+1204
+
+necedobon
+
+100
+p 1084
+
+25iFI
+
+-- - -
+
+122A
+
+her
+108B
+
+
