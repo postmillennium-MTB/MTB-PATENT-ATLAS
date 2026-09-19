@@ -1,0 +1,152 @@
+patent: US9643683
+source: https://patentimages.storage.googleapis.com/7e/ff/e2/774d081c9512bc/US9643683.pdf
+pages: 22
+per-page extracted text length: {1: 2417, 2: 704, 3: 56, 4: 56, 5: 101, 6: 88, 7: 63, 8: 79, 9: 56, 10: 56, 11: 56, 12: 57, 13: 6543, 14: 7683, 15: 6834, 16: 7599, 17: 7687, 18: 7713, 19: 7657, 20: 7530, 21: 6714, 22: 463}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO9643683B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 9,643,683 B2
+May 9, 2017
+(45) Date of Patent:
+
+Laprade
+
+(54)
+
+ELECTRIC BICYCLE AND PROPULSION
+SYSTEM THEREFOR
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+(71) Applicant: PROPULSION POWERCYCLE
+INC., Saint-Georges-de-Beauce (CA)
+
+729, 197 A
+
+1807220
+
+(72) Inventor: Paul Laprade, Delson (CA)
+
+(Continued)
+
+(73) Assignee: PROPULSION POWERCYCLE
+INC., Saint-Georges-de-Beauce (CA)
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+FOREIGN PATENT DOCUMENTS
+CN
+CN
+
+24O1447 Y
+201447041 U.
+
+OTHER PUBLICATIONS
+
+European Search Report, Application No. EP 15172283, Oct. 12,
+
+Jun. 16, 2015
+
+(65)
+
+2015.
+
+Prior Publication Data
+
+US 2015/036O748 A1
+
+10, 2000
+5, 2010
+
+(Continued)
+
+(21) Appl. No.: 14/740,818
+(22) Filed:
+
+5, 1903 Mathieu
+
+5,826,675 A * 10/1998 Yamamoto ............... B62M 6.55
+
+Dec. 17, 2015
+
+Primary Examiner — Joseph Rocca
+Assistant Examiner — Marlon A Arce
+
+(74) Attorney, Agent, or Firm — Norton Rose Fulbright
+Canada LLP
+
+Related U.S. Application Data
+(60) Provisional application No. 62/012,542, filed on Jun.
+16, 2014.
+
+(51)
+
+Int. Cl.
+
+B62M 6/70
+HO2K 7/10
+B62M 6/55
+
+(52)
+
+(2010.01)
+(2006.01)
+(2010.01)
+
+ABSTRACT
+
+drive of the electric motor to the rear wheel. The transmis
+
+U.S. C.
+
+CPC ................ B62M 6/70 (2013.01); B62M 6/55
+
+(2013.01); H02K 7/1004 (2013.01); Y10T
+29/497.18 (2015.01)
+(58)
+
+(57)
+
+An electric propulsion system, an electric bicycle, and a
+method for converting a non-electric bicycle into an electric
+bicycle are disclosed. The electric propulsion system has an
+electric motor with a motor output shaft rotatable about a
+motor shaft axis. An output end of the motor output shaft is
+disposed on a first side. A transmission interconnects the
+electric motor and a drive chain of the bicycle to transmit a
+
+Field of Classification Search
+
+CPC ......... B62M 6/70, B62M 6/55; H02K 7/1004;
+Y1OT 29/49718
+
+See application file for complete search history.
+
+sion has a rotatable driven member on the first side engaged
+with the output end and is rotated thereby. A drive sprocket
+on the second side and rotatable about a drive sprocket axis
+is connected to the driven member by a transmission shaft.
+The drive sprocket engages the drive chain to transmit the
+drive of the electric motor thereto.
+
+18 Claims, 10 Drawing Sheets
+
+Go is
+
+sara
+
+es
+
+Ni,
+
+

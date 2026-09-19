@@ -1,0 +1,164 @@
+patent: US5678837
+source: https://patentimages.storage.googleapis.com/cf/fe/97/94a1afe9952000/US5678837.pdf
+pages: 8
+per-page extracted text length: {1: 3738, 2: 59, 3: 51, 4: 35, 5: 7133, 6: 6964, 7: 7232, 8: 4493}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+III
+USOO5678837A
+
+United States Patent (19)
+
+11 Patent Number:
+45 Date of Patent:
+
+Leitner
+54 REAR SUSPENSION FOR BICYCLES
+76 Inventor: Horst Leitner, 429 Aster St., Laguna
+
+4,322,088 3/1982 Miyakoshi et al...................... 280/284
+280/277
+4,440,413 471984 Miyakoshi et al. .
+280/284
+4,529,056 7/1985 Kreuz ..................
+1807227
+4.579,189 4/1986 Tanaka ...
+180/227
+4,582,343 4/1986 Waugh ...
+. 280/284
+4,679,811 7/1987 Shuler .....
+280/284
+4,789,174 12/1988 Law will ......
+. 280/284
+5,000470 3/1991 Kamler et al. ..
+280/275
+5,121,937 6/1992 Law will ..........
+280/284
+5,129,665 7/1992 Sutter et al. .
+280/274
+5,217.241 6/1993 Girvin .........
+280/284
+5,226,674 7/1993 Buell ...
+. 280/284
+4,421,337 12/1983 Pratt ....................
+
+Beach, Calif. 92651
+
+*
+
+Notice:
+
+The term of this patent shall not extend
+beyond the expiration date of Pat. No.
+5,509,679.
+
+(21) Appl. No.: 633,201
+22 Filed:
+Apr. 16, 1996
+Related U.S. Application Data
+63 Continuation of Ser. No. 303,568, Sep. 9, 1994, Pat No.
+
+5,332,246 7/1994 Buell .......
+280/288
+5,337,861 8/1994 Romano .................................. 280/261
+5,370,411 12/1994 Takamiya et al.
+... 280/284
+5,409.249 4/1995 Busby ..................................... 280/284
+
+5,441.292 8/1995 Busby .....
+280/284
+5,509,679 4/1996 Leitner .................................... 280/284
+
+5,509,679, which is a continuation of Ser. No. 6,325, Jan. 21,
+1993, abandoned, which is a continuation-in-part of Ser. No.
+827,089, Jan. 21, 1992, abandoned.
+
+FOREIGN PATENT DOCUMENTS
+
+(51 int. Cl. .............. B62K 25/20
+52 U.S. Cl. ..............
+280/284; 280/261
+58 Field of Search ..................................... 280/283, 284,
+280/285,286, 288,275, 710, 716, 259,
+260, 261
+56
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+414,121 11/1889 Williams ................................. 280/284
+439,095 10/1890 Becker.
+467,794 1/1892 Ellis ........................................ 280/284
+494,803 4/1893 Cable ...
+... 280/284
+564,319 7/1896 Travis ...
+... 280/284
+578,615 3/1897 Travis ...
+... 280/284
+603,418 5/1898 Adriance ..
+... 280/284
+644,788 3/1900 Williams
+... 280/284
+
+657,667 9/1900 Mills .........
+
+667,594 2/1901 Soucy, Jr. ..
+708,202 9/1902 Case ......
+
+712,784 11/1902 Ellis.
+1,047,430 12/1912 Michaelson.
+1283,030 10/1918 Ashton.
+
+.280284
+
+... 280/284
+... 280/284
+
+1298,958 4/1919 Johnston.
+2,863,672 12/1958 Murata .................................... 280/283
+3,819,002 6/1974 Heathwaite et al..
+3,931,990 1/1976 Knapp ..................................... 280/283
+4,039,200 8/1977 McGonegle ..
+... 280/284
+4,058,181 11/1977 Buell ......................................... 180/32
+4299,582 11/1981 Leitner .................................... 474/109
+
+5,678,837
+*Oct. 21, 1997
+
+221626
+
+9/1957 Australia .
+
+383892 5/1954 Belgium.
+98.6467
+
+8/1951 France.
+
+OTHER PUBLICATIONS
+
+S-Works Bicycles, 1993 Catalog, pp. 1-15.
+Primary Examiner-Anne Marie Boehler
+Attorney, Agent, or Firm-Knobbe, Martens Olson & Bear,
+LLP.
+
+57
+
+ABSTRACT
+
+Arear wheel suspension for a bicycle includes paired lower
+arm members pivotally connected to the bicycle frame seat
+tube such that they can pivot about an axis situated above the
+center of the bottom bracket, paired upper arm members
+adapted to receive the rear wheel axle at hub points located
+on an axis situated above their lower ends and pivotally
+connected to the respective lower arm members such that
+they can pivot about an axis near the rear ends of the lower
+arm members, and a shock absorber mechanism associated
+with the upper ends of the upper arm members and pivotally
+connected to an upper pivot point on the seat tube for
+limiting the path and the extent of movement of the upper
+ends of the upper arm members.
+14 Claims, 3 Drawing Sheets
+
+

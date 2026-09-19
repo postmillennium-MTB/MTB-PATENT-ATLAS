@@ -1,0 +1,100 @@
+patent: US6263759
+source: https://patentimages.storage.googleapis.com/0f/73/cc/c30c48ae579d84/US6263759.pdf
+pages: 5
+per-page extracted text length: {1: 2067, 2: 57, 3: 71, 4: 6629, 5: 6912}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6263759B1
+
+(12) United States Patent
+Hollingsworth et al.
+(54) REMOVABLE, NON-TURNING HANDLEBAR
+GRIP
+
+(10) Patent No.:
+
+US 6,263,759 B1
+
+(45) Date of Patent:
+3,832,912
+
+Jul. 24, 2001
+
+9/1974 Edwards .............................. 74/551.8
+
+4,535,649
+8/1985 Stahel .................................. 74/551.9
+5,315,895 * 5/1994 Kattus et al.
+... 74/551.8
+
+(75) Inventors: Joseph E. Hollingsworth, Redondo
+
+5,904,442
+
+5/1999 Takeda ................................. 403/392
+
+Beach; E. David Grimes, Norco, both
+
+5,934,154 * 8/1999 Noel ........................
+
+of CA (US)
+
+6,035,742 * 3/2000 Hollingsworth et al. ........... 74/551.9
+
+(73) ASSignee: yer conse Marketing Inc.,
+
+* cited by examiner
+
+(*) Notice:
+
+Primary Examiner David A. Bucci
+Assistant Examiner Vicky A. Johnson
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+U.S.C. 154(b) by 0 days.
+(21) Appl. No.: 09/395,278
+(22) Filed:
+Sep. 13, 1999
+Related U.S. Application Data
+
+(63) Continuation-in-part of application No. 08/876,361, filed on
+Jun. 16, 1997, now Pat. No. 6,035.742.
+
+... 74/551.9
+
+(74) Attorney, Agent, or Firm-Edgar W. Averill, Jr.
+(57)
+ABSTRACT
+A handlebar grip assembly which can be removably attached
+to a handlebar. The grip assembly when attached will not
+rotate around the handlebar in use, and yet is easily removed
+y
+y
+from the handlebar. The handlebar grip assembly has an
+
+(51) Int. Cl." ..................................................... B62K226
+
+inner rigid shell with outwardly extending protrusions at
+
+(52) U.S. Cl. ............................................................. 74/551.9
+(58) Field of Search ................................. 74/5518, 551.9
+
+each end. A pair of rigid clamps pass over the outwardly
+extending protrusions and tighten against the handlebar to
+hold the grip assembly in place. A Soft, flexible grip portion
+is affixed to the outer surface of the inner rigid shell.
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+568,024
+
+8/1896 Gorman .............................. 74/551.9
+
+6 Claims, 2 Drawing Sheets
+
+

@@ -1,0 +1,124 @@
+patent: US10787043
+source: https://patentimages.storage.googleapis.com/67/fc/c9/1c847710ae949a/US10787043.pdf
+pages: 16
+per-page extracted text length: {1: 2103, 2: 95, 3: 126, 4: 100, 5: 114, 6: 143, 7: 6920, 8: 7667, 9: 7720, 10: 7761, 11: 7666, 12: 7534, 13: 7242, 14: 7201, 15: 7006, 16: 5478}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USO10787043B2
+
+( 12) United States Patent
+
+( 10) Patent No.: US 10,787,043 B2
+(45 ) Date of Patent :
+Sep. 29 , 2020
+
+Krefting
+
+( 54 ) INSERT FOR A PNEUMATIC TIRE
+( 71 ) Applicant: CushCore , LLC , Bend, OR (US )
+
+( 58 ) Field of Classification Search
+CPC
+
+( 72 ) Inventor: Adam Krefting , Bend , OR (US )
+( 73 ) Assignee : CushCore , Inc. , Bend, OR (US )
+
+( 56 )
+
+( 65 )
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 0 days.
+( 21 ) Appl . No .: 16 /245,604
+
+( * ) Notice:
+
+(22) Filed :
+
+4,592,403 A * 6/1986 Stein
+4,722,377 A * 2/1988 Dobson
+
+B60C 17/10
+
+152/158
+
+B60C 7/105
+152/158
+
+FOREIGN PATENT DOCUMENTS
+
+Jan. 11 , 2019
+
+2001 121907 A
+2001121907 A
+
+JP
+
+Prior Publication Data
+US 2019/0143763 A1 May 16, 2019
+
+JP
+
+5/2001
+5/2001
+
+OTHER PUBLICATIONS
+
+Related U.S. Application Data
+( 63 ) Continuation of application No. 15 / 348,662 , filed on
+Nov. 10 , 2016 , now Pat . No. 10,286,736 , which is a
+continuation - in -part of application No. 14 /656,250,
+filed on Mar. 12 , 2015 , now Pat . No. 10,293,640 .
+( 60 ) Provisional application No. 62/ 056,308 , filed on Sep.
+
+26 , 2014 , provisional application No. 62 / 257,548,
+
+filed on Nov. 19 , 2015 .
+( 51 ) Int . Ci.
+B60C 17/01
+B60C 5/08
+B60C 5/00
+
+B60C 17/01 ; B60C 5/002 ; B60C 5/08
+
+See application file for complete search history .
+
+( 2006.01 )
+
+( 2006.01 )
+( 2006.01 )
+B60C 17/06
+( 2006.01 )
+( 52) U.S. Ci .
+CPC
+B60C 17/01 (2013.01 ) ; B60C 5/002
+(2013.01 ) ; B60C 5/08 ( 2013.01 ) ; B60C 17/065
+( 2013.01 ) ; B60C 2200/10 (2013.01 ) ; B60C
+2200/12 (2013.01 )
+
+European Patent Office Examination Report, Application No. 15843697 .
+2-1012 , dated May 31 , 2019 .
+* cited by examiner
+
+Primary Examiner Jacob T Minskey
+Assistant Examiner - Melody Tsui
+(74 ) Attorney, Agent, or Firm — Hancock Hughey LLP
+( 57 )
+
+ABSTRACT
+
+An insert for a pneumatic tire including an annular member
+adapted to contact at least 10 % of an interior surface of the
+pneumatic tire and provide an outward pressure therea
+gainst .
+17 Claims , 5 Drawing Sheets
+
+120
+
+118
+
+

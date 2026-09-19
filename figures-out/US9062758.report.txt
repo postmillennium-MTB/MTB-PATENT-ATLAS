@@ -1,0 +1,213 @@
+patent: US9062758
+source: https://patentimages.storage.googleapis.com/87/79/b2/3fb6c5577795e1/US9062758.pdf
+pages: 21
+per-page extracted text length: {1: 2692, 2: 261, 3: 41, 4: 58, 5: 76, 6: 58, 7: 58, 8: 66, 9: 75, 10: 77, 11: 58, 12: 59, 13: 59, 14: 59, 15: 59, 16: 59, 17: 6534, 18: 7876, 19: 7757, 20: 7028, 21: 2377}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US009062758B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Reiter
+
+US 9,062,758 B2
+
+(45) Date of Patent:
+
+(54) CHAINRING
+
+536,813 A
+
+4/1895 Macphail
+
+591,270 A
+
+10, 1897 Gauthier
+
+586,991 A
+590,649 A
+
+(71) Applicant: Markus Reiter, Schweinfurt (DE)
+
+(72) Inventor: Markus Reiter, Schweinfurt (DE)
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+
+2: 3.
+
+4, 1981 Watanabe
+
+6,013,001 A
+
+1/2000 Miyoshi
+
+6,203462 B 1
+
+3/2001 Takamori
+
+6,500,084 B2
+
+12/2002 Wigsten
+
+7,416,500 B2 *
+
+8/2008 Young et al. .................. 474/2O2
+
+6,761,657 B2 * 7/2004 Young ........................... 474/2O2
+O
+
+O
+
+Prior Publication Data
+US 2013/O18411.0 A1
+
+2. edits al.
+
+12, 1980 Matt
+osleyet al. . . . . . . . . . . . . . . .
+
+6,325,734 B1* 12/2001 Young ........................... 474/2O2
+
+Mar. 6, 2013
+
+(65)
+
+5, 1976 Yamasaki
+7/1976 Martin et al. ................. 474,156
+
+4,261,214. A
+
+(21) Appl. No.: 13/787.276
+
+(22) Filed:
+
+3,956,943 A
+4.240.303
+A
+4 W
+
+U.S.C. 154(b) by 137 days.
+
+29 Anton
+11/1949 Barrett
+
+3.969,947 A *
+
+::::A; A :
+
+patent is extended or adjusted under 35
+
+1-1.
+
+7/1897 Curley
+9/1897 Ribyn
+
+is: A
+2,602,343 A
+
+(73) Assignee: SRAM, LLC, Chicago, IL (US)
+
+Jun. 23, 2015
+
+Jul.18, 2013
+
+7,686,721 B2 3, 2010 Sg
+7,824,287 B2 11/2010 Nonoshita
+2007/0054768 A1* 3/2007 Miyazawa .................... 474,152
+
+O
+
+2013/0139642 A1*
+
+6, 2013 Reiter et al. ...
+
+74,594.2
+
+2013, O18411.0 A1*
+
+7, 2013 Reiter .........
+
+474,152
+
+O
+
+Related U.S. Application Data
+
+(63) Continuation-in-part of application No. 13/311,735,
+filed on Dec. 6, 2011.
+
+FOREIGN PATENT DOCUMENTS
+JP
+
+11981042489
+
+9, 1979
+
+JP
+
+1985104.866
+
+6, 1985
+
+(51) Faizo,
+
+(2006.01)
+
+FI6H 5.5/30
+B62M 9/02
+
+(2006.01)
+(2006.01)
+
+(Continued)
+
+B62M 9/00
+(52) U.S. Cl.
+
+(2006.01)
+
+Primary Examiner — Henry Liu
+(74) Attorney, Agent, or Firm — Milan Milosevic: Lisa
+Serdynski
+
+CPC .............. FI6H55/303 (2013.01); FI6H55/30
+
+(2013.01); B62M 9/02 (2013.01); B62M
+2009/007 (2013.01)
+(58) Field of Classification Search
+
+(57)
+
+ABSTRACT
+
+CPC ..... F16H55/30; F16H 7/06; F16H 2055/306;
+
+(56)
+
+F16G 13/06; F16G 13/04
+USPC .......................................................... 474/156
+
+A Solitary chainring of a bicycle front crankset for engaging a
+bicycle drive chain, including a plurality of teeth formed
+
+See application file for complete search history.
+
+about a periphery of the chainring. One or more clearance
+chamfer Surfaces are formed on the chainring body, each of
+the chamfer surfaces substantially centered between adjacent
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+257.445 A * 5, 1882 Lechner ........................ 474,164
+495,584 A
+4, 1893 Guthrie
+
+pa1rs of the plurality of teeth.
+
+24 Claims, 14 Drawing Sheets
+
+
