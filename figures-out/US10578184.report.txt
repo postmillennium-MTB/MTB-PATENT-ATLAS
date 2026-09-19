@@ -1,0 +1,9 @@
+patent: US10578184
+source: https://patentimages.storage.googleapis.com/86/50/cf/61531019d98a2a/US10578184B2.pdf
+pages: 27
+per-page extracted text length: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0, 19: 0, 20: 0, 21: 0, 22: 0, 23: 0, 24: 0, 25: 0, 26: 0, 27: 0}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+(NO TEXT LAYER -- this PDF is a pure image scan, so no bibliographic text could be extracted.)
+
+The front page cannot be checked automatically here. Read the first rendered page by eye, or open the patent on Google Patents, before setting this entry's conf tier. Do not treat the absence of a contradiction as confirmation.
