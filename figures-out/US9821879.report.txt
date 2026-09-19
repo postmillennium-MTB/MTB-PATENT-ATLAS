@@ -1,0 +1,218 @@
+patent: US9821879
+source: https://patentimages.storage.googleapis.com/81/45/42/a923926a27b1de/US9821879.pdf
+pages: 67
+per-page extracted text length: {1: 2734, 2: 4984, 3: 888, 4: 223, 5: 272, 6: 156, 7: 220, 8: 190, 9: 262, 10: 434, 11: 210, 12: 220, 13: 333, 14: 232, 15: 289, 16: 247, 17: 310, 18: 296, 19: 145, 20: 187, 21: 224, 22: 213, 23: 127, 24: 236, 25: 189, 26: 190, 27: 258, 28: 372, 29: 148, 30: 94, 31: 95, 32: 326, 33: 175, 34: 236, 35: 128, 36: 165, 37: 245, 38: 209, 39: 132, 40: 165, 41: 633, 42: 173, 43: 122, 44: 164, 45: 123, 46: 126, 47: 308, 48: 204, 49: 596, 50: 600, 51: 215, 52: 127, 53: 7154, 54: 7485, 55: 6767, 56: 7579, 57: 7982, 58: 7988, 59: 8032, 60: 7902, 61: 8061, 62: 7721, 63: 7653, 64: 7806, 65: 7972, 66: 7884, 67: 6289}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US009821879B2
+
+(12) Hoogendoorn
+United States
+Patent
+et al.
+
+(45) Date of Patent:
+
+(54 ) RECIPROCATING RAIL MOVEMENT
+
+(58) Field of Classification Search
+
+(10) Patent No.:
+
+Nov . 21, 2017
+
+CPC ..... B62K 25 /28 ; B62K 25 /386 ; B62K 25 /286
+
+SUSPENSION SYSTEM
+
+See application file for complete search history .
+
+(71) Applicant: Yeti Cycling , LLC , Golden , CO (US)
+
+References Cited
+
+(56 )
+
+( 72 ) Inventors : Steven W . Hoogendoorn , Evergreen ,
+CO (US ); Peter Zawistowski,
+Lakewood , CO (US )
+(73 ) Assignee : YETI CYCLING , LLC , Golden , CO
+
+U . S. PATENT DOCUMENTS
+421, 748 A
+
+2/ 1890 McErlain
+
+519 ,855 A
+
+5 /1894 Whitaker
+
+(US )
+
+(Continued )
+
+Subject to any disclaimer, the term of this
+U .S .C . 154 (b ) by 0 days.
+
+( * ) Notice :
+
+US 9 ,821,879 B2
+
+patent is extended or adjusted under 35
+
+FOREIGN PATENT DOCUMENTS
+2293366 A1 12 / 1998
+
+??
+
+692011 C
+
+DE
+
+6 / 1940
+
+(21) Appl. No .:
+
+14/385 ,480
+
+(Continued )
+
+(22) PCT Filed :
+
+Nov. 21, 2012
+
+OTHER PUBLICATIONS
+International Search Report and Written Opinion for corresponding
+PCT Application No. PCT/US2012 /066427, dated Jan . 18, 2013, 12
+
+(86 ) PCT No .:
+PCT/US2012/066427
+$ 371 (c)(1),
+
+pages.
+
+Sep . 15 , 2014
+(2 ) Date :
+(87 ) PCT Pub . No.: W02013/078436
+PCT Pub . Date :May 30 , 2013
+(65)
+Prior Publication Data
+
+(Continued )
+
+Primary Examiner — Kevin Hurley
+(74 ) Attorney, Agent, or Firm — Dorsey & Whitney LLP
+
+(57 )
+ABSTRACT
+Generally, examples described herein may take the form of
+a bicycle including a front frame, a rear frame operably
+associated with the front frame and configured for coupling
+
+US 2015/0069735 A1 Mar. 12, 2015
+Related U .S . Application Data
+(63) Continuation -in -part of application No . 13 /215, 170 ,
+filed on Aug. 22 , 2011, now Pat. No. 9, 102,378 .
+
+to a rear wheel, and a suspension system operably associated
+
+with the front frame and the rear frame. The suspension
+
+(Continued )
+
+(51) Int. Cl.
+
+B62K 25 /30
+
+( 2006 . 01)
+(2006 .01)
+
+B62K 3 /02
+
+( 2006 .01)
+
+B62K 25 /28
+
+system includes a first connection structure operably cou
+pling the front frame to the rear frame and a first sliding body
+pivotally coupled to the rear frame and configured to travel
+
+in a first direction along a substantially linear travel path and
+in a second direction opposite the first direction along the
+
+substantially linear travel path as the suspension system is
+
+(52) CPC
+U.S . CI................. B62K 25/ 28 ( 2013 .01) ; B62K 3 /02
+
+compressed
+
+(2013.01); B62K 25 /286 (2013.01 ); B62K
+
+17 Claims, 49 Drawing Sheets
+
+25/ 30 (2013 .01)
+
+DELL
+
+CM
+COOR
+?
+
+? ? ? ?
+
+X?
+
+CCC
+
+LLLL
+A309
+
+???! Cutir
+
+-
+
+-
+
+412
+
+"
+Y
+"
+
+Share 426
+
+1
+
+plan.484
+em 481
+484
+
+410
+I !
+
+1 ry 488 485 440
+
+UCO
+
+sean a
+
+-
+
+FIDUCCC
+- --
+
+CA
+
+www3
+WILC w w
+
+TIM
+
+7
+
+13
+
+-
+
+

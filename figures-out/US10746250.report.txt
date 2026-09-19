@@ -1,0 +1,157 @@
+patent: US10746250
+source: https://patentimages.storage.googleapis.com/9f/4e/ff/7f7f751d752cf7/US10746250.pdf
+pages: 9
+per-page extracted text length: {1: 2512, 2: 1341, 3: 96, 4: 102, 5: 108, 6: 120, 7: 6523, 8: 7378, 9: 2604}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010746250B2
+
+( 12 ) Becker
+United States Patent
+
+( 10) Patent No .: US 10,746,250 B2
+(45) Date of Patent :
+*Aug. 18 , 2020
+(52) U.S. CI.
+
+( 54 ) METHOD AND APPARATUS FOR AN
+ADJUSTABLE DAMPER
+
+F16F 9/435 (2013.01 ) ; B62K 25/08
+(2013.01 ) ; B62K 2025/048 (2013.01 ) ; F16F
+9/34 (2013.01 )
+( 58 ) Field of Classification Search
+CPC .. F16F 9/34 ; F16F 9/346 ; F16F 9/3465 ; F16F
+9/435 ; B62K 2025/048 ; B62K 25/08
+See application file for complete search history.
+References Cited
+(56 )
+CPC
+
+( 71 ) Applicant: Fox Factory, Inc. , Braselton , GA ( US )
+(72) Inventor : William M. Becker , Aptos, CA (US )
+( 73 ) Assignee : Fox Factory , Inc. , Braselton , GA (US )
+( * ) Notice: Subject to any disclaim the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 (b ) by 0 days.
+
+U.S. PATENT DOCUMENTS
+
+This patent is subject to a terminal dis
+claimer.
+
+( 21 ) Appl. No .: 16 /259,734
+Jan. 28 , 2019
+(22 ) Filed :
+Prior Publication Data
+( 65 )
+US 2019/0154102 A1
+May 23 , 2019
+
+5,697,477 A
+
+12/1997 Hiramoto
+
+5,853,071 A * 12/1998 Robinson
+
+6,135,434 A
+6,296,092 B1
+
+10/2000 Marking
+10/2001 Marking et al.
+
+6,592,136 B2
+
+7/2003 Becker et al .
+
+6,604,751 B2
+6,978,872 B2
+7,128,192 B2
+
+8/2003 Fox
+12/2005 Turner
+10/2006 Fox
+
+6,311,961 B1
+6,360,857 B1
+6,415,895 B2
+6,581,948 B2
+
+(63 ) Continuation of application No. 15 / 679,471 , filed on
+
+Aug. 17 , 2017 , now Pat . No. 10,228,039 , which is a
+continuation of application No. 14 / 822,859 , filed on
+Aug. 10 , 2015 , now Pat . No. 9,739,331 , which is a
+continuation of application No. 13 / 890,753 , filed on
+May 9 , 2013 , now Pat. No. 9,103,400 .
+
+F16F 9/46
+
+188 /266.5
+F16F 9/0218
+188/322.18
+B60T 17/222
+137/14
+B60T 11/30
+188/352
+
+11/2001 Julia
+3/2002 Fox et al .
+7/2002 Marking et al.
+6/2003 Fox
+
+(Continued )
+Primary Examiner Vishal R Sahni
+
+(57 )
+
+( 60 ) Provisional application No. 61 / 644,859 , filed on May
+
+ABSTRACT
+
+An air bleed system for a suspension fork or shock absorber
+includes: a fluid passage between an interior of the suspen
+sion and an exterior of the suspension; and a manually
+operable valve having a first position substantially closing
+
+9 , 2012 .
+
+F16F 9/43
+B62K 25/08
+F16F 9/34
+B62K 25/04
+
+3/1993 Curnutt
+4/1996 Clarke
+
+5,816,281 A * 10/1998 Mixon
+
+Related U.S. Application Data
+
+( 51 ) Int . Cl .
+
+5,190,126 A *
+5,503,258 A
+
+( 2006.01 )
+
+( 2006.01 )
+
+the fluid passage and a second position allowing fluid flow
+
+( 2006.01 )
+
+5 Claims, 4 Drawing Sheets
+
+between the interior and the exterior.
+
+( 2006.01 )
+
+120
+
+153
+
+150
+151
+
+

@@ -1,0 +1,135 @@
+patent: US5462302
+source: https://patentimages.storage.googleapis.com/d3/49/f6/c36eaf3f3952de/US5462302.pdf
+pages: 7
+per-page extracted text length: {1: 2262, 2: 178, 3: 121, 4: 6460, 5: 6049, 6: 782, 7: 544}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+IIIUS005462302A
+IIHIII
+United States Patent (19)
+
+11 Patent Number:
+
+5,462,302
+
+Leitner
+
+(45) Date of Patent:
+
+Oct. 31, 1995
+
+(54) DOUBLE SWENGARM FRONT SUSPENSION
+
+0376759 8/1907 France ................................... 280/277
+
+FOR BICYCLES AND MOTORCYCLES
+
+1082316 12/1954 France ................................... 280/276
+
+0837652 3/1952 Germany ............................... 280/277
+
+(76 Inventor: Horst Leitner, 429 Aster St., Laguna
+
+1084599 6/1960 Germany.......................... 280/277
+
+Beach Calif. 92651
+
+9
+
+(21) Appl. No.: 142,837
+22 Filed:
+Oct. 25, 1993
+
+0001898
+
+2A1899
+
+United Kingdon
+
+0008899
+
+7/1911
+
+United Kingdom ................... 280/277
+
+- - - - - - - - - - - - - 280/277
+
+Primary Examiner-Anne Marie Boehler
+Attorney, Agent, or Firm-Knobbe, Martens, Olson & Bear
+
+Related U.S. Application Data
+
+(57)
+
+(63) Continuation of Ser. No.782,614, Oct. 25, 1991, abandoned.
+(51) int. Cl. ................ B62K 21/02
+
+ABSTRACT
+
+A suspension system for the front wheel of a bicycle or
+motorcycle, which has a minimum amount of friction. The
+
+i52 U.S.C.
+. 280/277. 280/27 9. 280.279
+suspension system includes an upper and a lower swingarm,
+A/O assunu wu sueessa non-nu
+267p02
+with a spring and elastomer combination, which works as a
+58) Field of Sh, 275,233,286,697. 29,&i.
+a- J - s 1 was
+
+202 25, 33 1 52
+s
+
+56
+
+y --9
+
+friction damper on the inside coils on the spring. The relative
+
+angle and length of the swingarm to one another, permits the
+
+linear movement of the wheel on impact, to optimize sus
+pension performance. The invention also desirably incorpo
+
+rates various elements which provide for the structural
+rigidity of the suspension assembly and light weight. In
+particular, the design preferably incorporates standard
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+bicycle or motorcycle components. For example such com
+423:
+
+A.
+
+Edahl an a asa
+
+w w w so a a v
+
+2:
+
+4,690,428 9/1987 Fluegge ................................... 280,697
+
+ponents may include wheels, brakes, axles and steering
+
+components.
+
+FOREIGN PATENT DOCUMENTS
+
+0005599 5/1906 France ................................... 280/277
+
+12 Claims, 2 Drawing Sheets
+
+FRONT WHEEL
+
+COMPRESSED
+SUSPENSION
+STRAIGHT LINE
+
+SUSPENSON DETECTION
+EXTENDED SUSPENSION
+DETECTION ANGLE
+
+
