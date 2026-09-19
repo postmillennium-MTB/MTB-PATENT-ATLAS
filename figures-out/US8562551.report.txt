@@ -1,0 +1,128 @@
+patent: US8562551
+source: https://patentimages.storage.googleapis.com/41/67/d5/dbb70a5a4564de/US8562551.pdf
+pages: 13
+per-page extracted text length: {1: 2501, 2: 57, 3: 57, 4: 57, 5: 57, 6: 182, 7: 57, 8: 6724, 9: 7457, 10: 7577, 11: 7451, 12: 7155, 13: 4853}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US008562551B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+US 8,562,551 B2
+
+(45) Date of Patent:
+
+Leatt
+(54) NECK BRACE
+(75) Inventor: Christopher James Leatt, Constantia
+(ZA)
+(73) Assignee: Xceed Holdings CC, Cape Town (ZA)
+(*) Notice:
+
+*Oct. 22, 2013
+
+(58) Field of Classification Search
+USPC ................. 602/5, 17–19; 2/422; 128/DIG. 23
+See application file for complete search history.
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+This patent is Subject to a terminal dis
+
+2,820,455. A * 1/1958 Hall ................................ 602.18
+3,514,784. A * 6/1970 McDavid .......................... 2,468
+3,601,123 A * 8, 1971 McFarland ...................... 602.18
+3,724.452 A * 4, 1973 Nitschke ......................... 602.18
+3,765,029 A * 10/1973 Germain ........................... 2,462
+3,765.412 A * 10/1973 Ommaya et al. ...
+... 128/846
+
+claimer.
+
+3,855,631 A * 12/1974 Ettinger ............................ 2,468
+
+(21) Appl. No.: 13/206,312
+
+3,878,561 A * 4/1975 Winiecki
+4,274,161 A * 6/1981 Littler .....
+
+(22) Filed:
+
+4,319.362 A *
+4.324,003 A *
+4.338,685 A *
+4,383,523 A *
+4,449,251 A
+
+Aug. 9, 2011
+
+(65)
+
+Prior Publication Data
+
+US 2012/O2O3157 A1
+
+Aug. 9, 2012
+
+Related U.S. Application Data
+(63) Continuation of application No. 1 1/440,576, filed on
+May 25, 2006, now Pat. No. 7.993,293, which is a
+continuation of application No. PCT/ZA2004/000148,
+filed on Nov. 26, 2004.
+
+... 2/461
+... 2/413
+
+3/1982 Ettinger .
+... 2,415
+4, 1982 Johnston ...
+... 2.f468
+7/1982 LaPorta, Jr.
+... 2/462
+5/1983 Schurman .
+602.36
+5/1984 Gauthier ........................... 2,468
+
+* cited by examiner
+Primary Examiner — Kim M Lewis
+(74) Attorney, Agent, or Firm — Kilpatrick, Townsend &
+Stockton, LLP.
+(57)
+
+ABSTRACT
+
+(2006.01)
+
+A neck brace (10) is disclosed which comprises two sections
+(12, 14) which are releasably connected to one another along
+a split line (18). The ring has upwardly facing surfaces (30.
+76.1, 20.2) which limit tilting movement of a helmeted head
+in all directions. The brace further has a column (68, 70)
+which extends downwardly from the ring for transferring
+loads to the wearer's back on each side of the spine.
+
+USPC ...................................... 602/18: 128/DIG. 23
+
+23 Claims, 6 Drawing Sheets
+
+(30)
+
+Foreign Application Priority Data
+
+Nov. 26, 2003
+
+(ZA) ................................... 2003/91.74
+
+(51) Int. Cl.
+A6DF 5/00
+
+(52) U.S. Cl.
+
+
