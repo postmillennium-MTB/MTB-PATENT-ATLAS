@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+
+# NOTE: figures-out/ is deliberately NOT ignored. The Fetch patent figure
+# workflow commits that directory into a review PR — ignoring it makes the
+# PR silently empty while every step still reports success. Its candidates
+# are meant to be deleted by hand once the chosen figure has been renamed
+# into pictures/, not kept out of git in the first place.
