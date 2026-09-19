@@ -1,0 +1,192 @@
+patent: US9746049
+source: https://patentimages.storage.googleapis.com/ee/2a/9d/594a3e3966e094/US9746049.pdf
+pages: 24
+per-page extracted text length: {1: 2343, 2: 5247, 3: 4965, 4: 2451, 5: 870, 6: 529, 7: 1142, 8: 1645, 9: 766, 10: 667, 11: 377, 12: 229, 13: 410, 14: 191, 15: 107, 16: 396, 17: 6389, 18: 7200, 19: 7470, 20: 7514, 21: 7397, 22: 6339, 23: 5841, 24: 2350}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+THURULUMULUTTUR
+US009746049B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+(45) Date of Patent:
+
+Becker et al.
+
+(54 ) VALVE
+SUSPENSION
+DAMPER HAVING INERTIA
+AND USER ADJUSTABLE
+
+(2013 .01) ; F16F 9 /06 (2013 .01) ; F16F 9 / 18
+
+(2013 .01); F16F 9 /34 ( 2013 .01 ); F16F 9/ 446
+
+(71) Applicant: Fox Factory, Inc ., Scotts Valley, CA
+
+@
+
+(2013 .01)
+
+(US )
+
+(58 ) Field of Classification Search
+
+CPC ... .. F16F 9/504 ; F16F 9/34 ; F16F 9/06 ; F16F
+9 / 18
+See application file for complete search history.
+
+( 72 ) Inventors : William M . Becker , Aptos, CA (US);
+Robert C . Fox , Scotts Valley, CA (US);
+Dennis K . Wootten , Scotts Valley, CA
+
+@
+
+(US )
+
+References Cited
+
+(56 )
+
+( 73 ) Assignee : Fox Factory, Inc., Scotts Valley, CA
+
+@
+
+U .S. PATENT DOCUMENTS
+
+(US )
+
+( * ) Notice:
+
+1,268,452 A
+1,281 ,079 A
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U . S .C . 154 (b ) by 0 days .
+This patent is subject to a terminal dis
+
+FOREIGN PATENT DOCUMENTS
+9 / 1966
+
+7 / 1989
+
+OTHER PUBLICATIONS
+Collection of Rock Shox Documents various articles dated 1993 ,
+1996 - 1998 , 2000 , 2004 .
+
+US 2016 /0131218 A1 May 12, 2016
+
+(Continued )
+
+Related U .S . Application Data
+(63 ) Continuation of application No. 14 / 107 ,963 , filed on
+Dec. 16 , 2013 , now Pat. No. 9 ,261, 163 , which is a
+
+Primary Examiner — Thomas J Williams
+ABSTRACT
+(57 )
+
+(Continued )
+
+B62K 25 /08
+F16F 9 / 18
+
+P18805719 A
+
+(Continued )
+
+Jan . 19 , 2016
+Prior Publication Data
+
+F16F 9/44
+F16F 9 /06
+F16F 9 /34
+
+294846
+
+AU
+
+BR
+
+(21) Appl. No.: 15/001,035
+
+(51) Int. Cl.
+F16F 9 /504
+
+6 / 1918 Goodyear
+10 / 1918 Sears
+
+(Continued )
+
+claimer .
+
+( 22 ) Filed :
+(65)
+
+* Aug. 29, 2017
+
+(52) U???
+.S. CI.... ........ F16F 9 /504 (2013.01) ; B62K 25/08
+
+PRESSURE - RELIEF
+
+@
+
+US 9 ,746 ,049 B2
+
+A modern suspension damper, for example , a shock absorber
+
+or a suspension fork , including an inertia valve and a
+
+pressure-relief feature is disclosed . The pressure-relief fea
+
+( 2006 . 01)
+( 2006 .01)
+
+ture includes a rotatable adjustment knob that allows the
+pressure -relief threshold to be externally adjusted by the
+
+(2006 .01)
+( 2006 .01 )
+
+rider “ on - the - fly ” and without the use of tools.
+
+( 2006 .01)
+
+5 Claims, 12 Drawing Sheets
+
+(2006 .01)
+551
+
+NENO
+
+649
+
+548
+1 548
+
+546 1
+
+1545
+
+54655
+me
+
+541
+
+8 . 550 128
+
+140
+
+540
+
+V
+
+2 .2m
+
+12T.D
+
+
