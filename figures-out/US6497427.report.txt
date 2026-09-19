@@ -1,0 +1,113 @@
+patent: US6497427
+source: https://patentimages.storage.googleapis.com/5e/13/f5/d0e6a265d9d489/US6497427.pdf
+pages: 13
+per-page extracted text length: {1: 2175, 2: 57, 3: 57, 4: 57, 5: 57, 6: 83, 7: 68, 8: 57, 9: 6565, 10: 6975, 11: 7058, 12: 6498, 13: 2107}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6497427B1
+
+(12) United States Patent
+D'Alusio et al.
+
+(10) Patent No.:
+
+US 6,497,427 B1
+
+(45) Date of Patent:
+
+(54) BICYCLE FRAME
+
+Dec. 24, 2002
+
+4,500,103 A
+
+2/1985 Klein ...................... 280/281.1
+
+4,621,827 A
+
+11/1986 Klein ......................... 280/274
+
+(75) Inventors: Christopher P. D'Alusio, Bethel, CT
+(US); Christopher A. Peck, Southbury,
+
+5,018,758. A
+5,129,665 A
+
+5/1991 Klein ...................... 280/281.1
+7/1992 Sutter et al. ................ 280/274
+
+CT (US)
+(73) Assignee: Cannondale Corporation, Bethel, CT
+(US)
+
+5,452,911. A
+5,476.278 A
+5,803,477 A
+
+9/1995 Klein et al. ................. 280/288
+12/1995 Levin et al. ................ 280/288
+9/1998 Reisinger .................... 280/284
+
+2002/0030345 A1
+
+3/2002 Colnago
+9. ..................... 280/288
+
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+U.S.C. 154(b) by 31 days.
+(21) Appl. No.:
+09/831,822
+(22) PCT Filed:
+Jun. 9, 2000
+(86) PCT No.:
+PCT/US00/15915
+S371 (c)(1),
+(2), (4) Date: May 15, 2001
+(87) PCT Pub. No.: WO00/76836
+
+* cited by examiner
+Primary Examiner Kevin Hurley
+57
+
+ABSTRACT
+
+PCT Pub. Date: Dec. 21, 2000
+(51) Int. Cl. ................................................ B62K11/00
+(52) U.S. Cl. ....................................................... 280/288
+(58) Field of Search .............................. 280/281. 1, 283,
+
+(57)
+The present invention is directed to a mountain bike frame
+(10) for use with a rear wheel (118). The frame is a
+“diamond-type” frame that includes seat stay tubes (32,34).
+The seat stay tubes (32, 34) are spaced apart to define a gap
+distance (C) between the inner Surface of the Seat stay tubes
+(32, 34) at a tire intersection point that at a minimum is
+greater than about 2 inches. In addition, the Seat Stay tubes
+(32, 34) have a modulus of elasticity value multiplied times
+
+280/284, 285, 286, 288
+
+the moment of inertia value is between about 1.0 lbxinches
+
+(56)
+
+References Cited
+
+and about 10 lbxinches. The frame is for use with only a
+
+rear disc brake mounted to one of the seat stay tubes (32.34).
+
+U.S. PATENT DOCUMENTS
+
+600,329 A
+
+3/1898 Burnham
+
+27 Claims, 7 Drawing Sheets
+
+

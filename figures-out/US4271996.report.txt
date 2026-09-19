@@ -1,0 +1,80 @@
+patent: US4271996
+source: https://patentimages.storage.googleapis.com/99/29/e4/a2e54d9ed67bd7/US4271996.pdf
+pages: 6
+per-page extracted text length: {1: 1801, 2: 55, 3: 49, 4: 119, 5: 6679, 6: 6141}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+Montgomery
+54 PANNER FOR BCYCLE REAR CARRIER
+RACKS
+
+75 Inventor: Joseph S. Montgomery, Stamford,
+Conn.
+
+(73) Assignee: Cannondale Corporation, Stamford,
+Conn.
+
+21) Appl. No.: 25,394
+Mar. 30, 1979
+22 Filed:
+51 int. C. ................................................ B62J 9/00
+(52) U.S. Cl. .................................... 224/32 A; 224/31;
+150/2.7; 150/28 R
+
+(58) Field of Search ............. 224/209, 210, 151, 46 R,
+
+224/47, 31, 30 A, 30 R, 32 A, 32 R, 36,39, 41,
+42.46 R, 907; 150/2.7, 28 R, 31, 46
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+518,270 4/1894 Orth................................. 224/210 X
+2,517,757 8/1950 Adlerstein ....................... 224/210 X
+2,542,477 2/1951 Cart ............................... 224/46 RX
+... 224/46 RUX
+3,092,224 6/1963 O'Neil ...
+3,937,374 2/1976. Hine ................................... 224/32 A
+
+(11)
+
+4,271,996
+
+45)
+
+Jun. 9, 1981
+
+3,955,727 5/1976 Montgomery ......................... 224/31
+FOREIGN PATENT DOCUMENTS .--
+
+1102369 10/1955 France ................................... 224/32R
+1127921 12/1956 France ...
+... 224/32 R
+1270435 7/1961 France ........
+... 224/31
+82237 7/1956 Netherlands
+224/32 R.
+
+Primary Examiner-Robert J. Spar
+Assistant Examiner-Jerold M. Forsberg
+
+Attorney, Agent, or Firm-Brumbaugh, Graves,
+Donohue & Raymond
+57
+ABSTRACT
+A pannier for a rear carrier rack on a bicycle carrier
+rack on a bicycle comprises a bag of flexible, light
+weight material and an internal frame having a back
+
+part, a top part and a pair of upper side parts, each of
+which is a network of interconnected ribs. The frame
+
+imparts shape and stability to the bag, and the top part
+has load-supporting capability so that the pannier top
+serves as a lateral extension of the carrier rack.
+
+5 Claims, 5 Drawing Figures
+
+
