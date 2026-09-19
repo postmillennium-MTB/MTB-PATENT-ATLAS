@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 276 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 280 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 276 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 276 |
+| **Total entries** | 280 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 132 |
-| **Expired patents** | 93 |
-| **Pending applications** | 40 |
+| **Active patents** | 133 |
+| **Expired patents** | 94 |
+| **Pending applications** | 42 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
 | **Brands** | 153 |
 | **Named inventors** | 54 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, ZA) |
-| **Verified entries** | 165 |
+| **Verified entries** | 169 |
 | **Medium confidence** | 57 |
 | **Draft / in progress** | 54 |
 
@@ -326,6 +326,8 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
   One patent could not be added this pass: **US 12,491,966** (Porsche's wheel motor-brake unit) failed at the fetch step itself — the USPTO print endpoint returned 403 even from the GitHub Actions runner (open egress), and the Google Patents page it fell back to didn't expose a `patentimages` PDF link, most likely because the patent is too recently granted to be fully indexed there yet. No `pdf_url` could be located by search either. Rather than leave a gap in the batch, US 9,643,683 (Dyname) was substituted in as the seventh pick; Porsche's entry remains unillustrated and unblocked for a future pass once the PDF becomes reachable by one of the usual routes.
 
   All seven are single-figure `img`/`imgAlt` additions (no entry moved to the multi-figure `imgs[]` pattern this run). No `D` entries were added or removed and no field values changed beyond `img`/`imgAlt`, so total/active/expired/verified counts are all unchanged at 276/132/93/165 — only the "entries with a figure" count moves, 69 → 76.
+
+- **Four new Fox Factory entries added, sourced from a list of ten Fox/Becker-family patents the user pasted in, all fetched and cross-checked via the GitHub Actions figure tool (including two still-pending published applications, which the tool handles via its `A1`/`A2` kind-code fallback).** Three of the ten pasted patents were skipped as duplicates of what the atlas already carries: US 8,727,366 is already one of the eight numbers inside the existing "Fox fork architecture portfolio" entry; US 12,129,909 is a later continuation in the same bleed-valve lineage as the existing "Bleed valve patent + Fox v. SRAM (US 10,746,250)" entry; US 10,731,724 shares its "Suspension system" title and inventor (Laird) with US 10,180,171, already inside the same fork-portfolio entry. Three more — the "Becker Designed, Inc." audio-cabinet and subwoofer-furniture design patents — were excluded as out of scope: cross-checked against Fox Factory's own William M. Becker (Principal Engineer, suspension) via separate LinkedIn profiles, a distinct "Bill Becker, CEO & Founder of BDI Furniture," and confirmed as different people by a third data point — Justia's aggregated "William M. Becker" inventor page also pulls in an unrelated vehicle-antenna patent, evidence that USPTO's lack of unique inventor IDs is quietly merging at least three different real people under one name there. **US 11,794,517** ("Methods and apparatus for releasably supporting a vehicle wheel assembly," the cam-actuated thru-axle behind Fox's QR hardware) — front page (a pure image scan, confirmed by eye) spells out the full continuation chain back to application Ser. No. 12/470,432, filed May 21, 2009 (the May 2008 date on some listings is only the provisional), so `exp` is computed as 2029, not the 2028 a naive read of the provisional date would give. Category `wheel`, figure is Fig. 1A, the fork's lower legs with the axle (2) at the dropouts. **US 9,746,049** ("Suspension damper having inertia valve and user adjustable pressure-relief," William M. Becker, Robert C. Fox, Dennis K. Wootten) — front page confirms the continuation chain traces to an April 2006 priority; `exp` 2026 means this specific invention's public-domain date landed *this year*, during the same pass that added it. Category `fork`, figure is Fig. 1, the full damper cross-section. **US 2022/0242191** ("Methods and apparatus for vehicle suspension having multiple gas volumes," the bottomless-tokens/volume-spacer foundation) — this one's continuation chain runs unusually deep (six generations of applications, two of them continuations-in-part), and reading it directly off the front page resolved an ambiguity flagged during research: the earliest non-provisional filing is Ser. No. 12/407,610, filed Mar. 19, 2009 (the Mar. 2008 date on public listings is only the provisional), putting `exp` at 2029. Upgraded from an initially-planned `conf:"m"` to `"v"` once the primary-source front page actually resolved the chain rather than leaving it to search-snippet inference. This specific division is still pending (`st:"pending"`); its immediate parent already issued as US 11,312,203. Category `fork`, figure is Fig. 2A, the air-spring assembly's internal cross-section showing the main chamber and the adjacent volume-adjustment piece. **US 2021/0300140** ("Integrated active valve assembly," Everet Owen Ericksen and William M. Becker) — a newer Live Valve filing from two of the same inventors on the existing 2015-era Live Valve portfolio entry, claiming the controller-module-wired-directly-to-the-shock packaging rather than a separate control box; priority March 2020, still pending. Category `fork`, figure is Fig. 1A, the whole bike with the controller module and wiring called out. All four `conf:"v"`. No new `BRANDS`/`INVENTORS` registrations needed — Fox Factory was already registered, and none of the four named engineers are independently notable enough elsewhere in this atlas to warrant their own filter chip, matching the existing convention for every other Fox-house entry (portfolio, Live Valve, GRIP2) of crediting `a:"Fox Factory"` rather than an individual. Counts synced: README At-a-glance (276→280 total, 132→133 active, 93→94 expired, 40→42 pending, 165→169 verified) and all seven hardcoded `index.html` count strings (three meta tags, the CSS-comment entry-count note, EN/FR `shareText`, EN/FR `mtBannerText`).
 
 ---
 
