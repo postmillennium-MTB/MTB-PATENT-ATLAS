@@ -1,0 +1,172 @@
+patent: US8936136
+source: https://patentimages.storage.googleapis.com/04/48/dc/068410a85550f0/US8936136.pdf
+pages: 17
+per-page extracted text length: {1: 2795, 2: 68, 3: 68, 4: 52, 5: 73, 6: 72, 7: 58, 8: 68, 9: 68, 10: 98, 11: 70, 12: 70, 13: 87, 14: 6765, 15: 7957, 16: 7719, 17: 3274}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US008936.136B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+(54)
+
+7,007,776 B1
+7,011, 189 B2
+7,055,655 B2
+
+BRAKE CALIPER ADJUSTMENT
+MECHANISM
+
+(75) Inventor: John L. Thomas, Cedarburg, WI (US)
+(73) Assignee: HB Performance Systems, Inc.,
+Mequon, WI (US)
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 188 days.
+
+(21) Appl. No.: 13/306,689
+(22) Filed:
+
+(52)
+
+May 30, 2013
+
+Int. C.
+FI6D 65/44
+(2006.01)
+U.S. C.
+USPC ........................
+Field of Classification Search
+
+-- - -- -- - - -- - -- -- - -
+
+(58)
+
+FOREIGN PATENT DOCUMENTS
+TW
+TW
+TW
+TW
+TW
+TW
+
+47.6325
+484573
+510342
+559 182
+I257360
+M347348
+
+2, 2002
+4/2002
+11, 2002
+10, 2003
+T 2006
+12/2008
+
+LLP
+188/26;
+
+188/73.31
+
+See application file for complete search history.
+References Cited
+U.S. PATENT DOCUMENTS
+10, 1973 Toyomasu
+11, 1974 Brooks
+6, 1986 Metoyer
+3, 1997 Hollars
+
+5,979,609 A * 11/1999 Tsai ................................ 188,26
+6,119,818 A
+6,230,849 B1
+
+9, 2000 Krumbeck et al.
+5, 2001 Lumpkin
+
+6,336,526 B1*
+6,390,246 B1*
+
+1/2002 Chou .............................. 188,26
+5/2002 Lee .............................. 188,711
+
+6,431,327 B2
+6,945,369 B1
+
+1/2009 Choon Chye et al. .......... 18826
+7/2010 Tetsuka et al. .................. 18826
+
+Primary Examiner — Anna Momper
+(74) Attorney, Agent, or Firm — Michael Best & Friedrich
+
+USPC ........................ ... 188/73.31, 205 R, 26, 24.19
+
+3,765,511 A
+3,848,707 A
+4,596,313 A
+5,607,031 A
+
+7,478,707 B2 *
+7.757,821 B2 *
+
+* cited by examiner
+
+CPC F16D 65/0056; F16D 65/0062: F16D 65/42:
+
+(56)
+
+3/2006 Lin
+3/2006 Chen
+6/2006 Takizawa et al.
+
+Shimano, Exploded View and Parts List brochure, received Feb. 17.
+2000, 4pgs.
+
+Prior Publication Data
+
+US 2013/O133991 A1
+
+Jan. 20, 2015
+
+OTHER PUBLICATIONS
+
+Nov. 29, 2011
+
+(65)
+(51)
+
+US 8,936,136 B2
+
+(45) Date of Patent:
+
+Thomas
+
+8, 2002 Lumpkin
+9, 2005 Chen
+
+(57)
+
+ABSTRACT
+
+A brake system comprising a brake disc that rotates about a
+center axis, a brake mount, a brake caliper attached to the
+brake mount and including a brake pad, and an adjuster
+between the brake mount and the brake caliper. The adjuster
+can move the brake pad toward and/or away from the brake
+disc. In one embodiment, the brake caliper is attached to the
+brake mount by a post extending through an elongated open
+ing in the brake caliper and nonparallel to the center axis. The
+adjuster can change a relative location of the post within the
+elongated opening. The adjuster can include an end that
+extends into the elongated opening and works against the
+post. The post can include a fastener threaded to the brake
+mount in a direction Substantially perpendicular to the center
+axis, and the fastener can extend through an elongated open
+ing in the brake caliper.
+23 Claims, 12 Drawing Sheets
+
+

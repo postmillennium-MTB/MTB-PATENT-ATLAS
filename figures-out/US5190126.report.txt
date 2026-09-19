@@ -1,0 +1,107 @@
+patent: US5190126
+source: https://patentimages.storage.googleapis.com/f1/e7/f7/99b2a4968c8237/US5190126.pdf
+pages: 12
+per-page extracted text length: {1: 2444, 2: 63, 3: 56, 4: 145, 5: 108, 6: 6816, 7: 6972, 8: 7104, 9: 7245, 10: 7020, 11: 6656, 12: 2845}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+IIIHIIIHIIII
+US005190126A
+
+United States Patent (19)
+
+11 Patent Number:
+45) Date of Patent:
+
+Curnutt
+
+Primary Examiner-George E. A. Halvosa
+
+(54) SHOCK ABSORBER WITH AIR CAVITY
+
+Attorney, Agent, or Firm-Charles H. Thomas
+
+CONTROLLED ORIFICES
+
+76 Inventor: Charles Curnutt, 75992 Baseline,
+Twenty Nine Palms, Calif. 92277
+(21) Appl. No.: 760,884
+(22 Filed:
+Sep. 16, 1991
+51)
+
+Int. Cl.5 ......
+
+57
+
+- O - - - - - - - - - F16F 9/06; F16F 9/34
+
+52 U.S. C. .................................... 188/269; 188/282;
+188/285; 188/299; 188/317; 267/64.15;
+
+267/127
+
+58 Field of Search ............... 188/269,284, 282,285,
+188/314, 317,322.15, 280, 299; 267/64.15, 127
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+2,244,501 6/1941 Pierce .................................. 88/284
+2,357,278 8/1944 O'Connor ........................... 188/269
+3,990,687 11/1976 Curnutt.
+4,210,344 7/1980 Curnutt .
+4,245,854 1/1981 Curnutt.
+4,683,992 8/1987 Watanabe ............................ 188/299
+4,749,068 6/1988
+
+5,190,126
+Mar. 2, 1993
+
+188/322.1S X
+
+4,972,928 1/1990 Sirven ................................. 188/269
+FOREIGN PATENT DOCUMENTS
+
+ABSTRACT
+
+A shock absorber is constructed with a hollow cylinder
+within which a first piston is disposed to move coaxi
+ally. A well is defined within the first piston to receive
+a second piston. The first piston is also provided with
+longitudinally extending dampening passageways and
+relief passageways. A cavity of variable volume filled
+with a compressible fluid, such as air, is defined between
+the two cylinders. At the start of a stroke of movement
+of the first piston within the cylinder, the additional
+length of the piston rod which enters the cylinder as the
+first piston moves toward the blind end of the cylinder
+increases pressure on the compressible fluid within the
+cylinder. The second piston is thereby pressed further
+into the first piston and ultimately closes off the damp
+ening passageways, thereby preventing further move
+ment of the first piston and increasing the dampening
+characteristics of the shock absorber. Upon return of
+the first piston, the compressed air is allowed to expand
+and as the length of the piston rod that remains within
+the cylinder decreases, the dampening characteristics of
+the shock absorber increase.
+
+2312925 12/1976 France ............................ 188/322.15
+
+17 Claims, 4 Drawing Sheets
+
+2071807 9/1981 United Kingdom ................ 188/280
+
+84
+
+se
+
+27
+
+é
+
+Z
+
+26
+
+

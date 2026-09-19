@@ -1,0 +1,79 @@
+patent: US4942778
+source: https://patentimages.storage.googleapis.com/a0/cc/9f/290fcee55df3b9/US4942778.pdf
+pages: 9
+per-page extracted text length: {1: 1652, 2: 51, 3: 58, 4: 51, 5: 122, 6: 6575, 7: 7037, 8: 6760, 9: 3160}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+11
+45
+
+Bryne
+54 CLIPLESS BICYCLE PEDAL SYSTEM
+
+Patent Number:
+Date of Patent:
+
+4.942,778
+Jul. 24, 1990
+
+FOREIGN PATENT DOCUMENTS
+
+3315282 10/1984 Fed. Rep. of Germany ........ 36/1.31
+3631302 4/1987 Fed. Rep. of Germany ........ 36/131
+
+76 Inventor: Richard M. Bryne, 2172 Pine St., San
+Diego, Calif. 92103
+
+Primary Examiner-Vinh T. Luong
+
+21 Appl. No.: 377,223
+
+Attorney, Agent, or Firm-Brown, Martin, Haller &
+McClain
+
+(22 Filed:
+
+Jul. 10, 1989
+
+57
+
+5ll Int. Cli............................................... G05G 1/14
+52 U.S. C. .................................. 74/594.6; 74/5944;
+36/131; D12/125
+58 Field of Search .................... 74/594.6,594.4, 560;
+36/131, 132; D12/125
+56
+
+References Cited
+U.S. PATENT DOCUMENTS
+3,964,343 6/1976 Lauterbach ...
+... 74/594.6
+4,685,351 8/1987 Pegg ...........
+... 74/594.4
+4,803,894 2/1989 Howel ..
+
+... 74/594.6
+
+4,815,333 3/1989 Sampson ...
+... 36/31 X
+4,827,633 5/1989 Feldstein ............................... 36/31
+
+ABSTRACT
+
+A clipless bicycle pedal system incorporating a pedal
+and cleat, the pedal being a block with a generally con
+vex symmetrical curved top and bottom surface and
+being circular in the lateral plane. Grooves are formed
+in the circumferential edge of the block, with at least
+one groove each in the leading and trailing edges of the
+block. The cleat is a plate which is to be fixed to the sole
+of a rider's shoe and has a concave recess therein which
+corresponds to the convex surface of the pedal block.
+Within the recess is a spring-loaded tongue which is
+adapted to be removably seated in the grooves of the
+pedal block.
+23 Claims, 4 Drawing Sheets
+
+

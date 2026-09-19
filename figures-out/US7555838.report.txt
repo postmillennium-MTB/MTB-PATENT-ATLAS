@@ -1,0 +1,149 @@
+patent: US7555838
+source: https://patentimages.storage.googleapis.com/31/fd/6d/601e53e009aaa4/US7555838.pdf
+pages: 7
+per-page extracted text length: {1: 2261, 2: 66, 3: 76, 4: 65, 5: 7150, 6: 8055, 7: 5672}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US007555838B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Shook
+
+US 7555,838 B2
+
+(45) Date of Patent:
+
+(54) METHOD FOR PRODUCING A
+
+5,499,700 A * 3/1996 Richardson et al. ...... 188/77W
+
+LIGHTWEIGHT BICYCLE WHEEL RIM
+
+(76) Inventor: William B. Shook, 3917 E. Eden Rock
+Cir., Tampa, FL (US) 36534
+-r
+
+(*) Notice:
+
+Jul. 7, 2009
+
+5,651,591 A
+6,070,948 A
+
+7/1997 Mercat et al.
+6/2000 Chen
+
+E. f
+
+1 !: R
+erting
+
+6,767,069 B2
+
+Subject to any disclaimer, the term of this
+
+patent is extended or adjusted under 35
+
+U.S.C. 154(b) by 154 days.
+
+6,961,999 B2
+
+2004/0163255 A1
+
+2005/0242658 A1
+
+7/2004 Chen
+
+11/2005 Shook
+
+8/2004 Shook ................... 29,894.354
+
+11/2005 Carlson et al.
+
+FOREIGN PATENT DOCUMENTS
+
+(21) Appl. No.: 11/525,438
+(22) Filed:
+Sep. 22, 2006
+
+EP
+EP
+
+O 579 525 A1
+0 715 OO1 B1
+
+7, 1993
+3/1999
+
+65
+(65)
+
+Primary Examiner David P Bryant
+Assistant Examiner—Sarang Afzali
+
+* cited by examiner
+Prior Publication Dat
+
+O
+DO
+US 2007/OO67993 A1
+Mar. 29, 2007
+
+Related U.S. Application Data
+(60) Provisional application No. 60/720,079, filed on Sep.
+23, 2005.
+
+(51) Int. Cl.
+B2IK L/38
+
+(2006.01)
+
+(52) U.S. Cl. .......... 29,894,35. 29/894.33: 29/894.353
+(58) Field of Classification Search ............ 29/894.354,
+29/894.35, 894.33, 894.353,894; 301/58,
+301/99, 95.104, 95.106, 95.107
+See application file for complete search history.
+(56)
+References Cited
+U.S. PATENT DOCUMENTS
+3, 1936 S11
+
+4,266,417 A
+
+5, 1981 Imamura et al. .............. T2,168
+
+14
+
+26
+
+Purdue
+(57)
+
+ABSTRACT
+
+A method for producing a bicycle wheel rim is disclosed. The
+method involves extruding a thin-walled, hollow body having
+the cross-sectional shape of the rim and an integral external
+tab. The walls of the hollow body are sufficiently thin that a
+length of the hollow body without the external tab is subject
+to buckling when roll formed to produce a rim. The tab is so
+positioned and sized that the hollow body with the integral
+external tab is not subject to buckling when roll formed. A
+portion of the extrusion is then rolled to a circular shape; the
+circular portion is cut from the extrusion; the free ends are
+connected, and the external tab is removed.
+
+2,034,360 A
+
+1029-N
+
+(74) Attorney, Agent, or Firm—David C. Purdue: John C.
+
+22
+
+12 Claims, 3 Drawing Sheets
+
+
