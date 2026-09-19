@@ -1,0 +1,159 @@
+patent: US10252768
+source: https://patentimages.storage.googleapis.com/ae/6e/50/7cb8a1af0f4165/US10252768.pdf
+pages: 12
+per-page extracted text length: {1: 2631, 2: 2434, 3: 116, 4: 273, 5: 205, 6: 194, 7: 164, 8: 144, 9: 6816, 10: 7496, 11: 7423, 12: 4449}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010252768B2
+
+(12) United States Patent
+
+( 10) Patent No.: US 10 , 252,768 B2
+
+Goes et al.
+
+(45) Date of Patent :
+
+(58 ) Field of Classification Search
+
+(54 ) BICYCLE
+(71 ) Applicants : Johannes Marie Quirinus Goes ,
+Lelystad (NL ); Pascal Tribotté,
+Versailles (FR )
+(72 ) Inventors: Johannes Marie Quirinus Goes,
+
+CPC ...... B62K 25 /04 ; B62K 25 / 286 ; B62K 19/00 ;
+B62K 19 /34 ; B62K 21/02 ; B62K 21/ 12 ;
+
+U .S. PATENT DOCUMENTS
+
+Versailles (FR )
+
+5 ,452,910 A * 9/1995 Harris
+
+15/507,729
+
+(22 ) PCT Filed :
+( 86 ) PCT No.:
+
+Aug. 31, 2015
+PCT/NL 2015 /000026
+
+280 /276
+
+OTHER PUBLICATIONS
+International Search Report and Written Opinion for related Inter
+national Patent Application No . PCT/NL2015 /000026 dated Feb .
+15 , 2016 .
+
+(Continued )
+
+Primary Examiner — Joseph M Rocca
+Assistant Examiner - Daniel S Yeagley
+(74 ) Attorney, Agent, or Firm — Troutman Sanders LLP ;
+
+(87) PCT Pub . No.: W02016 /036237
+PCT Pub . Date: Mar. 10 , 2016
+Prior Publication Data
+(65 )
+US 2017 /0240243 A1 Aug. 24 , 2017
+Foreign Application Priority Data
+(30 )
+1040932
+Sep . 1 , 2014 (NL ) .
+B62K 3 /04
+
+(52) U .S . CI.
+
+280 /283
+
+(Continued )
+
+$ 371 (c )( 1 ),
+Feb . 28 , 2017
+( 2 ) Date:
+
+B62K 25 / 28
+
+B62K 25 /26
+
+2001/0030408 A1* 10 /2001 Miyoshi .............. B62K 25 /04
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U . S .C . 154 (b ) by 252 days .
+
+(21) Appl. No.:
+
+(51) Int. Ci.
+
+(Continued )
+References Cited
+
+(56 )
+
+Lelystad (NL ); Pascal Tribotté ,
+
+( * ) Notice:
+
+Apr . 9 , 2019
+
+Ryan Schneider
+
+(57)
+
+ABSTRACT
+A mountain bike comprises: a frame (10 ); a rear wheel
+( 2 ) having its axle mounted in rear dropouts ( 16 ) of the
+frame; — a front wheel ( 3 ) having its axle mounted in front
+dropouts ( 18 ) of the frame; a pedal set (20 ) comprising a
+
+spindle mounted for rotation in a bottom bracket shell ( 19 )
+
+of the frame, two cranks ( 22 ) mounted at the opposite ends
+
+of the spindle , and two pedals (21) mounted for rotation at
+
+the free ends of the respective cranks ; wherein each crank
+
+( 2006 . 01)
+
+(22 ) has a crank length L of 164 mm or less ; wherein the
+bottom bracket shell ( 19 ) has a Practical Bracket Height
+PBH of 294 mm or less , wherein PBH = BH - B .( a :FST + ( 1
+a ).RST ), wherein BH indicates bracket height, FST indi
+
+(2006 .01 )
+(Continued )
+
+CPC ............. B62K 25 / 286 (2013 .01); B62K 3 /04
+( 2013 .01); B62K 19/34 ( 2013 .01); B62K 21/ 02
+
+cates Front Suspension Travel, and RST indicates Rear
+Suspension Travel.
+
+( 2013 .01); B62K 21/12 (2013.01); B62M 3 /08
+
+19 Claims, 6 Drawing Sheets
+
+(2013.01)
+
+12 3
+
+15
+
+10.3
+
+12
+18
+IR
+
+---
+
+WAP
+
+44
+
+Cous
+
+

@@ -1,0 +1,153 @@
+patent: US9033122
+source: https://patentimages.storage.googleapis.com/c0/4e/c0/30554dfaa0d43c/US9033122.pdf
+pages: 16
+per-page extracted text length: {1: 2734, 2: 1660, 3: 79, 4: 0, 5: 65, 6: 56, 7: 56, 8: 84, 9: 56, 10: 56, 11: 6539, 12: 7352, 13: 7717, 14: 7563, 15: 2319, 16: 752}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO9033122B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 9,033,122 B2
+(45) Date of Patent:
+May 19, 2015
+
+Ericksen et al.
+(54)
+
+on Jan. 20, 2010, provisional application No.
+
+METHOD AND APPARATUS FOR AN
+ADJUSTABLE DAMPER
+
+61/361,127, filed on Jul. 2, 2010.
+
+(71) Applicant: Fox Factory, Inc., Watsonville, CA (US)
+
+(51) Int. Cl.
+FI6F 9/50
+B60G 7/08
+B62K 25/08
+FI6F 9/46
+B62K 25/04
+
+(72) Inventors: Everet Ericksen, Santa Cruz, CA (US);
+Robert C. Fox, Scotts Valley, CA (US);
+David Batterbee, Buckingham (GB);
+John Marking, El Cajon, CA (US)
+(73) Assignee: Fox Factory, Inc., Watsonville, CA (US)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 72 days.
+
+(52) U.S. Cl.
+CPC ................ B60G 17/08 (2013.01); B62K 25/08
+
+(2013.01); F16F 9/465 (2013.01); B62K
+2025/044 (2013.01)
+(58) Field of Classification Search
+CPC ....... F16F 9/3482; F16F 9/3488; F16F 9/465;
+B6OG 17/08
+
+(21) Appl. No.: 13/843,704
+(22) Filed:
+(65)
+
+USPC ................... 188/269,281, 282.3, 282.4, 285,
+
+188/313–315,322. 13,322.14, 282.5;
+
+Mar 15, 2013
+
+280/276
+
+See application file for complete search history.
+
+Prior Publication Data
+
+US 2014/O124313 A1
+
+(2006.01)
+(2006.01)
+(2006.01)
+(2006.01)
+(2006.01)
+
+May 8, 2014
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+Related U.S. Application Data
+Continuation-in-part
+of application No. 13/485,401,
+(63)
+filed on May 31, 2012, and a continuation-in-part of
+application No. 12/684,072, filed on Jan. 7, 2010, now
+
+2,897,613 A
+3,202,413 A
+
+(Continued)
+
+abandoned, and a continuation-in-part of application
+
+No. 13/189,216, filed on Jul. 22, 2011, and a
+
+continuation-in-part of application No. 13/010,697,
+
+filed on Jan. 20, 2011, now Pat. No. 8,857,580, said
+
+8, 1959 Davidson et al.
+8, 1965 Colmerauer
+
+FOREIGN PATENT DOCUMENTS
+DE
+
+4406,918 A1 * 9, 1994
+
+application No. 13/189,216 is a continuation-in-part of
+application No. 13/175.244, filed on Jul. 1, 2011, now
+
+Primary Examiner — Thomas Irvin
+
+Pat. No. 8,627,932.
+
+(57)
+
+(60) Provisional application No. 61/709,041, filed on Oct.
+2, 2012, provisional application No. 61/667,327, filed
+on Jul. 2, 2012, provisional application No.
+61/491,858, filed on May 31, 2011, provisional
+application No. 61/645,465, filed on May 10, 2012,
+provisional application No. 61/143,152, filed on Jan.
+7, 2009, provisional application No. 61/296,826, filed
+
+7%ZZZgZ
+
+r
+
+E3 16,4315
+says
+9
+
+ABSTRACT
+
+A vehicle suspension damper is described. The vehicle sus
+pension damper includes: a pilot valve assembly; a primary
+valve; and an adjuster, wherein the pilot valve assembly
+meters fluid to the primary valve, and the adjuster moves the
+primary valve.
+5 Claims, 8 Drawing Sheets
+
+SS
+
+feat
+
+SSSANZN
+42.72
+
+

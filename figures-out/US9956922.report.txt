@@ -1,0 +1,191 @@
+patent: US9956922
+source: https://patentimages.storage.googleapis.com/fb/69/7f/d0c41c5eb6c60e/US9956922.pdf
+pages: 21
+per-page extracted text length: {1: 2762, 2: 577, 3: 145, 4: 381, 5: 156, 6: 150, 7: 425, 8: 288, 9: 128, 10: 276, 11: 302, 12: 305, 13: 181, 14: 96, 15: 6864, 16: 6586, 17: 7846, 18: 7856, 19: 7004, 20: 6572, 21: 353}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US009956922B2
+
+(12) United
+States Patent
+Phillips
+
+( 10 ) Patent No.:
+
+(54 ) CARRIER FOR A TWO WHEELED VEHICLE
+(71) Applicant: Cal M . Phillips, Platteville , WI (US)
+(72 ) Inventor: Cal M . Phillips , Platteville , WI (US)
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U .S .C . 154 (b ) by 0 days. days .
+
+( * ) Notice:
+
+US 9 ,956 , 922 B2
+
+(45) Date of Patent:
+4 ,852,779 A
+
+8 / 1989 Berg
+
+4 , 875 ,608 A
+
+10 /1989 Graber
+
+May 1 , 2018
+
+5 ,201, 244 A
+4 / 1993 Stewart et al.
+5 ,423 ,566 A * 6 / 1995 Warrington .
+
+B60D 1/52
+224 /521
+
+5 ,476,203 A * 12/1995 Fletcher ............
+5 ,497,927 A * 3/1996 Peterson
+
+B6OR 9 /06
+
+5,647,521 A * 7/ 1997 Burgess ....
+
+B6OR 9 / 10
+
+(21) Appl. No.: 15/396,710
+
+5 ,653,512 A
+8/ 1997 Phillips
+5 ,692 ,659 A * 12 / 1997 Reeves
+
+Jan . 2, 2017
+(22 ) Filed :
+Prior Publication Data
+(65 )
+US 2018 /0050645 A1 Feb . 22, 2018
+
+5,695 ,103 A * 12/1997 Duvernay
+5,775,560 A * 7/1998 Zahn
+
+BOOR 9 /06
+
+211/22
+
+224 /519
+
+224 / 505
+
+B6OR 9 /06
+224 / 504
+BOOR 9 / 06
+
+224 / 502
+BOOR 9 / 06
+224 /485
+
+( Continued )
+Primary Examiner - Corey Skurdal
+
+(51) Int. Ci.
+
+(74) Attorney , Agent, or Firm — John V . Stewart
+ABSTRACT
+(57 )
+
+( 2006 .01)
+
+BOOR 9 / 10
+
+B60R 9/ 04
+
+( 2006 . 01)
+
+BOOR 9 / 06
+
+( 2006 .01)
+
+(52 ) U .S . Ci.
+
+CPC .. . . . . . . . . . . . . . BOOR 9 / 10 (2013 .01 ); BOOR 9/ 04
+
+(2013 .01); B6OR 9/06 (2013 .01 )
+
+( 58 ) Field of Classification Search
+CPC . ... B6OR 9 /04 ; B6OR 9/ 06 ; B6OR 9 / 10 ; Y10S
+224 /924
+
+See application file for complete search history.
+References Cited
+
+(56 )
+
+1/ 1964 McCauley
+11/ 1967 Mork
+9 / 1970 Daugherty
+5 / 1972 Kravitz
+10 / 1974 Willis
+1/ 1975 Radek
+
+7
+
+-
+
+zontalposition and a compact vertical position selectable via
+a trigger at the back of the tray assembly . The main wheel
+tray assembly has a tray for each wheel of a bike . The two
+
+trays pivot between a compact position for shipping and
+storage and an operational position that is automatically
+locked . An add -on tray assembly provides wheel trays for a
+second bike. It connects to the main tray assembly without
+
+U .S. PATENT DOCUMENTS
+3 , 116 ,836 A
+3 ,355,028 A
+3, 529,737 A
+3 ,659 ,762 A
+3 ,843, 001 A
+3 , 861, 533 A
+
+A bike carrier that retains the wheels of a bike in a tray
+between pivoting retention arms with ratchets that hold the
+arms against the tires . The retention arms are quickly
+adjustable for different sized tires without tools. An embodi
+ment provides a bike wheel main tray assembly pivotally
+mounted on a trailer hitch drawbar at an operational hori
+
+tools, and provides a trigger at the back connected to the
+
+pivot selector of the main tray assembly .
+
+15 Claims, 12 Drawing Sheets
+
+16
+
+ADAPDAPORE
+
+-
+
+-
+
+-
+
+-
+
+rasa
+
+basoa
+
+re
+
+6
+PB
+!
+
+*
+
+101
+
+26 6 - 3
+
+VO
+
+

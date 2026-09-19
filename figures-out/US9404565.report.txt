@@ -1,0 +1,230 @@
+patent: US9404565
+source: https://patentimages.storage.googleapis.com/26/da/20/a20964b95f09f1/US9404565.pdf
+pages: 21
+per-page extracted text length: {1: 2541, 2: 4093, 3: 57, 4: 57, 5: 65, 6: 57, 7: 69, 8: 57, 9: 57, 10: 60, 11: 57, 12: 58, 13: 67, 14: 67, 15: 58, 16: 201, 17: 70, 18: 6582, 19: 7786, 20: 7767, 21: 7275}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO9404565B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Pfeiffer
+
+US 9.404,565 B2
+
+(45) Date of Patent:
+
+Aug. 2, 2016
+
+(54) SPROCKET
+
+536,813 A * 4, 1895 MacPhail et al. ....... F16H 55.30
+
+(71) Applicant: Wolf Tooth Components, LLC, Savage,
+MN (US)
+
+586,991 A * 7/1897 Curley .................... F16H 55.30
+474,156
+
+474,152
+
+590,649 A ck 9/1897 Ribyn, Jr.
+
+(72) Inventor: Michael W. Pfeiffer, Savage, MN (US)
+
+591,270 A
+
+10, 1897 Gauthier ................. F16.
+
+(73) Assignee: Wolf Tooth Components, LLC, Savage,
+MN (US)
+
+1,482,896 A * 2/1924 Huntington ............. F16H 55.30
+301/6.5
+
+619,537 A
+
+2, 1899 Bufford
+
+(*) Notice:
+
+1,608,141 A * 1 1/1926. Shekerjian ............... B62M 9.04
+
+Subject to any disclaimer, the term of this
+
+1835,406 A
+
+past
+SS
+adjusted under 35
+M YW(b) by
+ayS.
+
+2,602,343 A * 7/1952 Barrett ................... B62D
+55.08
+299,831
+
+w- -
+
+3,391,863. A
+
+(21) Appl. No.: 14/601,858
+(22) Filed:
+
+3,654,814. A
+
+Jan. 21, 2015
+
+(65)
+
+Prior Publication Data
+
+US 2015/0285362 A1
+
+12/1931 Kirst
+
+See
+
+474/74
+
+7, 1968 Huffman et al.
+
+4, 1972 Richmond
+
+3,730,009 A
+
+5, 1973 Mead et al.
+
+3,745,851 A
+
+7/1973 Zeldman et al.
+
+3,956,943 A
+
+5, 1976 Yamasaki
+
+3.969,947 A *
+
+7/1976 Martin .................... F16H 55.30
+
+Oct. 8, 2015
+
+474,152
+
+(Continued)
+
+Related U.S. Application Data
+(60) Provisional application No. 61/976,642, filed on Apr.
+
+FOREIGN PATENT DOCUMENTS
+
+8, 2014.
+
+DE
+
+1086957 B
+
+8, 1960
+
+(51) Int. Cl
+
+DE
+
+2816137 A1
+
+10, 1979
+
+FI6C 700
+
+(2006.01)
+
+(Continued)
+
+FI6C II/00
+FI6H 5.5/30
+
+(2006.01)
+(2006.01)
+
+OTHER PUBLICATIONS
+
+B62M 9/10
+(52) U.S. Cl.
+
+(2006.01)
+
+Third-Party Submission submitted in U.S. Appl. No. 14,596.761 on
+Dec. 17, 2015.
+
+CPC. FI6H55/30 (2013.01); B62M 9/10 (2013.01)
+(58) Field of Classification Search
+CPC ......... F16H55/30; F16H 7/06; F16H55/303;
+B62M 9/105; B62M 9/00
+USPC .......................................... 474/152, 156, 153
+
+See application file for complete search history.
+(56)
+References Cited
+U.S. PATENT DOCUMENTS
+257.445 A *
+
+5, 1882 Lechner .................... F16H 7.06
+
+495,584 A
+
+4, 1893 Guthrie
+
+Primary Examiner — Henry Liu
+(74) Attorney, Agent, or Firm — Dicke, Billig & Czaja,
+PLLC
+
+(57)
+ABSTRACT
+A sprocket includes a first body with teeth radially projecting
+therefrom, and second bodies on alternating ones of the teeth,
+with the second bodies increasing an overall width of the
+alternating ones of the teeth.
+
+474,152
+
+20 Claims, 15 Drawing Sheets
+3.
+
+302 330
+
+--
+
+--------
+
+w
+
+s
+
+|V
+
+SN Z-1 ( ,
+
+ww
+
+^
+
+S.
+
+D 242><s
+N \
+SNN- y
+NNN
+
+Y
+
+N
+
+s
+
+NN
+
+-
+
+

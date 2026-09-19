@@ -1,0 +1,155 @@
+patent: US11293500
+source: https://patentimages.storage.googleapis.com/ac/96/03/e49350707bf615/US11293500.pdf
+pages: 11
+per-page extracted text length: {1: 2633, 2: 203, 3: 156, 4: 210, 5: 139, 6: 135, 7: 6939, 8: 7039, 9: 7134, 10: 6335, 11: 2376}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011293500B2
+
+( 12 ) Dulken
+Unitedet alStates
+Patent
+.
+( 54 ) INDIVIDUALLY PHASED PAWL DRIVE
+MECHANISM
+
+( 10 ) Patent No.: US 11,293,500 B2
+(45) Date of Patent :
+Apr. 5, 2022
+( 58 ) Field of Classification Search
+
+F16D 41/12 ; F16D 41/30 ; B60B 27/023 ;
+
+USPC
+
+192/64 ; 310/ 110.5
+
+B60B 27/047
+
+( 71 ) Applicant: Industry Nine LLC , Asheville, NC
+(US )
+(72) Inventors: Michael Macfarland Dulken ,
+
+CPC
+
+See application file for complete search history .
+References Cited
+
+( 56 )
+
+Asheville , NC (US ) ; Clint John
+Spiegel, Asheville , NC ( US )
+
+U.S. PATENT DOCUMENTS
+
+( 73 ) Assignee : Industry Nine LLC , Asheville, NC
+(US )
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 (b ) by 0 days.
+( 21 ) Appl. No .: 16 /252,028
+
+( * ) Notice:
+
+( 22 ) Filed :
+
+( 65 )
+
+( 2006.01 )
+( 2006.01 )
+
+( 52 ) U.S. CI .
+
+???
+
+8,992,375 B2
+
+3/2015 Gobel et al .
+
+(Continued )
+FOREIGN PATENT DOCUMENTS
+0777060 A1 * 6/1997
+
+F16D 41/30
+
+( 57 )
+
+ABSTRACT
+
+An individually phased pawl drive mechanism includes a
+plurality of pawls each including a plurality of protrusions
+
+( 60 ) Provisional application No. 62 / 618,702 , filed on Jan.
+( 2006.01 )
+
+192/46
+BOOR 22/1954
+280/806
+
+Van Winkle Law Firm
+
+Related U.S. Application Data
+
+B62M 9/10
+BOOB 27/02
+BOOB 27/00
+F16D 41/30
+
+6,419,272 B1 * 7/2002 Yamaguchi
+
+Primary Examiner — Richard M Lorence
+(74 ) Attorney, Agent, or Firm William G. Heedy; The
+
+Prior Publication Data
+US 2019/0219109 A1
+Jul . 18 , 2019
+
+F16D 41/24
+
+BOOB 27/0005
+
+EP
+
+Jan. 18 , 2019
+
+18 , 2018 .
+(51 ) Int. Ci .
+
+5,964,332 A 10/1999 King
+6,202,813 B1 * 3/2001 Yahata
+
+( 2006.01 )
+( 2006.01 )
+
+F16D 41/24 ( 2013.01 ) ; B60B 27/0026
+
+(2013.01 ) ; B60B 27/023 ( 2013.01 ) ; B62M
+9/10 (2013.01 ) ; F16D 41/30 (2013.01 ) ; B60Y
+2200/13 (2013.01 )
+
+forming at least one slot between a corresponding pairing of
+the plurality of protrusions; a pawl carrier member sized and
+configured for receipt of the plurality of pawls ; a drive ring
+carrier member including a plurality of radially displaced
+teeth ; wherein rotation in one direction causes a first one of
+the plurality of radially displaced teeth to engage a first one
+of the plurality of pawls, the primary pawl ; and wherein
+continued rotation is permitted if the drive force is sufficient
+to cause deflection of the pawl carrier member relative to the
+drive ring carrier member, thereby causing one or more
+subsequent ones of the plurality of secondary pawls each to
+be brought into engagement in succession with a corre
+
+sponding one of the plurality of radially displaced teeth .
+16 Claims , 4 Drawing Sheets
+•22 .
+
+12
+
+14
+-16
+
+12 .
+
+
