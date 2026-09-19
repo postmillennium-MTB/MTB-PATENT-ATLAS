@@ -16,16 +16,16 @@ An interactive timeline of mountain bike intellectual property: 280 patents and 
 |---|---|
 | **Total entries** | 280 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 132 |
-| **Expired patents** | 94 |
+| **Active patents** | 131 |
+| **Expired patents** | 95 |
 | **Pending applications** | 43 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
 | **Brands** | 153 |
 | **Named inventors** | 54 |
-| **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, ZA) |
-| **Verified entries** | 171 |
-| **Medium confidence** | 56 |
+| **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
+| **Verified entries** | 172 |
+| **Medium confidence** | 55 |
 | **Draft / in progress** | 53 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -346,6 +346,10 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
   **Misdirected, not TTX-related, and re-homed to where they actually belong:** **US 6,494,117 B1** ("Pedal/cleat assembly," Richard M. Bryne/Speedplay) is already `nums[1]` of this atlas's own "Bryne / Speedplay later pedal-interface patents" entry — gained its first figure (Fig. 1, the exploded cleat-body/spring-tongue assembly). **US 6,155,394** ("Bicycle coasting mechanism," Bill Shook/American Classic) is already the primary `num` of "Bill Shook / American Classic hub & drivetrain portfolio" — gained its first figure (Fig. 9, the ratchet ring's evenly spaced internal teeth). Both entries were already `conf:"v"`; no date/number corrections needed, this was purely a picture-wiring bonus surfaced by chasing down what the uploaded files actually were.
   **Two pictures — US 6,199,021 B1 ("Method and apparatus for measuring power output of one powering a chain driven vehicle," CC Kinetics, Inc.) and US 2015/0008059 A1 ("Drive device for bicycles," Philip Douglas & Horst Gusterhuber) — don't match any existing atlas entry.** Confirmed via the same GitHub Actions fetch (front pages read directly): the first is an early bicycle chain-tension/speed power meter, unrelated to any brand currently in this atlas; the second is a rear-swingarm drive unit shown in the patent's own figures on a wheelchair-conversion cycle and enclosed cargo trike, not a mountain bike. Neither was wired anywhere or used to start a new entry — flagged back to the user rather than guessed into place, since neither this session nor a keyword search found what either was meant to illustrate.
   Counts synced: README At-a-glance (170→171 verified, 57→56 medium; total/active/expired/pending/litigated/jurisdictions unchanged — EP was already a represented jurisdiction, SE still is via the separate Öhlins e-MTB pending-application entry) and confirmed the three `index.html` meta descriptions, `shareText`, and `mtBannerText` needed no edit (total unchanged at 280). "Entries with a figure" moves 101 → 104 (`img` 93→95, `imgs[]` 8→9).
+
+- **Verified the Leatt-Brace entry on a number and two figures the user supplied, and caught a status change the correction forces.** **US 8,562,551 B2**, "Neck Brace," Christopher James Leatt (Constantia, South Africa), assigned to Xceed Holdings CC (Cape Town) — fetched and read directly via the GitHub Actions figure tool. Granted Oct. 22, 2013 as a continuation of a May 25, 2006 application (issued as US 7,993,293), itself a continuation of the original PCT filing (PCT/ZA2004/000148, filed Nov. 26, 2004), claiming priority to a Nov. 26, 2003 South African filing (ZA 2003/9174) — the year after the 2001 racetrack fatality Leatt has said motivated the design. Per the continuation-term rule, the 20-year clock runs from that 2004 PCT filing, not this document's own 2011 filing date, giving an estimated expiry of **2024 — already passed**; the patent's own front page confirms zero days of patent-term adjustment and a terminal disclaimer tying its term to the earlier-filed parent, so nothing extends past that date. `y` unchanged at 2004 (was already the right year, just previously unverified), `g` 2006→2013 (the earlier draft date likely referred to a different, still-unidentified South African patent in Leatt's 30+-patent portfolio, or was simply a guess), `num` null→`"8562551"`, `j` "ZA" dropped (schema rule: omit `j` for a plain US filing — this was the *only* atlas entry using ZA, so it drops out of the jurisdiction list entirely), `st` active→**expired**, `exp` null→2024, `conf` "m"→"v". Both user-supplied figures wired in as a two-item `imgs[]`: Fig. 1 (the brace worn under a helmet, showing how its ring catches the helmet's rear edge to limit tilt) and Fig. 2 (a hand-annotated plan view of the two-piece ring and its strap routing). Counts synced: README At-a-glance (132→131 active, 94→95 expired, 171→172 verified, 56→55 medium, 14→13 non-US jurisdictions with ZA removed from the list; total/pending/litigated unchanged) and confirmed the three `index.html` meta descriptions, `shareText`, and `mtBannerText` needed no edit (total unchanged at 280). "Entries with a figure" moves 104 → 105 (`imgs[]` 9→10).
+
+- **Investigated the user's suspicion that the Nicolai gear-transmission portfolio entry's "Colorado Innovation" panel tag was a bug, since Nicolai Bicycles is a German company — confirmed it's not a bug.** The panel tag is computed at render time from `who[]` against the `BRAND_HQ` registry (`isColorado` in `cardHTML()`), not stored on the entry itself. This entry's `who` is `["Nicolai","Gates"]`; `"Nicolai"` has no `BRAND_HQ` mapping at all, but `"Gates"` maps to `"Colorado"` (The Gates Corporation, Denver) — already registered for other entries before this one. The tag is legitimately triggered by Gates' real presence in this portfolio (2 of the 5 patents are assigned directly to Gates, per the entry's own `s:` text), exactly matching the user's own guess. No `s`/`w` text contains a stray "Colorado" string either, so there's no secondary false-positive path to worry about. No code or data change made — flagged back to the user with the actual mechanism rather than silently leaving the question open or removing a correct tag.
 
 ---
 
