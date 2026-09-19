@@ -1,0 +1,130 @@
+patent: US20220242191
+source: https://patentimages.storage.googleapis.com/5d/ef/d7/0d8ad53be11e4b/US20220242191A1.pdf
+pages: 29
+per-page extracted text length: {1: 3051, 2: 93, 3: 143, 4: 157, 5: 120, 6: 120, 7: 114, 8: 102, 9: 149, 10: 101, 11: 98, 12: 154, 13: 114, 14: 88, 15: 110, 16: 123, 17: 106, 18: 112, 19: 105, 20: 100, 21: 94, 22: 6722, 23: 6298, 24: 7319, 25: 7425, 26: 7372, 27: 7543, 28: 7385, 29: 3064}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US 20220242191A1
+
+IN
+
+( 19 ) United States
+
+( 12 ) GALASSO
+Patent Application
+Publication ((4310)) Pub
+Pub... Date
+No .: :US 2022/0242191
+A1
+et al .
+Aug. 4, 2022
+( 54 ) METHODS AND APPARATUS FOR VEHICLE
+SUSPENSION HAVING MULTIPLE GAS
+VOLUMES
+
+( 60 ) Provisional application No. 61 / 157,541 , filed on Mar.
+
+4 , 2009 , provisional application No. 61 /227,775 , filed
+on Jul. 22 , 2009 , provisional application No. 61/157 ,
+541 , filed on Mar. 4 , 2009 , provisional application
+
+( 71 ) Applicant: Fox Factory, Inc. , Duluth , GA (US )
+( 72 ) Inventors : Mario GALASSO , Sandy Hook, CT
+(US ) ; Joshua Benjamin YABLON ,
+Oakland, CA (US ) ; Andrew LAIRD ,
+Los Gatos , CA (US ); William M.
+BECKER , Aptos, CA (US ); Joseph
+FRANKLIN , Vancouver, WA (US ) ;
+Dennis K. WOOTTEN , Milford , NH
+
+(US )
+
+No. 61 / 038,015 , filed on Mar. 19 , 2008 , provisional
+application No. 61 / 157,541 , filed on Mar. 4 , 2009 ,
+provisional application No. 61 /038,015 , filed on Mar.
+19 , 2008 , provisional application No. 61 / 294,458 ,
+filed on Jan. 12 , 2010 .
+Publication Classification
+
+(51 ) Int. Cl.
+BOOG 17/052
+
+B60G 13/10
+
+( 73 ) Assignee: Fox Factory , Inc. , Duluth , GA ( US )
+( 21 ) Appl . No .: 17 /723,215
+Apr. 18 , 2022
+(22) Filed :
+
+F16F 9/02
+B60G 11/27
+F16F 13/00
+F150 1400
+F16F 9/16
+
+(2006.01 )
+(2006.01 )
+(2006.01 )
+(2006.01)
+(2006.01 )
+(2006.01 )
+( 2006.01)
+
+( 52 ) U.S. CI .
+
+Related U.S. Application Data
+
+( 60 ) Division of application No. 16/ 453,474 , filed on Jun .
+26 , 2019 , now Pat . No. 11,312,203 , which is a con
+tinuation of application No. 15 / 828,230 , filed on Nov.
+30 , 2017 , now Pat. No. 10,384,509 , which is a con
+tinuation of application No. 14 / 848,947 , filed on Sep.
+9 , 2015, now Pat . No. 9,855,812 , which is a contin
+uation of application No. 13 / 005,474 , filed on Jan. 12 ,
+2011 , now Pat . No. 9,156,325 , which is a continu
+ation - in - part of application No. 12 / 717,867 , filed on
+Mar. 4 , 2010 , now abandoned, which is a continu
+ation - in -part of application No. 12 / 509,258 , filed on
+Jul. 24 , 2009 , now Pat . No. 8,869,959 , said applica
+tion No. 12 /717,867 is aa continuation - in -part of appli
+cation No. 12 /407,610 , filed on Mar. 19 , 2009 , now
+Pat. No. 8,894,050 , said application No. 13 / 005,474
+is a continuation - in -part of application No. 12/407 ,
+2
+
+610 , filed on Mar. 19 , 2009 , now Pat . No. 8,894,050 .
+
+CPC
+
+B60G 17/052 (2013.01 ) ; B60G 13/10
+( 2013.01 ) ; F16F 9/0218 ( 2013.01 ) ; B60G
+11/27 ( 2013.01 ) ; F16F 13/00 ( 2013.01 ) ; B62K
+25/08 (2013.01 ) ; F16F 9/02 ( 2013.01 ) ; F16F
+9/16 ( 2013.01 ) ; Y10T 137/87161 ( 2015.04 ) ;
+B60G 2300/12 ( 2013.01 ) ; F150 1400
+( 2013.01 )
+ABSTRACT
+
+( 57 )
+
+A method and apparatus for a vehicle suspension system gas
+spring . In one embodiment, a vehicle suspension system gas
+
+spring includes a compressible main gas chamber and an
+
+additional volume combinable with the main chamber to
+
+change a gas spring rate of the system . In one embodiment,
+a low friction piston seal is created by a flexible seal
+
+member.
+
+025
+
+675
+
+10
+
+??
+
+

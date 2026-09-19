@@ -1,0 +1,112 @@
+patent: US20210300140
+source: https://patentimages.storage.googleapis.com/ea/ea/50/045b821c085920/US20210300140A1.pdf
+pages: 22
+per-page extracted text length: {1: 1433, 2: 129, 3: 111, 4: 124, 5: 121, 6: 174, 7: 131, 8: 121, 9: 221, 10: 361, 11: 454, 12: 6248, 13: 7391, 14: 7365, 15: 7258, 16: 7116, 17: 7178, 18: 7388, 19: 7499, 20: 7173, 21: 5855, 22: 3903}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+MONT
+
+US 20210300140A1
+
+IN
+
+( 19 ) United States
+
+( 12 ) ERICKSEN
+Patent Application
+Publication ((4310)) Pub
+Pub.. Date
+No .: :US 2021/0300140
+A1
+et al .
+Sep. 30 , 2021
+( 54 ) INTEGRATED ACTIVE VALVE ASSEMBLY
+
+(2006.01 )
+(2006.01 )
+
+B62K 21/02
+B62 ) 45/20
+B62 ) 43/30
+B62 ) 45/40
+
+( 71 ) Applicant: Fox Factory, Inc. , Braselton , GA (US )
+( 72 ) Inventors : Everet Owen ERICKSEN , Woodland ,
+CA (US ); William M. BECKER ,
+
+(2006.01 )
+(2006.01 )
+
+( 52 ) U.S. CI .
+
+Aptos, CA ( US )
+
+B60G 17/018 (2013.01 ) ; BOOG 17/06
+
+CPC
+
+( 2013.01 ) ; B62J 45/40 (2020.02 ) ; B62J 45/20
+( 2020.02 ) ; B62J 43/30 (2020.02 ) ; B62K 21/02
+
+( 73 ) Assignee : Fox Factory, Inc. , Braselton , GA (US )
+
+( 2013.01 )
+
+( 21 ) Appl. No .: 17 /212,313
+(22 ) Filed :
+
+Mar. 25 , 2021
+
+An integrated active valve assembly is disclosed . The inte
+grated active valve assembly including a suspension con
+troller module, an active shock assembly, and a wire to
+communicatively couple the suspension controller module
+with the active shock assembly such that the suspension
+controller module can send a signal via the wire to modify
+a damping characteristic of the active shock assembly.
+
+30, 2020 .
+
+Publication Classification
+
+( 51 ) Int . Ci.
+
+( 2006.01)
+( 2006.01 )
+
+B60G 17/018
+B60G 17/06
+
+ABSTRACT
+
+( 57 )
+
+Related U.S. Application Data
+( 60 ) Provisional application No. 63 / 001,739 , filed on Mar.
+
+32
+
+36
+
+33
+
+24
+34
+
+-26
+
+28
+
+-38
+288
+
+35
+85
+
+33
+
+72
+
+-30
+
+
