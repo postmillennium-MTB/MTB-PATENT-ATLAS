@@ -1,0 +1,195 @@
+patent: US9897160
+source: https://patentimages.storage.googleapis.com/ed/9c/34/e8e8dc3a2e6ace/US9897160.pdf
+pages: 11
+per-page extracted text length: {1: 2931, 2: 1846, 3: 951, 4: 98, 5: 792, 6: 6366, 7: 7176, 8: 7645, 9: 7612, 10: 6385, 11: 4861}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+|HAO WANATHA MARIA DE REALMAMMUT
+US009897160B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+(45) Date of Patent:
+
+Nishikawa
+
+(54 ) VIBRATION ISOLATOR
+(71 ) Applicant: BRIDGESTONE CORPORATION ,
+Tokyo (JP )
+
+Feb . 20, 2018
+
+References Cited
+U .S . PATENT DOCUMENTS
+
+(56 )
+
+4,697,793 A * 10/1987 Reuter ................ F16F
+13 / 105
+267/ 140 .13
+4,938 ,463 A * 7/1990 Miyamoto ........... F16F 13 / 106
+267/ 140 . 13
+(Continued )
+
+(72) Inventor: Keita Nishikawa, Tokyo ( JP )
+
+(73 ) Assignee : BRIDGESTONE CORPORATION ,
+Tokyo (JP )
+
+( * ) Notice :
+
+US 9 ,897, 160 B2
+
+FOREIGN PATENT DOCUMENTS
+
+Subject to any disclaimer, the term of this
+
+1796821 A
+103620258 A
+
+CN
+CN
+
+patent is extended or adjusted under 35
+U .S .C . 154 (b ) by 0 days.
+
+7 / 2006
+3 / 2014
+
+(Continued )
+
+(21 ) Appl. No.:
+
+15 /113, 344
+
+OTHER PUBLICATIONS
+
+(22 ) PCT Filed :
+
+Mar. 13, 2015
+
+Communication dated Mar. 8, 2017 from the State Intellectual
+Property Office of the P.R . C . in counterpart Application No .
+201580008965. 8 .
+
+PCT/ JP2015 / 057486
+(86 ) PCT No.:
+$ 371 (c )(1),
+Jul. 21, 2016
+( 2 ) Date :
+(87) PCT Pub . No.: W02015 / 190145
+PCT Pub. Date: Dec. 17, 2015
+Prior Publication Data
+(65 )
+US 2017 /0002891 A1 Jan . 5, 2017
+Foreign Application Priority Data
+(30 )
+.............. 2014 - 122439
+Jun . 13 , 2014 (JP )
+(51) Int. Cl.
+F16F 5 /00
+
+F16F 13/ 10
+
+(Continued )
+Primary Examiner — Christopher Schwartz
+
+(74 ) Attorney , Agent, or Firm — Sughrue Mion , PLLC
+ABSTRACT
+(57)
+A vibration isolator of the present invention includes a first
+attachment member ( 11 ), a second attachmentmember (12 ),
+an elastic body ( 13 ) , a partition member ( 15 ), and a movable
+
+member ( 23 ). In addition , a plurality of communicating
+holes ( 27a and 27b ) extending outward in an axial direction
+
+from a portion facing the movable member ( 23 ) in the axial
+
+direction in a wall surface of an accommodating chamber
+( 18 ) and configured to communicate the accommodating
+
+chamber (18 ) with a main liquid chamber ( 16a ) or a sub
+
+sidiary liquid chamber (165 ) are provided in the partition
+member ( 15 ), at least one of the plurality of communicating
+
+( 2006 .01)
+( 2006 .01)
+
+holes (27a and 27b ) is a direct coupling hole ( 27a ) config
+ured to directly couple the accommodating chamber ( 18 )
+
+(52) U.S . Ci.
+
+with the main liquid chamber ( 16a ) or the subsidiary liquid
+chamber ( 166 ) in the axial direction , a flow controlmember
+
+CPC ............ F16F 13/ 107 (2013 .01); F16F 13/ 10
+
+( 2013 .01)
+
+(58 ) Field of Classification Search
+???
+
+(30 ) positioned at an outside in the axial direction relative to
+movable member (23 ) in the axial direction through the
+(Continued )
+
+the direct coupling hole ( 27a ) and disposed to overlap the
+
+. . .......... . F16F 13 / 105 – 13 / 107
+
+(Continued )
+
+13a
+16
+
+11
+
+11am
+
+110
+
+28
+27a
+
+-
+
+-
+
+- - -
+
+-
+
+- - www
+
+- -
+
+- -
+
+- -
+
+A
+
+EA
+
+15
+
+21
+
+24
+18 -13b
+
+165-
+
+11b WAJITO
+
+18a18b 27b |22176 26 30
+14 25
+
+KTIAUR
+
+

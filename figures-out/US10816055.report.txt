@@ -1,0 +1,180 @@
+patent: US10816055
+source: https://patentimages.storage.googleapis.com/c4/43/af/ded20e680de0d7/US10816055.pdf
+pages: 17
+per-page extracted text length: {1: 2751, 2: 866, 3: 124, 4: 180, 5: 274, 6: 282, 7: 248, 8: 182, 9: 243, 10: 223, 11: 6883, 12: 7424, 13: 7877, 14: 7906, 15: 7130, 16: 6881, 17: 130}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010816055B2
+
+( 12 ) United
+States Patent
+Górski et al .
+
+( 10) Patent No .:
+
+( 54 ) DAMPER BUMPER CAP WITH LABYRINTH
+
+( 56 )
+
+U.S. PATENT DOCUMENTS
+
+( 71 ) Applicant: Tenneco Automotive Operating
+Company Inc. , Lake Forest , IL (US )
+( 72 ) Inventors : Tomasz Górski , Laziska Gorne (PL ) ;
+Sebastian Kostelecki , Katowice (PL )
+( 73 ) Assignee : Tenneco Automotive Operating
+Company Inc. , Lake Forest, IL (US )
+( * ) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 0 days.
+( 21 ) Appl. No .: 15 /964,317
+( 22) Filed :
+Apr. 27, 2018
+
+( 2006.01)
+( 2006.01 )
+
+F16F 9/38
+F16F 9/32
+F16F 9/36
+BOOG 13/00
+
+3/2001 McCormick et al .
+10/2010 Maeda
+
+(Continued )
+FOREIGN PATENT DOCUMENTS
+CN
+CN
+
+203962832 U
+204784402 U
+
+11/2014
+11/2015
+
+( Continued )
+OTHER PUBLICATIONS
+
+International Search Report and Written Opinion issued in related
+PCT Application No. PCT /US2019 /027466 dated Aug. 7 , 2019 .
+
+ABSTRACT
+
+( 57 )
+
+( 2006.01 )
+( 2006.01 )
+F16F 9/3242 ( 2013.01 ) ; F16F 9/36
+
+(2013.01 ) ; F16F 9/38 ( 2013.01 ) ; B60G 13/001
+( 2013.01 ) ; B60G 2204/41 (2013.01 ) ; F16F
+2230/0023 (2013.01 ) ; F16F 2230/105
+(2013.01 ) ; F16F 2230/30 (2013.01 )
+
+( 58 ) Field of Classification Search
+CPC
+
+12/1982 Wossner et al .
+
+Pierce
+
+( 51 ) Int. Ci .
+
+CPC
+
+4,364,457 A
+6,199,844 B1
+7,810,619 B2
+
+Primary Examiner — Bradley T King
+Assistant Examiner — Stephen M Bowes
+(74 ) Attorney, Agent, or Firm - Harness, Dickey &
+
+Prior Publication Data
+US 2019/0331192 A1
+Oct. 31 , 2019
+
+(52) U.S. CI.
+
+Oct. 27 ,2 2020
+
+References Cited
+
+AIR PASSAGEWAY
+
+( 65 )
+
+US 10,816,055 B2
+
+(45 ) Date of Patent :
+
+B60G 2204/4502 ; B60G 2204/124 ; B60G
+
+2202/31 ; B60G 2202/312 ; F16F 9/58 ;
+F16F 9/38 ; F16F 9/369 ; F16F 9/3242 ;
+F16F 9/361 ; F16J 15/447 ; F16J 15/4472 ;
+F16J 15/4476
+
+A damper bumper cap for covering the rod side end of the
+damper tube containing a piston rod seal and for retaining a
+dust cover on the damper tube. The cap includes a side wall
+positioned in contact with the damper tube, an end wall that
+extends radially inwardly over the piston rod seal , and an
+annular skirt that is spaced radially outward of the side wall .
+First and second groups of connection wall segments extend
+radially between the side wall and the annular skirt at
+different heights to define vent openings in the spaces
+between the connection wall segments in the first and second
+groups of connection wall segments. The vent openings thus
+provide a plurality of tortuous airflow paths through the cap
+
+at circumferentially spaced locations.
+
+See application file for complete search history.
+
+15 Claims , 8 Drawing Sheets
+34
+
+89 86
+
+-66
+
+76
+82
+
+76
+
+62
+
+-86
+
+88
+
+89
+-72
+74
+-78
+
+88
+74
+
+78
+
+54
+
+60
+
+70
+
+30
+
+-92
+94
+100
+
+44
+
+100
+
+

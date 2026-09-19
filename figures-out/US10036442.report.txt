@@ -1,0 +1,141 @@
+patent: US10036442
+source: https://patentimages.storage.googleapis.com/a9/2d/8a/72ae65e0d11be8/US10036442.pdf
+pages: 7
+per-page extracted text length: {1: 2430, 2: 169, 3: 243, 4: 129, 5: 6742, 6: 7393, 7: 2998}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010036442B2
+
+(12) United States Patent
+
+(10) Patent No.: US 10 ,036 ,442 B2
+
+(45) Date of Patent:
+
+Mao et al.
+
+(54 ) ELASTIC MEMBER AND VIBRATING
+MOTOR USING SAME
+@
+(71) Applicants :LuBin Mao , Shenzhen (CN ); Fei Hou ,
+
+Shenzhen (CN ); HongXing Wang ,
+
+Shenzhen (CN )
+
+(72 ) Inventors: LuBin Mao , Shenzhen (CN ); Fei Hou ,
+Shenzhen (CN ); HongXing Wang ,
+
+@
+
+Shenzhen (CN )
+@
+( 73 )
+
+Assignee : AAC TECHNOLOGIES PTE . LTD .,
+
+Singapore (SG )
+@
+( * ) Notice : Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U .S . C . 154 (b ) by 245 days .
+
+(21) Appl. No.: 15 /080, 290
+(22 ) Filed : Mar. 24 , 2016
+Prior Publication Data
+(65 )
+US 2017 /0025936 A1 Jan . 26 , 2017
+
+(30 )
+Foreign Application Priority Data
+Jul. 24, 2015 (CN ) ........................ 2015 1 0443104
+
+Jul. 31 , 2018
+
+(58 ) Field of Classification Search
+
+??? . ...... .......................... HO2K
+CPC
+ho 33 / 00 ; HO2K 33 /02
+. ......... 310 /25
+USPC ..............
+
+See application file for complete search history.
+References Cited
+(56 )
+
+U .S . PATENT DOCUMENTS
+2011/0101798 A1* 5/2011 Lee ............. HO2K31033// 2916
+
+2012/0104875 A1 * 5/2012 Park
+2012/ 0169148 A1 * 7/ 2012 Kim
+
+.........
+
+HO2K 33 / 16
+
+310 / 25
+
+HO2K 33 / 16
+310 /25
+
+2012/ 0169151 Al * 7/2012 Dong ....... ........... HO2K 31033// 2516
+
+* cited by examiner
+Primary Examiner – Hanh Nguyen
+(74 ) Attorney , Agent, or Firm — Na Xu; IPro , PLLC
+ABSTRACT
+(57)
+An elastic member is provided in the present disclosure. The
+elastic member includes a first elastic part for providing a
+first amplitude and a second elastic part connected to the first
+elastic part for providing a second amplitude. The first
+elastic part includes a first connecting part and a first
+
+connecting arm extending from the first connecting part ; the
+second elastic part includes a second connecting arm and a
+
+second connecting part extending from the second connect
+
+(51) Int. Cl.
+HO2K 33/ 00
+F16F 3 /02
+
+( 2006 .01)
+
+HOCK 33 /02
+
+(2006 . 01)
+
+ing arm ; the second connecting part is parallel to the first
+connecting part, the second connecting arm extends sub
+stantially towards the first connecting parts. A vibrating
+motor using the elastic member is also provided in the
+
+(2006 .01)
+
+(52 ) U . S . CI.
+
+CPC ....... ..... F16F 37023 (2013 . 01 ); H02K 33 /02
+
+present disclosure .
+
+17 Claims, 3 Drawing Sheets
+
+(2013 . 01)
+
+103
+
+102A
+101A
+
+102A
+
+100 101B
+101A
+
+102B
+
+104
+
+
