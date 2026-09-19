@@ -1,0 +1,171 @@
+patent: USD752482
+source: https://patentimages.storage.googleapis.com/b2/ba/a7/a9db1613df60a0/USD752482.pdf
+pages: 8
+per-page extracted text length: {1: 2898, 2: 1171, 3: 63, 4: 76, 5: 69, 6: 55, 7: 55, 8: 70}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOOD752482S
+
+(12) Gustaffson
+United States
+Design Patent (10) Patent No.:
+et al.
+
+US D752,482 S
+
+(45) Date of Patent:
+
+(54)
+
+. Mar. 29, 2016
+
+4,545,601 A * 10/1985 Muller ..................... B60G 3.26
+
+REAR SHOCK ABSORBER FOR A BICYCLE
+
+267/67
+
+(71) Applicant: Ohlins Racing AB, Upplands Vasby
+(SE)
+
+4,830,395 A
+D302.672 S
+
+8, 1989 Ueno
+
+4,911,466 A *
+
+3/1990 Blair ........................ B60G 3.26
+
+(72) Inventors: Leif Gustaffson, Holmsijo (SE); Torkel
+Sintorn, Vaxholm (SE)
+
+5,044,614 A *
+
+9/1991 Rau ...................... B60G 15,062
+
+280/124.134
+267/175
+
+D346,781 S * 5/1994 Homme ....................... D12/159
+5,580,034 A * 12/1996 Cheng .................. B60G 17,021
+
+(73) Assignee: Öhlins Racing AB, Upplands Vasby
+(SE)
+(**)
+
+Term:
+
+188,322.17
+
+14 Years
+
+(21) Appl. No.: 29/515,437
+(22) Filed:
+
+Jan. 22, 2015
+
+Related U.S. Application Data
+(62) Division of application No. 29/457,095, filedon Jun. 6,
+
+5/1989 Foley
+
+D390,505 S
+D390,506 S
+5,720.473 A
+
+2f1998 Shiau
+2f1998 Shiau
+2f1998 Thomas
+
+D398,269 S *
+5,803,443 A
+
+9/1998 Sennuck ....................... 297/209
+9/1998 Chang
+
+D399.462 S
+
+10, 1998 Toffolo et al.
+
+(Continued)
+Primary Examiner — Robert M Spear
+Assistant Examiner — Ryan Harvey
+(74) Attorney, Agent, or Firm — Wolf, Greenfield & Sacks,
+
+2013, now Pat. No. Des. 734,219.
+(51) LOC (10) Cl. ................................................ 12-11
+
+P.C.
+
+(52)
+
+The ornamental design for a rear shock absorber for a bicycle,
+
+(58)
+
+U.S. C.
+USPC ......................................................... D12/118
+Field of Classification Search
+
+(57)
+as shown and described.
+
+DESCRIPTION
+
+USPC ......... D12/111, 159, 118: D21/562; 267/218,
+
+267/286, 221, 34, 177, 180, 255; 29/227,
+29/401.1, 402.09: 188/285,287, 315,
+188/322.19, 314, 319.1, 269,282.9, 274,
+188/312,322.22: 280/6.157, 124.162:
+74/107
+
+CPC ..................... B60G 2500/30; B60G 2202/312:
+
+B60G 2204/1242: B60G 15/063: B60G
+22O2A12
+
+See application file for complete search history.
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+3,582,059 A
+6/1971 Van Ooy
+D230,723 S * 3/1974 Cowan ......................... D12/159
+4,036,335 A
+7/1977 Thompson et al.
+4,054,983 A
+D262,959 S
+D277,952 S
+
+10, 1977 Cowan
+2f1982 Cowan
+3, 1985 Nakano et al.
+
+CLAM
+
+FIG. 1 is a top front perspective view of a rear shock absorber
+for a bicycle;
+FIG. 2 is a right side view of the rear shock absorber for a
+bicycle of FIG. 1;
+FIG. 3 is a front view of the rear shock absorber for a bicycle
+of FIG. 1;
+FIG. 4 is a left side view of the rear shock absorber for a
+
+bicycle of FIG. 1;
+FIG. 5 is a rear view of the rear shock absorber for a bicycle
+of FIG. 1;
+FIG. 6 is a bottom view of the rear shock absorber for a
+
+bicycle of FIG. 1; and,
+FIG. 7 is a top view of the rear shock absorber for a bicycle of
+FIG 1.
+
+The broken lines illustrate portions of the article that form no
+part of the claimed design.
+1 Claim, 6 Drawing Sheets
+
+

@@ -1,0 +1,115 @@
+patent: US6199021
+source: https://patentimages.storage.googleapis.com/00/75/23/fbc81f22022feb/US6199021.pdf
+pages: 38
+per-page extracted text length: {1: 2423, 2: 40, 3: 57, 4: 107, 5: 36, 6: 0, 7: 537, 8: 161, 9: 153, 10: 501, 11: 235, 12: 160, 13: 333, 14: 137, 15: 73, 16: 6236, 17: 7255, 18: 6625, 19: 5516, 20: 1750, 21: 1585, 22: 674, 23: 0, 24: 0, 25: 0, 26: 0, 27: 0, 28: 0, 29: 1624, 30: 0, 31: 0, 32: 1248, 33: 0, 34: 1421, 35: 1466, 36: 1039, 37: 6340, 38: 1742}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6199021B1
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Cote et al.
+
+(54)
+
+METHOD AND APPARATUS FOR
+MEASURING POWER OUTPUT OF ONE
+POWERING A CHAN DRIVEN VEHICLE
+
+(75) Inventors: Alan Cote, East Aurora, NY (US);
+Jean-Joseph Cote, Boulder, CO (US);
+John C. Croy, Middleton, RI (US)
+(73) Assignee: CC Kinetics, Inc., East Aurora, NY
+(US)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+(21) Appl. No.: 09/083,374
+May 22, 1998
+(22) Filed:
+
+(56)
+
+Mar. 6, 2001
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+1,107,234
+
+8/1914 Morscher ........................ 73/862.194
+
+2,618,970 11/1952 Hitchcock et al. ............... 73/862.41
+4,071,892
+1/1978 Genzling .............................. 701/200
+4,141,245 * 2/1979 Branstetter ......
+... 73/144
+4,434,801
+
+3/1984 Jiminez et al. ..
+
+5,027.303
+5,167,159
+
+6/1991. Witte ...................................... 702/44
+12/1992 Lucking .......................... 73/862.451
+
+600/502
+
+5,426,968
+5,545,982
+
+6/1995 Mertens .......................... 73/862.474
+8/1996 Vlakancic ............................ 324/174
+
+5,585,560
+
+12/1996 Goossens ............................... 73/494
+
+* cited by examiner
+Primary Examiner Marc S. Hoff
+ASSistant Examiner Hien Vo
+
+(74) Attorney, Agent, or Firm-Hodgson Russ Andrews
+Woods & Goodyear LLP
+
+Related U.S. Application Data
+application No. 60/062,355, filed on Oct. 15,
+(60) Provisional
+1997.
+
+(51) Int. Cl." .............................. G01L 1700; G01L 3/00
+(52) U.S. Cl. ............................. 702/44; 73/54.41; 73/570;
+73/862.321; 73/862.322; 73/862.381; 73/862.391;
+73/862.41
+
+(58)
+
+US 6,199,021 B1
+
+(45) Date of Patent:
+
+Field of Search ........................... 702/44; 73/862.08,
+
+73/862.28, 862.321, 862.322, 862.324.
+54.28, 54.31, 54.41, 570, 868.451, 862.194,
+862.195, 862.391, 862.41, 862.42
+
+(57)
+
+ABSTRACT
+
+The invention broadly provides a method and apparatus for
+measuring the power output of one powering a chain driven
+vehicle. In a preferred embodiment described, the vehicle is
+a bicycle. The method of the invention comprises measuring
+the Speed and tension of the drive chain and calculating the
+power output therefrom. The apparatus of the invention
+includes a chain Speed Sensor, a chain tension Sensor, and
+electronic processing means to calculate and display the
+power output based upon the chain measurements.
+33 Claims, 14 Drawing Sheets
+
+

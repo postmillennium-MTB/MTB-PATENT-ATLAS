@@ -1,0 +1,237 @@
+patent: US6494117
+source: https://patentimages.storage.googleapis.com/9a/f6/44/394a341dcf6d04/US6494117.pdf
+pages: 15
+per-page extracted text length: {1: 3455, 2: 57, 3: 68, 4: 57, 5: 65, 6: 57, 7: 57, 8: 57, 9: 61, 10: 7251, 11: 0, 12: 0, 13: 7177, 14: 6443, 15: 5922}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6494,117B1
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Bryne
+
+US 6,494,117 B1
+
+(45) Date of Patent:
+
+(54) PEDAL/CLEAT ASSEMBLY
+
+(75) Inventor: Richard M. Bryne, Del Mar, CA (US)
+(73) Assignee: Speedplay, Inc., San Diego, CA (US)
+
+(*) Notice:
+
+Dec. 17, 2002
+
+DE
+
+34 26 103.6
+
+1/1986
+
+EP
+
+OO12097
+
+6/1980
+
+............ B62M/3/08
+
+FR
+
+O O15803
+
+2/1980
+
+... B62M/3/08
+
+FR
+
+2518 041
+
+12/1982
+
+... B62M/3/08
+
+FR
+
+2 609 270
+
+7/1988
+
+... B62M/3/08
+
+FR
+
+2279 6O7
+
+7/1994
+
+............ B62M/1/02
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+U.S.C. 154(b) by 21 days.
+
+* cited by examiner
+
+(21) Appl. No.: 09/905,603
+(22) Filed:
+Jul. 13, 2001
+
+Primary Examiner David A. Bucci
+Assistant Examiner Vicky Johnson
+(74) Attorney, Agent, or Firm-Sheppard, Mullin, Richter
+
+(51) Int. Cl." .................................................. G05G 1/14
+
+& Hampton LLP, James R. Brueggemann
+
+(58) Field of Search ............................. 74/594.4,594.6;
+
+36/131, 132
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+conformably mate together, and it further includes two
+
+Spaced-apart engagement recesses mounted on one of the
+
+4,298,210 A
+4,803,894 A
+4,815,333 A
+
+11/1981 Lotteau et al. ............. 74/594.6
+2/1989 Howell .........
+... 74/594.6
+3/1989 Sampson ...
+... 74/594.6
+
+4,819,504 A
+
+4/1989 Sampson ...
+
+26 A
+
+3.
+
+4899618 A . 3.0
+
+limited rotation relative to the body on which it is mounted,
+
+7sof
+
+about a rotation axis generally normal to the Sole of the
+
+---
+
+rider's shoe when the pedal body and the cleat body are
+
+4,936.164 A
+
+6/1990 Forke
+
+5,199,324. A
+5,213,009 A
+5,284.066 A
+5,325,738 A
+
+4/1993 Sain ............................ 36/1.31
+5/1993 Bryne ...
+... 74/594.6
+2/1994 Weiss ........................ 74/594.6
+7/1994 Bryne ....................... 74/594.6
+
+two engagement recesses. When the two tongues of the
+tongue assembly are engaged with the two engagement
+recesses, the tongue assembly is rotationally locked relative
+to the engagement recesses, Such that rotation of the cleat
+
+5,546.829 A
+5,553,516 A
+
+8/1996 Bryne ...
+9/1996 Weiss.........
+
+5,606,894 A
+
+3/1997 Bryne ..........
+
+4.942.778 A
+
+--- --
+
+7/1990 Bryne r
+
+.74A594.6
+
+74 solo
+
+5,687,619 A
+
+11/1997 Bryne ..........
+
+... 74/594.6
+
+5,852.955 A
+
+12/1998 Crisick et al. .
+
+... 74/594.6
+
+relative rotation. Further rotation of the cleat body relative
+
+5862.716 A
+
+... 74/594.6
+... 74/594.6
+
+mated together. The tongue assembly includes two Spring
+
+biased tongues configured for Selective engagement with the
+
+body relative to the pedal body, about an axis normal to the
+Sole of the rider's shoe, causes the tongue assembly to rotate
+relative to the particular body on which- it is- mounted,
+until
+- -- stop surface of the tongue assembly inhibits further
+
+5,575,184 A * 11/1996 De Schrijver .
+
+... 74/594.6
+... 74/594.6
+
+1/1999 Bryne. 74/5946
+
+FOREIGN PATENT DOCUMENTS
+
+DE
+
+two bodies, preferably the pedal body, and a tongue assem
+bly mounted on the other of the two bodies, thus preferably
+the cleat body. The tongue assembly is configured for
+
+... 759
+
+list - - E" - - -
+
+A clipleSS pedal/cleat assembly is disclosed, having a float
+range that is easily and precisely adjusted. The assembly
+includes a pedal body and a cleat body configured to
+
+3315282 A1
+
+10/1984 ............ B62M/3/08
+
+to the pedal body urges the tongues out of engagement with
+
+the engagement recesses, to release the cleat from the pedal.
+23 Claims, 8 Drawing Sheets
+
+

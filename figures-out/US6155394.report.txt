@@ -1,0 +1,107 @@
+patent: US6155394
+source: https://patentimages.storage.googleapis.com/46/fb/d3/e6ea787c756b12/US6155394.pdf
+pages: 17
+per-page extracted text length: {1: 1649, 2: 67, 3: 71, 4: 116, 5: 144, 6: 31, 7: 60, 8: 31, 9: 60, 10: 0, 11: 31, 12: 7066, 13: 6795, 14: 7632, 15: 7752, 16: 7273, 17: 7026}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6155394A
+
+United States Patent (19)
+
+11 Patent Number:
+
+6,155,394
+
+Shook
+
+(45) Date of Patent:
+
+Dec. 5, 2000
+
+54) BICYCLE COASTING MECHANISM
+
+5,078,664 1/1992 Nagano.
+1/1992 Yang.
+5,322,487 6/1994 Nagano.
+5,660,083 8/1997 Huang et al..
+
+76
+
+Inventor: William B. Shook, 3917 Eden Roc Cir.
+East, Tampa, Fla. 33634
+
+21
+
+Appl. No.: 09/274,445
+
+22
+
+Filed:
+
+Mar. 22, 1999
+
+(51) Int. Cl. ................................................ F16D 41/30
+52 U.S. Cl. ................................................. 192/46; 74/576
+58
+
+Field of Search ........................... 192/46, 64; 74/576
+
+56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+5,083,991
+
+FOREIGN PATENT DOCUMENTS
+104447
+
+3/1917
+
+f
+
+United Kingdom ..................... 192/46
+
+nited Kingdom
+
+f
+
+Primary Examiner Richard M. Lorence
+Attorney, Agent, or Firm-Francis T. Kremblas, Jr
+57
+ABSTRACT
+The present invention is directed to a bicycle coasting
+mechanism. The coasting mechanism includes a plurality of
+pawls which are rotatably mounted and which are config
+
+398,228
+
+2/1889
+
+Cartensen - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 192/46
+
+ured to engage a plurality of ratchet teeth. A linkage engages
+
+1.
+
+6/1889
+
+E. - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 192/46
+
+each pawl and causes the Substantially Simultaneous engage
+
+1. 2 :5.
+3.1904
+Weiler ....................................... 192/46
+1 -2
+/1922 Dughera .................................... 192/64
+3,557,922
+
+1/1971 Schwerdhoefer ......................... 192/64
+
+5,004,083 4/1991 Lohman.
+
+ment of each pawl with the ratchet teeth.
+32 Claims, 10 Drawing Sheets
+
+

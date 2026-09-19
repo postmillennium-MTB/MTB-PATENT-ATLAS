@@ -1,0 +1,69 @@
+patent: US20150008059
+source: https://patentimages.storage.googleapis.com/3f/3c/f1/d8041467953fd3/US20150008059A1.pdf
+pages: 12
+per-page extracted text length: {1: 1172, 2: 98, 3: 77, 4: 77, 5: 77, 6: 77, 7: 77, 8: 7135, 9: 7353, 10: 6856, 11: 7432, 12: 2331}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US 2015 0008059A1
+
+(19) United States
+
+(12) Patent Application Publication (10) Pub. No.: US 2015/0008059 A1
+Douglas et al.
+
+(54) DRIVE DEVICE FOR BICYCLES
+(71) Applicants: Philip Douglas, Maschwanden (CH):
+Horst Gusterhuber, Inzell (DE)
+(72) Inventors: Philip Douglas, Maschwanden (CH):
+Horst Gusterhuber, Inzell (DE)
+14/378,074
+(21) Appl. No.:
+Feb. 7, 2013
+(22) PCT Fled:
+PCT/EP2013/052433
+(86) PCT NO.:
+S371 (c)(1),
+Aug. 11, 2014
+(2) Date:
+Foreign Application Priority Data
+(30)
+
+Feb. 7, 2009
+
+(WO) ................... PCTEP2013 052433
+
+Jan. 8, 2015
+
+(43) Pub. Date:
+
+Publication Classification
+
+(51)
+
+Int. C.
+
+B62K 25/32
+B62M 6/55
+
+(52)
+
+(2006.01)
+(2006.01)
+
+U.S. C.
+
+CPC. B62K 25/32 (2013.01); B62M 6/55 (2013.01)
+USPC ........................................ 180/206.1: 280/260
+
+(57)
+
+ABSTRACT
+
+The invention relates to a drive device (1) for a bicycle. The
+drive device (1) comprises a central housing (4), to which at
+least one swingarm (5.6) is attached laterally which serves to
+hold a wheel (27) that is arranged such that it can rotate about
+a rotational axis (25). The at least one swingarm (5.6) serves
+to receive at least one drive means (7, 8, 17, 18, 19).
+
+

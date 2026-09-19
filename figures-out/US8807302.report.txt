@@ -1,0 +1,156 @@
+patent: US8807302
+source: https://patentimages.storage.googleapis.com/ca/d7/a0/a06bd58691782d/US8807302.pdf
+pages: 11
+per-page extracted text length: {1: 2640, 2: 807, 3: 0, 4: 110, 5: 0, 6: 93, 7: 7093, 8: 7137, 9: 7758, 10: 7425, 11: 3586}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US008807302B2
+
+(12) United States Patent
+
+(10) Patent No.:
+(45) Date of Patent:
+
+Nygren et al.
+(54) SHOCK ABSORBER WITH DUAL PISTON
+
+(56)
+
+References Cited
+
+2,225,986 A * 12/1940 Glezen .......................... 188,314
+
+(Continued)
+
+(73) Assignee: Ohlins Racing AB, Upplands Vasby
+(SE)
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 224 days.
+
+Notice:
+
+Aug. 19, 2014
+
+U.S. PATENT DOCUMENTS
+
+(75) Inventors: Nils Göran Nygren, Huddinge (SE);
+Johan Jarl, Stockholm (SE)
+
+(*)
+
+US 8,807,302 B2
+
+FOREIGN PATENT DOCUMENTS
+1O-339346
+2001-082522 A
+
+JP
+JP
+
+12/1998
+3, 2001
+
+(Continued)
+OTHER PUBLICATIONS
+
+(21) Appl. No.:
+
+12/747,502
+
+(22) PCT Fled:
+
+Dec. 17, 2008
+
+International Search Report: PCT/SE2008/051484; Mailing Date:
+Mar. 17, 2009; 3 pages.
+
+(86). PCT No.:
+S371 (c)(1),
+(2), (4) Date:
+
+PCT/SE2008/051484
+
+Primary Examiner — Anna Momper
+(74) Attorney, Agent, or Firm — Knobbe Martens Olson &
+Bear, LLP
+(57)
+
+Oct. 11, 2010
+
+(87) PCT Pub. No.: WO2009/082339
+PCT Pub. Date: Jul. 2, 2009
+
+(65)
+
+Prior Publication Data
+
+US 2011/OO17557 A1
+
+(30)
+
+Jan. 27, 2011
+
+Foreign Application Priority Data
+
+Dec. 19, 2007
+
+(SE) ....................................... O702838
+
+(51) Int. Cl.
+(52)
+
+FI6F 9/34
+U.S. C.
+
+(2006.01)
+
+USPC ................................. 188/322.15; 188/322.22
+
+(58)
+
+Field of Classification Search
+
+USPC ................... 188/283,322. 13,322.15,322.22
+
+ABSTRACT
+
+A shock absorber comprising a damping cylinder is divided
+into a first damping chamber and a second damping chamber
+by a main piston device. The main piston device comprises a
+first main piston and a second main piston. The main pistons
+comprise continuous ducts that are delimited in a direction of
+flow by first and second flow limiters. The main pistons are
+mounted on a piston rod. The piston rod has an axially extend
+ing and continuous cavity through which damping medium
+can flow between a pressurized chamber and a respective
+damping chamber. The damping medium flows via an inter
+space delimited by the first main piston and the second main
+piston out into the damping chambers via pressurization ducts
+delimited by the first flow limiters. The first flow limiters lift
+axially from the main piston with Substantially maintained
+external form in the opening process so that a flow path is
+created both between the main piston and the whole or parts
+of the inner periphery of the first flow limiter as well as
+between the main piston and the outer periphery of the first
+flow limiter.
+
+See application file for complete search history.
+
+21 Claims, 4 Drawing Sheets
+
+p
+
+R1 is
+
+P3
+
+24
+13
+17
+14
+
+10
+20
+
+
