@@ -1,0 +1,19 @@
+patent: US2151533
+source: https://patentimages.storage.googleapis.com/ff/2c/72/44b11faecb45fd/US2151533.pdf
+pages: 4
+per-page extracted text length: {1: 95, 2: 15, 3: 5197, 4: 5336}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+March 21, 1939.
+
+F. W. SCHWINN
+
+2,151,533
+
+BICYCLE FRAME
+
+Filed March 3, 1938
+
+2 Sheets-Sheet 1
+
+

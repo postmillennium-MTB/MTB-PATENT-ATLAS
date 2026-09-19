@@ -1,0 +1,179 @@
+patent: US9061729
+source: https://patentimages.storage.googleapis.com/e3/c1/12/e25ef40bf0c2a8/US9061729.pdf
+pages: 20
+per-page extracted text length: {1: 2593, 2: 1759, 3: 66, 4: 70, 5: 66, 6: 58, 7: 58, 8: 66, 9: 58, 10: 58, 11: 58, 12: 1387, 13: 7049, 14: 7074, 15: 7795, 16: 7815, 17: 7811, 18: 7819, 19: 7359, 20: 5394}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US009061729B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Canfield et al.
+
+US 9,061,729 B2
+
+45) Date of Patent:
+
+(54) SUSPENSION SYSTEM FOR WHEELED
+
+4,039,200 A
+
+(71) Applicants: Christopher Canfield, Layton, UT
+
+5,121,937 A
+
+VEHICLES
+
+Jun. 23,9 2015
+
+8/1977 McGonegle
+
+D284.459 S
+D286,996 S
+
+7/1986 Shimizu
+12/1986 Hartmann et al.
+
+D320,369 S
+
+10/1991 Feamster, III et al.
+
+(US); Lance Canfield, Layton, UT (US)
+
+5,217.241 A
+
+6/1993 Girvin
+
+D341,108 S
+
+11, 1993 Chen
+
+(72) Inventors: Christopher Canfield, Layton, UT
+(US); Lance Canfield, Layton, UT (US)
+
+5,306,036 A
+5,441.292
+A
+5,452,910 A
+
+4/1994 Busby
+8/1995 Busby
+9, 1995 Harris
+
+(*) Notice:
+
+6/1992 Law will
+
+Subject to any disclaimer, the term of this
+
+3. A
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+5,553,881 A
+5,628,524 A
+
+9, 1996 Klassen et al.
+5/1997 Klassen et al.
+
+5,662.405 A
+5,678,837 A
+
+9, 1997 Kuo
+10, 1997 Leitner
+
+(21) Appl. No.: 13/896,281
+
+ano
+
+(Continued)
+(22) Filed:
+(65)
+
+May 16, 2013
+
+OTHER PUBLICATIONS
+
+Prior Publication Data
+US 2014/OO42726A1
+Feb. 13, 2014
+
+Mark Jordan “The Most Significant Patents in Mountain Bike His
+tory'. Decline magazine, Aug. 2009.
+
+Related U.S. Application Data
+(60) Provisional application No. 61/681,503, filed on Aug.
+9, 2012.
+
+(51) Int. Cl.
+
+(Continued)
+Primary Examiner — Kevin Hurley
+Assistant Examiner — Michael Stabley
+(74) Attorney, Agent, or Firm — Kunzler Law Group
+
+B62K 25/00
+
+(2006.01)
+
+(57)
+
+ABSTRACT
+
+ER i.7%
+(52) U.S.
+Cl
+AV e. we
+
+388
+
+A Suspension system for supporting a frame of a vehicle On at
+El
+O will that is coupled via a R to a chain s O
+the frame. The Suspens1on system includes a structural mem
+
+CPC ................. B62K 25/26 (2013.01); hase
+( .01)
+(58) Field of Classification Search
+
+ber Supporting an axle of the wheel, a first linkage arm con
+necting the structural member to the frame, a second linkage
+arm connecting the structural member to the frame, and a
+
+CPC ....... B62K 25/286; B62K 25/28: B62K 25/04
+
+shock absorber coupled between the frame and one of the
+
+USPC
+
+.. ..
+
+.
+
+.. . .. .. . . . . . .
+
+. ... 280/284
+
+See application file for complete search history.
+(56)
+References Cited
+U.S. PATENT DOCUMENTS
+3.657,945 A
+D236,708 S
+
+4, 1972 Golden et al.
+9, 1975 Konzorr
+
+structural member, the first linkage arm and the second link
+
+age arm. Additionally, the center of curvature (CC) of the axle
+of the wheel is located within a predetermined radius of a
+tangent contact point between a tension segment of the chain
+and the chain ring throughout a range motion of the Suspen
+sion system.
+16 Claims, 10 Drawing Sheets
+
+

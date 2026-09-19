@@ -1,0 +1,184 @@
+patent: US11142133
+source: https://patentimages.storage.googleapis.com/a6/b6/07/a8c36d615fed17/US11142133.pdf
+pages: 18
+per-page extracted text length: {1: 2600, 2: 2374, 3: 208, 4: 121, 5: 194, 6: 117, 7: 148, 8: 182, 9: 191, 10: 118, 11: 6350, 12: 7073, 13: 7262, 14: 7226, 15: 7164, 16: 7189, 17: 6894, 18: 3726}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011142133B1
+
+( 12) United States Patent
+
+( 10) Patent No.: US 11,142,133 B1
+(45 ) Date of Patent :
+Oct. 12 , 2021
+
+( 54 ) BIKE RACKS INCLUDING ADJUSTABLE
+
+3,782,559 A * 1/1974 Wright
+3,872,972 A * 3/1975 Cummins
+3,921,869 A * 11/1975 Rogers
+3,924,751 A * 12/1975 Ballenger
+
+Oshman
+HOOKS
+
+( 71 ) Applicant: Joseph Oshman , Portland , OR ( US )
+( 72 ) Inventor: Joseph Oshman , Portland, OR (US )
+( * ) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 (b ) by 0 days.
+
+4,009,744 A * 3/1977 Joslyn
+
+( 21 ) Appl. No .: 17 /240,099
+
+4,171,077 A * 10/1979 Richard , Jr.
+
+( 22 ) Filed :
+
+3,976,200 A * 8/1976 Munns
+
+Apr. 26 , 2021
+Related U.S. Application Data
+
+(Continued )
+FOREIGN PATENT DOCUMENTS
+
+( 60 ) Provisional application No. 63 / 114,263 , filed on Nov.
+16 , 2020 .
+( 51 ) Int. Cl.
+
+( 52)
+
+BOOR 9/10
+B62H 3/02
+B62H 3/12
+BOOR 9/06
+U.S. CI .
+???
+
+*
+
+5/2010
+
+Primary Examiner Patrick D Hawn
+
+(74 ) Attorney, Agent, or Firm — Mohr Intellectual
+
+( 2006.01 )
+( 2006.01 )
+
+Property Law Solutions , PC
+
+( 2006.01 )
+
+( 2006.01)
+
+( 57 )
+
+( 2013.01 )
+
+B62H 3/02 ; B62H 3/10 ; B62H 3/12 ;
+B62H 3/00 ; B62H 3/08
+
+See application file for complete search history.
+References Cited
+U.S. PATENT DOCUMENTS
+5/1899 Martin
+
+between the first hook member and the second hook member
+is adjustable .
+
+B62H 3/12
+211/17
+GIOG 5/00
+248 / 125.1
+
+1,975,303 A * 10/1934 Walker
+
+ABSTRACT
+
+Bike racks configured to mount to a hitch of a? vehicle and
+to support a bike . The bike racks include a frame, a rack , and
+an adjustable hook . The frame is configured to selectively
+couple to the hitch of the vehicle . The rack is supported on
+the frame in a horizontal orientation and at an elevated
+position on the frame. The adjustable hook includes a first
+hook member and a second hook member spaced from the
+first hook member. The bike hangs vertically by a handlebar
+or a fork from the adjustable hook . The handlebar is tilted
+relative to the horizontal orientation of the rack when the
+handlebar or the fork is supported by the adjustable hook to
+allow tighter lateral packing of adjacent bikes . The spacing
+
+( 58 ) Field of Classification Search
+CPC
+Y10S 224/924 ; B6OR 9/06 ; B6OR 9/10 ;
+
+624,231 A *
+
+20100053039 A
+
+KR
+
+B6OR 9/10 ( 2013.01 ) ; B6OR 9/06
+( 2013.01 ) ; B62H 3/02 ( 2013.01 ) ; B62H 3/12
+
+( 56 )
+
+B62H 3/12
+211/17
+B62H 3/02
+211/17
+B6OR 9/10
+224/500
+B62H 3/12
+211/17
+B62H 3/12
+211/18
+BOOR 9/10
+150/167
+BOOR 9/10
+224/500
+
+12 Claims , 8 Drawing Sheets
+100
+
+123 193
+
+108
+
+124 126
+105–
+
+107
+
+125
+
+190
+104
+-106
+-103
+
+OBIDRE
+
+170
+0
+
+o
+
+o
+
+9
+
+0
+
+194
+
+185
+
+o
+
+o
+
+
