@@ -1,0 +1,133 @@
+patent: US7163222
+source: https://patentimages.storage.googleapis.com/0a/3a/8a/680e59e88bfbc1/US7163222.pdf
+pages: 29
+per-page extracted text length: {1: 2308, 2: 3682, 3: 58, 4: 58, 5: 109, 6: 105, 7: 81, 8: 58, 9: 75, 10: 64, 11: 58, 12: 76, 13: 89, 14: 63, 15: 94, 16: 93, 17: 129, 18: 7013, 19: 7650, 20: 7182, 21: 7623, 22: 7353, 23: 7637, 24: 7518, 25: 7645, 26: 7552, 27: 7583, 28: 5551, 29: 1143}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO7163222B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 7,163.222 B2
+(45) Date of Patent:
+*Jan. 16, 2007
+
+Becker et al.
+(54) BICYCLE FORK HAVING LOCK-OUT,
+BLOW-OFF, AND ADJUSTABLE BLOW-OFF
+THRESHOLD
+
+(75) Inventors: William M. Becker, Aptos, CA (US);
+
+Brian Lampman, Santa Cruz, CA (US)
+
+(73) Assignee: Fox Factory, Inc., Watsonville, CA
+(US)
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+This patent is Subject to a terminal dis
+
+1492,328 A
+
+4/1924 Lang
+
+2,329,803 A
+2,774.448 A
+3,086,786 A
+3,114,705 A
+3,319,741 A
+3,338,347 A
+
+9, 1943. Whistler
+12, 1956 Hultin
+4, 1963 TuckZek
+12/1963 Pribonic
+5, 1967 Hauck
+8, 1967 Avner
+
+3.414,092 A
+3,836,132 A
+
+12/1968 Speckhart
+9/1974 NcNally et al.
+
+4,145,067 A
+
+3, 1979 Ceriani
+
+(Continued)
+FOREIGN PATENT DOCUMENTS
+DE
+
+837 508
+
+4f1952
+
+claimer.
+
+(Continued)
+(21) Appl. No.: 10/620,323
+(22) Filed:
+
+OTHER PUBLICATIONS
+
+Jul. 15, 2003
+
+(65)
+
+Fox document various articles—Motocross Action Dec. 1981; Fox
+
+Factory 1983; Moto-X Fox 1981; Vanilla Float 1998; Mountain
+Biking Oct. 1998; Cycle World Dec. 1981; undated.
+
+Prior Publication Data
+
+US 2005/0087953 A1 Apr. 28, 2005
+Related U.S. Application Data
+(63) Continuation of application No. 09/897,706, filed on
+Jul. 2, 2001, now Pat. No. 6,592,136.
+
+(57)
+
+(51) Int. Cl.
+B62K 25/08
+
+(2006.01)
+
+(52) U.S. Cl. ......................................
+
+... 280/276
+
+(58) Field of Classification Search ................ 280/276,
+280/279; 188/281, 285,297, 313, 314, 316,
+188/317, 282.1; 267/217
+See application file for complete search history.
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+1,281,079 A
+
+10, 1918 Sears
+
+(Continued)
+Primary Examiner Anne Marie Boehler
+(74) Attorney, Agent, or Firm—Steven M. Reiss
+ABSTRACT
+
+A bicycle fork includes a pair of fork leg assemblies, each
+of the leg assemblies having an upper leg telescopingly
+engaged with a lower leg. A damping assembly is provided
+in at least one of the legs. The damping assembly includes
+an adjustable valve. Sometimes referred to as a pressure
+relief or blow-off valve. The adjustable valve is externally
+adjustable without tools. Furthermore, the adjustable valve
+and another fluid flow control valve may be adjusted inde
+pendently of each other.
+5 Claims, 15 Drawing Sheets
+
+

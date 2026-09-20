@@ -1,0 +1,164 @@
+patent: US10926830
+source: https://patentimages.storage.googleapis.com/74/10/34/ed88d511c01cc7/US10926830.pdf
+pages: 53
+per-page extracted text length: {1: 2754, 2: 4304, 3: 5028, 4: 5716, 5: 668, 6: 92, 7: 100, 8: 89, 9: 156, 10: 155, 11: 153, 12: 179, 13: 232, 14: 217, 15: 226, 16: 217, 17: 147, 18: 155, 19: 164, 20: 236, 21: 110, 22: 178, 23: 234, 24: 108, 25: 214, 26: 111, 27: 249, 28: 108, 29: 298, 30: 121, 31: 301, 32: 148, 33: 178, 34: 183, 35: 195, 36: 185, 37: 6841, 38: 7203, 39: 7545, 40: 6566, 41: 6541, 42: 5735, 43: 6924, 44: 6971, 45: 7884, 46: 7788, 47: 7627, 48: 7418, 49: 7579, 50: 7656, 51: 7267, 52: 6810, 53: 6738}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010926830B2
+
+( 12) United States Patent
+
+( 10) Patent No .: US 10,926,830 B2
+(45 ) Date of Patent :
+Feb. 23 , 2021
+
+Zawistowski
+
+( 54 ) VEHICLE SUSPENSION LINKAGE
+
+( 56 )
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+( 71 ) Applicant: YETI CYCLING, LLC , Golden , CO
+(US )
+
+421,748 A
+519,855 A
+
+FOREIGN PATENT DOCUMENTS
+
+( 73 ) Assignee : YETI CYCLING, LLC , Golden , CO
+(US )
+
+CA
+
+(65 )
+
+12/1998
+6/2005
+
+(Continued )
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 118 days .
+
+OTHER PUBLICATIONS
+
+PCT, International Search Report and Written Opinion dated Aug.
+2 , 2018 in connection with International Patent Application No.
+PCT/US2018 /023124 , 14 pages.
+
+(Continued )
+Primary Examiner Tony H Winner
+Assistant Examiner Michael R Stabley
+
+Jul . 6 , 2018
+
+Prior Publication Data
+US 2019/0039682 A1
+Feb. 7 , 2019
+
+( 74 ) Attorney, Agent, or Firm - Dorsey & Whitney LLP
+( 57 )
+
+Related U.S. Application Data
+
+( 60 ) Provisional application No. 62 / 529,852 , filed on Jul .
+7 , 2017 , provisional application No. 62 / 540,942 , filed
+(Continued
+
+ABSTRACT
+
+A two -wheel vehicle suspension linkage, including a shock
+and a shock extension assembly, is provided. The shock may
+include first and second mounting axes operably connected
+to two linkage bodies . The shock may be positioned to
+provide linear resistance between the two linkage bodies
+
+having relative motion with respect to one another. The
+
+( 51 ) Int. Cl.
+B62K 25/28
+B62K 19/42
+
+( 2006.01 )
+( 2006.01 )
+
+(Continued )
+
+(52) U.S. Ci.
+CPC
+
+B62K 25/286 (2013.01 ) ; B62K 19/38
+(2013.01 ) ; B62J 11/22 (2020.02 )
+( 58 ) Field of Classification Search
+
+(2013.01 ) ; B62K 19/42 (2013.01 ) ; B62K 25/30
+
+CPC
+
+2293366 A1
+2980086 A1
+
+CA
+
+( 21 ) Appl. No .: 16 /029,014
+(22 ) Filed :
+
+5/1894 Whitaker
+
+( Continued )
+
+(72) Inventor: Peter Zawistowski , Lakewood, CO
+(US )
+
+( * ) Notice :
+
+2/1890 McErlain
+
+shock extension assembly may include a first extension body
+and a second extension body. Each of the first extension
+body and the second extension body may include first
+mounting axis and a second mounting axis positioned with
+respect to one another in a non -parallel mounting orienta
+tion . The extension bodies may be pivotally connected to the
+
+suspension linkage so that the first mounting axis of the first
+extension body is collinear with the first mounting axis of
+the second extension body. The second mounting axis of the
+
+first extension body may be collinear to both the second
+mounting axis of the second extension body and to one of
+
+B62K 25/286 ; B62K 19/38 ; B62K 19/42 ;
+B62K 25/30 ; B62J 11/00 ; B62J 11/02
+
+See application file for complete search history .
+
+(Continued )
+
+310
+
+103
+
+30
+3002
+
+37
+
+36
+33
+
+41
+302
+
+42
+35
+308
+
+-304
+
+

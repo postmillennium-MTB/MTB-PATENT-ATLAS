@@ -1,0 +1,115 @@
+patent: US9404552
+source: https://patentimages.storage.googleapis.com/c8/63/81/3820264288d116/US9404552.pdf
+pages: 9
+per-page extracted text length: {1: 2091, 2: 56, 3: 338, 4: 56, 5: 56, 6: 7043, 7: 7016, 8: 7335, 9: 2741}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO9404.552B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 9.404.552 B2
+(45) Date of Patent:
+Aug. 2, 2016
+
+Sack et al.
+(54)
+
+HYDRAULC DAMPING CARTRIDGE
+
+(58) Field of Classification Search
+
+CPC ......... F16F 9/504; F16F 9/512; F16F 9/3405:
+
+B62K 25/08; B62K 2025/048
+
+(71) Applicant: B-Labs AG, Biel (CH)
+
+See application file for complete search history.
+
+(72) Inventors: Stefan Sack, Bad Wiessee (DE);
+Andreas Felsl, Biel (CH)
+
+(56)
+
+U.S. PATENT DOCUMENTS
+
+(73) Assignee: B-Labs AG, Biel (CH)
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+(21) Appl. No.: 14/280,300
+(22) Filed:
+
+May 16, 2014
+
+(65)
+(30)
+
+Nov. 20, 2014
+
+Foreign Application Priority Data
+
+May 17, 2013
+May 16, 2014
+
+(DE) ......................... 10 2013 105 106
+(DE) ......................... 10 2014 106977
+
+(51) Int. Cl.
+B60G 7/04
+FI6F 9/504
+
+6,105,987 A *
+
+8/2000 Turner .......................... 280/276
+
+2003/0001358 A1* 1/2003 Becker et al.
+280,276
+2009/0115159 A1
+5/2009 Sintorn ......................... 280/276
+2009/0277736 A1* 11/2009 McAndrews et al. ......... 188,314
+2010.0044975 A1
+2/2010 Yablon et al. .............. 280/S503
+2010/01 17329 A1* 5, 2010 Achenbach et al. .......... 280/276
+2011/008393.0 A1* 4/2011 Laird et al. .................... 188,275
+
+* cited by examiner
+Primary Examiner — Christopher Schwartz
+(74) Attorney, Agent, or Firm — Boyle Fredrickson S.C.
+
+Prior Publication Data
+
+US 2014/033903O A1
+
+References Cited
+
+(2006.01)
+(2006.01)
+
+(52) U.S. Cl.
+
+(57)
+
+ABSTRACT
+
+Disclosed is a damping cartridge with a rebound stage damp
+ing unit and a compression stage damping unit as well as an
+compensating Volume for a damping medium. According to
+the present invention the compression stage unit is made up of
+a three-way unit with a high-speed-, a mid-speed- and a
+low-speed flow path. Furthermore the compensating Volume
+is made up of a tube bladder, which at least partially encom
+passes the compression stage unit.
+
+CPC ............. FI6F 9/504 (2013.01); F16F 2230/32
+
+(2013.01)
+
+12 Claims, 4 Drawing Sheets
+
+
