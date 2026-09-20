@@ -1,0 +1,195 @@
+patent: US11345432
+source: https://patentimages.storage.googleapis.com/fc/75/f0/2a6903fc6e9255/US11345432.pdf
+pages: 24
+per-page extracted text length: {1: 2610, 2: 4496, 3: 4716, 4: 4322, 5: 3012, 6: 93, 7: 101, 8: 199, 9: 202, 10: 226, 11: 296, 12: 291, 13: 295, 14: 302, 15: 287, 16: 297, 17: 253, 18: 193, 19: 6708, 20: 7796, 21: 7848, 22: 7744, 23: 7312, 24: 6482}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011345432B2
+
+( 12) United States Patent
+
+( 10 ) Patent No.: US 11,345,432 B2
+(45 ) Date of Patent :
+May 31 , 2022
+
+Weagle
+
+( 54 ) SUSPENSION ASSEMBLY FOR A CYCLE
+
+4/1889 Baudreau
+
+400,727 A
+
+10/1889 Copeland
+10/1889 Hunter
+3/1890 Easthope
+( Continued )
+
+412,322 A
+414,048 A
+423,471 A
+
+HAVING A FORK ARM WITH DUAL
+OPPOSING TAPERS
+
+( 71 ) Applicant: SPECIALIZED BICYCLE
+COMPONENTS , INC . , Morgan Hill ,
+
+FOREIGN PATENT DOCUMENTS
+
+CA ( US)
+
+BE
+CA
+
+(72 ) Inventor: David Weagle, Edgartown, MA (US )
+
+507753 A
+
+12/1951
+
+474575 A
+
+6/1951
+
+(Continued )
+
+( 73 ) Assignee : SPECIALIZED BICYCLE
+
+COMPONENTS , INC . , Morgan Hill ,
+CA (US )
+
+OTHER PUBLICATIONS
+
+Color photograph of Armstrong motor cycle, Applicant Admitted
+Prior Art, Applicant's internal files.
+(Continued )
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 751 days .
+( 21 ) Appl. No .: 16 /159,252
+
+( * ) Notice:
+
+( 22 ) Filed :
+
+( 65 )
+
+Minnah L Seoh
+
+Assistant Examiner - Maurice L Williams
+
+Oct. 12 , 2018
+
+(74 ) Attorney, Agent, or Firm — Knobbe, Martens, Olson
+
+& Bear, LLP
+
+Prior Publication Data
+US 2020/0115001 A1
+Apr. 16 , 2020
+
+( 57 )
+
+ABSTRACT
+
+A multi -bar suspension assembly for a cycle having
+
+( 51 ) Int . CI .
+
+( 52)
+
+Primary Examiner
+
+B62K 25/24
+U.S. CI .
+
+CPC
+
+improved stability includes a first arm having a first arm
+fixed pivot and aa first arm shock pivot . The first arm includes
+a hollow internal portion having first end and a second end
+that are both wider than a narrow intermediate portion . A
+shock link has a shock link fixed pivot and a shock link
+
+( 2006.01 )
+
+B62K 25/24 ( 2013.01 ) ; B62K 2201/08
+( 2013.01 )
+
+(58) Field of Classification Search
+CPC
+
+floating pivot . A shock absorber has a first shock mount and
+a
+
+B62K 21/02 ; B62K 25/06 ; B62K 25/08 ;
+B62K 25/12 , B62K 25/24 ; B62K
+
+a second shock mount. A wheel carrier has a wheel carrier
+
+2201/00 ; B62K 2201/04 ; B62K 2201/08
+See application file for complete search history .
+
+one another, and a wheel mount that is adapted to be
+
+first pivot and aa wheel carrier second pivot spaced apart from
+
+connected to a wheel. A control link has a control link
+
+floating pivot and a control link fixed pivot , the control link
+floating pivot being pivotably connected to the wheel carrier
+second pivot , and the control link fixed pivot being pivotably
+
+References Cited
+
+( 56 )
+
+U.S. PATENT DOCUMENTS
+389,200 A
+
+393,387 A
+
+connected to the first arm control pivot .
+
+9/1888 Clegg
+
+30 Claims , 13 Drawing Sheets
+
+11/1888 Norton
+
+-34
+38
+
+32
+
+56
+
+44
+
+86
+76 -
+
+74
+
+70
+
+30
+
+D40 36
+
+72
+
+2
+50
+
+64 54
+
+SOMS
+
+64
+
+A
+
+
