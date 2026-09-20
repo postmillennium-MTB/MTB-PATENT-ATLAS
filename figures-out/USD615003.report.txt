@@ -1,0 +1,115 @@
+patent: USD615003
+source: https://patentimages.storage.googleapis.com/73/e5/60/476902ab98c2b7/USD615003.pdf
+pages: 6
+per-page extracted text length: {1: 2241, 2: 53, 3: 53, 4: 53, 5: 56, 6: 130}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOOD615003S
+
+(12) United States Design Patent (10) Patent No.:
+(54)
+
+Canfield et al.
+
+(45) Date of Patent:
+
+BICYCLE PEDAL
+
+D524, 195 S *
+
+7/2006 Neal ......................... D12/125
+
+Canfield, 2313 N. 500 West, Layton, UT
+
+Assistant Examiner—Linda G. Brooks
+
+(US) 84,041
+
+(74) Attorney, Agent, or Firm Kunzler Needham Massey &
+Thorpe
+
+14 Years
+(57)
+
+May 13, 2009
+
+(52) U.S. Cl. ...........
+D12/125
+(58) Field of Classification Search ................ D12/125,
+
+D12/111; 296/75; 280/291; 7454.15),
+See application file for complete search history.
+References Cited
+U.S. PATENT DOCUMENTS
+
+CLAM
+
+The ornamental design for a bicycle pedal, as shown and
+described.
+
+(51) LOC (9) Cl. .................................................. 12-11
+
+(56)
+
+May 4, 2010
+
+West, Layton, UT (US) 84041: Lance
+
+(21) Appl. No. 29/337,004
+(22) Filed:
+
+.
+
+* cited by examiner
+Primary Examiner Adir Aronovich
+
+(76) Inventors: Christopher Canfield, 2313 N. 500
+
+(**) Term:
+
+US D615,003 S
+
+DESCRIPTION
+
+FIG. 1 is a perspective view of the bicycle pedal;
+FIG. 2 is a front view of the bicycle pedal;
+
+FIG. 3 is a rear view of the bicycle pedal;
+FIG. 4 is a right side view of the bicycle pedal, the undisclosed
+left side being a mirror image thereof but for the external
+threads, which have a shape and appearance that is evident
+from the external threads shown in the right side view; and,
+
+FIG. 5 is a top view of the bicycle pedal, the undisclosed
+
+3.657,945. A * 4, 1972 Golden et al. .............. T4,594.4
+
+bottom view being a mirror image thereof but for the external
+
+D236,708 S * 9/1975 Konzorr .................... D12/125
+
+threads, which have a shape and appearance that is evident
+
+D284.459 S * 7/1986 Shimizu ............. ... D12/125
+
+from the external threads shown in the top view.
+
+D286,996 S * 12/1986 Hartmann et al. .......... D12/125
+
+The broken lines are directed to environment and are for
+
+D320,369 S : 10/1991 Feamster et al. .........., D12/125
+
+illustrative purposes only, the broken lines form no part of the
+
+D341,108 S * 1 1/1993 Chen ......................... D12/125
+5,662,405 A
+9, 1997 Kuo ........................... 362/473
+
+claimed design.
+
+6,647,826 B2 * 1 1/2003 Okajima et al. ............ T4,594.4
+
+1 Claim, 5 Drawing Sheets
+
+
