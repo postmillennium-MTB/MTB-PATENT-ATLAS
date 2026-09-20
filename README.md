@@ -16,17 +16,17 @@ An interactive timeline of mountain bike intellectual property: 284 patents and 
 |---|---|
 | **Total entries** | 284 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 132 |
+| **Active patents** | 133 |
 | **Expired patents** | 95 |
-| **Pending applications** | 44 |
+| **Pending applications** | 43 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
 | **Brands** | 156 |
 | **Named inventors** | 54 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
 | **Verified entries** | 174 |
-| **Medium confidence** | 57 |
-| **Draft / in progress** | 53 |
+| **Medium confidence** | 58 |
+| **Draft / in progress** | 52 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -391,6 +391,8 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 
 - **Added the JBX1 "Breezer 1" — the frame, not a patent.** Requested directly, as a deliberately non-patent historical marker: hand-built by Joe Breeze in 1977, the JBX1 (later "Breezer 1") was the first bicycle frame purpose-designed for off-road riding rather than a converted cruiser or road frame, built for the Repack downhill races on Mount Tamalpais — the object that turned mountain biking from modified "klunkers" into a purpose-built category. No patent was ever filed on the frame itself; Breezer #1 is held in the Smithsonian’s National Museum of American History. `num: null`, `st:"unknown"` (no patent, so no patent-status field applies — same convention as the existing Fatback/Matyas "no patent" entry), `conf:"v"` (cross-confirmed across the Smithsonian’s own catalog record, Wikipedia, and contemporaneous trade coverage). `w` text also notes mountain biking’s fast institutional rise afterward — a UCI-sanctioned World Championship by 1990 (Durango, Colorado) and an Olympic discipline at the 1996 Atlanta Games. Placed in `cat:"frame"`, right after the 1938 Schwinn cantilever frame entry. Joe Breeze was already registered in `INVENTORS` from his separate Hite-Rite patent entry, so no registry addition was needed. Counts synced: README At-a-glance (283→284 total, 173→174 verified) and all seven hardcoded `index.html` count strings (three meta tags, EN/FR `shareText`, EN/FR `mtBannerText`).
 
+
+- **Confirmed the Chilao SS "Static Spring" pedal axle patent: US 12,391,334 B1, "Bicycle pedal," inventor Yusaku Yoshimura.** Previously a `conf:"l"` draft placeholder (`num:null, st:"pending"`). The user supplied the number directly via a Google Patents URL filtered to that inventor; independently, a separate WebSearch pass surfaced a USPTO listing for the same number under the same title with a matching mechanism description (a spring member absorbing axial impact and preventing bearing binding from wear), cross-confirming the number and subject without relying on the user’s link alone. **One AI-generated search summary this pass repeatedly misattributed this same number to a different inventor (“Chang-Hsin Wu”) and an unrelated force-sensor mechanism — not trusted, matching this repo’s own documented experience with this exact failure mode (see the RatioX note earlier in this changelog).** `st` moved `"pending"` → `"active"` (a B1 patent number is a grant, not an application) and the title dropped “(patent pending).” **`g` and `exp` are deliberately left `null`** rather than guessed: this session could not independently reopen the Google Patents record itself (blocked to this sandbox) to read the actual filing/grant dates, so nothing here states a date this pass didn’t verify. `conf` raised `"l"` → `"m"` — the number and inventor are confirmed, but the dates aren’t, which is exactly what `"m"` is for. Counts synced: README At-a-glance (132→133 active, 44→43 pending, 57→58 medium, 53→52 draft; total and verified unchanged).
 
 ---
 
