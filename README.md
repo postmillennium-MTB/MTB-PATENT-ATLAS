@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 280 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 281 |
+| **Total entries** | 282 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 132 |
 | **Expired patents** | 95 |
-| **Pending applications** | 43 |
+| **Pending applications** | 44 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
 | **Brands** | 155 |
 | **Named inventors** | 54 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
 | **Verified entries** | 173 |
-| **Medium confidence** | 55 |
+| **Medium confidence** | 56 |
 | **Draft / in progress** | 53 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -307,6 +307,8 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **Added US 10,733,795's own figure**, per direct request — `US10733795B2.png` was already in `pictures/` but unreferenced. Fig. 2, a geometric rim-profile construction (height and width dimensions bounding a curve constrained by two radii through control points), matches this entry's own `s` text describing the patented software's parametrized-curve search — read before writing `imgAlt` rather than assumed from context.
 
 - **Added a third patent to the Trust Performance linkage fork portfolio: US D860,061**, per direct request. A design patent titled "Cycle suspension assembly," co-credited to Dave Weagle and Michael Giese, filed Feb. 8, 2018 and granted Sept. 17, 2019 — cross-confirmed by search results naming both inventors, the assignee (Trvstper, Inc.), and those exact dates. `nums` on the merged portfolio entry now reads `["10549813","11345432","D860061"]`; stored as `"D860061"` (the design-patent-inside-`nums[]` convention, carrying its own `D`, per CLAUDE.md's `num` formatting table). The entry's text now also names two likely sibling design patents from the same Feb. 8, 2018 filing date — D880,371 and D880,372 — surfaced by the same searches but not independently confirmed enough to add as their own numbers this pass, left as a named lead for a future one rather than silently dropped. `conf` stays `"m"` (unchanged — a portfolio entry, per this atlas's standing rule for that shape) and `exp` stays 2038 (the design patent's own term, grant+15=2034, doesn't extend the portfolio's existing later expiry). Counts synced: README At-a-glance (280→281 total, 131→132 active, 154→155 brands, 172→173 verified) and all seven hardcoded `index.html` count strings.
+
+- **Added a new entry: Dave Weagle's dual-chain high-pivot drivetrain, EP 4,059,824 A2 ("Sequential adjacent drive assembly")**, requested directly with a link to Pinkbike's coverage. Placed in the `drive` category next to the other recent pending-application entries (Shimano's direct-mount and MGU filings). Two chains in series: crank to a free-spinning driven sprocket near the pivot, which is fixed to a co-axial second sprocket driving a second chain down to the cassette — splitting the drivetrain to free up chainstay-yoke clearance, which the filing (per Pinkbike's reporting) says eats up close to 70% of a new frame's development time. `conf:"m"`, not `"v"`: Pinkbike read the filing directly and this atlas's own patent-database access is blocked, so the EP number itself — while consistent with everything independently found about this invention (inventor, mechanism, 2022 filing year, the "A2" search-report-publication status meaning not yet granted) — wasn't independently re-confirmed against the primary document this pass; said so plainly in the entry's own text rather than upgrading on partial evidence. `st:"pending"`, `g`/`exp` both `null`, matching the "A2" (unexamined publication) status. `who:["Dave Weagle"]`, no `INVENTORS` change needed (already registered). Counts synced: README At-a-glance (281→282 total, 43→44 pending, 55→56 medium) and all seven hardcoded `index.html` count strings.
 
 - **A live re-run of the figure workflow exposed one more real gap, fixed the same way as the last two.** Chose two clean modern US utility patents from the verification backlog: US 6,203,042 (Trek rearward-axle-path suspension) and US 8,894,083 (Trek DRCV shock). US 8,894,083 fetched cleanly on the first try. US 6,203,042 404'd — the kind code it was run with (a bare `A`, the only guess available without knowing the real one) doesn't exist; the actual patent is `US6203042B1`. Since every successful run so far has gone through the Google Patents fallback rather than the USPTO endpoint (which has 403'd on every GitHub-runner attempt to date), the exact kind code turns out to be load-bearing in a way secondhand sourcing usually can't supply. **Fixed at the source rather than by re-running with a corrected guess**: on a 404 specifically (not a 403, which means blocked and would fail identically under any kind code) `download_pdf()` now retries the same digits under `B1, B2, A1, A2, B, A` before giving up, and reports which one actually worked. Pinned with two mocked tests in `tools/test_fetch_patent_figure.py` that replay this exact sequence — one confirming the 404 recovery, one confirming a 403 does *not* trigger pointless guessing — since neither can be exercised against the real network from most sandboxes.
 
