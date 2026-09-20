@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 280 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 280 |
+| **Total entries** | 281 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 131 |
+| **Active patents** | 132 |
 | **Expired patents** | 95 |
 | **Pending applications** | 43 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
-| **Brands** | 153 |
+| **Brands** | 154 |
 | **Named inventors** | 54 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 172 |
+| **Verified entries** | 173 |
 | **Medium confidence** | 55 |
 | **Draft / in progress** | 53 |
 
@@ -359,6 +359,8 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **Gave each of the four visual themes its own display font, and removed CLAUDE.md's former "two Google Fonts total" non-negotiable at the user's explicit request.** `--font-display` (the CSS variable already driving `h1`, tab labels, era/stats/fights headings) now resolves to a different family per theme instead of always falling back to Barlow Condensed: **Nunito** for WMBC (soft/rounded, matching its organic trail identity), **Bitter** for COMBA (a slab serif for its "heavy serif-feel" vintage-editorial brief), **Anton** for CAMBA (an ultra-bold condensed face for its bold-racing/urgent brief), and **IBM Plex Mono** for CAMBR (matching its own "mono-forward" technical-blueprint description). Patent titles, body copy, and buttons are untouched — they stay on the shared Barlow/Barlow Condensed pair, so only headings and structural labels shift per theme. All four are loaded from the same Google Fonts `<link>` already in `<head>`; no new external host, no build step. Six font families total now load with the page instead of two — a real, deliberate increase in page weight for an iframed/mobile-embedded tool, accepted here because the user asked for the constraint removed rather than worked around.
 
 - **Added the missing figure to the "Crampon convex pedal platform" entry (US D615,003 S) — the atlas's first Canfield pedal design patent, which already existed as a `conf:"v"` text-only entry sitting right next to its sequel, "Crampon pedal, second design" (US D667,348), which already had one.** Fetched and cross-checked via the GitHub Actions figure tool, since this sandbox's egress to Google Patents/USPTO stayed blocked throughout. The front page confirms the entry's existing data exactly — Christopher and Lance Canfield, filed May 13, 2009, granted May 4, 2010, and a stated **14-year** design-patent term (the rule for anything filed before May 13, 2015; `exp:2024` was already computed correctly) — and caught one small existing inaccuracy along the way: the entry's `w:` text said "15 years," which the front page directly contradicts. Fixed in both languages; `conf` stays `"v"`. Gained **Fig. 1**, the pedal's perspective view showing the convex dome-up platform, tapered edges, and axle boss — the source PDF page itself was rotated 90°, so the cropped image was rotated back (matching the fix applied earlier to the "Integrated active valve assembly" figure) rather than left sideways. No `D` entries added, no counts affected beyond "entries with a figure" (105 → 106, `img` 95 → 96).
+
+- **Registered Push Industries and added the ElevenSix's "Dual Overhead Valve" shock-controller patent, closing out a long-flagged gap.** Two prior passes couldn't find a real number: one investigated three candidates supplied from an AI search summary (US10036442B2, US9897160B2, US10816055B2) and found all three genuine but unrelated — a phone vibration motor, an automotive vibration isolator, a shock bumper cap, none Push's. This pass found it independently via `WebSearch` cross-confirmation (assignee, inventor, and filing chain agreeing across multiple queries), then fetched and read the primary source directly via the GitHub Actions figure tool to confirm before adding. **US 10,156,280 B2**, "Control valve to permit adjustability of a shock absorber" — filed Sept. 9, 2015 (claiming priority to a Sept. 9, 2014 provisional, which per this atlas's own continuation rule doesn't itself count toward the term), granted Dec. 18, 2018, inventor Darren W Murphy (Push Industries' own founder), assignee Push Industries Incorporated, Loveland, CO. The claims are an exact match for the ElevenSix's marketed mechanism: a first valve and a second valve, each independently tunable to its own damping rate, plus a flow director routing shock fluid to one or the other — two completely separate, on-the-fly-selectable damping circuits from one shock. `exp` 2035 (filing+20, post-GATT). `conf:"v"`. Registered **Push Industries** in `BRANDS` and `BRAND_HQ` (Colorado, joining Gates/MRP/Revel/Reeb/Spot) — Darren Murphy was not added to `INVENTORS`, matching this atlas's convention of not filter-tagging a one-off company founder credited in `a`. Gained **Fig. 1**, an end view of the reservoir/controller housing showing its two identical valve assemblies side by side — the flow director's twin paths that give the shock its two damping circuits. This exact file (`pictures/US10156280B2.png`) already existed in the repo's history — uploaded and later deleted (orphaned) in an earlier, abandoned attempt at this same entry — so the pre-existing, correctly-oriented crop was restored rather than replaced with a rougher one freshly fetched via the GitHub Actions tool for this pass (which produced a whole-bike-context figure instead; discarded in favor of the existing file once found). Placed in `cat:"fork"` next to the TTX twin-tube damper entry, matching this atlas's existing convention of filing rear-shock-internals patents under `fork` rather than `susp` (which is reserved for frame-linkage/kinematic patents). Counts synced: README At-a-glance (280→281 total, 131→132 active, 153→154 brands, 172→173 verified; expired/pending/litigated/inventors/jurisdictions unchanged) and all six hardcoded `index.html` count strings (3 meta tags, EN/FR `shareText`, EN/FR `mtBannerText`). "Entries with a figure" moves 106 → 107 (`img` 96 → 97).
 
 ---
 
