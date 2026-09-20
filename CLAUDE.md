@@ -34,22 +34,30 @@ UI, not a local git client. That has concrete consequences:
 1. **One file.** `index.html` contains everything — markup, CSS, JS, and the
    entire dataset. No build step, no bundler, no npm, no `package.json`. It
    must keep working when someone just double-clicks it.
-2. **Zero runtime dependencies beyond two Google Fonts** (Barlow, Barlow
-   Condensed), loaded via a `<link>` in `<head>`. Don't add a framework, a
-   CDN script, or a new external dependency without calling it out explicitly
-   and saying what breaks without it.
-3. **It will be iframed.** Every release is embedded on
+2. **It will be iframed.** Every release is embedded on
    postmillenniumrenaissance.com and often in a Pinkbike article (see
    README's "Embedding in Pinkbike" section for the known `position: sticky`
    /`position: fixed` iframe quirk). Don't design a feature that assumes a
    top-level browsing context.
-4. **Mobile-first CSS.** Base rules are the phone layout; `@media
+3. **Mobile-first CSS.** Base rules are the phone layout; `@media
    (min-width: …)` adds desktop. Never the reverse.
-5. **No committed test suite.** The README's "Tech stack" line describing a
+4. **No committed test suite.** The README's "Tech stack" line describing a
    jsdom harness documents a verification *method* used during development
    sessions, not a checked-in test file — there is no `package.json`, no
    `node_modules`, no test directory in this repo. Don't assume `npm test`
    exists. See **Verifying a change**, below, for what actually exists.
+
+The former non-negotiable #2 capped this project at two Google Fonts total
+(Barlow, Barlow Condensed) to keep font-loading weight down for the iframed/
+mobile embed case. Removed 2026-09-20 at the user's explicit request — no
+longer a hard constraint. Still weigh load weight before adding an external
+dependency (this stays a single-file, no-framework, no-CDN-script project
+per rule 1 above), but a new Google Font is no longer something that needs
+special justification. The four visual themes each now carry their own
+display font (Nunito/WMBC, Bitter/COMBA, Anton/CAMBA, IBM Plex Mono/CAMBR)
+loaded via the same `<link>` in `<head>`, layered onto `--font-display`
+per theme rather than replacing Barlow/Barlow Condensed, which remain the
+shared body font and the `:root` fallback.
 
 ## File map
 
@@ -60,7 +68,7 @@ UI, not a local git client. That has concrete consequences:
 | `tools/` | Repo tooling, not runtime: `fetch_patent_figure.py` (downloads a patent PDF, picks out the drawing sheets, crops the margin and the "U.S. Patent / Sheet n of m" header, emits candidate PNGs plus a report of the PDF's own front page) and its `tools/README.md`. Paired with `.github/workflows/patent-figure.yml`, a `workflow_dispatch`-only job so the whole thing is runnable from the GitHub web UI. Deliberately stops short of choosing which figure to use or writing `imgAlt` — both are editorial. Nothing here is loaded by `index.html`; deleting the directory changes nothing a reader sees, so it does not breach the single-file rule. |
 | `pictures/` | Patent drawing images referenced by individual entries' `img` field. Two naming patterns coexist: `US<number><kindcode>.png` (e.g. `US7665929B2.png` — the majority pattern) and a few bare-number files from an earlier pass (`9102378.png`). Prefer the full `US<number><kind>.png` form for anything new. |
 | `favicon.ico`, `favicon-32x32.png`, `apple-touch-icon.png` | Site favicons. No reason to touch these for a data addition. |
-| `social-preview.png` | The `og:image`/`twitter:image` social-card asset (1000×852), referenced by absolute URL in `index.html`'s `<head>`. Not a runtime dependency of the page itself — only fetched by link-preview bots — so it doesn't violate the zero-dependency rule above. |
+| `social-preview.png` | The `og:image`/`twitter:image` social-card asset (1000×852), referenced by absolute URL in `index.html`'s `<head>`. Not loaded by the page's own runtime code — only fetched by link-preview bots. |
 
 ## The data model
 

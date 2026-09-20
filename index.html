@@ -20,7 +20,7 @@
 <meta name="twitter:description" content="An interactive timeline of 280 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta name="twitter:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/social-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Nunito:wght@600;700&family=Bitter:wght@600;700&family=Anton&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --radius:10px;
@@ -39,6 +39,7 @@
   --head-weight:700; --head-spacing:.01em; --head-transform:uppercase;
   --card-shadow:0 1px 2px rgba(20,38,28,.05); --pill-radius:999px; --era-line:2px;
   --header-bg:linear-gradient(160deg,#1B4332 0%,#225239 100%);
+  --font-display:'Nunito',system-ui,sans-serif;
 }
 /* ===== COMBA — vintage editorial print (warm cream, heavy serif-feel, squared) ===== */
 [data-theme="comba"]{
@@ -51,6 +52,7 @@
   --head-weight:700; --head-spacing:.04em; --head-transform:none;
   --card-shadow:none; --pill-radius:3px; --era-line:3px;
   --header-bg:#3D3122;
+  --font-display:'Bitter',Georgia,serif;
 }
 /* ===== CAMBA — bold racing / high contrast (sharp, black rules, urgent) ===== */
 [data-theme="camba"]{
@@ -63,6 +65,7 @@
   --head-weight:700; --head-spacing:0; --head-transform:uppercase;
   --card-shadow:3px 3px 0 rgba(22,22,22,.10); --pill-radius:0; --era-line:4px;
   --header-bg:#161616;
+  --font-display:'Anton',system-ui,sans-serif;
 }
 /* ===== CAMBR — technical blueprint (navy structure, orange accents, mono-forward) ===== */
 [data-theme="cambr"]{
@@ -75,6 +78,7 @@
   --head-weight:600; --head-spacing:.06em; --head-transform:uppercase;
   --card-shadow:0 1px 3px rgba(11,22,42,.07); --pill-radius:4px; --era-line:2px;
   --header-bg:linear-gradient(160deg,#0B162A 0%,#13294B 100%);
+  --font-display:'IBM Plex Mono',ui-monospace,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
