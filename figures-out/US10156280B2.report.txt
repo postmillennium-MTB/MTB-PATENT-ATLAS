@@ -1,0 +1,154 @@
+patent: US10156280B2
+source: https://patentimages.storage.googleapis.com/ad/7b/c3/7231ae2a111475/US10156280.pdf
+pages: 18
+per-page extracted text length: {1: 2933, 2: 1226, 3: 293, 4: 200, 5: 207, 6: 335, 7: 174, 8: 263, 9: 321, 10: 7008, 11: 7590, 12: 7248, 13: 7588, 14: 7652, 15: 7569, 16: 7475, 17: 7236, 18: 7388}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010156280B2
+
+(12)Murphy
+United States Patent
+
+(10) Patent No.: US 10 , 156 ,280 B2
+
+(45) Date of Patent:
+
+(54 ) CONTROL VALVE TO PERMIT
+
+ADJUSTABILITY OF A SHOCK ABSORBER
+
+2 ,621 ,886 A * 12/ 1952 Mueller ................ F16K 5 /0414
+
+INCORPORATED . Loveland, CO
+
+4 ,958,706 A
+
+(US )
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U .S .C . 154 (b ) by 0 days .
+
+(21) Appl. No.: 14/848 , 911
+
+(65 )
+
+9/1990 Richardson et al.
+
+137/625 .42
+
+(Continued )
+
+(72 ) Inventor: Darren W Murphy, Fort Collins, CO
+(US)
+
+(22 ) Filed :
+
+References Cited
+U . S . PATENT DOCUMENTS
+
+(56 )
+
+(71 ) Applicant: PUSH INDUSTRIES,
+
+( * ) Notice:
+
+Dec . 18, 2018
+
+OTHER PUBLICATIONS
+Advance E -Mail , PCT Notification Concerning Transmittal of Inter
+
+national Preliminary Report on Patentability (Chapter 1 of the
+
+Patent Cooperation Treaty ).
+(Continued )
+Primary Examiner — Anna M Momper
+(74 ) Attorney, Agent, or Firm — E . Victor Indiano ;
+Indiano & McConnell, LLC
+
+Sep . 9, 2015
+
+(57)
+
+Prior Publication Data
+
+A controller adjusts the damping characteristics of a vehicle
+
+US 2016 /0069415 A1
+
+ABSTRACT
+
+shock absorber that includes a shock absorber housing and
+a shock absorber fluid contained within the shock absorber
+housing. The controller includes a controller housing having
+
+Mar. 10 , 2016
+
+a fluid passageway therein . The housing includes a shock
+
+Related U .S . Application Data
+(60 ) Provisional application No.62/ 048 ,236 , filed on Sep .
+9 , 2014 .
+
+coupler for coupling the housing for the shock absorber and
+
+for placing the shock absorber housing in fluid communi
+cation with the fluid passageway . A reservoir stores shock
+absorber fluid in the controller and a first valve is disposed
+
+in the fluid passageway between the shock coupler and the
+(51) Int. CI.
+F16F 9 /50
+F16F 9 /34
+F16F 9 /44
+
+(52) U . S . CI.
+CPC
+
+reservoir . Shock absorber fluid can pass between the shock
+coupler and the reservoir. The first valve includes a first
+valve controller that is configured for controlling the rate of
+
+( 2006 .01 )
+(2006 .01)
+
+flow through the first valve to achieve a first damping rate .
+A second valve includes a second valve controller for
+
+(2006 .01 )
+F16F 9 /50 ( 2013 .01) ; F16F 9 /34
+
+( 2013 .01) ; F16F 9 /44 (2013.01)
+
+controlling the flow of shock absorber fluid through the
+second valve to achieve a second damping rate . A flow
+
+director directs the flow of shock absorber fluid to either the
+
+(58 ) Field of Classification Search
+CPC .. . .. F16F 9 /065 ; F16F 9 / 3242; F16F 9 / 325 ;
+F16F 9 /44 ; F16F 9 /443 ; F16F 9 /446 ;
+
+first valve or the second valve to achieve one of the first or
+second damping rates . The flow controller of the first valve
+
+See application file for complete search history .
+
+(Continued )
+
+F16F 9 /50
+
+controls the flow of shock absorber fluid to achieve the first
+
+damping rate independently of the second valve 's control of
+292
+
+284
+
+WAKE
+
+178
+
+F
+
+
