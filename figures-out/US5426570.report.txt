@@ -1,0 +1,101 @@
+patent: US5426570
+source: https://patentimages.storage.googleapis.com/88/e4/3a/4e23919448f893/US5426570.pdf
+pages: 6
+per-page extracted text length: {1: 1983, 2: 51, 3: 59, 4: 6487, 5: 6680, 6: 656}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+IIIHIII||||III
+s
+
+USOO542657OA
+
+United States Patent 19
+
+11
+
+Patent Number:
+
+5,426,570
+
+Davis
+
+45
+
+Date of Patent:
+
+Jun. 20, 1995
+
+54
+
+4,390,927 6/1983 Von Feldt............................. 362/72
+4,618,081. 10/1986 Miree............................ 224/30 AX
+4,911,339 3/1990 Cushing ....................... 280/288.4 X
+
+BATTERY SYSTEM FOR SUSTAINED
+BICYCLE PATHWAY ILLUMINATION, AND
+METHODS
+
+4,970,630 11/1990 Mudrovich ........................... 362/72
+
+76 Inventor: McKay H. Davis, P.O. Box 520084,
+
+5,066,012 11/1991 Stark ............................... 362/390 X
+
+Salt Lake City, Utah 84152
+
+5,181,774 1/1993 Lane ............................. 224/30 AX
+5,247,431 9/1993 Liu ........................................ 362/72
+
+21 Appl. No.: 221,208
+22 Filed:
+Mar. 31, 1994
+
+5,276,593 1/1994 Lighthill et al. ...................... 362/72
+Primary Examiner-Ira S. Lazarus
+
+(51 int. CI. ................................................ B62J 6/00
+
+Assistant Examiner-Thomas M. Sember
+
+(52 U.S. C. ...................................... 362/72, 362/.390.
+362/396; 340/432; 224/32 A: 224/32 R.
+
+206/333; 280/288.4
+
+58 Field of Search ................. 362/72, 390, 396, 198,
+362/191; 340/432: 280/288.4 224/32 A, 32 R
+s
+902. 266/333, 523
+(56.
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+880,703 3/1908 Wheeler et al. ................ o6/333 x
+
+362/390 X
+2,346,695 4/1944 Miller ................
+... 362/72 X
+4,204,191 5/1980 Daniels ......
+4,339,060 7/1982 Braida, Jr. -- a-- res. -- . . . . . . . . . . . 224/32R
+
+Attorney, Agent, or Firm-Foster & Foster; Lynn G.
+Foster
+57
+
+ABSTRACT
+
+An illumination system for a mountain bicycle is dis
+
+closed. The disclosed system comprises a long-term,
+high power battery pack encapsulated in an impervious
+jacket of compressible material, which combination is
+reliably and securely compression-fit into an open water
+
+bottle cage, in lieu of a water bottle, and electrically
+
+connected to a source of artificial light.
+
+5 Claims, 2 Drawing Sheets
+
+
