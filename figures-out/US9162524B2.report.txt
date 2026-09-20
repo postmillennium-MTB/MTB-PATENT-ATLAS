@@ -1,0 +1,150 @@
+patent: US9162524B2
+source: https://patentimages.storage.googleapis.com/e4/8b/89/87731b7bb35819/US9162524.pdf
+pages: 10
+per-page extracted text length: {1: 2802, 2: 1928, 3: 57, 4: 57, 5: 57, 6: 57, 7: 7596, 8: 7444, 9: 7206, 10: 3741}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO9162524B2
+
+(12) United States Patent
+Koziatek
+
+(10) Patent No.:
+
+(54) BICYCLE WHEEL RIM
+(US)
+
+USPC .................... 301/58, 95.101, 95.104-95.108;
+
+152/382, 516, 520
+
+(72) Inventor: Stanley F. Koziatek, Big Flats, NY (US)
+
+(73) Assignee: it, Motors, Inc., Horseheads, NY
+
+See application file for complete search history.
+
+(56)
+
+References Cited
+
+-
+
+U.S. PATENT DOCUMENTS
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+1,194,177 A
+
+8, 1916 Henderson
+
+U.S.C. 154(b) by 22 days.
+
+1,316,773 A
+
+9/1919 Daigre
+
+This patent is Subject to a terminal dis-
+
+(Continued)
+
+claimer.
+
+OTHER PUBLICATIONS
+
+(21) Appl. No.: 14/089,173
+(22) Filed:
+
+International Organization for Standardization. "Bicycle tyres and
+rims—Part 1: Tyre designations and dimensions.” 5th edition (Dec.
+
+Nov. 25, 2013
+
+(65)
+
+12, 1997).
+
+Prior Publication Data
+
+US 2014/OO77585 A1
+
+Mar. 20, 2014
+
+O O
+Related U.S. Application Data
+
+(63) Continuation of application No. 13/219.340, filed on
+Aug. 26, 2011, now Pat. No. 8,613.485, which is a
+continuation of application No. 12/420.595, filed O
+Apr. 8, 2009, now Pat. No. 8,007,053, which is a
+(Continued)
+(51) Int. Cl.
+B6OB 21/02
+B60B2I/O
+
+*Oct. 20, 2015
+
+B60B 21/10, B60B 21/102: B60B 21/104;
+B60B 21/106; B60C 7/24: B60C 17/04;
+B60C 17/041; B60C 17/042
+
+(71) Applicant: K.G. Motors, Inc., Horseheads, NY
+
+(*) Notice:
+
+US 9,162,524 B2
+
+(45) Date of Patent:
+
+(2006.01)
+(2006.01)
+
+(Continued)
+
+Primary Examiner — Jason Bellinger
+(74) Attorney, Agent, or Firm — Wilmer Cutler Pickering
+Hale and Dorr LLP
+
+(57)
+ABSTRACT
+A bicycle wheel rim having a circular base portion including
+a proximal Surface and a distal Surface, and a pair of integral
+sidewalls extending generally radially outward from an inter
+section region of the proximal Surface and the distal Surface.
+The distal Surface of the rim has a central hump, a trough
+contiguous with the central hump extending axially outward
+from the hump, and a flat shelf immediately adjacent, con
+
+(Continued)
+
+tiguous with, and extending axially outward from the trough.
+
+(52) U.S. Cl.
+CPC ............. B60B 21/102 (2013.01); B60B 21/025
+(2013.01); B60B 21/026 (2013.01); B60B
+
+Another embodiment of the invention is directed to a bicycle
+wheel including9. the embodied rim, a ppluralityy aa Sp
+spokes
+engaged at respective ends thereof with the rim and a hub
+engaged with the plurality of spoke members at opposite ends
+
+21/04 (2013.01); B60B 21/062 (2013.01); B60Y
+
+thereof. Another embodiment of the invention is directed to a
+
+2200/13 (2013.01)
+
+bicycle wheel assembly comprising the embodied wheel and
+
+(58) Field of Classification Search
+CPC ...... B60B 21/00, B60B 21/02; B60B 21/025;
+
+B60B 21/026; B60B 21/028; B60B 21/04;
+
+a tube and/or tire mounted on the rim.
+
+30 Claims, 4 Drawing Sheets
+
+

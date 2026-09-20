@@ -1,0 +1,124 @@
+patent: US9649878B2
+source: https://patentimages.storage.googleapis.com/11/72/41/fd92236b878fde/US9649878.pdf
+pages: 10
+per-page extracted text length: {1: 2433, 2: 2475, 3: 78, 4: 56, 5: 56, 6: 56, 7: 7313, 8: 7120, 9: 6881, 10: 5196}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US009649878B2
+
+(12) United States Patent
+Koziatek
+(54)
+
+BICYCLE WHEEL RIM
+
+(71) Applicant: K.G. Motors, Inc., Horseheads, NY
+(US)
+(72) Inventor: Stanley F. Koziatek, Big Flats, NY
+(US)
+(73) Assignee: K.G. Motors, Inc., Horseheads, NY
+(US)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+This patent is Subject to a terminal dis
+claimer.
+
+(21) Appl. No.: 14/859,591
+(22) Filed:
+
+Prior Publication Data
+
+US 2016/OOO9127 A1
+
+Jan. 14, 2016
+
+Related U.S. Application Data
+(63) Continuation of application No. 14/089,173, filed on
+Nov. 25, 2013, now Pat. No. 9,162,524, which is a
+(Continued)
+
+(51)
+
+Int. C.
+
+B6OB 21/02
+B60B 2L/04
+
+(2006.01)
+(2006.01)
+
+(Continued)
+(52)
+
+(58) Field of Classification Search
+CPC ....... B60B 21/00; B60B 21/02; B60B 21/025;
+
+B60B 21/026: B60B 21/028; B60B 21/04;
+
+(Continued)
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+1,194,177 A
+1,316,773 A
+
+8, 1916 Henderson
+
+9/1919 Daigre
+
+(Continued)
+OTHER PUBLICATIONS
+
+International Organization for Standardization. "Bicycle tyres and
+rims—Part 1: Tyre designations and dimensions.” 5th edition (Dec.
+12, 1997). (14 pages).
+
+(Continued)
+Primary Examiner — Jason Bellinger
+(74) Attorney, Agent, or Firm — Wilmer Cutler Pickering
+
+Sep. 21, 2015
+
+(65)
+
+(10) Patent No.:
+US 9,649,878 B2
+*May 16, 2017
+(45) Date of Patent:
+
+U.S. C.
+
+CPC ............ B60B 21/025 (2013.01); B60B I/003
+
+(2013.01); B60B I/02 (2013.01); B60B 21/026
+(2013.01);
+(Continued)
+
+Hale and Dorr LLP
+
+(57)
+
+ABSTRACT
+
+A bicycle wheel rim having a circular base portion including
+a proximal Surface and a distal Surface, and a pair of integral
+sidewalls extending generally radially outward from an
+intersection region of the proximal Surface and the distal
+Surface. The distal Surface of the rim has a central hump, a
+trough contiguous with the central hump extending axially
+outward from the hump, and a flat shelf immediately adja
+cent, contiguous with, and extending axially outward from
+the trough. Another embodiment of the invention is directed
+to a bicycle wheel including the embodied rim, a plurality a
+spokes engaged at respective ends thereof with the rim and
+a hub engaged with the plurality of spoke members at
+opposite ends thereof. Another embodiment of the invention
+is directed to a bicycle wheel assembly comprising the
+embodied wheel and a tube and/or tire mounted on the rim.
+
+34 Claims, 4 Drawing Sheets
+
+
