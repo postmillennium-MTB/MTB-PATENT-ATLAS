@@ -1,0 +1,163 @@
+patent: US8007053B2
+source: https://patentimages.storage.googleapis.com/3d/b1/c3/e626932f0fefb3/US8007053.pdf
+pages: 9
+per-page extracted text length: {1: 2922, 2: 1286, 3: 77, 4: 57, 5: 57, 6: 71, 7: 7841, 8: 7799, 9: 6760}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USO08007053B2
+
+(12) United States Patent
+Koziatek
+(54) BICYCLE WHEEL RIM
+
+(10) Patent No.:
+
+US 8,007,053 B2
+
+(45) Date of Patent:
+
+*Aug. 30, 2011
+
+6,283,557 B1 * 9/2001 Okajima et al.
+
+(76) Inventor: Stanley F. Koziatek, Big Flats, NY (US)
+
+6,402.255 B1*
+6,402.256 B1*
+B1*
+6,428,115
+
+(*) Notice:
+
+3.
+
+6/2002 Chen et al.
+6/2002 Chen
+Mercatetetal.al.
+8/2002
+
+ck
+
+Subject to any disclaimer, the term of this
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+This patent is Subject to a terminal disclaimer.
+
+R ck 1938: Sie al.
+
+6,736.462 B1* 5/2004 Okajima et al.
+6,752,187 B1 * 6/2004 Tien
+6,761,847 B2
+6,767,069 B2
+6,767,070 B1
+
+7/2004 Meggiolan et al.
+7/2004 Chen et al.
+7/2004 Chiang et al.
+
+6,776.460 B1
+
+8, 2004 Lo et al.
+
+(21) Appl. No.: 12/420,595
+(22) Filed:
+
+(Continued)
+
+Apr. 8, 2009
+
+(65)
+
+OTHER PUBLICATIONS
+
+Prior Publication Data
+US 2010/0066157 A1
+
+International Organization for Standardization. Bicycle tyres and
+rims—Part 1: Tyre designations and dimensions.” 5th edition (Dec.
+12, 1997).
+
+Mar. 18, 2010
+
+Related U.S. Application Data
+(63) Continuation of application No. 12/ 197,901, filed O
+
+Aug. 25, 2008, now abandoned, which is a
+
+continuation of application No. 1 1/965,153, filed on
+Dec. 27, 2007, now abandoned, which is a
+continuation of application No. 10/959,743, filed on
+Oct. 6, 2004, now Pat. No. 7,334,846.
+
+(51) Int. Cl.
+
+B6OB 21/02
+
+p
+References Cited
+
+U.S. PATENT DOCUMENTS
+
+1,194,177 A *
+
+8, 1916 Henderson
+
+4,896.921 A *
+6,183,047 B1 *
+
+1/1990 Sato et al.
+2/2001 Kuhl
+
+1,316,773 A * 9/1919 Daigre
+1,551,445 A * 8/1925 Wagenhorst
+
+Hale and Dorr LLP
+
+(57)
+ABSTRACT
+A bicycle wheel rim having a circular base portion including
+sidewalls extending generally radially outward from an inter
+
+(58) Field of Classification Search .................... 301/58,
+301/95.101, 95.104, 95.105.95.106, 95.107
+• w us 301/95 108. 152,382 516. 520
+See application file for com lete search histo s
+pp
+
+(74) Attorney, Agent, or Firm — Wilmer Cutler Pickering
+
+a proximal surface and a distal surface, and a pair of integral
+
+(2006.01)
+
+(52) U.S. Cl. ............... 301/95.104.301/95.106, 152,382
+
+(56)
+
+(Continued)
+Primary Examiner — Russell D Stormer
+
+ry.
+
+section region of the proximal surface and the distal surface.
+
+The distal Surface of the rim has a central hump, a trough
+contiguous with the central hump extending axially outward
+from the hump, and a flat shelf immediately adjacent, con
+tiguous with, and extending axially outward from the trough.
+
+Another embodiment of the invention is directed to a bicycle
+wheel including the embodied rim, a plurality a spokes
+engaged at respective ends thereof with the rim and a hub
+engaged with the plurality of spoke members at opposite ends
+thereof. Another embodiment of the invention is directed to a
+
+bicycle wheel assembly comprising the embodied wheel and
+a tube and/or tire mounted on the rim.
+
+15 Claims, 4 Drawing Sheets
+536
+550
+
+
