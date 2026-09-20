@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 284 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 283 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 284 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 284 |
+| **Total entries** | 283 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 133 |
+| **Active patents** | 132 |
 | **Expired patents** | 95 |
 | **Pending applications** | 43 |
 | **Litigated entries** | 27 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 284 patents and 
 | **Brands** | 156 |
 | **Named inventors** | 54 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 174 |
+| **Verified entries** | 173 |
 | **Medium confidence** | 58 |
 | **Draft / in progress** | 52 |
 
@@ -393,6 +393,8 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 
 
 - **Confirmed the Chilao SS "Static Spring" pedal axle patent: US 12,391,334 B1, "Bicycle pedal," inventor Yusaku Yoshimura.** Previously a `conf:"l"` draft placeholder (`num:null, st:"pending"`). The user supplied the number directly via a Google Patents URL filtered to that inventor; independently, a separate WebSearch pass surfaced a USPTO listing for the same number under the same title with a matching mechanism description (a spring member absorbing axial impact and preventing bearing binding from wear), cross-confirming the number and subject without relying on the user’s link alone. **One AI-generated search summary this pass repeatedly misattributed this same number to a different inventor (“Chang-Hsin Wu”) and an unrelated force-sensor mechanism — not trusted, matching this repo’s own documented experience with this exact failure mode (see the RatioX note earlier in this changelog).** `st` moved `"pending"` → `"active"` (a B1 patent number is a grant, not an application) and the title dropped “(patent pending).” **`g` and `exp` are deliberately left `null`** rather than guessed: this session could not independently reopen the Google Patents record itself (blocked to this sandbox) to read the actual filing/grant dates, so nothing here states a date this pass didn’t verify. `conf` raised `"l"` → `"m"` — the number and inventor are confirmed, but the dates aren’t, which is exactly what `"m"` is for. Counts synced: README At-a-glance (132→133 active, 44→43 pending, 57→58 medium, 53→52 draft; total and verified unchanged).
+
+- **Merged the duplicate SUNringlé/Reynolds US 11,090,977 entries into one card, and removed the erroneous co-listing of Stan’s US 7,334,846 on the SUNringlé card.** Reported directly by the user, who’d found the same number (11,090,977) rendering as two separate cards — a 2003-filed "SUNringlé wheel & hub patents" card that incorrectly bundled it with Stan’s 7,334,846 (and dated the *pair* to 2003/2008, which is right for 7,334,846 but wrong for 11,090,977, actually filed 2018/granted 2021 per the sibling Reynolds card), and a separate 2018-filed "Reynolds wheel patent" card carrying the correct dates for that same number. Since Hayes Bicycle Group owns both SUNringlé and Reynolds and the patent itself already said as much (both cards’ own `w` text called it shared IP), the fix was to merge them into a single card — `y:2018, g:2021, exp:2038` (the correct dates), `who:["SUNringlé","Reynolds","Hayes"]`, `num:"11090977"` only — rather than carry two cards for one number with disagreeing dates on one of them. The Stan’s 7,334,846 licensing fact wasn’t dropped, just relocated to where it belongs: a new sentence in the existing **Bead Socket Technology portfolio** entry’s `w` text (Stan’s own card) noting Hayes’ SUNringlé marking page also lists that number, mirroring the sentence already there about the Velocity license, with a pointer back to this merged card for the other side of the arrangement. **Known side effect: this breaks the two old `#p=11090977-1`/`#p=11090977-2` deep links** (e.g. ones already shared or embedded elsewhere) — the disambiguating `-1`/`-2` suffix only exists when two cards share a `num`, so with one card left, its link is now the bare `#p=11090977`. No fix applied for the stale links themselves (there’s no card left for `-1`/`-2` to point at, by design — that was the bug), flagged here in case either old link is live anywhere. Counts synced: README At-a-glance (284→283 total, 133→132 active, 174→173 verified; all seven hardcoded `index.html` count strings updated to match) — net -1 from the merge, since 284 was reached the same session by two separate additions (JBX1, Chilao SS) that both remain.
 
 ---
 
