@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 280 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 284 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,7 +14,7 @@ An interactive timeline of mountain bike intellectual property: 280 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 283 |
+| **Total entries** | 284 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 132 |
 | **Expired patents** | 95 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 280 patents and 
 | **Brands** | 156 |
 | **Named inventors** | 54 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 173 |
+| **Verified entries** | 174 |
 | **Medium confidence** | 57 |
 | **Draft / in progress** | 53 |
 
@@ -38,11 +38,13 @@ This table is a snapshot. For live, always-current numbers — plus a category b
 Rear Suspension · Forks & Damping · Drivetrain · Wheels & Tires · Components · E-MTB & Electronics · Frame & Standards · Bike Transport · Cameras & Wearables
 
 ### 📈 Patents-per-era bar chart
-A scrubber above the filter bar renders the full dataset as a tappable bar chart, bracketed by year. Three bracket sizes are available via the toggle in the top-right of the scrubber:
+A scrubber above the filter bar renders the dataset as a tappable bar chart, bracketed by year. Two toggles sit side by side in the top-right of the scrubber:
 
-- **2yr** (default) — the balance point between too dense to read and too coarse to be useful
-- **1yr** — every year gets its own bar
-- **5yr** — half-decade buckets (e.g. 1995–1999, 2000–2004 are each a single bar), for a zoomed-out view of eras
+- **MTB / ALL** — **MTB** (default) scopes the chart to 1980–present, mountain biking's own era; **ALL** widens it back to the full dataset, including the 1869–1913 bicycle-mechanics entries that predate the sport. This only changes what the chart displays — the timeline's own card list underneath is never filtered by it, so switching back to MTB doesn't hide any entry, just the chart's own axis.
+- **2yr / 1yr / 5yr** — the bracket size:
+  - **2yr** (default) — the balance point between too dense to read and too coarse to be useful
+  - **1yr** — every year gets its own bar
+  - **5yr** — half-decade buckets (e.g. 1995–1999, 2000–2004 are each a single bar), for a zoomed-out view of eras
 
 Tapping any bar jumps straight to that era's section in the timeline. Bars carry a tooltip with the exact count; a subset get a visible year label underneath, thinned automatically on narrow screens so labels never collide. Where the dataset has a real multi-decade silence (e.g. between the earliest 1890 entry and the next one in the mid-1970s), a dashed gap marker breaks the axis rather than drawing the two eras as if they were adjacent.
 
@@ -385,6 +387,10 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **Added a figure for each of the four Stan's continuations above, converting the entry's single `img` to a five-item `imgs[]` array.** Fetched via the GitHub Actions figure tool at a higher candidate count (6 sheets) for the two later continuations once the first pass showed they might carry genuinely new drawings, not just the parent's reused set — they did. The family turns out to hold two drawing generations, not five independent sets: **US 8,007,053** and **US 8,613,485** file the identical Fig. 3/4 sheet (tire bead seated in the channel, plus the channel's dimensioned width/height/offset) — disclosed as shared in both captions rather than presented as if each had unique art. **US 9,162,524** and **US 9,649,878** both add a second, expanded sheet on top of the original Fig. 1–4 (also shared between those two): Fig. 5's small interior-channel step, Fig. 6's foam/elastomer insert at the rim-well base, Fig. 7's fully hatched wall-thickness cross-section, and Fig. 8's hanging load-test rig — genuinely new drawings introduced a decade into the continuation chain, not reused from 2004. Picked one distinct page per patent (alternating Fig. 1/2 → parent's existing image, Fig. 3/4 → the two mid-chain continuations, Fig. 5/6 and Fig. 7/8 → the two later ones) so the five cards read as five different pictures rather than near-duplicates, while each `alt` text says plainly which other patent(s) share that exact sheet. All four images are correctly oriented as fetched, no rotation needed. Counts: "entries with a figure" unchanged at 107 (this entry already counted as illustrated before this pass) — only the `img`/`imgs[]` split moves, 97→96 / 10→11.
 
 - **Added figures to seven verified patents that lacked drawings.** From the set identified as illustration candidates — 28 verified entries with real numbers but no images — seven patents were successfully fetched and cross-checked via the GitHub Actions figure tool. The first five: **US 10,926,830 B2** (Yeti suspension linkage, FIG. 5 showing the multi-axis extension body geometry), **US D1,023,842** (Yeti shock extension design patent, housing and mounting interface), **US 9,404,552** (B-LABS/Fox three-way damping cartridge, FIG. 2 internal piston-valve cross-section), **US 7,163,222** (Fox fork damper architecture, FIG. 3 showing the cartridge's oil-flow paths), and **US 11,345,432** (Specialized/Weagle linkage fork, FIG. 6 showing the dual-taper arm geometry and pivot axis). Plus two additional US patents: **US 11,179,979** (Sport Components/milKit tubeless valve, FIG. 2 showing the cartridge seal and deployment mechanism) and **US 5,426,570** (McKay H. Davis water-bottle-cage light, FIG. 2 showing the LED mount assembly). Each front page was read to confirm existing entry data (assignees, filing/grant dates, inventors, titles all matched) and `conf` stays `"v"` across the board. Bilingual alt text added to each, describing the figure number shown and the key mechanism reference numerals visible. "Entries with a figure" moves 107 → 114 (`img` 96 → 103). Three candidates remain outstanding — AU 2013225624 (I-Track, Australian filing; network access limited), US 2024/0229892 (Fox tuned mass damper, published application format handling), and FR 86705 (Meyer wheel, 1869 French patent; pre-modern numbering scheme) — each presents specific challenges (international databases, non-PDF formats, or pre-1916 archives) that will require targeted approaches in subsequent passes.
+- **Added a MTB/ALL range toggle to the top-nav "Patents per era" bar chart, next to the existing 2yr/1yr/5yr bracket toggle.** Requested directly. **MTB** (default) scopes the chart to 1980–present; **ALL** widens it to the full dataset, back to the 1869 entries. Chart-only, by design: the new `eraScope` state var feeds a dedicated `getChartEras()` (wrapping the existing `buildEras(step, srcD)`, given an optional source array) used only by `renderBars()`, while the main timeline’s own card grouping keeps calling the original, unscoped `getEras()` — so switching to MTB narrows the chart’s own axis without hiding a single pre-1980 card from the timeline itself, the Fights view, or the Stats tab. New `MTB_ERA_START` constant (1980), chosen as a few years after Joe Breeze’s 1977 JBX1 prototype (see below) — mountain biking’s own purpose-built era, as distinct from the 1869–1913 general-bicycle-mechanics entries that predate the sport. Bilingual button label (`eraScopeLabel`: "MTB"/"ALL" in English, "VTT"/"TOUT" in French) and tooltip (`eraScopeTip`), wrapped with the step-bracket button in a new `.scrub-toggles` flex row so both sit together in the scrubber’s top-right corner. No visual/browser check available this pass — noted per this file’s own "no committed test suite" convention.
+
+- **Added the JBX1 "Breezer 1" — the frame, not a patent.** Requested directly, as a deliberately non-patent historical marker: hand-built by Joe Breeze in 1977, the JBX1 (later "Breezer 1") was the first bicycle frame purpose-designed for off-road riding rather than a converted cruiser or road frame, built for the Repack downhill races on Mount Tamalpais — the object that turned mountain biking from modified "klunkers" into a purpose-built category. No patent was ever filed on the frame itself; Breezer #1 is held in the Smithsonian’s National Museum of American History. `num: null`, `st:"unknown"` (no patent, so no patent-status field applies — same convention as the existing Fatback/Matyas "no patent" entry), `conf:"v"` (cross-confirmed across the Smithsonian’s own catalog record, Wikipedia, and contemporaneous trade coverage). `w` text also notes mountain biking’s fast institutional rise afterward — a UCI-sanctioned World Championship by 1990 (Durango, Colorado) and an Olympic discipline at the 1996 Atlanta Games. Placed in `cat:"frame"`, right after the 1938 Schwinn cantilever frame entry. Joe Breeze was already registered in `INVENTORS` from his separate Hite-Rite patent entry, so no registry addition was needed. Counts synced: README At-a-glance (283→284 total, 173→174 verified) and all seven hardcoded `index.html` count strings (three meta tags, EN/FR `shareText`, EN/FR `mtBannerText`).
+
 
 ---
 

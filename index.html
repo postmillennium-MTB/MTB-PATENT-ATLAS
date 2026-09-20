@@ -7,17 +7,17 @@
 <link rel="icon" type="image/png" href="favicon-32x32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>MTB Patent Atlas — 45 Years of Mountain Bike Innovation</title>
-<meta name="description" content="An interactive timeline of 283 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta name="description" content="An interactive timeline of 284 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MTB Patent Atlas — 45 Years of Mountain Bike Innovation">
-<meta property="og:description" content="An interactive timeline of 283 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta property="og:description" content="An interactive timeline of 284 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta property="og:url" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/">
 <meta property="og:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/social-preview.png">
 <meta property="og:image:width" content="1000">
 <meta property="og:image:height" content="852">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MTB Patent Atlas — 45 Years of Mountain Bike Innovation">
-<meta name="twitter:description" content="An interactive timeline of 283 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
+<meta name="twitter:description" content="An interactive timeline of 284 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta name="twitter:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/social-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Nunito:wght@600;700&family=Bitter:wght@600;700&family=Anton&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
@@ -279,6 +279,7 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .scrubber{margin-top:14px}
 /* Holds the scrubber's label and the year-bracket step toggle side by side */
 .scrub-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.scrub-toggles{display:flex;align-items:center;gap:6px;flex:0 0 auto}
 .scrub-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
 /* Toggles how many years each timeline bar covers (1/2/5yr brackets) */
 .step-btn{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.42);color:#fff;border-radius:6px;padding:3px 10px;cursor:pointer;transition:background .15s,border-color .15s;white-space:nowrap}
@@ -517,7 +518,10 @@ html,body{overflow-x:hidden;max-width:100%}
     <div class="scrubber">
       <div class="scrub-label-row">
         <div class="scrub-label" data-i18n="scrubLabel">Patents per era — tap a bar to jump</div>
-        <button class="step-btn" id="stepToggle" data-i18n-title="stepTip" title="Toggle bar bracket: 2yr → 1yr → 5yr">2yr</button>
+        <div class="scrub-toggles">
+          <button class="step-btn" id="eraScopeToggle" data-i18n-title="eraScopeTip" title="Toggle timeline range: MTB era (1980–present) vs full dataset history">MTB</button>
+          <button class="step-btn" id="stepToggle" data-i18n-title="stepTip" title="Toggle bar bracket: 2yr → 1yr → 5yr">2yr</button>
+        </div>
       </div>
       <div class="bars" id="bars" role="navigation" data-i18n-aria-label="timelineEras" aria-label="Timeline eras"></div>
       <div class="bars-foot"></div>
@@ -1003,6 +1007,7 @@ const D = [
   {"y":2022,"g":null,"t":{"en":"Machine-learning suspension control (application)","fr":"Contrôle de suspension par apprentissage automatique (demande)"},"a":"Shimano","num":null,"cat":"emtb","st":"pending","exp":null,"b":[],"who":["Shimano"],"conf":"v","s":{"en":"Published January 2024: sensors for speed, cadence, torque, tire pressure, braking and attitude — plus a forward-facing camera — feeding a trained model that adjusts suspension via motors and solenoids in real time.","fr":"Publiée en janvier 2024 : des capteurs de vitesse, cadence, couple, pression de pneu, freinage et assiette — plus une caméra orientée vers l'avant — alimentant un modèle entraîné qui ajuste la suspension via des moteurs et solénoïdes en temps réel."},"w":{"en":"The damping tune as a neural network. When the algorithm is the invention, the patent office becomes the new kingmaker.","fr":"Le réglage d'amortissement comme réseau de neurones. Quand l'algorithme est l'invention, l'office des brevets devient le nouveau faiseur de rois."}},
   {"y":2024,"g":2025,"t":{"en":"Wheel motor-brake unit (US 12,491,966)","fr":"Unité moteur-frein de roue (US 12,491,966)"},"a":"Mikel Fauri / Porsche AG","num":"12491966","cat":"emtb","st":"active","exp":2044,"j":"DE","b":["priorart"],"who":["Porsche"],"conf":"v","s":{"en":"A disk-rotor motor, planetary transmission and disc brake packaged into one wheel hub with regenerative braking — released publicly as Porsche and PON wound down their eMTB project. Inventor Mikel Fauri has since become Head of Electric Propulsion at McLaren.","fr":"Un moteur à rotor disque, une transmission planétaire et un frein à disque intégrés dans un seul moyeu de roue avec freinage régénératif — rendu public alors que Porsche et PON mettaient fin à leur projet de VTTAE. L'inventeur Mikel Fauri est depuis devenu responsable de la propulsion électrique chez McLaren."},"w":{"en":"Ferdinand Porsche built one of the first electric bicycles in 1893 and the first wheel-hub motor in 1900. This filing closes a 130-year family loop.","fr":"Ferdinand Porsche a construit l'un des premiers vélos électriques en 1893 et le premier moteur-moyeu de roue en 1900. Ce dépôt boucle une boucle familiale de 130 ans."}},
   {"y":1938,"g":1939,"t":{"en":"Schwinn cantilever frame (US 2,151,533)","fr":"Cadre cantilever Schwinn (US 2,151,533)"},"a":"Frank W. Schwinn / Arnold, Schwinn & Co.","num":"2151533","cat":"frame","st":"expired","exp":1956,"b":[],"who":["Schwinn","Frank W. Schwinn"],"conf":"v","s":{"en":"A frame construction adding a curved strut from the seat cluster down to the rear axle area, first used on the 1938 Autocycle line and later the Black Phantom and Sting-Ray. Filed the same day as the Spring Fork patent below (March 3, 1938). Pre-1995 US utility patents ran 17 years from grant rather than 20 years from filing, so this one lapsed in 1956.","fr":"Une construction de cadre ajoutant un étrésillon courbe du groupe de selle jusqu'à la zone de l'axe arrière, utilisée d'abord sur la gamme Autocycle de 1938 puis sur le Black Phantom et le Sting-Ray. Déposé le même jour que le brevet de fourche à ressort ci-dessous (3 mars 1938). Les brevets d'utilité américains d'avant 1995 duraient 17 ans à compter de la délivrance plutôt que 20 ans à compter du dépôt, celui-ci s'est donc éteint en 1956."},"img":"pictures/US2151533A.png","imgAlt":{"en":"Sheet 1 of US 2,151,533, showing Fig. 1 (the complete cantilever frame with the curved strut 15 running from the seat cluster to the rear axle area) and Fig. 2 (a detail of the seat-cluster/strut junction), signed by inventor Frank W. Schwinn","fr":"Planche 1 du brevet US 2 151 533, montrant la Fig. 1 (le cadre cantilever complet avec l'étrésillon courbe 15 allant du groupe de selle jusqu'à la zone de l'axe arrière) et la Fig. 2 (un détail de la jonction groupe de selle/étrésillon), signée par l'inventeur Frank W. Schwinn"},"w":{"en":"'Nearly every bicycle manufacturer' copied the cantilever silhouette once the patent expired — a plain, well-documented case of the atlas's own tagline in action, playing out two generations before anything else in this dataset. The atlas's earliest entries otherwise skip straight from 1890s bicycle-mechanics patents to 1970s mountain-bike-specific ones; this fills real ground in between.","fr":"« Presque chaque fabricant de vélos » a copié la silhouette cantilever une fois le brevet expiré — un cas simple et bien documenté du slogan même de cet atlas en action, se déroulant deux générations avant tout autre exemple de ce jeu de données. Les premières fiches de l'atlas passent sinon directement des brevets de mécanique de vélo des années 1890 à ceux spécifiques au VTT des années 1970 ; celle-ci comble un véritable espace entre les deux."}},
+  {"y":1977,"g":null,"t":{"en":"JBX1 \"Breezer 1\" — the frame, not a patent","fr":"JBX1 « Breezer 1 » — le cadre, pas un brevet"},"a":"Joe Breeze (Fairfax, CA)","num":null,"cat":"frame","st":"unknown","exp":null,"b":[],"who":["Joe Breeze"],"conf":"v","s":{"en":"Hand-built by Joe Breeze in 1977, the JBX1 — later called the \"Breezer 1\" — was the first bicycle frame purpose-designed for off-road riding rather than a converted cruiser or road frame. Built for the Repack downhill races on Mount Tamalpais, it replaced the balloon-tire \"klunkers\" mountain bike racers had been adapting from 1930s-40s cruisers, using period components (Araya 26in steel rims, Phil Wood hubs, SunTour derailleurs, Dia-Compe brakes, motorcycle-derived riser bars and Magura levers). Breeze completed nine more Series I frames by early 1978. No patent was ever filed on the frame itself; Breezer #1 is held in the Smithsonian Institution's National Museum of American History.","fr":"Fabriqué à la main par Joe Breeze en 1977, le JBX1 — appelé plus tard « Breezer 1 » — fut le premier cadre de vélo conçu spécifiquement pour la pratique hors route plutôt qu'un cadre de cruiser ou de route converti. Construit pour les courses de descente Repack sur le mont Tamalpais, il a remplacé les « klunkers » à pneus ballon que les coureurs de vélo tout-terrain adaptaient jusque-là à partir de cruisers des années 1930-40, avec des composants d'époque (jantes acier Araya 26 po, moyeux Phil Wood, dérailleurs SunTour, freins Dia-Compe, guidon relevé et leviers Magura d'origine moto). Breeze a réalisé neuf autres cadres de la Série I au début de 1978. Aucun brevet n'a jamais été déposé sur le cadre lui-même ; le Breezer n°1 est conservé au National Museum of American History de la Smithsonian Institution."},"w":{"en":"The ancestor object every patent in this atlas's frame, suspension, and drivetrain categories ultimately descends from — the moment mountain biking became a purpose-built category rather than a set of modifications to an existing bike. The sport it launched went from a Marin County pastime to a UCI-sanctioned World Championship in 1990 (Durango, Colorado) and an Olympic discipline at the 1996 Atlanta Games in under twenty years.","fr":"L'objet ancêtre dont descendent en dernière analyse tous les brevets des catégories cadre, suspension et transmission de cet atlas — le moment où le VTT est devenu une catégorie conçue en tant que telle plutôt qu'un ensemble de modifications apportées à un vélo existant. Le sport qu'il a lancé est passé d'un passe-temps du comté de Marin à un championnat du monde sanctionné par l'UCI en 1990 (Durango, Colorado), puis à une discipline olympique aux Jeux d'Atlanta en 1996, en moins de vingt ans."}},
   {"y":1983,"g":1985,"t":{"en":"Cannondale Optimum Oval Seatstays (US 4,513,985)","fr":"Haubans ovales optimisés Cannondale (US 4 513 985)"},"a":"David R. Graham / Cannondale Corporation","num":"4513985","cat":"frame","st":"expired","exp":2002,"b":[],"who":["Cannondale"],"conf":"v","img":"pictures/US4513985A.png","imgAlt":{"en":"Fig. 1 and Fig. 2 of US 4,513,985: the oval-cross-section seat stays (14) shown at the seat cluster junction and again near the dropout, with the horizontal diameter (Dh) and vertical diameter (Dv) of the oval called out","fr":"Fig. 1 et Fig. 2 du brevet US 4 513 985 : les haubans à section ovale (14) représentés à la jonction du point d'ancrage de la selle puis près de la patte de cadre, avec le diamètre horizontal (Dh) et le diamètre vertical (Dv) de l'ovale indiqués"},"s":{"en":"Filed January 6, 1983 and granted April 30, 1985 to Cannondale engineer David R. Graham, this patent claims bicycle seat stays that are oval in cross-section and oriented with the major axis horizontal — a shape that gives relatively greater lateral (side-to-side) stiffness and relatively less vertical (up-down) stiffness than a round tube of the same weight. Figures 1 and 2 show the oval profile carried from the seat cluster down to the dropouts, with horizontal (Dh) and vertical (Dv) diameters called out as separate claim dimensions. Pre-GATT filing, so the 17-year-from-grant term (not filing+20) applies; it lapsed in 2002.","fr":"Déposé le 6 janvier 1983 et délivré le 30 avril 1985 à David R. Graham, ingénieur chez Cannondale, ce brevet revendique des haubans de vélo de section ovale, orientés avec le grand axe à l'horizontale — une forme qui procure une rigidité latérale (côté à côté) relativement plus grande et une rigidité verticale (haut-bas) relativement moindre qu'un tube rond de même poids. Les figures 1 et 2 montrent le profil ovale conservé du point d'ancrage de la selle jusqu'aux pattes de cadre, avec des diamètres horizontal (Dh) et vertical (Dv) définis comme dimensions distinctes de la revendication. Dépôt antérieur au GATT, donc la durée de 17 ans à compter de la délivrance (et non dépôt+20) s'applique ; il s'est éteint en 2002."},"w":{"en":"One of the earliest patented examples of tube-shaping-for-ride-quality in the dataset, years before oversized aluminum tubing became Cannondale's signature. Trading vertical stiffness for lateral stiffness at the seatstay — rather than just making the tube bigger everywhere — is the same design logic that shows up decades later in compliance-tuned carbon stays; this patent is an early, explicit claim on that tradeoff rather than just a marketing description.","fr":"L'un des premiers exemples brevetés de mise en forme de tube pour la qualité de roulage dans cet atlas, des années avant que les tubes en aluminium surdimensionnés ne deviennent la signature de Cannondale. Échanger de la rigidité verticale contre de la rigidité latérale au niveau du hauban — plutôt que simplement agrandir le tube partout — relève de la même logique de conception que l'on retrouve des décennies plus tard dans les haubans carbone à flexion calibrée ; ce brevet en est une revendication précoce et explicite plutôt qu'un simple argument marketing."}},
   {"y":2000,"g":2002,"t":{"en":"Cannondale seat stay tire-clearance frame (US 6,497,427)","fr":"Cadre Cannondale à dégagement de pneu aux haubans (US 6 497 427)"},"a":"Christopher P. D'Alusio & Christopher A. Peck / Cannondale Corporation","num":"6497427","cat":"frame","st":"expired","exp":2020,"b":[],"who":["Cannondale"],"conf":"v","img":"pictures/US6497427B1.png","imgAlt":{"en":"Fig. 2 of US 6,497,427: rear view of the frame's seat stay tubes (32a/32b) converging toward the dropout (26), with the upper gap zone (34a) and lower gap zone (34b) bracketed to show where the minimum tire-clearance distance is measured","fr":"Fig. 2 du brevet US 6 497 427 : vue arrière des tubes de haubans du cadre (32a/32b) convergeant vers la patte de cadre (26), avec la zone de dégagement supérieure (34a) et la zone de dégagement inférieure (34b) indiquées par des accolades montrant où la distance minimale de dégagement du pneu est mesurée"},"s":{"en":"Filed as PCT application PCT/US00/15915 on June 9, 2000 and entering the US national stage in May 2001 (application 09/831,822), this patent claims a mountain bike 'diamond-type' frame whose seat stay tubes are spaced to keep a minimum gap distance of roughly 2 inches between their inner surfaces at the point where they pass the rear tire — specifically for frames built around a single rear disc brake rather than a rim brake, where tire and mud clearance at that pinch point is the practical constraint. The claims also bound the seat stay tubes' stiffness (modulus of elasticity times moment of inertia, roughly 1 to 10 lb×in²) rather than just their shape, tying the tire-clearance dimension to a specific stiffness range. Granted December 24, 2002, matching the grant year in the source description this entry was queued from. Term runs filing (PCT, 2000) + 20 = 2020.","fr":"Déposé comme demande PCT PCT/US00/15915 le 9 juin 2000 et entré en phase nationale américaine en mai 2001 (demande 09/831 822), ce brevet revendique un cadre de VTT de type « diamant » dont les tubes de haubans sont espacés pour maintenir une distance minimale d'environ 2 pouces entre leurs surfaces intérieures au point où ils longent le pneu arrière — spécifiquement pour des cadres conçus autour d'un frein à disque arrière unique plutôt qu'un frein sur jante, où le dégagement au pneu et à la boue à ce point d'étranglement est la contrainte pratique. Les revendications encadrent également la rigidité des tubes de haubans (module d'élasticité multiplié par le moment d'inertie, environ 1 à 10 lb×po²) plutôt que leur seule forme, liant la dimension de dégagement du pneu à une plage de rigidité précise. Délivré le 24 décembre 2002, ce qui correspond à l'année de délivrance de la description source à partir de laquelle cette fiche a été mise en attente. La durée court dépôt (PCT, 2000) + 20 = 2020."},"w":{"en":"A patent squarely about a tolerance, not a shape — proof that 'how much air gap a tire needs past a seat stay' was worth claiming as IP once disc brakes started reshaping rear-triangle geometry around 2000. D'Alusio is a recurring name in this atlas's frame patents — he's also a named inventor on Specialized's SWAT in-frame storage patent below, after later moving there — which makes this an early data point in his frame-engineering track record.","fr":"Un brevet portant carrément sur une tolérance, pas une forme — la preuve que « quel espace d'air un pneu a besoin en passant près d'un hauban » valait la peine d'être revendiqué comme propriété intellectuelle une fois que les freins à disque ont commencé à redessiner la géométrie du triangle arrière vers 2000. D'Alusio est un nom récurrent dans les brevets de cadre de cet atlas — il est aussi inventeur nommé sur le brevet de rangement intégré SWAT de Specialized ci-dessous, après être passé chez ce fabricant — ce qui fait de ce brevet un point de données précoce dans son parcours d'ingénierie de cadre."}},
   {"y":2015,"g":2019,"t":{"en":"Low-BB / short-crank geometry formula (US 10,252,768 + 11,479,322)","fr":"Formule de géométrie boîtier bas / manivelles courtes (US 10,252,768 + 11,479,322)"},"a":"Independent","num":"10252768","cat":"frame","st":"active","exp":2035,"b":["priorart"],"who":[],"conf":"v","img":"pictures/US10252768B2.png","imgAlt":{"en":"Fig. 1A of US 10,252,768: a full bicycle side elevation with the patent's claimed geometry dimensions labeled — bottom-bracket height (BH), the calculated 'practical bracket height' threshold (Bd), wheel radius (R), and crank length (L) measured from the bottom-bracket axle (19)","fr":"Fig. 1A du brevet US 10 252 768 : une élévation latérale complète du vélo avec les dimensions géométriques revendiquées par le brevet — hauteur du boîtier de pédalier (BH), le seuil calculé de « hauteur de boîtier pratique » (Bd), rayon de roue (R), et longueur de manivelle (L) mesurée depuis l'axe du boîtier de pédalier (19)"},"s":{"en":"A granted utility patent claiming mountain bikes by a *formula* — crank length ≤164mm combined with a calculated 'practical bracket height' threshold. A continuation, US 11,479,322 (granted 2022), extends the same formula-based claims.","fr":"Un brevet d'utilité délivré revendiquant les vélos de montagne par une *formule* — une longueur de manivelle ≤ 164 mm combinée à un seuil calculé de « hauteur de boîtier pratique ». Une continuation, US 11,479,322 (délivrée en 2022), étend les mêmes revendications fondées sur la formule."},"w":{"en":"A patent on geometry math itself. Engineers will argue about this one in the comments, which is exactly the point.","fr":"Un brevet sur les mathématiques de la géométrie elles-mêmes. Les ingénieurs vont se disputer à ce sujet dans les commentaires, ce qui est exactement le but."}},
@@ -1187,6 +1192,15 @@ function anyFilterActive(){ return FILTER_KEYS.some(k=>state[k].size>0); }
 /* Year-bracket step (5 | 2 | 1) and search query. Default: 2yr. */
 let stepYr  = 2;
 let searchQ = '';
+/* Top-nav timeline chart's range toggle: "mtb" (default) restricts the
+   chart to 1980–present — mountain biking's own era, starting a few years
+   after Breeze's 1977 JBX1 prototype and the Repack-era klunker scene that
+   preceded a purpose-built industry. "all" widens it to the full dataset,
+   back to the 1869/1870 bicycle-mechanics entries. Chart-only: it doesn't
+   touch which cards the Category/Status/etc. tabs show, just which eras
+   the "Patents per era" bar chart and its underlying counts cover. */
+let eraScope = "mtb";
+const MTB_ERA_START = 1980;
 /* "Count" (bar height = total volume, the default) vs "Share" (every bar
    full height, only the category mix varies) for the Stats tab's
    "Patents by category over time" chart — see catTimelineHTML(). Kept as
@@ -1330,6 +1344,8 @@ const T = {
     themeLabel:"Theme", langLabel:"Language", colorScheme:"Color scheme", langGroup:"Language",
     subtitle:"45 years of mountain bike innovation",
     scrubLabel:"Patents per era — tap a bar to jump",
+    eraScopeTip:"Toggle timeline range: MTB era (1980–present) vs full dataset history",
+    eraScopeLabel:scope=>scope==="mtb"?"MTB":"ALL",
     stepTip:"Toggle bar bracket: 2yr → 1yr → 5yr",
     stepLabel:n=>`${n}yr`,
     timelineEras:"Timeline eras",
@@ -1342,7 +1358,7 @@ const T = {
     shareBtn:"Share", shareTip:"Share this view",
     copyLink:"📋 Copy link", shareX:"𝕏 Share on X", shareFacebook:"📘 Share on Facebook", shareReddit:"👽 Share on Reddit",
     copiedConfirm:"✓ Copied", copyLinkShown:"Copy the link shown",
-    shareText:"MTB Patent Atlas — 283 mountain bike patents and applications, 1869 to present.",
+    shareText:"MTB Patent Atlas — 284 mountain bike patents and applications, 1869 to present.",
     clearFilters:"Clear filters",
     goingFreeSoonChip:"Expiring soon",
     goingFreeSoonTip:"Active patents whose estimated expiration falls within the next 2 years — technology about to become free for everyone to use.",
@@ -1402,7 +1418,7 @@ const T = {
     citeFiledGranted:(y,g)=>`filed ${y}, granted ${g}`,
     citeFiledPending:y=>`filed ${y}, pending`,
     citeSource:"MTB Patent Atlas",
-    mtBannerText:"🌐 Machine translation: this atlas's French content (all 283 patent entries) was AI-generated and has not yet been reviewed by a French speaker. Legal and technical terminology may be imprecise — check the English entry or primary source before relying on it.",
+    mtBannerText:"🌐 Machine translation: this atlas's French content (all 284 patent entries) was AI-generated and has not yet been reviewed by a French speaker. Legal and technical terminology may be imprecise — check the English entry or primary source before relying on it.",
     footerAbout:`<strong>About the data.</strong> Compiled from industry reporting, USPTO records, and manufacturer disclosures. Entries marked "unverified" or "draft" are documented technologies whose exact patent numbers are still being confirmed — corrections welcome. Expiration dates are estimated as filing date + 20 years and do not account for terminal disclaimers or fee lapses. Nothing here is legal advice.`,
     footerCredit:"A RedFoxRun <span class=\"footer-slash\">/<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-squirrel\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M15.236 22a3 3 0 0 0-2.2-5\"/><path d=\"M16 20a3 3 0 0 1 3-3h1a2 2 0 0 0 2-2v-2a4 4 0 0 0-4-4V4\"/><path d=\"M18 13h.01\"/><path d=\"M18 6a4 4 0 0 0-4 4 7 7 0 0 0-7 7c0-5 4-5 4-10.5a4.5 4.5 0 1 0-9 0 2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10\"/></svg></span> PostMillennium MTB project.",
     coBody:`<p>Mountain-bike innovation runs deep in Colorado — a mix of famous patented suspension designs, homegrown technology, and high-profile, multi-million-dollar intellectual-property disputes playing out in the state's courts.</p>
@@ -1418,6 +1434,8 @@ const T = {
     themeLabel:"Thème", langLabel:"Langue", colorScheme:"Palette de couleurs", langGroup:"Langue",
     subtitle:"45 ans d'innovation dans le VTT",
     scrubLabel:"Brevets par époque — touchez une barre pour y aller",
+    eraScopeTip:"Basculer la plage de la chronologie : ère VTT (1980–aujourd'hui) ou tout l'historique du jeu de données",
+    eraScopeLabel:scope=>scope==="mtb"?"VTT":"TOUT",
     stepTip:"Basculer le regroupement : 2 ans → 1 an → 5 ans",
     stepLabel:n=>`${n} an${n===1?"":"s"}`,
     timelineEras:"Chronologie des époques",
@@ -1430,7 +1448,7 @@ const T = {
     shareBtn:"Partager", shareTip:"Partager cette vue",
     copyLink:"📋 Copier le lien", shareX:"𝕏 Partager sur X", shareFacebook:"📘 Partager sur Facebook", shareReddit:"👽 Partager sur Reddit",
     copiedConfirm:"✓ Copié", copyLinkShown:"Copier le lien affiché",
-    shareText:"MTB Patent Atlas — 283 brevets et demandes de brevets liés au VTT, de 1869 à aujourd'hui.",
+    shareText:"MTB Patent Atlas — 284 brevets et demandes de brevets liés au VTT, de 1869 à aujourd'hui.",
     clearFilters:"Effacer les filtres",
     goingFreeSoonChip:"Expire bientôt",
     goingFreeSoonTip:"Brevets actifs dont l'expiration estimée survient dans les 2 prochaines années — une technologie sur le point de devenir libre d'usage pour tous.",
@@ -1490,7 +1508,7 @@ const T = {
     citeFiledGranted:(y,g)=>`déposé en ${y}, délivré en ${g}`,
     citeFiledPending:y=>`déposé en ${y}, en instance`,
     citeSource:"MTB Patent Atlas",
-    mtBannerText:"🌐 Traduction automatique : le contenu français de cet atlas (les 283 fiches de brevets) a été généré par IA et n'a pas encore été relu par un locuteur francophone. La terminologie juridique et technique peut être imprécise — vérifiez la fiche anglaise ou la source primaire avant de vous y fier.",
+    mtBannerText:"🌐 Traduction automatique : le contenu français de cet atlas (les 284 fiches de brevets) a été généré par IA et n'a pas encore été relu par un locuteur francophone. La terminologie juridique et technique peut être imprécise — vérifiez la fiche anglaise ou la source primaire avant de vous y fier.",
     footerAbout:`<strong>À propos des données.</strong> Compilées à partir de la presse spécialisée, des dossiers de l'USPTO et des communications des fabricants. Les entrées marquées « non vérifié » ou « provisoire » désignent des technologies documentées dont le numéro de brevet exact reste à confirmer — les corrections sont bienvenues. Les dates d'expiration sont estimées à date de dépôt + 20 ans et ne tiennent pas compte des déclarations terminales ni des défauts de paiement des annuités. Rien ici ne constitue un avis juridique.`,
     footerCredit:"Un projet RedFoxRun <span class=\"footer-slash\">/<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-squirrel\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M15.236 22a3 3 0 0 0-2.2-5\"/><path d=\"M16 20a3 3 0 0 1 3-3h1a2 2 0 0 0 2-2v-2a4 4 0 0 0-4-4V4\"/><path d=\"M18 13h.01\"/><path d=\"M18 6a4 4 0 0 0-4 4 7 7 0 0 0-7 7c0-5 4-5 4-10.5a4.5 4.5 0 1 0-9 0 2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10\"/></svg></span> PostMillennium MTB.",
     coBody:`<p>L'innovation VTT est profondément enracinée dans le Colorado — un mélange de designs de suspension brevetés célèbres, de technologies locales et de litiges de propriété intellectuelle très médiatisés, à plusieurs millions de dollars, qui se jouent devant les tribunaux de l'État.</p>
@@ -1545,6 +1563,7 @@ function applyStaticI18n(){
   if(camba) camba.setAttribute("aria-label",`${themeWord} CAMBA`);
   if(cambr) cambr.setAttribute("aria-label",`${themeWord} CAMBR`);
   const step=$("#stepToggle"); if(step) step.textContent=t("stepLabel",stepYr);
+  const eraBtn=$("#eraScopeToggle"); if(eraBtn) eraBtn.textContent=t("eraScopeLabel",eraScope);
   const banner=$("#mtBanner");
   if(banner) banner.hidden = !(MT_UNREVIEWED && state.lang!=="en");
   document.querySelectorAll(".langbtn").forEach(b=>{
@@ -1620,8 +1639,9 @@ applyStaticI18n(); // apply restored/default language to static markup before th
    step 5  -> 5-year brackets aligned to the half-decade (1990–94, 1995–99, …)
    Buckets are aligned to the calendar (floor to a multiple of step) rather than
    to the earliest data point, so the brackets stay stable as data is added. */
-function buildEras(step){
-  const ys=D.map(d=>d.y).filter(y=>typeof y==="number"&&isFinite(y));
+function buildEras(step,srcD){
+  const src = srcD || D;
+  const ys=src.map(d=>d.y).filter(y=>typeof y==="number"&&isFinite(y));
   if(!ys.length) return [];
   const lo=Math.floor(Math.min(...ys)/step)*step;
   const hi=Math.max(...ys);
@@ -1643,6 +1663,13 @@ function buildEras(step){
   return eras;
 }
 function getEras(){ return buildEras(stepYr); }
+/* Era buckets for the top-nav "#bars" chart only (renderBars) — respects
+   eraScope so the MTB/ALL toggle narrows the chart's own axis without
+   hiding any pre-1980 card from the main timeline, which always groups by
+   the unscoped getEras() above. */
+function getChartEras(){
+  return buildEras(stepYr, eraScope==="mtb" ? D.filter(d=>d.y>=MTB_ERA_START) : D);
+}
 
 /* ======== FILTER CHIPS ======== */
 function chip(label,set,key,row,setName){
@@ -2484,12 +2511,13 @@ function render(){
 }
 
 /* Draws the era histogram above the timeline: one bar per bracket from
-   getEras(), sized by how many entries in `list` fall in that bracket
-   relative to the full dataset, with empty brackets skipped and gap
-   markers inserted where several in a row are missing. */
+   getChartEras() (respects the MTB/ALL eraScope toggle), sized by how many
+   entries in `list` fall in that bracket relative to the full dataset,
+   with empty brackets skipped and gap markers inserted where several in a
+   row are missing. */
 function renderBars(list){
   const bars=$("#bars"); bars.innerHTML="";
-  const eras=getEras();
+  const eras=getChartEras();
   /* On narrow screens there isn't room for a label under every bar, so we show
      decade markers only. Recomputed each render; a resize listener re-renders. */
   const narrow = (typeof window!=="undefined" && window.innerWidth) ? window.innerWidth<NARROW_BREAKPOINT_PX : false;
@@ -2776,6 +2804,13 @@ function buildExportCSV(){
 document.getElementById("stepToggle").addEventListener("click",()=>{
   stepYr={2:1,1:5,5:2}[stepYr];
   document.getElementById("stepToggle").textContent=t("stepLabel",stepYr);
+  render();
+});
+
+/* ======== ERA SCOPE TOGGLE  (mtb → all → mtb) ======== */
+document.getElementById("eraScopeToggle").addEventListener("click",()=>{
+  eraScope = eraScope==="mtb" ? "all" : "mtb";
+  document.getElementById("eraScopeToggle").textContent=t("eraScopeLabel",eraScope);
   render();
 });
 
