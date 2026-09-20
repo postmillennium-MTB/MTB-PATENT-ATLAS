@@ -1,0 +1,175 @@
+patent: US11179979
+source: https://patentimages.storage.googleapis.com/07/6d/23/d467528bb5947b/US11179979.pdf
+pages: 17
+per-page extracted text length: {1: 2796, 2: 456, 3: 336, 4: 290, 5: 246, 6: 182, 7: 239, 8: 267, 9: 384, 10: 6803, 11: 7736, 12: 7649, 13: 6767, 14: 7380, 15: 7981, 16: 7465, 17: 848}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011179979B2
+
+( 12) United States Patent
+
+( 10) Patent No .: US 11,179,979 B2
+(45 ) Date of Patent :
+Nov. 23 , 2021
+
+Kobler et al .
+( 54 ) VALVE FOR TUBELESS TIRES
+( 71 ) Applicant: SPORT COMPONENTS AG , Zürich
+( CH )
+( 72 ) Inventors: Pius Kobler , Zürich (CH ) ; Dominik
+Eggert , Zürich (CH )
+( 73 ) Assignee : SPORT COMPONENTS AG , Zurich
+
+B60C 25/005 ( 2013.01 ) ; B60C 25/0551
+( 2013.01 ) ; B60C 25/0554 ( 2013.01 ) ; B60C
+2200/12 (2013.01 ) ; GOIN 33/26 (2013.01 )
+( 58 ) Field of Classification Search
+CPC
+B60C 29/00 ; B60C 29/005 ; B60C 29/02 ;
+B60C 29/04
+
+See application file for complete search history .
+References Cited
+
+(56 )
+
+( CH )
+
+U.S. PATENT DOCUMENTS
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 0 days.
+( 21 ) Appl. No .: 16 /694,443
+Nov. 25 , 2019
+(22) Filed :
+Prior Publication Data
+( 65 )
+
+( * ) Notice:
+
+US 2020/0086700 A1
+
+670,725 A
+
+Primary Examiner — Jason R Bellinger
+(74 ) Attorney, Agent, or Firm — Pauley Erickson &
+
+Mar. 19 , 2020
+
+Swanson
+
+( 57 )
+
+F16K 15/20
+
+B60C 5/12
+
+tubeless wheels . The valve stem system ( 1 ) includes aa valve
+stem body (2 ) with a first end ( 3 ) and a second end ( 4 ) ,
+wherein the second end ( 4 ) is located in a tire / rim - volume
+when mounted at the wheel. A first valve ( 5 ) is arranged at
+
+( 2006.01 )
+
+( 2006.01 )
+( 2006.01 )
+(2006.01 )
+( 2006.01 )
+
+the second end (4 ) of the valve stem body (2 ) . The first valve
+
+(5 ) is a self -sealing one -way valve . A second valve ( 10 ) is
+
+removably mountable at the first end ( 3 ) and is , when
+mounted , at least partially housed in the valve stem body ( 2 ) .
+
+( 2006.01 )
+
+The second valve ( 10 ) comprises a valve stem core inserted
+in the valve stem body ( 2 ) and can be added or removed
+from the valve stem body ( 2 ) while pressure is maintained
+within the tire by the first valve ( 5 ) . The invention further
+concerns a probe (30 ) for a valve stem system , a method to
+test the amount of sealant in aa wheel and a refilling assembly
+
+( 2006.01 )
+
+( 2006.01 )
+( 2006.01 )
+
+( 52) U.S. CI .
+CPC
+
+ABSTRACT
+
+The invention is directed to a valve stem system ( 1 ) for
+
+Aug. 18 , 2016 , now abandoned .
+(51 ) Int. Ci .
+
+B60C 25/00
+B60C 25/05
+GOIN 33/26
+
+11/1961 Keefe
+
+( Continued )
+
+Related U.S. Application Data
+
+B60C 5/00
+
+12/1936 Sipe
+6/1937 Perry
+3/1960 Hosking
+
+3,007,483 A
+
+( 63 ) Continuation of application No. 15 / 120,005 , filed on
+B60C 29/00
+B60C 29/06
+F16K 15/14
+
+3/1901 Pickett
+
+2,064,695 A
+2,082,972 A
+2,928,448 A
+
+B60C 29/005 (2013.01 ) ; B60C 5/004
+(2013.01 ) ; B60C 29/002 ( 2013.01 ) ; B60C
+29/062 (2013.01 ) ; F16K 15/147 ( 2013.01 ) ;
+F16K 15/202 ( 2013.01 ) ; B60C 5/12 ( 2013.01 ) ;
+
+(80) for a wheel .
+13 Claims , 7 Drawing Sheets
+
+16
+
+1
+
+16
+-17
+
+17 18
+10
+
+18
+
+13
+
+12
+
+14
+
+-12
+2
+8
+6
+
+11
+
+6
+
+
