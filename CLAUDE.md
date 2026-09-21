@@ -279,11 +279,52 @@ plausible but unconfirmed number.
 | `CAT_COLORS` | Maps each `CATS` key to a hex color, used only by the Stats tab's "Patents by category, over time" chart | An 8-hue colorblind-safety-validated categorical palette (fixed hue order, checked with a Delta-E/contrast validator against this tool's actual light chart surfaces) for the 8 original categories, plus a 9th entry for `tech` that is deliberately NOT a competing hue — it's a neutral gray, the dataviz method's own prescribed handling for an overflow/thin category rather than stretching an 8-hue-capped palette to 9. If a 10th category is ever added, it also gets the gray-"Other" treatment, not a re-validated 9- or 10-hue palette — re-tier only the original 8 if you ever swap two of *their* colors, and re-run the validator if you ever restyle this chart. |
 | `BADGES` / `BADGE_TIPS` | The five entry badges (`licensor acquired givenaway litigated priorart`) and their tooltip text | Adding a sixth badge is a bigger structural change — it touches the Stats view and the filter-tab row. Flag it as a design decision rather than doing it inline with a data addition. |
 | `FIGHTS` | Named rivalry groupings shown in the Patent Fights view | Add `{key, title, sub, combatants[], era, stakes, outcome, cards[]}`. `cards[]` takes patent-number strings or distinctive title substrings — `fightCardMatches()` scans `D[]` and auto-generates the tap-to-jump chips, so you don't hand-wire card references. |
+| `SEARCH_SYNONYMS` | Search-only synonym groups (added 2026-09-21) — see the dedicated section below | Extends what the search box matches; never changes a card's own text or what a category filter chip means. |
 
 If a brand/inventor chip you expect doesn't show up in the filter row after
 an edit, the most likely cause is a `who[]` value that doesn't exactly match
 a `BRANDS` string or an `INVENTORS` `key` — check for a typo or a missing
 registration before assuming something else broke.
+
+### `SEARCH_SYNONYMS` — widening the search box without touching entry text
+
+`passes()` (the search/filter predicate) splits a typed query into words and
+requires each word to be found somewhere on the card — see the comment on
+that function for why it works per-word rather than as one glued phrase.
+`SEARCH_SYNONYMS` sits on top of that: a flat array of small word groups,
+e.g. `["wheel","hub","spoke","freehub","rim","driver body"]`. When a query
+word belongs to a group, the search also accepts any *other* word in that
+same group appearing on the card, so the relationship works **in either
+direction** — searching "spoke" matches a card that only says "wheel," and
+searching "wheel" matches a card that only says "spoke," because both
+queries expand against the same group rather than one word pointing at
+another. This is why the structure is a list of groups, not a `word ->
+word[]` map: a directional map would need two entries (one each way) to get
+the symmetric behavior a reader actually expects, and would silently drift
+out of sync the moment someone added one side without the other.
+
+**This registry only affects what the search box matches.** It never adds a
+word to any card's own `t`/`s`/`w`/displayed text, and it has nothing to do
+with `CATS`/category filter chips — a `wheel`-category filter still means
+exactly what `CATS.wheel` says, synonym groups don't touch it.
+
+**When to add a group or a word to one:**
+- The words have to be genuinely the same real-world thing or tightly
+  coupled to it in this dataset — a freehub *is* part of a wheel, a
+  derailleur *is* part of a drivetrain. Don't add a group for two things
+  that are merely often mentioned near each other.
+- A word can legitimately belong to more than one group (`damper` is real
+  fork vocabulary and real rear-shock vocabulary) — put it in both rather
+  than forcing one group to cover two different concepts.
+- Keep groups small and specific. A group is doing more harm than good the
+  moment a search using it starts surfacing a card that isn't actually
+  about the thing being searched for — that's a false positive this
+  registry exists to avoid creating, not to introduce.
+- This is a search convenience, not a data-integrity mechanism — it doesn't
+  need the same sourcing rigor as a `D` entry, but a bad group still
+  degrades a reader's trust in search results, so treat a new group as
+  worth a second look before committing, the same as any other registry
+  change.
 
 ## Sourcing discipline
 

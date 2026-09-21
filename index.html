@@ -645,6 +645,33 @@ const CATS = {
      before two more were added this session) met that bar at this pass. */
   tech:{en:"Cameras & Wearables",fr:"Caméras et objets connectés"}
 };
+/* Search-only synonym groups — widens the search box so a common component
+   or concept word finds entries that only use a related term, without
+   touching any entry's actual text. Each inner array is one group; every
+   word in a group is treated as interchangeable with every other word in
+   the SAME group when matching a query word against a card, in EITHER
+   direction — searching "spoke" also matches a card that only says "wheel",
+   and searching "wheel" also matches a card that only says "spoke", because
+   both queries expand against the same group. This is deliberately a flat
+   list of groups, not a directional word->word map, so adding one term to
+   an existing group extends every other term in it for free.
+   Keep groups small, obviously related, and mountain-bike-specific — a
+   group is doing more harm than good the moment it pulls in a card that
+   isn't actually about the thing being searched for. If a word belongs to
+   more than one real concept in this dataset (e.g. "damper" is legitimately
+   both fork- and rear-shock-related), that's fine — put it in both groups;
+   don't stretch a single group to cover unrelated meanings of one word. */
+const SEARCH_SYNONYMS = [
+  ["wheel","hub","spoke","freehub","rim","driver body"],
+  ["fork","stanchion","damper","telescopic"],
+  ["suspension","shock","linkage","damper"],
+  ["drivetrain","derailleur","chainring","cassette","shifting","chain"],
+  ["dropper","seatpost","post"],
+  ["brake","caliper","rotor"],
+  ["tire","tyre","tubeless","insert"],
+  ["pedal","cleat"],
+  ["frame","chassis"]
+];
 /* Categorical color for the "Patents by category over time" stacked chart
    (Stats tab) — the ONLY place category identity is color-coded, so this is
    the one registry in the file that exists purely for a chart. The first 8
@@ -1893,7 +1920,16 @@ function passes(d){
        single-phrase check used, just applied per word now. */
     const words=foldedQuery.split(/\s+/).filter(Boolean);
     const hayCompact=hay.replace(/\s+/g,'');
-    const allWordsFound=words.every(w=>hay.includes(w)||hayCompact.includes(w.replace(/\s+/g,'')));
+    /* A query word also accepts any word in the same SEARCH_SYNONYMS group —
+       "spoke" tries "spoke" first, and if that's not on the card, also tries
+       "wheel"/"hub"/"freehub"/etc. (every other member of the group it's
+       in), so the synonym relationship works in whichever direction someone
+       actually searches. A word not in any group just checks itself. */
+    const wordMatches=w=>{
+      const candidates=SEARCH_SYNONYMS.find(group=>group.includes(w)) || [w];
+      return candidates.some(c=>hay.includes(c)||hayCompact.includes(c.replace(/\s+/g,'')));
+    };
+    const allWordsFound=words.every(wordMatches);
     if(words.length && !allWordsFound) return false;
   }
   if(state.cat.size && !state.cat.has(d.cat)) return false;

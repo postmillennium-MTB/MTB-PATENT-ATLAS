@@ -37,6 +37,13 @@ This table is a snapshot. For live, always-current numbers — plus a category b
 ### Nine categories
 Rear Suspension · Forks & Damping · Drivetrain · Wheels & Tires · Components · E-MTB & Electronics · Frame & Standards · Bike Transport · Cameras & Wearables
 
+### 🔍 Search
+Free-text search checks every field a card actually shows — title, assignee, summary, editorial text, patent numbers, brand/inventor tags, HQ location, category, status, badges, jurisdiction — in both languages at once, so switching languages mid-session never breaks a query already typed.
+
+A multi-word query matches each word independently, wherever it appears on the card, not as one glued-together phrase — searching "SRAM XD" finds a card whose title says "XD" and whose assignee field says "SRAM," even though those two words never sit next to each other in that order. A compound name still matches spaced or joined ("Bike Yoke" finds "BikeYoke", "One Up" finds "OneUp").
+
+Search also understands a small set of **synonym groups** for common mountain bike components and concepts — searching "spoke" also finds a card that only says "wheel," "hub," "freehub," or "rim," and vice versa, since the relationship works in either direction. Current groups: wheel/hub/spoke/freehub/rim, fork/stanchion/damper/telescopic, suspension/shock/linkage/damper, drivetrain/derailleur/chainring/cassette/shifting/chain, dropper/seatpost/post, brake/caliper/rotor, tire/tyre/tubeless/insert, pedal/cleat, frame/chassis. This only widens what a *search* matches — it never adds a word to a card's own displayed text, and a category filter chip still means exactly what its label says. See `SEARCH_SYNONYMS` in `index.html` (and CLAUDE.md's note on it) to add a group.
+
 ### 📈 Patents-per-era bar chart
 A scrubber above the filter bar renders the dataset as a tappable bar chart, bracketed by year. Two toggles sit side by side in the top-right of the scrubber:
 
@@ -408,7 +415,11 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 
 - **Added two new entries: SRAM's XD driver body (`num:null`, `conf:"l"`) and a pending SRAM modular mechanical derailleur application (US 2025/0010943, `conf:"v"`).** XD was introduced with XX1 in 2012 as an open, royalty-free standard licensed to nearly 90 hub manufacturers, per BikeRadar. Its specific patent number wasn't located — searches turned up several candidate SRAM Deutschland cassette/driver filings from the same era, none confirmed as the actual interface patent, so it ships with `num:null` rather than a guess, placed next to Shimano's Micro Spline as the competing freehub standard. US 2025/0010943 A1 is confirmed independently across four sources (Escape Collective, Singletracks, Pinkbike, Brujulabike): filed Sept. 17, 2024 by SRAM Deutschland GmbH, inventors Heiko Redecker and Tobias Harcke, describing a hierarchical modular derailleur construction — read by industry press as groundwork for a mechanical, cable-actuated version of the electronic-only Eagle Transmission. Placed next to the UDH/Transmission cluster. Counts synced: README At-a-glance (284→286 total, 43→44 pending, 172→173 verified, 51→52 draft) and all seven hardcoded `index.html` count strings.
 
----
+- **Wired in the SRAM modular-derailleur picture** (`pictures/US20250010943A1.png`) onto the US 2025/0010943 entry as `img`/`imgAlt` — a full assembly drawing with reference labels marking the module boundaries (base, swivel, shifting/parallelogram, cage/chain-guide) the entry's text describes, viewed directly before writing the alt text.
+
+- **Fixed a real search bug, reported directly: "SRAM XD" found nothing for the XD driver body entry even though both words are on the card.** The search predicate required the whole typed query to appear as one contiguous substring of the card's text; since a card's title sits before its assignee field in that concatenated text, "xd" and "sram" were never adjacent in that order, so the phrase-level check failed even with both words present. Fixed by splitting the query on whitespace and requiring each word to be found independently, in any order — a general fix, not specific to this one card, since any earlier multi-word search where the matched terms landed in different fields or reversed order was silently failing the same way.
+
+- **Added `SEARCH_SYNONYMS`, a small set of symmetric synonym groups for common component/concept words**, so a search for one term also finds cards that only use a related one — "spoke" finds a card that only says "wheel," and "wheel" finds one that only says "spoke," since both queries expand against the same group rather than one word pointing at the other. See the new "🔍 Search" section above for the current group list. Search-only: it never changes a card's own displayed text or what a category filter chip means.
 
 ## Recent updates (July 2026)
 
