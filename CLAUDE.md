@@ -159,8 +159,24 @@ take by default.
   w: {en:"Why it matters...", fr:"Pourquoi c'est important..."} // editorial payoff — what changed because of this patent
   // img: "pictures/US1234567A.png",   // OPTIONAL — only if a drawing was actually sourced and viewed — NOT translated
   // imgAlt: {en:"…", fr:"…"},         // required alongside img — describe what figure/number is shown, both languages
+  // searchUrl: "https://patents.google.com/?inventor=Jane+Doe", // OPTIONAL — see below — NOT translated
 }
 ```
+
+**`searchUrl`** overrides the card's auto-built "Search related patents on
+Google Patents" link with a specific URL you supply. The auto-built version
+(no `num`, US jurisdiction) constructs a query from the assignee name and
+title — a reasonable default, but sometimes a hand-picked query finds the
+right person or company far better than that guess can, most obviously an
+inventor-name search (`?inventor=First+M.+Last`) for a `num:null` entry
+where the actual patent hasn't been identified yet but the *inventor* is
+known — added first for Joe Breeze's JBX1 entry, whose real name (Joseph T.
+Breeze) differs from how he's credited (`a: "Joe Breeze"`), so the
+auto-built query would never have found it. `searchUrl` wins over every
+other branch of that link's logic, including a numbered/`nums` entry — set
+it deliberately, and update or remove it if a real patent number gets added
+to the same entry later, since nothing checks the two stay in sync
+automatically.
 
 **Expiration rule (`exp`):**
 - Filed **on or after June 8, 1995** (the post-GATT rule, which covers nearly
