@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 284 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 286 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,19 +14,19 @@ An interactive timeline of mountain bike intellectual property: 284 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 284 |
+| **Total entries** | 286 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 133 |
 | **Expired patents** | 95 |
-| **Pending applications** | 43 |
+| **Pending applications** | 44 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
 | **Brands** | 156 |
 | **Named inventors** | 54 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 172 |
+| **Verified entries** | 173 |
 | **Medium confidence** | 61 |
-| **Draft / in progress** | 51 |
+| **Draft / in progress** | 52 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -405,6 +405,8 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **Turned the Marzocchi open-bath damping entry into a six-patent portfolio, and wired in the MICRO SPLINE picture from the previous pass.** Requested directly, with four Google Patents links plus a fifth ("include this patent in that portfolio too") and a sixth referenced separately. Four of the six were independently confirmed — two of them (US 6,105,740 and US 6,328,291) by reading the actual drawing sheets the user uploaded to the repo, the gold-standard source this atlas prefers: US 6,044,940 ("Remote-controlled hydropneumatic shock absorber," filed 1997, granted Apr. 4, 2000), US 6,105,740 ("Hydraulic shock absorber," filed 1998, granted Aug. 22, 2000 — confirmed from its own header), US 6,328,291 ("Shock absorber," priority Dec. 19, 1996, granted Dec. 11, 2001, now assigned to Fox Factory Inc. — also confirmed from its own header), and US 6,386,643 ("Quick releasable dropout and wheel hub assembly," family priority Nov. 10, 1998) — a dropout/hub patent rather than a damping one, included in the same portfolio per the request. **Two Italian numbers, IT 1,192,909 and IT 1,156,632, could not be independently confirmed**: WebSearch found nothing under either number, and Google Patents/Espacenet were both unreachable this pass. Listed anyway on the strength of the user’s own Google Patents links (each carrying a real inventor-filter tracking parameter, not just a bare number), with the gap stated plainly in the entry’s own text — `y`/`g`/`exp` are computed from the four confirmed US numbers only and likely understate the portfolio’s real age, since Marzocchi’s fork lineage runs back to 1950. `conf` set to `"m"` for the mixed-certainty whole (up from the previous entry’s `"l"`). Added all three user-uploaded drawing sheets (US 6,105,740, US 6,328,291, US 6,386,643) as a three-image `imgs[]` array with alt text written from actually viewing each one. Separately, wired the MICRO SPLINE entry’s own newly-uploaded picture (US 11,578,761, Fig. 2 — the drive-train exploded view showing the largest sprocket’s internal-spline teeth facing the hub’s sprocket support body) in as `img`/`imgAlt`, closing a gap flagged in the previous pass’s picture audit. Counts synced: README At-a-glance (59→60 medium, 52→51 draft; total/active/verified unaffected).
 
 - **Added three more Google Patents links to the Lolo bike rack portfolio, all filtered to inventor Joseph Oshman, and dropped its confidence tier from `"v"` to `"m"` accordingly.** Requested directly, five URLs resolving to three unique numbers: published applications US 2022/0048345 and US 2022/0281390, and granted patent US 12,024,132. `nums` now carries six entries total. Unlike the Marzocchi Italian numbers (which at least turned up nothing but also weren't contradicted), this session's WebSearch pass came back completely empty on all three — no snippet returned a title, date, inventor, or any other content for any of them — and none of the three appear on Lolo's own official patent-info page (`loloracks.com/pages/patent`), which this pass *did* manage to surface via search snippet and which lists only 11,518,317, 11,590,555, 11,142,133, and the still-unresolved 17,214,670 application-number oddity already flagged in this atlas. Google Patents itself remains blocked to this sandbox, so none of the three could be opened directly either. Included anyway, on the same standard used for the Marzocchi Italian numbers: the supplied links carried real inventor-filter tracking parameters consistent with having actually been viewed on Google Patents, which is real (if secondhand) evidence, just not independent confirmation. `y`/`g`/`exp` left untouched, since none of the three new numbers is the entry's headline number and none could be dated. This is a candidate for a first check the next time working patent-database access is available — three of six numbers on a portfolio card is a meaningful unconfirmed fraction, not a rounding error. Counts synced: README At-a-glance (173→172 verified, 60→61 medium; total/active unaffected).
+
+- **Added two new entries: SRAM's XD driver body (`num:null`, `conf:"l"`) and a pending SRAM modular mechanical derailleur application (US 2025/0010943, `conf:"v"`).** XD was introduced with XX1 in 2012 as an open, royalty-free standard licensed to nearly 90 hub manufacturers, per BikeRadar. Its specific patent number wasn't located — searches turned up several candidate SRAM Deutschland cassette/driver filings from the same era, none confirmed as the actual interface patent, so it ships with `num:null` rather than a guess, placed next to Shimano's Micro Spline as the competing freehub standard. US 2025/0010943 A1 is confirmed independently across four sources (Escape Collective, Singletracks, Pinkbike, Brujulabike): filed Sept. 17, 2024 by SRAM Deutschland GmbH, inventors Heiko Redecker and Tobias Harcke, describing a hierarchical modular derailleur construction — read by industry press as groundwork for a mechanical, cable-actuated version of the electronic-only Eagle Transmission. Placed next to the UDH/Transmission cluster. Counts synced: README At-a-glance (284→286 total, 43→44 pending, 172→173 verified, 51→52 draft) and all seven hardcoded `index.html` count strings.
 
 ---
 
