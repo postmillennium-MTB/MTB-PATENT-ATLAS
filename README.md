@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 286 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 287 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 286 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 286 |
+| **Total entries** | 287 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 133 |
-| **Expired patents** | 95 |
+| **Expired patents** | 96 |
 | **Pending applications** | 44 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
-| **Brands** | 156 |
+| **Brands** | 157 |
 | **Named inventors** | 54 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
 | **Verified entries** | 173 |
-| **Medium confidence** | 61 |
+| **Medium confidence** | 62 |
 | **Draft / in progress** | 52 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -420,6 +420,14 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **Fixed a real search bug, reported directly: "SRAM XD" found nothing for the XD driver body entry even though both words are on the card.** The search predicate required the whole typed query to appear as one contiguous substring of the card's text; since a card's title sits before its assignee field in that concatenated text, "xd" and "sram" were never adjacent in that order, so the phrase-level check failed even with both words present. Fixed by splitting the query on whitespace and requiring each word to be found independently, in any order — a general fix, not specific to this one card, since any earlier multi-word search where the matched terms landed in different fields or reversed order was silently failing the same way.
 
 - **Added `SEARCH_SYNONYMS`, a small set of symmetric synonym groups for common component/concept words**, so a search for one term also finds cards that only use a related one — "spoke" finds a card that only says "wheel," and "wheel" finds one that only says "spoke," since both queries expand against the same group rather than one word pointing at the other. See the new "🔍 Search" section above for the current group list. Search-only: it never changes a card's own displayed text or what a category filter chip means.
+
+- **Added `bath` and `plush` to the suspension synonym group** (`suspension`/`shock`/`linkage`/`damper`/`bath`/`plush`) — "bath" catches the Marzocchi portfolio's own "open-bath damping" language, "plush" catches the colloquial ride-feel term riders search for rather than a mechanism name.
+
+- **Added `searchUrl`, a new optional `D` field that overrides a card's auto-built "Search related patents on Google Patents" link with a specific URL.** The auto-built version constructs a query from the assignee and title, which fails for an entry credited under a nickname — Joe Breeze's JBX1 entry is credited `a: "Joe Breeze"`, not his full legal name, so its auto-built query would never have found his own patent filings. Set to `https://patents.google.com/?inventor=Joseph+T.+Breeze` directly. `searchUrl` wins over every other branch of that link's logic when present.
+
+- **Rotated `pictures/US7712566B2.png`** (Schlumpf planetary crank drive → SRAM HammerSchmidt, US 7,712,566) 90° clockwise — the source drawing sheet was sideways in the file; viewed directly before and after to confirm the fix.
+
+- **New entry: First Principles Performance Products Ltd.'s hub adapter for a bicycle disc brake (US 6,880,897).** Filed Jan. 9, 2003 (claiming a Jan. 9, 2002 provisional), inventors Eric Goss and Daryl D. Musselman — a commercial manufacturing sister company Musselman founded alongside his engineering consulting firm, First Principles Engineering Inc. The adapter bolts to a non-disc hub's existing spoke-mounting holes, adding a rotor-mounting face and a wider spoke flange, converting a rim-brake hub to disc without a new hub — a retrofit patent from the early-2000s disc-brake transition. Title, assignee, and inventors cross-confirmed across two independent sources (a Google Patents result and a FreePatentsOnline listing, both quoting the same title/assignee/inventor set); the grant year (2005) is estimated from the patent's position in the USPTO's April 2005 issue-number sequence rather than read directly off the primary record, which this session couldn't reach — flagged in the entry's own text. `exp:2023` (filing+20, already expired), `conf:"m"` for that reason. `cat:"wheel"`, placed next to the XD driver body entry as another hub/rotor-interface patent. Registered `First Principles Performance Products` in `BRANDS`. Counts synced: README At-a-glance (286→287 total, 95→96 expired, 156→157 brands, 61→62 medium) and all seven hardcoded `index.html` count strings.
 
 ## Recent updates (July 2026)
 
