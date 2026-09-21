@@ -306,6 +306,58 @@ when adding or touching an entry:
    the change, so an unverified claim is a visible, known gap rather than
    something that quietly reads as settled fact.
 
+### Prose style: avoid AI tells
+
+Every honesty requirement above (name the gap, state the tier, say what
+wasn't confirmed) has to be met in **plain, professional, concise prose** —
+being honest about a gap is not license to write three sentences about it.
+This applies to `s`/`w` on `D` entries and to changelog bullets alike; it
+does not apply to this file's own contributor-facing voice.
+
+- **Don't narrate the research process.** "This pass," "this session," "this
+  session's WebSearch access," "independently confirmed this pass" — none of
+  that belongs in reader-facing text. A reader doesn't care which session did
+  the work; they care what's confirmed and what isn't. Write the *state* of
+  the fact ("confirmed against the manufacturer's marking page" / "unconfirmed
+  — no primary source located"), not the *story* of how you got there.
+- **Don't refer to "the user."** Jon is not a third party to this dataset —
+  he's its author. If a fact came from him directly rather than a document,
+  say what kind of source it is ("per the founder's own account," "per the
+  assignee's public statement," or just fold it into the sentence as a plain
+  claim) rather than narrating "the user confirmed X." If it matters *that a
+  person* said it (as opposed to a document), name Jon or the actual person,
+  not a generic role label.
+- **Don't over-explain a gap.** State the unconfirmed fact, state why it's
+  unconfirmed in a half-sentence if that's useful context (a blocked source,
+  a name collision), and stop. A gap worth flagging is worth one clean
+  sentence, not a paragraph defending the tier assignment.
+- **Cut hedge-stacking and meta-commentary about the atlas itself.** Sentences
+  like "distinguishing them is part of what this atlas exists to do" or "a
+  useful teaching point" editorialize about the *project* rather than the
+  *patent*. `w` is allowed real editorial voice — see below — but it should
+  land on the invention, the company, or the technology, not on this
+  dataset's own epistemics.
+- **Watch for compounding qualifiers.** "Likely," "plausibly," "may," "could
+  reasonably be assumed to," stacked two or three to a sentence, is a
+  speculative-sounding tell even when each individual hedge is accurate. Pick
+  the one hedge the sentence needs and cut the rest, or restructure as a
+  flat statement of what's known plus one flat statement of what isn't.
+- **Say it once.** Don't restate the same caveat in both `s` and `w`, or
+  re-explain a conclusion the previous sentence already reached.
+
+**`w` is where Jon's own voice belongs — but only when he actually has
+something to add.** A personal aside, a domain judgment call, a "this is the
+detail that actually matters to a rider/mechanic/advocate" — that's the
+right kind of injected personality, and it's welcome. Don't manufacture it
+by default on every entry; a factual `w` with no personal angle is a
+perfectly normal `w`. When Jon does add a personal take in a session, keep
+it in his voice (direct, technical, opinionated where warranted) rather than
+smoothing it into the same neutral-AI register as `s`.
+
+Before shipping a new or edited `s`/`w`, do one pass specifically hunting for
+these tells — it's a distinct check from fact-verification, and a factually
+correct entry can still read as generated rather than written.
+
 ### A known environment constraint: blocked patent-site fetches
 
 Sessions in this environment run behind a network egress proxy that has, in
@@ -370,7 +422,9 @@ Given that:
 3. **Write the object** following the schema above. Match the existing prose
    style: `s` is factual (what it covers, filing/grant history, the
    mechanism in concrete terms); `w` is the editorial payoff (why a reader
-   should care, what it changed, how it connects to other entries).
+   should care, what it changed, how it connects to other entries). See
+   **Prose style: avoid AI tells**, below — it applies to every `s`/`w`
+   you write, not just new entries.
 4. **Register any new brand/inventor** in `BRANDS`/`INVENTORS` (and
    `BRAND_HQ` if the location is confirmed) *before* referencing it in
    `who[]` — see the registries table above.
