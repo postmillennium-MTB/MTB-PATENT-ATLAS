@@ -485,16 +485,13 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .empty{text-align:center;color:var(--ink-soft);padding:40px 10px;font-size:14px}
 footer{background:var(--deep);color:#fff;padding:22px 16px;font-size:12.5px}
 footer .hwrap p{opacity:.8;max-width:640px}
-/* A small requested flourish: a squirrel mark sitting directly under the
-   "/" in "RedFoxRun / PostMillennium MTB project." — the slash is wrapped
-   in its own relatively-positioned inline-block so the icon tracks the
-   slash's actual rendered position (not the paragraph's), which keeps it
-   correctly placed even if the footer text wraps onto two lines on a
-   narrow/mobile viewport. Purely decorative: aria-hidden'd, no pointer
-   events, and it inherits the footer paragraph's currentColor/opacity via
+/* A small requested flourish: a squirrel mark above the "A RedFoxRun /
+   PostMillennium MTB project." credit line. Its own centered block rather
+   than inline with the text, so it stays put regardless of how that line
+   wraps on a narrow/mobile viewport. Purely decorative: aria-hidden'd, no
+   pointer events, and it inherits the footer's currentColor/opacity via
    fill="none" stroke="currentColor" rather than hardcoding a color. */
-.footer-slash{position:relative;display:inline-block}
-.footer-slash svg{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:14px;height:14px;margin-top:3px;pointer-events:none}
+.footer-squirrel{display:block;width:18px;height:18px;margin:0 0 2px;opacity:.8;pointer-events:none}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 @media(min-width:640px){
   .chead{padding:14px 18px}
@@ -636,7 +633,8 @@ html,body{overflow-x:hidden;max-width:100%}
 <footer>
   <div class="hwrap">
     <p data-i18n-html="footerAbout"><strong>About the data.</strong> Compiled from industry reporting, USPTO records, and manufacturer disclosures. Entries marked "unverified" or "draft" are documented technologies whose exact patent numbers are still being confirmed — corrections welcome. Expiration dates are estimated as filing date + 20 years and do not account for terminal disclaimers or fee lapses. Nothing here is legal advice.</p>
-    <p style="margin-top:8px" data-i18n-html="footerCredit">A RedFoxRun <span class="footer-slash">/<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-squirrel" aria-hidden="true" focusable="false"><path d="M15.236 22a3 3 0 0 0-2.2-5"/><path d="M16 20a3 3 0 0 1 3-3h1a2 2 0 0 0 2-2v-2a4 4 0 0 0-4-4V4"/><path d="M18 13h.01"/><path d="M18 6a4 4 0 0 0-4 4 7 7 0 0 0-7 7c0-5 4-5 4-10.5a4.5 4.5 0 1 0-9 0 2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10"/></svg></span> PostMillennium MTB project.</p>
+    <svg class="footer-squirrel" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15.236 22a3 3 0 0 0-2.2-5"/><path d="M16 20a3 3 0 0 1 3-3h1a2 2 0 0 0 2-2v-2a4 4 0 0 0-4-4V4"/><path d="M18 13h.01"/><path d="M18 6a4 4 0 0 0-4 4 7 7 0 0 0-7 7c0-5 4-5 4-10.5a4.5 4.5 0 1 0-9 0 2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10"/></svg>
+    <p style="margin-top:4px" data-i18n-html="footerCredit">A RedFoxRun / PostMillennium MTB project.</p>
   </div>
 </footer>
 
@@ -1492,7 +1490,7 @@ const T = {
     citeSource:"MTB Patent Atlas",
     mtBannerText:"🌐 Machine translation: this atlas's French content (all 293 patent entries) was AI-generated and has not yet been reviewed by a French speaker. Legal and technical terminology may be imprecise — check the English entry or primary source before relying on it.",
     footerAbout:`<strong>About the data.</strong> Compiled from industry reporting, USPTO records, and manufacturer disclosures. Entries marked "unverified" or "draft" are documented technologies whose exact patent numbers are still being confirmed — corrections welcome. Expiration dates are estimated as filing date + 20 years and do not account for terminal disclaimers or fee lapses. Nothing here is legal advice.`,
-    footerCredit:"A RedFoxRun <span class=\"footer-slash\">/<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-squirrel\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M15.236 22a3 3 0 0 0-2.2-5\"/><path d=\"M16 20a3 3 0 0 1 3-3h1a2 2 0 0 0 2-2v-2a4 4 0 0 0-4-4V4\"/><path d=\"M18 13h.01\"/><path d=\"M18 6a4 4 0 0 0-4 4 7 7 0 0 0-7 7c0-5 4-5 4-10.5a4.5 4.5 0 1 0-9 0 2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10\"/></svg></span> PostMillennium MTB project.",
+    footerCredit:"A RedFoxRun / PostMillennium MTB project.",
     coBody:`<p>Mountain-bike innovation runs deep in Colorado — a mix of famous patented suspension designs, homegrown technology, and high-profile, multi-million-dollar intellectual-property disputes playing out in the state's courts.</p>
     <h4>1 · Spot Brand vs. Gates Corp.</h4>
     <p>Golden-based Spot Brand sued Denver-based Gates Corp. in Denver District Court over the "Drop-Out" frame feature — the patented split dropout that lets a seamless carbon drive belt pass into the rear triangle. Spot seeks millions in unpaid royalties, alleging Gates encouraged other brands to use the invention without compensating Spot. A Denver judge has denied Gates' attempts to invalidate the patent and throw out the royalty contract, clearing the way to trial. The patent, invented by a former Spot co-owner, was assigned to Gates in a 2008 agreement that later expired.</p>
@@ -1582,7 +1580,7 @@ const T = {
     citeSource:"MTB Patent Atlas",
     mtBannerText:"🌐 Traduction automatique : le contenu français de cet atlas (les 293 fiches de brevets) a été généré par IA et n'a pas encore été relu par un locuteur francophone. La terminologie juridique et technique peut être imprécise — vérifiez la fiche anglaise ou la source primaire avant de vous y fier.",
     footerAbout:`<strong>À propos des données.</strong> Compilées à partir de la presse spécialisée, des dossiers de l'USPTO et des communications des fabricants. Les entrées marquées « non vérifié » ou « provisoire » désignent des technologies documentées dont le numéro de brevet exact reste à confirmer — les corrections sont bienvenues. Les dates d'expiration sont estimées à date de dépôt + 20 ans et ne tiennent pas compte des déclarations terminales ni des défauts de paiement des annuités. Rien ici ne constitue un avis juridique.`,
-    footerCredit:"Un projet RedFoxRun <span class=\"footer-slash\">/<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-squirrel\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M15.236 22a3 3 0 0 0-2.2-5\"/><path d=\"M16 20a3 3 0 0 1 3-3h1a2 2 0 0 0 2-2v-2a4 4 0 0 0-4-4V4\"/><path d=\"M18 13h.01\"/><path d=\"M18 6a4 4 0 0 0-4 4 7 7 0 0 0-7 7c0-5 4-5 4-10.5a4.5 4.5 0 1 0-9 0 2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10\"/></svg></span> PostMillennium MTB.",
+    footerCredit:"Un projet RedFoxRun / PostMillennium MTB.",
     coBody:`<p>L'innovation VTT est profondément enracinée dans le Colorado — un mélange de designs de suspension brevetés célèbres, de technologies locales et de litiges de propriété intellectuelle très médiatisés, à plusieurs millions de dollars, qui se jouent devant les tribunaux de l'État.</p>
     <h4>1 · Spot Brand contre Gates Corp.</h4>
     <p>La marque Spot, basée à Golden, a poursuivi Gates Corp., basée à Denver, devant la Denver District Court au sujet de la patte de cadre « Drop-Out » — la patte fendue brevetée qui permet à une courroie de transmission carbone sans jonction de passer dans le triangle arrière. Spot réclame des millions de dollars de redevances impayées, affirmant que Gates a encouragé d'autres marques à utiliser l'invention sans compenser Spot. Un juge de Denver a rejeté les tentatives de Gates de faire invalider le brevet et d'annuler le contrat de redevances, ouvrant la voie à un procès. Le brevet, inventé par un ancien co-propriétaire de Spot, avait été cédé à Gates dans le cadre d'un accord de 2008 depuis expiré.</p>
