@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 292 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 293 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,7 +14,7 @@ An interactive timeline of mountain bike intellectual property: 292 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 292 |
+| **Total entries** | 293 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 136 |
 | **Expired patents** | 95 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 292 patents and 
 | **Named inventors** | 56 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
 | **Verified entries** | 177 |
-| **Medium confidence** | 65 |
+| **Medium confidence** | 66 |
 | **Draft / in progress** | 50 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -464,7 +464,11 @@ Counts synced: README At-a-glance (290→291 total, 134→135 active, 158→159 
 
 Counts synced: README At-a-glance (291→292 total, 135→136 active, 159→160 brands, 55→56 inventors, 63→65 medium, 51→50 draft) and all seven hardcoded `index.html` count strings.
 
-- **Registered AMP Research as a brand and tagged it across Horst Leitner's five entries**, per a Motocross Action Magazine profile and the Mountain Bike Hall of Fame's own bio: AMP Research was Leitner's Laguna Beach company, not just a name in the assignee field — it's literally the "R" in his chain-torque work (Anti-Tension Kettenantrieb, from his earlier ATK motorcycle brand) and the company that built the Horst Link into a bicycle product starting in 1985. Added `AMP Research` to `who[]` on the Horst Link entry, its two continuations, the AMP F1/BLT fork, and the AMP disc brake, so the Brands filter surfaces the whole portfolio together. Enriched the "Leitner four-bar prototype era" entry's text with his racing background (Austrian Grand Prix motocross racer, four-time ISDT gold medalist), the 1980 move to the US, and the 2015 Mountain Bike Hall of Fame induction / AMP Research sale — all from that same profile. Two of three patent numbers supplied (US 5,678,837 and US 5,462,302) were already in the atlas under existing entries; a third, WO 1993/013974, couldn't be independently confirmed this session (search access to Google Patents' own record for that number came back empty) — not added, flagged here so it can go in with real title/date confirmation later. Rotated the Becker velocipede (US 439,095) Sheet 1 figure 90° clockwise so the bicycle reads right-side-up instead of sideways; the printed patent header now runs vertically along the image edge as a result, the same tradeoff made for the HammerSchmidt rotation earlier in the atlas.
+- **Registered AMP Research as a brand and tagged it across Horst Leitner's five entries**, per a Motocross Action Magazine profile and the Mountain Bike Hall of Fame's own bio: AMP Research was Leitner's Laguna Beach company, not just a name in the assignee field — it's literally the "R" in his chain-torque work (Anti-Tension Kettenantrieb, from his earlier ATK motorcycle brand) and the company that built the Horst Link into a bicycle product starting in 1985. Added `AMP Research` to `who[]` on the Horst Link entry, its two continuations, the AMP F1/BLT fork, and the AMP disc brake, so the Brands filter surfaces the whole portfolio together. Enriched the "Leitner four-bar prototype era" entry's text with his racing background (Austrian Grand Prix motocross racer, four-time ISDT gold medalist), the 1980 move to the US, and the 2015 Mountain Bike Hall of Fame induction / AMP Research sale — all from that same profile. Two of three patent numbers supplied (US 5,678,837 and US 5,462,302) were already in the atlas under existing entries. Rotated the Becker velocipede (US 439,095) Sheet 1 figure 90° clockwise so the bicycle reads right-side-up instead of sideways; the printed patent header now runs vertically along the image edge as a result, the same tradeoff made for the HammerSchmidt rotation earlier in the atlas.
+
+- **New entry: WO 1993/013974, "Rear Suspension For Bicycles"** — the third Leitner filing from that same batch, provided as full abstract and description text directly from the published WO document. Its claim language ("paired lower arm members... paired upper arm members... pivotally connected... near the bottom bracket") is close enough to the later US 5,509,679 and US 5,678,837 Horst Link claims to plausibly be the family's original priority filing, roughly two years ahead of the first US grant — but no existing entry's `y`/`g`/`exp` was changed on the strength of that resemblance alone, since this session didn't confirm an explicit priority citation connecting them. `y:1992` is an estimate from the WO 93/xxxxx publication-number convention (PCT applications typically publish about 18 months after filing), not a confirmed date read from the document's own bibliographic data. `g`/`exp` left unset — whether this application matured into a granted US patent wasn't confirmed. `conf:"m"`, matching the tier already used for the atlas's other read-but-outcome-unconfirmed WO entry (Evil's DELTA System).
+
+Counts synced: README At-a-glance (292→293 total, 65→66 medium) and all seven hardcoded `index.html` count strings.
 
 ## Recent updates (July 2026)
 
