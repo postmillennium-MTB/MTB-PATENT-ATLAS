@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 287 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 289 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,19 +14,19 @@ An interactive timeline of mountain bike intellectual property: 287 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 287 |
+| **Total entries** | 289 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 133 |
-| **Expired patents** | 96 |
+| **Active patents** | 134 |
+| **Expired patents** | 95 |
 | **Pending applications** | 44 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
-| **Brands** | 157 |
+| **Brands** | 158 |
 | **Named inventors** | 54 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 173 |
-| **Medium confidence** | 62 |
-| **Draft / in progress** | 52 |
+| **Verified entries** | 175 |
+| **Medium confidence** | 63 |
+| **Draft / in progress** | 51 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -428,6 +428,18 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **Rotated `pictures/US7712566B2.png`** (Schlumpf planetary crank drive → SRAM HammerSchmidt, US 7,712,566) 90° clockwise — the source drawing sheet was sideways in the file; viewed directly before and after to confirm the fix.
 
 - **New entry: First Principles Performance Products Ltd.'s hub adapter for a bicycle disc brake (US 6,880,897).** Filed Jan. 9, 2003 (claiming a Jan. 9, 2002 provisional), inventors Eric Goss and Daryl D. Musselman — a commercial manufacturing sister company Musselman founded alongside his engineering consulting firm, First Principles Engineering Inc. The adapter bolts to a non-disc hub's existing spoke-mounting holes, adding a rotor-mounting face and a wider spoke flange, converting a rim-brake hub to disc without a new hub — a retrofit patent from the early-2000s disc-brake transition. Title, assignee, and inventors cross-confirmed across two independent sources (a Google Patents result and a FreePatentsOnline listing, both quoting the same title/assignee/inventor set); the grant year (2005) is estimated from the patent's position in the USPTO's April 2005 issue-number sequence rather than read directly off the primary record, which this session couldn't reach — flagged in the entry's own text. `exp:2023` (filing+20, already expired), `conf:"m"` for that reason. `cat:"wheel"`, placed next to the XD driver body entry as another hub/rotor-interface patent. Registered `First Principles Performance Products` in `BRANDS`. Counts synced: README At-a-glance (286→287 total, 95→96 expired, 156→157 brands, 61→62 medium) and all seven hardcoded `index.html` count strings.
+
+- **Confirmed the original RockShox RS-1 fork patent: US 4,971,344, "Bicycle with a front fork wheel suspension."** Previously a `num:null, conf:"m"` placeholder. Confirmed directly from an uploaded drawing sheet — inventor Paul H. Turner, assignee RockShox, Inc., granted Nov. 20, 1990 — and cross-confirmed independently via search. Retitled, `num` set, `conf` raised to `"v"`, `exp` corrected to 2007 (pre-GATT grant+17, not filing+20). Wired in the uploaded figure as `img`/`imgAlt`.
+
+- **Added a second Maverick American fork entry: US 6,964,425, "Telescoping suspension fork having a quick release wheel axle clamp."** Confirmed directly from two uploaded drawing sheets (Fig. 1 and Fig. 3), both carrying the title, number, and Nov. 15, 2005 grant date. A separate patent from the existing Monolink entry — this one covers the front fork's dropout clamp hardware, not the rear-suspension link. Notes the patent's 2012 reassignment to Specialized Bicycle Components, Inc., per an independent search result. `conf:"v"`. Both figures added as a two-image `imgs[]`.
+
+- **Confirmed the Maverick Monolink entry's patent number: US 2003/0011167 A1** — previously `num:null`. The uploaded drawing matches the application's own abstract (a front structural member, a rear structural member, and a pivoting link between them carrying the shock) directly, but the sheet itself carries no printed bibliographic header, and this session's search access couldn't independently re-confirm the number. `conf` raised `"l"` → `"m"` rather than `"v"` for that reason. Also corrected `y` (2001 → 2002, matching the application's own filing year) and `g`/`st`/`exp` (2003/"expired"/2023 → null/"unknown"/null) — the previous values assumed a grant that an `A1`-suffixed application-publication number doesn't confirm; this is a genuine, if honest, downgrade from what the entry previously implied. Wired in the uploaded figure.
+
+- **Added Hadley Racing's own sourcing gap directly to its hub entry's text, per direct request:** no public record of a granted US patent has been located under Hadley Racing Products, Mike Hadley, or Michael Hadley. Previously the entry stated the hub was "patented" without qualification; corrected to name the gap plainly rather than assert a patent this atlas can't point to. `num` set to `null` (was already unset in practice), `st` to `"unknown"`. `conf` stays `"l"`.
+
+- **New entry: Wolf Tooth Hubs' and ENVE's shared INNERDRIVE freehub-internals patent, US 11,999,191.** Assignee Enve Composites LLC (Ogden, UT), inventors Kevin E. Nelson and Jerome Fantin — an interchangeable ratchet ring inside the freehub body that tunes engagement speed and drag independently of the hub shell, used in both Enve's own hubs and Wolf Tooth's. The uploaded drawing sheet carries no printed bibliographic header, so this session couldn't independently re-confirm the number's own filing/grant dates; a consecutively-numbered sibling patent (US 11,999,192, "Bicycle drive assembly") is independently confirmed under the same assignee and inventor pair, and INNERDRIVE is a real, currently-shipping product line. `conf:"m"`. `g` left `null` (grant year not confirmed); `st:"active"` on the strength of the B1 kind code alone. Registered `Enve` in `BRANDS`/`BRAND_HQ` (Utah).
+
+Counts synced across the five entries above: README At-a-glance (287→289 total, 133→134 active, 96→95 expired, 173→175 verified, 62→63 medium, 52→51 draft, 157→158 brands) and all seven hardcoded `index.html` count strings.
 
 ## Recent updates (July 2026)
 
