@@ -244,6 +244,11 @@ header::before{
 .stats-timeline{display:flex;align-items:flex-end;gap:3px;height:120px}
 .stats-col{flex:1;min-width:5px;position:relative;display:flex;flex-direction:column-reverse;border-radius:4px 4px 0 0;overflow:hidden;background:var(--chip-bg)}
 .stats-seg{width:100%;box-sizing:border-box}
+/* Category chart only: each column carries both heights (--hc count, --hs
+   share) and the wrapper's .is-share class picks one, so switching modes
+   is a single class flip the browser can animate. */
+.stats-timeline.cat-anim .stats-col{height:var(--hc);transition:height 1.2s ease-in-out}
+.stats-timeline.cat-anim.is-share .stats-col{height:var(--hs)}
 .stats-seg:not(:first-child){border-bottom:2px solid var(--surface)}
 /* Category-chart segments are <button>s (tap one to open the list filtered to
    that category, scrolled to that bracket -- see wireCatTimelineClicks()).
@@ -1298,6 +1303,15 @@ const MTB_ERA_START = 1980;
    orthogonal axis (both charts can independently vary bracket size and,
    for this one, height-encoding). */
 let catTimelineMode = "count";
+/* Until a reader picks a mode with the Count/Share button, the chart cycles
+   between the two on its own every CAT_TIMELINE_CYCLE_MS, animating only the
+   column heights (segment proportions are identical in both modes, so the
+   morph shows exactly what the switch changes). The first click on the
+   button sets catTimelineAuto=false for the rest of the visit. Skipped
+   entirely under prefers-reduced-motion. */
+let catTimelineAuto = true;
+let catTimelineTimer = null;
+const CAT_TIMELINE_CYCLE_MS = 5000;
 
 /* ======== HELPERS ======== */
 const $ = s => document.querySelector(s);
@@ -2368,7 +2382,7 @@ function buildStatsTimelineBuckets(){
    quiet era and a booming one would otherwise be hard to compare for mix
    alone); `legendItems` is the fixed {color,label} list shown below,
    independent of which segments happen to be non-zero in view right now. */
-function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems, denseLabels){
+function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems, denseLabels, animated){
   const perBucket=buckets.map(b=>({ ...b, segs:segmentsFor(b.items), total:b.items.length }));
   const maxTotal=Math.max(...perBucket.map(b=>b.total),1);
   const narrow = (typeof window!=="undefined" && window.innerWidth) ? window.innerWidth<NARROW_BREAKPOINT_PX : false;
@@ -2394,8 +2408,10 @@ function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems, dense
        their own column's total, above) are then the only thing that
        varies, isolating mix from volume so composition across eras
        compares directly. */
-    const colHeight = mode==="share" ? 100 : Math.max(3,pct(b.total,maxTotal));
-    return `<div class="stats-col" style="height:${colHeight.toFixed(1)}%" title="${b.tip} — ${b.total}">${segHTML}</div>`;
+    const countHeight = Math.max(3,pct(b.total,maxTotal));
+    const colHeight = mode==="share" ? 100 : countHeight;
+    const style = animated ? `--hc:${countHeight.toFixed(1)}%;--hs:100%` : `height:${colHeight.toFixed(1)}%`;
+    return `<div class="stats-col" style="${style}" title="${b.tip} — ${b.total}">${segHTML}</div>`;
   }).join("");
   const labels=perBucket.map(b=>{
     /* denseLabels (litigation chart only, see litTimelineHTML below) shows
@@ -2416,7 +2432,7 @@ function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems, dense
   }).join("");
   const legend=legendItems.map(({color,label})=>`<span><span class="dot" style="background:${color}"></span>${label}</span>`).join("");
   return `<div class="stats-timeline-wrap">
-    <div class="stats-timeline">${cols}</div>
+    <div class="stats-timeline${animated?" cat-anim":""}${animated&&mode==="share"?" is-share":""}">${cols}</div>
     <div class="stats-timeline-labels${denseLabels?" dense-labels":""}">${labels}</div>
     <div class="stack-legend timeline-legend">${legend}</div>
   </div>`;
@@ -2440,7 +2456,7 @@ function catTimelineHTML(){
     color:CAT_COLORS[k], count:items.filter(d=>d.cat===k).length, label:catLabel(k), key:k
   }));
   const legendItems=catKeys.map(k=>({color:CAT_COLORS[k], label:catLabel(k)}));
-  return renderStatsTimelineChart(buckets, segmentsFor, catTimelineMode, legendItems);
+  return renderStatsTimelineChart(buckets, segmentsFor, catTimelineMode, legendItems, false, true);
 }
 /* "Litigation over time" — a 2-segment stack per bracket (litigated vs.
    not), reusing the exact same STATS_TIMELINE_* buckets as the category
@@ -2473,6 +2489,7 @@ function litTimelineHTML(){
   return renderStatsTimelineChart(buckets, segmentsFor, "count", legendItems, true);
 }
 
+function stopCatTimelineCycle(){ if(catTimelineTimer){ clearInterval(catTimelineTimer); catTimelineTimer=null; } }
 function renderStats(){
   const tl=$("#timeline");
   const total=D.length;
@@ -2585,10 +2602,25 @@ function renderStats(){
     });
   };});
   const catModeBtn=$("#catTimelineModeToggle");
-  if(catModeBtn) catModeBtn.onclick=()=>{
-    catTimelineMode = catTimelineMode==="count" ? "share" : "count";
-    renderStats(); // cheap: only this tab's own chart depends on the mode
+  const catChart=tl.querySelector(".stats-timeline.cat-anim");
+  const applyCatMode=()=>{
+    if(catChart) catChart.classList.toggle("is-share",catTimelineMode==="share");
+    if(catModeBtn) catModeBtn.textContent=t("catTimelineModeLabel",catTimelineMode);
   };
+  if(catModeBtn) catModeBtn.onclick=()=>{
+    catTimelineAuto=false; stopCatTimelineCycle();
+    catTimelineMode = catTimelineMode==="count" ? "share" : "count";
+    applyCatMode();
+  };
+  stopCatTimelineCycle();
+  const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(catTimelineAuto && catChart && !reducedMotion){
+    catTimelineTimer=setInterval(()=>{
+      if(!catChart.isConnected){ stopCatTimelineCycle(); return; }
+      catTimelineMode = catTimelineMode==="count" ? "share" : "count";
+      applyCatMode();
+    },CAT_TIMELINE_CYCLE_MS);
+  }
   tl.querySelectorAll("[data-export]").forEach(btn=>{
     btn.onclick=()=>{
       if(btn.dataset.export==="json") downloadBlob(EXPORT_FILENAME.json,"application/json;charset=utf-8",JSON.stringify(D,null,2));
