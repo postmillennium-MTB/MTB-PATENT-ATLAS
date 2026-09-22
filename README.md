@@ -477,6 +477,8 @@ Counts synced: README At-a-glance (292→293 total, 65→66 medium) and all seve
 
 Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 verified, 66→63 medium, 50→48 draft) and all seven hardcoded `index.html` count strings.
 
+- **Fixed the entry-count line's start year, and gave card titles more room on phones.** The line under the filters read "294 entries · 1884–2026" after the 1869 Meyer and 1870 Starley & Hillman entries went in, because "1884" was typed into both the English and French strings. It now takes the earliest filing year from the data (`FIRST_YEAR`), so an older entry updates it automatically. On phones (below 640px), each card's year pill and country tag now sit on their own line above the title instead of beside it, so a long title wraps across two or three lines instead of four or five. Desktop layout is unchanged. Checked in headless Chromium at 320px, 390px and 1400px wide; no entry data or counts changed.
+
 ## Recent updates (July 2026)
 
 - **Fixed the 5-year bar chart bug.** The bar chart's "5yr" bracket wasn't aggregating into five-year buckets — it was silently falling back to one bar per year, making it the *most* granular view rather than the least. It now genuinely buckets by half-decade (1995–1999, 2000–2004, etc.), aligned to the calendar rather than to the dataset's earliest entry, so the buckets stay stable as more patents are added. The chart also gained a dashed gap marker for real multi-decade silences in the data (there's an 84-year gap between the 1890 entry and the next), and its final bucket's label no longer advertises years that haven't happened yet.
