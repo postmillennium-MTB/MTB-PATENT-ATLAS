@@ -148,6 +148,12 @@ header::before{
 .card-icon-btn svg{width:15px;height:15px;pointer-events:none}
 .card-icon-btn.copied{color:#fff;background:var(--primary);border-color:var(--primary)}
 @media(max-width:480px){.card-icon-btn{width:28px;height:28px;margin:10px 4px 0 0}.card-icon-btn:last-child{margin-right:8px}}
+/* CAMBR's per-card icon buttons (share/copy-link) rest in the accent
+   orange rather than the shared neutral gray, matching the .pill.cat
+   treatment above -- the "copied" flash still uses --primary so the two
+   states stay visually distinct from each other. */
+[data-theme="cambr"] .card-icon-btn{color:var(--accent)}
+[data-theme="cambr"] .card-icon-btn:hover{color:var(--accent);border-color:var(--accent)}
 /* ---------- Surprise me shimmer ----------
    A light sweep passes across the button at random intervals (see JS) to hint
    that it's interactive. Deliberately subtle: a soft highlight, no color or
@@ -392,6 +398,10 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .pills{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
 .pill{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;border-radius:var(--pill-radius,999px);padding:2.5px 8px;color:#fff;font-weight:600}
 .pill.cat{background:var(--ink-soft)}
+/* CAMBR's category pill uses the theme's own orange accent instead of the
+   shared neutral gray -- the blueprint palette's one accent color earns a
+   second job on the card face, not just the spine/header. */
+[data-theme="cambr"] .pill.cat{background:var(--accent)}
 .pill.active{background:var(--st-active)}
 .pill.expired{background:var(--st-expired)}
 .pill.pending{background:var(--st-pending)}
