@@ -413,6 +413,15 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .conf.low{color:var(--st-lit)}
 .caret{flex:0 0 auto;color:var(--ink-soft);font-size:12px;margin-top:4px;transition:transform .15s}
 .card.open .caret{transform:rotate(180deg)}
+/* Phone layout: the year pill, jurisdiction tag and caret share a short top
+   row, and the title block wraps onto its own full-width row beneath them.
+   Kept all on one row, the pills plus the card's two icon buttons left the
+   title a column barely wider than a few words, so a long title broke across
+   four or five lines. Desktop (min-width:640px, below) restores the single
+   row. The icon buttons sit outside .chead, so they stay top-right either way. */
+.chead{flex-wrap:wrap;row-gap:6px}
+.chead .ct{order:1;flex:1 1 100%}
+.chead .caret{margin-left:auto}
 .cbody{display:none;padding:0 14px 14px;border-top:1px dashed var(--card-border)}
 .card.open .cbody{display:block}
 .cbody p{font-size:14px;margin-top:10px}
@@ -495,6 +504,9 @@ footer .hwrap p{opacity:.8;max-width:640px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 @media(min-width:640px){
   .chead{padding:14px 18px}
+  .chead{flex-wrap:nowrap}
+  .chead .ct{order:0;flex:1 1 auto}
+  .chead .caret{margin-left:0}
   .cbody{padding:0 18px 16px}
   h1{letter-spacing:.02em}
 }
@@ -1282,6 +1294,10 @@ let catTimelineMode = "count";
 /* ======== HELPERS ======== */
 const $ = s => document.querySelector(s);
 const NOW = new Date().getFullYear();
+/* Earliest filing year in D, for the "N entries · YYYY–now" count line.
+   Derived rather than typed so adding an older entry can't leave it stale
+   (it read "1884" for a while after the 1869/1870 entries went in). */
+const FIRST_YEAR = Math.min(...D.map(d=>d.y));
 /* Matches the @media(max-width:480px) breakpoint used throughout the
    stylesheet (mini-btn, hbar-row, bar-gap, co-panel-title, fights headers).
    Previously this was a standalone 560 found nowhere else in the file —
@@ -1451,7 +1467,7 @@ const T = {
     minimize:"Minimize", close:"Close", dismiss:"Dismiss",
     eraCount:n=>`${n} ${n===1?"entry":"entries"}`,
     emptyState:"No patents match these filters. Loosen one and the timeline comes back.",
-    resultCountAll:total=>`${total} entries · 1884–${NOW}`,
+    resultCountAll:(total,first)=>`${total} entries · ${first}–${NOW}`,
     resultCountFiltered:(n,total)=>`${n} of ${total} entries`,
     entriesAnalyzed:total=>`${total} entries analyzed`,
     majorDisputes:n=>`${n} major disputes`,
@@ -1541,7 +1557,7 @@ const T = {
     minimize:"Réduire", close:"Fermer", dismiss:"Fermer",
     eraCount:n=>`${n} entrée${n===1?"":"s"}`,
     emptyState:"Aucun brevet ne correspond à ces filtres. Retirez-en un et la chronologie réapparaît.",
-    resultCountAll:total=>`${total} entrées · 1884–${NOW}`,
+    resultCountAll:(total,first)=>`${total} entrées · ${first}–${NOW}`,
     resultCountFiltered:(n,total)=>`${n} sur ${total} entrées`,
     entriesAnalyzed:total=>`${total} entrées analysées`,
     majorDisputes:n=>`${n} litiges majeurs`,
@@ -2605,7 +2621,7 @@ function render(){
   // counts + clear
   const total=D.length, n=list.length;
   const anyFilter=anyFilterActive()||searchQ;
-  $("#resultCount").textContent = anyFilter?t("resultCountFiltered",n,total):t("resultCountAll",total);
+  $("#resultCount").textContent = anyFilter?t("resultCountFiltered",n,total):t("resultCountAll",total,FIRST_YEAR);
   $("#clearAll").hidden=!anyFilter;
   updateTabDots();
   renderBars(list);
