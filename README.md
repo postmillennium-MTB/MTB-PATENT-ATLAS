@@ -24,8 +24,8 @@ An interactive timeline of mountain bike intellectual property: 290 patents and 
 | **Brands** | 158 |
 | **Named inventors** | 54 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 176 |
-| **Medium confidence** | 63 |
+| **Verified entries** | 177 |
+| **Medium confidence** | 62 |
 | **Draft / in progress** | 51 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -446,6 +446,10 @@ Counts synced across the five entries above: README At-a-glance (287→289 total
 - **New entry: US 6,615,960, "Fluid damped shock absorber and method"** — the Monolink's companion damper patent, also Paul H. Turner / Maverick American LLC, confirmed via Google Patents' own indexed title/inventor/assignee. Its application number (09/502,272) sits immediately next to the Feb. 2000 filing that became US 6,450,521 (09/502,746), the working basis for this entry's `y:2000` estimate — flagged as an estimate, not a confirmed filing date. `g`/`exp` left unset; this session didn't independently confirm the grant date or read the claims beyond the indexed abstract. `conf:"m"`.
 
 Counts synced: README At-a-glance (289→290 total, 175→176 verified) and all seven hardcoded `index.html` count strings.
+
+- **Corrected the confidence tier on US 6,615,960 ("Fluid damped shock absorber and method"): `"m"` → `"v"`.** The title, inventor (Paul H. Turner), and assignee (Maverick American LLC) are confirmed against Google Patents' own indexed record, and the card's search-related link resolves to that exact patent — nothing about the number itself is unverified. The remaining open items on this entry (`y:2000` as an estimated filing year, `g`/`exp` unset) are separate, narrower gaps and stay flagged in the entry's own text; they don't warrant holding the whole entry at `"m"`.
+
+Counts synced: README At-a-glance (176→177 verified, 63→62 medium) and the corresponding `index.html` count.
 
 ## Recent updates (July 2026)
 
