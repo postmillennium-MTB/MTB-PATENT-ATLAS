@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 290 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 291 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 290 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 290 |
+| **Total entries** | 291 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 134 |
+| **Active patents** | 135 |
 | **Expired patents** | 95 |
 | **Pending applications** | 44 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
-| **Brands** | 158 |
-| **Named inventors** | 54 |
+| **Brands** | 159 |
+| **Named inventors** | 55 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
 | **Verified entries** | 177 |
-| **Medium confidence** | 62 |
+| **Medium confidence** | 63 |
 | **Draft / in progress** | 51 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -451,6 +451,10 @@ Counts synced: README At-a-glance (289→290 total, 175→176 verified) and all 
 - **Corrected the confidence tier on US 6,615,960 ("Fluid damped shock absorber and method"): `"m"` → `"v"`.** The title, inventor (Paul H. Turner), and assignee (Maverick American LLC) are confirmed against Google Patents' own indexed record, and the card's search-related link resolves to that exact patent — nothing about the number itself is unverified. The remaining open items on this entry (`y:2000` as an estimated filing year, `g`/`exp` unset) are separate, narrower gaps and stay flagged in the entry's own text; they don't warrant holding the whole entry at `"m"`.
 
 Counts synced: README At-a-glance (176→177 verified, 63→62 medium) and the corresponding `index.html` count.
+
+- **New entry: Chumba Racing's force-channeling rear suspension, three related Ted K. Tanouye filings in one entry.** Chumba (Anaheim, CA, founded 1993 by Tanouye — hand-welded early on out of the back of his SoCal shop, Bike Beat, under the pre-lawsuit name Chumba Wumba) is a small independent builder with real patent coverage behind its frame platform. US 7,703,788, "Force channeling mountain bike rear suspension" (filed 2008, Tanouye and Alan H. Kang), is a granted patent for the five-tube frame with a dedicated force-channeling tube. US 8,136,829, "Force channelling centralization mountain bike and frame," is a related, later-assigned grant refining the same idea with the rocker link on the down tube instead of the seat tube — its priority relationship to the 2008 filing wasn't independently confirmed, so `exp` (2028) is computed only from the confirmed 7,703,788 filing date, not applied to 8,136,829. A third filing, US 2010/0096831, "Center of mass technology for mountain bike frames," was abandoned and never granted. `conf:"m"` — titles, inventor, and application numbers confirmed via search cross-checks against Google Patents' own indexed records (including the user-supplied inventor-filtered links), but this session couldn't independently read exact grant dates or the priority-chain text behind the 8,136,829/7,703,788 relationship. Registered `Chumba` in `BRANDS`/`BRAND_HQ` (California) and `Ted Tanouye` in `INVENTORS`/`BRAND_HQ`.
+
+Counts synced: README At-a-glance (290→291 total, 134→135 active, 158→159 brands, 54→55 inventors, 62→63 medium) and all seven hardcoded `index.html` count strings.
 
 ## Recent updates (July 2026)
 
