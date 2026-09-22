@@ -21,7 +21,7 @@ An interactive timeline of mountain bike intellectual property: 292 patents and 
 | **Pending applications** | 44 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
-| **Brands** | 160 |
+| **Brands** | 161 |
 | **Named inventors** | 56 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
 | **Verified entries** | 177 |
@@ -462,6 +462,8 @@ Counts synced: README At-a-glance (290→291 total, 134→135 active, 158→159 
 - **Upgraded the existing Ellsworth Instant Center Tracking entry from a placeholder theory (`num:null`, `conf:"l"`) to a three-patent portfolio, `conf:"m"`.** All three — US 6,471,230, US 6,361,059 (a related "three-bar" variant), and US 7,296,815 (granted Nov. 20, 2007) — are titled "Bicycle suspension apparatus and related method" and name Anthony S. Ellsworth as inventor, tracing to the same family with priority to a March 2, 1999 international (PCT) filing itself claiming a March 2, 1998 U.S. provisional. Since a provisional alone doesn't start this atlas's 20-year clock, `exp` moved from the previous placeholder 2018 to 2019, computed from that 1999 non-provisional/PCT filing — the entry's earlier `y:1996`/`g:1998`/`exp:2018` values were an unattributed guess rather than tied to any specific number, replaced now that real numbers are on record. Updated in place rather than added as a separate card, since it's the same company/inventor and theory the existing entry already covered — a duplicate entry for the same story would only fragment it.
 
 Counts synced: README At-a-glance (291→292 total, 135→136 active, 159→160 brands, 55→56 inventors, 63→65 medium, 51→50 draft) and all seven hardcoded `index.html` count strings.
+
+- **Registered AMP Research as a brand and tagged it across Horst Leitner's five entries**, per a Motocross Action Magazine profile and the Mountain Bike Hall of Fame's own bio: AMP Research was Leitner's Laguna Beach company, not just a name in the assignee field — it's literally the "R" in his chain-torque work (Anti-Tension Kettenantrieb, from his earlier ATK motorcycle brand) and the company that built the Horst Link into a bicycle product starting in 1985. Added `AMP Research` to `who[]` on the Horst Link entry, its two continuations, the AMP F1/BLT fork, and the AMP disc brake, so the Brands filter surfaces the whole portfolio together. Enriched the "Leitner four-bar prototype era" entry's text with his racing background (Austrian Grand Prix motocross racer, four-time ISDT gold medalist), the 1980 move to the US, and the 2015 Mountain Bike Hall of Fame induction / AMP Research sale — all from that same profile. Two of three patent numbers supplied (US 5,678,837 and US 5,462,302) were already in the atlas under existing entries; a third, WO 1993/013974, couldn't be independently confirmed this session (search access to Google Patents' own record for that number came back empty) — not added, flagged here so it can go in with real title/date confirmation later. Rotated the Becker velocipede (US 439,095) Sheet 1 figure 90° clockwise so the bicycle reads right-side-up instead of sideways; the printed patent header now runs vertically along the image edge as a result, the same tradeoff made for the HammerSchmidt rotation earlier in the atlas.
 
 ## Recent updates (July 2026)
 
