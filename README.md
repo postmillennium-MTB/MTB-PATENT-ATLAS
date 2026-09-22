@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 289 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 290 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,7 +14,7 @@ An interactive timeline of mountain bike intellectual property: 289 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 289 |
+| **Total entries** | 290 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 134 |
 | **Expired patents** | 95 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 289 patents and 
 | **Brands** | 158 |
 | **Named inventors** | 54 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 175 |
+| **Verified entries** | 176 |
 | **Medium confidence** | 63 |
 | **Draft / in progress** | 51 |
 
@@ -440,6 +440,12 @@ Corrections, additional patents, and better sourcing are welcome — open an iss
 - **New entry: Wolf Tooth Hubs' and ENVE's shared INNERDRIVE freehub-internals patent, US 11,999,191.** Assignee Enve Composites LLC (Ogden, UT), inventors Kevin E. Nelson and Jerome Fantin — an interchangeable ratchet ring inside the freehub body that tunes engagement speed and drag independently of the hub shell, used in both Enve's own hubs and Wolf Tooth's. The uploaded drawing sheet carries no printed bibliographic header, so this session couldn't independently re-confirm the number's own filing/grant dates; a consecutively-numbered sibling patent (US 11,999,192, "Bicycle drive assembly") is independently confirmed under the same assignee and inventor pair, and INNERDRIVE is a real, currently-shipping product line. `conf:"m"`. `g` left `null` (grant year not confirmed); `st:"active"` on the strength of the B1 kind code alone. Registered `Enve` in `BRANDS`/`BRAND_HQ` (Utah).
 
 Counts synced across the five entries above: README At-a-glance (287→289 total, 133→134 active, 96→95 expired, 173→175 verified, 62→63 medium, 52→51 draft, 157→158 brands) and all seven hardcoded `index.html` count strings.
+
+- **Confirmed the Maverick Monolink's granted patent number: US 6,854,753, "Suspension system for a vehicle."** Previously `num:"20030011167"` (an application publication, not a confirmed grant). Confirmed directly from an uploaded drawing sheet, whose Fig. 1 reference numerals (36/38/40/44/46/48/58/60/62/64/76/78) match the close-up link/shock figure already on file for the earlier application — circumstantial but strong evidence of a shared filing family, kept in `nums` alongside the new headline number rather than dropped. `conf` raised `"m"` → `"v"`. Turned up a real chain-of-title curiosity in the process: an earlier sibling patent under the identical title, US 6,450,521 (filed Feb. 11, 2000, confirmed granted Sept. 17, 2002), passed from Maverick American to Blackglass LLC in 2008, then to Santa Cruz Bicycles, Inc. in 2013, then to Red Star Holdings, LLC in 2015 — noted in the entry's own text as context, not independently verified as this specific patent's own priority chain. `g`/`exp` deliberately left unset for 6,854,753 itself: applying the 2000 filing date from the likely-related sibling would be a guess, not a confirmed reading, so this atlas's continuation rule wasn't invoked without the priority chain actually being read.
+
+- **New entry: US 6,615,960, "Fluid damped shock absorber and method"** — the Monolink's companion damper patent, also Paul H. Turner / Maverick American LLC, confirmed via Google Patents' own indexed title/inventor/assignee. Its application number (09/502,272) sits immediately next to the Feb. 2000 filing that became US 6,450,521 (09/502,746), the working basis for this entry's `y:2000` estimate — flagged as an estimate, not a confirmed filing date. `g`/`exp` left unset; this session didn't independently confirm the grant date or read the claims beyond the indexed abstract. `conf:"m"`.
+
+Counts synced: README At-a-glance (289→290 total, 175→176 verified) and all seven hardcoded `index.html` count strings.
 
 ## Recent updates (July 2026)
 
