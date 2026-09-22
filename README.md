@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 293 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 294 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,19 +14,19 @@ An interactive timeline of mountain bike intellectual property: 293 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 293 |
+| **Total entries** | 294 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 136 |
-| **Expired patents** | 95 |
+| **Expired patents** | 96 |
 | **Pending applications** | 44 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
 | **Brands** | 161 |
 | **Named inventors** | 56 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 177 |
-| **Medium confidence** | 66 |
-| **Draft / in progress** | 50 |
+| **Verified entries** | 183 |
+| **Medium confidence** | 63 |
+| **Draft / in progress** | 48 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -471,6 +471,11 @@ Counts synced: README At-a-glance (291→292 total, 135→136 active, 159→160 
 - **New entry: WO 1993/013974, "Rear Suspension For Bicycles"** — the third Leitner filing from that same batch, provided as full abstract and description text directly from the published WO document. Its claim language ("paired lower arm members... paired upper arm members... pivotally connected... near the bottom bracket") is close enough to the later US 5,509,679 and US 5,678,837 Horst Link claims to plausibly be the family's original priority filing, roughly two years ahead of the first US grant — but no existing entry's `y`/`g`/`exp` was changed on the strength of that resemblance alone, since this session didn't confirm an explicit priority citation connecting them. `y:1992` is an estimate from the WO 93/xxxxx publication-number convention (PCT applications typically publish about 18 months after filing), not a confirmed date read from the document's own bibliographic data. `g`/`exp` left unset — whether this application matured into a granted US patent wasn't confirmed. `conf:"m"`, matching the tier already used for the atlas's other read-but-outcome-unconfirmed WO entry (Evil's DELTA System).
 
 Counts synced: README At-a-glance (292→293 total, 65→66 medium) and all seven hardcoded `index.html` count strings.
+
+- **Confirmed the SPD clipless pedal entry's patent number: US 5,115,692, "Bicycle pedal."** Previously `num:null`/`conf:"m"` with an estimated 1988 filed/1990 granted (guessed from SPD's market launch date). Jon supplied the patent's own abstract and claims text directly from Google Patents (blocked to this session's own fetches — see the environment-constraint note above), confirming: filed August 27, 1991 and granted May 26, 1992 to Shimano Inc., inventor Masashi Nagano; claims a dual clamp-assembly mechanism (front and rear spring-loaded clamp members, two assemblies offset across the pedal body) matching SPD's dual-sided mountain pedal. `y`/`g` updated to the patent's own 1991/1992 dates (the entry's earlier 1988/1990 had conflated SPD's product-launch year with the patent's Japanese priority filing, which doesn't govern this pre-GATT patent's term). `exp` recomputed under the pre-June-1995 rule (grant + 17 = 2009), matching Google Patents' own stated anticipated-expiration date (2009-11-02) exactly. Upgraded `conf:"m"` → `"v"`.
+- While syncing this change, found the At-a-glance table and all seven hardcoded `index.html` count strings were already stale at 293 total (actual `D.length` was 294 before this session touched anything) — an entry landed on `main` at some point without the count-sync step. Corrected alongside the SPD change rather than left compounding.
+
+Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 verified, 66→63 medium, 50→48 draft) and all seven hardcoded `index.html` count strings.
 
 ## Recent updates (July 2026)
 
