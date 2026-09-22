@@ -245,6 +245,14 @@ header::before{
 .stats-col{flex:1;min-width:5px;position:relative;display:flex;flex-direction:column-reverse;border-radius:4px 4px 0 0;overflow:hidden;background:var(--chip-bg)}
 .stats-seg{width:100%;box-sizing:border-box}
 .stats-seg:not(:first-child){border-bottom:2px solid var(--surface)}
+/* Category-chart segments are <button>s (tap one to open the list filtered to
+   that category, scrolled to that bracket -- see wireCatTimelineClicks()).
+   Reset the button chrome so they render identically to the plain <div>
+   segments the litigation chart still uses. */
+button.stats-seg{display:block;padding:0;border-top:0;border-left:0;border-right:0;margin:0;cursor:pointer;font:inherit}
+button.stats-seg:first-child{border-bottom:0}
+button.stats-seg:hover,button.stats-seg:focus-visible{filter:brightness(1.15);outline:none}
+button.stats-seg:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
 .stats-timeline-labels{display:flex;gap:3px;margin-top:4px}
 .stats-timeline-labels span{flex:1;min-width:5px;text-align:center;font-family:var(--font-mono);font-size:10px;color:var(--ink-soft);white-space:nowrap}
 .timeline-legend{margin-top:10px}
@@ -1486,7 +1494,7 @@ const T = {
     noneFreeSoon:"No active patents in the atlas are estimated to expire within the next two years.",
     byCategory:"Entries by category",
     catTimelineTitle:"Patents by category, over time",
-    catTimelineIntro:yrs=>`Each bar is a ${yrs}-year bracket, stacked by category — bar height is total volume, segment color is the mix. Hover a segment for its exact count. Entries before 1980 are folded into one leading bar.`,
+    catTimelineIntro:yrs=>`Each bar is a ${yrs}-year bracket, stacked by category — bar height is total volume, segment color is the mix. Hover a segment for its exact count; tap it to see those patents. Entries before 1980 are folded into one leading bar.`,
     statsTimelinePreTip:yr=>`Before ${yr}`,
     catTimelineModeLabel:mode=>mode==="share"?"Share":"Count",
     catTimelineModeTip:"Toggle between total count (bar height = volume) and % share (bar height fixed, only the mix varies)",
@@ -1576,7 +1584,7 @@ const T = {
     noneFreeSoon:"Aucun brevet actif de l'atlas n'est estimé expirer dans les deux prochaines années.",
     byCategory:"Entrées par catégorie",
     catTimelineTitle:"Brevets par catégorie, dans le temps",
-    catTimelineIntro:yrs=>`Chaque barre représente une tranche de ${yrs} ans, empilée par catégorie — la hauteur de la barre est le volume total, la couleur des segments en montre la composition. Survolez un segment pour son nombre exact. Les brevets antérieurs à 1980 sont regroupés dans une première barre.`,
+    catTimelineIntro:yrs=>`Chaque barre représente une tranche de ${yrs} ans, empilée par catégorie — la hauteur de la barre est le volume total, la couleur des segments en montre la composition. Survolez un segment pour son nombre exact ; touchez-le pour afficher ces brevets. Les brevets antérieurs à 1980 sont regroupés dans une première barre.`,
     statsTimelinePreTip:yr=>`Avant ${yr}`,
     catTimelineModeLabel:mode=>mode==="share"?"Part":"Nombre",
     catTimelineModeTip:"Basculer entre le nombre total (hauteur = volume) et la part en % (hauteur fixe, seule la composition varie)",
@@ -2341,9 +2349,9 @@ function buildStatsTimelineBuckets(){
   return [
     ...(preItems.length ? [{
       axis:`<${STATS_TIMELINE_START_YR}`, tip:t("statsTimelinePreTip",STATS_TIMELINE_START_YR),
-      items:preItems, alwaysLabel:true
+      items:preItems, alwaysLabel:true, from:-Infinity, to:STATS_TIMELINE_START_YR-1
     }] : []),
-    ...regularEras.map(e=>({ axis:`${e.from}`, tip:e.label, items:D.filter(d=>d.y>=e.from&&d.y<=e.to), from:e.from }))
+    ...regularEras.map(e=>({ axis:`${e.from}`, tip:e.label, items:D.filter(d=>d.y>=e.from&&d.y<=e.to), from:e.from, to:e.to }))
   ];
 }
 /* Renders one chart from a list of {axis,tip,items,from,alwaysLabel} buckets
@@ -2373,7 +2381,12 @@ function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems, dense
   const cols=perBucket.map(b=>{
     const segHTML=b.segs.map(s=>{
       if(!s.count) return "";
-      return `<div class="stats-seg" style="height:${pct(s.count,b.total).toFixed(1)}%;background:${s.color}" title="${s.label} — ${s.count} · ${b.tip}"></div>`;
+      const attrs=`class="stats-seg" style="height:${pct(s.count,b.total).toFixed(1)}%;background:${s.color}" title="${s.label} — ${s.count} · ${b.tip}"`;
+      /* A segment with a `key` (category chart only) is clickable: it carries
+         the category and the bracket's year range for wireCatTimelineClicks(). */
+      return s.key
+        ? `<button type="button" ${attrs} aria-label="${s.label} — ${s.count} · ${b.tip}" data-tlcat="${s.key}" data-tlfrom="${b.from}" data-tlto="${b.to}"></button>`
+        : `<div ${attrs}></div>`;
     }).join("");
     /* Count mode scales column height to that bucket's share of the
        busiest bucket, so volume is readable at a glance. Share mode holds
@@ -2424,7 +2437,7 @@ function catTimelineHTML(){
   const buckets=buildStatsTimelineBuckets();
   if(!buckets.length) return "";
   const segmentsFor=items=>catKeys.map(k=>({
-    color:CAT_COLORS[k], count:items.filter(d=>d.cat===k).length, label:catLabel(k)
+    color:CAT_COLORS[k], count:items.filter(d=>d.cat===k).length, label:catLabel(k), key:k
   }));
   const legendItems=catKeys.map(k=>({color:CAT_COLORS[k], label:catLabel(k)}));
   return renderStatsTimelineChart(buckets, segmentsFor, catTimelineMode, legendItems);
@@ -2499,6 +2512,14 @@ function renderStats(){
         </div>
       </details>
     </div>
+    <div class="stats-sec">
+      <div class="stats-sec-head">
+        <h3>${t("catTimelineTitle")}</h3>
+        <button class="mini-btn" id="catTimelineModeToggle" title="${t('catTimelineModeTip')}">${t('catTimelineModeLabel',catTimelineMode)}</button>
+      </div>
+      <p class="stats-intro">${t("catTimelineIntro",STATS_TIMELINE_STEP_YR)}</p>
+      ${catTimelineHTML()}
+    </div>
     <div class="stat-grid">
       <div class="stat-box"><div class="stat-num">${total}</div><div class="stat-lbl">${t("totalEntriesLbl")}</div></div>
       <div class="stat-box"><div class="stat-num">${stCounts.active}</div><div class="stat-lbl">${t("activeLbl")}</div></div>
@@ -2513,14 +2534,6 @@ function renderStats(){
     <div class="stats-sec">
       <h3>${t("byCategory")}</h3>
       ${catBars}
-    </div>
-    <div class="stats-sec">
-      <div class="stats-sec-head">
-        <h3>${t("catTimelineTitle")}</h3>
-        <button class="mini-btn" id="catTimelineModeToggle" title="${t('catTimelineModeTip')}">${t('catTimelineModeLabel',catTimelineMode)}</button>
-      </div>
-      <p class="stats-intro">${t("catTimelineIntro",STATS_TIMELINE_STEP_YR)}</p>
-      ${catTimelineHTML()}
     </div>
     <div class="stats-sec">
       <h3>${t("litTimelineTitle")}</h3>
@@ -2552,6 +2565,24 @@ function renderStats(){
     (INVENTORS.some(i=>i.key===w)?state.inv:state.brand).add(w);
     syncChipsToState(); activeTab="all"; renderTabs(); render();
     window.scrollTo({top:0,behavior:"smooth"});
+  };});
+  /* Category-over-time segment click: open the list filtered to that one
+     category (same reset-then-filter as the "By category" bars above), then
+     scroll to the first matching card in the clicked bracket. The bracket
+     is a scroll target, not a filter -- the reader lands on that era but
+     can keep scrolling through the rest of the category's history. */
+  tl.querySelectorAll("[data-tlcat]").forEach(seg=>{ seg.onclick=()=>{
+    const from=Number(seg.dataset.tlfrom), to=Number(seg.dataset.tlto);
+    clearFilterState(); state.cat.add(seg.dataset.tlcat);
+    searchQ=''; const si=document.getElementById("searchInput"); if(si) si.value='';
+    syncChipsToState(); activeTab="all"; renderTabs(); render();
+    requestAnimationFrame(()=>{
+      const card=[...document.querySelectorAll("#timeline .card[data-y]")]
+        .find(c=>{ const y=Number(c.dataset.y); return y>=from&&y<=to; });
+      const target=card?.closest(".era")||card;
+      if(target) target.scrollIntoView({behavior:"smooth",block:"start"});
+      else window.scrollTo({top:0,behavior:"smooth"});
+    });
   };});
   const catModeBtn=$("#catTimelineModeToggle");
   if(catModeBtn) catModeBtn.onclick=()=>{
