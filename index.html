@@ -86,16 +86,20 @@ a{color:var(--primary)}
 button{font-family:inherit;cursor:pointer}
 /* ---------- Header ---------- */
 header{background:var(--header-bg);color:#fff;padding:18px 16px 14px;position:relative;overflow:hidden}
-/* Header texture: US Design Patent 28,278 (Crowe, 1898, expired -> public
-   domain carpet design), shared with postmillenniumrenaissance.com's
-   page-wide weave. White-on-dark since --header-bg is dark in all four
-   themes; kept faint (8%) so it reads as paper grain behind the title,
-   not a competing pattern. See images/pmr-carpet-1898-SOURCE.md. */
+/* Header texture: US Design Patent 25,495 (Crowe, 1896, expired -> public
+   domain carpet design) -- a sibling pattern to USD28,278, the one used
+   page-wide on postmillenniumrenaissance.com. White-on-dark since
+   --header-bg is dark in all four themes; kept faint (8%) so it reads as
+   paper grain behind the title, not a competing pattern. See
+   images/pmr-carpet-1896-SOURCE.md. (images/pmr-carpet-1898-mask.png,
+   the sibling asset, stays in the repo -- it's still the source for
+   postmillenniumrenaissance.com's own page-wide weave, just no longer
+   used here.) */
 header::before{
   content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
   background-color:#fff;opacity:.08;
-  -webkit-mask-image:url('images/pmr-carpet-1898-mask.png');
-  mask-image:url('images/pmr-carpet-1898-mask.png');
+  -webkit-mask-image:url('images/pmr-carpet-1896-mask.png');
+  mask-image:url('images/pmr-carpet-1896-mask.png');
   -webkit-mask-repeat:repeat;mask-repeat:repeat;
   -webkit-mask-size:260px auto;mask-size:260px auto;
 }
