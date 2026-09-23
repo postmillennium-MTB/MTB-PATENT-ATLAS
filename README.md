@@ -509,6 +509,15 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 
 - **absoluteBLACK Piston Press now links to its EUIPO record** (design 015091656-0001), located by Jon. A new optional `recordUrl` field on entries links straight to an official record at a registry Google Patents doesn't index. It shows as "View the official registration record →" (both languages), with the generic EUIPO search link beside it. It exists because `searchUrl` always reads "Search related patents on Google Patents", which would mislabel an EUIPO record. The EUIPO page itself is unreachable from the editing environment, so the link was not opened there. Only -0001 is linked; -0002 is still cited in the summary text.
 
+- **Images added to four entries** (files uploaded by Jon):
+  - **e*thirteen Sidekick:** Figs. 5–6 of WO 2024/107631, an exploded hub and a cross-section. Captioned with its WO source, and the caption link points to the WO publication.
+  - **absoluteBLACK Piston Press:** the EUIPO design view for 015091656-0001.
+  - **Park Tool PCS-9.3:** Fig. 1 of US D1,036,319.
+  - **Joe Breeze JBX1:** a labelled illustration (`pictures/jpx1.jpg`). Captioned "Illustration — not a patent drawing", since no patent exists. Its source and artist aren't recorded; the "Brooks B-72" saddle callout appears in the illustration but isn't sourced in the entry text.
+  
+  Each image's description was written after viewing it, in both languages.
+- **WO patent numbers now display as WIPO writes them:** "WO 2024/107,631" instead of "WO 2024,107,631". A trailing kind code is kept ("WO 2007/117,884 A2"). This fixes every card link and "cite this entry" string that includes a WO number, via one new `woLabel()` helper.
+
 ## Recent updates (July 2026)
 
 - **Fixed the 5-year bar chart bug.** The bar chart's "5yr" bracket wasn't aggregating into five-year buckets — it was silently falling back to one bar per year, making it the *most* granular view rather than the least. It now genuinely buckets by half-decade (1995–1999, 2000–2004, etc.), aligned to the calendar rather than to the dataset's earliest entry, so the buckets stay stable as more patents are added. The chart also gained a dashed gap marker for real multi-decade silences in the data (there's an 84-year gap between the 1890 entry and the next), and its final bucket's label no longer advertises years that haven't happened yet.
