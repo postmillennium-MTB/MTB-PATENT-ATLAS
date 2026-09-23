@@ -197,6 +197,52 @@ header::before{
 .chip.chip-soon{border-style:dashed}
 /* ---------- Stats view ---------- */
 .stats-wrap{max-width:880px;margin:0 auto;padding:18px 16px 30px}
+/* ---------- Atlas (home) tab ----------
+   The landing view: rabbit holes, the big search, invitation cards, the
+   clickable category chart and brand chips, then the original stats below.
+   Every block is a way into the list, not just a number to read. */
+.home-sec{margin:0 0 26px}
+.home-sec-h,.home-sec h3.home-sec-h{font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:17px;letter-spacing:.01em;margin:0 0 10px}
+/* Rabbit holes: a swipe row on phones, three across from 640px. */
+.rh-row{display:grid;grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:thin}
+.rh-card{scroll-snap-align:start;display:flex;flex-direction:column;text-align:left;background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);overflow:hidden;padding:0;cursor:pointer;color:inherit;font:inherit;transition:border-color .15s,transform .15s}
+.rh-card:hover,.rh-card:focus-visible{border-color:var(--primary);transform:translateY(-2px);outline:none}
+.rh-card img{display:block;width:100%;height:140px;object-fit:contain;background:#fff;border-bottom:1px solid var(--card-border);padding:8px;box-sizing:border-box}
+.rh-body{display:flex;flex-direction:column;gap:6px;padding:12px 14px;flex:1}
+.rh-body .yr{align-self:flex-start}
+.rh-title{font-weight:700;font-size:15px;line-height:1.25}
+.rh-blurb{font-size:13.5px;color:var(--ink-soft);line-height:1.4}
+.rh-go{margin-top:auto;font-size:13px;color:var(--primary);font-weight:700}
+@media(min-width:640px){.rh-row{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-auto-columns:auto;overflow:visible;margin:0;padding:0}}
+/* Hero search */
+.home-hero{margin:0 0 20px}
+.home-kicker{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.home-h{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,7vw,48px);line-height:1.02;margin:6px 0 8px}
+.home-sub{color:var(--ink-soft);font-size:16px;line-height:1.45;max-width:560px;margin:0 0 14px}
+.home-search{display:flex;align-items:center;gap:8px;background:var(--surface);border:2px solid var(--primary);border-radius:14px;padding:6px 6px 6px 14px;box-shadow:0 6px 24px rgba(0,0,0,.08);margin:0}
+.home-search svg{flex:0 0 auto;color:var(--primary)}
+.home-search input{flex:1;min-width:0;border:0;background:transparent;font-size:17px;padding:10px 0;color:var(--ink);outline:none;font-family:inherit}
+.home-search button{border:0;background:var(--primary);color:#fff;font-weight:700;font-size:15px;border-radius:10px;padding:11px 16px;font-family:var(--font-display);cursor:pointer;min-height:44px}
+.home-match{min-height:1.2em;margin:6px 2px 0;font-size:13px;color:var(--ink-soft)}
+.home-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;align-items:center}
+.home-lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-right:2px}
+.home-chip{border:1px solid var(--card-border);background:var(--surface);border-radius:999px;padding:7px 12px;min-height:40px;font:inherit;font-size:14px;color:var(--ink);display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.home-chip:hover,.home-chip:focus-visible{border-color:var(--primary);outline:none}
+.home-chip b{font-family:var(--font-mono);font-size:11px;color:var(--ink-soft);font-weight:600}
+/* Invitation cards: the headline numbers, each opening its own list. */
+.invite-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 26px}
+@media(min-width:640px){.invite-grid{grid-template-columns:repeat(4,1fr)}}
+.invite{background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:14px;display:flex;flex-direction:column;gap:4px;text-align:left;font:inherit;color:inherit;cursor:pointer;transition:border-color .15s}
+.invite:hover,.invite:focus-visible{border-color:var(--primary);outline:none}
+.invite .n{font-family:var(--font-display);font-weight:800;font-size:32px;color:var(--primary);line-height:1}
+.invite .q{font-size:14px;font-weight:600;line-height:1.3}
+.invite .go{margin-top:auto;padding-top:6px;font-size:13px;color:var(--primary);font-weight:700}
+.invite.lit .n{color:var(--st-lit)}
+.tap-note{display:inline-block;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;background:var(--primary);color:#fff;border-radius:999px;padding:3px 9px;margin-left:8px;vertical-align:middle}
+/* On phones the header's era scrubber duplicates the category chart on the
+   home view and pushes the page's first content below the fold -- hide it
+   there only. It returns on every other tab and at desktop widths. */
+@media(max-width:639px){body.home-view .scrubber{display:none}}
 .stats-h{font-family:var(--font-display);font-weight:700;font-size:clamp(24px,5vw,34px);text-transform:uppercase;letter-spacing:.01em}
 /* Puts the Stats tab's own title block beside the Export data menu — the
    .share-menu <details> pattern (see its own comment above) reused here
@@ -244,7 +290,20 @@ header::before{
 .stats-timeline{display:flex;align-items:flex-end;gap:3px;height:120px}
 .stats-col{flex:1;min-width:5px;position:relative;display:flex;flex-direction:column-reverse;border-radius:4px 4px 0 0;overflow:hidden;background:var(--chip-bg)}
 .stats-seg{width:100%;box-sizing:border-box}
+/* Category chart only: each column carries both heights (--hc count, --hs
+   share) and the wrapper's .is-share class picks one, so switching modes
+   is a single class flip the browser can animate. */
+.stats-timeline.cat-anim .stats-col{height:var(--hc);transition:height 1.2s ease-in-out}
+.stats-timeline.cat-anim.is-share .stats-col{height:var(--hs)}
 .stats-seg:not(:first-child){border-bottom:2px solid var(--surface)}
+/* Category-chart segments are <button>s (tap one to open the list filtered to
+   that category, scrolled to that bracket -- see wireCatTimelineClicks()).
+   Reset the button chrome so they render identically to the plain <div>
+   segments the litigation chart still uses. */
+button.stats-seg{display:block;padding:0;border-top:0;border-left:0;border-right:0;margin:0;cursor:pointer;font:inherit}
+button.stats-seg:first-child{border-bottom:0}
+button.stats-seg:hover,button.stats-seg:focus-visible{filter:brightness(1.15);outline:none}
+button.stats-seg:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
 .stats-timeline-labels{display:flex;gap:3px;margin-top:4px}
 .stats-timeline-labels span{flex:1;min-width:5px;text-align:center;font-family:var(--font-mono);font-size:10px;color:var(--ink-soft);white-space:nowrap}
 .timeline-legend{margin-top:10px}
@@ -705,7 +764,7 @@ const SEARCH_SYNONYMS = [
   ["fork","stanchion","damper","telescopic"],
   ["suspension","shock","linkage","damper","bath","plush"],
   ["drivetrain","derailleur","chainring","cassette","shifting","chain"],
-  ["dropper","seatpost","post"],
+  ["dropper","seatpost"], // not bare "post": it matched "post-GATT", "in post" and French "postérieur"
   ["brake","caliper","rotor"],
   ["tire","tyre","tubeless","insert"],
   ["pedal","cleat"],
@@ -1261,6 +1320,51 @@ const FIGHTS = [
   }
 ];
 
+/* ---- RABBIT HOLES (Atlas tab, top row) ----
+   Hand-picked story cards shown first on the Atlas (home) tab. Up to
+   RABBIT_HOLES_SHOWN appear per visit: every `pin:true` hole first, then a
+   random pick of the rest, then any empty slots are filled automatically
+   with a random verified entry that has a patent drawing (its own title and
+   the first sentence of its `w`). An empty array is valid -- the row is
+   then fully automatic.
+
+   Each hole:
+   {
+     title: {en:"...", fr:"..."},   // required
+     blurb: {en:"...", fr:"..."},   // required -- one or two short sentences
+     go: {card:"5509679"},          // required -- where a tap takes the reader, exactly one of:
+                                    //   {card:"<patent number or English title substring>"}  open that card
+                                    //   {q:"horst link"}          run a search
+                                    //   {cat:"susp"} {st:"expired"} {badge:"litigated"} {who:"SRAM"}  filter the list
+                                    //   {tab:"fights"}            open a tab
+     img: "pictures/US5509679A.png",// optional -- defaults to the linked card's own drawing
+     imgAlt: {en:"...", fr:"..."},  // optional -- defaults to the linked card's imgAlt
+     kicker: {en:"...", fr:"..."},  // optional small label above the title -- defaults to the linked card's filing year
+     pin: true,                     // optional -- always show this one (pinned holes fill slots before random ones)
+   }
+   Same sourcing rules as D entries apply to title/blurb: nothing here that
+   the linked entries don't already support. */
+const RABBIT_HOLES_SHOWN = 3;
+const RABBIT_HOLES = [
+];
+
+/* ---- HOME SEARCH SUGGESTIONS (Atlas tab, under the big search box) ----
+   One-tap example searches. `q` is exactly what gets typed into the search
+   box, so the match count shown on each chip is live and always agrees with
+   what the reader will see after tapping. Keep `q` to words that actually
+   appear in entries (or in a SEARCH_SYNONYMS group) -- a chip reading "0"
+   is worse than no chip. The first few labels also rotate through the big
+   box's placeholder text. */
+const HOME_SEARCH_SUGGESTIONS = [
+  {label:{en:"Horst link",fr:"Horst link"}, q:"horst link"},
+  {label:{en:"Dropper posts",fr:"Tiges de selle télescopiques"}, q:"dropper"},
+  {label:{en:"Gearboxes",fr:"Boîtes de vitesses"}, q:"gearbox"},
+  {label:{en:"VPP",fr:"VPP"}, q:"vpp"},
+  {label:{en:"Tires & tubeless",fr:"Pneus et tubeless"}, q:"tubeless"}, // "tubeless" shares a SEARCH_SYNONYMS group with tire/tyre, so this is every tire patent
+  {label:{en:"Boost spacing",fr:"Entraxe Boost"}, q:"boost"},
+  {label:{en:"Made in Colorado",fr:"Made in Colorado"}, q:"colorado"},
+];
+
 /* ======== STATE ======== */
 const state = { cat:new Set(), st:new Set(), badge:new Set(), inv:new Set(), brand:new Set(), lang:"en" };
 /* The five Set-valued filter keys on state, as opposed to state.lang (a
@@ -1290,6 +1394,15 @@ const MTB_ERA_START = 1980;
    orthogonal axis (both charts can independently vary bracket size and,
    for this one, height-encoding). */
 let catTimelineMode = "count";
+/* Until a reader picks a mode with the Count/Share button, the chart cycles
+   between the two on its own every CAT_TIMELINE_CYCLE_MS, animating only the
+   column heights (segment proportions are identical in both modes, so the
+   morph shows exactly what the switch changes). The first click on the
+   button sets catTimelineAuto=false for the rest of the visit. Skipped
+   entirely under prefers-reduced-motion. */
+let catTimelineAuto = true;
+let catTimelineTimer = null;
+const CAT_TIMELINE_CYCLE_MS = 5000;
 
 /* ======== HELPERS ======== */
 const $ = s => document.querySelector(s);
@@ -1424,6 +1537,7 @@ const ICON_HOURGLASS_COG = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24
 const ICON_DICE = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-dices icon-inline\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"12\" height=\"12\" x=\"2\" y=\"10\" rx=\"2\" ry=\"2\"/><path d=\"m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6\"/><path d=\"M6 18h.01\"/><path d=\"M10 14h.01\"/><path d=\"M15 6h.01\"/><path d=\"M18 9h.01\"/></svg>";
 const ICON_LINK = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-link icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"/><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"/></svg>";
 const ICON_SWORDS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-swords icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m13 19 6-6\"/><path d=\"M14.5 17.5 3.586 6.586A2 2 0 013 5.172V3h2.172a2 2 0 011.414.586L17.5 14.5\"/><path d=\"m14.828 6.172 2.586-2.586A2 2 0 0118.828 3H21v2.172a2 2 0 01-.586 1.414l-2.586 2.586\"/><path d=\"m16 16 4 4\"/><path d=\"m19 21 2-2\"/><path d=\"m5 14 4 4\"/><path d=\"m5 21-2-2\"/><path d=\"M7.5 16.5 4 20\"/></svg>";
+const ICON_COMPASS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-compass icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z\"/><circle cx=\"12\" cy=\"12\" r=\"10\"/></svg>";
 const ICON_CHART = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chart-no-axes-combined icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 16v5\"/><path d=\"M16 14.639V21\"/><path d=\"M20 10.656V21\"/><path d=\"m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15\"/><path d=\"M4 18.463V21\"/><path d=\"M8 14.656V21\"/></svg>";
 const T = {
   en:{
@@ -1437,7 +1551,7 @@ const T = {
     timelineEras:"Timeline eras",
     searchPlaceholder:"Search — title, inventor, brand, patent number…",
     tabCategory:"Category", tabStatus:"Status", tabStory:"Story", tabInventors:"Inventors", tabBrands:"Brands",
-    tabAll:"All", tabStats:"Stats", tabFights:"Fights",
+    tabAll:"All", tabStats:"Atlas", tabFights:"Fights",
     scrollLeft:"Scroll left", scrollRight:"Scroll right",
     showAll:"Show all", collapse:"Collapse",
     surpriseBtn:"Surprise me", surpriseTip:"Jump to a random patent",
@@ -1476,17 +1590,30 @@ const T = {
     whatItsAbout:"What it's about — ", howItEnded:"How it ended — ", patentsInFight:"Patents in this fight",
     vsWord:"v.",
     statsTitle:"Atlas by the numbers",
+    homeHolesH:"Pick a rabbit hole", homeReadStory:"Read the story →",
+    homeKicker:(n,first,now)=>`${n} patents · ${first}–${now} · every one sourced`,
+    homeHeadline:"Who invented your bike?",
+    homeSub:n=>`Search ${n} mountain bike patents — the suspension layouts, drivetrains and lawsuits behind the bike you ride.`,
+    homeSearchBtn:"Search", homeSearchAria:"Search the atlas",
+    homePlaceholder:ex=>`Try “${ex}” or your bike’s brand`,
+    homePopular:"Popular",
+    homeMatchCount:n=>n?`${n} ${n===1?"patent matches":"patents match"} — press Enter to see ${n===1?"it":"them"}`:"No matches — try a brand, a part or a year",
+    inviteActive:"patents still in force", inviteActiveGo:"Who owns today’s bikes →",
+    inviteExpired:"expired — free for anyone to build", inviteExpiredGo:"Browse the public domain →",
+    inviteLit:"went to court", inviteLitGo:"Read the Patent Fights →",
+    inviteSoon:y=>`expire by ${y}`, inviteSoonGo:"See what’s going free →",
+    catTapNote:"Tap any color",
+    homeBrandsH:"Start from a brand",
     statsIntro:"Everything below is computed live from the atlas data — it updates automatically as entries are added.",
     exportBtn:"⬇ Export data", exportTip:"Download the underlying dataset",
     exportJSON:"🗂️ Download JSON (full data)", exportCSV:"📊 Download CSV (spreadsheet)",
-    totalEntriesLbl:"Total entries", activeLbl:"Active", expiredFreeLbl:"Expired — free to use", litigatedLbl:"Litigated",
     statusSplit:"Status split",
     goingFreeSoonH3:"Expiring soon",
     goingFreeSoonIntro:yr=>`Active patents whose estimated expiration (filing + 20 yrs) falls by ${yr}. Tap one to jump to its card.`,
     noneFreeSoon:"No active patents in the atlas are estimated to expire within the next two years.",
     byCategory:"Entries by category",
     catTimelineTitle:"Patents by category, over time",
-    catTimelineIntro:yrs=>`Each bar is a ${yrs}-year bracket, stacked by category — bar height is total volume, segment color is the mix. Hover a segment for its exact count. Entries before 1980 are folded into one leading bar.`,
+    catTimelineIntro:yrs=>`Each bar is a ${yrs}-year bracket, stacked by category — bar height is total volume, segment color is the mix. Hover a segment for its exact count; tap it to see those patents. Entries before 1980 are folded into one leading bar.`,
     statsTimelinePreTip:yr=>`Before ${yr}`,
     catTimelineModeLabel:mode=>mode==="share"?"Share":"Count",
     catTimelineModeTip:"Toggle between total count (bar height = volume) and % share (bar height fixed, only the mix varies)",
@@ -1527,7 +1654,7 @@ const T = {
     timelineEras:"Chronologie des époques",
     searchPlaceholder:"Rechercher — titre, inventeur, marque, numéro de brevet…",
     tabCategory:"Catégorie", tabStatus:"Statut", tabStory:"Histoire", tabInventors:"Inventeurs", tabBrands:"Marques",
-    tabAll:"Tout", tabStats:"Stats", tabFights:"Batailles",
+    tabAll:"Tout", tabStats:"Atlas", tabFights:"Batailles",
     scrollLeft:"Défiler vers la gauche", scrollRight:"Défiler vers la droite",
     showAll:"Tout afficher", collapse:"Réduire",
     surpriseBtn:"Surprends-moi", surpriseTip:"Aller à un brevet au hasard",
@@ -1566,17 +1693,30 @@ const T = {
     whatItsAbout:"De quoi il s'agit — ", howItEnded:"Comment ça s'est terminé — ", patentsInFight:"Brevets concernés",
     vsWord:"c.",
     statsTitle:"L'atlas en chiffres",
+    homeHolesH:"Choisissez une piste", homeReadStory:"Lire l'histoire →",
+    homeKicker:(n,first,now)=>`${n} brevets · ${first}–${now} · tous sourcés`,
+    homeHeadline:"Qui a inventé votre vélo ?",
+    homeSub:n=>`Explorez ${n} brevets de VTT — les suspensions, transmissions et procès derrière le vélo que vous roulez.`,
+    homeSearchBtn:"Rechercher", homeSearchAria:"Rechercher dans l'atlas",
+    homePlaceholder:ex=>`Essayez « ${ex} » ou la marque de votre vélo`,
+    homePopular:"Populaire",
+    homeMatchCount:n=>n?`${n} ${n===1?"brevet correspond":"brevets correspondent"} — appuyez sur Entrée pour ${n===1?"le":"les"} voir`:"Aucun résultat — essayez une marque, une pièce ou une année",
+    inviteActive:"brevets toujours en vigueur", inviteActiveGo:"À qui appartiennent les vélos d'aujourd'hui →",
+    inviteExpired:"expirés — libres pour tous", inviteExpiredGo:"Parcourir le domaine public →",
+    inviteLit:"sont allés devant les tribunaux", inviteLitGo:"Lire les batailles de brevets →",
+    inviteSoon:y=>`expirent d'ici ${y}`, inviteSoonGo:"Voir ce qui devient libre →",
+    catTapNote:"Touchez une couleur",
+    homeBrandsH:"Partir d'une marque",
     statsIntro:"Tout ce qui suit est calculé en direct à partir des données de l'atlas — la mise à jour est automatique à chaque nouvelle entrée.",
     exportBtn:"⬇ Exporter les données", exportTip:"Télécharger le jeu de données sous-jacent",
     exportJSON:"🗂️ Télécharger en JSON (données complètes)", exportCSV:"📊 Télécharger en CSV (tableur)",
-    totalEntriesLbl:"Entrées totales", activeLbl:"Actifs", expiredFreeLbl:"Expirés — libres d'usage", litigatedLbl:"En litige",
     statusSplit:"Répartition par statut",
     goingFreeSoonH3:"Expire bientôt",
     goingFreeSoonIntro:yr=>`Brevets actifs dont l'expiration estimée (dépôt + 20 ans) survient d'ici ${yr}. Touchez-en un pour aller à sa fiche.`,
     noneFreeSoon:"Aucun brevet actif de l'atlas n'est estimé expirer dans les deux prochaines années.",
     byCategory:"Entrées par catégorie",
     catTimelineTitle:"Brevets par catégorie, dans le temps",
-    catTimelineIntro:yrs=>`Chaque barre représente une tranche de ${yrs} ans, empilée par catégorie — la hauteur de la barre est le volume total, la couleur des segments en montre la composition. Survolez un segment pour son nombre exact. Les brevets antérieurs à 1980 sont regroupés dans une première barre.`,
+    catTimelineIntro:yrs=>`Chaque barre représente une tranche de ${yrs} ans, empilée par catégorie — la hauteur de la barre est le volume total, la couleur des segments en montre la composition. Survolez un segment pour son nombre exact ; touchez-le pour afficher ces brevets. Les brevets antérieurs à 1980 sont regroupés dans une première barre.`,
     statsTimelinePreTip:yr=>`Avant ${yr}`,
     catTimelineModeLabel:mode=>mode==="share"?"Part":"Nombre",
     catTimelineModeTip:"Basculer entre le nombre total (hauteur = volume) et la part en % (hauteur fixe, seule la composition varie)",
@@ -1851,15 +1991,19 @@ const TAB_DEFS=[
   {key:"brand",tkey:"tabBrands"},
 ];
 const paneEls={cat:$("#rowCat"),st:$("#rowStatus"),badge:$("#rowBadge"),inv:$("#rowInv"),brand:$("#rowBrand")};
-let activeTab="cat";
+/* The Atlas tab (internal key "stats", kept so existing #tab=stats links
+   still resolve) is the landing view on a plain visit. initFromHash() keeps
+   the pre-2026-09 behavior for old filter links that carry no tab= param. */
+const DEFAULT_TAB="stats";
+let activeTab=DEFAULT_TAB;
 const tabRow=$("#filterTabs");
 /* Icons for the two tabs that carry one (Stats/Fights used to carry an
    emoji in their T-registry label instead) — kept out of the T registry
    itself and out of the data-i18n span below for the same reason as the
    ICONS section's own comment: a language switch's textContent reset
    would turn a baked-in <svg> into literal on-screen markup. */
-const TAB_ICONS={stats:ICON_CHART, fights:ICON_SWORDS};
-TAB_DEFS.concat([{key:"all",tkey:"tabAll"},{key:"stats",tkey:"tabStats"},{key:"fights",tkey:"tabFights"}]).forEach(tabDef=>{
+const TAB_ICONS={stats:ICON_COMPASS, fights:ICON_SWORDS};
+[{key:"stats",tkey:"tabStats"}].concat(TAB_DEFS,[{key:"all",tkey:"tabAll"},{key:"fights",tkey:"tabFights"}]).forEach(tabDef=>{
   const btn=document.createElement("button");
   btn.className="tab-btn"+(tabDef.key===activeTab?" on":"")+(tabDef.key==="fights"?" tab-fights":"");
   /* Label lives in its own span (relabeled by applyStaticI18n's generic
@@ -1880,6 +2024,7 @@ function renderTabs(){
     b.setAttribute("aria-pressed",on?"true":"false");
   });
   const fightsMode=activeTab==="fights"||activeTab==="stats";
+  document.body.classList.toggle("home-view", activeTab==="stats");
   $("#filters").setAttribute("data-mode", activeTab==="all"?"all":"single");
   // In Fights mode, hide the chip panes entirely (rivalries aren't chip-filtered)
   $("#filterPanes").classList.toggle("hidden-pane", fightsMode);
@@ -2341,9 +2486,9 @@ function buildStatsTimelineBuckets(){
   return [
     ...(preItems.length ? [{
       axis:`<${STATS_TIMELINE_START_YR}`, tip:t("statsTimelinePreTip",STATS_TIMELINE_START_YR),
-      items:preItems, alwaysLabel:true
+      items:preItems, alwaysLabel:true, from:-Infinity, to:STATS_TIMELINE_START_YR-1
     }] : []),
-    ...regularEras.map(e=>({ axis:`${e.from}`, tip:e.label, items:D.filter(d=>d.y>=e.from&&d.y<=e.to), from:e.from }))
+    ...regularEras.map(e=>({ axis:`${e.from}`, tip:e.label, items:D.filter(d=>d.y>=e.from&&d.y<=e.to), from:e.from, to:e.to }))
   ];
 }
 /* Renders one chart from a list of {axis,tip,items,from,alwaysLabel} buckets
@@ -2360,7 +2505,7 @@ function buildStatsTimelineBuckets(){
    quiet era and a booming one would otherwise be hard to compare for mix
    alone); `legendItems` is the fixed {color,label} list shown below,
    independent of which segments happen to be non-zero in view right now. */
-function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems, denseLabels){
+function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems, denseLabels, animated){
   const perBucket=buckets.map(b=>({ ...b, segs:segmentsFor(b.items), total:b.items.length }));
   const maxTotal=Math.max(...perBucket.map(b=>b.total),1);
   const narrow = (typeof window!=="undefined" && window.innerWidth) ? window.innerWidth<NARROW_BREAKPOINT_PX : false;
@@ -2373,7 +2518,12 @@ function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems, dense
   const cols=perBucket.map(b=>{
     const segHTML=b.segs.map(s=>{
       if(!s.count) return "";
-      return `<div class="stats-seg" style="height:${pct(s.count,b.total).toFixed(1)}%;background:${s.color}" title="${s.label} — ${s.count} · ${b.tip}"></div>`;
+      const attrs=`class="stats-seg" style="height:${pct(s.count,b.total).toFixed(1)}%;background:${s.color}" title="${s.label} — ${s.count} · ${b.tip}"`;
+      /* A segment with a `key` (category chart only) is clickable: it carries
+         the category and the bracket's year range for wireCatTimelineClicks(). */
+      return s.key
+        ? `<button type="button" ${attrs} aria-label="${s.label} — ${s.count} · ${b.tip}" data-tlcat="${s.key}" data-tlfrom="${b.from}" data-tlto="${b.to}"></button>`
+        : `<div ${attrs}></div>`;
     }).join("");
     /* Count mode scales column height to that bucket's share of the
        busiest bucket, so volume is readable at a glance. Share mode holds
@@ -2381,8 +2531,10 @@ function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems, dense
        their own column's total, above) are then the only thing that
        varies, isolating mix from volume so composition across eras
        compares directly. */
-    const colHeight = mode==="share" ? 100 : Math.max(3,pct(b.total,maxTotal));
-    return `<div class="stats-col" style="height:${colHeight.toFixed(1)}%" title="${b.tip} — ${b.total}">${segHTML}</div>`;
+    const countHeight = Math.max(3,pct(b.total,maxTotal));
+    const colHeight = mode==="share" ? 100 : countHeight;
+    const style = animated ? `--hc:${countHeight.toFixed(1)}%;--hs:100%` : `height:${colHeight.toFixed(1)}%`;
+    return `<div class="stats-col" style="${style}" title="${b.tip} — ${b.total}">${segHTML}</div>`;
   }).join("");
   const labels=perBucket.map(b=>{
     /* denseLabels (litigation chart only, see litTimelineHTML below) shows
@@ -2403,7 +2555,7 @@ function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems, dense
   }).join("");
   const legend=legendItems.map(({color,label})=>`<span><span class="dot" style="background:${color}"></span>${label}</span>`).join("");
   return `<div class="stats-timeline-wrap">
-    <div class="stats-timeline">${cols}</div>
+    <div class="stats-timeline${animated?" cat-anim":""}${animated&&mode==="share"?" is-share":""}">${cols}</div>
     <div class="stats-timeline-labels${denseLabels?" dense-labels":""}">${labels}</div>
     <div class="stack-legend timeline-legend">${legend}</div>
   </div>`;
@@ -2424,10 +2576,10 @@ function catTimelineHTML(){
   const buckets=buildStatsTimelineBuckets();
   if(!buckets.length) return "";
   const segmentsFor=items=>catKeys.map(k=>({
-    color:CAT_COLORS[k], count:items.filter(d=>d.cat===k).length, label:catLabel(k)
+    color:CAT_COLORS[k], count:items.filter(d=>d.cat===k).length, label:catLabel(k), key:k
   }));
   const legendItems=catKeys.map(k=>({color:CAT_COLORS[k], label:catLabel(k)}));
-  return renderStatsTimelineChart(buckets, segmentsFor, catTimelineMode, legendItems);
+  return renderStatsTimelineChart(buckets, segmentsFor, catTimelineMode, legendItems, false, true);
 }
 /* "Litigation over time" — a 2-segment stack per bracket (litigated vs.
    not), reusing the exact same STATS_TIMELINE_* buckets as the category
@@ -2460,6 +2612,105 @@ function litTimelineHTML(){
   return renderStatsTimelineChart(buckets, segmentsFor, "count", legendItems, true);
 }
 
+function stopCatTimelineCycle(){ if(catTimelineTimer){ clearInterval(catTimelineTimer); catTimelineTimer=null; } }
+
+/* ======== ATLAS (HOME) TAB HELPERS ======== */
+/* One "where does this tap go" handler shared by rabbit holes, the four
+   invitation cards and the brand chips -- see RABBIT_HOLES for the go:{}
+   shapes it accepts. Filters always start from a clean slate so a reader
+   arriving from the home view never lands on a list silently narrowed by
+   something they set earlier. */
+function followGo(go){
+  if(!go) return;
+  if(go.card){
+    const d=fightCardMatches(go.card)[0];
+    if(d){ clearFilterState(); searchQ=''; const si0=document.getElementById("searchInput"); if(si0) si0.value=''; syncChipsToState(); jumpToCard(cardRef(d)); }
+    return;
+  }
+  if(go.q!=null){ runHomeSearch(go.q); return; }
+  clearFilterState();
+  searchQ=''; const si=document.getElementById("searchInput"); if(si) si.value='';
+  if(go.tab){ activeTab=go.tab; }
+  else{
+    if(go.cat) state.cat.add(go.cat);
+    if(go.st) state.st.add(go.st);
+    if(go.badge) state.badge.add(go.badge);
+    if(go.who) (INVENTORS.some(i=>i.key===go.who)?state.inv:state.brand).add(go.who);
+    activeTab="all";
+  }
+  syncChipsToState(); renderTabs(); render();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+/* Runs a search from the home view: same effect as typing it into the main
+   search box, then moves to the full list so the results are visible. */
+function runHomeSearch(q){
+  q=(q||"").trim(); if(!q) return;
+  clearFilterState(); syncChipsToState();
+  searchQ=q; const si=document.getElementById("searchInput"); if(si) si.value=q;
+  activeTab="all"; renderTabs(); render();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+/* How many entries a query would return with no filters on -- runs the real
+   passes() predicate (synonyms, accent folding, HQ terms and all), so a
+   chip's count always matches what tapping it shows. Filter Sets are
+   emptied and refilled in place, never replaced: chip buttons hold direct
+   references to them. */
+function countForQuery(q){
+  const savedQ=searchQ, saved=FILTER_KEYS.map(k=>[...state[k]]);
+  searchQ=q; clearFilterState();
+  const n=D.filter(passes).length;
+  searchQ=savedQ; FILTER_KEYS.forEach((k,i)=>saved[i].forEach(v=>state[k].add(v)));
+  return n;
+}
+/* Chosen once per page load so a language switch or resize re-render
+   doesn't reshuffle the row under the reader. */
+let rabbitPicks=null;
+function pickRabbitHoles(){
+  if(rabbitPicks) return rabbitPicks;
+  const shuffle=a=>{ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+  const curated=[...RABBIT_HOLES.filter(h=>h.pin), ...shuffle(RABBIT_HOLES.filter(h=>!h.pin))]
+    .slice(0,RABBIT_HOLES_SHOWN)
+    .map(h=>{ const d=h.go&&h.go.card ? fightCardMatches(h.go.card)[0] : null; return {hole:h, d}; });
+  const used=new Set(curated.map(c=>c.d).filter(Boolean));
+  const auto=shuffle(D.filter(d=>d.img && d.conf==="v" && d.w && !used.has(d)))
+    .slice(0,Math.max(0,RABBIT_HOLES_SHOWN-curated.length))
+    .map(d=>({hole:null, d}));
+  rabbitPicks=[...curated,...auto];
+  return rabbitPicks;
+}
+/* An automatic hole's blurb is the first sentence of the entry's own `w`,
+   cut at a word boundary if it runs long -- enough to tease, not the whole
+   argument. A curated hole's blurb is shown as written. */
+const RABBIT_AUTO_BLURB_MAX = 130;
+function autoBlurb(d){
+  const first=(tx(d.w)||"").split(/(?<=[.!?])\s/)[0];
+  if(first.length<=RABBIT_AUTO_BLURB_MAX) return first;
+  return first.slice(0, first.lastIndexOf(" ", RABBIT_AUTO_BLURB_MAX-3))+"…";
+}
+function rabbitHolesHTML(){
+  return pickRabbitHoles().map(({hole,d},i)=>{
+    const img = hole ? (hole.img || d?.img) : d.img;
+    const alt = hole ? tx(hole.imgAlt || d?.imgAlt) : tx(d.imgAlt);
+    const kicker = hole ? (tx(hole.kicker) ?? d?.y ?? "") : d.y;
+    const title = hole ? tx(hole.title) : tx(d.t);
+    const blurb = hole ? tx(hole.blurb) : autoBlurb(d);
+    return `<button type="button" class="rh-card" data-rh="${i}">
+      ${img?`<img src="${img}" alt="${alt||""}" loading="lazy">`:""}
+      <span class="rh-body">
+        ${kicker!==""?`<span class="yr">${kicker}</span>`:""}
+        <span class="rh-title">${title}</span>
+        <span class="rh-blurb">${blurb}</span>
+        <span class="rh-go">${t("homeReadStory")}</span>
+      </span>
+    </button>`;
+  }).join("");
+}
+let homePlaceholderTimer=null;
+const HOME_PLACEHOLDER_CYCLE_MS = 3000;
+function stopHomeTimers(){
+  stopCatTimelineCycle();
+  if(homePlaceholderTimer){ clearInterval(homePlaceholderTimer); homePlaceholderTimer=null; }
+}
 function renderStats(){
   const tl=$("#timeline");
   const total=D.length;
@@ -2482,10 +2733,48 @@ function renderStats(){
     .map(([k,n])=>`<span><span class="dot" style="background:${STATUS_COLOR_VAR[k]}"></span>${statusWord(k)} · ${n}</span>`).join("");
   const catBars=catCounts.map(c=>hbarRow(c.label, c.n, maxCat, {dataAttr:"statcat", dataVal:c.key})).join("");
   const whoBars=topWho.map(([w,n])=>hbarRow(w, n, maxWho, {dataAttr:"statwho", dataVal:encodeURIComponent(w), variant:"alt"})).join("");
+  const topBrands=Object.entries(whoCounts).filter(([w])=>BRANDS.includes(w)).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const brandChips=topBrands.map(([w,n])=>`<button type="button" class="home-chip" data-go-who="${encodeURIComponent(w)}">${w} <b>${n}</b></button>`).join("");
+  const suggestChips=HOME_SEARCH_SUGGESTIONS.map((sg,i)=>`<button type="button" class="home-chip" data-suggest="${i}">${tx(sg.label)} <b>${countForQuery(sg.q)}</b></button>`).join("");
+  const firstExample=HOME_SEARCH_SUGGESTIONS.length?tx(HOME_SEARCH_SUGGESTIONS[0].label):"Shimano";
   const soonList=soon.length?`<ul class="soon-list">${soon.map(d=>
       `<li data-jumpref="${cardRef(d)}"><span class="soon-yr">${d.exp}</span><span>${tx(d.t)} — ${d.a}</span></li>`).join("")}</ul>`
     :`<p class="stats-intro">${t("noneFreeSoon")}</p>`;
   tl.innerHTML=`<div class="stats-wrap">
+    <section class="home-sec">
+      <h3 class="home-sec-h">${t("homeHolesH")}</h3>
+      <div class="rh-row">${rabbitHolesHTML()}</div>
+    </section>
+    <section class="home-hero">
+      <div class="home-kicker">${t("homeKicker",total,FIRST_YEAR,NOW)}</div>
+      <h2 class="home-h">${t("homeHeadline")}</h2>
+      <p class="home-sub">${t("homeSub",total)}</p>
+      <form class="home-search" id="homeSearch" role="search">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="homeSearchInput" aria-label="${t("homeSearchAria")}" placeholder="${t("homePlaceholder",firstExample)}" autocomplete="off" spellcheck="false">
+        <button type="submit">${t("homeSearchBtn")}</button>
+      </form>
+      <p class="home-match" id="homeMatch" aria-live="polite"></p>
+      <div class="home-chips"><span class="home-lbl">${t("homePopular")}</span>${suggestChips}</div>
+    </section>
+    <div class="invite-grid">
+      <button type="button" class="invite" data-go-st="active"><span class="n">${stCounts.active}</span><span class="q">${t("inviteActive")}</span><span class="go">${t("inviteActiveGo")}</span></button>
+      <button type="button" class="invite" data-go-st="expired"><span class="n">${stCounts.expired}</span><span class="q">${t("inviteExpired")}</span><span class="go">${t("inviteExpiredGo")}</span></button>
+      <button type="button" class="invite lit" data-go-tab="fights"><span class="n">${litigated}</span><span class="q">${t("inviteLit")}</span><span class="go">${t("inviteLitGo")}</span></button>
+      <button type="button" class="invite" data-go-st="soon"><span class="n">${soon.length}</span><span class="q">${t("inviteSoon",NOW+2)}</span><span class="go">${t("inviteSoonGo")}</span></button>
+    </div>
+    <div class="stats-sec">
+      <div class="stats-sec-head">
+        <h3>${t("catTimelineTitle")}<span class="tap-note">${t("catTapNote")}</span></h3>
+        <button class="mini-btn" id="catTimelineModeToggle" title="${t('catTimelineModeTip')}">${t('catTimelineModeLabel',catTimelineMode)}</button>
+      </div>
+      <p class="stats-intro">${t("catTimelineIntro",STATS_TIMELINE_STEP_YR)}</p>
+      ${catTimelineHTML()}
+    </div>
+    <section class="home-sec">
+      <h3 class="home-sec-h">${t("homeBrandsH")}</h3>
+      <div class="home-chips">${brandChips}</div>
+    </section>
     <div class="stats-h-row">
       <div>
         <h2 class="stats-h">${t("statsTitle")}</h2>
@@ -2499,12 +2788,6 @@ function renderStats(){
         </div>
       </details>
     </div>
-    <div class="stat-grid">
-      <div class="stat-box"><div class="stat-num">${total}</div><div class="stat-lbl">${t("totalEntriesLbl")}</div></div>
-      <div class="stat-box"><div class="stat-num">${stCounts.active}</div><div class="stat-lbl">${t("activeLbl")}</div></div>
-      <div class="stat-box"><div class="stat-num">${stCounts.expired}</div><div class="stat-lbl">${t("expiredFreeLbl")}</div></div>
-      <div class="stat-box"><div class="stat-num">${litigated}</div><div class="stat-lbl">${t("litigatedLbl")}</div></div>
-    </div>
     <div class="stats-sec">
       <h3>${t("statusSplit")}</h3>
       <div class="stack-bar">${stackSegs}</div>
@@ -2513,14 +2796,6 @@ function renderStats(){
     <div class="stats-sec">
       <h3>${t("byCategory")}</h3>
       ${catBars}
-    </div>
-    <div class="stats-sec">
-      <div class="stats-sec-head">
-        <h3>${t("catTimelineTitle")}</h3>
-        <button class="mini-btn" id="catTimelineModeToggle" title="${t('catTimelineModeTip')}">${t('catTimelineModeLabel',catTimelineMode)}</button>
-      </div>
-      <p class="stats-intro">${t("catTimelineIntro",STATS_TIMELINE_STEP_YR)}</p>
-      ${catTimelineHTML()}
     </div>
     <div class="stats-sec">
       <h3>${t("litTimelineTitle")}</h3>
@@ -2539,6 +2814,25 @@ function renderStats(){
     </div>
     <p class="stats-note">${t("statsNote")}</p>
   </div>`;
+  // Atlas (home) blocks
+  const holes=pickRabbitHoles();
+  tl.querySelectorAll("[data-rh]").forEach(b=>{ b.onclick=()=>{
+    const {hole,d}=holes[Number(b.dataset.rh)];
+    followGo(hole ? hole.go : {card:d.num || txEN(d.t)});
+  };});
+  tl.querySelectorAll("[data-suggest]").forEach(b=>{ b.onclick=()=>runHomeSearch(HOME_SEARCH_SUGGESTIONS[Number(b.dataset.suggest)].q); });
+  tl.querySelectorAll("[data-go-st]").forEach(b=>{ b.onclick=()=>followGo({st:b.dataset.goSt}); });
+  tl.querySelectorAll("[data-go-tab]").forEach(b=>{ b.onclick=()=>followGo({tab:b.dataset.goTab}); });
+  tl.querySelectorAll("[data-go-who]").forEach(b=>{ b.onclick=()=>followGo({who:decodeURIComponent(b.dataset.goWho)}); });
+  const homeForm=$("#homeSearch"), homeInp=$("#homeSearchInput"), homeMatch=$("#homeMatch");
+  if(homeForm){
+    homeForm.onsubmit=e=>{ e.preventDefault(); runHomeSearch(homeInp.value); };
+    let matchTimer;
+    homeInp.addEventListener("input",()=>{
+      clearTimeout(matchTimer);
+      matchTimer=setTimeout(()=>{ const q=homeInp.value.trim(); homeMatch.textContent=q?t("homeMatchCount",countForQuery(q)):""; },SEARCH_DEBOUNCE_MS);
+    });
+  }
   // wire up jumps
   tl.querySelectorAll("[data-jumpref]").forEach(li=>{ li.onclick=()=>jumpToCard(li.dataset.jumpref); });
   tl.querySelectorAll("[data-statcat]").forEach(r=>{ r.onclick=()=>{
@@ -2553,11 +2847,54 @@ function renderStats(){
     syncChipsToState(); activeTab="all"; renderTabs(); render();
     window.scrollTo({top:0,behavior:"smooth"});
   };});
+  /* Category-over-time segment click: open the list filtered to that one
+     category (same reset-then-filter as the "By category" bars above), then
+     scroll to the first matching card in the clicked bracket. The bracket
+     is a scroll target, not a filter -- the reader lands on that era but
+     can keep scrolling through the rest of the category's history. */
+  tl.querySelectorAll("[data-tlcat]").forEach(seg=>{ seg.onclick=()=>{
+    const from=Number(seg.dataset.tlfrom), to=Number(seg.dataset.tlto);
+    clearFilterState(); state.cat.add(seg.dataset.tlcat);
+    searchQ=''; const si=document.getElementById("searchInput"); if(si) si.value='';
+    syncChipsToState(); activeTab="all"; renderTabs(); render();
+    requestAnimationFrame(()=>{
+      const card=[...document.querySelectorAll("#timeline .card[data-y]")]
+        .find(c=>{ const y=Number(c.dataset.y); return y>=from&&y<=to; });
+      const target=card?.closest(".era")||card;
+      if(target) target.scrollIntoView({behavior:"smooth",block:"start"});
+      else window.scrollTo({top:0,behavior:"smooth"});
+    });
+  };});
   const catModeBtn=$("#catTimelineModeToggle");
-  if(catModeBtn) catModeBtn.onclick=()=>{
-    catTimelineMode = catTimelineMode==="count" ? "share" : "count";
-    renderStats(); // cheap: only this tab's own chart depends on the mode
+  const catChart=tl.querySelector(".stats-timeline.cat-anim");
+  const applyCatMode=()=>{
+    if(catChart) catChart.classList.toggle("is-share",catTimelineMode==="share");
+    if(catModeBtn) catModeBtn.textContent=t("catTimelineModeLabel",catTimelineMode);
   };
+  if(catModeBtn) catModeBtn.onclick=()=>{
+    catTimelineAuto=false; stopCatTimelineCycle();
+    catTimelineMode = catTimelineMode==="count" ? "share" : "count";
+    applyCatMode();
+  };
+  stopHomeTimers();
+  /* The big search box's placeholder rotates through the suggestion labels
+     until the reader focuses it or starts typing. */
+  if(homeInp && HOME_SEARCH_SUGGESTIONS.length>1){
+    let phIdx=0;
+    homePlaceholderTimer=setInterval(()=>{
+      if(!homeInp.isConnected || document.activeElement===homeInp || homeInp.value){ if(!homeInp.isConnected) stopHomeTimers(); return; }
+      phIdx=(phIdx+1)%HOME_SEARCH_SUGGESTIONS.length;
+      homeInp.placeholder=t("homePlaceholder",tx(HOME_SEARCH_SUGGESTIONS[phIdx].label));
+    },HOME_PLACEHOLDER_CYCLE_MS);
+  }
+  const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(catTimelineAuto && catChart && !reducedMotion){
+    catTimelineTimer=setInterval(()=>{
+      if(!catChart.isConnected){ stopCatTimelineCycle(); return; }
+      catTimelineMode = catTimelineMode==="count" ? "share" : "count";
+      applyCatMode();
+    },CAT_TIMELINE_CYCLE_MS);
+  }
   tl.querySelectorAll("[data-export]").forEach(btn=>{
     btn.onclick=()=>{
       if(btn.dataset.export==="json") downloadBlob(EXPORT_FILENAME.json,"application/json;charset=utf-8",JSON.stringify(D,null,2));
@@ -2712,7 +3049,7 @@ function syncChipsToState(){
 }
 function syncHash(){
   const p=new URLSearchParams();
-  if(activeTab!=="cat") p.set("tab",activeTab);
+  if(activeTab!==DEFAULT_TAB) p.set("tab",activeTab);
   HASH_SETS.forEach(k=>{ if(state[k].size) p.set(k,[...state[k]].join(",")); });
   if(searchQ) p.set("q",searchQ);
   if(state.lang!=="en") p.set("lang",state.lang); // langFromHash() already reads this back
@@ -2733,6 +3070,9 @@ function initFromHash(){
   if(hashQuery){ searchQ=hashQuery; const si=document.getElementById("searchInput"); if(si) si.value=hashQuery; }
   const tab=p.get("tab");
   if(tab && document.querySelector(`.tab-btn[data-tab="${tab}"]`)) activeTab=tab;
+  /* Links shared before the Atlas tab became the default omitted tab= when
+     they pointed at the Category tab -- open those there, not on the home view. */
+  else if(!tab && (HASH_SETS.some(k=>p.get(k)) || hashQuery)) activeTab="cat";
   pendingCardRef=p.get("p");
   syncChipsToState();
   renderTabs();
@@ -2953,7 +3293,15 @@ document.getElementById("eraScopeToggle").addEventListener("click",()=>{
 (()=>{
   const inp=document.getElementById("searchInput");
   let searchTimer;
-  inp.addEventListener("input",()=>{ clearTimeout(searchTimer); searchTimer=setTimeout(()=>{ searchQ=inp.value.trim(); render(); },SEARCH_DEBOUNCE_MS); });
+  inp.addEventListener("input",()=>{ clearTimeout(searchTimer); searchTimer=setTimeout(()=>{
+    searchQ=inp.value.trim();
+    // Atlas and Fights don't show search results -- typing moves to the full list.
+    if(searchQ && (activeTab==="stats"||activeTab==="fights")){
+      // Those views hide the filter chips, so any filter still set from earlier would be invisible -- start clean.
+      clearFilterState(); syncChipsToState(); activeTab="all"; renderTabs();
+    }
+    render();
+  },SEARCH_DEBOUNCE_MS); });
   inp.addEventListener("keydown",e=>{ if(e.key==="Escape"){ inp.value=''; searchQ=''; render(); } });
 })();
 /* ======== COLORADO MTB INNOVATION PANEL ======== */
