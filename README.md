@@ -24,8 +24,8 @@ An interactive timeline of mountain bike intellectual property: 295 patents and 
 | **Brands** | 161 |
 | **Named inventors** | 56 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 184 |
-| **Medium confidence** | 63 |
+| **Verified entries** | 185 |
+| **Medium confidence** | 62 |
 | **Draft / in progress** | 48 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -517,6 +517,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
   
   Each image's description was written after viewing it, in both languages.
 - **WO patent numbers now display as WIPO writes them:** "WO 2024/107,631" instead of "WO 2024,107,631". A trailing kind code is kept ("WO 2007/117,884 A2"). This fixes every card link and "cite this entry" string that includes a WO number, via one new `woLabel()` helper.
+
+- **Gates Carbon Drive / CDX CenterTrack upgraded `m` → `v`.** Now links US 10,088,020 ("Belt drive system") and AU 2018271340 B2. Jon verified both against Google Patents. Search results independently confirm only the US patent's title, not its assignee or dates. The entry's existing dates, expiry estimate and litigation text are unchanged. Counts synced: verified 184→185, medium 63→62.
 
 ## Recent updates (July 2026)
 
