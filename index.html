@@ -228,6 +228,10 @@ header::before{
 .home-lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-right:2px}
 .home-chip{border:1px solid var(--card-border);background:var(--surface);border-radius:999px;padding:7px 12px;min-height:40px;font:inherit;font-size:14px;color:var(--ink);display:inline-flex;gap:6px;align-items:center;cursor:pointer}
 .home-chip:hover,.home-chip:focus-visible{border-color:var(--primary);outline:none}
+/* The rotating chip: primary-tinted border so it reads as the "changing" one. */
+.rot-chip{border-color:var(--primary);border-style:dashed;justify-content:center}
+.rot-inner{display:inline-flex;gap:6px;align-items:center;transition:opacity .3s ease}
+.rot-inner.fading{opacity:0}
 .home-chip b{font-family:var(--font-mono);font-size:11px;color:var(--ink-soft);font-weight:600}
 /* Invitation cards: the headline numbers, each opening its own list. */
 .invite-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 26px}
@@ -1361,9 +1365,23 @@ const HOME_SEARCH_SUGGESTIONS = [
   {label:{en:"Gearboxes",fr:"Boîtes de vitesses"}, q:"gearbox"},
   {label:{en:"VPP",fr:"VPP"}, q:"vpp"},
   {label:{en:"Tires & tubeless",fr:"Pneus et tubeless"}, q:"tubeless"}, // "tubeless" shares a SEARCH_SYNONYMS group with tire/tyre, so this is every tire patent
-  {label:{en:"Boost spacing",fr:"Entraxe Boost"}, q:"boost"},
+  {label:{en:"Modular",fr:"Modulaire"}, q:"modular"},
   {label:{en:"Made in Colorado",fr:"Made in Colorado"}, q:"colorado"},
 ];
+/* One extra chip, shown first in the Popular row, that cycles through these
+   every HOME_ROTATE_MS (starting on a random one each visit). Same {label,q}
+   shape and the same live-count rule as HOME_SEARCH_SUGGESTIONS. It pauses
+   while hovered or focused so the label can't change under a tap, and
+   stays on its starting keyword under prefers-reduced-motion. */
+const HOME_SEARCH_ROTATING = [
+  {label:{en:"Wireless",fr:"Sans fil"}, q:"wireless"},
+  {label:{en:"E-bikes",fr:"VAE"}, q:"e-bike"},
+  {label:{en:"Disc brakes",fr:"Freins à disque"}, q:"disc brake"},
+  {label:{en:"Narrow-wide",fr:"Narrow-wide"}, q:"narrow wide"},
+  {label:{en:"Hitch racks",fr:"Porte-vélos d'attelage"}, q:"hitch"},
+];
+const HOME_ROTATE_MS = 4000;
+const ROT_FADE_MS = 300; // matches .rot-inner's opacity transition
 
 /* ======== STATE ======== */
 const state = { cat:new Set(), st:new Set(), badge:new Set(), inv:new Set(), brand:new Set(), lang:"en" };
@@ -2706,10 +2724,13 @@ function rabbitHolesHTML(){
   }).join("");
 }
 let homePlaceholderTimer=null;
+let homeRotateTimer=null;
+let homeRotateIdx=Math.floor(Math.random()*Math.max(1,HOME_SEARCH_ROTATING.length));
 const HOME_PLACEHOLDER_CYCLE_MS = 3000;
 function stopHomeTimers(){
   stopCatTimelineCycle();
   if(homePlaceholderTimer){ clearInterval(homePlaceholderTimer); homePlaceholderTimer=null; }
+  if(homeRotateTimer){ clearInterval(homeRotateTimer); homeRotateTimer=null; }
 }
 function renderStats(){
   const tl=$("#timeline");
@@ -2736,6 +2757,8 @@ function renderStats(){
   const topBrands=Object.entries(whoCounts).filter(([w])=>BRANDS.includes(w)).sort((a,b)=>b[1]-a[1]).slice(0,8);
   const brandChips=topBrands.map(([w,n])=>`<button type="button" class="home-chip" data-go-who="${encodeURIComponent(w)}">${w} <b>${n}</b></button>`).join("");
   const suggestChips=HOME_SEARCH_SUGGESTIONS.map((sg,i)=>`<button type="button" class="home-chip" data-suggest="${i}">${tx(sg.label)} <b>${countForQuery(sg.q)}</b></button>`).join("");
+  const rot=HOME_SEARCH_ROTATING[homeRotateIdx];
+  const rotChip=rot?`<button type="button" class="home-chip rot-chip" id="homeRotChip"><span class="rot-inner">${tx(rot.label)} <b>${countForQuery(rot.q)}</b></span></button>`:"";
   const firstExample=HOME_SEARCH_SUGGESTIONS.length?tx(HOME_SEARCH_SUGGESTIONS[0].label):"Shimano";
   const soonList=soon.length?`<ul class="soon-list">${soon.map(d=>
       `<li data-jumpref="${cardRef(d)}"><span class="soon-yr">${d.exp}</span><span>${tx(d.t)} — ${d.a}</span></li>`).join("")}</ul>`
@@ -2755,14 +2778,8 @@ function renderStats(){
         <button type="submit">${t("homeSearchBtn")}</button>
       </form>
       <p class="home-match" id="homeMatch" aria-live="polite"></p>
-      <div class="home-chips"><span class="home-lbl">${t("homePopular")}</span>${suggestChips}</div>
+      <div class="home-chips"><span class="home-lbl">${t("homePopular")}</span>${rotChip}${suggestChips}</div>
     </section>
-    <div class="invite-grid">
-      <button type="button" class="invite" data-go-st="active"><span class="n">${stCounts.active}</span><span class="q">${t("inviteActive")}</span><span class="go">${t("inviteActiveGo")}</span></button>
-      <button type="button" class="invite" data-go-st="expired"><span class="n">${stCounts.expired}</span><span class="q">${t("inviteExpired")}</span><span class="go">${t("inviteExpiredGo")}</span></button>
-      <button type="button" class="invite lit" data-go-tab="fights"><span class="n">${litigated}</span><span class="q">${t("inviteLit")}</span><span class="go">${t("inviteLitGo")}</span></button>
-      <button type="button" class="invite" data-go-st="soon"><span class="n">${soon.length}</span><span class="q">${t("inviteSoon",NOW+2)}</span><span class="go">${t("inviteSoonGo")}</span></button>
-    </div>
     <div class="stats-sec">
       <div class="stats-sec-head">
         <h3>${t("catTimelineTitle")}<span class="tap-note">${t("catTapNote")}</span></h3>
@@ -2806,6 +2823,12 @@ function renderStats(){
       <h3>${t("mostPatented")}</h3>
       <p class="stats-intro">${t("mostPatentedIntro")}</p>
       ${whoBars}
+    </div>
+    <div class="invite-grid">
+      <button type="button" class="invite" data-go-st="active"><span class="n">${stCounts.active}</span><span class="q">${t("inviteActive")}</span><span class="go">${t("inviteActiveGo")}</span></button>
+      <button type="button" class="invite" data-go-st="expired"><span class="n">${stCounts.expired}</span><span class="q">${t("inviteExpired")}</span><span class="go">${t("inviteExpiredGo")}</span></button>
+      <button type="button" class="invite lit" data-go-tab="fights"><span class="n">${litigated}</span><span class="q">${t("inviteLit")}</span><span class="go">${t("inviteLitGo")}</span></button>
+      <button type="button" class="invite" data-go-st="soon"><span class="n">${soon.length}</span><span class="q">${t("inviteSoon",NOW+2)}</span><span class="go">${t("inviteSoonGo")}</span></button>
     </div>
     <div class="stats-sec">
       <h3>${ICON_HOURGLASS}${t("goingFreeSoonH3")}</h3>
@@ -2886,6 +2909,37 @@ function renderStats(){
       phIdx=(phIdx+1)%HOME_SEARCH_SUGGESTIONS.length;
       homeInp.placeholder=t("homePlaceholder",tx(HOME_SEARCH_SUGGESTIONS[phIdx].label));
     },HOME_PLACEHOLDER_CYCLE_MS);
+  }
+  const rotChipEl=$("#homeRotChip");
+  if(rotChipEl){
+    rotChipEl.onclick=()=>runHomeSearch(HOME_SEARCH_ROTATING[homeRotateIdx].q);
+    /* Size the chip to its longest keyword once, so the chips after it
+       don't shift sideways every time the label changes. */
+    const rotInner=rotChipEl.querySelector(".rot-inner"), startHTML=rotInner.innerHTML;
+    let widest=0;
+    HOME_SEARCH_ROTATING.forEach(r=>{ rotInner.innerHTML=`${tx(r.label)} <b>${countForQuery(r.q)}</b>`; widest=Math.max(widest,rotChipEl.offsetWidth); });
+    rotInner.innerHTML=startHTML;
+    if(widest) rotChipEl.style.minWidth=widest+"px";
+    let paused=false;
+    rotChipEl.addEventListener("mouseenter",()=>paused=true);
+    rotChipEl.addEventListener("mouseleave",()=>paused=false);
+    rotChipEl.addEventListener("focus",()=>paused=true);
+    rotChipEl.addEventListener("blur",()=>paused=false);
+    const rm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(!rm && HOME_SEARCH_ROTATING.length>1){
+      homeRotateTimer=setInterval(()=>{
+        if(!rotChipEl.isConnected){ stopHomeTimers(); return; }
+        if(paused) return;
+        const inner=rotChipEl.querySelector(".rot-inner");
+        inner.classList.add("fading");
+        setTimeout(()=>{
+          homeRotateIdx=(homeRotateIdx+1)%HOME_SEARCH_ROTATING.length;
+          const r=HOME_SEARCH_ROTATING[homeRotateIdx];
+          inner.innerHTML=`${tx(r.label)} <b>${countForQuery(r.q)}</b>`;
+          inner.classList.remove("fading");
+        },ROT_FADE_MS);
+      },HOME_ROTATE_MS);
+    }
   }
   const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(catTimelineAuto && catChart && !reducedMotion){

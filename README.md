@@ -71,8 +71,8 @@ A dedicated tab frames the industry's eight major disputes as named rivalries �
 The first tab, and what a plain visit opens on. Built to get a reader searching, from top to bottom:
 - **Pick a rabbit hole:** three story cards, each showing a patent drawing, the year, the title and a one-line teaser. Tapping one opens that entry. Cards come from `RABBIT_HOLES` (hand-written, optionally pinned) first, and any empty slots are filled with random verified entries that have drawings, so the row changes on each visit.
 - **"Who invented your bike?":** a large search box whose placeholder rotates through example searches, plus "Popular" chips (`HOME_SEARCH_SUGGESTIONS`) that each show a live match count.
-- **Four invitation cards:** still in force, expired, went to court and expiring soon. Each opens its list (or the Patent Fights tab).
 - The category-over-time chart (tap any colour to jump), **Start from a brand** chips, and then the full statistics section described below.
+- **Four invitation cards**, below Most-patented names: still in force, expired, went to court and expiring soon. Each opens its list (or the Patent Fights tab).
 
 Shared links keep working. `#tab=stats` opens this tab, and older filter links without a `tab=` parameter still open on the Category tab.
 
@@ -494,6 +494,10 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 
 - **The Stats tab is now the "Atlas" tab: the first tab and the landing view.** It opens with **Pick a rabbit hole** (three drawing-led story cards), then **"Who invented your bike?"** (a large search box with rotating example placeholders, a live match count as you type, and one-tap "Popular" search chips with live counts), four **invitation cards** that replace the old number boxes and each open their list, the clickable category chart, **Start from a brand** chips, and the original statistics under "Atlas by the numbers." Two new registries sit after `FIGHTS`: `RABBIT_HOLES` (hand-written cards, each with a title, a teaser and a `go` target, which is a card, a search, a filter or a tab; `pin:true` keeps one always shown) and `HOME_SEARCH_SUGGESTIONS`. `RABBIT_HOLES` ships empty, so the row is fully automatic until curated cards are added. The internal tab key stays `stats`, so existing `#tab=stats` links still work. Older links with filters but no `tab=` still open on the Category tab. Typing in the main search box from the Atlas or Fights tab now moves to the full list with filters cleared; before, it did nothing visible there. On phones, the header's era scrubber is hidden on the Atlas tab only, so the page's content starts higher up; the category chart covers the same ground. New chrome strings are in both languages; the French is AI-drafted, like the rest of the interface.
 - **Search fix: "dropper" no longer matches unrelated entries.** The `SEARCH_SYNONYMS` group for dropper posts included the bare word "post", which matched "post-GATT", "in post" and French words like "postérieur", adding 10 unrelated cards to any dropper or seatpost search (27 results fell to 18). The group is now `["dropper","seatpost"]`.
+
+- **Atlas tab "Popular" chips: "Boost spacing" swapped for "Modular" (5 matches), plus one rotating chip.** A new `HOME_SEARCH_ROTATING` registry holds five keywords: Wireless (11), E-bikes (12), Disc brakes (15), Narrow-wide (7) and Hitch racks (8). They were chosen because their results stay on topic; "carbon" and "air spring" were tried and rejected because their results drifted into unrelated cards. The rotating chip sits first in the row, has a dashed border, and fades to the next keyword every 4 seconds, starting on a random one each visit. It pauses while hovered or focused so the label can't change under a tap, stays still under "reduce motion", and is sized to its longest keyword so the chips after it don't shift.
+
+- **Atlas tab: the four invitation cards (still in force, expired, went to court, expiring soon) moved below "Most-patented names,"** just above the Expiring soon list. Markup reorder only; behavior unchanged.
 
 ## Recent updates (July 2026)
 
