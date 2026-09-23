@@ -24,8 +24,8 @@ An interactive timeline of mountain bike intellectual property: 297 patents and 
 | **Brands** | 163 |
 | **Named inventors** | 56 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 187 |
-| **Medium confidence** | 62 |
+| **Verified entries** | 188 |
+| **Medium confidence** | 61 |
 | **Draft / in progress** | 48 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -529,6 +529,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Triple Triangle entry: Hellenic-stay origin and trademark drawing.** Summary now notes the layout predates GT: British "Hellenic stays," named for frame builder Fred Hellens and traditionally dated to 1923 (per Hetchins' history page and Sheldon Brown). The 1923 date is stated as traditional because retro-bike researchers report no documentation or surviving Hellens bicycle from that year. Added the drawing of GT's word-and-logo trademark (U.S. serial no. 73752964), linked to its Justia trademark record; hetchins.org and Justia are blocked from this environment, so both pages were confirmed through search results only. No count changes.
 - **New entry: Vorsprung high-dynamic-range air spring (US 12,442,429).** "High dynamic range suspension apparatus with selective fluid pressure communication," Vorsprung Technologies Ltd (British Columbia), granted October 14, 2025; published application US 2022/0373056 linked alongside. A separator connects a secondary negative air chamber for the first part of the stroke, then seals it off, giving a coil-like linear rate followed by an air spring's end-stroke ramp. Placed in Forks & Damping next to the multiple-gas-volumes entry; `w` notes the match with Vorsprung's Secus fork upgrade (enlarged negative chamber plus "Midstroke Support Valve"), stated as a match, since the patent names no product. Image: Fig. 1G of the application (spring-force curves). Added `Vorsprung` to `BRANDS` (HQ British Columbia). Ships at `conf:"v"`: number, title and grant date confirmed via the USPTO Official Gazette and USPTO document listing. **Unconfirmed:** the filing date and inventor names. The application PDF is an image-only scan and the granted PDF was unreachable even from the GitHub runner, so `y: 2022` (the publication year) and `exp: 2042` are estimates, which the entry says. Counts: 297 total, 139 active, 187 verified, 163 brands.
 - **Rotated the Kelley strap-drum bicycle drawing (US 321,932) 90° clockwise** so the bicycle stands upright; the printed patent header now runs vertically along the right edge, the same tradeoff as earlier rotations.
+- **Lawwill four-bar upgraded `m` → `v` with three patents and a drawing.** Now linked to US 4,789,174 (filed April 27, 1987, granted December 6, 1988), US 5,121,937 (granted June 16, 1992) and US 5,957,473 ("Rear suspension bicycle"). The summary describes the trapezoidal swing-arm/control-arm/hub-plate layout that balances chain forces. Dates corrected: filed 1987 and granted 1988, instead of the earlier 1991/1993; expiry is 2005 under the pre-1995 rule (grant + 17). Image: Fig. 1 of US 4,789,174. The '174 and '937 dates come from Justia records; for '473 only the title was confirmed. The entry's deep link changes from `lawwill-four-bar` to `4789174`, because numbered entries are anchored by number. Counts: 188 verified, 61 medium.
 
 ## Recent updates (July 2026)
 
