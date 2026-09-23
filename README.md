@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 297 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 298 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,19 +14,19 @@ An interactive timeline of mountain bike intellectual property: 297 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 297 |
+| **Total entries** | 298 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 139 |
 | **Expired patents** | 96 |
-| **Pending applications** | 44 |
+| **Pending applications** | 45 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
 | **Brands** | 163 |
 | **Named inventors** | 56 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 188 |
-| **Medium confidence** | 61 |
-| **Draft / in progress** | 48 |
+| **Verified entries** | 189 |
+| **Medium confidence** | 62 |
+| **Draft / in progress** | 47 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -532,6 +532,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Lawwill four-bar upgraded `m` → `v` with three patents and a drawing.** Now linked to US 4,789,174 (filed April 27, 1987, granted December 6, 1988), US 5,121,937 (granted June 16, 1992) and US 5,957,473 ("Rear suspension bicycle"). The summary describes the trapezoidal swing-arm/control-arm/hub-plate layout that balances chain forces. Dates corrected: filed 1987 and granted 1988, instead of the earlier 1991/1993; expiry is 2005 under the pre-1995 rule (grant + 17). Image: Fig. 1 of US 4,789,174. The '174 and '937 dates come from Justia records; for '473 only the title was confirmed. The entry's deep link changes from `lawwill-four-bar` to `4789174`, because numbered entries are anchored by number. Counts: 188 verified, 61 medium.
 - **Added Fig. 1 of US 4,995,753 to the Bill Shook saddle & seatpost entry**: the seatpost head clamp gripping the saddle rail. English and French alt text, linked to the patent. No count changes.
 - **Lawwill four-bar: added Mert Lawwill's biography to the "why it matters" text.** It gives his 1969 AMA Grand National Championship, his induction into the Mountain Bike Hall of Fame (1997) and the AMA Motorcycle Hall of Fame (1998), and his death on May 6, 2026, at 85, per the AMA, Bicycle Retailer and Pinkbike. The summary's "hall-of-famer" note moved there so it isn't said twice. No count changes.
+- **Added a new suspension entry: Matheson & Heim's two-axis rear-wheel path (US 9,908,583)**, and upgraded the existing Guerrilla Gravity "Revved" frame entry with its real patent number. US 9,908,583, "Bicycle rear suspension with a two axis wheel path," was filed December 23, 2014 by W. Hank Matheson and Jonathan R. Heim (originally assigned to their company, Bicycle Fabrications LLC, later reassigned to the two inventors), granted March 6, 2018, and claims a swing arm whose axle travels independently along vertical and rearward axes rather than one fixed arc, so the path itself shifts with the direction of impact. Development reportedly began in 2010, per the source material supplied for this entry. Ships `conf:"v"` — number, filing/grant dates and both inventor names cross-confirmed across Justia, the USPTO PDF, and Google Patents search snippets. Image: Fig. 1, the whole-bike side view with both axle-travel axes labeled (user-supplied, already in `pictures/`). The Guerrilla Gravity entry previously carried `num:null` at `conf:"l"`; it now cites the published application US 2018/0264756 A1 ("Composite structures and methods of forming composite structures," filed March 19, 2018, Guerrilla Industries LLC, inventors Matt Giaraffa and William Montague) underlying the company's "Revved Carbon" process, moved to `conf:"m"` and `st:"pending"` since this pass could not confirm whether the patent Revved Industries announced as granted in March 2021 carries this same application's number or a later continuation's — left as an open flag rather than guessed. Two user-supplied figures added (Fig. 1, the composite frame tube; Fig. 10, the heated-fluid forming process). No new `BRANDS`/`INVENTORS` registrations — Guerrilla Gravity was already registered, and neither Matheson/Heim nor Giaraffa/Montague are recurring figures elsewhere in the atlas. Counts synced: 297 → 298 total, pending 44 → 45, verified 188 → 189, medium 61 → 62, draft 48 → 47; active, expired, litigated, brands, inventors and jurisdictions all unchanged. All six hardcoded `index.html` count strings updated to match.
 
 ## Recent updates (July 2026)
 
