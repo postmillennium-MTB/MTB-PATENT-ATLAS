@@ -20,13 +20,14 @@
 <meta name="twitter:description" content="An interactive timeline of 297 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta name="twitter:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/social-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Nunito:wght@600;700&family=Bitter:wght@600;700&family=Anton&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Nunito:wght@600;700&family=Bitter:wght@500;600;700&family=Anton&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --radius:10px;
   --font-display:'Barlow Condensed',system-ui,sans-serif;
   --font-body:'Barlow',system-ui,sans-serif;
   --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --ui-weight:600; /* weight for small display-font UI text (tabs, sub-heads); a theme overrides this when its display font reads heavy at small sizes */
 }
 /* ===== WMBC — clean trail / topographic (soft, rounded, organic) ===== */
 [data-theme="wmbc"]{
@@ -53,6 +54,11 @@
   --card-shadow:none; --pill-radius:3px; --era-line:3px;
   --header-bg:#3D3122;
   --font-display:'Bitter',Georgia,serif;
+  /* Bitter's bold weights read heavy/muddy at small UI sizes (tabs, sub-
+     heads) even though the same weight is crisp at H1 size — so small
+     display-font text in this theme drops to a lighter weight than the
+     other themes' shared default (see --ui-weight below). */
+  --ui-weight:500;
 }
 /* ===== CAMBA — bold racing / high contrast (sharp, black rules, urgent) ===== */
 [data-theme="camba"]{
@@ -261,7 +267,7 @@ header::before{
 .stat-num{font-family:var(--font-display);font-weight:700;font-size:30px;line-height:1;color:var(--primary)}
 .stat-lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
 .stats-sec{margin-bottom:22px}
-.stats-sec h3{font-family:var(--font-display);font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:8px}
+.stats-sec h3{font-family:var(--font-display);font-weight:var(--ui-weight);font-size:19px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:8px}
 /* Wraps an <h3> plus one small control (e.g. the category-timeline's
    Count/Share toggle) on the same line, wrapping to two lines on a narrow
    screen rather than crowding — the h3 keeps its own margin-bottom above,
@@ -415,7 +421,7 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 /* ---------- Filter tabs ---------- */
 .tab-row{max-width:880px;margin:0 auto;display:flex;gap:5px;overflow-x:auto;padding:3px 16px;scrollbar-width:none}
 .tab-row::-webkit-scrollbar{display:none}
-.tab-btn{flex:0 0 auto;position:relative;border:1px solid var(--card-border);background:var(--surface);color:var(--ink-soft);border-radius:8px 8px 0 0;padding:9px 14px;font-size:14px;font-weight:600;border-bottom:none;font-family:var(--font-display);letter-spacing:.01em;min-height:44px}
+.tab-btn{flex:0 0 auto;position:relative;border:1px solid var(--card-border);background:var(--surface);color:var(--ink-soft);border-radius:8px 8px 0 0;padding:9px 14px;font-size:14px;font-weight:var(--ui-weight);border-bottom:none;font-family:var(--font-display);letter-spacing:.01em;min-height:44px}
 .tab-btn.on{background:var(--primary);color:#fff;border-color:var(--primary)}
 .tab-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 .tab-dot{position:absolute;top:6px;right:6px;width:6px;height:6px;border-radius:50%;background:var(--accent);display:none}
