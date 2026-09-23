@@ -160,6 +160,7 @@ take by default.
   // img: "pictures/US1234567A.png",   // OPTIONAL — only if a drawing was actually sourced and viewed — NOT translated
   // imgAlt: {en:"…", fr:"…"},         // required alongside img — describe what figure/number is shown, both languages
   // searchUrl: "https://patents.google.com/?inventor=Jane+Doe", // OPTIONAL — see below — NOT translated
+  // recordUrl: "https://euipo.europa.eu/eSearch/#details/designs/015091656-0001", // OPTIONAL — direct link to an official record Google Patents doesn't index (EU RCDs); wins over searchUrl — NOT translated
 }
 ```
 

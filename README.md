@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 294 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 295 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 294 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 294 |
+| **Total entries** | 295 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 136 |
+| **Active patents** | 137 |
 | **Expired patents** | 96 |
 | **Pending applications** | 44 |
 | **Litigated entries** | 27 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 294 patents and 
 | **Brands** | 161 |
 | **Named inventors** | 56 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 183 |
+| **Verified entries** | 184 |
 | **Medium confidence** | 63 |
 | **Draft / in progress** | 48 |
 
@@ -498,6 +498,16 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Atlas tab "Popular" chips: "Boost spacing" swapped for "Modular" (5 matches), plus one rotating chip.** A new `HOME_SEARCH_ROTATING` registry holds five keywords: Wireless (11), E-bikes (12), Disc brakes (15), Narrow-wide (7) and Hitch racks (8). They were chosen because their results stay on topic; "carbon" and "air spring" were tried and rejected because their results drifted into unrelated cards. The rotating chip sits first in the row, has a dashed border, and fades to the next keyword every 4 seconds, starting on a random one each visit. It pauses while hovered or focused so the label can't change under a tap, stays still under "reduce motion", and is sized to its longest keyword so the chips after it don't shift.
 
 - **Atlas tab: the four invitation cards (still in force, expired, went to court, expiring soon) moved below "Most-patented names,"** just above the Expiring soon list. Markup reorder only; behavior unchanged.
+
+- **SE Quadangle entry now names BMX.** Its summary (both languages) now identifies the Quadangle as SE Racing's BMX race frame and ties it to early BMX racing, so a "BMX" search finds it. Wording only; tier (`l`), dates and other fields unchanged.
+
+- **Schwinn Sting-Ray banana seat entry now connects it to BMX.** One sentence added to its "why it matters" text (both languages): the Sting-Ray was BMX's first race bike, raced by kids on Southern California dirt tracks in the late 1960s, before purpose-built BMX frames existed. Consistent with Britannica's and Wikipedia's BMX histories (the first organized race was at Palms Park, Santa Monica, in 1969). Tier (`v`) unchanged; the addition is history, not a patent claim.
+
+- **New entry: e*thirteen Sidekick anti-kickback hub (US 12,643,343).** "Hub system, method and device with adjustable deadband," filed 2023 by The Hive Global (e*thirteen's parent); also published as WO 2024/107631 and US 2024/0157728, all three linked on the card. A freehub with a deliberate, adjustable deadband that absorbs chain growth so suspension compression doesn't kick back through the pedals, and can be set wide enough to coast silently. Tier `v`: the grant number comes from e*thirteen's own patent-marking page, and the WO/US publications, assignee and inventor are consistent across multiple search results. The marking page and Google Patents are blocked from this environment, so the 2026 grant year is inferred from the patent's number range and should be checked directly. Drawing (`pictures/WO2024107631A1.png`) not yet wired in. Counts synced: 294→295 total, 136→137 active, 183→184 verified.
+
+- **SE Quadangle entry rewritten by Jon.** New summary puts the Quadangle in context: SE Racing's aluminum PK Ripper (1978) came first and disrupted a chromoly-dominated BMX scene, and the Quadangle followed in 1979. The new "why it matters" frames it as a monument to an era of garage welders working free of IP concerns. This replaces the "uncopyrighted" line; the frame question was always patent, not copyright. PK Ripper's 1978 launch in aluminum matches SE Racing histories. Those same histories say the Quadangle design began slightly earlier as the STR-1, built for Stu Thomsen, so "one year later" holds for the Quadangle name rather than the design. Tier stays `l`: "never patented" has not been checked against patent records.
+
+- **absoluteBLACK Piston Press now links to its EUIPO record** (design 015091656-0001), located by Jon. A new optional `recordUrl` field on entries links straight to an official record at a registry Google Patents doesn't index. It shows as "View the official registration record →" (both languages), with the generic EUIPO search link beside it. It exists because `searchUrl` always reads "Search related patents on Google Patents", which would mislabel an EUIPO record. The EUIPO page itself is unreachable from the editing environment, so the link was not opened there. Only -0001 is linked; -0002 is still cited in the summary text.
 
 ## Recent updates (July 2026)
 
