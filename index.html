@@ -2780,12 +2780,6 @@ function renderStats(){
       <p class="home-match" id="homeMatch" aria-live="polite"></p>
       <div class="home-chips"><span class="home-lbl">${t("homePopular")}</span>${rotChip}${suggestChips}</div>
     </section>
-    <div class="invite-grid">
-      <button type="button" class="invite" data-go-st="active"><span class="n">${stCounts.active}</span><span class="q">${t("inviteActive")}</span><span class="go">${t("inviteActiveGo")}</span></button>
-      <button type="button" class="invite" data-go-st="expired"><span class="n">${stCounts.expired}</span><span class="q">${t("inviteExpired")}</span><span class="go">${t("inviteExpiredGo")}</span></button>
-      <button type="button" class="invite lit" data-go-tab="fights"><span class="n">${litigated}</span><span class="q">${t("inviteLit")}</span><span class="go">${t("inviteLitGo")}</span></button>
-      <button type="button" class="invite" data-go-st="soon"><span class="n">${soon.length}</span><span class="q">${t("inviteSoon",NOW+2)}</span><span class="go">${t("inviteSoonGo")}</span></button>
-    </div>
     <div class="stats-sec">
       <div class="stats-sec-head">
         <h3>${t("catTimelineTitle")}<span class="tap-note">${t("catTapNote")}</span></h3>
@@ -2829,6 +2823,12 @@ function renderStats(){
       <h3>${t("mostPatented")}</h3>
       <p class="stats-intro">${t("mostPatentedIntro")}</p>
       ${whoBars}
+    </div>
+    <div class="invite-grid">
+      <button type="button" class="invite" data-go-st="active"><span class="n">${stCounts.active}</span><span class="q">${t("inviteActive")}</span><span class="go">${t("inviteActiveGo")}</span></button>
+      <button type="button" class="invite" data-go-st="expired"><span class="n">${stCounts.expired}</span><span class="q">${t("inviteExpired")}</span><span class="go">${t("inviteExpiredGo")}</span></button>
+      <button type="button" class="invite lit" data-go-tab="fights"><span class="n">${litigated}</span><span class="q">${t("inviteLit")}</span><span class="go">${t("inviteLitGo")}</span></button>
+      <button type="button" class="invite" data-go-st="soon"><span class="n">${soon.length}</span><span class="q">${t("inviteSoon",NOW+2)}</span><span class="go">${t("inviteSoonGo")}</span></button>
     </div>
     <div class="stats-sec">
       <h3>${ICON_HOURGLASS}${t("goingFreeSoonH3")}</h3>
