@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 298 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 299 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 298 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 298 |
+| **Total entries** | 299 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 139 |
 | **Expired patents** | 96 |
 | **Pending applications** | 45 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
-| **Brands** | 163 |
+| **Brands** | 164 |
 | **Named inventors** | 56 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
 | **Verified entries** | 189 |
-| **Medium confidence** | 62 |
+| **Medium confidence** | 63 |
 | **Draft / in progress** | 47 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -533,6 +533,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Added Fig. 1 of US 4,995,753 to the Bill Shook saddle & seatpost entry**: the seatpost head clamp gripping the saddle rail. English and French alt text, linked to the patent. No count changes.
 - **Lawwill four-bar: added Mert Lawwill's biography to the "why it matters" text.** It gives his 1969 AMA Grand National Championship, his induction into the Mountain Bike Hall of Fame (1997) and the AMA Motorcycle Hall of Fame (1998), and his death on May 6, 2026, at 85, per the AMA, Bicycle Retailer and Pinkbike. The summary's "hall-of-famer" note moved there so it isn't said twice. No count changes.
 - **Added a new suspension entry: Matheson & Heim's two-axis rear-wheel path (US 9,908,583)**, and upgraded the existing Guerrilla Gravity "Revved" frame entry with its real patent number. US 9,908,583, "Bicycle rear suspension with a two axis wheel path," was filed December 23, 2014 by W. Hank Matheson and Jonathan R. Heim (originally assigned to their company, Bicycle Fabrications LLC, later reassigned to the two inventors), granted March 6, 2018, and claims a swing arm whose axle travels independently along vertical and rearward axes rather than one fixed arc, so the path itself shifts with the direction of impact. Development reportedly began in 2010, per the source material supplied for this entry. Ships `conf:"v"` — number, filing/grant dates and both inventor names cross-confirmed across Justia, the USPTO PDF, and Google Patents search snippets. Image: Fig. 1, the whole-bike side view with both axle-travel axes labeled (user-supplied, already in `pictures/`). The Guerrilla Gravity entry previously carried `num:null` at `conf:"l"`; it now cites the published application US 2018/0264756 A1 ("Composite structures and methods of forming composite structures," filed March 19, 2018, Guerrilla Industries LLC, inventors Matt Giaraffa and William Montague) underlying the company's "Revved Carbon" process, moved to `conf:"m"` and `st:"pending"` since this pass could not confirm whether the patent Revved Industries announced as granted in March 2021 carries this same application's number or a later continuation's — left as an open flag rather than guessed. Two user-supplied figures added (Fig. 1, the composite frame tube; Fig. 10, the heated-fluid forming process). No new `BRANDS`/`INVENTORS` registrations — Guerrilla Gravity was already registered, and neither Matheson/Heim nor Giaraffa/Montague are recurring figures elsewhere in the atlas. Counts synced: 297 → 298 total, pending 44 → 45, verified 188 → 189, medium 61 → 62, draft 48 → 47; active, expired, litigated, brands, inventors and jurisdictions all unchanged. All six hardcoded `index.html` count strings updated to match.
+- **Added a new suspension entry: Propain's PRO10 floating-shock linkage (DE 10 2008 011 364 A1).** German published application "Bicycle frame has soft tail...", filed by founder/engineer Robert Krauss and published from Propain Bicycles, describing a rear triangle driven by two seesaw links pivoting between the main and rear frame — the mechanism behind Propain's PRO10 rear end. Propain's own support material (independently found and quoted in search results) describes PRO10 as four pivot points driving a floating shock squeezed from both ends by two counter-rotating links, which matches this document's drawing closely enough to treat as the same mechanism; used that description for the entry's `w` text. **Two things this pass could not verify, both stated honestly in the entry rather than guessed:** a second, earlier Krauss filing (reported in the sourcing material as DE 10 2006 042 165 A1, filed September 2006, possibly this design's direct parent) could not be independently confirmed to exist — Google Patents itself is blocked to this session and no search result corroborated that specific number, so it's named as an unconfirmed lead rather than linked as a related filing; and this document's own prosecution status is unconfirmed — "A1" marks an unexamined published application, not a grant, and no grant record was found, so `st:"unknown"`/`exp:null` rather than assuming it issued. Ships `conf:"m"` on that basis. Image: Fig. 1 (user-supplied, already in `pictures/`), showing the counter-rotating seesaw links (6, 11) squeezing the shock spring (4). Registered `Propain` in `BRANDS` and `BRAND_HQ` (Germany); Robert Krauss credited in `a` prose only, not added to `INVENTORS`, matching the atlas's "recurring figure only" rule — this is his only entry so far. Counts synced: 298 → 299 total, unknown 18 → 19, medium 62 → 63, brands 163 → 164; active, expired, pending, litigated, verified and jurisdictions unchanged. All six hardcoded `index.html` count strings updated to match.
 
 ## Recent updates (July 2026)
 
