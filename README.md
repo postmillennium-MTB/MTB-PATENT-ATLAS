@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 295 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 296 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 295 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 295 |
+| **Total entries** | 296 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 137 |
+| **Active patents** | 138 |
 | **Expired patents** | 96 |
 | **Pending applications** | 44 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
-| **Brands** | 161 |
+| **Brands** | 162 |
 | **Named inventors** | 56 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 185 |
+| **Verified entries** | 186 |
 | **Medium confidence** | 62 |
 | **Draft / in progress** | 48 |
 
@@ -521,6 +521,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Gates Carbon Drive / CDX CenterTrack upgraded `m` → `v`.** Now links US 10,088,020 ("Belt drive system") and AU 2018271340 B2. Jon verified both against Google Patents. Search results independently confirm only the US patent's title, not its assignee or dates. The entry's existing dates, expiry estimate and litigation text are unchanged. Counts synced: verified 184→185, medium 63→62.
 
 - **Ochain entry now names pedal kickback and links WO 2024/003949.** Its "why it matters" text explains that Ochain and e*thirteen's Sidekick hub solve the same problem from opposite ends of the chain: a chainring that slips back at the crank versus built-in freehub slack at the rear wheel. Sidekick's text now points back to Ochain. The WO publication (found by Jon on Google Patents) is added alongside EP 4,536,547. Search results confirm what the product does, but not the WO number itself. Tier stays `m`, since the EP filing date and grant status are still unconfirmed; that caveat was also reworded to remove process narration.
+- **New entry: Doppelmayr Bike Cab gondola cabin (EP 3,927,592).** "Ropeway vehicle for transporting two-wheeled vehicles," Innova Patent GmbH (Doppelmayr's IP holder), inventors Daniel Mangold and Florian Trittler, priority February 19, 2019; also AT 521785 B1 and WO 2020/169226. A seatless cabin with a rotating central column of eight wheel holders that riders load themselves. `w` notes North America's first five Bike Cabs on the Mighty Argo Cable Car (Idaho Springs, Colorado; opened May 2026), serving Virginia Canyon Mountain Park, and the follow-on AT 523148 / EP 4,031,429 station-rack drive. Two images: Fig. 2 of the WO publication and a design sketch of the cabin frame. Added `Doppelmayr` to `BRANDS` (HQ Austria). Ships at `conf:"v"`: the EP number, B1 grant (September 2023) and priority date are confirmed against the EPO Global Patent Index; the AT number, WO number and inventor names come from the Google Patents record, which is blocked from this environment. The follow-on family (AT 523148 / EP 4,031,429) is unconfirmed and is named in prose only, not linked. The sketch's origin is not documented.
 
 ## Recent updates (July 2026)
 
