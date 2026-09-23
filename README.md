@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 296 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 297 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 296 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 296 |
+| **Total entries** | 297 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 138 |
+| **Active patents** | 139 |
 | **Expired patents** | 96 |
 | **Pending applications** | 44 |
 | **Litigated entries** | 27 |
 | **Patent Fights (named rivalries)** | 8 |
-| **Brands** | 162 |
+| **Brands** | 163 |
 | **Named inventors** | 56 |
 | **Non-US jurisdictions** | 13 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE) |
-| **Verified entries** | 186 |
+| **Verified entries** | 187 |
 | **Medium confidence** | 62 |
 | **Draft / in progress** | 48 |
 
@@ -527,6 +527,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Supre Drive wording fix and four more drawings.** The Supre Drive summary said chain tensioning moved to "a hydraulic damper inside the down tube"; both patent abstracts and the drawings place a separate chain tensioner at the crank, so it now reads "a separate tensioner at the bottom bracket" (EN/FR). Added previously uploaded drawings: US 10,363,988 frame view (Knolly, added to its existing gallery), Fig. 1 of US 11,293,537 (MRP Wave Ring), Fig. 3B of US 2024/0229892 (tuned mass damper; the file was sideways and is now rotated upright), and Fig. 2 of US 6,199,021 (Alan Coté). No count changes.
 - **Second drawings for three entries.** Wolf Tooth portfolio: Fig. 9 of US 11,235,827 (height-adjustable seat post). Maverick Monolink: a drawing from the published application US 2003/0011167. GT i-Drive: Figs. 3–4 of EP 0913322 (the eccentric bottom bracket). Each entry's existing drawing is kept as the first image. `pictures/US6880897B2.png` duplicates the hub-adapter entry's existing Fig. 2 and was not added. No count changes.
 - **Triple Triangle entry: Hellenic-stay origin and trademark drawing.** Summary now notes the layout predates GT: British "Hellenic stays," named for frame builder Fred Hellens and traditionally dated to 1923 (per Hetchins' history page and Sheldon Brown). The 1923 date is stated as traditional because retro-bike researchers report no documentation or surviving Hellens bicycle from that year. Added the drawing of GT's word-and-logo trademark (U.S. serial no. 73752964), linked to its Justia trademark record; hetchins.org and Justia are blocked from this environment, so both pages were confirmed through search results only. No count changes.
+- **New entry: Vorsprung high-dynamic-range air spring (US 12,442,429).** "High dynamic range suspension apparatus with selective fluid pressure communication," Vorsprung Technologies Ltd (British Columbia), granted October 14, 2025; published application US 2022/0373056 linked alongside. A separator connects a secondary negative air chamber for the first part of the stroke, then seals it off, giving a coil-like linear rate followed by an air spring's end-stroke ramp. Placed in Forks & Damping next to the multiple-gas-volumes entry; `w` notes the match with Vorsprung's Secus fork upgrade (enlarged negative chamber plus "Midstroke Support Valve"), stated as a match, since the patent names no product. Image: Fig. 1G of the application (spring-force curves). Added `Vorsprung` to `BRANDS` (HQ British Columbia). Ships at `conf:"v"`: number, title and grant date confirmed via the USPTO Official Gazette and USPTO document listing. **Unconfirmed:** the filing date and inventor names. The application PDF is an image-only scan and the granted PDF was unreachable even from the GitHub runner, so `y: 2022` (the publication year) and `exp: 2042` are estimates, which the entry says. Counts: 297 total, 139 active, 187 verified, 163 brands.
 
 ## Recent updates (July 2026)
 
