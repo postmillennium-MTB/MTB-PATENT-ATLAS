@@ -499,6 +499,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 
 - **Atlas tab: the four invitation cards (still in force, expired, went to court, expiring soon) moved below "Most-patented names,"** just above the Expiring soon list. Markup reorder only; behavior unchanged.
 
+- **SE Quadangle entry now names BMX.** Its summary (both languages) now identifies the Quadangle as SE Racing's BMX race frame and ties it to early BMX racing, so a "BMX" search finds it. Wording only; tier (`l`), dates and other fields unchanged.
+
 ## Recent updates (July 2026)
 
 - **Fixed the 5-year bar chart bug.** The bar chart's "5yr" bracket wasn't aggregating into five-year buckets — it was silently falling back to one bar per year, making it the *most* granular view rather than the least. It now genuinely buckets by half-decade (1995–1999, 2000–2004, etc.), aligned to the calendar rather than to the dataset's earliest entry, so the buckets stay stable as more patents are added. The chart also gained a dashed gap marker for real multi-decade silences in the data (there's an 84-year gap between the 1890 entry and the next), and its final bucket's label no longer advertises years that haven't happened yet.
