@@ -1,0 +1,86 @@
+patent: US6408715
+source: https://patentimages.storage.googleapis.com/1b/01/4a/ac2d18efdaccc2/US6408715.pdf
+pages: 7
+per-page extracted text length: {1: 1840, 2: 75, 3: 75, 4: 65, 5: 68, 6: 6928, 7: 2712}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO64087.15B1
+
+(12) United States Patent
+Huang
+
+(10) Patent No.:
+
+US 6,408,715 B1
+
+(45) Date of Patent:
+
+(54) STEERING WHEEL COVER
+
+Jun. 25, 2002
+
+Primary Examiner Rodney H. Bonck
+ASSistant Examiner Eric M. Williams
+
+(76) Inventor: Yuan-Yuan Huang, No. 33, Lane 75,
+
+Sec. 2, Chung-Cheng N. Rd., Kuei-Jen
+
+* ) Notice:
+
+Hsiang, Tainan Hsien (TW)
+
+Farabow, Garrett & Dunner, L.L.P.
+
+Subject to anyy disclaimer, the term of this
+
+(57)
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 22 days.
+
+A Steering wheel cover includes an annular hollow core
+layer, a flexible lining layer, and a hook-and-loop fastening
+unit. A core layer has an inner annular peripheral edge that
+is formed with a slot therealong to permit access into a
+receiving Space. The core layer further has an outer wall
+Surface, and an inner wall Surface with opposing edge parts
+disposed on opposite lateral edges of the slot. The lining
+layer has a pair of marginal portions disposed respectively
+on opposing Sides of the covering portion. The marginal
+portions extend into the receiving Space of the core layer via
+the slot, and overlap respectively the edge parts of the inner
+
+(21) Appl. No.: 09/644,534
+(22) Filed:
+Aug. 24, 2000
+(51) Int. CI.7.
+... B62D 1706
+(52) U.S. Cl. ......................................................... 74/558
+(58) Field of Search ............................................ 74/558
+(56)
+
+(74) Attorney, Agent, or Firm-Finnegan, Henderson,
+
+References Cited
+U.S. PATENT DOCUMENTS
+5,743,154 A * 4/1998 Jacinth ........................ 74/558
+
+5,848,559 A
+
+* cited by examiner
+
+57
+
+ABSTRACT
+
+wall Surface of the core layer. The fastening unit is provided
+
+on the edge parts and on the marginal portions to fasten
+removably the lining layer tO the COC layer.
+
+12/1998 Harrill ......................... 74/558
+
+4 Claims, 4 Drawing Sheets
+
+

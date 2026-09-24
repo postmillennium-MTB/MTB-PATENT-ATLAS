@@ -1,0 +1,228 @@
+patent: US6615960
+source: https://patentimages.storage.googleapis.com/9a/e7/01/d245ddc37824af/US6615960.pdf
+pages: 19
+per-page extracted text length: {1: 3292, 2: 100, 3: 73, 4: 57, 5: 68, 6: 57, 7: 83, 8: 57, 9: 57, 10: 64, 11: 58, 12: 7117, 13: 6979, 14: 7660, 15: 7607, 16: 6744, 17: 6883, 18: 6660, 19: 2349}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO66.1596OB1
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Turner
+(54) FLUID DAMPED SHOCK ABSORBER AND
+METHOD
+(75)
+
+Inventor:
+
+Paul H. Turner, Boulder, CO (US)
+
+Sep. 9, 2003
+
+5,529,154 A
+
+6/1996 Tanaka .................. 188/322.15
+
+5,580,075 A
+
+12/1996 Turner et al. ............... 280/276
+
+5,634,653 A
+
+6/1997 Browning ................... 280/276
+
+D391530 S
+
+3/1998 Turner. - - - - - - - - - . . . . . . . . . . D12/118
+
+D401,537 S
+
+11/1998 Turner ....................... D12/118
+
+5,862,895 A
+D406,083 S
+
+1/1999 Ricard ........................ 188/289
+2/1999 Turner .........
+... D12/118
+
+5,725.226 A * 3/1998 Cabrerizo-Pariente ...... 280/276
+5,775,677 A
+7/1998 Englund .................. 267/64.11
+
+(73) ASSignee: Myrist American LLC, Boulder,
+
+(*) Notice:
+
+US 6,615,960 B1
+
+(45) Date of Patent:
+
+Subject
+to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+5.996,746 A
+
+U.S.C. 154(b) by 0 days.
+
+12/1999 Turner et al. ............... 188/269
+
+FOREIGN PATENT DOCUMENTS
+JP
+
+4337137
+
+* 11/1992
+
+(21) Appl. No.: 09/502,272
+
+JP
+
+4337138
+
+* 11/1992
+
+(22) Filed:
+
+WO
+
+96.O895O
+
+3/1996
+
+Feb. 11, 2000
+
+.............. 188/266.5
+
+sk -
+
+(51) Int. Cl." ............................... F16F 9/34; F16F 9/00;
+
+cited by examiner
+
+F16F 9/48
+
+Primary Examiner Matthew C. Graham
+
+(52) U.S. Cl. ............................ 188/322.13; 188/322.19;
+
+ASSistant Examiner Melody M. Burch
+
+188/286; 280/276
+
+(74) Attorney, Agent, or Firm Townsend and Townsend
+
+(58) Field of Search ................................. 188/275, 280,
+188/281, 282.1, 314, 315, 287, 284, 319.2,
+
+and Crew LLP
+
+322.13,3222, 286: 280,276
+
+(56)
+
+(57)
+
+References Cited
+
+ABSTRACT
+
+A fluid damped Shock absorber comprises an outer tube
+having a closed end and an open end, and a damper tube
+disposed within the Outer tube. An inner tube is axially
+
+U.S. PATENT DOCUMENTS
+
+Slideable within the outer tube and has a closed end and an
+
+2,329,803 A * 9/1943 Whisler, Jr. .................. 188/88
+
+open end. A Sealing piston is attached to the inner tube to
+
+3. A
+
+provide a Seal between the inside of the outer tube and the
+
+E. r
+
+r ..
+
+4. 53.237 A * 5/1979 Supalla ......
+
+... 267/64.15
+
+outside of the damper tube. A sealing device is attached near
+
+4,807,860 A * 2/1989 Simons .....
+... 267/217
+4,971,344. A 11/1990 Turner ...
+... 280/276
+5,186,481 A
+2/1993 Turner ....
+... 280/276
+5,285.875 A * 2/1994 Munoz. ............. ... 188/275
+5,332,068 A * 7/1994 Richardson et al. ........ 188/275
+
+the open end of the outer tube to provide a seal between the
+outside of the inner tube and the Outer tube. A regulation
+Valve is fixed to the damper tube in a Sealed arrangement
+with the outer tube. The regulation valve is located between
+the closed end of the outer tube and the Sealing piston. The
+
+5.386.893 A
+
+t
+
+2/1995 Feigel ............
+
+... 188/299
+
+... 188/299
+
+damping fluid between the outer tube and the damper tube
+
+: A : 18: Its al r
+
+2.
+
+upon axial movement of the inner tube within the outer tube.
+
+5,400,877 A * 3/1995 Kircher et al. .
+
+regulation valve is configured to regulate fluid flow of a
+
+5,464,079 A * 11/1995 Lohberg et al.............. 188/315
+5,467852 A * 11/1995 de Kock ................ 188/322.14
+
+32 Claims, 10 Drawing Sheets
+76
+S
+
+60 C
+
+4.
+2
+
+60
+64
+62
+
+68
+78
+
+90
+77
+
+70
+
+80
+62
+
+92
+
+66
+
+

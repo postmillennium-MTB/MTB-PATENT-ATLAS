@@ -1,0 +1,130 @@
+patent: US7703788
+source: https://patentimages.storage.googleapis.com/8d/cd/ca/e375d9d6550f4e/US7703788.pdf
+pages: 11
+per-page extracted text length: {1: 2426, 2: 57, 3: 57, 4: 57, 5: 57, 6: 57, 7: 6897, 8: 7494, 9: 6773, 10: 6079, 11: 5329}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO7703788B2
+
+(12) United States Patent
+Tanouye et al.
+
+(10) Patent No.:
+US 7.703,788 B2
+(45) Date of Patent:
+Apr. 27, 2010
+
+(54) FORCE CHANNELING MOUNTAIN BIKE
+
+7,100,930 B2 * 9/2006 Saiki .......................... 280/284
+
+REAR SUSPENSION
+
+7.350,797 B2 *
+7,392,999 B2*
+
+(76) Inventors: Ted K. Tanouye, 1341 W. Baker Ave.,
+
+R".Jos (SS) 2. Ali.Apt
+
+3 igaheim e RSSO ., Apl.
+s
+
+(*) Notice:
+
+s
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+4/2008 Carroll ......
+7/2008 O'Connor.
+
+2.
+R: 133
+I- I
+
+Buckley
+---Sel9 . . . . . . .
+
+2005/0184483 A1* 8/2005 Buckley ........
+
+... 280/284
+... 280/284
+
+- - - 585.
+
+- --
+
+... 280/284
+
+2006/007 1442 A1* 4/2006 Hoogendoorn .............. 280/275
+* cited by examiner
+
+Primary Examiner Kevin Hurley
+
+Assistant Examiner—Daniel Yeagley
+
+(21) Appl. No.: 12/098,399
+
+(57)
+
+(22) Filed:
+
+An innovated rear Suspension system for mountain bikes that
+includes five structural tubes—a force channeling tube, a
+
+Apr. 4, 2008
+
+(65)
+
+Prior Publication Data
+
+US 2009/O250897 A1
+51) Int. C
+
+(51) ...K sMO2
+
+Oct. 8, 2009
+
+2006.O1
+
+( .01)
+(52) U.S. Cl. ........ grrrrr. 280/284
+(58) Field of Classification Search ............... . 280/284
+See application file for complete search history.
+(56)
+References Cited
+
+ABSTRACT
+
+front stabilizing tube, a rear stabilizing tube, a top tube, and a
+seat tube—connected to form an irregular polygon; rein
+forced with gussets, a torque conversion device pivotally
+connected to a compression strut, a shock-absorbing element
+
+and the force channeling tube, which transfers force or shock
+
+6,036.213 A * 3/2000 Busby ........................ 280/284
+
+from the compression strut to the shock-absorbing element.
+The shock-absorbing element pivotally connected at the front
+to a pair of shock mounts attached to the force channeling
+tube absorbs and compresses force from the torque conver
+sion device and transfers the force to the force channeling
+tube. The upward and forward direction of the force channel
+ing tube guides the force along the force channeling tube
+propelling the bicycle and the rider forward, reducing jacking
+and efficiently utilizing pedal forces.
+
+6, 131,934. A * 10/2000 Sinclair ...................... 280/284
+6,581,950 B1* 6/2003 Ellsworth ................... 280/284
+
+9 Claims, 5 Drawing Sheets
+
+U.S. PATENT DOCUMENTS
+
+5,611,557 A * 3/1997 Farris et al. ................. 280/275
+
+

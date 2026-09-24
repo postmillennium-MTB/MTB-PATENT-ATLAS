@@ -1,0 +1,139 @@
+patent: US8043185
+source: https://patentimages.storage.googleapis.com/8e/51/48/45b1d5bb261501/US8043185.pdf
+pages: 20
+per-page extracted text length: {1: 2601, 2: 58, 3: 58, 4: 58, 5: 58, 6: 58, 7: 58, 8: 58, 9: 58, 10: 58, 11: 131, 12: 59, 13: 7349, 14: 6851, 15: 7708, 16: 6815, 17: 7953, 18: 7957, 19: 7598, 20: 6331}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US008043.185B2
+
+(12) United States Patent
+Nicolai
+(54) MULTIPLE GEAR TRANSMISSION WITH
+MAGNETIC CONTROL
+
+(76) Inventor: Karlheinz Nicolai, Luebbrechtsen (DE)
+(*) Notice:
+
+(10) Patent No.:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 857 days.
+
+(22) Filed:
+
+* cited by examiner
+
+(65)
+
+Prior Publication Data
+
+US 2008/O234O90 A1
+
+Sep. 25, 2008
+
+Kim et al. ..................... 310,191
+Dratewski
+Dratewski
+Schneider et al. .............. 192/14
+Benoit et al. ................. 192.84.8
+
+FOREIGN PATENT DOCUMENTS
+
+(21) Appl. No.: 12/052,182
+Mar 20, 2008
+
+Oct. 25, 2011
+
+2003/0192763 A1* 10, 2003 Inoue et al. .................. 192/48.2
+2004/0021390 A1
+2/2004
+2004/0066O17 A1
+4/2004
+2004, OO67804 A1
+4/2004
+2004/O144609 A1* 7/2004
+2007/0267269 A1* 11/2007
+CH
+DE
+DE
+WO
+
+(30)
+
+US 8,043,185 B2
+
+(45) Date of Patent:
+
+167867
+2020. 178
+10339 207
+2006/039880
+
+3, 1933
+4f1971
+6, 2005
+4/2006
+
+Primary Examiner — Ha D. Ho
+(74) Attorney, Agent, or Firm — Andrew M. Calderon;
+Roberts Mlotkowski Safran & Cole, P.C.
+
+Foreign Application Priority Data
+(57)
+
+Mar. 21, 2007
+
+(DE) ......................... 10 2007 O13 444
+
+(51) Int. Cl.
+FI6H 4.8/06
+
+(2006.01)
+
+(52) U.S. Cl. ......................... 475/154; 475/156; 475/157
+(58) Field of Classification Search .................. 475/149,
+475/154, 156,157
+See application file for complete search history.
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+4,158,316 A
+
+6/1979 Strong
+
+4,955,247 A
+5,553,510 A
+5,871,412 A
+5,924.950 A
+
+9, 1990 Marshall
+9, 1996 Balhorn
+2, 1999 Moser
+7, 1999 Pusic
+
+6,146,296 A 11/2000 Apostolo
+7,726,455 B2 * 6/2010 Benoit et al. ............... 192.84.31
+
+ABSTRACT
+
+A multiple gear transmission with magnetic control for
+vehicles or for use in drive technology includes an input shaft
+Supported on a frame and an output shaft. The input shaft
+protrudes from the frame at least one end and the output shaft
+protrudes from the frame at one end. Transmission gear ratios
+with transmission wheels are embodied as gear trains or belt
+and chain drives and are located between the input shaft and
+the output shaft. Transmission wheels are Supported in a
+rotatable manner on the input shaft or on the output shaft. The
+transmission wheels are connected to the input shaft or the
+output shaft in a torsionally fixed manner by a clutch mecha
+nism. The transmission wheels are constantly in rotation dur
+ing operation. A state of the clutch mechanism changes
+through the change of an additional magnetic field inside or in
+a direct vicinity of the clutch mechanism.
+35 Claims, 11 Drawing Sheets
+
+

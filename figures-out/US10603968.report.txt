@@ -1,0 +1,162 @@
+patent: US10603968
+source: https://patentimages.storage.googleapis.com/e9/14/e2/116f1b1bc98ca2/US10603968.pdf
+pages: 12
+per-page extracted text length: {1: 2676, 2: 470, 3: 115, 4: 194, 5: 113, 6: 161, 7: 118, 8: 217, 9: 6576, 10: 7230, 11: 7546, 12: 5921}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010603968B2
+
+( 12 )
+
+United States Patent
+
+( 10 ) Patent No.: US 10,603,968 B2
+(45 ) Date of Patent:
+Mar. 31 , 2020
+
+Withrow et al.
+(54 ) LOCKING ADJUSTABLE VEHICLE HITCH
+
+5,881,937 A * 3/1999 Sadler
+6,406,051 B1 * 6/2002 Phillips
+
+(71 ) Applicant: 1UPUSA.COM , LLC , Dickeyville, WI
+(US)
+
+Robbie T. Lange, Cuba City, WI (US)
+(73) Assignee : 1UP USA.COM , LLC , Dickeyville, WI
+(US )
+Subject to any disclaimer, the term of this
+
+patent is extended or adjusted under 35
+U.S.C. 154(b ) by 156 days .
+( 21) Appl. No.: 15 /827,821
+(22) Filed : Nov. 30 , 2017
+Prior Publication Data
+(65 )
+US 2019/0160899 A1 May 30 , 2019
+(51) Int. Ci.
+B60D 1/44
+(2006.01)
+B60D 1/58
+( 2006.01 )
+B60D 1/48
+( 2006.01)
+BOOR 9/06
+B60D 1/60
+
+(2006.01 )
+( 2006.01 )
+
+(52) U.S. Ci.
+CPC
+
+B60D 1/44 ( 2013.01 ); B60D 1/48
+
+(2013.01); B60D 1/583 (2013.01); B60D 1/60
+( 2013.01); BOOR 9/06 ( 2013.01)
+
+(58) Field of Classification Search
+CPC
+B60D 1/44 ; B60D 1/48; B60D 1/583
+USPC
+280/467
+
+See application file for complete search history .
+
+(56 )
+
+References Cited
+
+7,909,350 B1 *
+
+3/2011 Landry
+
+8,091,913 B1
+8,262,121 B2
+
+1/2012 White
+9/2012 Beck
+
+8,696,011 B2
+8,944,516 B2
+
+B60D 1/06
+280 /416.1
+
+4/2014 Despres
+
+2/2015 Eidsmore
+
+(Continued )
+Primary Examiner
+
+Jacob D Knutson
+
+( 74 ) Attorney, Agent, or Firm — Erin Ella Block ; Charles
+S. Sara ; DeWitt LLP
+
+(57 )
+
+ABSTRACT
+
+A locking adjustable trailer hitch system includes a vehicle
+
+trailer hitch receiver having a receiver opening. The vehicle
+trailer hitch receiver includes at least one hitch pin opening
+for placement of a locking hitch pin . A locking adjustable
+trailer hitch bar is slidably and removably attached to the
+trailer hitch receiver through the receiver opening . The
+trailer hitch bar includes at least one extended slotted
+depression alongside one of its walls . The slotted depression
+is adapted to be in alignment with the hitch pin opening and
+can be a pass through or non -pass through depression . The
+
+hitch system further includes an anti -wobble device to
+secure and stabilize the hitch bar within the vehicle receiver.
+The hitch bar can extend along the length of the slotted
+depression such that the distal end of the hitch bar can be
+
+positioned a greater or lesser distance from the receiver as
+desired .
+
+U.S. PATENT DOCUMENTS
+5,322,315 A
+5,727,805 A
+
+12/2004 Li
+
+6,835,021 B1 12/2004 McMillan
+6,902,181 B1 6/2005 Dye
+6,951,287 B1 10/2005 Randazzo
+8/2009 Thomas
+7,568,718 B1
+7,635,247 B2 12/2009 Collins
+
+(72 ) Inventors : Ryan P. Withrow , Platteville , WI (US );
+
+( * ) Notice :
+
+6,829,915 B1
+
+B6OR 9/06
+224/509
+B60D 1/145
+280 /491.1
+
+6/1994 Carsten
+
+2 Claims, 6 Drawing Sheets
+
+3/1998 La Roque
+
+16
+
+33
+
+10
+
+12
+-5
+
+

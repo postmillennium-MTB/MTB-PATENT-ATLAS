@@ -1,0 +1,117 @@
+patent: US6402256
+source: https://patentimages.storage.googleapis.com/9e/ba/21/cd5eb47f1c785a/US6402256.pdf
+pages: 7
+per-page extracted text length: {1: 2147, 2: 57, 3: 57, 4: 57, 5: 6628, 6: 7192, 7: 6524}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6402256B1
+
+(12) United States Patent
+Mercat
+
+(10) Patent No.:
+US 6,402,256 B1
+(45) Date of Patent:
+Jun. 11, 2002
+
+(54) BICYCLE RIM AND WHEEL HAVING SUCH
+
+5,499,864 A * 3/1996 Klein et al.
+5,651,591 A
+
+A RIM
+
+(75) Inventor: Jean-Pierre Mercat, Chatillon Sur
+Chalaronne (FR)
+(73) Assignee: Mavic S.A., Saint Trivier Sur Moignans
+(FR)
+(*) Notice: Subject to any disclaimer, the term of this
+
+EP
+EP
+EP
+EP
+EP
+TW
+
+O714791
+O714792
+O715 OO1
+O818328
+O89328O
+313981
+
+6/1996
+6/1996
+6/1996
+1/1998
+1/1999
+8/1997
+
+patent is extended or adjusted under 35
+
+WO
+
+WO 93/09963
+
+5/1993
+
+U.S.C. 154(b) by 0 days.
+
+* cited by examiner
+Primary Examiner Russell D. Stormer
+
+(21) Appl. No.: 09/654,907
+(22) Filed:
+Sep. 5, 2000
+(30)
+Foreign Application Priority Data
+Sep. 17, 1999
+
+(FR) ............................................ 99 11808
+
+(51) Int. Cl. ................................................ B60B 21/06
+(52) U.S. Cl. ................ 301/95.104; 301/58; 301/95.108
+(58) Field of Search ....................... 301/55, 58, 95.101,
+301/95.104, 95.106, 95.107, 95.108
+(56)
+
+7/1997 Mercat et al. ................ 301/95
+
+FOREIGN PATENT DOCUMENTS
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+395,523 A * 1/1889 Taylor
+446,189 A * 2/1891. Overman
+452,649 A * 5/1891 Powell
+
+521,385 A * 6/1894 Mosely
+1,484.844. A * 2/1924 Olle
+4,793,659 A * 12/1988 Oleff et al.
+
+(74) Attorney, Agent, or Firm-Greenblum & Bernstein,
+P.L.C.
+
+(57)
+
+ABSTRACT
+
+A bicycle rim including an annular shaped element whose
+croSS-Section includes a box shape demarcated by an upper
+bridge and a lower portion having a lower bridge and Side
+walls, the lower bridge or the Side walls having holes
+distributed evenly and provided for the connection of the
+spokes, the holes and their immediate vicinity defining
+boring Zones. The thickness of the walls constituted by the
+lower bridge and the Side walls has a nominal value in the
+boring Zones and a lower value than the nominal value in the
+intermediate Zones located between two adjacent boring
+Zones, and the thickness of this wall varies progressively
+from the nominal value to the lower value to the nominal
+value.
+
+22 Claims, 3 Drawing Sheets
+
+

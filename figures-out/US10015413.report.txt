@@ -1,0 +1,173 @@
+patent: US10015413
+source: https://patentimages.storage.googleapis.com/07/77/5c/f3b5535e8793f3/US10015413.pdf
+pages: 14
+per-page extracted text length: {1: 2851, 2: 1735, 3: 154, 4: 328, 5: 141, 6: 280, 7: 780, 8: 1093, 9: 7021, 10: 7801, 11: 7711, 12: 6389, 13: 6501, 14: 125}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+TOMMAND
+(12) United States Patent
+
+US010015413B1
+
+(10 ) Patent No.:
+
+(45) Date of Patent:
+
+Woodman et al.
+
+WATCH
+
+US 10 ,015 ,413 B1
+Jul. 3 , 2018
+
+(54) INCONVERSION
+BETWEEN ASPECT RATIOS
+CAMERA
+
+(58 ) Field of Classification Search
+
+(71 ) Applicant: GoPro , Inc., San Mateo , CA (US)
+
+See application file for complete search history.
+(56 )
+References Cited
+U . S. PATENT DOCUMENTS
+
+(72 ) Inventors : Nicholas D . Woodman , Woodside, CA
+(US); Sumit Chawla , San Carlos , CA
+
+(US ); Loic Segapelli , Oakland, CA
+
+(US); Scott Patrick Campbell,
+
+CPC ...... . HO4N 5 / 2628 ; G06T 3 /0093 ; G06T 3 /20 ;
+G06T 3 /40; G06T 3 /4069; G06T 3 / 4084
+
+5 ,790 ,696 A
+8 /1998 Takahashi
+6 ,757 ,446 B16 / 2004 Li
+
+Belmont, CA (US)
+
+(Continued )
+
+( 73 ) Assignee: GoPro , Inc ., San Mateo , CA (US)
+Subject to any disclaimer, the term of this
+U . S .C . 154 (b ) by 0 days .
+(21) Appl. No.: 15 /492,738
+( * ) Notice:
+
+(22 ) Filed :
+
+patent is extended or adjusted under 35
+
+Apr. 20 , 2017
+
+FOREIGN PATENT DOCUMENTS
+2334058
+9 /2016
+
+??
+
+wo
+
+2010073192
+
+7 /2010
+
+OTHER PUBLICATIONS
+
+(63 ) Continuation of application No. 15/044 ,253 , filed on
+
+Office Action for U .S. Appl. No. 14 /536 ,315 dated Jun . 19, 2015, 5
+(Continued )
+
+continuation of application No. 14 /536 ,315 , filed on
+
+Primary Examiner — Ngoc - Yen Vu
+(74 ) Attorney , Agent, or Firm — Sheppard Mullin Richter
+
+pages .
+
+Related U .S. Application Data
+Jan . 29 , 2016 , now Pat. No. 9 ,674 , 429, which is a
+
+Nov. 7 , 2014 , now Pat. No . 9 , 294 ,671, which is a
+continuation of application No. 14 / 180 ,887 , filed on
+
+Feb . 14 , 2014 , now Pat. No. 8,917 ,329.
+
+(57)
+ABSTRACT
+A camera system captures an image in a source aspect ratio
+and applies a transformation to the input image to scale and
+warp the image to generate an output image having a target
+
+(Continued )
+(51) Int. Cl.
+
+H04N 5 /262
+G06T 3 /00
+G06T 340
+
+( 2006 .01)
+( 2006 .01)
+
+aspect ratio different than the source aspect ratio . The output
+
+image has the same field of view as the input image ,
+maintains image resolution , and limits distortion to levels
+
+(2006 .01)
+
+G06K 9/ 36
+
+( 2006 .01 )
+
+G06T 3 / 20
+
+( 2006 . 01)
+
+& Hampton LLP
+
+that do not substantially affect the viewing experience . In
+
+(52 ) U . S . CI.
+
+CPC ......... H04N 5 /2628 ( 2013.01); G06T 370093
+(2013 .01 ); G06T 3 /4069 (2013.01); G06T 3 /20
+
+one embodiment, the output image is non -linearly warped
+relative to the input image such that a distortion in the output
+image relative to the input image is greater in a corner region
+of the output image than a center region of the output image .
+
+(2013 .01); GOOT 3/40 (2013 .01); GOOT 3/4084
+
+20 Claims, 6 Drawing Sheets
+
+( 2013 .01)
+
+www.
+
+Original Image (4 : 3 )
+402
+
+mr. x
+
+Cropped Image ( 16 : 9 )
+404
+
+.. .
+
+xxhd.xmiw
+
+RU
+
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+
+Non - Linear Warped
+image ( 16 : 9 )
+406
+
+

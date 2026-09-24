@@ -1,0 +1,167 @@
+patent: US9376160
+source: https://patentimages.storage.googleapis.com/2e/08/7b/7476060d09a133/US9376160.pdf
+pages: 13
+per-page extracted text length: {1: 2979, 2: 1488, 3: 57, 4: 63, 5: 57, 6: 0, 7: 57, 8: 57, 9: 6804, 10: 7561, 11: 7410, 12: 7066, 13: 367}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO9376160B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Pye
+
+US 9,376,160 B2
+
+(45) Date of Patent:
+
+Jun. 28, 2016
+
+(54) AXLE ASSEMBLY
+
+6,412,803 B1* 7/2002 Lalikyan ................ B62K 25/02
+
+(71) Applicant: Hayes Bicycle Group, Inc., Mequon,
+
+6,435,622 B1* 8/2002 Kanehisa ............ B60,799.
+
+280/276
+
+WI (US)
+
+7,530,645 B2*
+
+5/2009 Takachi ................. B62K 25/02
+301,110.5
+
+(72) Inventor: Nicholas William Pye, Carrboro, NC
+(US)
+
+7,537,291 B2* 5/2009 Hara ..................... B6OB 27 O26
+301,110.5
+7,556,321 B2* 7/2009 Hara ..................... B6OB 27 O26
+301,110.5
+7.628.416 B2 12/2009 Hara ...................... B62K 25/02
+
+rsr rr
+
+(73) Assignee: HAYES BICYCLE GROUP, INC.,
+
+Mequon, WI (US)
+
+(*) Notice:
+
+280,260
+1/2010 Watarai ............... B6OB 27/0052
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+301,110.5
+7,654,546 B2 * 2/2010 Watarai .................. B6%
+
+U.S.C. 154(b) by 0 days.
+
+7,654,548 B2 * 2/2010 Kanehisa ............... B62K 21 O2
+
+(21) Appl. No.: 14/521,208
+
+(22) Filed:
+
+7,648,211 B2 *
+
+(Continued)
+Primary Examiner — Jeffrey J Restifo
+
+Oct. 22, 2014
+
+(65)
+
+Prior Publication Data
+
+E. I'
+rope
+
+US 2015/O2467O6A1
+
+". or Firm — Zimmerman Intellectual
+CW1CS
+
+Sep. 3, 2015
+(57)
+
+Related U.S. Application Data
+
+- ------ --- ---
+
+• u. fs
+
+(58) Field of Classification Search
+CPC
+
+ABSTRACT
+-
+
+(60) Provisional application No. 61/899,142, filed on Nov.
+1, 2013.
+51) Int. C
+(51) 60B 5/12
+(2006.01)
+B62K 25/02
+(20060i)
+(52) U.S. Cl
+CPC
+B62K 25/02 (2013.01); B62K 2206/00
+(2013.01)
+
+B62K 25/O2
+
+SDCI0/22
+
+See application file for complete search history.
+(56)
+
+280,260
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+6,089,675 A *
+
+7/2000 Schlanger ............. B6OB 27 O23
+
+6,241.322 B1*
+
+6/2001 Phillips ............... B6OB 27/0078
+
+280,279
+301,110.5
+
+An axle assembly for a bicycle is disclosed. The axle assem
+bly is configured to be installed at a mounting structure on the
+bicycle to mount a rotating hub of a wheel on the bicycle. The
+axle is secured to the mounting structure by a bolt; the bolt is
+nested in a retainer secured to the mounting structure. The
+axle has at least one non-circular section engaging a corre
+sponding non-circular section of the mounting structure. The
+retainer is installed in a threaded section of the mounting
+structure. At initial installation of the axle assembly the
+
+retainer and the bolt of the axle assembly are installed on the
+
+mounting structure; Subsequent installation and removal of
+
+the wheel/hub is accomplished by installation and removal of
+
+the axle performed by rotation of the bolt (using a tool or a
+tool-free feature) nested in the retainer. The axle assembly
+can be installed in the front fork (such as a front Suspension
+fork) or the rear frame of the bicycle or other wheeled vehicle.
+The axle assembly comprises one or more of the inventive
+concepts and features shown and described in the specifica
+tion and FIGURES.
+
+22 Claims, 6 Drawing Sheets
+
+
