@@ -1,0 +1,19 @@
+patent: US641983A
+source: https://patentimages.storage.googleapis.com/93/e9/35/495b25d7454d91/US641983.pdf
+pages: 4
+per-page extracted text length: {1: 213, 2: 198, 3: 4716, 4: 3569}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+No. 641,983.
+A. P. MORROW.
+BACK PE DALNG BRAKE.
+(No Model.)
+
+Patented Jan. 23, 1900.
+
+(Application filed Aug. 1, 1896. Renewed Nov. 1, 1899.)
+2. Sheets-Sheet .
+
+THE NORRIS PETERS co, PHoro-LTHo., washington, to c.
+
+

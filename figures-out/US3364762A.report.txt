@@ -1,0 +1,20 @@
+patent: US3364762A
+source: https://patentimages.storage.googleapis.com/47/4b/fc/8bd7f91ba79fdb/US3364762.pdf
+pages: 10
+per-page extracted text length: {1: 135, 2: 155, 3: 154, 4: 134, 5: 145, 6: 172, 7: 159, 8: 7225, 9: 8223, 10: 3393}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+Jan. 23, 1968
+
+TETSUO MAEDA
+
+3,364,762
+
+CHANGE SPEED GEAR CONTROL DEVICE FOR BICYCLES OR THE LIKE
+Filed Nov. 4, 1964
+
+m
+
+7 Sheets-Sheet
+
+

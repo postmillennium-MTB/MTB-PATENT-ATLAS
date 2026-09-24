@@ -1,0 +1,65 @@
+patent: US4500103A
+source: https://patentimages.storage.googleapis.com/b4/0b/6a/3bbadb06f1ba96/US4500103.pdf
+pages: 10
+per-page extracted text length: {1: 1270, 2: 61, 3: 50, 4: 6986, 5: 7179, 6: 6840, 7: 7217, 8: 4430, 9: 979, 10: 501}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+(11)
+45
+
+Klein
+HIGH EFFICIENCY BICYCLE FRAME
+
+Related U.S. Application Data
+(63) Continuation of Ser. No. 658,620, Feb. 17, 1976, aban
+doned.
+
+296/205
+References Cited
+56)
+U.S. PATENT DOCUMENTS
+3,966,230 6/1976 Nicol ............................... 280/281R
+
+Feb. 19, 1985
+
+Bicycling Magazine, May 1975, pp. 26, 28, 30, 32, article
+"Design Considerations', by M. Rosenbaum.
+Primary Examiner-David M. Mitchell
+
+Attorney, Agent, or Firm-Jim Zegeer
+57
+
+51 Int. Cl. .............................................. B62K 19/06
+(52) U.S. Cl. ................................................ 280/281 R
+58 Field of Search ............. 280/281 R, 281 LP, 274;
+
+4,500,103
+
+FOREIGN PATENT DOCUMENTS
+65701 1 9/1951 United Kingdom............ 280/281 R
+OTHER PUBLICATIONS
+
+Inventor:
+
+Gary G. Klein, 207 B.S. Prairie Rd.,
+Chehalis, Wash. 98532
+Appl. No.: 849,141
+Filed:
+Nov. 7, 1977
+
+Patent Number:
+Date of Patent:
+
+ABSTRACT
+
+The frame of a racing type bicycle is made very rigid to
+increase the power transmission efficiency and to im
+prove the handling and riding characteristics. The pre
+ferred configuration uses large diameter tubing in alu
+minum alloy to achieve a lighter, stronger and much
+more rigid frame than prior art.
+7 Claims, 4 Drawing Figures
+
+

@@ -1,0 +1,124 @@
+patent: US5064250A
+source: https://patentimages.storage.googleapis.com/45/b8/a3/41ea618a1f12d0/US5064250.pdf
+pages: 17
+per-page extracted text length: {1: 2740, 2: 63, 3: 52, 4: 74, 5: 52, 6: 103, 7: 97, 8: 52, 9: 60, 10: 52, 11: 68, 12: 86, 13: 6649, 14: 6919, 15: 6608, 16: 7193, 17: 5702}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+Yashiro et al.
+
+11
+45
+
+(54) whEEL FOR LIGHT VEHICLE AND DISC
+
+1,113,577 10/1914 Redfield ................................ 30/55
+
+5,064,250
+Nov. 12, 1991
+
+1,303,501 5/1919 Rouanet .
+... 301/54
+1,938,862 12/1933 Roe ....................................... 301/97
+3,158,404 11/1964 Noakes ..........
+30/63 DDX
+
+USED THEREFOR
+
+75 Inventors: Tadashi Yashiro, Nara; Takafumi
+Nishimoto, Ichihara, both of Japan
+73) Assignees: Sugino Cycle Industries, Ltd., Nara;
+Nippon Steel Chemical Co., Ltd.,
+Tokyo, both of Japan
+(21) Appl. No.: 365,649
+
+3,462,817 8/1969 Horsfall et al................ 301/63 RX
+
+4,114,953 9/1978 Baumgartner ............ 301/63 PW X
+4,602,823 7/1986 Berg .................................. 301/55 X
+4,844,552 7/1989 Tsygankou et al. ...... 301/63 PW X
+4,858,297 8/1989 de Longcamp ................... 301/55 X
+
+FOREIGN PATENT DOCUMENTS
+
+(22 Filed:
+Jun. 13, 1989
+30
+Foreign Application Priority Data
+Jun. 17, 1988
+
+Patent Number:
+Date of Patent:
+
+83 685/82 11/1982 Australia .
+
+8806988 8/1988 Fed. Rep. of Germany .
+909095 4/1946 France .
+
+594494 6/1959 Italy ...................................... 301/58
+
+P
+
+Japan ................................ 63-1SO468
+
+Jul. 20, 1988 (JP)
+Sep. 1, 1988 JP
+Sep. 22, 1988 (JP)
+
+Japan ........................... 63-095932(U
+Japan ........................... 63-115246(U
+Japan .....
+... 63-124612U
+
+61-160301 7/1986 Japan.
+105964 5/1917 United Kingdom .
+2180510A 4/1987 United Kingdom .
+
+Dec. 8, 1988 JP
+Dec. 8, 1988 JP
+Dec. 28, 1988 JP
+
+Japan .....
+... 63-159922U
+Japan ................................ 63-310509
+Japan .....
+... 63-171076(U)
+
+Primary Examiner-Russell D. Stormer
+Attorney, Agent, or Firm-Armstrong, Nikaido,
+
+Feb. 15, 1989 JP Japan ............................. 1-017031 (U
+Feb. 15, 1989 JP Japan ................................. 1-037146
+51) int. C. ................................................ B60B 3/OO
+52 U.S. C. ......................... 301/63 DS; 301/63 PW;
+301/55
+
+58 Field of Search ....................... 301/54, 55, 58, 59,
+301/63 DD, 63 PW, 63 DS, 56
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+466,598 1/1892 Bunker .............................. 301/55 X
+1,005,103 10/1911 Chessnut ............................... 301/54
+
+Marmelstein, Kubovcik & Murray
+(57)
+
+ABSTRACT
+
+A wheel for light vehicles and a disc member used
+therein. The wheel comprising a hub, a rim and a pair of
+disc members detachably coupled with the hub and the
+rim, wherein the wheel has the advantage of a spoke
+
+wheel that it is lightweight and has sufficient strength as
+well as the advantage of a disc wheel that it has less air
+resistance when it rotates, and further the wheel can be
+
+easily repaired when it is damaged.
+8 Claims, 11 Drawing Sheets
+
+52
+
+

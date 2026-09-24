@@ -1,0 +1,169 @@
+patent: US5375676A
+source: https://patentimages.storage.googleapis.com/ec/93/dc/655a6901b1f628/US5375676.pdf
+pages: 10
+per-page extracted text length: {1: 2849, 2: 61, 3: 39, 4: 63, 5: 51, 6: 82, 7: 6435, 8: 7117, 9: 6227, 10: 1281}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO5375676A
+
+United States Patent (19)
+
+11
+45
+
+Takata et al.
+54 BICYCLE WITH ELECTRIC MOTOR
+75 Inventors: Nozomu Takata; Tatsuji Yokoyama,
+both of Iwata, Japan
+73 Assignee: Yamaha Hatsudoki Kabushiki Kaisha,
+
+Mar. 6, 1992 JP
+
+Dec. 27, 1994
+
+0168905 1/1986 European Pat. Off. .
+2259741 8/1975 France .
+241.1302 8/1979 France .
+
+2403727 8/1975 Germany .
+56-76590 6/1981 Japan .
+57-74285 5/1982 Japan.
+2-74491 3/1990 Japan .
+2083423 3/1982 United Kingdom.
+OTHER PUBLICATIONS
+
+Japan .................................... 4-32917
+
+51) Int. Cl. ............................................. B62M 23/02
+52 U.S. Cl. .................................... 180/206; 180/207;
+
+180/220; 180/65.2; 180/65.8
+58) Field of Search .................... 180/65.2, 65.8, 65.1,
+180/206, 205, 207, 220,907; 280/304.1; 74/388
+R., 625
+
+56
+
+5,375,676
+
+FOREIGN PATENT DOCUMENTS
+
+Iwata, Japan
+
+21 Appl. No.: 26,868
+(22 Filed:
+Mar. 5, 1993
+(30)
+Foreign Application Priority Data
+
+Patent Number:
+Date of Patent:
+
+European Search Report dated Jun. 15, 1993, Patent
+Abs. of Japan, vol. 14, No. 113(M-944) 2 Mar. 1990 &
+JP-A-13 14685 (Japan IIM KK) 19 Dec. 1989.
+Patent Abs of Japan, vol. 14, No. 262(M-981) (4205 6
+Jun. 1990 & JP-A-20 74 491 (Matsushita Electric
+Works Ltd) 14 Mar. 1990.
+Primary Examiner-Mitchell J. Hill
+Assistant Examiner-Anne Marie Boehler
+
+Attorney, Agent, or Firm-Knobbe, Martens, Olson &
+
+References Cited
+U.S. PATENT DOCUMENTS
+3,991,843 11/1976 Davidson ............................ 180/214
+4,050,533 9/1977 Seamone ..........
+... 180/907
+
+Bear
+
+57
+
+ABSTRACT
+
+4,923,028 5/1990 Yamashita et al. ................. 180/219
+5,024,113 6/1991 to et al. ............................. 80/65.2
+
+Art electrically assisted bicycle wherein electric assist is
+provided is proportion to the manual force for pedalling
+the bicycle. The device includes an arrangement for
+maintaining the speed of the electric motor at the same
+speed as the bicycle even when no force is applied to
+the pedal even though the bicycle is in motion so as to
+reduce the time delay and power losses when power
+assist is required.
+
+5,024,286 6/1991 Lean et al. .......................... 180/2O6
+5,078,227 1/1992 Becker ................................ 180/221
+
+19 Claims, 5 Drawing Sheets
+
+4,122,907 10/1978 Davidson et al. ...
+4,168,758 9/1979 Holt ..................................... 180/206
+4,364,448 12/1982 Ikuma .................................. 180/2O6
+a
+
+- - - 280/214
+
+4,422,515 12/1983 Loveless ................... ... 280/304.
+
+4,869,332 9/1989 Fujita et al. ........................ 80/65.2
+4,871,042 10/1989 Hsu et al. ........................... 180/65.2
+
+28
+
+42
+
+17
+
+30
+
+Manpower
+(Crank Shaft)
+33
+
+-
+
+RT
+66 or 67
+
+Pedal Force
+
+Vehicle Speed
+
+Detection
+
+Detection
+
+32
+
+29
+
+FL
+
+S
+
+68
+
+53
+
+52
+
+One-Way
+Clutch
+
+Speed
+Reduction
+Gear Mechanism
+
+Drive
+Shaft
+
+One-Way
+Clutch
+
+Rear
+Wheel
+
+

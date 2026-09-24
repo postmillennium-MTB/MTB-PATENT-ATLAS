@@ -1,0 +1,135 @@
+patent: US4765443A
+source: https://patentimages.storage.googleapis.com/2b/b1/81/b2a59b2f5a286c/US4765443.pdf
+pages: 26
+per-page extracted text length: {1: 3221, 2: 51, 3: 51, 4: 50, 5: 85, 6: 74, 7: 6773, 8: 6980, 9: 7059, 10: 6572, 11: 7360, 12: 7290, 13: 6998, 14: 6349, 15: 6152, 16: 5906, 17: 5975, 18: 6160, 19: 6109, 20: 6178, 21: 5952, 22: 6133, 23: 6084, 24: 6195, 25: 5965, 26: 704}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+11) Patent Number:
+
+4,765,443
+
+Cunningham
+
+(45. Date of Patent:
+
+Aug. 23, 1988
+
+54) CALIPER BRAKE FOR MOUNTAIN
+
+1000840 2/1952 France .............................. 188/24.22
+
+BICYCLES HAVING WIDE TRES
+
+0973248 9/1952 France .....
+1075997 10/1954 France .....
+O972185 11/1954 France .....
+
+76) Inventor: Charles B. Cunningham, 121 Wood
+La., Fairfax, Calif. 94930
+21 Appl. No.: 32,956
+Mar. 31, 1987
+22 Filed:
+
+0556268 6/1958 Italy ................................. 188/24. 12
+0029576 11/1907 United Kingdom............. 188/24.8
+0179277 4/1922 United Kingdom ............. 188/24.21
+0247337 2/1926 United Kingdom ............. 188/24.21
+0274755 7/1927 United Kingdom............. 188/24.21
+
+0648040 12/1950 United Kingdom............. 188/24.2
+
+Related U.S. Application Data
+63
+
+0676463 7/1952 United Kingdom ... ... 188/24.21
+0911876 11/1962 United Kingdom ............. 188A24.12
+
+Continuation of Ser. No. 740,648, Jun. 3, 1985, aban
+
+doned, which is a continuation-in-part of Ser. No.
+534,380, Sep. 21, 1983, abandoned.
+Int. Cl." ................................................ B62, 3/00
+(52) U.S. Cl. .............................. 188/24.21; 188/24.19;
+188/24.22; 188/24.12
+58 Field of Search ............... 188/24. 1, 24.12, 24.13,
+188/24.14, 24.15, 24.16, 24.18, 24.19, 24.21,
+
+(51)
+
+24.22
+
+56
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+2,160,181 5/1939 Taylor .............................. 188/24.21
+2,460,204 1/1949 Vacher .........
+3,314,504 4/1967 Altenburger .
+
+. 188/24.21
+188/24.19
+
+4,051,924 10/1977 Yoshigai .......
+188/24.2
+4,301,894 11/1981 Arai ...
+188/24.19
+4,546,858 10/1985 Nagano ............................ 188/24.19
+
+FOREIGN PATENT DOCUMENTS
+0023414 2/1981 European Pat. Off. ......... 188/24.12
+
+08.15461 10/1951 Fed. Rep. of Germany ... 188/24.21
+
+0863006 1/1953 Fed. Rep. of Germany ... 188/24.12
+0524762
+0600907
+0633234
+0907035
+1000765
+
+... 188/24.21
+... 188/24.21
+... 138/24.12
+
+9/1921 France .............................. 188/24.12
+2/1926 France ......
+188/24.21
+1/1928 France ......
+188/24.21
+2/1946 France ......
+188/24.12
+2/1952 France .............................. 88/24.21
+
+Primary Examiner-John W. Caldwell, Sr.
+Assistant Examiner-Alvin Oberley
+Attorney, Agent, or Firm-Owen, Wickersham &
+Erickson
+
+57
+
+ABSTRACT
+
+A caliper brake for wide-tire mountain bicycles. Each
+caliper arm is pivotally mounted to a stationary pivot
+post of the bicycle frame via a cylindrical bushing to
+which the arm is press fitted. A return spring is retained
+around the pivot post in a normally stationary portion
+enabling purposeful adjustment. A brake shoe holder is
+mounted on one end of the caliper arm, and a roller
+mounting post is secured to the other end. A cam roller
+is mounted rotatably on the roller mounting post by a
+low-friction bearing and has a circumferential groove
+engaging a cammed edge of a can plate, to which a
+brake-actuating cable is secured. The brake shoe holder
+is preferably asymmetrical and is mounted for adjust
+
+ment lengthwise of the caliper arm and for rotation
+around it and is also made adjustable as to the spacing
+from the caliper arm and as to the rotational position
+around an axis perpendicular to that arm.
+44 Claims, 5 Drawing Sheets
+
+

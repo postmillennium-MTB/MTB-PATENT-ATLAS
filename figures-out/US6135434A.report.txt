@@ -1,0 +1,219 @@
+patent: US6135434A
+source: https://patentimages.storage.googleapis.com/90/38/52/bf0d500936aa0f/US6135434.pdf
+pages: 7
+per-page extracted text length: {1: 3029, 2: 0, 3: 0, 4: 6719, 5: 7439, 6: 7413, 7: 4082}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6135434A
+
+United States Patent (19)
+
+11 Patent Number:
+
+6,135,434
+
+Marking
+
+(45) Date of Patent:
+
+Oct. 24, 2000
+
+54
+
+5.984,060 11/1999 Clark et al. ........................ 188/322.16
+
+SHOCK ABSORBER WITH POSITIVE AND
+NEGATIVE GAS SPRING CHAMBERS
+
+OTHER PUBLICATIONS
+
+75 Inventor: John Marking, El Cajon, Calif.
+73 Assignee: Fox Factory, Inc., San Jose, Calif.
+21
+
+Appl. No.: 09/231,257
+
+1999 Sid XC, SL and XLOwner's Manual, Rock ShoX(R) pp.
+1-21.
+Primary Examiner-Christopher P. Schwartz
+Attorney, Agent, or Firm Townsend and Townsend and
+
+22
+
+Filed:
+
+Crew LLP
+
+Jan. 15, 1999
+
+Related U.S. Application Data
+
+57
+
+ABSTRACT
+
+60 Provisional application No. 60/073,478, Feb. 3, 1998.
+
+A gas spring shock absorber (10A) includes a damping fluid
+
+(51) Int. Cl." ................................... F16F 9/02; F16F 5/00
+
+cylinder (14A) telescopically housed within an air cylinder
+
+58) Field of search - - - - -
+
+the air cylinder with a vented piston (32A) movably
+
+52 U.S. CI.
+
+267/64.26; 188/315; 188/322.16
+s
+
+(12A). A shaft (16A) connects a sealable, outer end (18A) of
+
+267/33, 34 35
+
+267/6411, 64.26 iss/31 5 317 322 1. 6
+• ----s / • a sys
+
+56)
+
+mounted within the damping fluid cylinder. A first fluid seal
+
+s -1 -u- s
+
+(60) extends from the gas cylinder and contacts the outer
+
+References Cited
+
+surface (38A) of the damping cylinder while a second fluid
+Seal (34A) extends from the damping cylinder and contacts
+
+U.S. PATENT DOCUMENTS
+D. 391530 3/1998 Turner
+
+3.272.495 of1966 Axhammer
+
+the inner surface (36A) of the gas cylinder. The fluid seals
+create a sealed variable-volume air chamber (40A) which is
+
+188/315
+
+divided into air positive and air negative Spring chambers
+
+4,132.395 1/1979 Fox, Jr. ...........
+... 188/314
+4,934,667 6/1990 Pees et al.
+267/64.21
+4,971,344 11/1990 Turner .........
+... 280/276
+5,186,481 2/1993 Turner .............
+... 280/276
+5,271,485 12/1993 Yowell et al. ...
+... 188/317
+St. 10/1995 Turner et al. ........................... 280/276
+
+the two fluid Seals and automatically balances the force on
+the damping unit from the pressurized gas in the first air
+chamber portion. A bypass channel (66) is provided to
+permit fluid to bypass the Second fluid Seal and automati
+cally equalize the pressure in the air positive and air negative
+Spring chambers when the Second fluid Seal is aligned
+
+580,075 12/1996 Turneret al. r 280/276
+5,682,966 11/1997 Cabrerizo-Pariente.
+5,775,677 7/1998 Englund .................................. 188/317
+
+therewith.
+
+3,794,309 2/1974 Chrokey et al... 26734
+
+(62,64). The air negative spring chamber is defined between
+
+5,810,130 9/1998 McCandless ....................... 188/322.22
+
+11
+
+42
+
+\ 40
+
+9 Claims, 2 Drawing Sheets
+
+10, 29
+
+/18
+
+18
+
+50
+
+AY^1
+
+24
+
+A NyayS.
+
+N7
+
+4.41r
+
+%N&SSNS
+S321, 226S
+r
+SY 2
+N
+
+NN
+
+NS
+
+N.
+
+S.
+
+y-f
+
+A
+
+ZYSSSSSSESSEY)
+NSYNN S SS
+1 Ayaz ZZZ
+
+N
+4-4-44444444 Car
+
+44 44(S44
+
+SAaaaaayaasa NYNYNYNNNYSSYSS
+
+Za
+
+13A
+
+is's " . KYL.
+
+7 Sea N N ANNNNN N N N N S YNNY
+
+38A
+
+al
+
+Zaza
+
+l
+
+Sz
+Sk, N N N N N N N N N N N N
+
+SS
+
+ARN
+
+20A
+
+Ss
+
+30
+
+

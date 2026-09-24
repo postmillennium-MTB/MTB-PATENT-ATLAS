@@ -1,0 +1,109 @@
+patent: US5060833A
+source: https://patentimages.storage.googleapis.com/a7/ad/e3/7be2b99d71ac9f/US5060833.pdf
+pages: 7
+per-page extracted text length: {1: 2477, 2: 51, 3: 51, 4: 51, 5: 6293, 6: 6971, 7: 4588}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+11) Patent Number:
+(45) Date of Patent:
+
+Edison et al.
+54
+
+4,189,075
+4,253,454
+4,265,381
+4,345,704
+
+CAMEL BACK
+
+75 Inventors: James M. Edison; Arthur D.
+Henderson, both of Odessa, Tex.
+
+4,544,087 10/1985 Modig.
+4,629,098 12/1986 Eger .................................... 224/48
+4,739,905 4/1988 Nelson .
+4,739,93 4/1988 Moore ................................. 224/214
+
+Continuation of Ser. No. 393,434, Aug. 14, 1989, aban
+doned.
+
+51 Int. Cl. ................................................ A45F 5/00
+(52) U.S. Cl. .................................... 224/148; 224/209;
+224/901; 222/213; 222/175; 251/342; 215/1 A
+
+(58) Field of Search ............... 224/148, 209, 214, 901;
+128/207.18, 207.13, 205.22, 202.15; 222/175,
+213; 251/342; 215/1 A, 312, 315
+
+56)
+
+4,469,097 9/1984 Kelman .
+
+Aug. 24, 1990
+
+Related U.S. Application Data
+
+63
+
+2/1980 Hall.
+3/1981 Warncke .
+5/1981 Muscatell .
+8/1982 Boughton ............................ 224/148
+
+4,449,654 5/1984 Cappis .
+
+(73) Assignee: Fastrak Systems, Inc., Odessa, Tex.
+21 Appl. No.: 574,576
+22 Filed:
+
+5,060,833
+Oct. 29, 1991
+
+References Cited
+U.S. PATENT DOCUMENTS
+33,343 9/861 Garrick .
+357,272 2/1987 Donavin .
+1,637,635 8/1927 Corley .
+2,013,358 9/1935 Osborne.
+2,380,372 7/1945 Alderfer .
+2,999,499 9/1961 Willet .................................. 251/342
+3,819, 151 6/1974 Kish .
+4,089,447 5/1978 Achimeteli.
+4,090,650 5/1978 Gotta .
+4,139,130 2/1979 Glusker .
+4,176,772 12/1979 Danon .
+
+Primary Examiner-Linda J. Sholl
+Attorney, Agent, or Firm-Marcus L. Bates
+(57)
+
+ABSTRACT
+
+A water system that allows a bicyclist to drink liquids
+anytime he desires. The system has a collapsible con
+
+tainer of water or other liquid stored within a flexible
+back pack that is removably secured at a location be
+tween the shoulders of the bicyclist. A resilient mouth
+
+piece adapted to be held in the mouth of the bicyclist is
+connected to the container by a length of tubing. The
+mouthpiece is a valve device and has a cylindrical side
+wall that forms a chamber. A spring biased valve ele
+ment located inside the chamber normally prevents
+flow therethrough. When the opposed sidewalls of the
+chamber are compressed between the teeth, liquid flows
+through the mouthpiece. This allows the mouthpiece to
+be held securely between the lips and whenever the
+sidewalls are compressed by the teeth, fluid flows from
+the container, through the tubing and into the mouth of
+the bicyclist.
+
+s
+
+4 Claims, 3 Drawing Sheets
+
+

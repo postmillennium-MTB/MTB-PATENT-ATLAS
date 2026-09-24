@@ -1,0 +1,188 @@
+patent: US9734813B2
+source: https://patentimages.storage.googleapis.com/30/73/0b/070c0a689c9402/US9734813.pdf
+pages: 16
+per-page extracted text length: {1: 2734, 2: 596, 3: 336, 4: 244, 5: 341, 6: 231, 7: 81, 8: 92, 9: 84, 10: 93, 11: 197, 12: 82, 13: 111, 14: 6426, 15: 7287, 16: 819}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+|HAI LALA A
+(12) Lacy
+United States Patent
+
+MAN MAL MAL AT MANUAL THAT
+
+US009734813B2
+
+(10) Patent No.:
+
+US 9 ,734,813 B2
+
+(45 ) Date of Patent:
+
+(54 ) BICYCLE BELL WITH SILENCING
+
+References Cited
+U .S . PATENT DOCUMENTS
+
+(56 )
+
+MECHANISM
+
+Aug. 15 , 2017
+
+(71 ) Applicant: Christopher Lacy, Encinitas, CA (US)
+
+42 ,107 A * 3/1864 Parker . ....
+
+(72) Inventor: Christopher Lacy, Encinitas, CA (US)
+
+55,392 A * 6/ 1866 Thompson ............... G10K
+1/07
+116 / 155
+
+(73 ) Assignee : Christopher Lacy , Encinitas, CA (US )
+( * ) Notice : Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U .S .C . 154 (b ) by 194 days .
+(21) Appl. No.: 14 /882,837
+(22 ) Filed : Oct . 14 , 2015
+Prior Publication Data
+(65 )
+US 2016 /0111074 A1 Apr. 21, 2016
+
+GIOK116 /1155
+/07
+
+151,356 A * 5/ 1874 Collins .................... G10K 3/00
+116 / 172
+513, 152 A * 1/1894 Smith .................... G10K 1/072
+116 / 167
+
+.. B62J 3 /00
+702,160 A * 6/ 1902 Seabrook
+116 / 166
+GIOK 1/ 32
+1,848,020 A * 3/ 1932 Merrill
+116 / 150
+GIOK 1/ 36
+2 ,571,178 A * 10 /1951 Allen .....
+116 / 148
+2,695,589 A * 11/1954 Hubbell ............ A63H116 /5150
+/ 00
+(Continued )
+FOREIGN PATENT DOCUMENTS
+
+Related U .S . Application Data
+(60 ) Provisional application No. 62 /064 ,797 , filed on Oct .
+
+114604 A * 4 / 1926
+
+CN
+
+CN
+
+127891 A * 9 / 1928 .........
+
+16 , 2014 .
+
+G04B 21/08
+
+G04B 21/ 08
+
+(Continued )
+
+(51) Int. Cl.
+
+B62 ) 3 / 00
+
+GIOK 1/ 10
+GIOK 1 / 36
+
+Primary Examiner — R . A . Smith
+(74 ) Attorney , Agent, or Firm — Adli Law Group P.C .
+ABSTRACT
+(57)
+A bell with silencing and or sound dampening mechanism is
+
+( 2006 .01)
+(2006 .01)
+( 2006 .01 )
+
+(2006 .01)
+GIOK 1/072
+(52) U . S . CI.
+CPC GIOK 1 / 10 (2013 . 01 ); B62J 3 /00 (2013 .01);
+
+disclosed . In one embodiment of the present disclosure , the
+
+disclosed bell comprises a bell, a clamp body attaching to
+
+the bell, a lever installed on the clamp body and is config
+
+GIOK 1/36 (2013.01); GIOK 1 /072 (2013 .01)
+
+ured to be slidable on the clamp body, a clapper and a cable
+connecting the lever at one end and the clapper at other end .
+
+(58 ) Field of Classification Search
+
+CPC ... B62J 3 /00 ; GIOK 1 /00 ; GIOK 1/ 06 ; G1OK
+
+When the lever is moved in a direction away from the bell ,
+
+1/07; G1OK 1/071 ; G10K 1/072 ; G1OK
+USPC ....... 116 / 148 , 149, 150 , 155 , 166 , 167, 169,
+116 / 170 , 171, 172 , 446 /419, 421, 422
+See application file for complete search history .
+
+the clapper is retracted into the head of the bell and becomes
+stationary, preventing the clapper to contact the body of the
+bell.
+
+1 / 10 ; G1OK 1 /32 ; G10K 1 /36 ; G10K 1 / 38
+
+11 Claims, 11 Drawing Sheets
+
+-
+
+-----
+
+---
+
+--
+
+.
+.
+
+*
+*
+*
+*
+-
+
+-
+
+-
+
+-
+
+1
++
+
+YENE
+
+.
+
+129 .
+.
+67
+
+o
+
+*
+*
+
+*
+*
+*
+
+

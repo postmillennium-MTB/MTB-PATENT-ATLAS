@@ -1,0 +1,159 @@
+patent: US10834987B1
+source: https://patentimages.storage.googleapis.com/d0/dd/90/2796be504487ad/US10834987.pdf
+pages: 14
+per-page extracted text length: {1: 2530, 2: 2959, 3: 93, 4: 126, 5: 96, 6: 163, 7: 143, 8: 99, 9: 96, 10: 303, 11: 6585, 12: 7575, 13: 7781, 14: 4896}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010834987B1
+
+( 12) United States Patent
+
+( 10) Patent No .: US 10,834,987 B1
+(45 ) Date of Patent :
+Nov. 17 , 2020
+
+Bottlang et al .
+
+(54) PROTECTIVE LINER FOR HELMETS AND
+OTHER ARTICLES
+
+( 56 )
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+( 71 ) Applicant: Apex Biomedical Company LLC ,
+Portland, OR (US )
+
+3,577,305 A * 5/1971 Hines
+
+( 72 ) Inventors: Michael Bottlang , Portland, OR (US );
+Steven Madey , West Linn , OR (US ) ;
+Stanley Tsai, Portland, OR (US );
+Jeffrey Bennett , Portland, OR (US );
+
+3,877,076 A * 4/1975 Summers
+12/1976 Keltner
+
+4,227,593 A
+4,526,421 A
+4,710,984 A
+5,025,504 A
+
+10/1980 Bricmont et al .
+7/1985 Brennan et al .
+
+5,561,866 A
+
+5,700,545 A
+
+filed on Mar. 14 , 2013 , now abandoned .
+
+( 60 ) Provisional application No. 62 / 303,884 , filed on Mar.
+4 , 2016 , provisional application No. 61 / 670,258 , filed
+on Jul. 11 , 2012 .
+
+( 51 ) Int. Ci.
+A42B 3/06
+A42B 3/12
+
+A63B 71/10
+
+( 2006.01 )
+( 2006.01 )
+
+( 2006.01 )
+
+(52) U.S. CI.
+CPC
+
+A42B 3/064 (2013.01 ) ; A42B 3/125
+(2013.01 ) ; A63B 71/10 (2013.01 )
+( 58 ) Field of Classification Search
+CPC
+
+A42B 3/125 ; A42B 3/064 ; A42B 3/06 ;
+
+A42B 37063 ; A42B 3/10 ; A42B 3/12 ;
+A42B 3/128
+See application file for complete search history.
+
+A41D 31/285
+2/456
+
+12/1987 Asper
+
+6/1991 Benston et al .
+10/1996 Ross
+12/1997 Audi et al.
+
+(Continued )
+
+U.S.C. 154 ( b ) by 391 days .
+
+( 63 ) Continuation - in -part of application No. 13 / 803,962 ,
+
+2/414
+
+3,999,220 A
+
+4,213,202 A * 7/1980 Larry
+
+Devin Knowles , Portland, OR (US )
+( 73 ) Assignee : Apex Biomedical Company, LLC ,
+Portland, OR (US )
+( * ) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+( 21 ) Appl. No .: 15 /449,898
+Mar. 3 , 2017
+(22 ) Filed :
+Related U.S. Application Data
+
+A41D 13/0155
+428/72
+A42B 3/065
+
+FOREIGN PATENT DOCUMENTS
+CN
+DE
+
+11/2011
+
+202019831
+8409316
+
+7/1984
+
+( Continued )
+Primary Examiner Sally Haden
+(74 ) Attorney, Agent, or Firm -Schwabe, Williamson &
+
+Wyatt, P.C.
+(57 )
+
+ABSTRACT
+
+Embodiments herein employ a novel strategy based on a
+floating cellular liner that acts as a torsional suspension
+system to dampen rotational acceleration, such as head
+acceleration in a helmet, in response to an oblique impact.
+Specifically, the torsional suspension consists of an aniso
+tropic cellular liner that is at least partially recessed inside a
+more rigid adjacent shell, relative to which the cellular liner
+can simultaneously undergo translation and in - plane com
+
+pression.
+
+9 Claims, 8 Drawing Sheets
+201
+203
+
+204
+
+204
+202
+
+200
+
+
