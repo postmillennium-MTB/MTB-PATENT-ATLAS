@@ -1,0 +1,75 @@
+patent: US5088535
+source: https://patentimages.storage.googleapis.com/9e/8c/f7/3ccb0a154ce7a2/US5088535.pdf
+pages: 8
+per-page extracted text length: {1: 1618, 2: 26, 3: 51, 4: 51, 5: 6474, 6: 6917, 7: 6795, 8: 5361}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+|||||||||||||||III
+USOO5088535A
+
+United States Patent (19)
+
+11 Patent Number:
+(45) Date of Patent:
+
+Potts et al.
+(54) BICYCLE OR MOTORCYCLE TRE TREAD
+(75) Inventors: Stephen M. Potts; Mark J. Slate,
+both of Mill Valley; Charles B.
+
+56
+
+Cunningham, Fairfax; James H.
+
+Merz, Morgan Hill, all of Calif.
+73 Assignee: Specialized Bicycle Components, Inc.,
+Morgan Hill, Calif.
+21 Appl. No.: 529,785
+May 25, 1990
+22 Filed:
+Related U.S. Application Data
+Continuation of Ser. No. 267,683, Nov. 2, 1988, aban
+doned, which is a continuation of Ser. No. 907,370,
+
+Sep. 11, 1986, abandoned, which is a continuation-in
+part of Ser. No. 906,834, Sep. 10, 1986, abandoned.
+
+(51) int. Cl. .............................................. B60C 11/11
+52) U.S. Cl. ............................ 152/209 B; 152/209 R;
+(58
+
+D2/140
+Field of Search .............................. D12/136, 140;
+
+152/209 R, 209 B, 209 D
+
+5,088,535
+Feb. 18, 1992
+
+References Cited
+U.S. PATENT DOCUMENTS
+D. 254,367 3/1980 Kaniya .............................. D12/136
+D. 268,339 3/1983 Inae et al. .......................... D2A36
+D, 282,454 2/1986 Tsai .................................... D12/136
+3,842,879 10/1974 Mills et al. ...................... 152/209 R
+
+FOREIGN PATENT DOCUMENTS
+
+2148213 5/1985 United Kingdom ........... 152/209 )
+
+Primary Examiner-Geoffrey L. Knable
+Attorney, Agent, or Firm-Philip A. Dalton; Milton W. .
+Schlemmer
+
+57
+
+ABSTRACT
+
+An improved bicycle tire tread comprising selected
+combinations of tread block and trough dimensions and
+concave, convex and beveled tread surface configura
+tions, is disclosed.
+
+12 Claims, 3 Drawing Sheets
+
+
