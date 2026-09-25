@@ -1,0 +1,156 @@
+patent: US10661598B2
+source: https://patentimages.storage.googleapis.com/e7/62/97/ad27a68ec23a79/US10661598.pdf
+pages: 15
+per-page extracted text length: {1: 2376, 2: 952, 3: 98, 4: 77, 5: 90, 6: 87, 7: 97, 8: 94, 9: 76, 10: 90, 11: 6796, 12: 6813, 13: 7663, 14: 7244, 15: 1341}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010661598B2
+
+(12) Spanjers
+Unitedet States
+Patent
+al.
+(54 ) ARTICLE HAVING BRAIDED FIBER AND
+ROD END CONNECTION
+
+( 10 ) Patent No.: US 10,661,598 B2
+(45 ) Date of Patent:
+*May 26 , 2020
+(58 ) Field of Classification Search
+CPC
+
+B60B 1/003 ; B60B 5/02 ; B60B 1/0246 ;
+B60B 1/0269; B60B 2360/322 ; B60B
+
+(71 ) Applicant: BERD L.L.C., Minneapolis , MN (US)
+(72 ) Inventors: Charles S. Spanjers , St. Paul, MN
+(US ); Kyle D. Olson , St. Louis Park ,
+MN (US)
+(73 ) Assignee: BERD , L.L.C., Minneapolis , MN (US)
+( * ) Notice : Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 (b ) by 0 days.
+This patent is subject to a terminal dis
+
+2360/36 ; B60B 2900/111 ; B60B 2900/35
+USPC
+
+(56 )
+
+References Cited
+
+U.S. PATENT DOCUMENTS
+3/1988 Imao et al.
+4,729,605 A
+5,110,190 A * 5/1992 Johnson
+
+5,131,727 A * 7/1992 Johnson
+
+claimer .
+
+B60B 5/02
+301/104
+B60B 7/02
+301/ 37.41
+
+(Continued )
+FOREIGN PATENT DOCUMENTS
+
+( 21 ) Appl. No .: 16 /213,516
+(22) Filed :
+(65)
+
+301/58
+
+See application file for complete search history .
+
+DE
+
+Dec. 7 , 2018
+
+EP
+
+102008046255 B3
+1304238 A1
+
+3/2010
+4/2003
+
+(Continued )
+
+Prior Publication Data
+
+May 16 , 2019
+Related U.S. Application Data
+(62 ) Division of application No. 15 / 147,357, filed on May
+5 , 2016 , now Pat. No. 10,150,332.
+
+European Search Report and Written Opinion for European patent
+
+(60 ) Provisional application No. 62/278,527, filed on Jan.
+14, 2016 , provisional application No. 62/ 160,124 ,
+filed on May 12 , 2015 .
+
+Primary Examiner S. Joseph Morano
+
+US 2019/0143744 A1
+
+(51) Int. Cl.
+BOOB 1/00
+
+BOOB 5/02
+
+BOOB 1/02
+
+( 2006.01 )
+(2006.01)
+( 2006.01 )
+
+(Continued )
+Assistant Examiner
+
+Jean W Charleston
+
+( 74 ) Attorney , Agent, or Firm
+
+Steven M. Koehler
+
+ABSTRACT
+
+An article includes having a braided fiber having a first end
+and a second end , and a rod having a first end and a second
+
+B60B 1/003 (2013.01 ); B60B 5/02
+(2013.01); B60B 1/0246 (2013.01); B60B
+1/0269 (2013.01 ); B60B 2360/322 (2013.01);
+B60B 2360/36 (2013.01); B60B 2900/111
+(2013.01); BOOB 2900/351 (2013.01 )
+
+103
+
+application No. 16793219.3 , dated Dec. 13 , 2018 .
+
+(57 )
+
+(52 ) U.S. Ci.
+CPC
+
+OTHER PUBLICATIONS
+
+104
+
+end , whereby the first end of the rod is threaded and wherein
+the second end of the rod is disposed inside the first end of
+the braided fiber.
+
+20 Claims, 8 Drawing Sheets
+
+105
+
+106
+
+o
+
+107
+
+
