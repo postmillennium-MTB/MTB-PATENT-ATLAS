@@ -1,0 +1,96 @@
+patent: US4939950A
+source: https://patentimages.storage.googleapis.com/54/35/a3/da2ca9ea82d8e2/US4939950.pdf
+pages: 8
+per-page extracted text length: {1: 2321, 2: 51, 3: 51, 4: 130, 5: 6666, 6: 7268, 7: 6584, 8: 4299}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+11
+45
+
+Girvin
+54). HANDLEBAR ASSEMBLY FOR CYCLES
+
+4,939,950
+Jul. 10, 1990
+
+FOREIGN PATENT DOCUMENTS
+
+(75) Inventor: Robert H. Girvin, Holliston, Mass.
+
+53602 9/1937 Denmark ........................... 74/55.2
+1OSO197 1/954 France ...............
+... 74/551.2
+
+73 Assignee: K G Engineering, Inc., Woonsocket,
+
+9603 of 1903 United Kingdom ............... 74/551.2
+419336 11/1934 United Kingdom ............... 74/551.2
+437984 11/1935 United Kingdom ............... 74/551.2
+
+R.I.
+
+21 Appl. No.: 261,556
+
+531716 1/1941 United Kingdom ............... 74/551.2
+
+22 Filed:
+Oct. 24, 1988
+51) Int. C. .............................................. B62K 21A14
+52 U.S. C. ................................... 74/5512; 280/279;
+280/288.4; 74/551.1
+58 Field of Search ................. 74/551.1, 551.2, 551.3;
+280/279, 276, 278, 288.4; D12/111, 112, 107
+56
+
+Patent Number:
+Date of Patent:
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+367,368 8/1887 Copeland ........................... 74/55.2
+586,493 7/1897 Hicks .
+617,565 1/1899 Deans.
+690,464 1/1902 Sadler.
+1,053,150 2/1913 Bouillat .
+1,468,835 9/1923 Rosen.
+2,294,839 9/1942 Duffy ............ so ossovo was over 74/551.2
+
+2,358,737 9/1944 Schwinn ............................. 74/551.2
+2,396,041 3/1946 Du Pont.
+2,583,947 1/1952 Keetch ............................... 74/551.2
+4,379,567 4/1983 Ribi ........
+... 280/279 X
+4,383,388 5/1983 Suimon ..
+- - - -A
+
+Primary Examiner-Vinh T. Luong
+Attorney, Agent, or Firm-Salter & Michaelson
+57
+
+ABSTRACT
+
+A handlebar assembly for a cycle includes a column
+member which is securable to a cycle so that it is rotat
+able about the steering column axis thereof, a pivot arm
+which is pivotably mounted on the column member so
+that it extends forwardly therefrom, a spring assembly
+for resiliently resisting pivoting movement of the pivot
+arm and a handlebar element of the forward end of the
+
+pivot arm. The handlebar element is adapted and
+mounted so that the hands of an operator of the cycle
+are positioned forward of the steering column axis, and
+the spring assembly is operative for resiliently resisting
+pivoting movement of the pivot arm to cushion shocks
+which are transmitted to the column member when
+bumps are encountered in an irregular roadway or off
+road surface.
+
+280/279
+
+24 Claims, 3 Drawing Sheets
+
+

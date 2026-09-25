@@ -1,0 +1,85 @@
+patent: US4669747A
+source: https://patentimages.storage.googleapis.com/3c/71/86/6fa6019a58c5b3/US4669747.pdf
+pages: 7
+per-page extracted text length: {1: 2026, 2: 48, 3: 182, 4: 49, 5: 6347, 6: 6906, 7: 4574}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+11
+
+Patent Number:
+
+4,669,747
+
+Groendal
+
+(45) Date of Patent:
+
+Jun. 2, 1987
+
+(54) FLEXIBLE BICYCLE
+76 Inventor: Mark L. Groendal, 3988 Burlingame,
+SW., Wyoming, Mich. 49509
+(21) Appl. No.: 266,181
+May 22, 1981
+22 Filed:
+(51)
+(52)
+58)
+
+Int. Cl."................................................ B62K9/00
+U.S.C. .................................................... 280/283
+Field of Search ................... 280/274, 275,281 R,
+
+280/283, 286; 267/149
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+441,649 12/1890 Dunlop ............................... 280/275
+701,967 6/1902 Titus .................................... 280/283
+4, 102,439 7/1978 Calderazzo .
+4,119,326 10/1978 Porter.
+4,202,561 5/1980 Yonkers .......................... 280/281 R
+FOREIGN PATENT DOCUMENTS
+110943 5/1928 Austria ................................ 280/283
+672642 10/1963 Canada ................................ 267/149
+839312 3/1939 France ................
+... 280/283
+
+Primary Examiner-John J. Love
+Assistant Examiner-Ross Weaver
+
+Attorney, Agent, or Firm-Mason, Fenwick & Lawrence
+57)
+
+ABSTRACT
+
+A bicycle has a front frame portion including a front
+wheel and handlebars and a rear frame portion includ
+ing a crank housing, a pedal crank, a rear wheel, and a
+seat with a flexible fiberglass spring plate removably
+mounted between upper portions of the front and rear
+frame portion and a steel cable extending from the
+crank housing of the rear frame portion to the upper
+portion of the front frame portion. During operation of
+the bicycle, the front frame portion can flex with re
+spect to the rear frame portion by flexing the fiberglass
+spring plate and tensioning the cable against the bias of
+compression springs holding the cable in tensioned con
+
+dition. The fiberglass spring plate can be removed and
+
+replaced with another plate having different flexibility
+characteristics for accommodating rider of varying
+weights.
+14 Claims, 9 Drawing Figures
+
+12901 of 1887 United Kingdom ................ 280/283
+
+27
+SafeStar
+
+

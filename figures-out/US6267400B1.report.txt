@@ -1,0 +1,168 @@
+patent: US6267400B1
+source: https://patentimages.storage.googleapis.com/bb/a0/97/3f83303cd45ba4/US6267400.pdf
+pages: 18
+per-page extracted text length: {1: 2561, 2: 58, 3: 58, 4: 107, 5: 115, 6: 141, 7: 64, 8: 74, 9: 70, 10: 69, 11: 69, 12: 59, 13: 6548, 14: 7360, 15: 7605, 16: 6300, 17: 6218, 18: 3063}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO626740OB1
+
+(12) United States Patent
+
+(10) Patent No.:
+
+McAndrews
+
+US 6,267,400 B1
+
+(45) Date of Patent:
+
+(54) BICYCLE DAMPING ENHANCEMENT
+SYSTEM
+
+Jul. 31, 2001
+
+5,000,470
+
+3/1991 Kamler et al. .
+
+5,332,068
+
+7/1994 Richardson et al. .
+
+5,337,864
+
+8/1994 Sjöström.
+
+(75) Inventor: Michael
+McAndrews, Santa Cruz, CA
+(US)
+
+5509,679
+5,598.903
+
+4/1996
+Leitner
+2/1997 Richardson.
+
+5,678,837
+
+10/1997 Leitner.
+
+O O
+(73) Assignee: Specialized
+Bicycle Components, Inc.,
+
+5,823,305
+5,954,167
+
+10/1998 Richardson et al..
+
+Morgan Hill, CA (US)
+
+6,105,987
+
+8/2000 Turner.
+
+6,119,830
+
+9/2000 Richardson et al. .
+
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+9/1999 Richardson et al. .
+
+FOREIGN PATENT DOCUMENTS
+
+U.S.C. 154(b) by 0 days.
+
+59106734
+
+6/1984 (EP).
+
+WO 99/31403
+
+6/1999 (WO).
+
+(21) Appl. No.: 09/288,003
+(22) Filed:
+Apr. 6, 1999
+(51) Int. Cl." ................................................... B62K 3700
+
+* cited by examiner
+Primary Examiner Robert P. Olszewski
+ASSistant Examiner Andrew J. Fischer
+
+(52) U.S. Cl. ............................................. 280/285; 188/275
+(58) Field of Search ..................................... 280/283, 284,
+
+(74) Attorney, Agent, or Firm-Knobbe, Martens, Olson &
+Bear LLP
+
+280/285, 286, 276, 275, 277; 188/275,
+
+(57)
+
+ABSTRACT
+
+322.19
+
+(56)
+
+4,127,038
+4,492.290
+4,580,997
+
+11/1978 Browning.
+1/1985 Zavodny.
+4/1986 Browning et al..
+
+A bicycle shock absorber for differentiating between rider
+induced forces and terrain-induced forces comprising: a first
+fluid chamber having fluid contained therein; a piston for
+compressing the fluid within the fluid chamber; a Second
+fluid chamber coupled to the first fluid chamber by a fluid
+communication hose, and an inertial valve disposed within
+the Second fluid chamber, the inertial valve opening in
+response to terrain-induced forces and providing communi
+cation of fluid compressed by the piston from the first fluid
+chamber to the second fluid chamber; and the inertial valve
+
+4,679,811
+
+7/1987 Shuler.
+
+ing communication of the fluid compressed by the piston
+
+4,790,554
+
+12/1988 Siegwart, Jr..
+
+from the first fluid chamber to the second fluid chamber.
+
+4,807,860
+
+2/1989 Simons.
+
+4,917,222
+
+4/1990 Bacardit ............................... 188/275
+
+References Cited
+U.S. PATENT DOCUMENTS
+a
+2,311.993 2/1943 Olsen.
+3,696,894 10/1972 Brady et al..
+4,082,169 4/1978 Bowles.
+4,126,302 11/1978 Curnutt.
+
+4,592,738
+
+6/1986 Nagano.
+
+not opening in response to rider-induced forces and prevent
+70 Claims, 11 Drawing Sheets
+
+

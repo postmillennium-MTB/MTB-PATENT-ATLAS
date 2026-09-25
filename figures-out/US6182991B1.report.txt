@@ -1,0 +1,241 @@
+patent: US6182991B1
+source: https://patentimages.storage.googleapis.com/90/18/42/bd5e7e6f110c36/US6182991.pdf
+pages: 24
+per-page extracted text length: {1: 3159, 2: 57, 3: 57, 4: 57, 5: 161, 6: 57, 7: 63, 8: 183, 9: 125, 10: 71, 11: 58, 12: 58, 13: 66, 14: 76, 15: 66, 16: 7232, 17: 6968, 18: 6790, 19: 7807, 20: 7781, 21: 7767, 22: 7243, 23: 7105, 24: 3100}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US006182991B1
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Christini et al.
+
+US 6,182,991 B1
+
+(45) Date of Patent:
+
+*Feb. 6, 2001
+
+(54) TWO WHEEL DRIVE BICYCLE WITH A
+
+4,773,662
+
+9/1988 Phillips ................................ 280/234
+
+SHOCK-ABSORBING FRONT FORK
+
+4,895,385
+
+5,004,258
+
+1/1990 Becoat
+4/1991 Becoat .....
+
+... 280/259
+... 280/259
+
+5,042.608
+
+8/1991 Horike
+
+. . 180/219
+
+5,113.964
+
+5/1992 Yamauchi
+
+... 180/224
+
+(75) Inventors: Steven J. Christini; Michael J. Dunn,
+
+both
+of Philadelphia, PA (US); Jeremy
+T. Shook, Ballston Spa, NY (US);
+
+E. : sists
+2Y- - -2
+arker ...
+
+Robert L. Pigeon, Lafayette Hill, PA
+
+5,116,070
+
+(US); Louis J. Allora, Morristown, NJ
+
+5,158,314
+
+10/1992 Pinos ...
+
+5/1992 Becoat ...
+
+. . 280/259
+
+(US)
+
+5,184,838
+5,224,725
+
+2/1993 Becoat .
+7/1993 Erlston .....
+
+... 280/259
+... 280/259
+
+(73) Assignee: Christini Technologies, Inc.,
+Philadelphia, PA (US)
+( c: )
+
+Notice:
+
+3.
+
+. . 280/259
+
+5,253,889
+
+10/1993 Kaminski.
+
+. . 280/230
+
+5,324,057
+
+6/1994 Chartrand.
+
+... 280/261
+
+5,332,244
+
+7/1994 Turner ...
+
+... 280/230
+
+Under 35 U.S.C. 154(b), the term of this
+
+5,390.946
+
+2/1995
+
+... 280/259
+
+patent shall be extended for 0 days.
+
+SEE
+:
+2 a 2
+
+1. Syenbacher
+--ICSS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+This patent is Subject to a terminal dis-
+
+5,542,689
+
+8/1996 Chalfant ............................ 280/242.1
+
+claimer.
+
+Spicer
+
+------- --- --- --------
+
+2.
+
+FOREIGN PATENT DOCUMENTS
+
+(21) Appl. No.: 09/372,160
+
+"..., R. 'yo Em B.N.38
+
+(22) Filed:
+
+W55
+
+ACEO E.M.'
+
+1284.821
+
+8/1972 (GB) ............................. B62K/11/OO
+
+Aug. 11, 1999
+Related U.S. Application Data
+
+(63) Continuation-in-part of application No. 09/171,742, filed on
+Oct. 23, 1998.
+
+(60) 1996,
+Provisional
+application No. 60/016.232, filed on Apr. 26,
+and provisional application No. 60/096,264, filed on
+Aug. 12, 1998.
+
+* cited bw examiner
+
+y
+
+E.'EC
+SRrewty.
+h
+SSIS
+EXfile
+J. Fischer
+
+(74) Attorney, Agent, or Firm-Cooley Godward LLP
+
+1. Int.
+nt. Cl.'
+51)
+C.7 ....................................................... B62M 1/00
+
+57
+
+(52) U.S. Cl. ........................................... 280/230; 74/665 F
+(58) Field of Search ..................................... 280/230, 210,
+(56)
+
+280/283; 180/223, 224, 240;665
+74/66.56
+R 665 E,F
+s
+References Cited
+
+The present invention is a fully functioning two-wheel drive
+bicycle with a shock-absorbing front fork. The drive train
+which Supplies power to the front wheel is incorporated into
+a modified frame and comprises a rear wheel driven by the
+traditional chain O shaft mechanism and the front wheel
+
+U.S. PATENT DOCUMENTS
+4O29,332
+6/1977 Davi
+280/234
+2 -1 - 2
+aVIS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+driven rear wheel to the front wheel. The drive train length
+ens and Shortens in parallel with the Shock-absorbing front
+
+4,397,369
+
+8/1983 Read ....................................
+
+fork.
+
+4,479,660
+
+10/1984 Patterson .............................. 280/261
+
+4,611,684
+
+2
+
+9/1986 Geschwender ....................... 180/223
+
+ABSTRACT
+
+driven by a Series of rigid shafts transferring power from the
+
+14 Claims, 14 Drawing Sheets
+
+

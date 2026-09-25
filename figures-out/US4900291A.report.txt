@@ -1,0 +1,108 @@
+patent: US4900291A
+source: https://patentimages.storage.googleapis.com/47/35/8a/05534e05dfe501/US4900291.pdf
+pages: 38
+per-page extracted text length: {1: 2269, 2: 51, 3: 521, 4: 51, 5: 89, 6: 79, 7: 50, 8: 105, 9: 51, 10: 57, 11: 64, 12: 117, 13: 52, 14: 388, 15: 6818, 16: 6793, 17: 6667, 18: 6227, 19: 7236, 20: 7194, 21: 7263, 22: 7191, 23: 7002, 24: 7014, 25: 7192, 26: 7053, 27: 7188, 28: 6718, 29: 7064, 30: 6715, 31: 5263, 32: 510, 33: 3336, 34: 3334, 35: 5792, 36: 6516, 37: 6620, 38: 801}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+(11 Patent Number:
+(45) Date of Patent:
+
+Patterson
+
+4,384,864 5/1983 Bonnard wi. 474/80 X
+
+(54) BICYCLE GEARSHIFTING METHOD AND
+
+4,693,700 9/1987 Chappell ............................... 474/80
+
+APPARATUS
+
+Primary Examiner-Thuy M. Bui
+
+75 Inventor: Sam H. Patterson, Chicago, Ill.
+73) Assignee: Sram Corporation, Chicago, Ill.
+(21) Appl. No.: 293,521
+(22 Filed:
+Jan. 5, 1989
+
+Attorney, Agent, or Firm-Albert L. Gabriel
+57
+
+1988, abandoned, which is a continuation of Ser. No.
+141,625, Jan. 6, 1988, abandoned.
+
+511 Int. Cl." ............................................... F16H 9/24
+52 U.S. C. ........................................ 474/80; 74/488;
+74/501.6
+
+58 Field of Search .................................... 474/77-81;
+74/473 R, 475, 480 R, 488, 489,501.6; 280/289
+R, 289 H
+56)
+
+ABSTRACT
+
+A bicycle derailleur gear shifting system having a rotat
+
+Related U.S. Application Data
+Continuation-in-part of Ser. No. 291,359, Dec. 29,
+
+63
+
+References Cited
+U.S. PATENT DOCUMENTS
+4,055,093 10/1977 Ross .................................. 474/81 X
+4,194,408 3/1980 Hedrich
+... 474/81
+4,201,095 5/1980 Cirami.......
+... 474/81
+4,267,744 5/1981 Yamasaki .......................... 474/82 X
+
+able handgrip actuator cam which is coupled with the
+derailleur shifting mechanism through a control cable
+system so as to control the derailleur mechanism. Sepa
+
+rate actuator cams are associated with the front and rear
+
+derailleurs. For the down-shifting direction, at least the
+rear derailleur cam is configured so as to substantially
+compensate for increasing force of the derailleur return
+spring; so as to substantially compensate for numerous
+cumulative lost motions in the derailleur shifting mech
+anism and cable system, and for chain gap variations;
+
+and so as to overshift the chain a sufficient amount
+
+beyond the destination freewheel sprocket so that the
+chain will approach the destination sprocket in the same
+direction as it would in the up-shift direction, but not
+sufficient to cause a double shift, or derailling from the
+#1 sprocket. A front derailleur cam is configured to
+provide fine-tuning for "cross-over' riding.
+26 Claims, 13 Drawing Sheets
+
+SR
+
+al Sl
+
+rare
+
+M7s Mao
+
+2.
+
+a soon
+
+area. As a
+
+s2
+62
+
+4,900,291
+Feb. 13, 1990
+
+R
+
+

@@ -1,0 +1,101 @@
+patent: US5489139A
+source: https://patentimages.storage.googleapis.com/d4/32/6b/7998a8e1da7e7d/US5489139.pdf
+pages: 9
+per-page extracted text length: {1: 2328, 2: 58, 3: 58, 4: 58, 5: 58, 6: 6755, 7: 7401, 8: 7342, 9: 748}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+||||||I||
+US005489139A
+United States Patent 19
+
+11
+45
+
+McFarland
+(54) PARALLEL LINK SEATPOST SUSPENSION
+Rushmore Rd., Custer, S. Dak. 57730
+
+Appl. No.: 430,760
+Filed:
+Apr. 27, 1995
+Int. Cl." ............................................... B62, 1/04
+U.S. Cl. ....................... 297/195.1; 248/586; 280/283;
+297/208
+
+58) Field of Search ................................. 297/195.1, 208;
+248/564,585-587; 280/275, 283
+56
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+2,39.2ll 4/1946 du Pont ................................... 297/208
+2,949,153 8/1960 Hickman ................................. 248/585
+3,314,672 4/1967 Persson .......
+... 248/585 X
+4,456,295 6/1984 Francu .................................... 297/21
+4,736,983 4/1988 Furbee ...
+... 297/209
+
+5,044,648 9/1991 Knapp ..................................... 280/283
+FOREIGN PATENT DOCUMENTS
+27505
+
+7/1924 France ................................... 297/208
+
+152186 9/1903
+250368 9/1926
+151915 10/1920
+154369 12/1920
+
+Germany .......
+... 297/208
+Italy .......................
+... 297/209
+United Kingdom.......
+... 297/208
+United Kingdom ................... 297/208
+
+5,489,139
+Feb. 6, 1996
+
+265885 2/1927 United Kingdom ................... 297/209
+474349 10/1937 United Kingdom ................... 297/209
+OTHER PUBLICATIONS
+
+(76) Inventor: Ryan J. McFarland, 120 Mount
+21
+22
+(51]
+52
+
+Patent Number:
+Date of Patent:
+
+"Bike" magazine article Ten Underrated Products You Prob
+ably Don't Own But Maybe Should (in part) Jan. 1994, two
+pp. 82 and 83.
+"Bike' magazine article Softride Contour Mar. 1994, two
+pp. 64 and 65.
+"Mountain Bike Action' picture and caption describing
+Body Shock, Jan. 1994, one p. 48.
+"Mountain Bike' magazine advertisement for Power Post,
+Jun., 1994, one p. 26.
+Primary Examiner-Peter R. Brown
+Attorney, Agent, or Firm-Gene R. Woodle
+(57)
+
+ABSTRACT
+
+Embodiments of a new bicycle seatpost with an integrated
+suspension system are disclosed in which the seatpost may
+be mounted on a bicycle and upon which a seat may
+mounted and in which a rider is cushioned from bumps by
+two parallel linkages with resilient means interposed allow
+ing the seat to react to bumps by resiliently rocking to the
+rear and downward while maintaining constant saddle angle
+and minimizing change in seat to pedal distance due to
+suspension movement.
+4 Claims, 4 Drawing Sheets
+
+
