@@ -1,0 +1,157 @@
+patent: US10150332B2
+source: https://patentimages.storage.googleapis.com/54/cc/f5/8711277a453700/US10150332.pdf
+pages: 15
+per-page extracted text length: {1: 2682, 2: 373, 3: 95, 4: 111, 5: 95, 6: 121, 7: 121, 8: 554, 9: 108, 10: 76, 11: 7126, 12: 7063, 13: 7871, 14: 7377, 15: 1683}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010150332B2
+
+(12) United States Patent
+
+(10 ) Patent No.:
+
+Spanjers et al.
+
+WITH HUB AND RIM TERMINATIONS
+
+(56 )
+
+(72 ) Inventors: Charles S . Spanjers, St. Paul, MN
+
+(US); Kyle D . Olson , Roseville , MN
+(US)
+
+(65 )
+
+Prior Publication Data
+US 2016 /0332481 A1 Nov . 17 , 2016
+Related U . S . Application Data
+
+(60 ) Provisional application No .62/ 160 , 124 , filed on May
+12 , 2015 , provisional application No. 62 /278,527 ,
+filed on Jan . 14 , 2016 .
+(51) Int. CI.
+BOOB 1/00
+BOOB 5 /02
+
+B60B 1/02
+
+(52 ) U .S . CI.
+
+( 2006 . 01)
+( 2006 . 01 )
+(2006 .01)
+
+References Cited
+U . S. PATENT DOCUMENTS
+4 ,729,605 A
+
+5 ,110 , 190 A *
+
+(73 ) Assignee: BERD L .L . C ., Roseville , MN (US)
+( * ) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U .S .C . 154 (b ) by 118 days .
+
+(21) Appl. No.: 15/147, 357
+(22) Filed : May 5, 2016
+
+Dec . 11, 2018
+
+USPC
+.. ............... 301/55, 58, 59, 61, 104, 105
+See application file for complete search history .
+
+(54 ) SPOKE COMPOSED OF BRAIDED FIBER
+
+(71) Applicant: BERD , L .L . C ., Roseville , MN (US)
+
+US 10 ,150,332 B2
+
+(45) Date of Patent:
+
+3 /1988 Imao et al.
+5/ 1992 Johnson ......... ...
+
+5 ,131,727 A * 7 /1992 Johnson ..
+5 ,424 ,021 A * 6 / 1995 Nakade
+6 ,036 ,281 A
+7 , 988 ,240 B2
+8 ,313 , 154 B2
+
+8 ,794 ,714 B2
+2003/0085610 A1
+
+3/2000 Campbell
+11/ 2012 Lubecki
+
+B60B 5 / 02
+301/ 104
+B60B 7 /02
+
+301/37 .41
+A42B 3 /06
+264/ 257
+
+8 / 2011 Lubecki
+
+8 /2014 Lubecki
+5 / 2003 Addink et al.
+
+(Continued )
+
+FOREIGN PATENT DOCUMENTS
+EP
+
+1304238 A1 * 4 /2003 ............. B60B 1/003
+
+OTHER PUBLICATIONS
+International Search Report and Written Opinion , for PCT Appli
+
+cation No. PCT/US2016 /030973 , dated Aug . 10 , 2016 , 15 pages.
+
+Primary Examiner — S . Joseph Morano
+Assistant Examiner — Jean W Charleston
+(74 ) Attorney , Agent, or Firm — Steven M . Koehler;
+Westman , Champlin & Koehler, P . A .
+
+CPC ................ B60B 1 /003 (2013 .01 ); B60B 5 / 02
+( 2013 .01) ; B60B 1 /0246 (2013 .01 ) ; BOOB
+
+1 /0269 (2013.01 ); B60B 2360 / 322 (2013 .01) ;
+B60B 2360/ 36 (2013.01) ; B60B 2900 / 111
+(2013 . 01 ); B60B 2900 / 351 ( 2013 .01)
+(58 ) Field of Classification Search
+CPC .......... B60B 2360 / 36 ; B60B 2360/ 322 ; B60B
+2900 / 351; B60B 1/ 003; B60B 5 /02 ; B60B
+1/ 0269; B60B 1 /0246 ; B60B 2900 /111
+
+ABSTRACT
+A spoke for use in connection with a wheel, the spoke having
+
+(57 )
+
+a braided fiber having a first end and a second end, a rod
+
+having a first end and a second end , whereby the first end of
+the rod is threaded and wherein the second end of the rod is
+
+disposed inside the first end of the braided fiber .
+
+20 Claims, 8 Drawing Sheets
+
+- 105
+*
+*
+**
+*
+*
+*
+.
+.
+.
+.
+.
+..
+
+
