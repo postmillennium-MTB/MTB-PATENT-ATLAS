@@ -1,0 +1,84 @@
+patent: EP2546134B1
+source: https://patentimages.storage.googleapis.com/48/e6/da/179782376f53d6/EP2546134B1.pdf
+pages: 11
+per-page extracted text length: {1: 1666, 2: 5765, 3: 5776, 4: 5674, 5: 4768, 6: 4721, 7: 1390, 8: 18, 9: 18, 10: 19, 11: 419}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+TEPZZ 546_¥4B_T
+
+(19)
+
+(11)
+
+EP 2 546 134 B1
+
+EUROPEAN PATENT SPECIFICATION
+
+(12)
+
+(45) Date of publication and mention
+
+(51) Int Cl.:
+
+B62M 6/65 (2010.01)
+B62K 25/02 (2006.01)
+
+of the grant of the patent:
+25.03.2015 Bulletin 2015/13
+
+B62M 6/60 (2010.01)
+
+(21) Application number: 11184749.7
+(22) Date of filing: 11.10.2011
+(54) Combination structure of bicycle frame and motor hub
+Kombinationsstruktur aus Fahrradrahmen und Motornabe
+Structure de combinaison de cadre de bicyclette et moyeu à moteur
+(72) Inventors:
+
+(84) Designated Contracting States:
+AL AT BE BG CH CY CZ DE DK EE ES FI FR GB
+GR HR HU IE IS IT LI LT LU LV MC MK MT NL NO
+PL PT RO RS SE SI SK SM TR
+
+(30) Priority: 11.07.2011 TW 100212672
+
+• Lin, Sheng Shan
+Taipei Hsien 236
+Taiwan (TW)
+• Yu, Yu Chi
+Taipei Hsien 236
+Taiwan (TW)
+
+(43) Date of publication of application:
+16.01.2013 Bulletin 2013/03
+
+(73) Proprietors:
+• Fairly Bike Manufacturing Co., Ltd.
+Tu Cheng City, Taipei Hsien 236 (TW)
+• Mystromer AG
+3145 Niederscherli (CH)
+
+(74) Representative: Piésold, Alexander James
+Dehns
+St Bride’s House
+10 Salisbury Square
+London
+EC4Y 8JD (GB)
+
+(56) References cited:
+
+EP 2 546 134 B1
+
+EP-A1- 1 820 727
+US-A- 6 089 675
+
+WO-A1-2010/148472
+US-A1- 2011 049 968
+
+Note: Within nine months of the publication of the mention of the grant of the European patent in the European Patent
+Bulletin, any person may give notice to the European Patent Office of opposition to that patent, in accordance with the
+Implementing Regulations. Notice of opposition shall not be deemed to have been filed until the opposition fee has been
+paid. (Art. 99(1) European Patent Convention).
+Printed by Jouve, 75001 PARIS (FR)
+
+

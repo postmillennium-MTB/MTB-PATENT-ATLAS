@@ -1,0 +1,87 @@
+patent: EP1308337B1
+source: https://patentimages.storage.googleapis.com/b2/bf/a6/6078a4abda3355/EP1308337B1.pdf
+pages: 21
+per-page extracted text length: {1: 1697, 2: 5990, 3: 5790, 4: 5876, 5: 6191, 6: 6143, 7: 6315, 8: 6075, 9: 6171, 10: 5353, 11: 5245, 12: 4852, 13: 4968, 14: 4853, 15: 5397, 16: 5314, 17: 770, 18: 19, 19: 19, 20: 19, 21: 19}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+European Patent Office
+
+&
+
+Office européen des brevets
+
+(11)
+
+Europäisches Patentamt
+
+(19)
+
+  
+EP 1 308 337 B1
+
+EUROPEAN PATENT SPECIFICATION
+
+(12)
+
+(45) Date of publication and mention
+of the grant of the patent:
+01.02.2006 Bulletin 2006/05
+
+(51) Int Cl.:
+B60K 23/08 (2006.01)
+
+B60K 17/35 (2006.01)
+
+(21) Application number: 02024193.1
+(22) Date of filing: 30.10.2002
+(54) Power distribution control apparatus for four-wheel drive vehicle
+Leistungsaufteilungs-Steuerungsgerät für ein vierradgetriebenes Fahrzeug
+Dispositif de commande de distribution de puissance pour véhicule à quatre roues motrices
+(84) Designated Contracting States:
+DE
+
+(30) Priority: 31.10.2001 JP 2001333713
+(43) Date of publication of application:
+07.05.2003 Bulletin 2003/19
+
+(73) Proprietors:
+• TOYODA KOKI KABUSHIKI KAISHA
+Kariya-shi, Aichi-ken (JP)
+• Mazda Motor Corporation
+Aki-gun,
+Hiroshima 730-8670 (JP)
+
+• Hiruta, Hideshi
+Aki-gun,
+Hiroshima-ken 730-8670 (JP)
+• Fumoto, Hisao
+Aki-gun,
+Hiroshima-ken 730-8670 (JP)
+• Takagi, Hiroshi
+Aki-gun,
+Hiroshima-ken 730-8670 (JP)
+
+(74) Representative: TBK-Patent
+Bavariaring 4-6
+80336 München (DE)
+
+(56) References cited:
+(72) Inventors:
+
+US-A- 4 751 856
+
+US-A- 4 912 639
+
+EP 1 308 337 B1
+
+• Murakami, Tsuyoshi
+Kariya-shi,
+Aichi-ken (JP)
+
+Note: Within nine months from the publication of the mention of the grant of the European patent, any person may give
+notice to the European Patent Office of opposition to the European patent granted. Notice of opposition shall be filed in
+a written reasoned statement. It shall not be deemed to have been filed until the opposition fee has been paid. (Art.
+99(1) European Patent Convention).
+Printed by Jouve, 75001 PARIS (FR)
+
+
