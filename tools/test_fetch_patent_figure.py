@@ -76,6 +76,17 @@ check("design patent", parse_number("D1140680"), ("D1140680", "USD1140680"))
 check("reissue", parse_number("RE45684"), ("RE45684", "USRE45684"))
 check("commas and spaces tolerated", parse_number("US 12,570,369 B1"), ("12570369", "US12570369B1"))
 
+# Non-US numbers need their own office prefix -- there is no sane default to
+# guess for them the way a bare US number defaults to "US". These two are the
+# PI ROPE GmbH spoke patents this atlas has (2026-09-26 pass), the case that
+# motivated this branch: DE-numbered documents fetch_patent_figure.py could
+# not previously parse at all.
+check("German granted patent (B4)", parse_number("DE102017116754B4"),
+      ("102017116754", "DE102017116754B4"))
+check("German utility model (U1, a Gebrauchsmuster)", parse_number("DE202017104416U1"),
+      ("202017104416", "DE202017104416U1"))
+check("non-US number, no kind code", parse_number("EP3111109"), ("3111109", "EP3111109"))
+
 try:
     parse_number("not-a-patent")
     check("garbage input is rejected", "no exception raised", "ValueError")
@@ -162,8 +173,36 @@ def test_403_does_not_trigger_kind_code_guessing():
         F._get = orig
 
 
+def test_non_us_canonical_skips_uspto_and_kind_code_guessing():
+    """A non-US canonical (DE102017116754B4) has no USPTO print endpoint and
+    no modeled kind-code scheme to guess against -- download_pdf should go
+    straight to the one Google Patents URL for the given kind code, never
+    touching USPTO_PDF or trying alternates."""
+    pdf_bytes = b"%PDF-1.4 fake"
+    pdf_url = "https://patentimages.storage.googleapis.com/xx/DE102017116754B4.pdf"
+    page_url = F.GOOGLE_PATENT_PAGE.format(full="DE102017116754B4")
+    uspto_url = F.USPTO_PDF.format(digits="102017116754")
+
+    calls, orig = _install_fake_get({
+        page_url: ('<a href="%s">pdf</a>' % pdf_url).encode(),
+        pdf_url: pdf_bytes,
+    })
+    try:
+        with tempfile.TemporaryDirectory() as td:
+            dest = os.path.join(td, "out.pdf")
+            source = F.download_pdf("102017116754", "DE102017116754B4", dest)
+            ok = (source == pdf_url
+                  and open(dest, "rb").read() == pdf_bytes
+                  and uspto_url not in calls
+                  and calls == [page_url, pdf_url])
+            check("non-US canonical skips USPTO and kind-code guessing", ok, True)
+    finally:
+        F._get = orig
+
+
 test_kind_code_fallback_recovers_from_a_wrong_guess()
 test_403_does_not_trigger_kind_code_guessing()
+test_non_us_canonical_skips_uspto_and_kind_code_guessing()
 
 print()
 if FAILURES:
