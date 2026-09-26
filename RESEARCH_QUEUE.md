@@ -70,13 +70,16 @@ either way.
    earlier-appearing number) — check whether this is a distinct related
    Mavic filing or a mismatch in the submitted list.
 
-7. **Tioga Disk Drive wheel** — submitted as Oscar Yamanami/Sugino, US
-   5,064,249 (1991). Atlas's existing entry is US **5,064,250** (Tadashi
-   Yashiro & Takafumi Nishimoto, Sugino/Nippon Steel Chemical, filed 1989,
-   granted 1991) — one digit off, and a different inventor name.
-   5,064,249 and 5,064,250 being adjacent numbers from the same era is
-   plausible (a companion filing granted the same day), but needs an actual
-   lookup rather than assuming it's a typo for the existing entry.
+7. ~~**Tioga Disk Drive wheel**~~ — **Resolved 2026-09-26, no change needed.**
+   US 5,064,249 is a real patent, but it's a completely unrelated automotive
+   part: "Disc wheel cover" (a hubcap), inventor Hung Chun Mao, filed
+   April 9, 1990, granted November 12, 1991 — same era, adjacent number,
+   nothing to do with bicycles. Confirms the atlas's existing entry, US
+   5,064,250 (Tadashi Yashiro & Takafumi Nishimoto, Sugino/Nippon Steel
+   Chemical, "Wheel for light vehicle and disc used therefor," filed
+   June 13, 1989, granted November 12, 1991 — same issue date as the
+   unrelated 5,064,249, which is presumably why the two got confused
+   upstream of this atlas), is correct as-is and needs no change.
 
 ## New candidates — nothing currently in the atlas
 
