@@ -2808,6 +2808,15 @@ function countForQuery(q){
 /* Chosen once per page load so a language switch or resize re-render
    doesn't reshuffle the row under the reader. */
 let rabbitPicks=null;
+/* An entry's first drawing regardless of whether it uses the single-image
+   d.img/d.imgAlt fields or the multi-image d.imgs[] array -- the Rabbit
+   Holes picker needs one representative image either way. */
+function firstImg(d){
+  if(!d) return null;
+  if(d.img) return {src:d.img, alt:d.imgAlt};
+  if(d.imgs && d.imgs.length) return {src:d.imgs[0].src, alt:d.imgs[0].alt};
+  return null;
+}
 function pickRabbitHoles(){
   if(rabbitPicks) return rabbitPicks;
   const shuffle=a=>{ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
@@ -2815,7 +2824,7 @@ function pickRabbitHoles(){
     .slice(0,RABBIT_HOLES_SHOWN)
     .map(h=>{ const d=h.go&&h.go.card ? fightCardMatches(h.go.card)[0] : null; return {hole:h, d}; });
   const used=new Set(curated.map(c=>c.d).filter(Boolean));
-  const auto=shuffle(D.filter(d=>d.img && d.conf==="v" && d.w && !used.has(d)))
+  const auto=shuffle(D.filter(d=>(d.img||d.imgs) && d.conf==="v" && d.w && !used.has(d)))
     .slice(0,Math.max(0,RABBIT_HOLES_SHOWN-curated.length))
     .map(d=>({hole:null, d}));
   rabbitPicks=[...curated,...auto];
@@ -2832,8 +2841,9 @@ function autoBlurb(d){
 }
 function rabbitHolesHTML(){
   return pickRabbitHoles().map(({hole,d},i)=>{
-    const img = hole ? (hole.img || d?.img) : d.img;
-    const alt = hole ? tx(hole.imgAlt || d?.imgAlt) : tx(d.imgAlt);
+    const di = firstImg(d);
+    const img = hole ? (hole.img || di?.src) : di?.src;
+    const alt = hole ? tx(hole.imgAlt || di?.alt) : tx(di?.alt);
     const kicker = hole ? (tx(hole.kicker) ?? d?.y ?? "") : d.y;
     const title = hole ? tx(hole.title) : tx(d.t);
     const blurb = hole ? tx(hole.blurb) : autoBlurb(d);
