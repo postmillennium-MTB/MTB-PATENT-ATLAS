@@ -19,7 +19,7 @@ on:
   workflow_dispatch:
     inputs:
       numbers:
-        description: "Patent number(s), space-separated. e.g. US12570369B1 D1140680 4733881"
+        description: "Patent number(s), space-separated. e.g. US12570369B1 D1140680 4733881 DE102017116754B4"
         required: true
         type: string
       pdf_url:

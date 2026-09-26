@@ -33,8 +33,13 @@ USAGE
   python3 tools/fetch_patent_figure.py 4733881 --out /tmp/figs --candidates 6
   python3 tools/fetch_patent_figure.py US12570369B1 --url <pdf link>  # lookup blocked
   python3 tools/fetch_patent_figure.py US12570369B1 --pdf saved.pdf   # already have it
+  python3 tools/fetch_patent_figure.py DE102017116754B4               # non-US number
 
-  Accepts "US12570369B1", "12570369", "D1140680", "RE45684".
+  Accepts "US12570369B1", "12570369", "D1140680", "RE45684", or a non-US
+  number with its own office prefix, e.g. "DE102017116754B4", "EP3111109" --
+  the USPTO print endpoint is skipped for those (US-only) and there is no
+  kind-code guessing (each office's scheme differs; the given kind code is
+  trusted as given rather than guessed at).
 """
 
 import argparse
@@ -78,20 +83,41 @@ PATENTIMAGES_RE = re.compile(r'https://patentimages\.storage\.googleapis\.com/[^
 def parse_number(raw):
     """Split a patent identifier into (digits, canonical_name).
 
-    digits          what USPTO's print endpoint wants (no country, no kind code)
+    digits          what USPTO's print endpoint wants (no country, no kind
+                    code) -- only meaningful when canonical_name starts with
+                    "US"; for a non-US number it's the same digits, unused
+                    by the (US-only) USPTO endpoint.
     canonical_name  what the file should be called, matching pictures/'s
-                    dominant US<number><kind>.png convention
+                    dominant <COUNTRY><number><kind>.png convention. A bare
+                    number or one already prefixed "US" defaults to the US
+                    office, covering the vast majority of numbers in this
+                    atlas. A non-US number must carry its own office prefix
+                    explicitly (DE102017116754B4, EP3111109) -- there is no
+                    sane default to guess for it.
     """
     s = raw.strip().upper().replace(",", "").replace(" ", "")
-    s = re.sub(r"^US", "", s)
-    m = re.match(r"^(RE|D|PP|H|T)?(\d+)([AB]\d?)?$", s)
-    if not m:
-        raise ValueError(
-            "cannot parse %r as a US patent number. Expected forms: "
-            "US12570369B1, 12570369, D1140680, RE45684." % raw
-        )
-    prefix, digits, kind = m.group(1) or "", m.group(2), m.group(3) or ""
-    return prefix + digits, "US%s%s%s" % (prefix, digits, kind)
+    us = re.sub(r"^US", "", s)
+    m = re.match(r"^(RE|D|PP|H|T)?(\d+)([AB]\d?)?$", us)
+    if m:
+        prefix, digits, kind = m.group(1) or "", m.group(2), m.group(3) or ""
+        return prefix + digits, "US%s%s%s" % (prefix, digits, kind)
+
+    # Not a bare/US-prefixed number -- try a non-US office prefix instead.
+    # Other offices don't share USPTO's RE/D/PP/H/T design-and-reissue
+    # sub-prefixes, so this branch stays deliberately simpler: office code,
+    # digits, kind code. Kind-code shapes vary by office (DE's "B4"/"U1" vs.
+    # USPTO's "B1"/"A1"), so this accepts any short letter+digit suffix
+    # rather than the US-specific [AB]\d? pattern above.
+    m2 = re.match(r"^([A-Z]{2,3})(\d+)([A-Z]\d{0,2})?$", s)
+    if m2:
+        country, digits, kind = m2.group(1), m2.group(2), m2.group(3) or ""
+        return digits, country + digits + kind
+
+    raise ValueError(
+        "cannot parse %r as a patent number. Expected forms: "
+        "US12570369B1, 12570369, D1140680, RE45684, or a non-US number with "
+        "its own office prefix, e.g. DE102017116754B4, EP3111109." % raw
+    )
 
 
 # Every live run so far -- Forcite, GoPro, Park Tool, the DRCV shock below --
@@ -134,6 +160,10 @@ def download_pdf(digits, canonical, dest, direct_url=None):
     is the escape hatch -- on the Google Patents page for any patent, the PDF
     link is right there under the title, and pasting it here skips both
     automatic lookups entirely.
+
+    USPTO's print endpoint only exists for US numbers, so a non-US canonical
+    (a "canonical" not starting with "US" -- see parse_number) skips straight
+    to Google Patents, which mirrors most national offices' own PDFs.
     """
     attempts = []
 
@@ -149,28 +179,38 @@ def download_pdf(digits, canonical, dest, direct_url=None):
         except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
             attempts.append("%s -> %s" % (direct_url, e))
 
-    url = USPTO_PDF.format(digits=digits)
-    try:
-        blob = _get(url)
-        if blob[:5] == b"%PDF-":
-            open(dest, "wb").write(blob)
-            return url
-        attempts.append("%s -> not a PDF (%d bytes)" % (url, len(blob)))
-    except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
-        attempts.append("%s -> %s" % (url, e))
+    is_us = canonical.startswith("US")
+
+    # The USPTO print endpoint only serves US numbers -- skip it entirely for
+    # a non-US canonical rather than firing a request that can only 404/403.
+    if is_us:
+        url = USPTO_PDF.format(digits=digits)
+        try:
+            blob = _get(url)
+            if blob[:5] == b"%PDF-":
+                open(dest, "wb").write(blob)
+                return url
+            attempts.append("%s -> not a PDF (%d bytes)" % (url, len(blob)))
+        except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
+            attempts.append("%s -> %s" % (url, e))
 
     # Try the caller's own canonical id first, then -- only on a 404, meaning
     # the *page itself* doesn't exist rather than the whole site being blocked
     # -- retry the same digits under each common kind code. re-guessing after
     # a 403 would be pointless (every kind code would fail the same way) and
-    # is deliberately not attempted.
-    m = re.match(r"^(RE|D|PP|H|T)?(\d+)", canonical.removeprefix("US"))
-    prefix, digits = (m.group(1) or "", m.group(2)) if m else ("", "")
+    # is deliberately not attempted. KIND_CODE_FALLBACKS is a USPTO kind-code
+    # list (B1/B2/A1/...) so this guessing only applies to a US canonical --
+    # for a non-US number the caller's own kind code is trusted as given
+    # rather than guessed against a scheme (DE's B4/U1/C1/...) this tool
+    # doesn't model.
     candidates = [canonical]
-    for kc in KIND_CODE_FALLBACKS:
-        alt = "US%s%s%s" % (prefix, digits, kc)
-        if alt not in candidates:
-            candidates.append(alt)
+    if is_us:
+        m = re.match(r"^(RE|D|PP|H|T)?(\d+)", canonical.removeprefix("US"))
+        prefix, num = (m.group(1) or "", m.group(2)) if m else ("", "")
+        for kc in KIND_CODE_FALLBACKS:
+            alt = "US%s%s%s" % (prefix, num, kc)
+            if alt not in candidates:
+                candidates.append(alt)
 
     for i, cand in enumerate(candidates):
         page_url = GOOGLE_PATENT_PAGE.format(full=cand)
