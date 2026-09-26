@@ -1,0 +1,278 @@
+patent: US4923203
+source: https://patentimages.storage.googleapis.com/25/ba/9c/47ec2830e16a9f/US4923203.pdf
+pages: 20
+per-page extracted text length: {1: 3708, 2: 49, 3: 67, 4: 48, 5: 62, 6: 47, 7: 51, 8: 610, 9: 6832, 10: 7263, 11: 6463, 12: 7367, 13: 7302, 14: 7326, 15: 7361, 16: 7327, 17: 6577, 18: 6933, 19: 6745, 20: 4806}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+Trimble et al.
+54 COMPOSTE BICYCLE FRAME WITH
+
+950982 9/1956 Fed. Rep. of Germany .
+24551.41 3/1975 Fed. Rep. of Germany .
+24.5335 5/1975 Fed. Rep. of Germany .
+839373 4/1939 France ........................... 280/281. R.
+877814, 1/1943 France.
+1367704 6/1964 France ........................... 280/281 R.
+191124, 5/1937 Switzerland .................... 280/281R
+3568 of 1894 United Kingdom .
+902 of 898 United Kingdom .
+303619 11/1927 United Kingdom .
+59 1926 9/1947 United Kingdom .
+1361394 7/1974 United Kingdom .
+2117333 10/1983 United Kingdom ............ 280/281 R
+
+76) Inventors: Brent J. Trimble, 8025 Sundi Way,
+
+Anchorage, Ak. 99502; Richard H.
+Trimble, Box 2, 2 College St.,
+Providence, R.I. 02093
+
+21) Appl. No.: 137,124
+Dec. 23, 1987
+22 Filed:
+51 int. Cl................................................. B62K 3/14
+52 U.S. C. ............................... 280/288.3; 280/281.1
+(58) Field of Search ............... 280/281 R, 281 B, 282,
+280/270, 273, 274
+References Cited
+56)
+U.S. PATENT DOCUMENTS
+2, 182,828 12/1939 Stutsman ......................... 280/281 R
+2,370,726 3/1945 Hess et al. .
+... 280/28 R
+2,729,466 1/1956 Giordani ..........
+... 280/281 R
+... 280/281R
+
+3,233,916 2/1966 Bowden .............................. 280/274
+3,375,024 3/1968 Bowden ....
+280/28 R
+3,493,240 2/1970 Jenks ................................ 280/11.13
+3,641,230 2/1972 Jenks ................................... 264/152
+3,833,242 9/1974 Thompson, Jr. .
+... 280/281 R
+3,884,521 5/1975 Moore ............................... 296/31 P
+4,015,854 4/1977 Ramond ....
+... 280/281 R
+4,230,332 10/1980 Porsche .....
+... 280/281 B
+
+4,264,389 4/1981 Staub et al.
+4,368,897 1/1983 Brown .......
+4,411,333 10/1983 Bothwell ...
+
+... 156/156
+. 280/202
+... 180/219
+
+4,471,020 9/1984 McCarthy ...
+
+. 428/309.9
+
+4,479,662. 10/1984 Defour et al.
+4,493,749 1/1985 Brezina .....
+4,511,523 4/985 Hsu ...
+453,986 4/1985 Trimble.
+
+... 280/281R
+... 280/281R
+... 264/46.6
+... 280/28 R
+
+4,529,216 7/1985 Spekner ...
+
+... 280/281R
+
+4,565,595 1/1986 Whitener ............................. 156/156
+
+4,613,146 9/1986 Sharp ....
+
+280/281 B
+
+4,657,795 4/1987 Foret .....
+
+... 280/281R
+
+Y
+
+3O
+
+SA - 40
+
+w
+
+/
+
+/ /
+
+7 /
+7
+S
+/ f
+
+sy /A
+
+//
+
+M //
+
+57
+
+ABSTRACT
+
+A generally hollow bicycle frame of resin impregnated
+fibrous material having a main tubular portion and a
+cross tubular portion arranged in an X-shaped geometry
+as viewed from one side. A rear segment of the main
+
+portion may be slit to provide opposing rear stays for
+
+receiving a rear wheel assembly therebetween. The
+main tubular portion connects the head tube and the
+rear wheel sugports and the cross tubular portion con
+
+nects the bottom bracket and the seat sleeve. Both of
+
+these portions may be substantially straight and continu
+ous from end to end and joined by a generally hollow
+common junction. Alternatively, the common junction
+may integrally unite a plurality of pre-formed tubular
+portions corresponding respectively to the supports for
+the front wheel assembly, the rear wheel assembly, the
+bottom bracket and the seat. The tubular portions may
+have round or non-circular aerodynamic cross-sectional
+shapes.
+24 Claims, 7 Drawing Sheets
+
+7
+
+4.
+
+4.
+
+cy
+
+26
+
+7444
+
+8
+
+?
+
+7
+
+49
+s
+
+45
+
+28
+
+8
+
+-
+
+47
+
+4. O
+
+2
+
+7
+
+//
+//
+
+Attorney, Agent, or Firm-Pollock, Vande Sande &
+Priddy
+
+w
+
+//
+
+//
+
+Primary Examiner-Charles A. Marmor
+Assistant Examiner-Donn McGiehan
+
+73
+
+I
+
+May 8, 1990
+
+FOREIGN PATENT DOCUMENTS
+
+CROSSED TUBULAR PORTIONS
+
+2,827,306 3/1958 Roder ..................
+
+4,923,203
+
+Patent Number:
+Date of Patent:
+
+11)
+45)
+
+24.
+
+S.
+, /
+
+w
+
+S-1
+
+4s
+
+48 38. 37
+
+5/
+
+5
+
+o
+
+4S
+
+1.
+
+g
+
+5O
+43
+
+36
+
+SSS&
+29
+6
+
+2
+
+29 42
+
+&
+
+5
+
+w
+
+S
+S-
+
+27
+
+O
+
+3.
+22
+
+1
+
+32
+
+

@@ -1,0 +1,86 @@
+patent: US5104199
+source: https://patentimages.storage.googleapis.com/93/4a/0c/4f9031cc3b7125/US5104199.pdf
+pages: 9
+per-page extracted text length: {1: 1275, 2: 51, 3: 69, 4: 51, 5: 75, 6: 6342, 7: 7371, 8: 6991, 9: 890}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+|||||||||||||||||||
+USOOSO499A
+
+United States Patent 19
+Schlanger
+
+11 Patent Number:
+(45) Date of Patent:
+
+(54) VEHICLE WHEEL
+
+4,358,162 11/1982 Schneider et al... 301/63 Pw X
+
+76 Inventor: Raphael Schlanger, 18 Elton Ct.,
+
+4,919,490 4/1990 Hopkins et al. .............. 301/63 PW
+
+s
+
+4,844,552 7/1989 Tsygankov et al. ...... 301/63 PW X
+
+Norwalk, Conn. 0685
+21) Appl. No.: 603,556
+
+22 Filed:
+51
+
+5,104,199
+Apr. 14, 1992
+
+FOREIGN PATENT DOCUMENTS
+a
+885675 12/1961 United Kingdom .......... 301/63 PW
+
+Oct. 26, 1990
+
+int. Cl. ................................................ B6OB 11/00
+
+Primary Examiner-Russell
+D. Stormer
+rrn-
+
+o
+
+52 U.S. Cl. ................................. 0.367.
+
+Attorney, Agent, or Firm-Bachman & LaPointe
+
+58 Field of Search .......... 301/63 DD, 63DS.64 R,
+
+57)
+
+W
+
+(56)
+
+301/66, 95, 96, 97,98, 105 B, 63 P
+References Cited
+U.S. PATENT DOCUMENTS
+
+2,297,960 10/1942 Hood ...............................
+2,710,230 6/1955 Tea, Jr. .
+
+is
+
+ABSTRACT
+
+The wheel includes an annular rin, a central hub, a
+plurality of spoke portions running between the rim and
+hub, and two wheel portions integrally joined to each
+
+other and including the spoke portions.
+
+301/64. R
+
+3,862,779 1/1975 Jayne ............................. 30A63 DD
+
+17 Claims, 4 Drawing Sheets
+
+
