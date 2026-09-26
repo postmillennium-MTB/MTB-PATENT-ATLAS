@@ -513,6 +513,15 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .gp-list summary:hover{text-decoration:underline}
 .gp-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:2px 14px;padding:6px 0 2px;border-top:1px dashed var(--card-border);margin-top:4px}
 .gp-li{margin-top:0;font-family:var(--font-mono);font-size:12px;font-weight:500;padding:3px 0}
+/* Second-level disclosure for the rare entry with a d.long field (see CLAUDE.md) —
+   same zero-JS-to-open <details> pattern as .gp-list above, styled to match. */
+.deep-story{margin-top:14px;padding-top:12px;border-top:1px dashed var(--card-border)}
+.deep-story summary{font-size:13px;font-weight:600;color:var(--primary);cursor:pointer;padding:4px 0;list-style:none}
+.deep-story summary::-webkit-details-marker{display:none}
+.deep-story summary:hover{text-decoration:underline}
+.deep-story-body{margin-top:8px;font-size:14px;line-height:1.55}
+.deep-story-body p{margin:0 0 10px}
+.deep-story-body p:last-child{margin-bottom:0}
 /* ---------- Colorado MTB innovation feature ---------- */
 .co-link{display:inline-flex;align-items:center;gap:4px;margin-top:10px;background:var(--chip-bg);border:1px solid var(--card-border);color:var(--primary);border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:var(--font-body)}
 .co-link:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
@@ -1644,6 +1653,7 @@ const T = {
     patentTextIn:lang=>`Patent text in ${lang} — machine translation available via Google Patents or Espacenet`,
     figCaptionDefault:"Fig. from original filing", viewFullPatent:"View full patent →",
     origDrawingFor:title=>`Original patent drawing for ${title}`,
+    readFullStory:"Read the full story →",
     coPanelTitle:"📍 Colorado MTB Innovation", coLinkBtn:"📍 Colorado MTB innovation", coAriaLabel:"Colorado MTB innovation",
     minimize:"Minimize", close:"Close", dismiss:"Dismiss",
     eraCount:n=>`${n} ${n===1?"entry":"entries"}`,
@@ -1748,6 +1758,7 @@ const T = {
     patentTextIn:lang=>`Texte du brevet en ${lang} — traduction automatique disponible via Google Patents ou Espacenet`,
     figCaptionDefault:"Fig. du dépôt original", viewFullPatent:"Voir le brevet complet →",
     origDrawingFor:title=>`Dessin de brevet original pour ${title}`,
+    readFullStory:"Lire l'histoire complète →",
     coPanelTitle:"📍 Innovation VTT du Colorado", coLinkBtn:"📍 Innovation VTT du Colorado", coAriaLabel:"Innovation VTT du Colorado",
     minimize:"Réduire", close:"Fermer", dismiss:"Fermer",
     eraCount:n=>`${n} entrée${n===1?"":"s"}`,
@@ -2430,6 +2441,12 @@ function cardHTML(d){
       <img src="${f.src}" alt="${tx(f.alt) || t("origDrawingFor", titleShown.replace(/\(.*?\)/g,'').trim())}" loading="lazy">
       <figcaption><span>${tx(f.caption)||t("figCaptionDefault")}</span>${f.link?`<a href="${f.link}" target="_blank" rel="noopener">${t("viewFullPatent")}</a>`:(f.link!==false&&numForUrl?`<a href="${patentUrl(numForUrl,jur)}" target="_blank" rel="noopener">${t("viewFullPatent")}</a>`:"")}</figcaption>
     </figure>`).join("") : "";
+  /* d.long (OPTIONAL, see CLAUDE.md) — a second, deeper narrative layer for the
+     rare entry with more well-sourced substance than s/w should carry on their
+     own. Paragraphs are split on a literal blank line so a multi-paragraph
+     long can be written as one string, same as s/w. Absent on every entry
+     that doesn't set it, so this renders nothing for the ordinary case. */
+  const deepHTML = d.long ? `<details class="deep-story"><summary>${t("readFullStory")}</summary><div class="deep-story-body">${tx(d.long).split(/\n{2,}/).map(p=>`<p>${p}</p>`).join("")}</div></details>` : "";
   return `<article class="card ${d.st==='pending'?'pending-card':''} ${(d.b&&d.b.includes('litigated'))?'lit-card':''}" data-y="${d.y}" id="p-${ref}">
     <div class="chead-row">
     <button class="chead" aria-expanded="false">
@@ -2453,6 +2470,7 @@ function cardHTML(d){
       <p>${tx(d.s)}</p>
       ${figHTML}
       <p class="why">${t("whyItMatters")} ${tx(d.w)}</p>
+      ${deepHTML}
       <div class="meta">
         <div><b>${t("filed")}</b>${d.y}</div>
         <div><b>${t("granted")}</b>${d.g??t("grantedPending")}</div>

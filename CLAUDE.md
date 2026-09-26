@@ -161,6 +161,7 @@ take by default.
   // imgAlt: {en:"…", fr:"…"},         // required alongside img — describe what figure/number is shown, both languages
   // searchUrl: "https://patents.google.com/?inventor=Jane+Doe", // OPTIONAL — see below — NOT translated
   // recordUrl: "https://euipo.europa.eu/eSearch/#details/designs/015091656-0001", // OPTIONAL — direct link to an official record Google Patents doesn't index (EU RCDs); wins over searchUrl — NOT translated
+  // long: {en:"…", fr:"…"},           // OPTIONAL — see below — a deeper narrative, rendered as an inline <details> disclosure below w
 }
 ```
 
@@ -178,6 +179,29 @@ other branch of that link's logic, including a numbered/`nums` entry — set
 it deliberately, and update or remove it if a real patent number gets added
 to the same entry later, since nothing checks the two stay in sync
 automatically.
+
+**`long`** is a second, deeper layer of narrative for the rare entry that has
+more well-sourced substance than `s`/`w` should carry on their own — added
+2026-09-26 for cases like a patent's own Background section naming an
+earlier, unpatented product as prior art, or a company history documented
+across multiple independent articles. It renders as a native `<details>`
+disclosure at the bottom of the card body (same zero-JS-to-open pattern as
+the multi-number `.gp-list` block and the share menu — see the comment above
+`.share-menu` in `index.html`), so it costs nothing on cards that don't use
+it and needs no new JavaScript to open/close. Write multiple paragraphs by
+separating them with a literal `\n\n` in the string; single-paragraph is
+fine too.
+
+**This is an escape valve, not a new default.** The **Prose style: avoid AI
+tells** rules below — especially "say it once," don't pad a gap, don't
+restate a caveat — apply to `long` exactly as they apply to `s`/`w`; a
+`long` field is not permission to relax them because there's now more room.
+Most entries should never have one. Reach for it only when there's genuine
+additional substance (a documented legal/technical angle, a company history
+worth telling in the founders' own words) that would otherwise force `s`/`w`
+to either omit something worth keeping or bloat the default card view for
+every reader — not as a place to dump biographical color that doesn't
+actually serve the entry's point just because a source happened to include it.
 
 **Expiration rule (`exp`):**
 - Filed **on or after June 8, 1995** (the post-GATT rule, which covers nearly
@@ -549,7 +573,7 @@ string, and that no `who[]` value is unregistered, by extending the same
 script:
 
 ```js
-let notBilingual=[]; D.forEach(d=>['t','s','w'].forEach(f=>{
+let notBilingual=[]; D.forEach(d=>['t','s','w','long'].forEach(f=>{
   if(d[f]!=null && typeof d[f] !== 'object') notBilingual.push([d.num||d.t, f]);
 }));
 console.log('still-plain-string fields:', notBilingual);
