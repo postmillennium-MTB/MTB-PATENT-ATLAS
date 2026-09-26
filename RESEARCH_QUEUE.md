@@ -120,6 +120,24 @@ link, honest tier) — none are pre-approved just because no duplicate exists.
   5,251,727 (1993).
 - **Magic Motorcycle hollow crank** — Alex Pong, US 5,456,134 (1995).
   Cannondale/CODA acquisition claim needs its own check.
+- **Bicycle with integrated anti-theft system** — Bassem Ghaly, assignee
+  12226448 Canada Inc., US 20230312034A1 (a *published application*, not
+  yet a granted patent — WO/US/EP family, worldwide filing 2020). A
+  spindle-blocking mechanism built into a bicycle sub-assembly (bore that
+  receives a wheel/BB/headset-type spindle) with a locked/unlocked state
+  toggled by an authorized user — an integrated, non-retrofit anti-theft
+  approach rather than a bolt-on lock. Nothing in the atlas today covers
+  integrated/frame-level anti-theft (only conventional add-on locks would
+  be adjacent, and none of those are in `D` either) — this would be a
+  genuinely new angle, not just a new company. Notes for whoever
+  researches it: confirm current prosecution status (published ≠ granted,
+  so `st` would likely be `"pending"` and `exp` should stay `null` until a
+  grant date exists, per the schema's own pending-patent handling);
+  identify what product/brand this maps to, if any, since the assignee
+  name here is a numbered holding company rather than a recognizable
+  brand; and check whether "spindle" in the claims covers a wheel axle,
+  a bottom bracket spindle, or both, since the entry's `cat` depends on
+  that (likely `comp`, possibly `wheel`).
 
 ## Process reminder for whoever picks this up
 
