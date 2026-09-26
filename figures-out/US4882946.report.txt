@@ -1,0 +1,177 @@
+patent: US4882946
+source: https://patentimages.storage.googleapis.com/83/fa/64/e69a99ee5516d0/US4882946.pdf
+pages: 9
+per-page extracted text length: {1: 3889, 2: 61, 3: 51, 4: 51, 5: 6732, 6: 6541, 7: 7161, 8: 6781, 9: 1077}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+11
+
+Patent Number:
+
+Beyl
+
+45
+
+Date of Patent:
+
+(54) PEDAL FOR A BICYCLE OR SIMILAR
+
+FOREIGN PATENT DOCUMENTS
+
+DEVICE
+
+43046 9/1937 Belgium .
+98329 1/1984 European Pat. Off. .............. 74/560
+0169080 1/1986 European Pat. Off. .
+3343015 5/1984 Fed. Rep. of Germany .
+3425044 1/1985 Fed. Rep. of Germany ........ 74/560
+
+76 Inventor: Jean J. Beyl, 10, boulevard Victor
+
+Hugo, 58000 Nevers, France
+(21) Appl. No.: 265,353
+
+(22) Filed:
+
+63
+
+1043447 11/1953 France ............................... 74/594.4
+1350.092 12/1963 France .
+2302904 10/1976 France .................................. 74/560
+2564414 12/1986 France .
+2574743 2/1987 France.
+
+Oct. 28, 1988
+
+Related U.S. Application Data
+Continuation of Ser. No. 943,933, Dec. 19, 1986, which
+
+53-88949 of 1978 Japan.
+53-88943 7/1978 Japan.
+60-111790 7/1985 Japan.
+
+is a continuation-in-part of Ser. No. 48,533, May 5,
+
+1987, Pat. No. 4,762,019, which is a continuation of
+Ser. No. 735,210, May 17, 1985, abandoned.
+
+(30)
+
+France ................................. 8407786
+France ................................. 84.1973
+France ................................. 85.1935
+
+(51 Int. Cl." ............................................... G05G 1/14
+52 U.S. C. .................................. 74/594.6; 74/5944;
+36/131
+
+58 Field of Search................. 74/594.4, 594.6, 594.5,
+74/560; 36/131
+(56)
+
+42239 5/1930 Netherlands ....................... 74/594.4
+120588 1/1948 Sweden .........
+... 74/594.4
+200223 12/1938 Switzerland .
+... 74/594.4
+251790 9/1948 Switzerland .........
+... 74/594.4
+
+Foreign Application Priority Data
+
+May 18, 1984 FR
+Dec. 14, 1984 (FR)
+Dec. 24, 1985 FR
+
+References Cited
+U.S. PATENT DOCUMENTS
+563,959 7/1896 Grothe............................... 74/594.4
+584,453 6/1897 Bolte et al...
+... 74/594.4
+610, 175 9/1898 Flindall ...
+... 74/594.4
+1,144,518 6/1915 Yahle ................................. 74/594.4
+1,564,188 12/1925 Allen .
+2,399,888 5/1946 Persons .
+
+2,567,785 9/1951 Rieger ................................ 74/594.4
+3,760,653 9/1973 Hagenah .
+... 74/594.4
+3,800,623 4/1974 Baginski ......
+... 74/594.4
+3,807,255 4/1974 Baginski ......
+... 74/594.4
+3,964,343 6/1976 Lauterbach .
+74/594.4 X
+4,172,392 10/1979 Foster .........
+... 74/594.5
+4,373,760 2/1983 Durham ..
+... 74/594.4
+4,445,397 5/1984 Shimano .
+74/5944 X
+4,458,556 7/1984 Schar .................................. 74/594.6
+4,662,863 11/1986 Denker ............................... 74/594.6
+
+5244 12/1879 United Kingdom ............... 74/594.4
+1130971 10/1968 United Kingdom .
+OTHER PUBLICATIONS
+Shimano 5540 SHPublication.
+
+Primary Examiner-Rodney M. Lindsey
+Attorney, Agent, or Firm-Cushman, Darby & Cushman
+57
+
+ABSTRACT
+
+A bicycle pedal comprises a pedal body which contains
+a housing intended to accommodate a transverse spindle
+capable of being fixed to a crank. The pedal body is
+rotatably mounted on the said spindle by means of two
+rotary bearings provided respectively near the ends of
+the spindle. The rotary bearing provided at the end of
+the spindle remote from the crank comprises a needle
+bearing whose external diameter is smaller than the
+external diameter of the rotary bearing situated nearer
+the crank; the pedal body has a bearing surface for the
+user's foot which passes over the needle bearing, and is
+spaced from the geometrical axis of the spindle by a
+distance that is smaller than the external radial dimen
+sion of the pedal body in the vicinity of the rotary bear
+ing nearer the crank. The bearing surface is a portion of
+a flat surface and extends as far as the external edge.
+This surface is situated towards the outside in relation to
+the rotary bearing near the crank.
+-P
+
+4,762,019 8/1988 Beyl .................................... 74/594.6
+
+.
+
+14 Claims, 3 Drawing Sheets
+
+ZZZZZZZZZZZZ4
+
+EN42te
+
+4,882,946
+Nov. 28, 1989
+
+SE (SNN
+
+AA-AA M
+A A
+EN 4222222
+
+seat N
+
+uneason?
+
+a
+
+S
+
+447.222s,
+
+

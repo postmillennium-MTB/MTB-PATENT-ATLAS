@@ -1,0 +1,161 @@
+patent: US4982975
+source: https://patentimages.storage.googleapis.com/d5/3b/58/bdb24b65ac722f/US4982975.pdf
+pages: 13
+per-page extracted text length: {1: 3496, 2: 730, 3: 50, 4: 73, 5: 49, 6: 49, 7: 6615, 8: 6587, 9: 7120, 10: 7279, 11: 7370, 12: 7022, 13: 6762}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+(11)
+45
+
+Trimble
+PRESSURE MOLDED JUNCTURE
+
+76 Inventor: Brent J. Trimble, 265 Westridge Dr.,
+Watsonville, Calif. 95076
+
+Notice:
+
+The portion of the term of this patent
+subsequent to Jul. 25, 2006 has been
+disclaimed.
+
+21 Appl. No.: 337,816
+22 Filed:
+Apr. 14, 1989
+Related U.S. Application Data
+
+60
+
+Division of Ser. No. 53,370, May 12, 1987, Pat. No.
+
+4,850,607, which is a continuation-in-part of Ser. No.
+861,983, May 12, 1986, abandoned.
+
+51 Int. Cl. .............................................. B62K 19/16
+52 U.S. C. .................................. 280/281.1; 264/258
+58 Field of Search ..................... 280/281. 1, 282, 274;
+264/257, 258
+56)
+
+Date of Patent:
+
+"Jan. 8, 1991
+
+5/1915 France .
+4/1939 France.
+8/1981 France .............................. 280/281.1
+7/1986 Japan .
+7/1974 United Kingdom .
+
+OTHER PUBLICATIONS
+
+Article entitled “Cycles', Sept., 1986 issue of Popular
+Mechanics by Norman Mayersohn, pp. 46 and 48.
+English Translation of French Patent No. 475,337.
+English Translation of German Patent No. 944,173.
+Article entitled "Sanderson Outruns High Technology
+to Win ABC Time Trial", May 13, 1985 edition of An
+chorage Daily News by Lew Freedman, p. C-10.
+Partial English Translation of French patent No.
+839,373.
+
+Brent J. Trimble's Declaration of Pre-Filing Activity
+dated Sept. 30, 1987 filed in related U.S. Application
+Ser. No. 861,983 filed May 12, 1986.
+Article Published in the Anchorage Daily News on
+May 13, 1985.
+Article Published in Bicycle Guide Dec. 1985 Issue, p.
+74.
+
+References Cited
+U.S. PATENT DOCUMENTS
+2,370,726 3/1945 Hess et al. .....
+... 280/281
+3,493,240 2/1970 Jenks ..
+.., 280/610
+3,641,230 2/1972 Jenks ................................... 264/152
+3,755,037 8/1973 Erwin .................................. 156/185
+
+3,833,242 9/1974 Thompson ....
+
+4,982,975
+
+475337
+839373
+2576576
+1163.835
+361394
+
+(54) COMPOSITE BICYCLE FRAME WITH
+
+*
+
+Patent Number:
+
+... 280/281.1
+
+4,047,731 9/1977 Van Auken ...
+... 280/281.
+4,264,389 4/198 Staub et al. ......................... 156/56
+
+4,437,679 3/1984 Campagnolo ...
+4,471,020 9/1984 McCarthy .....
+4,479,662 10/1984 Defour et al. .
+
+... 280/281.1
+428/309.9
+280/281.1
+
+4493,749 1/1985 Brezina ..........
+4,513,986 4/1985 Trimble .........
+4,548,422 10/1985 Michel et al. .
+
+... 280/281.1
+... 280/288.3
+... 280/288.3
+
+4,613,146 9/1986 Sharp et al. ...
+
+... 280/288.2
+
+4,657,795 4/1987 Foret .............
+... 280/28.
+4,673,451 6/1987 Yamazawa .......................... 156/172
+4,705,286 /1987 Lauzier .........
+... 280/281
+4,828,285 5/1989 Foret et al. ......................... 280/279
+4,850,607 7/1989 Trimble .........
+... 280/281.1
+4,900,048 2/1990 Derujinsky ....................... 280/281.1
+FOREIGN PATENT DOCUMENTS
+
+944173 6/1956 Fed. Rep. of Germany .
+
+Article Published in Bicycle Guide Aug., 1987 Issue Enti
+tled “Kestral 4000", pp. 30-35.
+Article Published in Bicycle Guide Aug. 1987 issue enti
+tled "A Taste of the Future", pp. 20-29.
+(List continued on next page.)
+Primary Examiner-Charles A. Marmor
+Assistant Examiner-Alan M. Kager
+Attorney, Agent, or Firm-Pollock, Vande Sande &
+Priddy
+57
+
+ABSTRACT
+
+A cycle frame having a generally hollow unitary com
+ponent of composite material connecting at least two
+support members. The frame component includes at
+least one pressure molded juncture comprising overlap
+
+ping layers of resin impregnated fibrous material pro
+vided by overlapped parts of at least two adjacent wall
+
+sections.
+
+22 Claims, 4 Drawing Sheets
+
+

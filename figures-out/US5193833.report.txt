@@ -1,0 +1,81 @@
+patent: US5193833
+source: https://patentimages.storage.googleapis.com/1c/92/81/61945f2b3cd228/US5193833.pdf
+pages: 9
+per-page extracted text length: {1: 1982, 2: 51, 3: 51, 4: 51, 5: 51, 6: 6535, 7: 7112, 8: 6488, 9: 996}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+|||||||||||||||
+US005193833A
+
+United States Patent (19)
+
+(11) Patent Number:
+45) Date of Patent:
+
+Reisinger
+
+147555 1 1/1954 Sweden ............................... 280/276
+
+54 BICYCLE FRONTSUSPENSION, STEERING
+
+& BRAKING SYSTEM
+76) Inventor: Robert Reisinger, 472-B Islay St., San
+
+Luis Obispo, Calif. 93401
+(21) Appl. No.: 572,719
+Aug. 24, 1990
+22) Filed:
+Int.
+Cl.
+......................
+B62K 25/04; B60T 11/16;
+51)
+F6D 65/20
+(52) U.S. C. ...................................... 280/276; 188/20;
+188/72.4; 188/72.9; 188/344; 267/141.1;
+280/277
+
+(58) Field of Search ............... 280/276, 277,275,279,
+280/280; 188/20, 72.4, 72.9, 344; 267/141.1
+
+56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+2,683,034 7/1954 Seddon ................................ 280/276
+2,683,044 7/1954 Seddon ................................ 280/276
+4,756,612 7/1988 Toms, Jr. ......................... 267/141.1
+FOREIGN PATENT DOCUMENTS
+3242830 5/1984 Fed. Rep. of Germany ...... 280/277
+
+5,193,833
+Mar. 16, 1993
+
+2026635 2/1980 United Kingdom ............... 188/72.4
+
+Primary Examiner-Mitchell J. Hill
+Attorney, Agent, or Firm-Wallace, Robert M.
+(57)
+
+ABSTRACT
+
+The invention is a bicycle front assembly in which sus
+pension is provided by a pair of telescoping tubes hav
+ing a plurality of elastic cells of different stiffnesses in
+their hollow interior. Steering geometry adjustment is
+provided by connecting the bottom end of one of the
+tubes to the front wheel axle by a drop-out which hori
+zontally offsets the tube from the axle. Retrofitable
+hydraulic front wheel disk brakes are provided by a
+closed system hydraulic brake caliper assembly
+mounted to the front wheel axle and connected to a
+conventional brake cable of a handbrake, Automatic
+
+self-centering of the disk is provided by a web mounted
+on the front wheel axle having horizontal fingers nested
+in holes in the disk along which the disk is allowed to
+slide in response to a centering force from the calipers.
+13 Claims, 4 Drawing Sheets
+
+

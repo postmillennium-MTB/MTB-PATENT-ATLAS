@@ -1,0 +1,116 @@
+patent: US5636716
+source: https://patentimages.storage.googleapis.com/ba/09/c4/4cb1c2e96ab852/US5636716.pdf
+pages: 15
+per-page extracted text length: {1: 2853, 2: 57, 3: 58, 4: 51, 5: 175, 6: 57, 7: 58, 8: 61, 9: 57, 10: 58, 11: 6969, 12: 7284, 13: 7161, 14: 6562, 15: 980}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US00563671.6A
+
+United States Patent 19
+
+11
+45
+
+Sugimoto et al.
+
+Patent Number:
+Date of Patent:
+
+5,636,716
+Jun. 10, 1997
+
+54. BICYCLE BRAKE DEVICE
+
+57
+
+(75. Inventors: Masanori Sugimoto, Osakasayama;
+Toshiyuki Tanaka, Sakai, both of Japan
+
+Each brake mechanism for a bicycle includes a brake arm
+having an upper portion and a lower portion, a linkmember
+having an upper portion and a lower portion, and a shoe
+attachment member for attaching a brake shoe thereto. The
+shoe attachment member is pivotally coupled to the upper
+portion of the brake arm and to the upper portion of the link
+member. The lower portion of the brake arm and the lower
+portion of the link member are adapted to be pivotally
+mounted to the bicycle so that the lower portion of the brake
+arm and the lower portion of the link member pivot when a
+braking force is applied by the cantilever brake apparatus to
+
+73) Assignee: Shimano, Inc., Osaka, Japan
+21 Appl. No.: 612,453
+22 Filed:
+Mar 6, 1996
+
+30
+
+Foreign Application Priority Data
+
+Mar. 7, 1995
+Mar. 7, 1995
+
+JP
+JPl
+
+Japan .................................... 7-047493
+Japan .................................... 7-047494
+
+(51 int. Claim....m. B62L 3/00
+52 U.S. Cl. ................................. 188/24.22; 188/24.19
+58
+
+Field of Search .............................. 188/24.11, 24.12,
+188/24.14, 24.15, 24.16, 24.19, 24.21, 24.22;
+74/105
+
+56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+3,921,764 11/1975 Mathauser ............................ 188/24.14
+
+FOREIGN PATENT DOCUMENTS
+
+438416 8/1949 Italy .................................... 188/24.2
+446063 6/1950 Italy ...................
+... 188/24.2
+
+616123 1/1949 United Kingdom................ 188/24.2
+
+Primary Examiner-Lee W. Young
+Attorney, Agent, or Firm-James A. Deland
+
+ABSTRACT
+
+cause the brake shoe to move toward a wheel rim. The lower
+
+portion of the brake arm and the lower portion of the link
+member are spaced apart from each other for forming a
+four-bar link mechanism with the shoe attachment member.
+
+A link base is provided for attachment to the bicycle frame,
+wherein the link base includes an attitude maintenance
+
+mechanism for maintaining an attachment attitude of the
+link base relative to the bicycle frame. The link base includes
+a cylindrical component for fitting about the fixing pin, an
+engagement component fixed to one end of the cylindrical
+component, and an arm component fixed to another end of
+the cylindrical component. The lower portion of the link
+member is pivotally mounted to the arm component, and the
+
+engagement component includes an engagement pin for
+fitting in an opening formed on the bicycle frame. The shoe
+
+attachment member and the brake arm are structured and
+
+coupled so that one of the shoe attachment member or brake
+
+arm sandwiches the other one of the shoe attachment mem
+ber or brake arm.
+
+29 Claims, 9 Drawing Sheets
+
+

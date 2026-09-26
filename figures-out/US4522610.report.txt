@@ -1,0 +1,105 @@
+patent: US4522610
+source: https://patentimages.storage.googleapis.com/f5/0a/0a/78dd3b4233e65d/US4522610.pdf
+pages: 16
+per-page extracted text length: {1: 2357, 2: 169, 3: 58, 4: 274, 5: 51, 6: 50, 7: 48, 8: 211, 9: 6753, 10: 6660, 11: 7020, 12: 6990, 13: 6317, 14: 2495, 15: 40, 16: 2696}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+11. Patent Number:
+(45) Date of Patent:
+
+Nagano
+54, GEAR CRANKAPPARATUS FOR A BICYCLE
+75) Inventor: Masashi Nagano, Izumi, Japan
+73) Assignee: Shimano Industrial Company
+Limited, Osaka, Japan
+
+460239 11/1913 France .
+82.216 4/1937 France .
+880851 4/1943 France .
+974.415 2/1951 France ................................ 474/141
+1039783. 10/1953 France .
+1112643 3/1956 France .
+41026 4/1964 France .
+2264709 10/1975 France .
+2440863 11/1978 France.
+282923 5/1952 Switzerland .
+
+22 Filed:
+May 23, 1983
+(30)
+Foreign Application Priority Data
+Japan .................................. 57-94396
+Japan .........
+... 57-115837
+Japan ................................ 57-177828
+
+51) Int. Cl. .............................................. F16H 55/30
+52 U.S. C. .................................................... 474/141
+58) Field of Search .................. 474/141, 78; 280/236,
+280/261
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+513,589 1/1894 Metz .................................... 474/14
+528,145 10/1894 Carr ..........
+591488 10/1897 McMullin .....
+
+... 474/14 X
+... 474/141 X
+
+2,693,119 11/1954 Payberg et al. .....
+
+... 474/141 X
+
+2,827,797 3/1958 Bell et al......
+3,259,398 7/1966 Hattan ...
+
+... 474/141 X
+... 474/14 X
+4,181,034 1/1980 Daniel ................................. 474/141
+
+FOREIGN PATENT DOCUMENTS
+389663 8/1932 Belgium .
+814111 9/1951 Fed. Rep. of Germany .
+
+Jun. 11, 1985
+
+7821953 1 1/1978 Fed. Rep. of Germany .
+
+(21) Appl. No.: 497,051
+
+Jun. 1, 1982 JP
+Jul. 2, 1982 (JP)
+Oct. 9, 1982 JP
+
+4,522,610
+
+449504 6/1936 United Kingdom ................ 474/141
+
+Primary Examiner-Stephen J. Novosad
+Assistant Examiner-Thuy M. Bui
+Attorney, Agent, or Firm-Stevens, Davis, Miller &
+Mosher
+
+57)
+
+ABSTRACT
+
+A gear crank apparatus for a bicycle, comprising a
+crank shaft, a pair of crank arms, and at least one chain
+gear. The chain gear has an ellipse-like shape and pe
+ripheral teeth located on different pitch diameters, the
+chain gear being arranged with respect to the crank
+arms and being coupled therewith, so that when torque
+produced by a cyclist's leg during pedalling is maxi
+mum, the gear diameter for transmitting the torque
+from the chain gear to a driving chain becomes substan
+tially minimum and when the torque is a minimum, the
+gear diameter becomes substantially a maximum.
+7 Claims, 9 Drawing Figures
+
+
