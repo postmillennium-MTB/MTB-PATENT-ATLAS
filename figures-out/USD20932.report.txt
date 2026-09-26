@@ -1,0 +1,18 @@
+patent: USD20932
+source: https://patentimages.storage.googleapis.com/b6/c0/88/87ec6cc028dbea/USD20932.pdf
+pages: 2
+per-page extracted text length: {1: 83, 2: 1250}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+DEscN.
+sessions
+
+J. J. TOWER.
+
+WRENOH HANDLE,
+
+No. 20,932.
+
+Patented July 14, 1891.
+
+

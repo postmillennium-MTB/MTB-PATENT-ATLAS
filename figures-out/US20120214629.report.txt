@@ -1,0 +1,62 @@
+patent: US20120214629
+source: https://patentimages.storage.googleapis.com/13/18/5f/3e525021e9ec11/US20120214629A1.pdf
+pages: 6
+per-page extracted text length: {1: 1354, 2: 81, 3: 81, 4: 0, 5: 6548, 6: 2582}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US 20120214629A1
+
+(19) United States
+
+(12) Patent Application Publication (10) Pub. No.: US 2012/0214629 A1
+Earle
+
+(43) Pub. Date:
+
+(54) BICYCLE SPROCKET
+
+(76) Inventor:
+(21) Appl. No.:
+
+David Earle, Watsonville, CA (US)
+13/459,789
+
+(22) Filed:
+
+Apr. 30, 2012
+
+Related U.S. Application Data
+(63) Continuation-in-part of application No. 12/817,835,
+filed on Jun. 17, 2010.
+Publication Classification
+
+(51) Int. Cl.
+FI6H 5.5/30
+
+(2006.01)
+
+Aug. 23, 2012
+
+(52) U.S. Cl. ........................................................ 474/152
+(57)
+
+ABSTRACT
+
+A bicycle sprocket includes a sprocket body having a plural
+ity of bottom edges along an outer periphery thereof, and a
+plurality of teeth. The bottom edges extends in a generally
+circumferential direction of the sprocket body. Each of the
+bottom edges is connected between two adjacent ones of the
+teeth. The central points of the bottom edges includes a first
+group of central points each spaced apart from the center of
+the sprocket body by a first distance, and a second group of
+central points each spaced apart from the center of the
+sprocket body by a second distance smaller than the first
+distance. The sprocket body further has a direction guiding
+groove extending inwardly from the outer periphery, permit
+ting passage of a chain pin, and adjacent to the first group of
+the central points.
+
+131A
+
+
