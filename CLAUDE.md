@@ -484,6 +484,58 @@ Given that:
   patent/marking page is sometimes reachable when the aggregator isn't).
 - Never silently fall back to guessing when a fetch is blocked — say so.
 
+## Workflow: sourcing a batch of new entries (Jon hasn't named specific patents)
+
+This is the process for a request like "add 10 more entries" — as opposed to
+Jon handing over a specific patent number or Google Patents link, which skips
+straight to *Workflow: adding one or more new patent entries* below. Follow
+these steps in order every time; don't improvise a different shape for this
+request from one session to the next.
+
+1. **Source candidates, screening for duplicates as you go.** Search for
+   real inventions/patents against category gaps, assignees not yet in
+   `BRANDS`, and general MTB-patent research — not just whatever surfaces
+   first. For every candidate, check it against the existing `D` array by
+   `num` *and* by title/assignee (a fuzzy match, not just an exact string),
+   because a continuation or reissue can share a title/inventor with an
+   entry already in the atlas while being a legally distinct filing (see
+   the WickWerks/RampWerks continuation-lineage note above) — and because a
+   "new" patent can turn out to be the same invention already covered under
+   a different number. Drop anything that doesn't hold up as a genuinely
+   real, distinct, unlisted patent per *Sourcing discipline* above — don't
+   pad the list with a guess to hit a round number.
+2. **Present a numbered list of up to 10 candidates before writing anything.**
+   For each: title, patent number, assignee, filing/grant year, proposed
+   `cat`, proposed `conf` tier (call it honestly — a first-pass find is
+   usually `m` or `l`, not `v`, until sourced further), and whether a usable
+   drawing/figure sheet is realistically available (most utility and design
+   patents have one; some process/software patents don't). Note briefly why
+   anything considered got rejected as a duplicate or unverifiable, so the
+   screening in step 1 is visible rather than invisible. If honest sourcing
+   only turns up fewer than 10 clean candidates, present fewer — a short
+   list of real entries beats a full list padded with weak ones.
+3. **Wait for Jon's direction on which candidates to proceed with**, and on
+   images. For each entry he selects for a figure, fetch it via the
+   `Fetch patent figure` GitHub Actions workflow (`tools/fetch_patent_figure.py`
+   — direct fetches to patent sites are blocked in-session, see *A known
+   environment constraint* above), then present the candidate sheets/crops
+   from its report and propose a specific sheet, crop, and `imgAlt` — don't
+   pick and commit a figure unilaterally, since sheet selection and `imgAlt`
+   wording are editorial calls that belong to Jon per `tools/README.md`. The
+   `D` schema has one `img` field per entry; if a case genuinely seems to
+   need two images, flag that as a schema question rather than inventing a
+   workaround (e.g. don't silently repurpose `long` as an image slot).
+4. **Write, verify, and changelog each approved entry** by following
+   *Workflow: adding one or more new patent entries* below in full, starting
+   at its step 1 (candidates are already verified for existence in step 1
+   above, but still confirm the number/date/inventor precisely before
+   writing the object) — including the count-sync step, which is easy to
+   forget when several entries land in one batch.
+5. **Open a pull request; do not push to `main`.** State in the PR
+   description: which entries were added, the tier assigned to each and why,
+   any gaps that couldn't be verified, and which count-sync locations were
+   touched. Push to `main` only when Jon explicitly asks for that separately.
+
 ## Workflow: adding one or more new patent entries
 
 0. **`git fetch origin main` and diff against it before touching anything** —
