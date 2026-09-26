@@ -1,0 +1,88 @@
+patent: US4155231A
+source: https://patentimages.storage.googleapis.com/17/3b/09/c07104810415b1/US4155231.pdf
+pages: 6
+per-page extracted text length: {1: 2608, 2: 87, 3: 136, 4: 6388, 5: 6997, 6: 1208}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+11)
+45)
+
+Zane et al.
+
+(54) BICYCLE LOCK AND BRACKET
+75 Inventors: Michael S. Zane; Peter L. Zane, both
+
+of Brookline, Mass.
+(73) Assignee: KBL Corporation, Boston, Mass.
+
+(21) Appl. No.: 792,184
+(22 Filed:
+Apr. 29, 1977
+51 Int. C.’.............................................. EOSB 71/OO
+52 U.S.C. ....................................................... 70/18
+
+58) Field of Search ........................ 70/18, 260,59/86;
+
+114/174; 279/96
+
+56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+263,212 8/1882 Pettibone ................................. 70/18
+410,027 8/1889 Rueckert .................................. 70/18
+1,542,016 6/1925 Stull ..................................... 70/18 X
+2,889,451 6/1959 Longo ...
+248/314 X
+3,739,607 6/1973 Smedley ................................... 70/18
+3,754,418 8/1973 Miller ....................................... 70/18
+3,924,426 9/1975 Zane et al. ............................... 70/18
+
+3,964,706 6/1976 Adams ........
+, 248/538 X
+3,967,475 7/1976 Zane ......................................... 70/18
+
+FOREIGN PATENT DOCUMENTS
+222146 5/1925 United Kingdom ........................ 70/18
+
+Primary Examiner-Richard E. Moore
+
+4,155,231
+May 22, 1979
+
+Attorney, Agent, or Firm-Morse, Altman, Oates &
+Bello
+
+(57)
+
+ABSTRACT
+
+A locking mechanism and storage bracket are provided
+for use in securing bicycles or the like to a post or other
+fixture. The lock includes a relatively large U-shaped
+shackle formed from cylindrical hard metal stock, one
+leg of which terminates in a bent foot portion. The other
+leg extends parallel to the first leg and is formed with a
+shoulder near the end thereof. The lock also includes a
+tubular cross piece formed with a pair of openings in
+register with the ends of the shackle legs and provided
+with a key operated lock in one end of the cross piece
+adapted to lock with the shoulder of the other shackle
+leg when assembled thereto. The bent foot portion
+locks to the cross piece by inserting the end of the foot
+in its cooperating opening and pivoting the shackle to
+bring the end of the other leg into its opening where it
+is secured by the key operated lock.
+A mounting bracket is provided for storing the locking
+mechanism when not in use and is comprised of a tubu
+lar socket mountable to the bicycle frame and formed
+with a re-entrant L-shaped slot by means of which one
+end of the lock cross piece may be inserted in the socket
+with the shackle aligned with the slot opening. The lock
+is then pressed into the socket and rotated approxi
+mately 90' to secure it to the bracket.
+5 Claims, 13 Drawing Figures
+
+

@@ -1,0 +1,148 @@
+patent: US7712757B2
+source: https://patentimages.storage.googleapis.com/f1/f6/3b/ef2d1e26d0f6e9/US7712757.pdf
+pages: 20
+per-page extracted text length: {1: 2564, 2: 60, 3: 57, 4: 70, 5: 57, 6: 57, 7: 60, 8: 57, 9: 57, 10: 57, 11: 58, 12: 58, 13: 88, 14: 58, 15: 86, 16: 58, 17: 7166, 18: 7010, 19: 7861, 20: 4743}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US007712757B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 7,712,757 B2
+(45) Date of Patent:
+May 11, 2010
+
+Berthold
+(54) SUSPENSION FOR MOUNTAIN BICYCLES
+
+(75) Inventor: Brian David Berthold, 5174 Herbemont
+Rd., Martinsville, IN (US) 46151
+(73) Assignees: Kona USA, Inc., Ferndale, WA (US);
+Brian David Berthold, Martinsville, IN
+
+(US)
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+6,164,676 A
+6,203,042 B1
+6,361,059 B1
+6.450,521 B1
+
+12, 2000 Wilcox
+3, 2001 Wilcox
+3/2002 Ellsworth
+9, 2002 Turner
+
+6,471,230 B2
+6,488.301 B2
+
+10/2002 Ellsworth et al.
+12/2002 Klassen et al.
+
+6,866,281 B2
+6,926,298 B2
+
+3/2005 Chamberlain et al.
+8, 2005 Ellsworth et al.
+
+6,969,081 B2
+
+11/2005 Whyte
+
+7,059,620 B2
+7,066,481 B1
+
+6/2006 Chamberlain et al.
+6/2006 Soucek
+
+2003/003.8450 A1
+2004/0094933 A1*
+
+2/2003 Lam
+5/2004 Probst ........................ 280/284
+
+2005/0253357 A1* 1 1/2005 Chang et al. ................ 280/283
+2007/O108725 A1
+
+(21) Appl. No.: 12/143,650
+(22) Filed:
+
+Jun. 20, 2008
+
+(65)
+
+Prior Publication Data
+
+US 2009/0315296A1
+
+Dec. 24, 2009
+
+(51) Int. Cl.
+B62K 3/02
+
+(2006.01)
+
+(52) U.S. Cl. ...................................................... 280/284
+(58) Field of Classification Search ................. 280/283,
+280/284, 285, 286
+
+See application file for complete search history.
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+4,789,174. A * 12/1988 Law will ..................... 280/284
+5,205,572 A * 4, 1993 Buell et al. ................. 280/284
+5,217.241 A
+
+5/2007 Graney
+
+2008/0238030 A1* 10/2008 Tseng ........................ 280/284
+2008/0238031 A1* 10/2008 Tseng ..............
+... 280/284
+2009/0045601 A1* 2/2009 Colegrove et al. .......... 280/284
+
+6, 1993 Girvin
+
+5,409.249 A * 4/1995 Busby ........................ 280/284
+5,628,524 A
+
+5, 1997 Klassen et al.
+
+6,036,213 A
+6,102,421 A
+
+3/2000 Busby
+8/2000 Law will et al. ............. 280/284
+
+FOREIGN PATENT DOCUMENTS
+EP
+
+O668209 A1
+
+8, 1995
+
+* cited by examiner
+Primary Examiner Tony H. Winner
+(74) Attorney, Agent, or Firm Seed IP Law Group PLLC
+(57)
+
+ABSTRACT
+
+A rear wheel suspension for bicycles has a link connecting the
+chainstay, or Swingarm, to the lower damper or shock
+absorber mount. This link allows the requirements of the rider
+to manipulate the Suspension and geometry available for Vari
+ous conditions. In this way, the Suspension characteristics,
+Such as spring rate, rising rate, and wheel travel, will auto
+matically change in accordance with the rider's needs.
+15 Claims, 15 Drawing Sheets
+
+

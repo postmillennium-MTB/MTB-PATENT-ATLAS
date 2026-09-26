@@ -1,0 +1,181 @@
+patent: US7726529B2
+source: https://patentimages.storage.googleapis.com/42/da/ec/7ff2633000b877/US7726529.pdf
+pages: 13
+per-page extracted text length: {1: 2428, 2: 4042, 3: 56, 4: 69, 5: 77, 6: 169, 7: 56, 8: 6793, 9: 7679, 10: 7913, 11: 7623, 12: 6992, 13: 992}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US007726529B2
+
+(12) United States Patent
+
+(10) Patent No.:
+(45) Date of Patent:
+
+Foley
+(54) BICYCLE CARRIER
+
+376,055 A
+
+(75) Inventor: Aaron J. Foley, Portland, OR (US)
+(73) Assignee: Yakima Products, Inc., Beaverton, OR
+(US)
+
+(*) Notice:
+
+1/1888 Hopkins
+1/1942 Carroll
+
+2,576,222 A
+
+1 1/1951 Dean
+
+3,239,115 A
+
+3, 1966 Bott
+
+3,258,820 A
+
+7/1966 Steinberg
+
+3,292.222 A
+3,662.435 A
+
+12/1966 Steinberg
+5/1972 Allsop
+
+(Continued)
+FOREIGN PATENT DOCUMENTS
+
+This patent is Subject to a terminal dis
+claimer.
+
+DE
+
+(21) Appl. No.: 11/880,884
+
+3O34750
+
+4f1982
+
+(Continued)
+
+Prior Publication Data
+
+US 2008/0053926A1
+
+*Jun. 1, 2010
+
+2,271.452 A
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+(65)
+
+US 7,726,529 B2
+
+535xt Classic Fork Mount Instructions, Thule U.S.A., undated.
+
+Mar. 6, 2008
+
+Primary Examiner Nathan J Newhouse
+
+O
+
+Assistant Examiner—Lester L. Vanterpool
+
+O
+
+Related U.S. Application Data
+(62) Division of application No. 1 1/502,604, filed on Aug.
+
+(74) Attorney, Agent, or Firm Kolisch Hartwell, P.C.
+
+9, 2006.
+
+(57)
+
+ABSTRACT
+
+(51) Int. Cl.
+B60R 9/00
+(2006.01)
+B60R 9/052
+(2006.01)
+A47F 7/04
+(2006.01)
+E2IB (7/043
+(2006.01)
+(52) U.S. Cl. ....................... 224/324; 224/315; 224/322;
+211/20: 403/320
+
+A bicycle carrier, including a rack and a fork mount. The rack
+includes crossbars for mounting on a vehicle. The fork mount
+includes a head portion adapted to selectively clamp the fork
+mount to one of the crossbars, and a skewer assembly adapted
+to selectively secure forks of a bicycle to the head portion. The
+skewer assembly includes a skewerbolt, an actuator handle
+that is moveable between a first position and a second posi
+
+(58) Field of Classification Search ................. 224/324,
+
+tion, and an adjustment member threaded onto an end of the
+
+224/924, 315, 322: 211/20, 17; 403/320,
+403/315
+See application file for complete search history.
+(56)
+References Cited
+
+skewer bolt that permits longitudinal adjustment of the
+skewer assembly to accommodate different fork dimensions.
+The adjustment member is accessible when the actuator
+handle is in the first position, but is covered by the actuator
+handle when the ERO handle is in the
+d position.
+
+U.S. PATENT DOCUMENTS
+
+357,287 A
+
+2, 1887 Nolte
+
+15 Claims, 5 Drawing Sheets
+74
+
+i
+
+28
+
+34
+
+Oei 33
+
+-G/ .
+
+ss
+
+s' 64 Mzz
+
+tI Huys?'
+Miss
+S42
+722.3% 542
+
+N
+
+NSI 48sa.&
+SSS
+
+70
+
+NZz,
+
+-
+
+N
+
+2
+
+

@@ -1,0 +1,166 @@
+patent: US7739783B1
+source: https://patentimages.storage.googleapis.com/da/21/32/b656b7ded31ba4/US7739783.pdf
+pages: 11
+per-page extracted text length: {1: 2785, 2: 990, 3: 57, 4: 64, 5: 57, 6: 57, 7: 57, 8: 6730, 9: 7812, 10: 7716, 11: 3258}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO7739783B1
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Jacobsen
+
+US 7,739,783 B1
+
+(45) Date of Patent:
+
+Jun. 22, 2010
+
+(54) HEAD PROTECTION SYSTEMAND METHOD
+
+5,269,025 A
+
+75
+
+5,309,576 A
+
+5/1994 Broersma ...
+
+(75) Inventor: Gregg T. Jacobsen, Capitola, CA (US)
+
+5,351,341 A
+
+10, 1994 Broersma ...................... 2,412
+
+(73) Assignee: Bell Sports, Inc., Santa Cruz, CA (US)
+
+5,351,342 A 10/1994 Garneau ........................ 2,414
+5,469,583 A 1 1/1995 Akeley et al. .................. 2/421
+5,477.563 A * 12/1995 Gentes et al. .................. 2,411
+5,481,762 A
+1/1996 Gentes et al. .................. 2,411
+
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+U.S.C. 154(b) by 759 days.
+
+12/1993 Broersma ...................... 2,411
+
+(21) Appl. No.: 11/427,518
+(22) Filed:
+Jun. 29, 2006
+
+(Continued)
+FOREIGN PATENT DOCUMENTS
+
+Related U.S. Application Data
+(62) Division of application No. 10/898.598, filed on Jul.
+23, 2004, now Pat. No. 7,069,601.
+
+(51) Int. Cl.
+
+... 2.f412
+
+EP
+
+O 517 O91
+
+12/1992
+
+B2IB L/46
+
+(2006.01)
+
+(Continued)
+
+B2B 3/22
+B22D II/26
+
+(2006.01)
+(2006.01)
+
+OTHER PUBLICATIONS
+
+B22D II/28
+B23P 17/00
+B23P 25/00
+A 42B 3/00
+
+(2006.01)
+(2006.01)
+(2006.01)
+(2006.01)
+
+Notification of Transmittal of International Search Report, mailed
+Oct. 17, 2005, regarding International ApplicationNo. PCT/US2005/
+253718.0-2314, 3 pages.
+
+A42B 7/OO
+
+(2006.01)
+
+Primary Examiner David P Bryant
+
+(52) U.S. Cl. ............................... 29,527.1.2/411, 2/421
+(58) Field of Classification Search ..................... 2410
+2/411,421; 29/527.1
+See application file for complete search history.
+(56)
+
+Assistant Examiner Christopher M Koehler
+(74) Attorney, Agent, or Firm Baker Botts L.L.P.
+(57)
+
+ABSTRACT
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+4,081,865 A
+4,115,874 A
+
+4, 1978 Bergee et al. .................. 2,425
+9/1978 Hasegawa ...................... 2,425
+
+5,007,141 A
+
+4, 1991 Gentes ....
+
+5,088,130 A
+
+2, 1992 Chiarella ....................... 2,411
+
+5,093.937 A
+5,093.938 A
+
+3/1992 Kamata ......................... 2,424
+3/1992 Kamata ......................... 2,424
+
+5,099,523 A
+5,119,516 A
+
+3, 1992 Broersma ...................... 2,411
+6, 1992 Broersma ...................... 2,411
+
+5,231,703 A
+
+8/1993 Garneau ........................ 2,414
+
+... 24,163 R
+
+According to some embodiments of the invention, a system
+for securing a helmet to the head of a user is provided. The
+system includes a helmet body, and a roll cage disposed
+substantially within the helmet body. The system also
+includes at least a portion of a helmet retention system
+coupled to the roll cage so that a force applied to the strap is
+transferred to the roll cage before being transferred to the
+helmet body.
+6 Claims, 5 Drawing Sheets
+
+
