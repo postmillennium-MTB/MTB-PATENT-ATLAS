@@ -1,0 +1,92 @@
+patent: US20200327874
+source: https://patentimages.storage.googleapis.com/67/fd/5b/b37eb57ca069dd/US20200327874A1.pdf
+pages: 22
+per-page extracted text length: {1: 1569, 2: 113, 3: 138, 4: 143, 5: 131, 6: 152, 7: 186, 8: 137, 9: 121, 10: 123, 11: 113, 12: 124, 13: 121, 14: 178, 15: 158, 16: 6638, 17: 7359, 18: 7415, 19: 7368, 20: 7205, 21: 6646, 22: 2332}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+IN
+
+US 20200327874A1
+
+( 19 ) United States
+
+( 10) Pub . No .: US 2020/0327874 A1
+( 12 ) Patent
+Application
+Publication
+SLONE et al .
+(43) Pub. Date :
+
+Oct. 15 , 2020
+
+(52) U.S. CI.
+
+( 54) BELL
+( 72 ) Inventors: Clinton N. SLONE , San Francisco , CA
+
+(US ) ; Nicholaus M. SLONE , Bend,
+OR (US ); Adam R.L. REINECK , Mill
+
+Valley, CA (US )
+( 21 ) Appl. No .: 16 /822,503
+(22) Filed :
+Mar. 18 , 2020
+
+Related U.S. Application Data
+( 60 ) Provisional application No. 62/ 831,295 , filed on Apr.
+9 , 2019 .
+
+Publication Classification
+
+( 51 ) Int . CI .
+
+GIOK 1/072
+
+B62 ) 3/04
+
+(2006.01)
+
+GIOK 1/072 (2013.01 ) ; B62J 3/04
+
+CPC
+
+( 71 ) Applicant: Slone Studio Inc. , Sausalito , CA (US )
+
+( 2020.02 )
+
+ABSTRACT
+
+( 57 )
+
+A variety of bells are described . In one aspect , a support
+
+carries a bell body. A first portion of the support is positioned
+within the bell cavity and a second portion extends outside
+the bell cavity through the bell's mouth . A strike lever is
+coupled to the support at a location within the bell cavity.
+The strike lever is resiliently biased towards a neutral
+
+position that is spaced apart from the bell body. To ring the
+bell , a user presses the strike lever thereby spring loading the
+lever as the lever moves away from the bell strike surface .
+When the strike lever is released, the spring loading causes
+the strike lever to swing to strike the bell body to ring the
+bell . The strike lever is configured to strike the bell body
+while traveling in a direction having a radially outward
+
+vector component.
+
+( 2006.01 )
+
+10
+
+20
+
+23
+
+24
+
+40
+60
+
+

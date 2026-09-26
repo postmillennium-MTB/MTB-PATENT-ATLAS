@@ -1,0 +1,160 @@
+patent: US9168977
+source: https://patentimages.storage.googleapis.com/8d/c0/b4/2f1c024ffee347/US9168977.pdf
+pages: 56
+per-page extracted text length: {1: 3234, 2: 1301, 3: 0, 4: 225, 5: 73, 6: 58, 7: 58, 8: 90, 9: 58, 10: 78, 11: 91, 12: 28, 13: 254, 14: 59, 15: 70, 16: 62, 17: 70, 18: 28, 19: 63, 20: 62, 21: 59, 22: 67, 23: 108, 24: 104, 25: 62, 26: 71, 27: 59, 28: 71, 29: 0, 30: 253, 31: 72, 32: 65, 33: 59, 34: 59, 35: 59, 36: 130, 37: 59, 38: 84, 39: 6983, 40: 6677, 41: 6583, 42: 7035, 43: 7560, 44: 7640, 45: 7802, 46: 7853, 47: 7814, 48: 7649, 49: 7783, 50: 7875, 51: 7765, 52: 7688, 53: 7595, 54: 7598, 55: 6934, 56: 2337}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US009 168977B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+McLeay
+(54) VEHICLE SUSPENSION SYSTEM
+(71) Applicant: Hugh McLeay, Black Forest (AU)
+
+(72) Inventor: Hugh McLeay, Black Forest (AU)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+(21) Appl. No.:
+14/382,162
+(22) PCT Filed:
+Mar. 1, 2013
+
+(86). PCT No.:
+
+PCT/AU2013AOOO196
+
+(52) U.S. Cl.
+CPC
+
+FOREIGN PATENT DOCUMENTS
+200O247282 A
+9, 2000
+
+JP
+
+OTHER PUBLICATIONS
+International Search Report for corresponding PCT International
+application No. PCT/AU2013/000196 dated Jun. 14, 2013.
+(Continued)
+
+Primary Examiner Drew Brown
+
+(AU) ................................ 2O1290O828
+
+(51) Int. Cl
+
+B62M 9/16
+B60G II/2
+
+Oct. 27, 2015
+
+(74) Attorney, Agent, or Firm — Erickson Kernell
+Derusseau & Kleypas, LLC
+
+S371 (c)(1),
+(2) Date:
+Aug. 29, 2014
+(87) PCT Pub. No.: WO2013/126968
+PCT Pub. Date: Sep. 6, 2013
+(65)
+Prior Publication Data
+US 2015/OO35241 A1
+Feb. 5, 2015
+O O
+(30)
+Foreign Application Priority Data
+Mar. 2, 2012
+
+US 9,168,977 B2
+
+(45) Date of Patent:
+
+(57)
+ABSTRACT
+A driven wheel suspension system for a vehicle (100) having
+a chassis (12) suspended from a driven wheel (10) is dis
+closed. The Suspension system includes a suspension mecha
+nism including a driven wheel carrier member (11) rotatably
+connected to the driven wheel (10). The suspension mecha
+nism is configured to isolate the movement of the driven
+wheel 10 from the movement of the chassis (12). The driven
+wheel (10) is movable a distance relative to the chassis (12)
+hich defines
+defin a Suspens1on travel.1. The driven wheel Suspen
+which
+
+(2006.01)
+(2006.01)
+(Continued)
+
+sion system further includes a drive train including a looped
+power transmission element configured to transmit power
+
+between the driven wheel (10) and a power source mounted
+on the chassis (12). An idler member (31) is rotatably
+
+B62M 9/16 (2013 01); B60G3/20 (2013 01);
+
+mounted on an idler carrier member (20) that is movable
+
+B60G 11/12 (2013 01): B62K 25/04 (2013,015.
+rv
+• us
+(Continued)
+
+relative to both the chassis (12) and driven wheel earner
+member (11). The idler member (31) is configured to engage
+with a power transmitting segment (33) of the looped power
+
+(58) Field of Classification Search
+CPC ....... B62M 9/16; B62K 25/04; B62K 25/283;
+B62K 25/28: B62K 2025/044; B60G 3/20;
+
+B60G 11/12, B60G 2204/421; B60G 2300/12
+
+See application file for complete search history.
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+5,121.937 A * 6, 1992 Law will
+
+5,217.241 A
+
+transmission element and move to follow a predetermined
+path as a function of suspension travel, to thereby alter a path
+of said power transmitting segment (33) of the looped power
+
+transmission element. Altering the path of the power trans
+
+mitting segment (33) of the looped power transmission ele
+ment results in a lengthening or shortening of the power
+transmitting segment (33) of the looped power transmission
+element. The driven wheel suspension system of the present
+invention has many applications, including but not limited to
+
+280/284
+
+a rear wheel Suspension system for a bicycle.
+
+6/1993 Girvin. 280/284
+(Continued)
+
+22 Claims, 36 Drawing Sheets
+
+O
+
+42
+
+s
+
+al 3 Ž
+s
+
+CS
+
+
