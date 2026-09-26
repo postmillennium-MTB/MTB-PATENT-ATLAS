@@ -80,46 +80,34 @@ either way.
 
 ## New candidates — nothing currently in the atlas
 
-No existing `D` entry found for these. Standard verification still applies
-before any of them get written up (real invention, real number, resolvable
-link, honest tier) — none are pre-approved just because no duplicate exists.
+All 13 "new candidate" entries from this section (Spinergy Rev-X, Kestrel
+monocoque, Browning Automatic Transmission, Rolf paired-spoke wheel, Giro
+vented EPS helmet, Boone Lennon/Scott DH aero bar, Mantis elevated
+chainstays, Mavic Zap, Look clipless pedal, Shimano V-Brake, Biopace,
+Mountain Cycle Pro-Stop, and Magic Motorcycle hollow crank) were added to
+`index.html` on 2026-09-26 — see the README changelog entry "Added 13
+entries from a 26-candidate list..." for what was actually confirmed.
 
-- **Spinergy Rev-X carbon wheels** — Raphael Schlanger, US 5,184,874 (1993).
-  Note for research: the UCI-ban/injury angle needs its own sourcing check
-  before it goes in `w` — that's a strong claim.
-- **Kestrel monocoque carbon frame** — Brent Trimble, US 4,828,781 (1989).
-- **Browning Automatic Transmission** — Bruce Browning, US 4,867,733 (1989).
-  Genealogy claim (grandson of John Moses Browning) needs independent
-  confirmation before repeating it.
-- **Rolf paired-spoke wheel lacing** — Rolf Dietrich, US 5,931,544 (1999).
-  Note the Trek/Bontrager licensing claim for `w`.
-- **Giro vented EPS helmet** — Jim Gentes, US 5,088,130 (1992).
-- **Boone Lennon aero bar (Scott DH)** — US 4,750,378 (1988). The 1989 Tour
-  de France / Greg LeMond connection is well-documented territory generally
-  but still needs its own check against a primary source, not just the
-  submitted summary.
-- **Elevated chainstays (Mantis)** — Richard Cunningham, US 4,986,558
-  (1991). Note: the atlas already has a *different* Cunningham patent
-  (Charles B. Cunningham's roller-cam brake, US 4,765,443) under `who:
-  ["Charlie Cunningham", ...]` — confirm whether Richard Cunningham
-  (Mantis) and Charles "Charlie" Cunningham (WTB) are two different people
-  before adding a second `who[]` tag, since a collision here would
-  misattribute credit between two real, distinct mountain bike builders.
-- **Mavic Zap electronic shifting** — Jean-Pierre Mercat, US 5,358,451
-  (1994). Distinct from the UST/ISM/X-Tend Mercat patents already in the
-  atlas — same named inventor, different invention; worth a cross-reference
-  note if added, given how many other Mercat/Mavic entries already exist.
-- **Look clipless pedal** — Jean Beyl, US 4,686,867 (1987).
-- **Shimano V-Brake (linear-pull)** — Masanao Ose, US 5,636,716 (1997).
-- **Biopace non-circular chainrings** — submitted as Masashi Nagano, US
-  4,406,643 (1983). Same inventor name as the atlas's existing SPD entry
-  (also credited to Masashi Nagano) — plausible (both Shimano), but confirm
-  independently rather than assuming consistency proves accuracy.
-- **CamelBak** — see duplicates section above, not a new candidate.
-- **Mountain Cycle Pro-Stop hydraulic disc brake** — Robert Reisinger, US
-  5,251,727 (1993).
-- **Magic Motorcycle hollow crank** — Alex Pong, US 5,456,134 (1995).
-  Cannondale/CODA acquisition claim needs its own check.
+**Most of the originally-submitted patent numbers turned out to be
+wrong** — independent web-search verification found several named a
+completely different, unrelated invention (details in the README
+changelog entry). Corrected real numbers were used where one could be
+confirmed; where none could be, the entry shipped honestly with
+`num:null` and a low/medium confidence tier rather than guessing. Two
+follow-ups worth a future session with working patent-database access:
+
+- The Kestrel entry (now US 4,982,975, Brent J. Trimble) flags a real risk
+  of confusion with US 4,513,986, a different, similarly-named "James L.
+  Trimble" patent from the same few years — worth confirming neither
+  number got swapped.
+- The Shimano V-Brake entry (US 5,636,716) credits inventor "M. Sugimoto"
+  from a single source, not the "Masanao Ose" name originally submitted —
+  needs a second source before that inventor credit is treated as settled.
+
+CamelBak remains out of scope as a new entry — see the duplicates section
+above; that submission's detail was folded into the existing entry's own
+sourcing note rather than creating a second entry.
+
 - **Bicycle with integrated anti-theft system** — Bassem Ghaly, assignee
   12226448 Canada Inc., US 20230312034A1 (a *published application*, not
   yet a granted patent — WO/US/EP family, worldwide filing 2020). A
