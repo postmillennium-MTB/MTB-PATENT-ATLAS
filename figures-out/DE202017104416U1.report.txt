@@ -1,0 +1,55 @@
+patent: DE202017104416U1
+source: https://patentimages.storage.googleapis.com/d1/c6/6d/a06109c990f397/DE202017104416U1.pdf
+pages: 12
+per-page extracted text length: {1: 1467, 2: 5271, 3: 5170, 4: 4747, 5: 5395, 6: 778, 7: 513, 8: 4670, 9: 63, 10: 40, 11: 40, 12: 40}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+(19)
+
+*DE202017104416U120171207*
+(10)
+
+DE 20 2017 104 416 U1 2017.12.07
+
+Gebrauchsmusterschrift
+
+(12)
+
+B60B 1/04 (2006.01)
+
+(21) Aktenzeichen: 20 2017 104 416.5
+(22) Anmeldetag: 25.07.2017
+(47) Eintragungstag: 26.10.2017
+(45) Bekanntmachungstag im Patentblatt: 07.12.2017
+
+(51) Int Cl.:
+
+(66) Innere Priorität:
+10 2016 113 668.9
+20 2017 104 401.7
+
+(74) Name und Wohnsitz des Vertreters:
+Patentanwaltskanzlei Rumrich, 09116 Chemnitz,
+DE
+
+25.07.2016
+24.07.2017
+
+B60B 21/00 (2006.01)
+B60B 27/02 (2006.01)
+B60B 1/02 (2006.01)
+
+(73) Name und Wohnsitz des Inhabers:
+Berbig, Ingo, 09376 Oelsnitz, DE
+Die folgenden Angaben sind den vom Anmelder eingereichten Unterlagen entnommen.
+(54) Bezeichnung: Systemlaufrad mit Speichen auf Basis von Hochleistungsfaserstoffen
+
+(57) Hauptanspruch: Systemlaufrad mit Speichen auf Basis
+von geflochtenen Hochleistungsfaserstoffen, wobei die einzelnen Speichen (2) einen textilen Teil und eine Endverbindung (3) aufweisen, dadurch gekennzeichnet,
+– dass der textile Teil der Speiche (2) in Form eines biegeschlaffen Textils aus miteinander geflochtenen Geflechtteilen (2.3) ausgebildet ist,
+– dass die Speiche (2) mittels wenigstens eines Spannelements spannbar ist und
+– dass der Querschnitt der Speiche (2) im nichtgespannten
+Zustand quadratähnlich und im gespannten Zustand im Wesentlichen rund ist oder, dass der Querschnitt der Speiche
+(2) im nichtgespannten Zustand rechteckähnlich und im gespannten Zustand im Wesentlichen oval ist.
+
+

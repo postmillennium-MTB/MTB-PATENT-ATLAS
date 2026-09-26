@@ -1,0 +1,105 @@
+patent: DE102017116754B4
+source: https://patentimages.storage.googleapis.com/f6/22/bc/c67904b99dd010/DE102017116754B4.pdf
+pages: 11
+per-page extracted text length: {1: 2508, 2: 5196, 3: 5184, 4: 4789, 5: 5332, 6: 3520, 7: 2248, 8: 63, 9: 39, 10: 40, 11: 98}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+(19)
+
+*DE102017116754B420230525*
+(10)
+
+(12)
+
+DE 10 2017 116 754 B4 2023.05.25
+
+Patentschrift
+
+(21) Aktenzeichen: 10 2017 116 754.4
+(22) Anmeldetag: 25.07.2017
+(43) Offenlegungstag: 25.01.2018
+(45) Veröffentlichungstag
+der Patenterteilung: 25.05.2023
+
+(51) Int Cl.:
+
+B60B 1/04 (2006.01)
+B60B 27/02 (2006.01)
+B60B 21/00 (2006.01)
+
+Innerhalb von neun Monaten nach Veröffentlichung der Patenterteilung kann nach § 59 Patentgesetz gegen das Patent
+Einspruch erhoben werden. Der Einspruch ist schriftlich zu erklären und zu begründen. Innerhalb der Einspruchsfrist ist
+eine Einspruchsgebühr in Höhe von 200 Euro zu entrichten (§ 6 Patentkostengesetz in Verbindung mit der Anlage zu § 2
+Abs. 1 Patentkostengesetz).
+(66) Innere Priorität
+10 2016 113 668.9
+20 2017 104 401.7
+
+(56) Ermittelter Stand der Technik:
+25.07.2016
+24.07.2017
+
+(73) Patentinhaber:
+Berbig, Ingo, 09126 Chemnitz, DE
+(74) Vertreter:
+Patentanwaltskanzlei Rumrich, 09116 Chemnitz,
+DE
+(72) Erfinder:
+Berbig, Ingo, 09376 Oelsnitz, DE; Nendel, Klaus,
+Prof. Dr., 09569 Oederan, DE; Storch, Daniela,
+09126 Chemnitz, DE; Fischer, Dirk, 09244
+Lichtenau, DE; Mager, Stephanie, 09126 Chemnitz,
+DE
+
+DE
+DE
+DE
+DE
+DE
+US
+US
+WO
+
+40 36 340
+10 2008 050 132
+10 2009 020 123
+10 2009 050 458
+298 24 507
+2013 / 0 033 094
+2016 / 0 009 126
+2003/ 020 535
+
+A1
+A1
+A1
+A1
+U1
+A1
+A1
+A2
+
+STORCH, Daniela; BERBIG, Ingo; MICHAEL,
+Markus: Hochleistungsseile für textile Speichen
+in Laufrädern. In: Technische Textilien. 2015, Bd.
+58, H. 4, S. 225-227. ISSN 0945-1943.
+
+(54) Bezeichnung: Speiche auf Basis von Hochleistungsfaserstoffen für ein Systemlaufrad und Sys-temlaufrad
+
+(57) Hauptanspruch: Speiche auf Basis von geflochtenen
+Hochleistungsfaserstoffen für ein Systemlaufrad , mit einer
+Nabe (1), welche mittels den Speichen (2) über eine Endver­
+bindung (3) mit einer Felge (4) verbunden ist wobei die ein­
+zelnen Speichen (2) einen textilen Teil aufweisen, wobei der
+textile Teil der Speiche (2) in Form eines biegeschlaffen Tex­
+tils aus miteinander geflochtenen Geflechtteilen (2.3) ausge­
+bildet ist und wobei die Speiche (2) mittels wenigstens eines
+Spannelements spannbar ist, dadurch gekennzeichnet,
+- dass der Querschnitt der Speiche (2) im nichtgespannten
+biegeschlaffen Zustand quadratisch und im gespannten
+Zustand rund ist oder dass der Querschnitt der Speiche (2)
+im nichtgespannten biegeschlaffen Zustand innerhalb einer
+rechteckigen Hülllinie liegt und im gespannten Zustand oval
+und aerodynamisch den Luftwiderstand reduzierend in dem
+Laufrad ausgerichtet ist.
+
+
