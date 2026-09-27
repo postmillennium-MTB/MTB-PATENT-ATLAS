@@ -1,0 +1,174 @@
+patent: US6241636B1
+source: https://patentimages.storage.googleapis.com/17/c0/9f/d6bd30d563cfb6/US6241636.pdf
+pages: 19
+per-page extracted text length: {1: 2786, 2: 57, 3: 57, 4: 162, 5: 0, 6: 73, 7: 68, 8: 75, 9: 64, 10: 67, 11: 73, 12: 6501, 13: 7007, 14: 7427, 15: 7408, 16: 7487, 17: 6869, 18: 6399, 19: 4485}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6241636B1
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Miller
+(54) CONTINUOUSLY WARIABLE
+TRANSMISSION
+
+(75) Inventor: Donald C. Miller, Fallbrook, CA (US)
+(73) Assignee: Motion Technologies, LLC, Fallbrook,
+CA (US)
+(*) Notice:
+
+US 6,241,636 B1
+
+(45) Date of Patent:
+4.909,101
+
+3/1990 Terry, Sr..
+
+5,020,384
+5,236,403
+
+6/1991 Kraus.
+8/1993 Schievebusch.
+
+Jun. 5, 2001
+
+5,318,486 6/1994 Lutz.
+FOREIGN PATENT DOCUMENTS
+2310880 9/1974 (DE).
+
+2136243
+O 432 742 A1
+
+Subject to any disclaimer, the term of this
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+(21) Appl. No.: 09/133,284
+(22) Filed:
+Aug. 12, 1998
+
+1/1975 (DE).
+6/1991 (EP).
+
+39 40919 A1 6/1991 (DE).
+592320 9/1947 (GB).
+1376 057 12/1974 (GB).
+2 080452 2/1982 (GB).
+2 035782 6/1990 (GB).
+55135259 10/1980 (JP).
+Primary Examiner David Fenstermacher
+
+Related U.S. Application Data
+(60) Provisional
+application No.
+filed on
+on Dec.
+rovisional application
+No. 60/070,044,
+U44, Illed
+Lec. 30
+3U,
+
+Assistant Examiner William C.KJoyce
+
+(51) Int. Cl." ................................................. F16H 15/00
+(52) U.S. Cl. ................................................. 476/38; 476/36
+
+A continuously variable transmission. The transmission
+includes a plurality of power adjusters, Such as Spherical
+
+(58) Field of Search ................................... 476/36, 38, 62
+
+balls, frictionally interposed between a driving and a driven
+
+1997, provisional application No. 60/062,620, filed on Oct.
+22, 1997, provisional application No. 60/062,860, filed on
+Oct. 16, 1997, and provisional application No. 60/056,045,
+filed on Sep. 2, 1997.
+
+(56)
+
+3/1916 Barnes,
+5/1949 Kopp.
+4/1954 Acker.
+4/1960 Hayward.
+4/1960 Hayward.
+
+member. The driving and the driven member are each
+rotatably disposed over a main Shaft. The Spherical balls are
+configured to rotate about a modifiable axis and thereby
+provide a continuously variable shifting capability by adjust
+ing the ratio between the angular velocity of the driving
+member in relation to the driven member. The system
+includes automatic and manual shifting gearing for adjusting
+the Speed of the transmission. The System also includes a
+Support a Support member which is rotatably disposed over
+
+5/1966 Schottler.
+
+the main shaft and frictionally engaged to each of the
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+1,175,677
+2,469,653
+2,675,713
+2.931,234
+2.931,235
+
+3.248,960
+4,735,430
+4,756.211
+4,856,374
+
+4,900,046
+
+(74) Attorney, Agent, or Firm
+obbe, Martens, Olson &
+Bear, LLP
+(57)
+ABSTRACT
+
+4/1988 Tomkinson.
+7/1988 Fellows.
+8/1989 Kreuzer.
+
+Spherical balls.
+
+2/1990 Aranceta-Angoitia.
+
+40 Claims, 10 Drawing Sheets
+
+SS 'Elfrisk,
+SY
+
+2.
+
+S
+
+27
+
+r EAAN
+ENSA
+sizENE
+-
+
+222-
+
+N N N N N S N N N N N N
+
+S3 S243. NY4.
+
+922 N
+
+;A /:SKy2A.
+T.J.
+KX.N. P2XL as
+THAKKTNA
+f
+
+

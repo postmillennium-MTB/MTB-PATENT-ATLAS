@@ -1,0 +1,90 @@
+patent: US6099008A
+source: https://patentimages.storage.googleapis.com/6d/4d/ab/6c0d263ffde7af/US6099008.pdf
+pages: 9
+per-page extracted text length: {1: 1909, 2: 50, 3: 50, 4: 58, 5: 58, 6: 6606, 7: 7547, 8: 7137, 9: 2511}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US006099008A
+
+United States Patent (19)
+
+11 Patent Number:
+
+6,099,008
+
+Caffey
+
+(45) Date of Patent:
+
+Aug. 8, 2000
+
+54) HITCH FOR BICYCLE TRAILER
+
+4,721,320 1/1988 Creps et al. .
+
+5,171,034 12/1992 Scott ....................................... 280/204
+
+75
+
+Inventor: Stephen Patrick Caffey, Eugene, Oreg.
+
+73
+
+Assignee: Burley Design Cooperative, Eugene,
+Oreg.
+
+21 Appl. No.: 09/144,737
+22 Filed:
+Sep. 1, 1998
+
+5,267,744 12/1993 Berry et al. ............................. 280/204
+5,516,131 5/1996 Novotny .
+5,713,698 2/1998 Worsley ................................. 405/60.5
+
+Primary Examiner Paul N. Dickson
+Assistant Examiner Tony Winner
+Attorney, Agent, or Firm-Robert D. Varitz, PC
+57
+ABSTRACT
+
+(51) Int. Cl. ............................................... B62K 27/00
+
+A bicycle trailer hitch for joining a trailer, having a trailer
+
+58 Field of Search ..................................... 280/204, 292,
+
+including a rear-wheel axle having an axis-of-rotation
+
+52)
+
+280/204; 280/292; 280/503
+
+280/515,503
+
+56)
+
+References Cited
+
+U.S. PATENT DOCUMENTS
+Re. 26.806 3/1970 Robinson.
+3,387,859 6/1968 McClellan.
+3,567.249 3/1971 Robinson.
+3,762,748 10/1973 Anders .................................... 403/156
+3,934,666 1/1976 Ellington ................................... 180/11
+3,993,320 11/1976 Robinson ................................ 280/204
+
+tongue, to a bicycle, having a bicycle frame and a rear wheel,
+
+therethrough, mounted on a rear wheel mounting structure
+of the bicycle frame, includes a hitch mount Secured to the
+rear axle of the bicycle, including a frame-contacting mem
+ber mounted on the bicycle frame; and a hitch mount body
+
+rotatably mounted on Said frame-contacting member; a
+hitch-mount retainer mechanism for Securing Said hitch
+mount to the bicycle frame; and a hitch connector fixed to
+the trailer tongue and removably receivable on Said hitch
+mount body.
+20 Claims, 4 Drawing Sheets
+
+

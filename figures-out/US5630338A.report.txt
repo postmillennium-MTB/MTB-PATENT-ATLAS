@@ -1,0 +1,82 @@
+patent: US5630338A
+source: https://patentimages.storage.googleapis.com/0b/41/21/6031c2b1048bdb/US5630338.pdf
+pages: 10
+per-page extracted text length: {1: 1679, 2: 50, 3: 127, 4: 50, 5: 7103, 6: 6645, 7: 7283, 8: 7228, 9: 1875, 10: 599}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US00563.0338A
+
+United States Patent (19)
+
+11) Patent Number:
+
+Patterson et al.
+
+45
+
+54
+
+May 20, 1997
+
+BICYCLE DERAILLEUR CABLE PRELOAD
+
+5,009,122 4/1991 Chaczyk et al. ....................... 74/5026
+
+AND SEALNG SYSTEM
+
+5,102,372 4/1992 Patterson et al. ................... 74/502.4X
+
+75 Inventors: Sam Patterson; Frederick W. Day;
+Michael Larson; Brian Jordan, all of
+Chicago, Ill.
+73) Assignee: SRAM Corporation, Chicago, Ill.
+(21) Appl. No.: 500,774
+1a22 Filed:
+Jul. 11, 1995
+(51 int.C. ...mmm. F16C 1/22
+52 U.S. C. ...............
+741s026.74/5015R
+souse poso 74/502.4502.6,
+(58) Field of Search ...
+
+74/500.5, 501.5 R
+
+56)
+
+Date of Patent:
+
+5,630,338
+
+References Cited
+
+U.S. PATENT DOCUMENTS
+
+Primary Examiner-Charles A. Marmor
+Assistant Examiner-Mary Ann Battista.
+Attorney, Agent, or Firm-Ralph C. Francis
+57
+ABSTRACT
+A cable pre-load system and device attachable between a
+moveable control cable and a rigid frame for regulating
+tension in the control cable and sealing the control cable
+against contamination. The tensioning device includes a
+cable connector, a resilient tubular member with two ends
+
+and aframe connector. The cable connector attaches one end
+
+of the tubular member to the control cable to form a static
+
+seal about the control cable. The frame connector attaches
+the other end of the tubular member to the frame. The
+
+tubular member stretches between a first configuration and
+a second configuration in response to movement of the
+control cable to regulate tension in the control cable.
+
+4,833,937 5/1989 Nagano .............................. 74/502.4 X
+
+4,889,005 12/1989 Crack ................................. 74/502.4 X
+
+11 Claims, 3 Drawing Sheets
+
+

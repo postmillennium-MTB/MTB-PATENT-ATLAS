@@ -1,0 +1,77 @@
+patent: US3925821A
+source: https://patentimages.storage.googleapis.com/c1/8a/60/1a5b22b9bb96d4/US3925821.pdf
+pages: 5
+per-page extracted text length: {1: 1402, 2: 50, 3: 55, 4: 6429, 5: 3022}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+11 3,925,821
+(45) Dec. 16, 1975
+
+Lewicki
+54 AIR COOLED HELMET
+75 Inventor: Lester R. Lewicki, Woodland Hills,
+Calif.
+
+73) Assignee: Bell Helmets Inc., Long Beach,
+Calif.
+
+22 Filed:
+
+July 5, 1974
+
+(21) Appl. No.: 485,827
+
+52 U.S. Cl..................o... 2/3 R; 2/171.3
+(51 Int. Cl.’........................ A42C5/04; A42B 3100.
+
+(58) Field of Search........................ 2/3 R, 3 A-3 C,
+
+2/171.7, 171.5, 1714, 171.3, 5; 98/1, 8, 13
+
+56)
+
+References Cited
+UNITED STATES PATENTS
+
+935,556
+1,347,046
+
+9/1909 Smith............................... 2/171.7 X
+7/1920 McDonough........................... 2/3 R
+
+3,344,433 10/1967 Stapenhill............................. 2/3 R
+3,496,854
+
+, 3,783,450
+
+2/1970
+
+Feldman et al......
+
+... 2/3 R
+
+1/1974 O'Connor............................... 2/3 R
+
+Primary Examiner-Andrew V. Kundrat
+Assistant Examiner-Peter Nerbun
+
+Attorney, Agent, or Firm-White and Haefliger
+57
+
+ABSTRACT
+
+A helmet adapted, especially for bicyclist wear com
+prising an outer shell or lamination adhered to an in
+sulative or shock absorptive liner spaced, as worn,
+from the head of the wearer, the helmet having dis
+tributed air intake openings extending through the
+liner and from which entering air streams are directed
+rearwardly in cooling contact with the helmet and
+wearer by baffles formed as inward deflections of the
+outer shell.
+
+15 Claims, 6 Drawing Figures
+
+

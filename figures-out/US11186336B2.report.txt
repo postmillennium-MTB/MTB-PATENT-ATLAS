@@ -1,0 +1,171 @@
+patent: US11186336B2
+source: https://patentimages.storage.googleapis.com/ad/e3/4a/436ffc9e1561a4/US11186336.pdf
+pages: 23
+per-page extracted text length: {1: 2578, 2: 2162, 3: 127, 4: 259, 5: 123, 6: 106, 7: 108, 8: 257, 9: 181, 10: 104, 11: 104, 12: 7180, 13: 8017, 14: 7457, 15: 7775, 16: 7557, 17: 7828, 18: 7821, 19: 7079, 20: 7287, 21: 6811, 22: 6738, 23: 3773}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011186336B2
+
+( 12) United States Patent
+
+( 10) Patent No .: US 11,186,336 B2
+(45 ) Date of Patent :
+Nov. 30 , 2021
+
+Primeaux et al .
+
+( 56 )
+
+( 54 ) BICYCLE SADDLE
+
+References Cited
+
+( 71 ) Applicant: Specialized Bicycle Components, Inc. ,
+
+U.S. PATENT DOCUMENTS
+
+Morgan Hill , CA (US )
+( 72 ) Inventors: Philip Alan Primeaux , Capitola, CA
+(US ) ; Garrett Yale Davis Getter ,
+Morgan Hill , CA (US ) ; Christopher
+
+10/1974 Young
+
+3,844,611 A
+4,098,537 A
+5,011,222 A
+
+7/1978 Jacobs
+
+4/1991 Yates et al.
+
+11/1992 Terry
+
+5,165,752 A
+5,442,823 A
+
+8/1995 Siekman et al .
+
+Yu , Menlo Park , CA (US )
+
+(Continued )
+
+( 73 ) Assignee: Specialized Bicycle Components, Inc. ,
+Morgan Hill , CA (US )
+( * ) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 0 days.
+( 21 ) Appl. No .: 16 /927,765
+(22 ) Filed :
+Jul . 13 , 2020
+
+FOREIGN PATENT DOCUMENTS
+
+( 65 )
+
+CN
+CN
+
+OTHER PUBLICATIONS
+
+International Search Report and Written Opinion in PCT Applica
+tion No. PCT /US2020 /041843 dated Oct. 7 , 2020 .
+
+( Continued )
+Primary Examiner Milton Nelson , Jr.
+
+Jan. 28 , 2021
+
+(74 ) Attorney, Agent, or Firm - Knobbe, Martens, Olson
+
+& Bear, LLP
+
+Related U.S. Application Data
+
+( 57 )
+
+( 60 ) Provisional application No. 62 / 877,200 , filed on Jul .
+22 , 2019 .
+
+A bicycle saddle includes: a base structure having a top
+
+B62 ) 1/26
+
+B62 ) 1/00
+B62 ) 1/22
+
+( 2006.01)
+( 2006.01 )
+
+( 2006.01)
+
+( 52 ) U.S. Cl .
+
+B62J 1/26 (2013.01 ) ; B62J 1/007
+( 2013.01 ) ; B62 ) 1/22 ( 2013.01 ) ; B62 ) 1/002
+(2013.01 )
+
+( 58 ) Field of Classification Search
+CPC
+
+ABSTRACT
+
+portion; and aa cushion coupled to the top portion of the base
+structure, the cushion including a first lateral side and a
+second lateral side separated by a longitudinal plane,
+wherein each of the first lateral side and the second lateral
+side includes : a first region having a first stiffness; a second
+region having a second stiffness that is less than the first
+stiffness; and a third region having a third stiffness that is
+less than the second stiffness, wherein a perimeter of the
+second region is at least 75 % enclosed within the first
+region, and wherein a perimeter of the third region is at least
+
+( 51 ) Int . Cl .
+
+CPC
+
+5/2015
+12/2015
+
+(Continued )
+
+Prior Publication Data
+
+US 2021/0024155 A1
+
+204341269
+105122135
+
+B62J 1/26 ; B62J 1/002 ; B62J 1/007 ; B62J
+1/22 ; B60N 2/58
+
+75 % enclosed within the second region.
+33 Claims , 9 Drawing Sheets
+
+See application file for complete search history.
+
+420
+
+112
+
+776 .
+
+102
+
+110
+
+114
+
+-420
+104
+
+107
+
+108
+
+106
+
+108
+
+

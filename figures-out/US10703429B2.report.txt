@@ -1,0 +1,196 @@
+patent: US10703429B2
+source: https://patentimages.storage.googleapis.com/35/6d/46/82cd175e059416/US10703429.pdf
+pages: 13
+per-page extracted text length: {1: 2575, 2: 1648, 3: 86, 4: 282, 5: 209, 6: 134, 7: 181, 8: 189, 9: 6729, 10: 7086, 11: 7324, 12: 5611, 13: 6833}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010703429B2
+
+United States Patent
+
+( 10 ) Patent No.: US 10,703,429 B2
+(45 ) Date of Patent:
+* Jul. 7 , 2020
+
+Fiedler et al.
+(54 ) CLOSURE DEVICE FOR CONNECTING A
+
+(58 ) Field of Classification Search
+
+CONTAINER E.G. TO A BICYCLE
+
+CPC
+
+(71) Applicant: Fidlock GmbH , Hannover (DE )
+(72 ) Inventors: Joachim Fiedler, Hannover (DE);
+Breido Botkus, Hannover (DE ) ;
+Friedemann Richter , Hannover (DE );
+Jürgen Spindler , Regensburg (DE )
+(73 ) Assignee: Fidlock GmbH , Hannover (DE )
+( * ) Notice : Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b ) by 0 days .
+This patent is subject to a terminal dis
+
+24/32
+
+( Continued )
+References Cited
+U.S. PATENT DOCUMENTS
+
+( 56 )
+
+6,281,674 B1 *
+
+FOREIGN PATENT DOCUMENTS
+
+16 / 327,999
+
+CN
+DE
+
+9/2003
+4/1995
+
+OTHER PUBLICATIONS
+Fidlock , “ Launch of our brand new booth at the Eurobike 2016 !” ,
+
+Eurobike 2016 , Facebook post (Aug. 30 , 2016 ).
+
+Primary Examiner Justin M Larson
+(74 ) Attorney, Agent, or Firm The Webb Law Firm
+
+Prior Publication Data
+US 2019/0308684 A1 Oct. 10 , 2019
+
+(57)
+
+ABSTRACT
+
+A closure device for connecting a container to a frame of a
+vehicle , in particular of a two-wheeler or a three -wheeler,
+includes a first closure part which is to be arranged on the
+frame and comprises a first magnet element and a second
+closure part which is assigned to the container and com
+prises a second magnet element. The second closure part is
+positionable on the first closure part in a closing direction
+and is latched mechanically with the first closure part in a
+closed position . The second closure part is releasably con
+
+Foreign Application Priority Data
+10 2016 216 422
+Aug. 31, 2016 (DE)
+
+( 30 )
+
+B62 ) 11/00
+B62J 7/08
+
+2571651 Y
+29502746 U1
+
+(Continued )
+
+PCT Pub . Date : Mar. 8 , 2018
+
+(51) Int. Cl.
+
+B62J 11/00
+324/174
+B62J 11/00
+224/423
+
+(Continued )
+
+(22) PCT Filed : Aug. 24 , 2017
+PCT/EP2017 / 071349
+( 86 ) PCT No .:
+$ 371 (c ) (1 ),
+Apr. 15 , 2019
+(2 ) Date :
+(87) PCT Pub. No.: WO2018 /041716
+
+(65)
+
+8/2001 Huang
+
+7,150,382 B2 * 12/2006 Zickefoose
+
+claimer.
+
+(21) Appl. No.:
+
+B62J 11/00; B62J 11/02 ; A43C 11/165 ;
+F16B 2001/0035 ; A45C 13/1069; Y10T
+
+(2020.01 )
+( 2006.01 )
+(Continued )
+
+( 52 ) U.S. CI.
+CPC
+B62J 11/00 ( 2013.01); F16B 1/00
+( 2013.01 ); FI6B 2001/0035 (2013.01 ); HOIF
+7/0263 (2013.01 )
+
+nectable to the container.
+
+19 Claims, 6 Drawing Sheets
+
+2
+
+50 502A 51A 520
+510 511 SZA
+
+411
+410
+
+43A
+
+53A
+
+41A
+
+310
+
+544
+
+-521
+512 513 520
+
+42 542
+
+4004
+
+510
+
+410
+
+-30
+610
+
+541
+
+5431
+54 501
+
+43B
+400B
+
+41B
+
+512
+
+500B
+502B
+
+517
+un
+
+538
+
+52152B
+
+60
+
+
