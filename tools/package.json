@@ -1,0 +1,12 @@
+{
+  "name": "mtb-patent-atlas-tools",
+  "private": true,
+  "description": "Dev-only tooling for verifying index.html (see tools/README.md). Not loaded by the runtime page -- deleting this directory changes nothing a reader sees, same as the rest of tools/.",
+  "scripts": {
+    "verify": "node verify_data.js",
+    "smoke": "node smoke_test.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

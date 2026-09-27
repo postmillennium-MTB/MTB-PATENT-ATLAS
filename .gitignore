@@ -1,5 +1,6 @@
 __pycache__/
 *.pyc
+tools/node_modules/
 
 # NOTE: figures-out/ is deliberately NOT ignored. The Fetch patent figure
 # workflow commits that directory into a review PR — ignoring it makes the

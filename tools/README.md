@@ -4,6 +4,36 @@ Repo tooling. Nothing here is loaded by `index.html` at runtime — the atlas is
 still one self-contained file with no build step, and deleting this whole
 directory would not change what a reader sees.
 
+## `verify_data.js` / `smoke_test.js` — verifying a change to `index.html`
+
+The two checks CLAUDE.md's "Verifying a change" section describes, as real
+files rather than copy-pasted snippets, so there's exactly one copy of the
+logic instead of two that can silently drift apart. Also run automatically
+by `.github/workflows/verify-data.yml` on every PR and every push to `main`.
+
+```bash
+node tools/verify_data.js     # parse check + schema-integrity + counts
+cd tools && npm install && cd ..
+node tools/smoke_test.js      # real-browser check: search + Rabbit Holes
+```
+
+`verify_data.js` needs only Node. `smoke_test.js` needs Playwright (`npm
+install` inside `tools/` once) and a Chromium build — it uses the one
+pre-installed at `/opt/pw-browsers/chromium` if that path exists (true in
+this repo's usual dev sandbox), otherwise falls back to Playwright's own
+(`npx playwright install --with-deps chromium`, which is what the GitHub
+Actions runner does, since that fixed sandbox path won't exist there).
+
+Added 2026-09-27 after a real incident: four `D` entries had shipped with a
+*missing* `b` field (not merely a wrong value), which parsed fine and looked
+correct in every check that existed before this, then crashed `cardHTML()`/
+`passes()` the moment a real page rendered one of them — breaking search and
+Rabbit Holes navigation in what looked like two unrelated bugs before the
+shared root cause was found. `verify_data.js`'s schema-integrity check would
+have caught it as a data gap; `smoke_test.js` would have caught it as an
+actual crash. Neither existed at the time. See CLAUDE.md's incident note
+under "Verifying a change" for the full account.
+
 ## `fetch_patent_figure.py` — patent drawings, semi-automated
 
 Replaces the mechanical half of adding a drawing: find the PDF, work out which

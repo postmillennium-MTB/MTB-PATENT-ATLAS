@@ -1,0 +1,66 @@
+# Runs the same two checks CLAUDE.md's "Verifying a change" section
+# documents for a session to run locally -- parse/schema-integrity
+# (tools/verify_data.js) and a real-browser smoke test (tools/smoke_test.js)
+# -- automatically on every change to index.html, whether it comes from a
+# Claude Code session's PR or a direct edit through GitHub's web UI.
+#
+# Added 2026-09-27 after a real incident: four entries had shipped with a
+# missing (not just wrong) required field, which parsed fine and looked
+# correct in every check that existed until then, then crashed the page for
+# any reader who searched a common word or tapped a Rabbit Hole. Neither bug
+# was caught by a session before merge, because catching it depended on a
+# session remembering to run the right check by hand. This workflow removes
+# that dependency for future changes -- it runs the same checks, but always,
+# not only when someone remembers to.
+#
+# `pull_request` gates a PR's merge button once branch protection is turned
+# on for this check (Settings -> Branches -> require status checks). `push`
+# to main is a backstop for a change committed directly through GitHub's web
+# UI, which never goes through a PR at all -- that path can't be gated (the
+# commit has already landed by the time this runs), but it still surfaces a
+# clear red check on the commit rather than the break going unnoticed.
+#
+# This workflow does not touch index.html and adds no runtime dependency to
+# it -- same as tools/fetch_patent_figure.py and its own workflow, this is
+# repo tooling, not part of the single-file rule's runtime.
+
+name: Verify data
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "tools/verify_data.js"
+      - "tools/smoke_test.js"
+      - "tools/package.json"
+      - "tools/package-lock.json"
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Parse, schema-integrity and bilingual-completeness check
+        run: node tools/verify_data.js
+
+      - name: Install Playwright + Chromium
+        working-directory: tools
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Browser smoke test (search + Rabbit Holes)
+        run: node tools/smoke_test.js
