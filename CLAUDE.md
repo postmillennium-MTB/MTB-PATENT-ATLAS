@@ -531,10 +531,26 @@ request from one session to the next.
    above, but still confirm the number/date/inventor precisely before
    writing the object) — including the count-sync step, which is easy to
    forget when several entries land in one batch.
-5. **Open a pull request; do not push to `main`.** State in the PR
+5. **Run the browser smoke test** (see *Verifying a change* below) before
+   opening the PR — not just the Node parse/schema/bilingual checks. A batch
+   add is exactly the change most likely to exercise a part of the file a
+   narrower edit wouldn't have touched, and it's also the moment a
+   pre-existing latent bug elsewhere in `D` is most likely to surface and
+   get (wrongly) blamed on the new entries — as happened 2026-09-27, where
+   four *pre-existing* entries missing `b:[]` were surfaced by, but not
+   caused by, a batch add, and were initially reported as two seemingly
+   unrelated bugs (search, then Rabbit Holes) before the shared root cause
+   was found. Running the smoke test once, right before opening the PR,
+   catches this class of issue regardless of which entries actually
+   introduced it.
+6. **Open a pull request; do not push to `main`.** State in the PR
    description: which entries were added, the tier assigned to each and why,
-   any gaps that couldn't be verified, and which count-sync locations were
-   touched. Push to `main` only when Jon explicitly asks for that separately.
+   any gaps that couldn't be verified, which count-sync locations were
+   touched, and that the browser smoke test was run (or, if it genuinely
+   couldn't be — no Playwright/Chromium available in that session's
+   environment — say so explicitly rather than letting the omission read as
+   an oversight). Push to `main` only when Jon explicitly asks for that
+   separately.
 
 ## Workflow: adding one or more new patent entries
 
@@ -565,7 +581,14 @@ request from one session to the next.
    `BRAND_HQ` if the location is confirmed) *before* referencing it in
    `who[]` — see the registries table above.
 5. **Run the verification script** (below) to confirm the file still parses
-   and to get the real updated counts — don't hand-compute them.
+   and to get the real updated counts — don't hand-compute them. Also run
+   the **schema-integrity check** (same section) — it catches a field your
+   new entry forgot (`b`, `who`) that the parse check alone won't, since a
+   *missing* field doesn't break parsing, only rendering. For anything
+   beyond a single entry — and always for a batch add — also run the
+   **browser smoke test** in that same section before committing; it's the
+   only check that actually executes `cardHTML()`/`passes()` against your
+   edit rather than just inspecting the data shape.
 6. **Sync every place a total/count is hardcoded** (all of these must move
    together — this exact class of drift has bitten this repo twice before):
    - `README.md` → the "At a glance" table (total, active, expired, pending,
@@ -619,6 +642,46 @@ in `D` breaks the entire page, not just one card. For a `BRANDS`/`INVENTORS`
 change, the same pattern works against `const BRANDS = \[([\s\S]*?)\];` /
 `const INVENTORS = \[([\s\S]*?)\n\];`.
 
+**Schema-integrity check — required array fields.** Run this every time,
+not just after a batch add, since it also catches pre-existing entries that
+predate this check:
+
+```js
+let schemaIssues=[];
+D.forEach(d=>{
+  if(!Array.isArray(d.b)) schemaIssues.push([d.num||d.t, 'b is missing or not an array']);
+  if(!Array.isArray(d.who)) schemaIssues.push([d.num||d.t, 'who is missing or not an array']);
+});
+console.log('schema-integrity issues:', schemaIssues);
+```
+
+**Why this exists (2026-09-27 incident, don't remove without re-reading
+this):** four pre-existing entries (Spinergy Rev-X, Giro vented helmet
+shell, Look clipless pedal, Trimble X-Frame) had shipped with no `b` field
+at all — not even `b:[]`. `cardHTML()` renders badge pills with an
+unguarded `d.b.map(...)`, and `passes()`'s badge-filter check does an
+unguarded `d.b.includes(...)`. Neither the parse check above nor the
+bilingual check below catches a *missing* field — both only look at
+fields that are present. The result: any render that included one of
+those four entries threw `TypeError: Cannot read properties of undefined
+(reading 'map')` **mid-render**, silently truncating or blanking the
+results with no visible error to the reader. This broke two features that
+looked unrelated and were reported as two separate bugs before the shared
+root cause was found: (1) search — any query matching one of the four
+(`wheel`, `spoke`, `helmet`, `pedal`, `frame` — all common words) returned
+a truncated list; (2) Rabbit Holes — *every single click* failed, because
+tapping one calls `jumpToCard()`, which switches to the unfiltered "All"
+tab, and the unfiltered list always contains all four broken entries.
+Fixed by adding `b:[]` to all four entries, and by hardening the two
+unguarded reads to `d.b||[]` (matching a defensive pattern the search
+hay-building code already used one function over) so a future entry
+missing `b[]` degrades gracefully instead of crashing the whole page.
+**The lesson for schema changes generally:** when adding a new array field
+to the `D` schema (or auditing an old one), grep for every place that
+reads it and confirm each site tolerates the field being absent — a
+`||[]` fallback is cheap; a silent full-page crash from one bad entry
+touching every reader who searches or browses is not.
+
 **Bilingual completeness check** — if the current convention is to write
 entries bilingual (see above), confirm nothing slipped through as a plain
 string, and that no `who[]` value is unregistered, by extending the same
@@ -634,9 +697,76 @@ console.log('still-plain-string fields:', notBilingual);
 An empty array is what a fully-bilingual dataset looks like; a non-empty one
 is either a deliberate, changelog-flagged exception or a field you forgot.
 
-There's no visual/rendering check available without a browser — if a change
-touches layout, CSS, or interactive behavior rather than just `D`, say
-plainly that it's unverified visually rather than implying it was tested.
+**A visual/rendering check *is* available — a real browser, not just static
+analysis.** A previous version of this file said there was no way to test
+this without a browser; that was wrong, or at least is wrong in this
+environment. Chromium is pre-installed at `/opt/pw-browsers/chromium`, and
+Playwright can be installed on demand:
+
+```bash
+mkdir -p /tmp/pw-smoke && cd /tmp/pw-smoke && npm init -y >/dev/null 2>&1 \
+  && npm install playwright --no-save
+```
+
+Then drive the actual file and assert on real page behavior, not just data
+shape — this is what caught the incident above; the Node scripts above did
+not, because they only ever inspected `D`, never executed the code that
+reads it:
+
+```js
+// /tmp/pw-smoke/smoke.js
+const { chromium } = require('playwright');
+const path = require('path');
+(async () => {
+  const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+  const page = await browser.newPage();
+  const errors = [];
+  page.on('pageerror', e => errors.push(e.message));
+  await page.goto('file://' + path.resolve('/home/user/MTB-PATENT-ATLAS/index.html'));
+  await page.waitForTimeout(600);
+
+  // Rabbit Holes first, while still on the default home/Atlas tab --
+  // clicking one always renders the FULL unfiltered list (see the incident
+  // note above), so this is a stronger whole-file smoke test than search:
+  // it touches every entry in D on every click. Do this BEFORE any search
+  // below, since typing a query navigates away from the home tab and
+  // .rh-card stops existing in the DOM -- a real ordering bug that shipped
+  // in an earlier draft of this exact script.
+  errors.length = 0;
+  await page.click('.rh-card >> nth=0');
+  await page.waitForTimeout(400);
+  console.log('rabbit hole click errors:', JSON.stringify(errors),
+    'cards rendered:', await page.locator('.card').count());
+
+  // Then exercise search with a handful of high-collision-risk terms
+  // (category labels, common component words) rather than only the words
+  // your own new entries happen to contain -- a crash from a PRE-EXISTING
+  // entry only shows up on a query that reaches it.
+  for (const q of ['wheel','frame','fork','drive','comp','emtb','susp','transport','tech']) {
+    errors.length = 0;
+    await page.fill('#searchInput', '');
+    await page.fill('#searchInput', q);
+    await page.waitForTimeout(500);
+    const cards = await page.locator('.card').count();
+    console.log(`search "${q}": ${cards} cards, errors: ${JSON.stringify(errors)}`);
+  }
+
+  await browser.close();
+})();
+```
+
+```bash
+node /tmp/pw-smoke/smoke.js
+```
+
+Any non-empty `errors` array, or a suspiciously low card count on a broad
+category-word search, means something crashed mid-render — treat it the
+same as a thrown error from the Node parse check above, not as a cosmetic
+issue. Run this smoke test at least once per session that touches `D`,
+`cardHTML()`, `passes()`, or any render/navigation code — and always
+before opening a PR for a batch add, since a batch add is exactly the kind
+of change most likely to touch a part of the file a narrower single-entry
+edit wouldn't have exercised.
 
 ## Git conventions for this repo
 
@@ -652,7 +782,7 @@ plainly that it's unverified visually rather than implying it was tested.
 
 ## Periodic audit checklist (for larger reviews, not every small addition)
 
-When asked to review or clean up rather than just add an entry, run all six:
+When asked to review or clean up rather than just add an entry, run all seven:
 
 1. **Data separation** — is every fact above the `D`/registries block and
    every rendering decision below it? Watch for a label or threshold that
@@ -672,6 +802,16 @@ When asked to review or clean up rather than just add an entry, run all six:
    more brand, one more Patent Fight) be made as a single, localized edit?
    If not, that's a signal the relevant registry needs widening, not that
    the next contributor should hand-roll around it.
+7. **Schema completeness** — run the schema-integrity check in *Verifying a
+   change* against every entry in `D`, not just the ones a recent session
+   touched (it caught four entries missing `b[]` entirely — see that
+   section's incident note — that had sat undetected for an unknown number
+   of prior sessions because nothing had ever checked for a field's
+   *absence*, only for wrong values in fields that were present). While
+   here, grep for every read site of any array field (`b`, `who`, `nums`,
+   `imgs`) and confirm each one tolerates the field being missing (`||[]`
+   or an equivalent guard) — a bare `d.field.map(...)`/`.includes(...)` is
+   a latent full-page crash waiting for one old entry to trigger it.
 
 ## What not to do
 
