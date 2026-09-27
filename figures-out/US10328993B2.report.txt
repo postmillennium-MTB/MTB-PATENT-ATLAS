@@ -1,0 +1,212 @@
+patent: US10328993B2
+source: https://patentimages.storage.googleapis.com/15/73/c7/10aae913ff305d/US10328993.pdf
+pages: 23
+per-page extracted text length: {1: 2712, 2: 507, 3: 213, 4: 224, 5: 218, 6: 249, 7: 450, 8: 241, 9: 121, 10: 518, 11: 220, 12: 473, 13: 301, 14: 578, 15: 263, 16: 445, 17: 328, 18: 6424, 19: 7333, 20: 7690, 21: 7457, 22: 7243, 23: 4787}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010328993B2
+
+(12) United States Patent
+
+( 10 ) Patent No.: US 10 ,328, 993 B2
+
+(54 ) BICYCLE STEERER TUBE WITH VARIANT
+
+6 , 805 , 372 B2
+
+10 /2004 Gueugneaud
+
+(71) Applicant: SRAM , LLC, Chicago, IL (US)
+
+7 , 537 ,231 B2 *
+
+5 / 2009 Callahan . .. . . . .. . . .. B62K 19/ 32
+
+(45) Date of Patent:
+
+Watt et al.
+
+6 , 893,037 B1
+7 ,503, 576 B1
+
+STIFFNESS
+
+(72 ) Inventors: Jonathan Blair Watt, Colorado
+Springs, CO (US); Robert Powell,
+Colorado Springs, CO (US )
+
+(73) Assignee: SRAM , LLC , Chicago, IL (US)
+( * ) Notice:
+
+Subject to any disclaimer, the term of this
+
+patent is extended or adjusted under 35
+
+U . S .C . 154 (b ) by 888 days .
+(21) Appl . No.: 14 /585 ,629
+( 22 ) Filed : Dec . 30 , 2014
+
+(65 )
+
+Jun. 25 , 2019
+
+5 / 2005 Galasso
+3/ 2009 Schroeder
+
+7 ,909,346 B2 3 /2011 Moeching
+8 , 128 , 112 B23 /2012 Moeching
+8 ,366, 130 B2 * 2 /2013 Galasso
+2005 /0012299 A1 * 1/2005 Schuman
+2007 /0210554 A1 * 9 /2007 Callahan .........
+
+CN
+
+2228046 Y
+
+5 / 1996
+
+202557710 U
+
+11 / 2012
+
+EP
+
+2930094 Al
+
+FR
+
+902315 A
+
+8 / 1945
+
+0174654 A1
+
+10 /2001
+
+CN
+
+(51) Int. CI.
+B62K 21/04
+B62K 19 /32
+
+( 2006 .01)
+
+WO
+
+( 2006 .01)
+
+B62K 21/ 18
+
+( 2006 .01)
+
+* cited by examiner
+
+B62K 19 /02
+
+( 2006 . 01)
+
+(52) CPC
+U .S . CI............... B62K 21/04 ( 2013.01); B62K 19/32
+(2013 .01 ); B62K 21/18 (2013.01); B62K 19/02
+
+(2013.01 )
+
+(58 ) Field of Classification Search
+
+B62K 21/ 02
+
+280 /276
+B62K 25 / 00
+280 /288.3
+B62K 21/06
+280 /279
+
+2007/0257466 Al* 11/2007 Murphy ................. B62K 19 / 16
+280 /276
+2008 /0303240 A1* 12/2008 Lewis .................... B62K 19 / 16
+
+2010 /0259028 Al 10 /2010 Moechnig
+FOREIGN PATENT DOCUMENTS
+
+Prior Publication Data
+US 2016 /0185414 A1 Jun . 30 , 2016
+
+280 /276
+
+280 / 276
+
+10 /2015
+
+Primary Examiner — Anne Marie M Boehler
+Assistant Examiner — Marlon A Arce
+
+(57)
+
+ABSTRACT
+A bicycle steerer tube is adapted to reside in a plane of travel
+
+CPC ........ B62K 21/04 ; B62K 19 /32 ; B62K 21/18 ;
+B62K 19 /02
+See application file for complete search history .
+References Cited
+(56 )
+
+the cross -sectional angle of the point to the plane of travel,
+with the wall thickness being at a maximum in the plane of
+
+U .S. PATENT DOCUMENTS
+
+with a minor axis aligned with the plane of travel and a
+
+5 ,649,738 A
+
+of the bicycle . A thickness at a point on the wall of the steerer
+
+tube body in a lower section thereof varies as a function of
+
+travel. An inner wall of the lower section may be elliptical,
+
+major axis orthogonal to the plane of travel.
+
+7 / 1997 Thomson et al.
+
+6 , 145, 862 A * 11/ 2000 D ’ Aluisio . ..... ........ B62K 21/20
+280 / 276
+
+65 Claims, 16 Drawing Sheets
+
+- 212
+
+214
+200
+2004
+
+216
+213
+
+218
+
+228
+
+112
+
+232
+
+234 218
+106
+
+213 220
+
+214
+
+2021
+
+108
+
+222
+
+215
+
+212
+
+

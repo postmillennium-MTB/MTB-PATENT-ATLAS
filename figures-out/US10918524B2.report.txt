@@ -1,0 +1,163 @@
+patent: US10918524B2
+source: https://patentimages.storage.googleapis.com/7e/ba/c1/79045982741219/US10918524.pdf
+pages: 17
+per-page extracted text length: {1: 2651, 2: 120, 3: 157, 4: 126, 5: 214, 6: 112, 7: 117, 8: 183, 9: 159, 10: 123, 11: 188, 12: 177, 13: 6421, 14: 7532, 15: 7780, 16: 6885, 17: 255}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010918524B1
+
+( 12) United
+States Patent
+Blanchard et al .
+
+( 10) Patent No .: US 10,918,524 B1
+(45 ) Date of Patent :
+* Feb . 16 , 2021
+
+( 54 ) PROTECTIVE EYEWEAR
+( 71 ) Applicant: 100 % Speedlab , LLC , San Diego , CA
+(US )
+
+( 72 ) Inventors : Marc Blanchard , Solana Beach , CA
+(US ) ; Ludovic Boinnard , San Diego ,
+CA (US ); Jerome Jacques Marie
+
+Mage , Los Angeles, CA (US )
+( 73 ) Assignee : 100 % Speedlab , LLC , San Diego , CA
+
+( 52 ) U.S. CI.
+
+A61F 97028 (2013.01 ) ; G02C 5/008
+( 2013.01 )
+( 58 ) Field of Classification Search
+CPC
+A61F 9/025 ; A61F 9/028 ; G02C 5/008 ;
+G02C 5/10 ; G02C 1/04 ; G02C 1/06
+See application file for complete search history.
+CPC
+
+U.S. PATENT DOCUMENTS
+
+( US )
+
+( * ) Notice:
+
+References Cited
+
+( 56 )
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 0 days.
+
+5,760,868 A * 6/1998 Jannard
+6,029,271 A * 2/2000 Banuchi
+6,227,664 B1 * 5/2001 Pavlak
+
+This patent is subject to a terminal dis
+
+10,716,708 B2 * 7/2020 Blanchard
+
+claimer .
+
+A61F 9/02
+16/228
+A61F 9/04
+
+2/12
+A61F 9/026
+
+2/437
+A61F 9/028
+GO2C 5/12
+351/62
+GO2C 5/22
+
+2005/0179856 A1 *
+
+8/2005 Van Atta
+
+( 21 ) Appl . No .: 17 /071,840
+
+2018/0252938 A1 *
+
+9/2018 Thorsell
+
+( 22 ) Filed :
+
+* cited by examiner
+Primary Examiner Tajash D Patel
+(74 ) Attorney, Agent, or Firm — Kolitch Romano LLP
+ABSTRACT
+(57)
+
+Oct. 15 , 2020
+Related U.S. Application Data
+
+( 63 ) Continuation of application No. 16 /933,793 , filed on
+
+Jul. 20 , 2020 , which is a continuation of application
+No. 14/ 548,217 , filed on Nov. 19 , 2014 , now Pat. No.
+
+10,716,708, which is a continuation - in -part of
+application No. 29 / 501,895 , filed on Sep. 9 , 2014 ,
+now Pat. No. Des . 727,400 , and a continuation - in -part
+of application No. 13 / 750,093 , filed on Jan. 25 , 2013 ,
+now Pat. No. 10,751,218 .
+( 60 ) Provisional application No. 62 /048,253, filed on Sep.
+9 , 2014 .
+
+( 51 ) Int . Ci.
+
+upward from left and right segments.
+
+(2006.01 )
+( 2006.01 )
+
+GO2C 5/00
+A61F 9/02
+
+Protective eyewear may include an eyewear frame having a
+topmost frame member extending from a left pivotable
+temple to a right pivotable temple . A lens is coupled directly
+to a lower edge of the topmost frame member. The lens is
+unitary from a left side to a right side of a nose bridge of the
+eyewear, such that the lens is configured to cover both eyes
+of a user when worn . Both the lower edge of the topmost
+frame member and an upper edge of the topmost frame
+member include a discrete central raised portion extending
+19 Claims , 11 Drawing Sheets
+
+200
+
+204
+
+242
+
+230
+
+234
+
+232
+274
+
+274
+
+252
+208
+
+256
+
+206
+
+262
+
+206
+
+26
+266
+
+254
+250
+
+

@@ -1,0 +1,144 @@
+patent: US9302734B2
+source: https://patentimages.storage.googleapis.com/ae/92/02/124fab7c8654de/US9302734.pdf
+pages: 16
+per-page extracted text length: {1: 2617, 2: 824, 3: 69, 4: 56, 5: 378, 6: 63, 7: 49, 8: 63, 9: 64, 10: 7049, 11: 7426, 12: 7217, 13: 7680, 14: 7654, 15: 7334, 16: 3580}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO9302734B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 9,302,734 B2
+(45) Date of Patent:
+Apr. 5, 2016
+
+Getta et al.
+(54) DRIVE DEVICE FOR AN ELECTRIC
+
+(58) Field of Classification Search
+
+CPC ........... B62M 6/55; B62M 9/06; B62M 11/14
+
+BICYCLE
+
+USPC ....................................................... 180/206.4
+
+(71) Applicant: Brose Fahrzeugteile GmbH & Co. KG,
+Coburg, Coburg (DE)
+
+See application file for complete search history.
+(56)
+
+(72) Inventors: Udo Getta, Berlin (DE); Ullrich Noack,
+Berlin (DE); Karl-Heinz Fleischmann,
+Marienwerder (DE)
+(73) Assignee: Brose Fahrzeugteile GmbH & Co.
+Kommandtigesellschaft, Coburg,
+Coburg (DE)
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+5,570,752 A * 1 1/1996 Takata ....................... 180,206.4
+5,749,429 A * 5/1998 Yamauchi et al. ......... 180,206.4
+
+(Continued)
+FOREIGN PATENT DOCUMENTS
+DE
+DE
+
+40 27 365 A1
+696 08752 T2
+
+3, 1992
+11/2000
+
+(Continued)
+
+(21) Appl. No.:
+
+14/394,701
+
+OTHER PUBLICATIONS
+
+(22) PCT Filed:
+
+Apr. 15, 2013
+
+(86). PCT No.:
+
+PCT/EP2013/057811
+
+English translation of the International Preliminary Report on Pat
+entability for application No. PCT/EP2013/057811, report issued
+Oct. 21, 2014, 8 pages.
+
+S371 (c)(1),
+(2) Date:
+
+Dec. 17, 2014
+
+(87) PCT Pub. No.: WO2013/156445
+PCT Pub. Date: Oct. 24, 2013
+(65)
+
+Prior Publication Data
+
+US 2015/O1 O1874 A1
+
+(30)
+
+Apr. 16, 2015
+
+Foreign Application Priority Data
+
+Apr. 17, 2012
+
+(DE) ......................... 10 2012 103 355
+
+(51) Int. Cl.
+B62M 9/06
+B62M 6/55
+B62M II/4
+
+(2006.01)
+(2010.01)
+(2006.01)
+
+(52) U.S. Cl.
+CPC. B62M 6/55 (2013.01); B62M 9/06 (2013.01);
+B62M II/14 (2013.01)
+
+Primary Examiner — Joseph Rocca
+Assistant Examiner — Michael Stabley
+(74) Attorney, Agent, or Firm — Lewis Roca Rothgerber
+Christie LLP
+
+(57)
+
+ABSTRACT
+
+A drive device for an electric bicycle with a drive housing in
+which a hollow shaft is mounted which is connected to a chain
+
+wheel of a chain drive of the electric bicycle, a pedal crank
+shaft arranged coaxial to the hollow shaft and is couplable
+thereto, which crankshaft is connected to pedal cranks on
+each of its two ends and an electric motor the output of which
+can be coupled to the hollow shaft via a traction mechanism
+drive which drive means comprises a belt drive with a flexible
+traction mechanism in the form of a toothed belt, a flatbelt, or
+
+a V-belt, or said drive means comprises a chain drive with a
+flexible traction mechanism in the form of a single or double
+roller chain.
+
+14 Claims, 7 Drawing Sheets
+
+

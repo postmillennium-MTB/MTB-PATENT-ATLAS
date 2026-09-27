@@ -1,0 +1,173 @@
+patent: US10393872B2
+source: https://patentimages.storage.googleapis.com/96/15/04/b92b851f1bcfcc/US10393872.pdf
+pages: 29
+per-page extracted text length: {1: 2815, 2: 1552, 3: 1513, 4: 146, 5: 354, 6: 384, 7: 515, 8: 358, 9: 795, 10: 7168, 11: 7340, 12: 7958, 13: 7955, 14: 8019, 15: 7763, 16: 7459, 17: 7700, 18: 8006, 19: 7818, 20: 7875, 21: 7745, 22: 7771, 23: 8073, 24: 7809, 25: 7929, 26: 7828, 27: 7878, 28: 7103, 29: 4704}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010393872B2
+
+(12) United States Patent
+
+( 10 ) Patent No.: US 10 ,393,872 B2
+(45) Date of Patent:
+Aug. 27 , 2019
+
+Brisimitzakis et al.
+
+(54 ) CAMERA AUGMENTED BICYCLE RADAR
+
+(58 ) Field of Classification Search
+
+CPC .. GO1S 13 / 931 ; G01S 2013 / 9332 ; GOIS 7 /04 ;
+
+SENSOR SYSTEM
+
+GOIS 7 /41; B62J 2099/0013 ; B62J
+
+(71) Applicant: Garmin Switzerland GmbH ,
+
+2099/002 ; B62J 2099/0026 ; B62J 27/00
+
+Schaffhausen (CH )
+
+(Continued )
+
+(72 ) Inventors: Evangelos V . A . Brisimitzakis , Lenexa,
+KS (US); Ross G . Stirling, Cochrane
+(CA ); Kenneth A . Carlson , Gardner,
+KS (US ); Franz A . Struwig , Western
+
+(56 )
+
+References Cited
+U . S. PATENT DOCUMENTS
+5 ,781, 145 A
+
+Stellenbosch (ZA )
+
+Printout from https://www .dcrainmaker.com /2014 /07 /hands -on
+backtracker-radar.html; published prior to Jun . 3 , 2016 .
+(Continued )
+
+Primary Examiner — Timothy A Brainard
+(74 ) Attorney , Agent, or Firm — Samuel M . Korte ; Max
+M . Ali
+
+Dec. 7, 2016
+
+Prior Publication Data
+US 2017 /0160392 A1 Jun . 8, 2017
+
+A bicycle radar system including a camera is disclosed . The
+
+system may include a radar unit and a bicycle computing
+
+device that are in communication with one another. The
+
+(60 ) Provisional application No. 62/ 264,539, filed on Dec .
+
+radar unit may transmit radar signals , receive return signals
+(reflections), and process the returned radar signals to deter
+
+8 , 2015 .
+
+GOIS 13 /86
+
+(52 ) U .S . CI.
+
+ABSTRACT
+
+(57)
+
+Related U . S . Application Data
+
+(51) GOIS
+Int. Ci13. /93
+
+mine a location and velocity of one or more targets located
+in a sensor field behind a user 's bicycle. The radar unit may
+also include an integrated camera to selectively provide
+
+( 2006 . 01)
+
+images or video of an area behind the bicycle in the camera ' s
+
+(2006 .01)
+(Continued )
+
+field of view . The radar unit may analyze the returned radar
+signals and images and/or video to track the location of
+targets located behind the bicycle . The bicycle computing
+
+CPC ........... GOIS 13 /931 (2013.01); G01S 77003
+
+device or the radar unit may also selectively activate the
+
+( 2013 .01); G01S 77062 (2013 .01 ); GOIS 7 /24
+(2013.01 );
+(Continued )
+
+camera based upon the satisfaction of particular conditions.
+
+18 Claims, 7 Drawing Sheets
+440
+
+ot- 405
+
+Left on Main St.
+
+Informational
+
+410
+
+Overlay
+
+- 444
+
+LIEWS
+AO + -- 408
+402B
+403B
+
+402A
+
+403A
+414
+
+412
+
+342 /20
+
+OTHER PUBLICATIONS
+
+( * ) Notice : Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U .S .C . 154 (b ) by 341 days .
+( 21) Appl. No.: 15 /372 ,092
+
+(65)
+
+7/ 1998 Williams et al. ...........
+(Continued )
+
+(73) Assignee : Garmin Switzerland GmbH ( CH )
+
+(22) Filed :
+
+4 / 1991 Taylor et al. ................. 180 /219
+
+5 ,005,661 A
+
+Cape (ZA ); Nolan van Heerden ,
+
+Dist. to Turn
+
+300 ft
+
+Time to Turn
+
+0 :20
+
+Tap to go back
+
+
