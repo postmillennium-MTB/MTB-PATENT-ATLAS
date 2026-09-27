@@ -1,0 +1,209 @@
+patent: US11364968
+source: https://patentimages.storage.googleapis.com/fc/80/6c/70fe2e47d1a34a/US11364968.pdf
+pages: 10
+per-page extracted text length: {1: 2557, 2: 88, 3: 199, 4: 212, 5: 261, 6: 242, 7: 6805, 8: 7148, 9: 7204, 10: 4974}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011364968B2
+
+( 12)
+
+United States Patent
+
+( 10) Patent No .: US 11,364,968 B2
+(45 ) Date of Patent :
+Jun . 21 , 2022
+
+Moia
+
+(54) PRESSURE MODULATOR FOR AN
+
+( 56 )
+
+References Cited
+
+ANTI- LOCK BRAKING SYSTEM OF A
+
+U.S. PATENT DOCUMENTS
+
+BICYCLE
+
+5,102,207 A * 4/1992 Leppek
+
+( 71 ) Applicant: Robert Bosch GmbH , Stuttgart (DE )
+(72 ) Inventor: Alessandro Moia , Holzgerlingen (DE )
+
+2005/0067892 A9 *
+
+3/2005 Heubner
+
+2018/0009424 A1 *
+
+1/2018 Lauhoff
+
+DE
+DE
+DE
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 4 days.
+
+DE
+DE
+EP
+JP
+KR
+KR
+TW
+
+( 21 ) Appl. No .: 17/014,501
+( 22 ) Filed :
+( 65 )
+
+Sep. 8, 2020
+
+4015746 A1
+
+11/1991
+
+B60T 8/447
+B60T 8/4863
+
+322422 C2 *
+102012222058 Al
+102017100279 Al *
+3366536 A1
+
+8/1993
+6/2014
+7/2018
+8/2018
+
+B60T 8/32
+
+H05201319 A
+8/1993
+20110124602 A * 11/2011
+
+20180026921 A
+1649232 B
+
+3/2018
+2/2019
+
+US LLP ; Gerard Messina
+ABSTRACT
+(57 )
+
+Foreign Application Priority Data
+202019105187.6
+Sep. 19 , 2019 ( DE )
+
+( 30)
+
+B60T 8/32
+B60T 8/42
+( 52 ) U.S. Cl .
+
+3526189 Al * 2/1987
+
+* cited by examiner
+Primary Examiner Melanie Torres Williams
+(74 ) Attorney, Agent, or Firm Norton Rose Fulbright
+
+Prior Publication Data
+US 2021/0086865 A1
+Mar. 25 , 2021
+
+( 51 ) Int . Ci .
+B62L 3/00
+
+303 / 115.2
+
+B60T 8/3225
+303 / 113.5
+B60T 8/42
+
+FOREIGN PATENT DOCUMENTS
+
+(73 ) Assignee : Robert Bosch GmbH , Stuttgart (DE )
+
+( * ) Notice:
+
+B60T 8/17616
+
+A pressure modulator for an anti - lock braking system of a
+bicycle . The pressure modulator includes a cylinder, and a
+
+piston having a through opening for hydraulic fluid , the
+piston being situated inside the cylinder and subdividing the
+cylinder into a first accumulator chamber and a second
+accumulator chamber, the first and second accumulator
+chambers being connectable to each other via the through
+opening . The pressure modulator further includes a valve
+system , which includes a closing element and an actuating
+device for the closing element, the closing element being
+situated in the through opening, and the actuating device
+being situated at a bottom of the cylinder, and an actuator for
+moving the piston .
+
+( 2006.01 )
+
+( 2006.01 )
+
+( 2006.01)
+
+CPC
+
+B62L 3/00 ( 2013.01 ) ; B60T 8/3225
+( 2013.01 ) ; B60T 8/4266 (2013.01 )
+( 58 ) Field of Classification Search
+CPC
+B62L 3/00 ; B60T 8/3225 ; B60T 8/4266
+See application file for complete search history .
+
+12 Claims , 5 Drawing Sheets
+
+reservoir
+
+14
+
+15
+
+19a
+
+31
+52
+actuator
+
+4
+40
+50
+
+41
+
+30
+
+53
+
+51
+
+pressure
+
+19b
+
+16
+limiter
+
+120
+
+121
+
+11
+
+control unit
+
+10
+
+

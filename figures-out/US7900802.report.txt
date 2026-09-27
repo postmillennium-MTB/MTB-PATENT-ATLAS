@@ -1,0 +1,193 @@
+patent: US7900802
+source: https://patentimages.storage.googleapis.com/b1/91/24/da80f7b1958817/US7900802.pdf
+pages: 10
+per-page extracted text length: {1: 2580, 2: 64, 3: 58, 4: 131, 5: 68, 6: 64, 7: 47, 8: 56, 9: 5100, 10: 6646}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US007900802B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Hammond
+
+US 7,900,802 B2
+
+(45) Date of Patent:
+
+(54) FORKCROWN SUPPORTED BICYCLE
+
+Mar. 8, 2011
+
+5,871,131. A * 2/1999 Low et al. ..................... 224,537
+
+CARRIER
+
+5.996,870 A
+6,010,049 A
+
+12, 1999 Shaver
+1/2000 Stein
+ck
+
+(76)
+
+Inventor:
+
+Malcolm Thomas Hammond, North
+
+g:
+
+f
+
+Vancouver (CA)
+
+6,491,195 B1* 12/2002 McLemore et al. .......... 224,537
+
+3.
+
+6,516,986 B1
+
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+2001 0035446 A1
+
+Feb. 20, 2004
+Prior Publication Data
+
+(51) Eikuo
+
+11, 2001 WallStrom
+
+DE
+
+3890700 C2 * 12/1996
+
+EP
+
+O72186.0 A1
+
+T 1996
+
+GB
+
+2327 655 A
+
+3, 1999
+
+EP
+
+US 2007/01 19889 A1
+
+2/2003 Lassanske
+
+FOREIGN PATENT DOCUMENTS
+
+(21) Appl. No.: 10/782,174
+
+(65)
+
+. . . . . . . . . . . . . . . . . . . . . . . . . 414.f462
+
+6,834,786 B2 * 12/2004 Hansen ......................... 224,403
+
+U.S.C. 154(b) by 768 days.
+
+(22) Filed:
+
+SEin
+
+May 31, 2007
+
+95548 A2 * 12/1983
+
+WO
+
+WO 89,01883
+
+3, 1989
+
+WO
+
+WO 03/064214 A1
+
+8, 2003
+
+* cited by examiner
+Primary Examiner —Nathan J Newhouse
+
+(2006.01)
+
+Assistant Examiner — Corey NSkurdal
+
+B60R 9/00
+(2006.01)
+(52) U.S. Cl. ......................................... 224/521; 224/924
+
+(58) Field States 95.530 2.
+
+(74) Attorney, Agent, or Firm — Cameron IP
+(57)
+ABSTRACT
+
+5. 3.
+
+A vehicle mounted bicycle carrier for transporting non-stan
+
+s
+
+dard bicycle frame types, such as full suspension mountain
+
+211/17
+See application file for complete search history.
+
+bikes. The carrier typically is mounted to the hitch structure of
+a vehicle and is comprised of a vertical Support mast, with a
+top mounted horizontal bar, containing cradles for hanging
+bicycles from their fork crowns in a vertical position, provid
+ing independent access. The cradle design turns the fork and
+handlebars to a degree that prevents interference with an
+adjacent bicycles handlebars, thereby allowing the closest
+possible spacing. Lower down on the vertical Support mast is
+a horizontal bar for securing the bicycle rear wheels, prevent
+ing the bicycles from Swinging freely on the cradles.
+
+s
+
+(56)
+
+s
+
+s
+
+s
+
+s
+
+s
+
+s
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+4,171,077 A
+10/1979 Richard, Jr.
+5,067,641 A * 1 1/1991 Johnson et al. ............... 224,501
+5,211,323 A * 5/1993 Chimenti et al.
+... 224,314
+5,526,971 A * 6/1996 Despain ...........
+224,519
+5,558,261 A * 9/1996 Hedeen ......................... 224,511
+5,647,521 A * 7/1997 Burgess ........................ 224,534
+5,803,330 A
+
+9, 1998 Stack
+
+8 Claims, 7 Drawing Sheets
+
+

@@ -1,0 +1,135 @@
+patent: US6076845
+source: https://patentimages.storage.googleapis.com/96/2e/e5/d01cd22f03f6b0/US6076845.pdf
+pages: 17
+per-page extracted text length: {1: 3646, 2: 52, 3: 52, 4: 52, 5: 52, 6: 64, 7: 293, 8: 56, 9: 52, 10: 114, 11: 56, 12: 6466, 13: 7454, 14: 7432, 15: 7597, 16: 7296, 17: 1407}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6O76845A
+
+United States Patent (19)
+
+11 Patent Number:
+
+6,076,845
+
+Law will et al.
+
+(45) Date of Patent:
+
+Jun. 20, 2000
+
+54 REAR SUSPENSION FOR A BICYCLE
+
+5,509,679 4/1996 Leitner.
+
+75
+
+HAVING A FLEXIBLE CHAIN STAY
+
+5,553,881
+5,628,524
+
+9/1996 Klassen et al..
+5/1997 Klassen et al..
+
+Inventors: Merton R. Law will, Tiburon, Calif.;
+Mark L. Schroeder, Boulder, Colo.
+
+5,975,550 11/1999 Schonfeld ............................... 280/284
+
+5,957,473 9/1999 Law will .................................. 280/284
+FOREIGN PATENT DOCUMENTS
+
+73 Assignee: Schwinn Cycling & Fitness Inc.,
+
+753260 10/1933 France.
+884138 8/1943 France.
+996586 12/1951 France.
+
+Boulder, Colo.
+
+21 Appl. No.: 09/160,001
+22 Filed:
+Sep. 24, 1998
+
+Primary Examiner Kevin Hurley
+Attorney, Agent, or Firm-Holland & Hart LLP
+
+(51) Int. Cl. ............................................... B62K 25/30
+
+57
+
+52 U.S. Cl. .............................................................. 280/284
+58 Field of Search ..................................... 280/275, 276,
+280/283, 284, 285, 286
+56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+D. 368,678 4/1996 Wilcox et al..
+452,073 5/1891 Huelsen et al..
+644,788 3/1900 Williams.
+
+707,262 8/1902 Sager et al..
+709,718 9/1902 Monahan.
+1,029,771 6/1912 Stephenson ............................. 280/284
+1,261,440 4/1918 Rigby ...................................... 280/284
+3,917,313 11/1975 Smith et al..
+3,982,770 9/1976 Satoh et al..
+4,058,181 11/1977 Buell.
+4,114,918 9/1978 Lutz.
+4,789,174 12/1988 Law will.
+5,098,114 3/1992 Jones.
+5,121,937 6/1992 Law.will.
+5,205,572 4/1993 Buell et al..
+5,217.241 6/1993 Girvin.
+5,226,674 7/1993 Buell et al..
+
+5.244.224 9/1993 Busby .
+5,259,637 11/1993 Busby.
+5,301,974 4/1994 Knapp.
+5,306,036 4/1994 Busby .
+5,316,327 5/1994 Bell.
+5,332,246 7/1994 Buell.
+
+5,335,929 8/1994 Takagaki et al..
+5,354,085 10/1994 Gally.
+5,409.249 4/1995 Busby.
+5,413,368 5/1995 Pong et al..
+5,452,910 9/1995 Harris.
+
+ABSTRACT
+
+A rear Suspension bicycle having a rear wheel with an axle,
+a frame including a Seat tube and a down tube having a top
+and bottom ends, a pair of drop link members, one for either
+Side of the rear wheel, each having a top attachment point
+and a bottom attachment point, and an axle attachment point
+for receiving the axle. A Seat Stay assembly including a front
+end and a rear end, and having a front pivotal attachment
+point adjacent the front end for attachment to the down tube
+defining a first pivot point, and a pair of rear pivot points,
+each for pivotal attachment to the top attachment point of
+one of Said drop link members, forming together the Second
+pivot point. A vertically flexible chain Stay assembly, pro
+Viding Suspension Spring force, having a front end and a rear
+end, and defining a front fixed attachment point at the front
+end, and a pair of rear pivot points at the rear end, the front
+attachment point being adjacent to the bottom end of the seat
+tube, and a pair of rear pivot points, each for pivotal
+attachment to the bottom attachment point of one of the drop
+link members, forming together the third pivot point. A
+damping member is mounted between the Seat Stay assembly
+and the frame. When the rear wheel is moved upwardly with
+respect to the frame, the chain stay assembly flexes
+upwardly, and the axle traces a complex curvilinear axle
+path generally upwardly, moving first rearwardly to a rear
+Wardmost position, then forwardly along the upward axle
+path. The rear Suspension transmits the pedal force gener
+ated by the rider efficiently into forward moving force
+without compressing, or otherwise activating, the Suspen
+Sion appreciably.
+13 Claims, 10 Drawing Sheets
+
+

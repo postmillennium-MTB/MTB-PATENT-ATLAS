@@ -1,0 +1,131 @@
+patent: US10668866
+source: https://patentimages.storage.googleapis.com/2a/85/7c/0df53c5903173f/US10668866.pdf
+pages: 42
+per-page extracted text length: {1: 2533, 2: 1157, 3: 161, 4: 105, 5: 93, 6: 105, 7: 111, 8: 127, 9: 107, 10: 94, 11: 77, 12: 144, 13: 94, 14: 91, 15: 314, 16: 195, 17: 156, 18: 336, 19: 261, 20: 174, 21: 328, 22: 198, 23: 98, 24: 145, 25: 101, 26: 98, 27: 316, 28: 251, 29: 256, 30: 108, 31: 6975, 32: 7564, 33: 6889, 34: 7755, 35: 7797, 36: 7687, 37: 7840, 38: 7741, 39: 7830, 40: 7716, 41: 7295, 42: 6101}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010668866B2
+
+United States Patent
+
+(10 ) Patent No.: US 10,668,866 B2
+(45 ) Date of Patent:
+Jun . 2 , 2020
+
+Kuschmeader et al.
+(54 ) HITCH -MOUNTED BICYCLE CARRIER
+
+(56 )
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+(71) Applicant: Kuat Innovations, LLC , Springfield ,
+MO (US )
+
+5,052,605 A * 10/1991 Johansson
+
+(72 ) Inventors: Luke Kuschmeader , Battlefield , MO
+(US); Michael Buis, Springfield , MO
+(US) ; Jordan K. Bowles, Ozark , MO
+(US ); Joshua H. Schwartz , Springfield ,
+MO (US ); Aaron A. Houston , Nixa,
+MO (US)
+(73 ) Assignee : KUAT INNOVATIONS, LLC ,
+
+5,527,146 A * 6/1996 Allsop
+
+B6OR 9/10
+224/324
+B6OR 9/06
+224/319
+
+(Continued )
+FOREIGN PATENT DOCUMENTS
+CN
+
+203331973 U * 12/2013
+205916047 U
+2/2017
+
+CN
+
+(Continued )
+
+Springfield , MO (US)
+( * ) Notice : Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 (b ) by 0 days .
+( 21) Appl. No.: 15 /706,378
+Sep. 15 , 2017
+(22) Filed :
+
+H. Jeffries
+
+(65)
+
+Prior Publication Data
+US 2018/0072237 A1 Mar. 15 , 2018
+
+(57 )
+
+CPC . B60R 9/10 (2013.01 ); B6OR 9/06 (2013.01)
+
+assembly having inner and outer clamps configured to the
+hold a bike into position such thatmechanical work may be
+
+OTHER PUBLICATIONS
+
+NV Video, https://www.youtube.com/watch?v=Ind6VGIRRRE, Feb.
+14 , 2013 ( 4 Screen Captures).*
+
+(Continued )
+Primary Examiner
+
+Scott T McNurlen
+
+(74 ) Attorney, Agent, or Firm - Kutak Rock LLP ; James
+ABSTRACT
+
+The present disclosure includes hitch -mounted carriers ,
+
+including portable bicycle racks. One carrier may include
+front tire tray assembly ; hook arm assembly; pivot assem
+bly ; hitch shank ball cam assembly ; rear tire tray assembly ;
+Related U.S. Application Data
+and a bike docking assembly . The pivot assembly allowing
+(60 ) Provisional application No. 62/395,172 , filed on Sep. for adjustment between : storage, trunk access, and use
+configurations. The bike carrier having first and second
+15 , 2016 .
+wheel supporting tray assemblies for supporting wheels of a
+loaded bicycle. A hook arm assembly may be pivotally
+(51 ) Int. Cl.
+arranged relative to lock at least one wheel and ratchet
+BOOR 9/10
+(2006.01 )
+clamped to at least one wheel. The hook arm assembly may
+BOOR 9/06
+( 2006.01 )
+also be configured to extend and retract and is frictionally
+(52 ) U.S. Cl.
+locked into position . The bike carrier may include a docking
+(58 ) Field of Classification Search
+CPC
+B6OR 9/10; Y10S 224/924 ; B6OD 1/241
+
+accomplished at an elevated height.
+
+20 Claims, 28 Drawing Sheets
+
+( Continued )
+
+w
+
+12
+1
+
+r28
+229
+14
+
+

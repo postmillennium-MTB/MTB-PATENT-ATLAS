@@ -1,0 +1,136 @@
+patent: US6924021
+source: https://patentimages.storage.googleapis.com/3a/dc/a5/3ae621494b4b2f/US6924021.pdf
+pages: 12
+per-page extracted text length: {1: 2940, 2: 56, 3: 56, 4: 56, 5: 56, 6: 80, 7: 56, 8: 0, 9: 7113, 10: 6699, 11: 7740, 12: 3968}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6924021B1
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Colegrove et al.
+
+US 6,924,021 B1
+
+(45) Date of Patent:
+
+(54) COMPLEX-SHAPED CARBON FIBER
+STRUCTURAL MEMBER AND ITS METHOD
+OF MANUFACTURE
+(75) Inventors: James E. Colegrove, Lake Mills, WI
+
+(US); Chad Manuell, West Baraboo,
+WI (US); Doug A. Cusack, Cottage
+Grove, WI (US)
+s
+
+Aug. 2, 2005
+
+OTHER PUBLICATIONS
+HeXcel Research and Technology,
+“HexMCTM–Composites. In 3D (A New High Performance
+Molding Compound,' 2000.
+Fudge,
+
+Jack,
+
+66
+
+TM
+
+ss
+
+HexMCTM Moulding Compound”
+Product Data, 2000.
+66
+9:
+Hexcel Composite Materials “What
+is HexMC'?”
+data
+sheets.
+* cited by examiner
+
+(73) Assignee: Trek Bicycle Corporation, Waterloo,
+WI (US)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 157 days.
+(22) Filed:
+Jul. 3, 2002
+(51) Int. Cl. .................................................. B32B5/12
+
+Primary Examiner Elizabeth M. Cole
+(74) Attorney, Agent, or Firm-Boyle Fredrickson
+Newholm Stein & Gratz S.C.; James F. Boyle
+(57)
+ABSTRACT
+A complex-shaped carbon fiber Structural member including
+a multiplicity of carbon epoxy fiber bundles surrounded by
+a unidirectional carbon fiber rope and its method of manu
+facture are provided. The fiber bundles are formed from
+large sheets of unidirectional carbon fiber materials cut into
+Small Strips, with the Strips then being randomly oriented in
+
+(52) U.S. Cl. ......................... 428/81; 428/192; 428/131;
+
+the form of a sheet of randomized fiber bundles. The strips,
+
+(21) Appl. No.: 10/190,172
+1-1.
+
+428/292.1; 428/300.7
+
+(58) Field of Search .......................... 428/81, 192, 131,
+428/292.1, 300.7
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+and the fibers in the Strips, croSS Over one another So as to
+
+form a layer of material that has a relatively uniform strength
+
+in all directions. The sheets of randomized carbon epoxy
+fiber bundles are cut into preforms for the structural part
+being made. Several preforms are Stacked on top of each
+other in order to provide material to make the part of a
+desired thickness. To reinforce the bundles within the part,
+
+4,260,657 A * 4/1981 Loyd et al. ................. 428,113
+5,215,322. A
+6/1993 Enders ....................... 280/231
+
+particularly along its Outer periphery, the preforms are
+wrapped prior to molding with an elongated rope of unidi
+
+5,271,879 A
+5,624,519 A
+5,685,553 A
+
+12/1993 Saatchi et al. ...... ... 264/46.5
+4/1997 Nelson et al. .............. 156/245
+11/1997 Wilcox et al. .............. 280/283
+
+rectional carbon fibers. The preforms and unidirectional
+rope are assembled together in an appropriate mold, which
+is then Subject to heat and preSSure for molding and curving
+
+6,270,104 B1
+
+8/2001 Nelson et al. ........... 280/281.1
+
+6,109,638 A
+
+8/2000 Colegrove ............... 280/288.3
+
+6,277.463 B1 * 8/2001 Hamilton et al. ........... 428/106
+
+the part.
+
+9 Claims, 7 Drawing Sheets
+
+
