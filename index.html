@@ -1442,9 +1442,9 @@ const FIGHTS = [
    Hand-picked story cards shown first on the Atlas (home) tab. Up to
    RABBIT_HOLES_SHOWN appear per visit: every `pin:true` hole first, then a
    random pick of the rest, then any empty slots are filled automatically
-   with a random verified entry that has a patent drawing (its own title and
-   the first sentence of its `w`). An empty array is valid -- the row is
-   then fully automatic.
+   with a random entry that has a patent drawing (img or imgs) and a `w`
+   (its own title and the first sentence of that `w`) -- any conf tier,
+   not just "v". An empty array is valid -- the row is then fully automatic.
 
    Each hole:
    {
@@ -2840,7 +2840,7 @@ function pickRabbitHoles(){
     .slice(0,RABBIT_HOLES_SHOWN)
     .map(h=>{ const d=h.go&&h.go.card ? fightCardMatches(h.go.card)[0] : null; return {hole:h, d}; });
   const used=new Set(curated.map(c=>c.d).filter(Boolean));
-  const auto=shuffle(D.filter(d=>(d.img||d.imgs) && d.conf==="v" && d.w && !used.has(d)))
+  const auto=shuffle(D.filter(d=>(d.img||d.imgs) && d.w && !used.has(d)))
     .slice(0,Math.max(0,RABBIT_HOLES_SHOWN-curated.length))
     .map(d=>({hole:null, d}));
   rabbitPicks=[...curated,...auto];
