@@ -1,0 +1,209 @@
+patent: US8382136
+source: https://patentimages.storage.googleapis.com/f0/2a/ae/b57a06944bf3f6/US8382136.pdf
+pages: 28
+per-page extracted text length: {1: 3052, 2: 1062, 3: 142, 4: 89, 5: 62, 6: 58, 7: 58, 8: 62, 9: 104, 10: 43, 11: 86, 12: 131, 13: 59, 14: 59, 15: 155, 16: 127, 17: 63, 18: 72, 19: 72, 20: 72, 21: 72, 22: 7247, 23: 7336, 24: 6983, 25: 7776, 26: 7802, 27: 7019, 28: 4984}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO8382136B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Beale et al.
+(54) BICYCLE REAR SUSPENSION SYSTEM
+
+6,386,568 B1
+
+LINKAGE
+
+(US)
+
+6,866,281 B2
+6,880,847 B2
+6,886,846 B2
+6,969,081 B2
+
+3/2005 Chamberlain et al.
+4/2005 Chamberlain et al.
+5, 2005 Carroll
+
+11/2005 Whyte
+
+6/2006 Soucek
+
+ck
+
+Egy. f
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 669 days.
+
+7,216,883 B2
+7.350,797 B2
+
+7,392,999 B2*
+
+658. St.en et al. ................ 280/284
+5, 2007 O'Connor
+4/2008 Carroll
+
+7/2008 O'Connor ..................... 280/284
+
+(Continued)
+
+Apr. 17, 2009
+
+FOREIGN PATENT DOCUMENTS
+O
+
+O
+
+Prior Publication Data
+
+US 2009/0261556A1
+
+3/2004 Chamberlain et al.
+3/2004 Assier
+
+7,066,481 B1
+
+Subject to any disclaimer, the term of this
+
+(65)
+
+5/2002 Tribotte
+
+12/2002 Klassen
+
+7,048,292 B2 * 5/2006 Weagle ......................... 280/285
+
+(21) Appl. No.: 12/426,037
+(22) Filed:
+
+Feb. 26, 2013
+
+6,488.301 B2
+
+6,712,373 B2
+6,712.374 B2
+
+(75) Inventors: Luther M. Beale, Davis, CA (US);
+David M. Earle, Watsonville, CA (US)
+(73) Assignee: Sotto Group LLC, Watsonville, CA
+
+(*) Notice:
+
+US 8,382,136 B2
+
+(45) Date of Patent:
+
+DE
+
+19802429 B4
+
+8, 1998
+
+EP
+
+T28094 B1
+
+6, 2000
+
+Oct. 22, 2009
+
+Related U.S. Application D
+
+elated U.S. Application Data
+(60) Provisional application No. 61/124,789, filed on Apr.
+17, 2008.
+
+(Continued)
+Primary Examiner —Tashiana Adams
+
+(74) Attorney, Agent, or Firm — Kolisch Hartwell, P.C.
+
+(57)
+
+ABSTRACT
+
+A bicycle rear Suspension system includes a main frame and
+
+(51) Int. Cl.
+
+a rear wheel Suspension
+SVStem.
+The main frame 9.generally
+p
+y
+
+B62K 9/00
+(2006.01)
+(52) U.S. Cl. ........................................ 280/284; 280/275
+
+comprises a seat tube, a down tube, a top tube, and a head
+tube. The rear wheel Suspension system comprises a first
+
+58)
+(58)
+
+Field of Classification Search .................. 280/284 s
+
+linkage
+and a second linkage
+9. member, a rear wheel Swingarm,
+9.
+9.
+
+280/219, 283, 288, 275
+See application file for complete search history.
+
+member. The first linkage member is shorter than 15 mm from
+its pivotal connection to the main frame and its pivotal con
+nection to the rear wheel Swingarm, and changes its direction
+of rotation as the rear wheel is articulated generally vertically.
+The rear wheel suspension system allows for a preferential
+rear wheel axle travel path that provides for increased rates of
+chainstay lengthening in the first part of the vertical rear
+wheel travel with a rapid change to reduced chainstay length
+ening in the latter part of the vertical rear wheel travel so that
+the overall change in chainstay length is Small relative to the
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+5,553,881 A
+9, 1996 Klassen
+
+5,628,524. A *
+
+5/1997 Klassen et al. ................ 280/284
+
+5,791.674. A
+
+8, 1998 DAluisio
+
+6,076,845. A *
+
+6/2000 Law will et al. ............... 280/284
+
+6,131,934. A
+6,203,042 B1
+6,206,397 B1
+
+10, 2000 Sinclair
+3, 2001 Wilcox
+3, 2001 Klassen
+
+6,308.975 B1
+
+10/2001 Moulton
+
+7
+
+amount of vertical rear wheel travel.
+
+24 Claims, 19 Drawing Sheets
+
+
