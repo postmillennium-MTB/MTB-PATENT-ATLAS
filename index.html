@@ -433,7 +433,9 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 /* ---------- Scrollable row controls (arrows + show all) ---------- */
 .scroller{position:relative}
 .scroller .frow{padding-right:4px}
-.scroll-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:30px;height:30px;border-radius:50%;border:1px solid var(--card-border);background:var(--surface);color:var(--primary);font-size:14px;line-height:1;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.14)}
+.scroll-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:30px;height:30px;border-radius:50%;border:1px solid var(--card-border);background:var(--surface);color:var(--primary);line-height:1;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.14);opacity:.7;transition:opacity .15s}
+.scroll-btn:hover,.scroll-btn:focus-visible{opacity:1}
+.scroll-btn svg{width:16px;height:16px;pointer-events:none}
 .scroll-btn.show{display:flex}
 .scroll-btn.sb-left{left:-2px}
 .scroll-btn.sb-right{right:-2px}
@@ -663,23 +665,28 @@ html,body{overflow-x:hidden;max-width:100%}
   </div>
   <div class="tab-row" id="filterTabs"></div>
   <div class="tab-panes" id="filterPanes">
-    <div class="frow" id="rowCat"><span class="flabel" data-i18n="tabCategory">Category</span></div>
+    <div class="scroller" id="scrollCat">
+      <button class="scroll-btn sb-left" data-i18n-aria-label="scrollLeft" aria-label="Scroll left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg></button>
+      <div class="frow" id="rowCat"><span class="flabel" data-i18n="tabCategory">Category</span></div>
+      <button class="scroll-btn sb-right" data-i18n-aria-label="scrollRight" aria-label="Scroll right"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
     <div class="frow" id="rowStatus"><span class="flabel" data-i18n="tabStatus">Status</span></div>
     <div class="frow" id="rowBadge"><span class="flabel" data-i18n="tabStory">Story</span></div>
     <div class="scroller" id="scrollInv">
-      <button class="scroll-btn sb-left" data-i18n-aria-label="scrollLeft" aria-label="Scroll left">‹</button>
+      <button class="scroll-btn sb-left" data-i18n-aria-label="scrollLeft" aria-label="Scroll left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg></button>
       <div class="frow" id="rowInv"><span class="flabel" data-i18n="tabInventors">Inventors</span></div>
-      <button class="scroll-btn sb-right" data-i18n-aria-label="scrollRight" aria-label="Scroll right">›</button>
+      <button class="scroll-btn sb-right" data-i18n-aria-label="scrollRight" aria-label="Scroll right"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>
     </div>
     <div class="scroller" id="scrollBrand">
-      <button class="scroll-btn sb-left" data-i18n-aria-label="scrollLeft" aria-label="Scroll left">‹</button>
+      <button class="scroll-btn sb-left" data-i18n-aria-label="scrollLeft" aria-label="Scroll left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg></button>
       <div class="frow" id="rowBrand"><span class="flabel" data-i18n="tabBrands">Brands</span></div>
-      <button class="scroll-btn sb-right" data-i18n-aria-label="scrollRight" aria-label="Scroll right">›</button>
+      <button class="scroll-btn sb-right" data-i18n-aria-label="scrollRight" aria-label="Scroll right"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>
     </div>
   </div>
   <div class="fmeta">
     <span id="resultCount"></span>
     <span class="fmeta-actions">
+      <button class="mini-btn" id="sortBtn" data-i18n-title="sortTipAsc" title="Sort oldest to newest"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock-arrow-up icon-inline" aria-hidden="true" focusable="false"><path d="M12 6v6l1.56.78"/><path d="M13.227 21.925a10 10 0 1 1 8.767-9.588"/><path d="m14 18 4-4 4 4"/><path d="M18 22v-8"/></svg><span data-i18n="sortOldest">Oldest first</span></button>
       <button class="mini-btn" id="surpriseBtn" data-i18n-title="surpriseTip" title="Jump to a random patent"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dices icon-inline" aria-hidden="true" focusable="false"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg><span data-i18n="surpriseBtn">Surprise me</span></button>
       <details class="share-menu" id="shareMenu">
         <summary class="mini-btn" data-i18n-title="shareTip" title="Share this view"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link icon-inline" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span data-i18n="shareBtn">Share</span></summary>
@@ -1523,6 +1530,11 @@ let searchQ = '';
    back to the 1869/1870 bicycle-mechanics entries. Chart-only: it doesn't
    touch which cards the Category/Status/etc. tabs show, just which eras
    the "Patents per era" bar chart and its underlying counts cover. */
+/* Timeline reading order for the main card list (the sortBtn in .fmeta-actions
+   toggles this). false = oldest-to-newest (the long-standing default, filed
+   year ascending), true = newest-to-oldest. Doesn't persist across a reload,
+   same as the Stats tab's Count/Share toggle. */
+let sortDesc = false;
 let eraScope = "mtb";
 const MTB_ERA_START = 1980;
 /* "Count" (bar height = total volume, the default) vs "Share" (every bar
@@ -1674,6 +1686,10 @@ const ICON_HOURGLASS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" h
 const ICON_HOURGLASS_COG = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-hourglass-cog icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m14.305 19.53.923-.382\"/><path d=\"m15.228 16.852-.923-.383\"/><path d=\"m16.852 15.228-.383-.923\"/><path d=\"m16.852 20.772-.383.924\"/><path d=\"M17 2v4.172a2 2 0 0 1-.586 1.414l-8.828 8.828A2 2 0 0 0 7 17.828V22\"/><path d=\"m19.148 15.228.383-.923\"/><path d=\"m19.53 21.696-.382-.924\"/><path d=\"m20.772 16.852.924-.383\"/><path d=\"m20.772 19.148.924.383\"/><path d=\"M5 22h6.159\"/><path d=\"M5 2h14\"/><path d=\"M7 2v4.172a2 2 0 0 0 .586 1.414l5.188 5.188\"/><circle cx=\"18\" cy=\"18\" r=\"3\"/></svg>";
 const ICON_DICE = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-dices icon-inline\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"12\" height=\"12\" x=\"2\" y=\"10\" rx=\"2\" ry=\"2\"/><path d=\"m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6\"/><path d=\"M6 18h.01\"/><path d=\"M10 14h.01\"/><path d=\"M15 6h.01\"/><path d=\"M18 9h.01\"/></svg>";
 const ICON_LINK = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-link icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"/><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"/></svg>";
+/* Sort-toggle button icon (fmeta-actions row) — swaps between these two
+   depending on current sort direction, see the sortBtn click handler. */
+const ICON_CLOCK_ARROW_UP = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-clock-arrow-up icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 6v6l1.56.78\"/><path d=\"M13.227 21.925a10 10 0 1 1 8.767-9.588\"/><path d=\"m14 18 4-4 4 4\"/><path d=\"M18 22v-8\"/></svg>";
+const ICON_CLOCK_ARROW_DOWN = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-clock-arrow-down icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 6v6l2 1\"/><path d=\"M12.337 21.994a10 10 0 1 1 9.588-8.767\"/><path d=\"m14 18 4 4 4-4\"/><path d=\"M18 14v8\"/></svg>";
 const ICON_SWORDS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-swords icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m13 19 6-6\"/><path d=\"M14.5 17.5 3.586 6.586A2 2 0 013 5.172V3h2.172a2 2 0 011.414.586L17.5 14.5\"/><path d=\"m14.828 6.172 2.586-2.586A2 2 0 0118.828 3H21v2.172a2 2 0 01-.586 1.414l-2.586 2.586\"/><path d=\"m16 16 4 4\"/><path d=\"m19 21 2-2\"/><path d=\"m5 14 4 4\"/><path d=\"m5 21-2-2\"/><path d=\"M7.5 16.5 4 20\"/></svg>";
 const ICON_COMPASS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-compass icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z\"/><circle cx=\"12\" cy=\"12\" r=\"10\"/></svg>";
 const ICON_CHART = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chart-no-axes-combined icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 16v5\"/><path d=\"M16 14.639V21\"/><path d=\"M20 10.656V21\"/><path d=\"m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15\"/><path d=\"M4 18.463V21\"/><path d=\"M8 14.656V21\"/></svg>";
@@ -1693,6 +1709,8 @@ const T = {
     scrollLeft:"Scroll left", scrollRight:"Scroll right",
     showAll:"Show all", collapse:"Collapse",
     surpriseBtn:"Surprise me", surpriseTip:"Jump to a random patent",
+    sortOldest:"Oldest first", sortNewest:"Newest first",
+    sortTipAsc:"Sort oldest to newest", sortTipDesc:"Sort newest to oldest",
     shareBtn:"Share", shareTip:"Share this view",
     copyLink:"📋 Copy link", shareX:"𝕏 Share on X", shareFacebook:"📘 Share on Facebook", shareReddit:"👽 Share on Reddit",
     copiedConfirm:"✓ Copied", copyLinkShown:"Copy the link shown",
@@ -1798,6 +1816,8 @@ const T = {
     scrollLeft:"Défiler vers la gauche", scrollRight:"Défiler vers la droite",
     showAll:"Tout afficher", collapse:"Réduire",
     surpriseBtn:"Surprends-moi", surpriseTip:"Aller à un brevet au hasard",
+    sortOldest:"Plus anciens d'abord", sortNewest:"Plus récents d'abord",
+    sortTipAsc:"Trier du plus ancien au plus récent", sortTipDesc:"Trier du plus récent au plus ancien",
     shareBtn:"Partager", shareTip:"Partager cette vue",
     copyLink:"📋 Copier le lien", shareX:"𝕏 Partager sur X", shareFacebook:"📘 Partager sur Facebook", shareReddit:"👽 Partager sur Reddit",
     copiedConfirm:"✓ Copié", copyLinkShown:"Copier le lien affiché",
@@ -2121,6 +2141,7 @@ function setupScroller(scrollerId, rowId){
   setTimeout(updateState,SCROLLER_SETTLE_DELAY_MS);
   return updateState;
 }
+const updCat=setupScroller("scrollCat","rowCat");
 const updInv=setupScroller("scrollInv","rowInv");
 const updBrand=setupScroller("scrollBrand","rowBrand");
 
@@ -3126,9 +3147,13 @@ function render(){
   if(typeof syncHash==="function") syncHash();
   if(typeof activeTab!=="undefined" && activeTab==="fights"){ renderFights(); return; }
   if(typeof activeTab!=="undefined" && activeTab==="stats"){ renderStats(); return; }
-  const list=D.filter(passes).sort((a,b)=>a.y-b.y);
+  const list=D.filter(passes).sort((a,b)=>sortDesc ? b.y-a.y : a.y-b.y);
   const tl=$("#timeline");
-  const eras=getEras();
+  /* Era buckets are always built oldest-first (buildEras walks lo->hi);
+     reverse the section order under sortDesc so the era headings read
+     newest-first too, matching the cards' own order within each section
+     (list is already sorted the right way, and filter() preserves it). */
+  const eras=sortDesc ? [...getEras()].reverse() : getEras();
   if(!list.length){ tl.innerHTML=`<div class="empty">${t("emptyState")}</div>`; }
   else{
     tl.innerHTML=eras.map(e=>{
@@ -3312,6 +3337,27 @@ function jumpToCard(ref){
 initFromHash();
 render();
 if(pendingCardRef){ const r=pendingCardRef; pendingCardRef=null; setTimeout(()=>jumpToCard(r),DEEP_LINK_JUMP_DELAY_MS); }
+
+/* ======== SORT ORDER ========
+   Toggles the main card list (see sortDesc above) between oldest-first
+   (the default) and newest-first. One button whose icon/label/title swap
+   between the two states, same pattern as the Stats tab's Count/Share
+   toggle -- rebuilt via dataset keys (not just el.title/textContent) so a
+   later language switch (applyStaticI18n) still picks the current state's
+   string rather than reverting to the button's original markup. */
+const sortBtn=document.getElementById("sortBtn");
+function updateSortBtn(){
+  const labelKey=sortDesc?"sortNewest":"sortOldest";
+  const tipKey=sortDesc?"sortTipDesc":"sortTipAsc";
+  sortBtn.innerHTML=`${sortDesc?ICON_CLOCK_ARROW_DOWN:ICON_CLOCK_ARROW_UP}<span data-i18n="${labelKey}">${t(labelKey)}</span>`;
+  sortBtn.dataset.i18nTitle=tipKey;
+  sortBtn.title=t(tipKey);
+}
+sortBtn.addEventListener("click",()=>{
+  sortDesc=!sortDesc;
+  updateSortBtn();
+  render();
+});
 
 /* ======== SURPRISE ME ======== */
 document.getElementById("surpriseBtn").addEventListener("click",()=>{
