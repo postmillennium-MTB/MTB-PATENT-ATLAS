@@ -433,7 +433,8 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 /* ---------- Scrollable row controls (arrows + show all) ---------- */
 .scroller{position:relative}
 .scroller .frow{padding-right:4px}
-.scroll-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:30px;height:30px;border-radius:50%;border:1px solid var(--card-border);background:var(--surface);color:var(--primary);line-height:1;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.14)}
+.scroll-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:30px;height:30px;border-radius:50%;border:1px solid var(--card-border);background:var(--surface);color:var(--primary);line-height:1;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.14);opacity:.7;transition:opacity .15s}
+.scroll-btn:hover,.scroll-btn:focus-visible{opacity:1}
 .scroll-btn svg{width:16px;height:16px;pointer-events:none}
 .scroll-btn.show{display:flex}
 .scroll-btn.sb-left{left:-2px}
