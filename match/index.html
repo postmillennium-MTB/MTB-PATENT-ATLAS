@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patent Match — prototype</title>
+<meta name="description" content="Prototype: match a real mountain-bike patent drawing to its description. Not yet part of the live MTB Patent Atlas.">
+<meta name="robots" content="noindex,nofollow">
+<style>
+/* ===========================================================
+   PATENT MATCH -- prototype for postmillenniumrenaissance.com/atlas/match
+   ===========================================================
+   Single file, no build step, no framework -- same rule as the main
+   Atlas (index.html one level up). This is a standalone tinkering
+   prototype: it is NOT linked from index.html and NOT wired into the
+   PMR site yet (see the banner below and the header comment on
+   MATCH_DATA). CSS variable names match the Atlas's own default
+   ("WMBC") theme values so this can be reskinned or folded into the
+   main tool later with minimal rework.
+   =========================================================== */
+:root{
+  --bg:#EEF3EC; --surface:#FFFFFF; --ink:#16261C; --ink-soft:#4b5f53;
+  --primary:#2D6A4F; --accent:#8AB17D; --card-border:#D8E2D9;
+  --ok:#2D6A4F; --ok-bg:#E3EFE6; --bad:#B5532A; --bad-bg:#F6E4DC;
+  --radius:14px; --font-body:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:16px 16px 60px}
+
+/* ---- Header ---- */
+.proto-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--bad);background:var(--bad-bg);border:1px solid var(--bad);border-radius:999px;padding:3px 9px;margin-bottom:10px}
+h1{font-size:24px;margin:0 0 6px}
+.lede{color:var(--ink-soft);margin:0 0 4px;font-size:15px;max-width:60ch}
+.lede.small{font-size:13px}
+
+/* ---- Controls panel ---- */
+.controls{background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:14px 16px;margin:16px 0;display:flex;flex-direction:column;gap:12px}
+.ctrl-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.ctrl-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--ink-soft);min-width:98px}
+.chip-set{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--card-border);background:var(--bg);color:var(--ink);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s,border-color .15s}
+.chip[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}
+.chip:hover{border-color:var(--primary)}
+.chip:focus-visible{outline:2px solid var(--primary);outline-offset:1px}
+.toggle-row{display:flex;align-items:center;gap:8px;font-size:13px}
+.new-round-btn{margin-left:auto;background:var(--primary);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer}
+.new-round-btn:hover{opacity:.92}
+.clamp-note{font-size:12.5px;color:var(--bad);margin:0}
+
+/* ---- Status bar ---- */
+.status-bar{display:flex;flex-wrap:wrap;gap:16px;align-items:center;font-size:14px;margin:0 0 14px;padding:0 2px}
+.status-bar b{font-variant-numeric:tabular-nums}
+.status-bar .mistakes b{color:var(--bad)}
+
+/* ---- Board: mobile-first, stacked; side-by-side from 760px ---- */
+.board{display:flex;flex-direction:column;gap:22px}
+.panel h2{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);margin:0 0 8px}
+.img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.desc-list{display:flex;flex-direction:column;gap:8px}
+
+.tile{position:relative;border:2px solid var(--card-border);border-radius:var(--radius);background:var(--surface);cursor:pointer;text-align:left;font:inherit;color:inherit;padding:0;overflow:hidden;transition:border-color .15s,transform .1s,background .2s}
+.tile:hover:not(.matched){border-color:var(--primary);transform:translateY(-1px)}
+.tile:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.tile.selected{border-color:var(--primary);box-shadow:0 0 0 3px rgba(45,106,79,.18)}
+.tile.wrong{border-color:var(--bad);background:var(--bad-bg);animation:shake .3s}
+.tile.matched{border-color:var(--ok);background:var(--ok-bg);cursor:default;transform:none}
+.tile.matched:hover{transform:none}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+.img-tile{aspect-ratio:1/1;display:flex;flex-direction:column}
+.img-tile .badge{position:absolute;top:6px;left:6px;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;z-index:2}
+.img-tile.matched .badge{background:var(--ok)}
+.img-tile img{width:100%;height:100%;object-fit:contain;background:#fff;padding:10px;flex:1}
+.img-tile .reveal{display:none;font-size:11px;padding:6px 8px;border-top:1px solid var(--card-border);color:var(--ink-soft);line-height:1.3}
+.img-tile.matched .reveal{display:block}
+
+.desc-tile{display:flex;gap:10px;padding:11px 12px;align-items:flex-start}
+.desc-tile .badge{flex:none;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.desc-tile.matched .badge{background:var(--ok)}
+.desc-tile .txt{font-size:13.5px;line-height:1.4}
+.desc-tile.matched .txt{color:var(--ink-soft)}
+
+@media(min-width:760px){
+  .board{flex-direction:row}
+  .panel{flex:1;min-width:0}
+}
+
+/* ---- Completion banner ---- */
+.done-banner{display:none;background:var(--ok-bg);border:1px solid var(--ok);border-radius:var(--radius);padding:18px;margin:18px 0;text-align:center}
+.done-banner.show{display:block}
+.done-banner h2{margin:0 0 6px;font-size:18px;color:var(--ok)}
+.done-banner p{margin:0 0 12px;font-size:14px;color:var(--ink-soft)}
+.done-banner button{background:var(--primary);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+footer{margin-top:40px;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--card-border);padding-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="proto-badge">Prototype — not linked from the live Atlas</span>
+  <h1>Patent Match</h1>
+  <p class="lede">Match each real patent drawing to the description of what it covers. Every image, title and summary here comes straight from the MTB Patent Atlas's own verified entries — nothing on this page is invented.</p>
+  <p class="lede small">This demo pool is 27 entries (three per Atlas category) chosen for images that are genuinely easy to tell apart. The live Atlas has roughly 150 verified, single-drawing entries to draw from once this is wired up for real.</p>
+
+  <div class="controls">
+    <div class="ctrl-row">
+      <span class="ctrl-label" id="pairsLabel">Pairs</span>
+      <div class="chip-set" id="pairsChips" role="group" aria-labelledby="pairsLabel"></div>
+    </div>
+    <div class="ctrl-row">
+      <span class="ctrl-label" id="catLabel">Categories</span>
+      <div class="chip-set" id="catChips" role="group" aria-labelledby="catLabel"></div>
+    </div>
+    <div class="ctrl-row">
+      <label class="toggle-row"><input type="checkbox" id="timerToggle" checked> Show timer</label>
+      <button type="button" class="new-round-btn" id="newRoundBtn">New round</button>
+    </div>
+    <p class="clamp-note" id="clampNote" hidden></p>
+  </div>
+
+  <div class="status-bar">
+    <span>Matched <b id="statMatched">0</b>/<b id="statTotal">0</b></span>
+    <span class="mistakes">Mistakes <b id="statMistakes">0</b></span>
+    <span id="statTimeWrap">Time <b id="statTime">0:00</b></span>
+  </div>
+
+  <div class="board">
+    <div class="panel">
+      <h2>Drawings</h2>
+      <div class="img-grid" id="imgGrid"></div>
+    </div>
+    <div class="panel">
+      <h2>Descriptions</h2>
+      <div class="desc-list" id="descList"></div>
+    </div>
+  </div>
+
+  <div class="done-banner" id="doneBanner">
+    <h2 id="doneHeadline"></h2>
+    <p id="doneStats"></p>
+    <button type="button" id="playAgainBtn">Play again</button>
+  </div>
+
+  <div class="sr-only" aria-live="polite" id="liveRegion"></div>
+
+  <footer>
+    Prototype built from the MTB Patent Atlas dataset for Jon to tinker with before it's wired up as <code>/atlas/match</code>. No French translation, no shared code with the main Atlas file yet, and the pool is a fixed 27-entry sample rather than the live dataset.
+  </footer>
+</div>
+
+<script>
+/* ======================================================================
+   MATCH_DATA -- a fixed, hand-picked snapshot of 27 real Atlas entries
+   (3 per category), not a live link to index.html's D array. Every
+   field (title, assignee, img, alt, full) is copied verbatim from an
+   existing, already-verified `conf:"v"` entry -- nothing here is new or
+   invented. `teaser` is a short, hand-written one-line paraphrase of
+   that entry's own `s` text (written for this game specifically, since
+   an automatic first-sentence cut -- the same technique the Atlas's own
+   autoBlurb() uses -- turned out to break on abbreviations like "Sept."
+   and initials like "David R." and often led with filing-date
+   boilerplate instead of the mechanism). Regenerating this block from
+   the live dataset (plus writing teasers for a wider pool) is real work
+   to do before this becomes the production page -- see the footer note.
+   ====================================================================== */
+const MATCH_DATA = [
+  {
+    "num": "12253139",
+    "cat": "susp",
+    "title": "Dual Live Valve — independently controlled main damper and base valve (US 12,253,139)",
+    "assignee": "Fox Factory, Inc.",
+    "img": "../pictures/US12253139B2.png",
+    "alt": "Fig. 1A of US 12,253,139 B2: an isometric view of the complete rear shock assembly (100), showing the upper mounting eyelet (140), the main damper body (120/125) and a secondary valve housing near the shock's top (450), the shaft (142) and lower mounting eyelet (138)",
+    "teaser": "A rear shock whose main piston and base valve are each electronically actuated on their own circuit, instead of sharing one solenoid.",
+    "full": "A rear shock with its main damper piston and base valve independently, electronically actuated, rather than sharing one solenoid circuit — extending the accelerometer-driven, millisecond-scale damping control of the original Live Valve system (cataloged above under Forks & Damping) to both halves of a twin-circuit shock. Filed September 17, 2020 and granted March 18, 2025 as US 12,253,139, cross-confirmed via Justia Patents and Google Patents. The granted PDF itself is an unindexed image scan with no extractable text layer, so this pass confirmed the figure against the rendered page rather than a text-searchable front page."
+  },
+  {
+    "num": "9908583",
+    "cat": "susp",
+    "title": "Two-axis rear-wheel suspension path (US 9,908,583)",
+    "assignee": "W. Hank Matheson & Jonathan R. Heim",
+    "img": "../pictures/US9908583B2.png",
+    "alt": "Fig. 1 of US 9,908,583 B2: a full-suspension bike in profile with the swing arm's independent vertical (A1) and rearward (A4) axle-travel axes both labeled at the rear wheel (106), and the force-vector components FX/FY shown resolving near the bottom-bracket pivot (120/122)",
+    "teaser": "A rear swing-arm suspension where the axle's path shifts direction with the impact, moving along two axes instead of one fixed arc.",
+    "full": "Granted patent \"Bicycle rear suspension with a two axis wheel path,\" filed December 23, 2014 by W. Hank Matheson and Jonathan R. Heim and originally assigned to their company Bicycle Fabrications LLC (later reassigned to the two inventors individually). It claims a swing-arm suspension that lets the rear axle move independently along two axes — vertical and rearward — rather than tracing a single fixed arc, so the axle's actual path shifts with the direction of the impact force. The pair had been developing the concept since 2010, four years before this application was filed."
+  },
+  {
+    "num": "7722072",
+    "cat": "susp",
+    "title": "Rear Suspension System for a Bicycle (4 patents, 3 expired 2025)",
+    "assignee": "Steven W. Hoogendoorn / Yeti Cycling LLC",
+    "img": "../pictures/7722072.png",
+    "alt": "Yeti Rear Suspension System for a Bicycle patent drawing, Figs. 8 and 9, showing the rear-triangle linkage and shock mount",
+    "teaser": "Yeti's foundational rear-suspension patent — predates Switch Infinity and is still marked against the brand's entire current lineup.",
+    "full": "Yeti's foundational rear-suspension filing, predating Switch Infinity by years: US 7,722,072, filed 2005 and granted May 2010, credited to inventor Steven W. Hoogendoorn. Per Yeti's own marking page, three siblings from the same family — US 8,272,658, 10,293,881 and 8,696,008 — all expired on the same day, September 15, 2025, while 7,722,072 itself remains listed ISSUED. All four are marked against the entire current lineup, SB115 through SB165-MIX — the broadest product coverage of any patent in Yeti's portfolio."
+  },
+  {
+    "num": "10393872",
+    "cat": "tech",
+    "title": "Camera-augmented bicycle radar (US 10,393,872)",
+    "assignee": "Evangelos V.A. Brisimitzakis et al. / Garmin Switzerland GmbH",
+    "img": "../pictures/US10393872B2.png",
+    "alt": "Figs. 2A/2B of US 10,393,872: a cyclist (202) carrying the radar/camera unit (206/208) on the seatpost as a trailing car (204) is tracked in the sensor field, with the system's informational overlay shown alerting the rider to the approaching vehicle",
+    "teaser": "A rear-facing bike radar that can trigger an onboard camera to record an approaching vehicle, instead of filming continuously.",
+    "full": "Filed December 7, 2016 (claiming priority to a December 8, 2015 provisional) and granted August 27, 2019, this Garmin Switzerland GmbH patent covers a bicycle radar unit that pairs its rear-facing radar sensor with an integrated camera: the radar tracks the range and closing speed of vehicles approaching from behind, and the system can selectively trigger the camera to capture images or video of a detected target rather than recording continuously. It's the patent underlying Garmin's Varia line of rearview bike radar/taillights."
+  },
+  {
+    "num": "10574894",
+    "cat": "tech",
+    "title": "Stabilization & horizon leveling — HyperSmooth (US 10,574,894 + 10,958,840)",
+    "assignee": "César Douady, Thomas Derbanne & Maxim Karpushin / GoPro",
+    "img": "../pictures/US10574894B2.png",
+    "alt": "Fig. 3 of US 10,574,894: a labeled diagram of the image capture device's hardware — the optical element (304), image sensor (306), position sensor (308, i.e. the accelerometer/gyroscope used for horizon leveling), processor (310) and housing (312)",
+    "teaser": "Electronic video stabilization that crops the sensor in real time and keeps the horizon level through a full camera rotation.",
+    "full": "Both titled 'Systems and methods for stabilizing videos': US 10,574,894 (filed August 2019, granted February 2020) and US 10,958,840 (filed December 2019, granted March 2021) cover the electronic image stabilization that analyzes camera motion and crops the sensor in real time to cancel vibration and impacts, plus horizon leveling that uses the onboard accelerometers and gyroscopes to hold the horizon flat through full camera rotation."
+  },
+  {
+    "num": "10021931",
+    "cat": "tech",
+    "title": "Helmet-chin mount for accessories, including cameras (US 10,021,931)",
+    "assignee": "Eric Brock Tulley / Sopro Mounts Inc.",
+    "img": "../pictures/US10021931B2.png",
+    "alt": "Fig. 1 of US 10,021,931: an exploded view showing the Y-shaped mount (100) attaching to a full-face helmet's chin bar via a strap (118/120A) and bracket (108A), with a camera (114) sliding onto the mating bracket (108B)",
+    "teaser": "A Y-shaped mount that straps to a full-face helmet's chin bar to carry a camera or other accessory.",
+    "full": "A Y-shaped accessory mount that straps to the chin bar of a full-face helmet, claiming the mount, a removable fastener such as a quick-release buckle, and the strap-and-slit retention geometry. Claims cover full-face, off-road/motocross and modular/flip-up helmets, and the accessory may be a camera, video recorder, phone or flashlight. Filed 2015 by Eric Brock Tulley and assigned to Sopro Mounts Inc.; the record now shows expired/fee-related status rather than running to its ~2035 term."
+  },
+  {
+    "num": "8043185",
+    "cat": "drive",
+    "title": "Nicolai gear-transmission portfolio (5 patents, 2 assigned to Gates)",
+    "assignee": "Karlheinz Nicolai (Nicolai Bicycles, Germany)",
+    "img": "../pictures/US8043185B2.png",
+    "alt": "Fig. 3 of US 8,043,185 B2: a full-suspension mountain bike with the magnetic-clutch multi-gear transmission (43) housed at the bottom bracket, between the crank (4) and rear wheel (12), rather than in a rear derailleur",
+    "teaser": "Karlheinz Nicolai's own name spans a frame-integration patent, a mechanical multi-gear transmission, and a magnetic-clutch transmission.",
+    "full": "Karlheinz Nicolai's own name sits on a frame-integration patent (7,338,058), a mechanical multi-gear transmission (7,644,944), and the magnetic-clutch transmission already cited in this atlas (8,043,185) — plus two later belt/chain-drive and shaft/hub patents (8,308,589 and 9,435,382) assigned directly to The Gates Corporation."
+  },
+  {
+    "num": "5630338",
+    "cat": "drive",
+    "title": "Sealed derailleur cable preload system (US 5,630,338)",
+    "assignee": "Sam Patterson, Frederick W. Day, Michael Larson, Brian Jordan / SRAM Corporation",
+    "img": "../pictures/US5630338A.png",
+    "alt": "Sheet 2 of US 5,630,338: Fig. 2, the derailleur cable's routing past the cassette and through the sealing assembly (30/32/34), and Fig. 4, a cross-section of that same tensioning tube showing the threaded preload adjuster (86/88/92) and the sealed cable pass-through (76-79)",
+    "teaser": "A flexible sleeve sealed to both the derailleur cable and a frame-mounted connector, regulating tension while keeping dirt out.",
+    "full": "US 5,630,338, \"Bicycle Derailleur Cable Preload and Sealing System,\" filed July 11, 1995 and granted May 20, 1997 to SRAM Corporation of Chicago. A resilient tubular sleeve seals one end to the derailleur control cable and the other to a frame-mounted connector, stretching between two configurations as the cable moves — regulating cable tension and keeping contamination out of the housing in a single part."
+  },
+  {
+    "num": "20250010943",
+    "cat": "drive",
+    "title": "Modular mechanical derailleur (US 2025/0010943, application)",
+    "assignee": "SRAM Deutschland GmbH",
+    "img": "../pictures/US20250010943A1.png",
+    "alt": "A full rear-derailleur assembly drawing from US 2025/0010943, with reference labels marking the boundaries between its modules: the base module (B) at the mount, the swivel/knuckle module (K) below it, the shifting/parallelogram module (A) and spring (P_S/M_S), and the cage and chain-guiding module (P_C/C_C, W_CL) at the lower pulley wheel.",
+    "teaser": "A rear derailleur built from separately replaceable base, swivel, shifting, and chain-guide modules instead of one fixed unit.",
+    "full": "US 2025/0010943 A1, filed Sept. 17, 2024 by SRAM Deutschland GmbH (inventors Heiko Redecker, Tobias Harcke), published January 2025. Describes a rear derailleur built as a hierarchical, modular construction system with separately replaceable base-element, swivel-formation, shifting-element, and chain-guiding-device modules, each serviceable on its own."
+  },
+  {
+    "num": "20220242191",
+    "cat": "fork",
+    "title": "Multiple gas volumes / bottomless tokens (US 2022/0242191)",
+    "assignee": "Fox Factory",
+    "img": "../pictures/US20220242191A1.png",
+    "alt": "Fig. 2A of US 2022/0242191: a cross-section through the top of the fork leg's air-spring assembly (200), showing the main chamber body (202) and the adjacent volume-adjustment piece (210) separated by seals (203, 212, 213, 215) — the hardware equivalent of adding or removing a volume spacer",
+    "teaser": "The Fox Factory patent family behind volume-adjustable air-spring tokens, now nearly universal across air forks and shocks.",
+    "full": "The Fox Factory patent family behind volume-adjustable air springs — the 'bottomless tokens'/volume-spacer concept now essentially universal across the air-sprung fork and shock industry. Named inventors on this specific application are Mario Galasso, Joshua Benjamin Yablon, Andrew Laird, William M. Becker, Dennis K. Wootten and Joseph Franklin, per the patent's own front page, which also spells out the full continuation chain: this 2022-filed application is a division of application Ser. No. 16/453,474 (filed Jun. 26, 2019, now Pat. No. 11,312,203), itself a continuation running back through Pat. Nos. 10,384,509, 9,855,812 and 9,156,325 to application Ser. No. 12/407,610, filed Mar. 19, 2009 (now Pat. No. 8,894,050) — the earliest non-provisional filing in the chain, and the date this atlas's 'exp' is computed from. The Mar. 19, 2008 date some listings show is only provisional application No. 61/038,015, which doesn't start the 20-year clock. This specific division is still pending; its immediate parent already issued as US 11,312,203."
+  },
+  {
+    "num": "9376160",
+    "cat": "fork",
+    "title": "Manitou fork & shock portfolio (9 patents)",
+    "assignee": "Hayes Bicycle Group (Manitou)",
+    "img": "../pictures/US9376160B2.png",
+    "alt": "Figs. 1 and 2A of US 9,376,160 B2 (\"Axle assembly\"): a full fork-equipped bike, and an exploded view of the thru-axle (A) passing through the fork lowers (F) and front hub (H) with the skewer lever (W)",
+    "teaser": "Manitou's own patent grid, spanning the Mattoc, Mara, Mastodon and Minute lines — the broadest single-brand fork portfolio here.",
+    "full": "Manitou's own patent grid lists nine numbers spanning the Mattoc, Mara, Mastodon and Minute lines, including a US reissue patent (RE45684) and two Taiwan grants — the broadest single-brand fork portfolio in this atlas."
+  },
+  {
+    "num": "9746049",
+    "cat": "fork",
+    "title": "Inertia-valve damper + adjustable pressure-relief (US 9,746,049)",
+    "assignee": "Fox Factory",
+    "img": "../pictures/US9746049B2.png",
+    "alt": "Fig. 1 of US 9,746,049: a cross-section through the whole damper assembly (10), running from the top cap (232) down the shaft (220) through the piston/valve region (250-268) to the base (432)",
+    "teaser": "A damper that stays firm until a bump physically opens an inertia valve, paired with a tool-free pressure-relief knob.",
+    "full": "Fox's own terrain-activated damper: an inertia valve that stays firm until a bump physically opens it, paired with a tool-free, rider-adjustable knob that sets the pressure-relief threshold. Named inventors are William M. Becker, Robert C. Fox and Dennis K. Wootten, per this patent's own front page. Granted in 2017, but the family's priority traces to an April 2006 filing, with Fox re-filing the same core invention across at least five granted numbers (7,699,146 → 8,607,942 → 9,261,163 → 9,746,049 → 10,359,092)."
+  },
+  {
+    "num": "8757341",
+    "cat": "wheel",
+    "title": "Star Ratchet EXP (US 8,757,341)",
+    "assignee": "Jo Klieber / Syntace GmbH → DT Swiss AG",
+    "img": "../pictures/US8757341B2.png",
+    "alt": "Fig. 3 of US 8,757,341: an exploded view of the hub, showing the fixed and floating ratchet rings (30/32) stacked between the freewheel body (70) and the hub shell (12)",
+    "teaser": "One fixed and one floating ratchet ring inside a hub driver, replacing the original double-floating ratchet design.",
+    "full": "One fixed and one floating ratchet ring replacing the original double-floating design — designed by Jo Klieber at Syntace, filed August 2, 2011 (claiming priority to two August 2010 German filings) and granted June 24, 2014, then formally assigned to DT Swiss in January 2020, exactly as the original ratchet patent expired. The listed expiry accounts for a 296-day patent term adjustment noted on the grant, pushing the flat 20-year date (2031) out to 2032, matching Google Patents' own listed anticipated expiration."
+  },
+  {
+    "num": "1129585",
+    "cat": "wheel",
+    "title": "Valve for Pneumatic Tires (US 1,129,585)",
+    "assignee": "Joseph N. Newsom → St. Louis Pneumatic Valve Co.",
+    "img": "../pictures/US1129585A.png",
+    "alt": "Newsom 1915 pneumatic tire valve patent drawing, showing the internal stem, disk and grooved seat",
+    "teaser": "A tire valve sealed by threading a cap down to press a disk into a grooved seat — no springs at all.",
+    "full": "Filed April 1913, granted February 1915. Newsom's valve moves the seal away from a simple pin-and-spring core: a disk on the end of an internal stem is drawn up against a grooved seat at the base of the housing by threading an external cap down, compressing a rubber gasket into concentric grooves for the seal — then released by backing the cap off. No springs, described in the patent's own text as deliberately 'devoid of all springs and other delicate parts.'"
+  },
+  {
+    "num": "5931544",
+    "cat": "wheel",
+    "title": "Rolf paired-spoke wheel (US 5,931,544)",
+    "assignee": "Rolf Dietrich / Rolf Prima",
+    "img": "../pictures/US5931544A.png",
+    "alt": "Fig. 1 of US 5,931,544: a front view of the wheel showing the paired spokes (20) meeting the rim (18) at shared points, unlike the evenly staggered spokes of a conventional wheel",
+    "teaser": "A spoked wheel where each left/right spoke pair meets the rim at the same point, canceling the spokes' opposing pull.",
+    "full": "US 5,931,544, granted August 3, 1999 to Rolf Dietrich, covers a tensioned spoked wheel where each pair of left and right spokes meets the rim at the same circumferential point instead of the traditional staggered pattern, canceling out the lateral pulling force that alternating spokes would otherwise apply against each other. The patent's own filing history is a three-generation continuation chain — the 1998 application on file is itself a continuation of a 1997 continuation of the original filing, Dec. 24, 1991 (Ser. No. 07/813,436) — so per this atlas's continuation-dating rule, the 20-year clock runs from that 1991 filing, not the 1998 one."
+  },
+  {
+    "num": "5115692",
+    "cat": "comp",
+    "title": "SPD clipless pedal (US 5,115,692)",
+    "assignee": "Shimano",
+    "img": "../pictures/US5115692A.png",
+    "alt": "Fig. 1 of US 5,115,692: a longitudinal cross-section through the pedal axle (1), showing a front and rear clamp assembly (4A/5A and 4B/5B) at each end of the pedal body, with their spring-loaded engaging portions (41a/42a and 41b/42b) that grip the cleat",
+    "teaser": "A pedal body with two spring-loaded clamp pairs, offset front-to-back and side-to-side, so a cleat can enter from either side.",
+    "full": "US 5,115,692, 'Bicycle pedal,' filed August 27, 1991 and granted May 26, 1992 to Shimano Inc., inventor Masashi Nagano. The claims cover a pedal body carrying two spring-loaded clamp assemblies, offset front-to-back and side-to-side across the body, each built from a front and a rear clamp member that grip a shoe cleat — the dual entry-point mechanism behind SPD's mountain pedal. The application claims foreign priority to a 1988 Japanese filing (also filed in Germany and France in 1989); the term math above runs from the US patent's own 1991 filing date, as this atlas's convention requires."
+  },
+  {
+    "num": "547886",
+    "cat": "comp",
+    "title": "Repeating rotary-striker bicycle bell (US 547,886)",
+    "assignee": "Alfred Nicholas (Birmingham, England), assignor to Joseph Lucas & Harry Lucas",
+    "img": "../pictures/US547886A.png",
+    "alt": "Fig. 1 (top) of the original filing's Sheet 1: a full cross-section of the bell showing the thumb lever (h), toothed sector (f), coiled spring (g), striker carrier (c) and plunger-like striker (b) inside the dome; Figs. 5 and 6 below show the striker and its casing in isolation",
+    "teaser": "A thumb lever winds a spring-driven striker carrier inside the bell, ringing twice per full turn.",
+    "full": "\"Be it known that I, ALFRED NICHOLAS, manufacturer, a subject of the Queen of Great Britain, residing on Water Street, in the city of Birmingham, England, have invented new and useful Improvements in Bells\" — the patent's own opening line. US 547,886, \"Bicycle-Bell,\" filed August 8, 1895 by Alfred Nicholas of Birmingham, England, and assigned to Joseph Lucas and Harry Lucas — the father-and-son partnership trading as Joseph Lucas & Son, the direct predecessor of Lucas Industries. A companion British patent, No. 22,049 of November 15, 1894, predates the US filing by nine months. The claimed mechanism: a thumb lever winds a toothed sector against a coiled spring, spinning a striker carrier inside the bell; a plunger-like striker riding in that carrier is longer than the carrier itself, so one end always projects beyond it and strikes the bell wall on each half-turn, producing two rings per full rotation. Granted the same year it was filed; under the pre-1995 rule its term runs to grant plus 17 years, expiring in 1912."
+  },
+  {
+    "num": "8662517",
+    "cat": "comp",
+    "title": "GripLock headset retention (US 8,662,517)",
+    "assignee": "Chris King",
+    "img": "../pictures/US8662517B2.png",
+    "alt": "Fig. 2 of US 8,662,517 B2: an exploded steering-bearing assembly showing the cap (2), compression ring (41), head tube (12) and steerer (11) stacked in order, with the wedge components (5, 19, 42, 17) that isolate bearing preload from steerer clamping",
+    "teaser": "A wedge that isolates bearing preload from steerer-tube clamping, so steerer impacts can't knock the headset out of adjustment.",
+    "full": "An isolated-wedge system separating bearing preload from steerer-tube clamping, so impacts through the steerer can't hammer the headset out of adjustment on long-travel bikes."
+  },
+  {
+    "num": "4513985",
+    "cat": "frame",
+    "title": "Cannondale Optimum Oval Seatstays (US 4,513,985)",
+    "assignee": "David R. Graham / Cannondale Corporation",
+    "img": "../pictures/US4513985A.png",
+    "alt": "Fig. 1 and Fig. 2 of US 4,513,985: the oval-cross-section seat stays (14) shown at the seat cluster junction and again near the dropout, with the horizontal diameter (Dh) and vertical diameter (Dv) of the oval called out",
+    "teaser": "Oval-cross-section seatstays, laid with the wide axis horizontal for more side-to-side stiffness and less vertical stiffness than a round tube.",
+    "full": "Filed January 6, 1983 and granted April 30, 1985 to Cannondale engineer David R. Graham, this patent claims bicycle seat stays that are oval in cross-section and oriented with the major axis horizontal — a shape that gives relatively greater lateral (side-to-side) stiffness and relatively less vertical (up-down) stiffness than a round tube of the same weight. Figures 1 and 2 show the oval profile carried from the seat cluster down to the dropouts, with horizontal (Dh) and vertical (Dv) diameters called out as separate claim dimensions. Pre-GATT filing, so the 17-year-from-grant term (not filing+20) applies; it lapsed in 2002."
+  },
+  {
+    "num": "2151533",
+    "cat": "frame",
+    "title": "Schwinn cantilever frame (US 2,151,533)",
+    "assignee": "Frank W. Schwinn / Arnold, Schwinn & Co.",
+    "img": "../pictures/US2151533A.png",
+    "alt": "Sheet 1 of US 2,151,533, showing Fig. 1 (the complete cantilever frame with the curved strut 15 running from the seat cluster to the rear axle area) and Fig. 2 (a detail of the seat-cluster/strut junction), signed by inventor Frank W. Schwinn",
+    "teaser": "A curved strut running from the seat cluster down to the rear axle area, added to a classic cruiser frame.",
+    "full": "A frame construction adding a curved strut from the seat cluster down to the rear axle area, first used on the 1938 Autocycle line and later the Black Phantom and Sting-Ray. Filed the same day as the Spring Fork patent below (March 3, 1938). Pre-1995 US utility patents ran 17 years from grant rather than 20 years from filing, so this one lapsed in 1956."
+  },
+  {
+    "num": "4500103",
+    "cat": "frame",
+    "title": "Klein oversized-aluminum frame + Klein v. Cannondale (US 4,500,103)",
+    "assignee": "Gary G. Klein (Chehalis, WA)",
+    "img": "../pictures/US4500103A.png",
+    "alt": "Fig. 3 of US 4,500,103: the torsional-stiffness test the claims are written around — the frame lies on a table (16) with its head tube (1) clamped between blocks, a bar (13) fixed in the bottom bracket (5) carries a weight (15), and a dial gauge (14) reads how far the frame twists",
+    "teaser": "A racing frame built from large-diameter, thin-wall aluminum tubing, with claims written around measured torsional and bending stiffness.",
+    "full": "US 4,500,103, \"High efficiency bicycle frame,\" Gary G. Klein of Chehalis, Washington: filed November 7, 1977 as a continuation of a February 17, 1976 application, granted February 19, 1985. It discloses a racing frame of large-diameter, thin-wall aluminum tubing, with claims written around measured stiffness — a torsional rigidity of at least 67 lbf·ft per degree and a lateral bending rigidity of at least 120 lbf per inch, measured on the test rigs drawn in Figs. 3 and 4. Klein sued Cannondale for infringement in 1985. In 1989 the Federal Circuit upheld the invalidation of claims 1 and 7, because William B. Shook had built and openly raced a very similar aluminum frame in the early 1970s, and vacated the ruling on claim 2. Pre-1995 filing: the term ran 17 years from grant, to 2002."
+  },
+  {
+    "num": "9302734",
+    "cat": "emtb",
+    "title": "Drive device for an electric bicycle (US 9,302,734)",
+    "assignee": "Udo Getta, Ullrich Noack & Karl-Heinz Fleischmann / Brose Fahrzeugteile GmbH & Co. KG",
+    "img": "../pictures/US9302734B2.png",
+    "alt": "FIG 1/FIG 2 of US 9,302,734: exploded and cutaway isometric views of the drive housing (70), showing the hollow shaft and chainring mount (21/30/62), the coaxial pedal-crank gearing, and the motor's traction-drive gears (10/82) coupling into the same housing",
+    "teaser": "A mid-drive housing where a hollow shaft carrying the chainring surrounds the pedal-crank shaft, driven by the motor through a belt or chain.",
+    "full": "Filed under the PCT on April 15, 2013 (claiming a German priority from April 17, 2012) and granted April 5, 2016, this Brose Fahrzeugteile patent covers a mid-drive housing where a hollow shaft carrying the chainring surrounds a coaxial pedal-crank shaft, with the electric motor's output coupled to that hollow shaft through a belt or chain traction drive rather than a fixed gear train. Brose supplies the mid-drive units used across Specialized's Turbo Levo line and other e-MTBs under licensing and supply agreements rather than building its own bike brand."
+  },
+  {
+    "num": "5375676",
+    "cat": "emtb",
+    "title": "Yamaha pedal-force motor assist (US 5,375,676)",
+    "assignee": "Nozomu Takata & Tatsuji Yokoyama / Yamaha Hatsudoki K.K. (Iwata, Japan)",
+    "img": "../pictures/US5375676A.png",
+    "alt": "Figure 2 of US 5,375,676: the power-assisted bicycle in side view, with the battery (31) and controller (32) drawn dashed inside the main frame tube, the motor (29) just above the crankshaft (28), the pedal-force sensor (33) at the crank, and a shaft drive to the rear wheel (17) in place of a chain",
+    "teaser": "A crank sensor measures pedal force and a controller runs the motor in proportion — and keeps it spinning at speed so assist returns without a lag.",
+    "full": "US 5,375,676, \"Bicycle with electric motor,\" inventors Nozomu Takata and Tatsuji Yokoyama of Iwata, assigned to Yamaha Motor (Yamaha Hatsudoki K.K.): filed March 5, 1993 on Japanese priority from March 6, 1992, granted December 27, 1994. A sensor at the crank measures pedal force, and a controller runs a battery-powered motor in proportion to it, adding assist on top of the rider's effort; the motor is also kept turning at road speed when the rider stops pedaling, so assist returns without a lag. Filed the year Yamaha put its PAS power-assist bicycle on sale in Japan. Google Patents lists it as lapsed for unpaid maintenance fees, before the 2011 end of its 17-year term."
+  },
+  {
+    "num": "EP2546134",
+    "cat": "emtb",
+    "title": "myStromer / Fairly Bike frame-integrated motor hub (EP 2,546,134)",
+    "assignee": "myStromer AG (Switzerland) & Fairly Bike Manufacturing Co. (Taiwan)",
+    "img": "../pictures/EP2546134B1.png",
+    "alt": "Fig. 2 of EP 2,546,134: an exploded view of the hub motor's stack along the axle (21) — dropout mounts (1,11 / 1,12), stator (22/220), rotor housing (23/24), end cap (25), cassette body (4) and crank/pedal assembly (3) — showing the motor built into the hub rather than bolted on separately",
+    "teaser": "The drive motor built directly into the frame/hub junction, instead of bolted on as a separate mid-drive unit.",
+    "full": "A jointly held European patent — EP 2,546,134 B1, \"Combination structure of a bicycle frame and a motor hub\" — filed October 11, 2011 and granted March 25, 2015 by myStromer (the Swiss speed-pedelec maker) together with Taiwan's Fairly Bike Manufacturing. It covers building the drive motor directly into the frame/hub junction rather than as a bolt-on mid-drive unit, the structural approach behind myStromer's own ST-series e-bikes."
+  },
+  {
+    "num": "5833074",
+    "cat": "transport",
+    "title": "QuikRack — Fast-loading protective bicycle rack (US 5,833,074)",
+    "assignee": "Cal M. Phillips (licensed to 1UP USA)",
+    "img": "../pictures/US5833074A.png",
+    "alt": "Fig. 1 of US 5,833,074: the U-channel track (1) that cradles each wheel, with the pivoting U-shaped clamp arm (2/5/6) that swings down to hold the tire against the track",
+    "teaser": "A hitch rack that holds bikes by the tires alone, with a swinging arm over each wheel instead of frame contact.",
+    "full": "The original no-frame-contact tray rack — bikes held by tires, a swinging arm over each wheel, mounted to a standard hitch receiver. Invented and patented by Cal Phillips; 1UP USA licensed the design rather than buying it outright. Filed April 6, 1995 — before the June 8, 1995 GATT cutoff — so its 17-year term runs from the November 1998 grant rather than 20 years from filing, expiring in 2015 (corrected from a previously-stated 2016) and triggering an immediate wave of tray-style competitors including RockyMounts GuideRail and Quik'R'Stuff."
+  },
+  {
+    "num": "7900802",
+    "cat": "transport",
+    "title": "Fork crown supported bicycle carrier (US 7,900,802)",
+    "assignee": "Malcolm T. Hammond, later assigned to North Shore Racks Inc. (North Vancouver, BC)",
+    "img": "../pictures/US7900802B2.png",
+    "alt": "Fig. 4 of US 7,900,802 B2: a close-up front view of two adjacent bicycles' fork crowns (28) cradled side by side in the rack's rotating cradles (30), mounted on the horizontal support bar (14), showing how the cradle's rotation keeps the bikes' handlebars and forks from interfering with each other",
+    "teaser": "A hitch rack that hangs bikes vertically by the fork crown, front wheel up, on a rotating cradle.",
+    "full": "North Shore Racks' foundational hitch-mount carrier hangs bikes vertically by the fork crown, front wheel up, with a rotating cradle that lets adjacent bikes' handlebars nest closer together than a horizontal tray rack allows. Filed February 20, 2004 and granted March 8, 2011 as US 7,900,802 — read directly off the patent's own front page, which lists it under inventor Malcolm T. Hammond alone, with no corporate assignee printed on the face; Google Patents' separately recorded 'current assignee' is North Shore Racks Inc., the company Hammond and his wife Alison founded in North Vancouver the year before this application was filed."
+  },
+  {
+    "num": "6099008",
+    "cat": "transport",
+    "title": "Burley bicycle trailer hitch (US 6,099,008)",
+    "assignee": "Stephen Patrick Caffey / Burley Design Cooperative",
+    "img": "../pictures/US6099008A.png",
+    "alt": "Fig. 2 of US 6,099,008, an exploded view of the axle-mounted hitch: the frame-contacting clamp (30/36) secured by the wheel's own skewer (24), the rotating hitch-mount body (10) with its locking arm (40) and pull-pin retainer (44/48/52), and the dropout hardware (26/27/54) it clamps around",
+    "teaser": "A trailer hitch that clamps to the rear axle instead of the seatpost or frame, with a rotating body the trailer tongue clips onto.",
+    "full": "US 6,099,008, \"Hitch for Bicycle Trailer,\" filed September 1, 1998 by Stephen Patrick Caffey and granted August 8, 2000 to Burley Design Cooperative of Eugene, Oregon. A hitch mount clamps to the bicycle's rear axle rather than the seatpost or frame, carrying a rotating hitch-mount body that the trailer's own tongue-mounted connector clips onto and releases from."
+  }
+];
+
+/* ---- Tunable constants ---- */
+const PAIR_COUNT_OPTIONS = [4,6,8];      // round-size choices offered in the "Pairs" chip row
+const DEFAULT_PAIRS = 6;
+const MISMATCH_FLASH_MS = 550;           // how long a wrong pair flashes red before resetting
+const CAT_LABELS = {                      // same category names as the Atlas's own CATS registry
+  susp:"Rear Suspension", fork:"Forks & Damping", drive:"Drivetrain", wheel:"Wheels & Tires",
+  comp:"Components", emtb:"E-MTB & Electronics", frame:"Frame & Standards",
+  transport:"Bike Transport", tech:"Cameras & Wearables"
+};
+const CAT_ORDER = ["susp","fork","drive","wheel","comp","emtb","frame","transport","tech"];
+
+/* ---- State ---- */
+let state = {
+  pairs: DEFAULT_PAIRS,
+  cats: new Set(CAT_ORDER),   // active category filter
+  round: [],                  // the D-style entries in play this round
+  imgOrder: [],                // shuffled indices into state.round, drives #imgGrid
+  descOrder: [],                // shuffled indices into state.round, drives #descList
+  selectedImg: null,          // index into state.round, or null
+  selectedDesc: null,
+  matched: new Set(),
+  mistakes: 0,
+  startedAt: null,
+  timerHandle: null
+};
+
+const $ = sel => document.querySelector(sel);
+const shuffle = a => { a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+
+/* ---- Controls: build the chip rows once ---- */
+function buildControls(){
+  const pairsWrap = $("#pairsChips");
+  pairsWrap.innerHTML = PAIR_COUNT_OPTIONS.map(n =>
+    `<button type="button" class="chip" data-pairs="${n}" aria-pressed="${n===state.pairs}">${n}</button>`).join("");
+  pairsWrap.querySelectorAll("[data-pairs]").forEach(btn=>{
+    btn.onclick=()=>{ state.pairs=Number(btn.dataset.pairs); buildControls(); startRound(); };
+  });
+
+  const catWrap = $("#catChips");
+  catWrap.innerHTML = CAT_ORDER.map(k =>
+    `<button type="button" class="chip" data-cat="${k}" aria-pressed="${state.cats.has(k)}">${CAT_LABELS[k]}</button>`).join("");
+  catWrap.querySelectorAll("[data-cat]").forEach(btn=>{
+    btn.onclick=()=>{
+      const k=btn.dataset.cat;
+      if(state.cats.has(k) && state.cats.size>1) state.cats.delete(k);
+      else state.cats.add(k);
+      buildControls();
+      startRound();
+    };
+  });
+}
+
+/* ---- Round setup ---- */
+function startRound(){
+  clearInterval(state.timerHandle);
+  const pool = MATCH_DATA.filter(d=>state.cats.has(d.cat));
+  const wanted = state.pairs;
+  const actual = Math.min(wanted, pool.length);
+  const clampNote = $("#clampNote");
+  if(actual < wanted){
+    clampNote.hidden=false;
+    clampNote.textContent = `Only ${actual} entr${actual===1?"y":"ies"} match the current category filter, so this round plays with ${actual} pair${actual===1?"":"s"} instead of ${wanted}.`;
+  } else {
+    clampNote.hidden=true;
+  }
+  state.round = shuffle(pool).slice(0, actual);
+  state.imgOrder = shuffle(state.round.map((_,i)=>i));
+  state.descOrder = shuffle(state.round.map((_,i)=>i));
+  state.selectedImg=null; state.selectedDesc=null;
+  state.matched=new Set();
+  state.mistakes=0;
+  state.startedAt=Date.now();
+  $("#doneBanner").classList.remove("show");
+  renderBoard();
+  renderStatus();
+  if($("#timerToggle").checked){
+    $("#statTimeWrap").style.display="";
+    state.timerHandle=setInterval(renderTime, 1000);
+  } else {
+    $("#statTimeWrap").style.display="none";
+  }
+}
+
+function elapsedLabel(){
+  const s=Math.floor((Date.now()-state.startedAt)/1000);
+  const m=Math.floor(s/60), r=s%60;
+  return `${m}:${String(r).padStart(2,"0")}`;
+}
+function renderTime(){ $("#statTime").textContent=elapsedLabel(); }
+
+function renderStatus(){
+  $("#statMatched").textContent=state.matched.size;
+  $("#statTotal").textContent=state.round.length;
+  $("#statMistakes").textContent=state.mistakes;
+  renderTime();
+}
+
+/* ---- Board rendering ---- */
+function renderBoard(){
+  const imgGrid=$("#imgGrid"), descList=$("#descList");
+  imgGrid.innerHTML = state.imgOrder.map((idx,pos)=>{
+    const d=state.round[idx];
+    const isMatched=state.matched.has(idx);
+    const isSel=state.selectedImg===idx;
+    return `<button type="button" class="tile img-tile${isMatched?" matched":""}${isSel?" selected":""}" data-idx="${idx}" ${isMatched?"disabled":""} aria-pressed="${isSel}">
+      <span class="badge">${pos+1}</span>
+      <img src="${d.img}" alt="${escapeHtml(d.alt)}" loading="lazy">
+      <span class="reveal">${isMatched?escapeHtml(d.title)+" — "+escapeHtml(d.assignee):""}</span>
+    </button>`;
+  }).join("");
+
+  descList.innerHTML = state.descOrder.map((idx,pos)=>{
+    const d=state.round[idx];
+    const isMatched=state.matched.has(idx);
+    const isSel=state.selectedDesc===idx;
+    return `<button type="button" class="tile desc-tile${isMatched?" matched":""}${isSel?" selected":""}" data-idx="${idx}" ${isMatched?"disabled":""} aria-pressed="${isSel}">
+      <span class="badge">${String.fromCharCode(65+pos)}</span>
+      <span class="txt">${escapeHtml(d.teaser)}</span>
+    </button>`;
+  }).join("");
+
+  imgGrid.querySelectorAll("[data-idx]").forEach(b=>{ b.onclick=()=>pickImg(Number(b.dataset.idx)); });
+  descList.querySelectorAll("[data-idx]").forEach(b=>{ b.onclick=()=>pickDesc(Number(b.dataset.idx)); });
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+/* ---- Selection / matching ---- */
+function pickImg(idx){
+  if(state.matched.has(idx)) return;
+  state.selectedImg=idx;
+  if(state.selectedDesc!=null) attemptMatch();
+  else renderBoard();
+}
+function pickDesc(idx){
+  if(state.matched.has(idx)) return;
+  state.selectedDesc=idx;
+  if(state.selectedImg!=null) attemptMatch();
+  else renderBoard();
+}
+function attemptMatch(){
+  const i=state.selectedImg, j=state.selectedDesc;
+  if(i===j){
+    state.matched.add(i);
+    state.selectedImg=null; state.selectedDesc=null;
+    renderBoard(); renderStatus();
+    announce(`Matched: ${state.round[i].title}`);
+    if(state.matched.size===state.round.length) finishRound();
+  } else {
+    renderBoard(); // show both as selected first
+    const imgEl=document.querySelector(`.img-tile[data-idx="${i}"]`);
+    const descEl=document.querySelector(`.desc-tile[data-idx="${j}"]`);
+    imgEl&&imgEl.classList.add("wrong");
+    descEl&&descEl.classList.add("wrong");
+    state.mistakes++;
+    renderStatus();
+    announce("Not a match, try again.");
+    setTimeout(()=>{
+      state.selectedImg=null; state.selectedDesc=null;
+      renderBoard();
+    }, MISMATCH_FLASH_MS);
+  }
+}
+function announce(msg){ $("#liveRegion").textContent=msg; }
+
+function finishRound(){
+  clearInterval(state.timerHandle);
+  const time=elapsedLabel();
+  $("#doneHeadline").textContent="Round complete";
+  $("#doneStats").textContent=`${state.round.length} of ${state.round.length} matched in ${time} with ${state.mistakes} mistake${state.mistakes===1?"":"s"}.`;
+  $("#doneBanner").classList.add("show");
+}
+
+$("#newRoundBtn").onclick=startRound;
+$("#playAgainBtn").onclick=startRound;
+$("#timerToggle").onchange=()=>{
+  clearInterval(state.timerHandle);
+  if($("#timerToggle").checked){
+    $("#statTimeWrap").style.display="";
+    state.timerHandle=setInterval(renderTime,1000);
+    renderTime();
+  } else {
+    $("#statTimeWrap").style.display="none";
+  }
+};
+
+buildControls();
+startRound();
+</script>
+</body>
+</html>
