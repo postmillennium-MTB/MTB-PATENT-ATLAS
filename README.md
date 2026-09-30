@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 367 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 368 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 367 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 367 |
+| **Total entries** | 368 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 161 |
+| **Active patents** | 162 |
 | **Expired patents** | 138 |
 | **Pending applications** | 45 |
 | **Litigated entries** | 30 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 367 patents and 
 | **Brands** | 207 |
 | **Named inventors** | 76 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 262 |
+| **Verified entries** | 263 |
 | **Medium confidence** | 61 |
 | **Draft / in progress** | 44 |
 
@@ -610,6 +610,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Rotated three sideways drawings 90° clockwise, per Jon's request**: the Schwinn flexible-chainstay entry's single image (`US6076845A.png`) and both images on the Rocky Mountain rear-suspension entry (`US6843494B2.png`, `US6843494B2.1.png`) — same class of issue as the Sotto Group image rotated earlier in this section. No data, schema, or text changed on either entry; `verify_data.js` and `smoke_test.js` both pass clean at the unchanged entry count.
 - **Rotated a fourth sideways drawing 90° clockwise, same request**: Fig. 7 (`US12157333B2.2.png`) on the KOM Xeno Hub entry (EP 4,017,740 + US 12,157,333). No data, schema, or text changed; `verify_data.js` and `smoke_test.js` both pass clean.
 - **Rotated two more sideways drawings 90° clockwise, same request**: Fig. 1 (`US6182991B1.png`) on the Christini All-Wheel Drive entry (US 6,182,991) and the single image (`US10393872B2.png`) on the Garmin camera-augmented radar entry (US 10,393,872). No data, schema, or text changed; `verify_data.js` and `smoke_test.js` both pass clean.
+- **One new entry, patent number supplied directly by Jon: DT Swiss's dual-bearing rotor hub (US 10,442,245, 367 → 368).** Filed July 26, 2017 by Martin Walthert and Stefan Spahr, granted October 15, 2019 to DT Swiss Inc.; `conf:"v"` since the full bibliographic record (title, abstract, inventors, assignee, application number, filing/publication/grant dates, adjusted expiration) was pasted in directly. Claims a hub shell on two roller bearings and a separately-bearinged rotor, with hub-side/rotor-side freewheel components that shift axially between disengaged and engaging positions while the rotor itself stays put — a later addition to this atlas's existing DT Swiss hub cluster (the original 1995 Star Ratchet and its 2011/2014 EXP simplification), adding a dedicated rotor bearing pair rather than sharing bearings with the hub shell. A quick cross-check found two later continuations from the same inventors/assignee (US 10,933,691, US 11,485,173) carrying the same architecture forward — named in the entry's own text as a real but not independently re-verified family relationship, not folded into `nums[]`. Jon had already uploaded both drawing sheets (`US10442245B2.png`, the full hub cross-section; `US10442245B2.1.png`, Figs. 5–6 showing the freewheel engagement teeth in perspective and cross-section) via GitHub's web UI ahead of this request, per the standing pictures/-check rule in CLAUDE.md — wired in as a two-image `imgs[]`. Placed in the `wheel` category directly after the existing Star Ratchet EXP entry. No new `BRANDS`/`INVENTORS` registrations (`DT Swiss` already registered; Walthert and Spahr stay in `a` prose only, matching the one-off-engineer convention). Counts synced: total 367 → 368, active 161 → 162, verified 262 → 263; expired, pending, litigated, medium confidence, draft, brands, inventors and jurisdictions unchanged. README's At-a-glance table, the intro-paragraph count, and all eight hardcoded `index.html` count strings updated to match. `verify_data.js` and `smoke_test.js` both pass clean at the new 368-entry baseline.
 
 ## Recent updates (July 2026)
 
