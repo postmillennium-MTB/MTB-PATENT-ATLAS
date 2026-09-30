@@ -17,15 +17,15 @@ An interactive timeline of mountain bike intellectual property: 362 patents and 
 | **Total entries** | 362 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 160 |
-| **Expired patents** | 135 |
-| **Pending applications** | 44 |
+| **Expired patents** | 136 |
+| **Pending applications** | 43 |
 | **Litigated entries** | 30 |
 | **Patent Fights (named rivalries)** | 8 |
 | **Brands** | 204 |
 | **Named inventors** | 75 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 255 |
-| **Medium confidence** | 61 |
+| **Verified entries** | 256 |
+| **Medium confidence** | 60 |
 | **Draft / in progress** | 46 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -580,6 +580,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Updated the Shimano co-axial disc brake mount entry from a pending application to its granted patent (US 12,497,127, verified, 362 total throughout).** Jon confirmed the correct Google Patents link directly. Also corrected the entry's `y` field, which had been carrying an incorrect 2025 filing year; the actual filing date is December 1, 2022 (granted December 16, 2025). Added the three companion foreign filings Jon supplied — TW 202423773 A, DE 10 2023 131 850 A1, CN 118124712 A — named in `s` prose rather than in `nums[]`, since none of them are Google-Patents-linkable the way the primary US number is.
 - **Updated the SRAM wireless-dropper entry from a pending application to its granted patent (US 12,291,297, verified, 362 total throughout).** Jon supplied the number directly. Retitled from "collar-mounted electronics" to reflect only what the granted claims actually describe — a solenoid-driven valve between two piston-divided fluid chambers in the post's upper tube — rather than carrying forward an unconfirmed detail (battery/controller placement under the collar) that isn't stated in this patent's own abstract.
 - **Rewrote the KOM Xeno Hub entry around a verified patent number (EP 4,017,740) and cut AI-speak from its prose (`conf` upgraded m → v, 362 total throughout).** Jon supplied Google Patents' full record directly: filed August 2020 (priority to a 2019 UK filing), granted August 2024 to inventor Stephen Michael Elkins personally (not assigned to the King of the Mountain company). The previous entry's text — built during an earlier pass that had ruled out a wrong WO number — narrated that research process in the reader-facing copy ("this session's own... access is blocked," "removed rather than left in place now that it's confirmed wrong"), which this file's own prose-style rules call out as a tell to avoid; replaced with a plain statement of what the patent covers (a freehub running the full width of the hub body, concentric inside the shell) and added the independent Sheffield Hallam University stiffness-test figures from Pinkbike's October 2025 review.
+- **Identified the base patent behind the Orion 6-bar + dual-idler (RMU Nighttrain) entry: US 7,661,503 (`conf` upgraded m → v, 362 total throughout).** Jon supplied Google Patents' record directly. The number traces the Orion platform to a 2005 filing by David Weagle, assigned to his own Orion Dynamics Inc. and titled generically ("Vehicle suspension system," no mention of bicycles) — confirming Esker Cycles' own account that Orion was originally built for motorcycle use before Weagle licensed it into bikes. This is the squat-stabilizing linkage patent only; no separate published number was located for the dual-idler drivetrain feature specific to the high-pivot bicycle adaptation, so that claim stays sourced to Esker's own product description rather than a patent number. Filed 2005 and now expired (`st` pending → expired, `exp` 2025); also corrected `y`/`g` from the RMU product's ~2023 debut year to the patent's own 2005/2010 filing/grant dates, matching this atlas's convention of dating a licensed entry to the underlying patent rather than the licensee's product launch. Counts synced: expired 135 → 136, pending 44 → 43, verified 255 → 256, medium confidence 61 → 60; total unchanged at 362.
 
 ## Recent updates (July 2026)
 
