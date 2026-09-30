@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 367 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 368 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 367 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 367 |
+| **Total entries** | 368 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 161 |
+| **Active patents** | 162 |
 | **Expired patents** | 138 |
 | **Pending applications** | 45 |
 | **Litigated entries** | 30 |
 | **Patent Fights (named rivalries)** | 8 |
-| **Brands** | 207 |
+| **Brands** | 209 |
 | **Named inventors** | 76 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 262 |
+| **Verified entries** | 263 |
 | **Medium confidence** | 61 |
 | **Draft / in progress** | 44 |
 
@@ -607,6 +607,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Reversed the Lauf split from the previous update, on Jon's explicit direction** — the just-added "Lauf flexible-suspension patent" entry (US 9,375,989 / EP 2,760,683) is gone again, folded back into "Lauf pivotless leaf-spring fork & rear suspension" (`num:"20220402572"`, the entry's stable ref/deep-link) as a single 3-number bundle (`nums: ["20220402572","9375989","EP2760683"]`) rather than two cards. Jon's reasoning — the 2012 patent's own claims and drawings already cover both the fork and a rear application, so splitting it away from the rear-specific continuation just re-created the fork/rear divide the merge was meant to close — checked out once the additional sheets below were reviewed. **This also surfaced four unused image sheets already sitting in `pictures/`** (`EP2760683B1.png`, `.1.png`, `.2.png`, `.3.png`, plus `US9375989B2.png`) that the previous update's split entry never checked for — a session gap now written up as a standing rule in CLAUDE.md (see below). Two of the four EP sheets turned out to be worth wiring in: Fig. 27 (`EP2760683B1.1.png`) shows a rear-wheel embodiment mounted on a single trailing arm, and another sheet (`EP2760683B1.2.png`) shows a two-blade front-fork embodiment in more mechanical detail — direct visual confirmation, straight from the 2012 patent's own drawings, that it was never fork-specific. The merged entry now carries four images (`imgs[]`): the fork embodiment from US 9,375,989, the front-fork detail and the rear-wheel embodiment from EP 2,760,683, and the existing dedicated figure from the rear-suspension continuation — each with its own explicit `link` so "View full patent" points at the correct one of the three numbers rather than defaulting to the bundle's headline number. `conf` stays `"m"`: the bundle still carries the unconfirmed freehub aside from the pre-existing entry. Total entries 368 → 367 (net of one entry removed); active 162 → 161, verified 263 → 262; expired, pending, litigated, medium confidence, draft, brands, inventors and jurisdictions unchanged. README's At-a-glance table and all eight hardcoded `index.html` count strings re-synced to 367; `verify_data.js` and `smoke_test.js` re-run clean.
 - **CLAUDE.md updated with a standing rule**, prompted directly by the missed-images gap above: before finalizing `img`/`imgs` on any entry, check `pictures/` for every numbered variant (`.1.png`, `.2.png`, ...) under *every* number in that entry's `num` and `nums[]`, not just the number a request happens to name — Jon sometimes stages multiple sheets ahead of a session without saying so, and a session that only looks up the one it was told about will miss the rest.
 - **Started the repeating rotary-striker bicycle bell entry (US 547,886) with the patent's own opening line**, quoted directly from the document at Jon's request: "Be it known that I, ALFRED NICHOLAS, manufacturer, a subject of the Queen of Great Britain, residing on Water Street, in the city of Birmingham, England, have invented new and useful Improvements in Bells." Kept in English in both the EN and FR versions of `s` (a direct quotation of the original document's own words, not paraphrased prose), with a one-line French frame around it in the FR field. No change to `conf`, dates, or any other field.
+- **New entry: Light & Motion bike light and tail light patents (US 8,770,808 B1 + US 8,974,098 B2)**, from full bibliographic records and abstracts Jon pasted directly, `conf:"v"`. US 8,770,808 ("Bicycle tail light," filed Apr. 15, 2011, granted Jul. 8, 2014) covers the universal seatpost/rack/chainstay mount, swivel tilt joint, and over-180° side visibility; its own record shows it reassigned from Light & Motion Industries to SeeScan, Inc. on Jan. 29, 2025. US 8,974,098 ("Bicycle light," filed May 11, 2012, granted Mar. 10, 2015) covers the single-LED-board dual-reflector spot/flood design with independently switchable side lighting; Google's record lists its status as "Ceased" rather than "Active," most likely a lapsed maintenance fee — not confirmed further. Both patents' own inventor lists overlap (McCaslin, Lo); Daniel T. Emerson, a named inventor on the tail light patent, was Light & Motion's CEO when the company permanently closed in January 2025, citing US manufacturing cost pressures — noted in `w` along with the reassignment to SeeScan, Inc. (a San Diego pipe-inspection equipment maker), since a patent portfolio outliving the company that built it is worth explaining, not just logging as a date. Three images already staged in `pictures/` (`US8770808B1.png`, `US8974098B2.png`, `US8974098B2.1.png`) wired in as a three-item `imgs[]`, each with its own explicit `link` to its correct source patent. Registered "Light & Motion" and "SeeScan" in `BRANDS`. Placed in the `comp` lighting cluster next to the existing water-bottle-cage battery light entry.
+- Counts synced: total 367 → 368, active 161 → 162, verified 262 → 263, brands 207 → 209; expired, pending, litigated, medium confidence, draft, inventors and jurisdictions unchanged. README's At-a-glance table and all eight hardcoded `index.html` count strings re-synced to 368; `verify_data.js` and the Playwright `smoke_test.js` both pass clean.
 
 ## Recent updates (July 2026)
 
