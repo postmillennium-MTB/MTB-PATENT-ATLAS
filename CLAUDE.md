@@ -180,6 +180,24 @@ it deliberately, and update or remove it if a real patent number gets added
 to the same entry later, since nothing checks the two stay in sync
 automatically.
 
+**Before finalizing `img`/`imgs` on any entry, check `pictures/` for every
+number in that entry's `num` and `nums[]`, not just the one you were pointed
+at.** Jon sometimes uploads several sheets for a single patent directly
+through GitHub's web UI ahead of a data session, without saying so in the
+request — the base file (`<NUM><KIND>.png`) plus numbered variants
+(`.1.png`, `.2.png`, `.3.png`, ...). A session that only looks up the sheet
+it was explicitly told about will miss the rest. Run
+`ls pictures/ | grep -i <NUM>` for each number the entry touches (the
+2026-09-30 session that added Lauf's foundational patent found one used
+sheet and missed three more sitting in `pictures/` under the same number —
+caught a session later only because Jon asked directly). This applies on
+every entry that touches a patent number, new or existing — an entry can
+gain a newly-uploaded sheet between sessions with no other signal that it
+happened. If multiple sheets show genuinely different embodiments (e.g. a
+patent's own drawings covering both a front and a rear application), that's
+itself evidence for how broadly the patent's claims reach — worth reflecting
+in `s`, not just in which sheets get wired into `imgs[]`.
+
 **`long`** is a second, deeper layer of narrative for the rare entry that has
 more well-sourced substance than `s`/`w` should carry on their own — added
 2026-09-26 for cases like a patent's own Background section naming an
