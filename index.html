@@ -153,6 +153,13 @@ header::before{
 .card-icon-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 .card-icon-btn svg{width:15px;height:15px;pointer-events:none}
 .card-icon-btn.copied{color:#fff;background:var(--primary);border-color:var(--primary)}
+/* Favorite toggle -- a persistent state (unlike .copied's brief flash), so it
+   stays tinted rather than reverting after ANIMATION_CLEANUP_MS. Uses --primary
+   like .copied rather than a new color, same reasoning as that rule's own CAMBR
+   override below: a state that must read the same regardless of theme. */
+.card-icon-btn.is-fav{color:var(--primary);border-color:var(--primary)}
+@keyframes heartPop{0%{transform:scale(1)}35%{transform:scale(1.3)}60%{transform:scale(.9)}100%{transform:scale(1)}}
+.card-fav-btn.fav-pop svg{animation:heartPop .35s ease}
 @media(max-width:480px){.card-icon-btn{width:28px;height:28px;margin:10px 4px 0 0}.card-icon-btn:last-child{margin-right:8px}}
 /* CAMBR's per-card icon buttons (share/copy-link) rest in the accent
    orange rather than the shared neutral gray, matching the .pill.cat
@@ -160,6 +167,12 @@ header::before{
    states stay visually distinct from each other. */
 [data-theme="cambr"] .card-icon-btn{color:var(--accent)}
 [data-theme="cambr"] .card-icon-btn:hover{color:var(--accent);border-color:var(--accent)}
+/* Same equal-specificity issue as .copied above would otherwise cause under
+   CAMBR (this rule is declared after the plain .is-fav one, and ties it on
+   specificity, so without this override a favorited heart would silently
+   read as --accent here instead of --primary). Spelled out explicitly
+   rather than relying on source order to keep it correct. */
+[data-theme="cambr"] .card-icon-btn.is-fav{color:var(--primary);border-color:var(--primary)}
 /* ---------- Surprise me shimmer ----------
    A light sweep passes across the button at random intervals (see JS) to hint
    that it's interactive. Deliberately subtle: a soft highlight, no color or
@@ -426,6 +439,11 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .tab-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 .tab-dot{position:absolute;top:6px;right:6px;width:6px;height:6px;border-radius:50%;background:var(--accent);display:none}
 .tab-dot.show{display:block}
+/* Favorites tab doesn't exist in the DOM until the first entry is favorited
+   (see ensureFavTabBtn) -- this only plays on that first appearance, not on
+   every reload of a return visit (see the `animate` param it's gated on). */
+@keyframes tabFavIn{0%{opacity:0;transform:translateY(-6px) scale(.9)}60%{opacity:1;transform:translateY(1px) scale(1.05)}100%{opacity:1;transform:translateY(0) scale(1)}}
+.tab-btn.tab-fav-in{animation:tabFavIn .45s cubic-bezier(.3,.2,.2,1)}
 .tab-panes{max-width:880px;margin:0 auto;padding:6px 16px 2px;background:var(--surface);border:1px solid var(--card-border);border-radius:0 8px 8px 8px}
 .tab-panes .frow{padding:3px 0;max-width:none;margin:0}
 .hidden-pane{display:none!important}
@@ -1519,6 +1537,25 @@ const FILTER_KEYS = ["cat","st","badge","inv","brand"];
 function clearFilterState(){ FILTER_KEYS.forEach(k=>state[k].clear()); }
 function anyFilterActive(){ return FILTER_KEYS.some(k=>state[k].size>0); }
 
+/* ======== FAVORITES ========
+   The only reader data this tool persists. A Set of stable cardRef() strings
+   (see the _REF map below), saved to localStorage as a plain array -- kept
+   deliberately separate from `state` above rather than a sixth Set on it,
+   since clearFilterState() (the "Clear filters" button) must NOT wipe a
+   saved collection the way it resets an actual filter chip.
+   Per-browser only: this is a static, backend-less, no-account tool (see
+   CLAUDE.md's non-negotiables), so there's no way to sync a favorite across
+   devices, and every read/write is wrapped in try/catch since this tool
+   also runs inside a cross-origin iframe on postmillenniumrenaissance.com,
+   where some browsers restrict or partition storage for an embedded
+   third-party origin -- a blocked read/write should degrade to "favorites
+   don't persist this visit," never a broken page. */
+const FAVORITES_KEY = "pma-favorites";
+let favorites = new Set();
+try { favorites = new Set(JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]")); } catch(e){ favorites = new Set(); }
+function saveFavorites(){ try{ localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites])); }catch(e){ /* storage blocked or full -- favorites still work for this visit, just won't persist */ } }
+function isFav(ref){ return favorites.has(ref); }
+
 /* Year-bracket step (5 | 2 | 1) and search query. Default: 1yr. */
 let stepYr  = 1;
 let searchQ = '';
@@ -1692,6 +1729,13 @@ const ICON_CLOCK_ARROW_DOWN = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\
 const ICON_SWORDS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-swords icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m13 19 6-6\"/><path d=\"M14.5 17.5 3.586 6.586A2 2 0 013 5.172V3h2.172a2 2 0 011.414.586L17.5 14.5\"/><path d=\"m14.828 6.172 2.586-2.586A2 2 0 0118.828 3H21v2.172a2 2 0 01-.586 1.414l-2.586 2.586\"/><path d=\"m16 16 4 4\"/><path d=\"m19 21 2-2\"/><path d=\"m5 14 4 4\"/><path d=\"m5 21-2-2\"/><path d=\"M7.5 16.5 4 20\"/></svg>";
 const ICON_COMPASS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-compass icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z\"/><circle cx=\"12\" cy=\"12\" r=\"10\"/></svg>";
 const ICON_CHART = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chart-no-axes-combined icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 16v5\"/><path d=\"M16 14.639V21\"/><path d=\"M20 10.656V21\"/><path d=\"m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15\"/><path d=\"M4 18.463V21\"/><path d=\"M8 14.656V21\"/></svg>";
+/* Favorites: heart-plus for the not-yet-saved state of the per-card toggle,
+   plain heart for the Favorites tab label and (filled, via the fill="currentColor"
+   variant) the toggle's already-saved state. All three requested directly, icon
+   by icon, same as every other ICON_* above. */
+const ICON_HEART_PLUS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-heart-plus icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49\"/><path d=\"M15 15h6\"/><path d=\"M18 12v6\"/></svg>";
+const ICON_HEART = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-heart icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5\"/></svg>";
+const ICON_HEART_FILLED = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-heart icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5\"/></svg>";
 const T = {
   en:{
     themeLabel:"Theme", langLabel:"Language", colorScheme:"Color scheme", langGroup:"Language",
@@ -1704,7 +1748,9 @@ const T = {
     timelineEras:"Timeline eras",
     searchPlaceholder:"Search — title, inventor, brand, patent number…",
     tabCategory:"Category", tabStatus:"Status", tabStory:"Story", tabInventors:"Inventors", tabBrands:"Brands",
-    tabAll:"All", tabStats:"Atlas", tabFights:"Fights",
+    tabAll:"All", tabStats:"Atlas", tabFights:"Fights", tabFavorites:"Favorites",
+    favAdd:"Add to favorites", favRemove:"Remove from favorites",
+    favEmpty:"No favorites yet — tap the heart on any entry to save it here.",
     scrollLeft:"Scroll left", scrollRight:"Scroll right",
     showAll:"Show all", collapse:"Collapse",
     surpriseBtn:"Surprise me", surpriseTip:"Jump to a random patent",
@@ -1811,7 +1857,9 @@ const T = {
     timelineEras:"Chronologie des époques",
     searchPlaceholder:"Rechercher — titre, inventeur, marque, numéro de brevet…",
     tabCategory:"Catégorie", tabStatus:"Statut", tabStory:"Histoire", tabInventors:"Inventeurs", tabBrands:"Marques",
-    tabAll:"Tout", tabStats:"Atlas", tabFights:"Batailles",
+    tabAll:"Tout", tabStats:"Atlas", tabFights:"Batailles", tabFavorites:"Favoris",
+    favAdd:"Ajouter aux favoris", favRemove:"Retirer des favoris",
+    favEmpty:"Aucun favori pour l'instant — touchez le cœur sur une fiche pour l'enregistrer ici.",
     scrollLeft:"Défiler vers la gauche", scrollRight:"Défiler vers la droite",
     showAll:"Tout afficher", collapse:"Réduire",
     surpriseBtn:"Surprends-moi", surpriseTip:"Aller à un brevet au hasard",
@@ -2179,19 +2227,74 @@ const TAB_ICONS={stats:ICON_COMPASS, fights:ICON_SWORDS};
   btn.onclick=()=>{ activeTab=tabDef.key; renderTabs(); render(); };
   tabRow.appendChild(btn);
 });
+
+/* The Favorites tab doesn't exist in the fixed list above -- per the
+   feature's own point, it should only appear once the reader has actually
+   favorited something (see toggleFav below), not sit empty on every first
+   visit. A returning visitor with saved favorites gets it immediately, no
+   animation; ensureFavTabBtn(true) (the animated entrance) only fires the
+   moment favorites goes from empty to non-empty during THIS visit. */
+let favTabBtn=null;
+function buildFavTabBtn(){
+  const btn=document.createElement("button");
+  btn.className="tab-btn";
+  btn.innerHTML=`${ICON_HEART}<span data-i18n="tabFavorites">${t("tabFavorites")}</span>`;
+  btn.dataset.tab="fav";
+  btn.setAttribute("aria-pressed","false");
+  btn.onclick=()=>{ activeTab="fav"; renderTabs(); render(); };
+  return btn;
+}
+function ensureFavTabBtn(animate){
+  if(favTabBtn) return;
+  favTabBtn=buildFavTabBtn();
+  if(animate) favTabBtn.classList.add("tab-fav-in");
+  tabRow.appendChild(favTabBtn);
+}
+if(favorites.size>0) ensureFavTabBtn(false);
+
+/* Per-card heart toggle (see the card-fav-btn wiring in render()). Updates
+   just the one button in place rather than a full re-render for the common
+   case (browsing All/a category/etc.) -- a full render() there would lose
+   scroll position and close every other open card for a change that only
+   affects one button. The one case that DOES need a re-render is toggling
+   off while already viewing the Favorites tab itself, since that list is
+   the favorited set and must actually drop the entry. */
+function toggleFav(ref,btnEl){
+  const wasEmpty=favorites.size===0;
+  const nowFav=!favorites.has(ref);
+  if(nowFav) favorites.add(ref); else favorites.delete(ref);
+  saveFavorites();
+  if(nowFav) ensureFavTabBtn(wasEmpty);
+  if(activeTab==="fav"){ render(); return; }
+  if(btnEl){
+    btnEl.innerHTML=nowFav?ICON_HEART_FILLED:ICON_HEART_PLUS;
+    btnEl.classList.toggle("is-fav",nowFav);
+    btnEl.setAttribute("aria-pressed",String(nowFav));
+    const label=nowFav?t("favRemove"):t("favAdd");
+    btnEl.setAttribute("aria-label",label);
+    btnEl.title=label;
+    btnEl.classList.remove("fav-pop");
+    void btnEl.offsetWidth;
+    btnEl.classList.add("fav-pop");
+  }
+}
+
 function renderTabs(){
   document.querySelectorAll(".tab-btn").forEach(b=>{
     const on=b.dataset.tab===activeTab;
     b.classList.toggle("on",on);
     b.setAttribute("aria-pressed",on?"true":"false");
   });
-  const fightsMode=activeTab==="fights"||activeTab==="stats";
+  /* Fights, Stats and Favorites all bypass the chip-filter system entirely
+     (rivalries and the stats snapshot aren't chip-filterable, and a saved
+     collection is its own list rather than a facet to narrow) -- all three
+     hide the same chip panes. */
+  const noPanesMode=activeTab==="fights"||activeTab==="stats"||activeTab==="fav";
   document.body.classList.toggle("home-view", activeTab==="stats");
   $("#filters").setAttribute("data-mode", activeTab==="all"?"all":"single");
-  // In Fights mode, hide the chip panes entirely (rivalries aren't chip-filtered)
-  $("#filterPanes").classList.toggle("hidden-pane", fightsMode);
+  $("#filterPanes").classList.toggle("hidden-pane", noPanesMode);
   Object.entries(paneEls).forEach(([k,el])=>{
-    el.classList.toggle("hidden-pane", fightsMode || !(activeTab==="all"||activeTab===k));
+    el.classList.toggle("hidden-pane", noPanesMode || !(activeTab==="all"||activeTab===k));
   });
   // recompute scroll arrows once the now-visible row has real width
   requestAnimationFrame(()=>{ if(typeof updInv==="function")updInv(); if(typeof updBrand==="function")updBrand(); });
@@ -2241,6 +2344,12 @@ function goingFreeSoon(d){ return d.st==="active" && d.exp && d.exp>=NOW && d.ex
    filter chip — the single predicate render() (and the resize-driven bars
    re-render) filters the full D array through. */
 function passes(d){
+  /* The Favorites tab restricts the pool to saved entries before anything
+     else runs -- search and the chip filters (if any are still set from an
+     earlier tab) then narrow further within that, same as every other tab.
+     cardRef/_REF are declared later in the file but hoisted, same as
+     passes() itself is called well after full parse. */
+  if(activeTab==="fav" && !isFav(cardRef(d))) return false;
   if(searchQ){
     /* Strips accents (é→e, ö→o, …) so "Sunringle" finds "SUNringlé" and
        "Ohlins" finds "Öhlins" — most people typing on a US keyboard won't
@@ -2541,6 +2650,9 @@ function cardHTML(d){
         ${conf?`<span class="conf ${d.conf==='l'?'low':''}">⚠ ${conf}</span>`:""}
       </span>
       <span class="caret">▼</span>
+    </button>
+    <button class="card-icon-btn card-fav-btn${isFav(ref)?' is-fav':''}" data-ref="${ref}" aria-pressed="${isFav(ref)}" aria-label="${isFav(ref)?t('favRemove'):t('favAdd')}" title="${isFav(ref)?t('favRemove'):t('favAdd')}">
+      ${isFav(ref)?ICON_HEART_FILLED:ICON_HEART_PLUS}
     </button>
     <button class="card-icon-btn card-share-btn" data-ref="${ref}" aria-label="${t('copyLinkTitle')}" title="${t('copyLinkTitle')}">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
@@ -3153,7 +3265,7 @@ function render(){
      newest-first too, matching the cards' own order within each section
      (list is already sorted the right way, and filter() preserves it). */
   const eras=sortDesc ? [...getEras()].reverse() : getEras();
-  if(!list.length){ tl.innerHTML=`<div class="empty">${t("emptyState")}</div>`; }
+  if(!list.length){ tl.innerHTML=`<div class="empty">${activeTab==="fav"?t("favEmpty"):t("emptyState")}</div>`; }
   else{
     tl.innerHTML=eras.map(e=>{
       const items=list.filter(d=>d.y>=e.from&&d.y<=e.to);
@@ -3170,6 +3282,9 @@ function render(){
   });
   tl.querySelectorAll(".co-link").forEach(b=>{
     b.onclick=(e)=>{ e.stopPropagation(); openColorado(); };
+  });
+  tl.querySelectorAll(".card-fav-btn").forEach(b=>{
+    b.onclick=(e)=>{ e.stopPropagation(); toggleFav(b.dataset.ref, b); };
   });
   tl.querySelectorAll(".card-share-btn").forEach(b=>{
     b.onclick=async(e)=>{
@@ -3192,7 +3307,11 @@ function render(){
   });
   // counts + clear
   const total=D.length, n=list.length;
-  const anyFilter=anyFilterActive()||searchQ;
+  /* Without the activeTab check, viewing Favorites with no chip filters or
+     search text set would read anyFilterActive() as false and print the
+     full-dataset "359 entries · 1869–2026" line instead of "N of 359" --
+     technically true of the chips, but not of what's actually on screen. */
+  const anyFilter=activeTab==="fav"||anyFilterActive()||searchQ;
   $("#resultCount").textContent = anyFilter?t("resultCountFiltered",n,total):t("resultCountAll",total,FIRST_YEAR);
   $("#clearAll").hidden=!anyFilter;
   updateTabDots();
@@ -3317,7 +3436,8 @@ function jumpToCard(ref){
   if(activeTab==="fights"||activeTab==="stats"){ activeTab="all"; renderTabs(); render(); }
   requestAnimationFrame(()=>{
     let target=document.getElementById("p-"+ref);
-    if(!target){ // card may be filtered out — clear filters and retry
+    if(!target){ // card may be filtered out, or (Favorites tab) simply not saved — reset and retry
+      if(activeTab==="fav"){ activeTab="all"; renderTabs(); }
       clearFilterState();
       searchQ=''; const si=document.getElementById("searchInput"); if(si) si.value='';
       syncChipsToState(); render();
