@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 369 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 370 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 369 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 369 |
+| **Total entries** | 370 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 162 |
+| **Active patents** | 163 |
 | **Expired patents** | 137 |
 | **Pending applications** | 46 |
 | **Litigated entries** | 30 |
@@ -24,8 +24,8 @@ An interactive timeline of mountain bike intellectual property: 369 patents and 
 | **Brands** | 209 |
 | **Named inventors** | 76 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 267 |
-| **Medium confidence** | 59 |
+| **Verified entries** | 269 |
+| **Medium confidence** | 58 |
 | **Draft / in progress** | 43 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -625,6 +625,10 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - Counts synced: total unchanged at 369 (an update, not a new row); active 163 → 162, pending 45 → 46, verified 266 → 267, medium confidence 60 → 59; expired, litigated, brands (TQ already registered), inventors and jurisdictions (EP already represented) unchanged. README's At-a-glance table updated; all seven hardcoded `index.html` count strings cite only the total entry count, which didn't move, so none needed editing. `verify_data.js` and the Playwright `smoke_test.js` both pass clean.
 
 - **Wired in two drawing sheets Jon uploaded for the EP 3,163,122 entry above** (`EP3163122A1.png`, `EP3163122A1.1.png`), found via the standing pictures/-check rule in CLAUDE.md rather than mentioned in the original request. Both viewed directly before writing `imgAlt`: Fig. 1 is the patent's main exploded view of the full pin-ring drive stack (outer ring, pin ring, inner output ring, bearing/seal components); Fig. 14 is a second, distinct embodiment with a simpler output disc carrying four mounting through-holes instead of the main assembly's bearing stack. Genuinely different embodiments, not two crops of the same drawing, so wired in as a two-item `imgs[]` rather than a single `img`, and the entry's `s` text now names both figures rather than describing only one. No count or schema change — `img`/`imgs` fields only.
+
+- **Filled another existing gap: the "Early hydraulic disc brake" placeholder (`num:null`, `conf:"m"`) now carries two real patents, from full bibliographic records and abstracts Jon pasted directly, at his direction to bundle both into this one entry.** EP 0,792,795, "Hydraulic brakes" (Ian Weatherill and Simon Sharp, filed Feb. 26, 1997, withdrawn before grant) covers a reservoir-to-cylinder self-bleed port that shuts once the piston moves to actuate the brake. GB 2,437,745, "Brake disc manufacture" (Simon Sharp, assignee Hope Technology, filed May 5, 2006, also withdrawn) covers a vacuum-brazed process joining two braking elements and cooling fins into a thin ventilated rotor — a different component (the rotor, not the caliper) from a different decade, bundled here on Jon's explicit direction rather than this session's own judgment call. Weatherill and Sharp are independently confirmed as Hope Technology's co-founders (Pinkbike's 2014 "From the Top" profile), so `conf` moves `"m"` → `"v"` despite neither patent granting; `y` corrected 1990 → 1997 (the earlier of the two real filings, replacing the undocumented 1989-build estimate, which stays in `s` as company lore rather than a patent fact); `g`/`exp` cleared to `null` (neither patent ever issued, so there's no real term); `st` stays `"expired"` as the closest fit this schema's four-value enum has for "withdrawn, no protection ever resulted." Three drawing sheets Jon uploaded ahead of the request (`EP0792795A3.png`, `GB2437745A.png`, `GB2437745A.1.png`) wired in as a three-item `imgs[]`, each viewed directly before writing `imgAlt`.
+- **New entry: a second, distinct Nicolai gearbox filing, bundled under one entry per Jon's direction — two individually-filed German patents naming Karlheinz Nicolai as inventor.** DE 10 2022 001 740 A1 (filed May 17, 2022, still pending) and DE 10 2023 207 638 B3 (filed Aug. 9, 2023, granted Oct. 2, 2024, anticipated expiration 2043 per the patent's own record, used directly rather than recomputed). Both describe a bottom-bracket gearbox built from a fixed shaft carrying several fixed gears alongside a parallel shift shaft carrying loose gears, each engaged to the shift shaft by its own clutch — ordering the fixed shaft ahead of the shift shaft in the torque path lets a step-up ratio reduce the torque the clutch itself carries. `conf:"v"` since both full bibliographic records were pasted in directly. Placed between the existing 2004 Nicolai gear-transmission portfolio and the 2024–25 shift-under-load clutch applications, both already in this atlas — same inventor and general subject as the latter, but no documented priority chain ties this pair to those filings, so the relationship is named as context in `w`, not asserted as one continuous family. No drawing available; none staged in `pictures/` for either number.
+- Counts synced: total 369 → 370 (one new entry); active 162 → 163; verified 267 → 269 (one tier upgrade from the brake bundle, one new `"v"` entry); medium confidence 59 → 58; expired, pending, litigated, draft, brands, inventors and jurisdictions unchanged (DE, EP and GB were all already represented). README's At-a-glance table, the intro-paragraph count, and all eight hardcoded `index.html` count strings updated to match. `verify_data.js` and the Playwright `smoke_test.js` both pass clean at the new 370-entry baseline.
 
 ## Recent updates (July 2026)
 
