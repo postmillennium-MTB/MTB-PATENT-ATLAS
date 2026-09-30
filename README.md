@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 368 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 367 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 368 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 368 |
+| **Total entries** | 367 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 162 |
+| **Active patents** | 161 |
 | **Expired patents** | 138 |
 | **Pending applications** | 45 |
 | **Litigated entries** | 30 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 368 patents and 
 | **Brands** | 207 |
 | **Named inventors** | 76 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 263 |
+| **Verified entries** | 262 |
 | **Medium confidence** | 61 |
 | **Draft / in progress** | 44 |
 
@@ -604,6 +604,9 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **New entry: Shimano electronic-derailleur user-interface patent, US 11,407,475 B2**, from the full bibliographic record and abstract Jon pasted directly (`conf:"v"`) — filed Dec. 6, 2019, granted Aug. 9, 2022, inventors Hiroyuki Kitano/Yu Goto/Takeshi Ueda. Not a mechanical claim: it covers the derailleur's own single-input control scheme for triggering calibration, assist tuning, display changes, actuator recovery, re-pairing, a wired/wireless channel switch, power state, and shift-mode toggles. Placed in the drivetrain cluster next to the existing Shimano direct-mount applications entry. Adjusted expiration (2040, PTA-adjusted per the patent's own record, later than the plain 2039 filing+20 estimate) used directly rather than recomputed, matching the precedent set by the Micro Spline entry. One of the three images already staged in `pictures/` for this patent (`US11407475B2.1.png`, Fig. 5) wired in as `img`.
 - **Lauf's foundational fork patent identified and given its own entry, separate from the existing rear-suspension continuation.** Jon supplied EP 2,760,683 B1 and its US counterpart US 9,375,989 B2 ("Vehicle suspension system," Benedikt Skúlason / Lauf Forks ehf., filed Sept. 19, 2012, granted 2016/2018, both records showing an anticipated expiration of Sept. 19, 2032) and flagged that the claims read on both the fork and a rear application — confirmed: the claims cover flexible members generically, not a fork specifically. `conf:"v"` — both records were pasted in full, not just cross-searched. This corrects a claim in the existing "Lauf pivotless leaf-spring fork & rear suspension" entry (US 2022/0402572, the later, narrower rear-only continuation), which had said the original mechanism was "patent-pending... no separate US number... located" — no longer accurate now that the foundational patent has its own entry; that entry's `y` was also corrected from a stray `2013` to `2019`, matching its own text's EP priority date. The old thin placeholder entry (`num:null, conf:"l"`) this replaces is gone.
 - Counts synced: total 367 → 368 (one new entry), active 160 → 162, expired 139 → 138, verified 262 → 263, medium confidence 60 → 61, draft 45 → 44; pending, litigated, brands, inventors and jurisdictions unchanged. README's At-a-glance table and all eight hardcoded `index.html` count strings (three meta descriptions, the machine-translation-banner CSS comment, EN/FR `shareText`, EN/FR `mtBannerText`) updated to match. `verify_data.js` and the Playwright `smoke_test.js` both pass clean at the new 368-entry baseline, and the sprocket-drawing image at the "Sotto Group drivetrain patents for Praxis Works" entry (`US20120214629A1.png`) was rotated 90° clockwise per Jon's request — it had been loading sideways.
+- **Reversed the Lauf split from the previous update, on Jon's explicit direction** — the just-added "Lauf flexible-suspension patent" entry (US 9,375,989 / EP 2,760,683) is gone again, folded back into "Lauf pivotless leaf-spring fork & rear suspension" (`num:"20220402572"`, the entry's stable ref/deep-link) as a single 3-number bundle (`nums: ["20220402572","9375989","EP2760683"]`) rather than two cards. Jon's reasoning — the 2012 patent's own claims and drawings already cover both the fork and a rear application, so splitting it away from the rear-specific continuation just re-created the fork/rear divide the merge was meant to close — checked out once the additional sheets below were reviewed. **This also surfaced four unused image sheets already sitting in `pictures/`** (`EP2760683B1.png`, `.1.png`, `.2.png`, `.3.png`, plus `US9375989B2.png`) that the previous update's split entry never checked for — a session gap now written up as a standing rule in CLAUDE.md (see below). Two of the four EP sheets turned out to be worth wiring in: Fig. 27 (`EP2760683B1.1.png`) shows a rear-wheel embodiment mounted on a single trailing arm, and another sheet (`EP2760683B1.2.png`) shows a two-blade front-fork embodiment in more mechanical detail — direct visual confirmation, straight from the 2012 patent's own drawings, that it was never fork-specific. The merged entry now carries four images (`imgs[]`): the fork embodiment from US 9,375,989, the front-fork detail and the rear-wheel embodiment from EP 2,760,683, and the existing dedicated figure from the rear-suspension continuation — each with its own explicit `link` so "View full patent" points at the correct one of the three numbers rather than defaulting to the bundle's headline number. `conf` stays `"m"`: the bundle still carries the unconfirmed freehub aside from the pre-existing entry. Total entries 368 → 367 (net of one entry removed); active 162 → 161, verified 263 → 262; expired, pending, litigated, medium confidence, draft, brands, inventors and jurisdictions unchanged. README's At-a-glance table and all eight hardcoded `index.html` count strings re-synced to 367; `verify_data.js` and `smoke_test.js` re-run clean.
+- **CLAUDE.md updated with a standing rule**, prompted directly by the missed-images gap above: before finalizing `img`/`imgs` on any entry, check `pictures/` for every numbered variant (`.1.png`, `.2.png`, ...) under *every* number in that entry's `num` and `nums[]`, not just the number a request happens to name — Jon sometimes stages multiple sheets ahead of a session without saying so, and a session that only looks up the one it was told about will miss the rest.
+- **Started the repeating rotary-striker bicycle bell entry (US 547,886) with the patent's own opening line**, quoted directly from the document at Jon's request: "Be it known that I, ALFRED NICHOLAS, manufacturer, a subject of the Queen of Great Britain, residing on Water Street, in the city of Birmingham, England, have invented new and useful Improvements in Bells." Kept in English in both the EN and FR versions of `s` (a direct quotation of the original document's own words, not paraphrased prose), with a one-line French frame around it in the FR field. No change to `conf`, dates, or any other field.
 
 ## Recent updates (July 2026)
 
