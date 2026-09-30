@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 367 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 368 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,19 +14,19 @@ An interactive timeline of mountain bike intellectual property: 367 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 367 |
+| **Total entries** | 368 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 160 |
-| **Expired patents** | 139 |
+| **Active patents** | 162 |
+| **Expired patents** | 138 |
 | **Pending applications** | 45 |
 | **Litigated entries** | 30 |
 | **Patent Fights (named rivalries)** | 8 |
 | **Brands** | 207 |
 | **Named inventors** | 76 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 262 |
-| **Medium confidence** | 60 |
-| **Draft / in progress** | 45 |
+| **Verified entries** | 263 |
+| **Medium confidence** | 61 |
+| **Draft / in progress** | 44 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -600,6 +600,10 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
   - **Rewrote the Forbidden Trifecta/OneRide entry's `w`** with a more specific technical explanation Jon supplied directly: the design combines an unpatentable-or-expired high pivot, an idler, and a rate-control linkage rather than relying on one broad suspension patent, and the V2 (Druid/Dreadnought) architecture's inverted four-bar is engineered around existing rear-triangle patents as much as for looks — protection here comes from trade secrets, branding, and narrower hardware patents (the chain guide, the DUH dropouts), not a single overarching filing.
   - **Could not source:** `pictures/WO2021038196A1.png`, which Jon described as "a XOM hub related patent." `WebSearch` returned no snippet quoting this specific WO publication's actual title, applicant, or filing data, and direct fetches to WIPO/Google Patents are blocked in this environment (see "A known environment constraint" in `CLAUDE.md`) — no entry was added rather than guessing at a title or company. Flagged for Jon to supply the bibliographic details directly, or for a future session with different network access to look up.
   - Counts synced: total 365 → 367, expired 137 → 139, verified 260 → 262, brands 206 → 207; active, pending, litigated, medium confidence and draft unchanged. README's At-a-glance table, the six hardcoded `index.html` count strings, and one drifting code comment (the machine-translation-banner CSS comment citing the entry count) all updated to match. `verify_data.js` and the Playwright `smoke_test.js` both pass clean at the new 367-entry baseline — run repeatedly through this pass, since two edits along the way (missing a closing brace when converting `img`/`imgAlt` to a multi-item `imgs[]`) were caught by `verify_data.js` immediately as parse failures and fixed before commit.
+- **Kind Shock dropper-post entry rebuilt from a single-line `num:null` placeholder into a 5-patent portfolio**, from patent links Jon supplied directly (all naming Jung-Yu Hsu as inventor): US 7,673,936, 8,308,124, 8,191,964, 9,073,592, and 9,487,256. Cross-search confirmed title and inventor for three of the five (8,308,124 "Control device for adjustable bicycle seat," granted Nov. 13, 2012; 8,191,964 "Adjustment device for bicycle seat"; 9,487,256 "Seat adjustment assembly," assignee Kind Shock Hi-Tech Co., Ltd. — the corporate name Jon flagged, confirmed directly on Google's own record); 7,673,936 and 9,073,592 could not be independently confirmed this way — direct fetches to Google Patents/USPTO are blocked in this environment (see CLAUDE.md's known constraint) and search snippets didn't surface either number's own page. `conf` set to `"m"` rather than `"v"` for that reason. 7,673,936's grant year (2010) is an estimate from its position in the sequential patent-number series, not read off its own record — flagged as such in the entry text. Also corrected a latent inconsistency the rewrite surfaced: the entry had carried `st:"expired"` next to `exp:2027`, a year still in the future — now `"active"`. Two images Jon supplied (`US7673936B2.png`, `US7673936B2.1.png`) wired in as a two-item `imgs[]`.
+- **New entry: Shimano electronic-derailleur user-interface patent, US 11,407,475 B2**, from the full bibliographic record and abstract Jon pasted directly (`conf:"v"`) — filed Dec. 6, 2019, granted Aug. 9, 2022, inventors Hiroyuki Kitano/Yu Goto/Takeshi Ueda. Not a mechanical claim: it covers the derailleur's own single-input control scheme for triggering calibration, assist tuning, display changes, actuator recovery, re-pairing, a wired/wireless channel switch, power state, and shift-mode toggles. Placed in the drivetrain cluster next to the existing Shimano direct-mount applications entry. Adjusted expiration (2040, PTA-adjusted per the patent's own record, later than the plain 2039 filing+20 estimate) used directly rather than recomputed, matching the precedent set by the Micro Spline entry. One of the three images already staged in `pictures/` for this patent (`US11407475B2.1.png`, Fig. 5) wired in as `img`.
+- **Lauf's foundational fork patent identified and given its own entry, separate from the existing rear-suspension continuation.** Jon supplied EP 2,760,683 B1 and its US counterpart US 9,375,989 B2 ("Vehicle suspension system," Benedikt Skúlason / Lauf Forks ehf., filed Sept. 19, 2012, granted 2016/2018, both records showing an anticipated expiration of Sept. 19, 2032) and flagged that the claims read on both the fork and a rear application — confirmed: the claims cover flexible members generically, not a fork specifically. `conf:"v"` — both records were pasted in full, not just cross-searched. This corrects a claim in the existing "Lauf pivotless leaf-spring fork & rear suspension" entry (US 2022/0402572, the later, narrower rear-only continuation), which had said the original mechanism was "patent-pending... no separate US number... located" — no longer accurate now that the foundational patent has its own entry; that entry's `y` was also corrected from a stray `2013` to `2019`, matching its own text's EP priority date. The old thin placeholder entry (`num:null, conf:"l"`) this replaces is gone.
+- Counts synced: total 367 → 368 (one new entry), active 160 → 162, expired 139 → 138, verified 262 → 263, medium confidence 60 → 61, draft 45 → 44; pending, litigated, brands, inventors and jurisdictions unchanged. README's At-a-glance table and all eight hardcoded `index.html` count strings (three meta descriptions, the machine-translation-banner CSS comment, EN/FR `shareText`, EN/FR `mtBannerText`) updated to match. `verify_data.js` and the Playwright `smoke_test.js` both pass clean at the new 368-entry baseline, and the sprocket-drawing image at the "Sotto Group drivetrain patents for Praxis Works" entry (`US20120214629A1.png`) was rotated 90° clockwise per Jon's request — it had been loading sideways.
 
 ## Recent updates (July 2026)
 
