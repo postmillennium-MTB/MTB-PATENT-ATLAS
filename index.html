@@ -222,8 +222,22 @@ header::before{
    Every block is a way into the list, not just a number to read. */
 .home-sec{margin:0 0 26px}
 .home-sec-h,.home-sec h3.home-sec-h{font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:17px;letter-spacing:.01em;margin:0 0 10px}
-/* Rabbit holes: a swipe row on phones, three across from 640px. */
-.rh-row{display:grid;grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:thin}
+/* Rabbit holes: a swipe row on phones, three across from 640px. The pool
+   (RABBIT_HOLES_SHOWN, in the data section) runs bigger than what's ever
+   visible at once, so .rh-row always scrolls -- .rh-head's prev/next
+   buttons (wired in renderStats(), reusing the same 30px round-button look
+   as the filter-row .scroll-btn arrows for visual consistency) step it one
+   card at a time, and a timer there auto-advances every HOME_RABBIT_CYCLE_MS.
+   The arrows live in the heading row rather than floating over the cards
+   themselves so they never sit on top of a patent drawing. */
+.rh-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 10px}
+.rh-head .home-sec-h{margin:0}
+.rh-nav{display:flex;gap:6px;flex:none}
+.rh-arrow{width:30px;height:30px;border-radius:50%;border:1px solid var(--card-border);background:var(--surface);color:var(--primary);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.14);opacity:.85;transition:opacity .15s,border-color .15s}
+.rh-arrow:hover,.rh-arrow:focus-visible{opacity:1;border-color:var(--primary);outline:none}
+.rh-arrow:disabled{opacity:.3;cursor:default}
+.rh-arrow svg{width:16px;height:16px;pointer-events:none}
+.rh-row{display:grid;grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding:2px 2px 6px;scrollbar-width:thin}
 .rh-card{scroll-snap-align:start;display:flex;flex-direction:column;text-align:left;background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);overflow:hidden;padding:0;cursor:pointer;color:inherit;font:inherit;transition:border-color .15s,transform .15s}
 .rh-card:hover,.rh-card:focus-visible{border-color:var(--primary);transform:translateY(-2px);outline:none}
 .rh-card img{display:block;width:100%;height:140px;object-fit:contain;background:#fff;border-bottom:1px solid var(--card-border);padding:8px;box-sizing:border-box}
@@ -232,7 +246,7 @@ header::before{
 .rh-title{font-weight:700;font-size:15px;line-height:1.25}
 .rh-blurb{font-size:13.5px;color:var(--ink-soft);line-height:1.4}
 .rh-go{margin-top:auto;font-size:13px;color:var(--primary);font-weight:700}
-@media(min-width:640px){.rh-row{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-auto-columns:auto;overflow:visible;margin:0;padding:0}}
+@media(min-width:640px){.rh-row{grid-auto-columns:calc((100% - 20px)/3);overflow-x:hidden}}
 /* Hero search */
 .home-hero{margin:0 0 20px}
 .home-kicker{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
@@ -1487,6 +1501,15 @@ const FIGHTS = [
    (its own title and the first sentence of that `w`) -- any conf tier,
    not just "v". An empty array is valid -- the row is then fully automatic.
 
+   Only 3 show on screen at once (78% width on phones, an exact third from
+   640px -- see .rh-row's CSS), but RABBIT_HOLES_SHOWN itself sets the full
+   pool size behind the scroll -- the prev/next arrows and the 5-second
+   auto-advance (both in renderStats()) page through the rest of it one
+   card at a time. Raising it gives a reader more to page through per
+   visit at the cost of a few more thumbnails decoded (all lazy-loaded, so
+   the cost is real but small); it doesn't change how many are ever on
+   screen together.
+
    Each hole:
    {
      title: {en:"...", fr:"..."},   // required
@@ -1503,7 +1526,7 @@ const FIGHTS = [
    }
    Same sourcing rules as D entries apply to title/blurb: nothing here that
    the linked entries don't already support. */
-const RABBIT_HOLES_SHOWN = 3;
+const RABBIT_HOLES_SHOWN = 9;
 const RABBIT_HOLES = [
 ];
 
@@ -3025,12 +3048,15 @@ function rabbitHolesHTML(){
 }
 let homePlaceholderTimer=null;
 let homeRotateTimer=null;
+let rabbitTimer=null;
 let homeRotateIdx=Math.floor(Math.random()*Math.max(1,HOME_SEARCH_ROTATING.length));
 const HOME_PLACEHOLDER_CYCLE_MS = 3000;
+const HOME_RABBIT_CYCLE_MS = 5000; // Rabbit Holes row: how often it auto-advances by one card
 function stopHomeTimers(){
   stopCatTimelineCycle();
   if(homePlaceholderTimer){ clearInterval(homePlaceholderTimer); homePlaceholderTimer=null; }
   if(homeRotateTimer){ clearInterval(homeRotateTimer); homeRotateTimer=null; }
+  if(rabbitTimer){ clearInterval(rabbitTimer); rabbitTimer=null; }
 }
 function renderStats(){
   const tl=$("#timeline");
@@ -3063,10 +3089,20 @@ function renderStats(){
   const soonList=soon.length?`<ul class="soon-list">${soon.map(d=>
       `<li data-jumpref="${cardRef(d)}"><span class="soon-yr">${d.exp}</span><span>${tx(d.t)} — ${d.a}</span></li>`).join("")}</ul>`
     :`<p class="stats-intro">${t("noneFreeSoon")}</p>`;
+  // Rabbit Holes prev/next arrows -- only worth showing once the pool
+  // actually holds more than what's on screen at once (3, see .rh-row CSS).
+  const rhPool=pickRabbitHoles();
+  const rhNav=rhPool.length>3 ? `<div class="rh-nav">
+      <button type="button" class="rh-arrow" id="rhPrev" aria-label="${t('scrollLeft')}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button type="button" class="rh-arrow" id="rhNext" aria-label="${t('scrollRight')}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>` : "";
   tl.innerHTML=`<div class="stats-wrap">
     <section class="home-sec">
-      <h3 class="home-sec-h">${t("homeHolesH")}</h3>
-      <div class="rh-row">${rabbitHolesHTML()}</div>
+      <div class="rh-head">
+        <h3 class="home-sec-h">${t("homeHolesH")}</h3>
+        ${rhNav}
+      </div>
+      <div class="rh-row" id="rhRow">${rabbitHolesHTML()}</div>
     </section>
     <section class="home-hero">
       <div class="home-kicker">${t("homeKicker",total,FIRST_YEAR,NOW)}</div>
@@ -3200,6 +3236,47 @@ function renderStats(){
     applyCatMode();
   };
   stopHomeTimers();
+  /* Rabbit Holes: prev/next step the row by exactly one card (native
+     scrollLeft clamping means a click near either end just settles at the
+     natural last/first position -- no wraparound, no manual index to keep
+     in sync with a reader's own touch-swipe on phones), and every
+     HOME_RABBIT_CYCLE_MS it auto-advances the same way, pausing on
+     hover/focus and skipped entirely under prefers-reduced-motion. A
+     manual click also re-arms the timer so it doesn't immediately
+     auto-advance again a moment after a reader has just navigated. */
+  const rhRow=$("#rhRow"), rhPrevBtn=$("#rhPrev"), rhNextBtn=$("#rhNext");
+  if(rhRow && rhPrevBtn && rhNextBtn){
+    const rhReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const rhStep=()=>{
+      const c0=rhRow.children[0], c1=rhRow.children[1];
+      if(!c0) return 0;
+      return c1 ? c1.getBoundingClientRect().left - c0.getBoundingClientRect().left : c0.getBoundingClientRect().width;
+    };
+    const rhAtStart=()=>rhRow.scrollLeft<=2;
+    const rhAtEnd=()=>rhRow.scrollLeft>=rhRow.scrollWidth-rhRow.clientWidth-2;
+    const rhUpdateBtns=()=>{ rhPrevBtn.disabled=rhAtStart(); rhNextBtn.disabled=rhAtEnd(); };
+    const rhAdvance=dir=>rhRow.scrollBy({left:dir*rhStep(), behavior:rhReducedMotion?"auto":"smooth"});
+    const rhArmTimer=()=>{
+      if(rabbitTimer){ clearInterval(rabbitTimer); rabbitTimer=null; }
+      if(rhReducedMotion) return;
+      rabbitTimer=setInterval(()=>{
+        if(!rhRow.isConnected){ clearInterval(rabbitTimer); rabbitTimer=null; return; }
+        if(rhPaused || rhAtEnd()) return;
+        rhAdvance(1);
+      },HOME_RABBIT_CYCLE_MS);
+    };
+    let rhPaused=false;
+    rhRow.addEventListener("mouseenter",()=>rhPaused=true);
+    rhRow.addEventListener("mouseleave",()=>rhPaused=false);
+    rhRow.addEventListener("focusin",()=>rhPaused=true);
+    rhRow.addEventListener("focusout",()=>rhPaused=false);
+    rhRow.addEventListener("scroll",rhUpdateBtns,{passive:true});
+    rhPrevBtn.onclick=()=>{ rhAdvance(-1); rhArmTimer(); };
+    rhNextBtn.onclick=()=>{ rhAdvance(1); rhArmTimer(); };
+    rhUpdateBtns();
+    setTimeout(rhUpdateBtns,SCROLLER_SETTLE_DELAY_MS);
+    rhArmTimer();
+  }
   /* The big search box's placeholder rotates through the suggestion labels
      until the reader focuses it or starts typing. */
   if(homeInp && HOME_SEARCH_SUGGESTIONS.length>1){
