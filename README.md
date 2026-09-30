@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 362 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 363 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 362 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 362 |
+| **Total entries** | 363 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 159 |
+| **Active patents** | 160 |
 | **Expired patents** | 136 |
 | **Pending applications** | 44 |
 | **Litigated entries** | 30 |
 | **Patent Fights (named rivalries)** | 8 |
-| **Brands** | 204 |
+| **Brands** | 205 |
 | **Named inventors** | 75 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 257 |
+| **Verified entries** | 258 |
 | **Medium confidence** | 60 |
 | **Draft / in progress** | 45 |
 
@@ -585,6 +585,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Added drawing images Jon uploaded directly via GitHub's web UI to two existing entries, discovered mid-session as a merge conflict-free `main` update: the Gehl sprocket entry (`pictures/US4174642A.png`, the labeled Fig. 1 hub view) and a second figure for the BMX Gyro detangler portfolio entry (`pictures/US6205635B1.png`, the stem-mounted cable mechanism from US 6,205,635, one of the four patents already cited in that entry's `nums[]`).** The Gyro entry's single `img` was converted to a two-entry `imgs[]` array to hold both drawings rather than replacing the existing US 6,164,153 figure. No count changes.
 - **Clarified the convention going forward: uploading `X.png` and `X.1.png` together means use both, not "here's a replacement, pick one."** Jon said so directly after the previous entry shipped with only the first Gehl image wired in. Converted the Gehl entry's single `img` to a two-item `imgs[]`: Fig. 1 (the labeled hub view already in use) plus `pictures/US4174642A.1.png` (Figs. 3–10, side/end views and individual wide/narrow tooth cross-sections). Also repaired a break this same upload round introduced: `pictures/US6164153A.png`, the file the BMX Gyro detangler entry's first image pointed at, was deleted in a later upload and replaced with `pictures/US6968927B2.png` (Fig. 1 of the entry's own primary patent number, a full-bike view showing the Gyro assembly and both brake cables) — the entry's `imgs[]` now points at the new file instead of the dangling reference, which a Playwright smoke test wouldn't have caught since it only checks that cards render, not that every image path resolves. Left two things unresolved rather than guessing at them: a `pictures/US4174642A.1.webp` (a vintage Gehl Bros. silo-filler advertisement, not a patent drawing, sharing the ".1" index with the existing PNG) and a stray duplicate of that same file sitting at the repository root instead of inside `pictures/` — flagged to Jon rather than wired in or deleted.
 - **Verified the Saris MHS Modular Hitch System entry against a real patent, at Jon's direct request, and wired in two more Jon-uploaded images the same session (362 total throughout).** Added US 2025/0018873 A1, "Modular hitch-mounted equipment carrier system" — filed November 2022, published January 2025, four named inventors, assigned to Saris Equipment LLC — replacing a `conf:"l"` entry that had only ever cited Saris's own "patents issued and pending" marketing language with no number. `st` corrected from `"active"` to `"pending"` (the *patent* hasn't granted yet, even though the product ships) and `exp` cleared to `null` accordingly; `conf` upgraded l → v. Added both of Jon's uploaded figures (`US20250018873A1.png`, the hitch-receiver mounting detail; `.1.png`, the beam/handle/bumper assembly) as a two-item `imgs[]`. Separately, two more images Jon uploaded in the same round for the *existing*, unrelated Kuat hitch-carrier entry (`US10668866B2.1.png`, `.2.png`, plus a higher-resolution replacement of the existing `US10668866B2.png`) turned out to need more than just adding: the replaced base image is a genuinely different figure than the one the old `imgAlt` described (a vehicle-context tilted view, not the labeled side-elevation the old alt text claimed), so its alt text was rewritten to match what the image actually shows rather than left stale. All three Kuat figures are now in a three-item `imgs[]`. Counts synced: active 160 → 159, pending 43 → 44, verified 256 → 257, draft 46 → 45; total unchanged at 362. One mechanical slip caught before commit: the first pass at converting Kuat's single `img`/`imgAlt` fields to an `imgs[]` array dropped the entry's own closing brace, which `verify_data.js` caught immediately as a parse failure — fixed and reverified.
+- **Split the Vittoria graphene/Air-Liner bundled entry in two after Jon verified one of its three claims (362 → 363).** The old entry bundled three unrelated inventions — graphene compound chemistry, Air-Liner insert geometry, and a reTyre manufacturing process — under one `conf:"l"` entry with no number. Jon supplied Google Patents' record for US 10,920,045 B2, "Elastomeric composition comprising graphene and tire components comprising said composition," confirming the compound-chemistry claim: filed July 2016 (priority to a July 2015 Italian filing, ITUB20153129A1), granted February 2021, assigned to **Directa Plus SpA** — not Vittoria itself, which is only the commercial licensee putting the compound into its Corsa PRO tires. Rather than let one real number lend borrowed credibility to the other two still-unconfirmed claims, split them into a separate entry that keeps the original `conf:"l"`, `num:null` framing. The graphene entry is now `conf:"v"` with `exp` 2036 (filed 2016 + 20). Registered "Directa Plus" in `BRANDS` and tagged it in the verified entry's `who[]` alongside "Vittoria." Counts synced: active 159 → 160, verified 257 → 258, brands 204 → 205; total 362 → 363. Followed the same split-on-verification pattern as the earlier OneUp/e*thirteen cassette-extender split.
 
 ## Recent updates (July 2026)
 
