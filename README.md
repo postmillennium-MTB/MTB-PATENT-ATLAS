@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 370 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 372 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 370 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 370 |
+| **Total entries** | 372 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 163 |
+| **Active patents** | 165 |
 | **Expired patents** | 137 |
 | **Pending applications** | 46 |
 | **Litigated entries** | 30 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 370 patents and 
 | **Brands** | 209 |
 | **Named inventors** | 76 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 270 |
+| **Verified entries** | 272 |
 | **Medium confidence** | 58 |
 | **Draft / in progress** | 42 |
 
@@ -635,6 +635,9 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - Counts synced: total unchanged at 370 (both changes above were updates to existing entries, not new rows); verified 269 → 270; medium confidence unchanged at 58; draft 43 → 42; active, expired, pending, litigated, brands, inventors and jurisdictions unchanged. README's At-a-glance table updated; all eight hardcoded `index.html` count strings cite only the total, which didn't move, so none needed editing. `verify_data.js` and the Playwright `smoke_test.js` both pass clean.
 
 - **Wired in three drawing sheets Jon uploaded for the Fazua Ride entry above** (`US9777774B2.png`, `US9777774B2.1.png`, `US20230415847A1.png`), found via the standing pictures/-check rule. All three viewed directly before writing `imgAlt`: the first two are Fig. 2 (the motor mounted along the down tube) and a detail of the battery pack sliding into its down-tube compartment, both from US 9,777,774; the third is an exploded view of the strain-wave gear stage from US 2023/0415847. Wired in as a three-item `imgs[]`, with the third sheet carrying an explicit `link` to its own Google Patents URL since the entry's headline `num` is the other patent. No data, count, or text change beyond the image fields.
+
+- **Two new entries, from GitHub issue #96 — patents Jon queued in an earlier session for this one, both from full bibliographic records and abstracts he pasted directly, both independently cross-confirmed via search (`conf:"v"`).** US 10,780,837, "Vehicle rack with loading apparatus" (Chris Sautter, Scott A. McFadden, Ashley Hoch & Warren E. Stoneburner, filed Dec. 14, 2017, granted Sept. 22, 2020, anticipated expiration 2037) covers a pair of crossbar-mounted rails that extend past the roofline and pivot down along the vehicle's side, each tipped with a loading arm. Flagged directly in `w` as an edge-of-scope entry — the patent's own drawings show kayaks, not bikes — on the same logic as this atlas's existing Mavic and myStromer entries, since the rail/crossbar platform is the same hardware base Yakima's bike carriers mount to. US 11,351,929, "Hitch-mounted bicycle rack system" (Scott A. McFadden, Gian-Marco D'Angelo, Jason Attfield Sagen, Warren E. Stoneburner & Brandon Michael Willems, filed Nov. 30, 2020, granted June 7, 2022, anticipated expiration 2038) covers a hitch-mounted mast with a fork-crown gripping station — squarely in scope. Both placed directly after the existing 2006 "Yakima fork-mount bicycle carrier" entry, continuing that company cluster. Five drawing sheets Jon had already staged in `pictures/` ahead of this session (two for the roof rack, three for the hitch rack) wired in as `imgs[]`, each viewed directly before writing `imgAlt`.
+- Counts synced: total 370 → 372 (two new entries); active 163 → 165; verified 270 → 272; expired, pending, litigated, medium confidence, draft, brands, inventors and jurisdictions unchanged (Yakima already registered). README's At-a-glance table, the intro-paragraph count, and all eight hardcoded `index.html` count strings updated to match. `verify_data.js` and the Playwright `smoke_test.js` both pass clean at the new 372-entry baseline.
 
 ## Recent updates (July 2026)
 
