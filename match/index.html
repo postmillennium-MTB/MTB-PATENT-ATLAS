@@ -3,20 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Patent Match — prototype</title>
-<meta name="description" content="Prototype: match a real mountain-bike patent drawing to its description. Not yet part of the live MTB Patent Atlas.">
-<meta name="robots" content="noindex,nofollow">
+<title>Patent Match — MTB Patent Atlas</title>
+<meta name="description" content="Match real mountain-bike patent drawings to their descriptions, drawn from the MTB Patent Atlas's own verified entries.">
 <style>
 /* ===========================================================
-   PATENT MATCH -- prototype for postmillenniumrenaissance.com/atlas/match
+   PATENT MATCH -- live at postmillenniumrenaissance.com/atlas/match
    ===========================================================
    Single file, no build step, no framework -- same rule as the main
-   Atlas (index.html one level up). This is a standalone tinkering
-   prototype: it is NOT linked from index.html and NOT wired into the
-   PMR site yet (see the banner below and the header comment on
-   MATCH_DATA). CSS variable names match the Atlas's own default
-   ("WMBC") theme values so this can be reskinned or folded into the
-   main tool later with minimal rework.
+   Atlas (index.html one level up). Wired into the PMR site 2026-10-01
+   via a wrapper page in the pmr-website repo (same pattern as the main
+   Atlas's own /atlas/ wrapper) -- still NOT linked from this repo's own
+   index.html nav (a separate call, not yet made). CSS variable names
+   match the Atlas's own default ("WMBC") theme values so this can be
+   reskinned or folded into the main tool later with minimal rework.
+   Known shipped-with-a-gap: MATCH_DATA's `teaser` field is still an
+   algorithmic truncation, not hand-written -- see the header comment on
+   MATCH_DATA below. Jon chose to launch with that gap and improve
+   teaser copy in a later pass rather than hold the page back for it.
    =========================================================== */
 :root{
   --bg:#EEF3EC; --surface:#FFFFFF; --ink:#16261C; --ink-soft:#4b5f53;
@@ -31,7 +34,7 @@ body{margin:0;font-family:var(--font-body);background:var(--bg);color:var(--ink)
 
 /* ---- Header ---- */
 .head-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.proto-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--bad);background:var(--bad-bg);border:1px solid var(--bad);border-radius:999px;padding:3px 9px;margin-bottom:10px}
+.proto-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);background:var(--surface);border:1px solid var(--card-border);border-radius:999px;padding:3px 9px;margin-bottom:10px}
 .lang-btn{flex:none;border:1px solid var(--card-border);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;cursor:pointer;margin-top:2px}
 .lang-btn:hover{border-color:var(--primary)}
 .lang-btn:focus-visible{outline:2px solid var(--primary);outline-offset:1px}
@@ -174,9 +177,9 @@ footer{margin-top:40px;font-size:12px;color:var(--ink-soft);border-top:1px solid
    real cost: a algorithmic cut often leads with filing/citation
    boilerplate ("US 5,630,338, filed July 11, 1995...") rather than the
    mechanism, which is a weaker teaser than a hand-written one -- worth
-   revisiting entry-by-entry before this becomes the real /atlas/match
-   page, the same way the Atlas's own README documents en/fr coverage
-   honestly rather than papering over it.
+   revisiting entry-by-entry now that this is live as /atlas/match, the
+   same way the Atlas's own README documents en/fr coverage honestly
+   rather than papering over it.
 
    Regenerate this block (after a data session adds/edits entries with
    images) with the Node snippet kept in the sibling comment at the
@@ -206,7 +209,7 @@ const CAT_ORDER = ["susp","fork","drive","wheel","comp","emtb","frame","transpor
 /* ---- Chrome strings (not entry data -- see tx()/t() below) ---- */
 const T = {
   en:{
-    protoBadge:"Prototype — not linked from the live Atlas",
+    protoBadge:"Beta — descriptions are auto-generated for now",
     langBtn:"FR",
     h1:"Patent Match",
     lede1:"Match each real patent drawing to the description of what it covers. Every image, title and summary here comes straight from the MTB Patent Atlas's own verified entries — nothing on this page is invented.",
@@ -220,10 +223,10 @@ const T = {
     playAgain:"Play again",
     matchedAnnounce:title=>`Matched: ${title}`,
     wrongAnnounce:"Not a match, try again.",
-    footer:"Prototype built from the MTB Patent Atlas dataset for Jon to tinker with before it's wired up as /atlas/match. No shared code with the main Atlas file yet."
+    footer:"Built from the MTB Patent Atlas's own verified entries. Descriptions are trimmed automatically from each entry's summary; a hand-written pass is planned."
   },
   fr:{
-    protoBadge:"Prototype — pas encore lié à l'Atlas en ligne",
+    protoBadge:"Bêta — descriptions générées automatiquement pour l'instant",
     langBtn:"EN",
     h1:"Patent Match",
     lede1:"Associez chaque dessin de brevet réel à la description de ce qu'il couvre. Chaque image, titre et résumé provient directement des entrées vérifiées du MTB Patent Atlas — rien sur cette page n'est inventé.",
@@ -237,7 +240,7 @@ const T = {
     playAgain:"Rejouer",
     matchedAnnounce:title=>`Association trouvée : ${title}`,
     wrongAnnounce:"Ce n'est pas la bonne association, réessayez.",
-    footer:"Prototype construit à partir des données du MTB Patent Atlas pour que Jon puisse l'ajuster avant son intégration en tant que /atlas/match. Pas encore de code partagé avec le fichier principal de l'Atlas."
+    footer:"Construit à partir des entrées vérifiées du MTB Patent Atlas. Les descriptions sont raccourcies automatiquement à partir du résumé de chaque entrée ; une révision manuelle est prévue."
   }
 };
 
