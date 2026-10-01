@@ -641,6 +641,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 
 - **Rotated `pictures/US7726529B2.png` 90° clockwise, per Jon's request** (Yakima fork-mount bicycle carrier entry) — the source drawing sheet was sideways in the file; viewed directly before and after to confirm the fix. No data, schema, or text changed; `verify_data.js` and `smoke_test.js` both pass clean at the unchanged entry count.
 
+- **Rotated `pictures/US5833074A.png` 90° clockwise, per Jon's request** (QuikRack — Fast-loading protective bicycle rack entry) — the source drawing sheet was sideways in the file; viewed directly before and after to confirm the fix. No data, schema, or text changed; `verify_data.js` and `smoke_test.js` both pass clean at the unchanged entry count.
+
 ## Recent updates (July 2026)
 
 - **Fixed the 5-year bar chart bug.** The bar chart's "5yr" bracket wasn't aggregating into five-year buckets — it was silently falling back to one bar per year, making it the *most* granular view rather than the least. It now genuinely buckets by half-decade (1995–1999, 2000–2004, etc.), aligned to the calendar rather than to the dataset's earliest entry, so the buckets stay stable as more patents are added. The chart also gained a dashed gap marker for real multi-decade silences in the data (there's an 84-year gap between the 1890 entry and the next), and its final bucket's label no longer advertises years that haven't happened yet.
