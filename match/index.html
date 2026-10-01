@@ -43,16 +43,31 @@ h1{font-size:24px;margin:0 0 6px}
 .lede.small{font-size:13px}
 
 /* ---- Controls panel ---- */
+/* Mobile-first: .controls is a <details> element, CLOSED by default (no
+   [open] attribute in the markup) so the 2 pair chips + 9 category chips
+   don't push the actual game board below the fold on a phone. A small
+   bootstrap script (near the end of this file's own <script>) re-opens it
+   by default on >=760px viewports only, matching the board's own
+   side-by-side breakpoint -- desktop keeps the always-visible panel it had
+   before. */
 .controls{background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:14px 16px;margin:16px 0;display:flex;flex-direction:column;gap:12px}
+.controls summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:40px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--ink-soft)}
+.controls summary::-webkit-details-marker{display:none}
+.controls summary::after{content:"\25BE";font-size:15px;transition:transform .15s}
+.controls[open] summary::after{transform:rotate(180deg)}
 .ctrl-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .ctrl-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--ink-soft);min-width:98px}
-.chip-set{display:flex;flex-wrap:wrap;gap:6px}
-.chip{border:1px solid var(--card-border);background:var(--bg);color:var(--ink);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s,border-color .15s}
+/* Mobile-first: scroll sideways instead of wrapping to several lines --
+   matters most for the 9-chip Categories row. Desktop (>=760px, below)
+   restores wrapping since there's room for it and side-scrolling a mouse
+   is worse UX than just letting it wrap. */
+.chip-set{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px;padding-bottom:2px;-webkit-overflow-scrolling:touch}
+.chip{flex:none;border:1px solid var(--card-border);background:var(--bg);color:var(--ink);border-radius:999px;padding:5px 14px;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s,border-color .15s;display:inline-flex;align-items:center;min-height:40px}
 .chip[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}
 .chip:hover{border-color:var(--primary)}
 .chip:focus-visible{outline:2px solid var(--primary);outline-offset:1px}
 .toggle-row{display:flex;align-items:center;gap:8px;font-size:13px}
-.new-round-btn{margin-left:auto;background:var(--primary);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer}
+.new-round-btn{margin-left:auto;background:var(--primary);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer;min-height:40px}
 .new-round-btn:hover{opacity:.92}
 .clamp-note{font-size:12.5px;color:var(--bad);margin:0}
 
@@ -92,6 +107,7 @@ h1{font-size:24px;margin:0 0 6px}
 @media(min-width:760px){
   .board{flex-direction:row}
   .panel{flex:1;min-width:0}
+  .chip-set{flex-wrap:wrap;overflow-x:visible}
 }
 
 /* ---- Completion banner ---- */
@@ -116,7 +132,8 @@ footer{margin-top:40px;font-size:12px;color:var(--ink-soft);border-top:1px solid
   <p class="lede" id="txLede1"></p>
   <p class="lede small" id="txLede2"></p>
 
-  <div class="controls">
+  <details class="controls" id="controlsPanel">
+    <summary><span id="controlsSummaryText"></span></summary>
     <div class="ctrl-row">
       <span class="ctrl-label" id="pairsLabel"></span>
       <div class="chip-set" id="pairsChips" role="group" aria-labelledby="pairsLabel"></div>
@@ -130,7 +147,7 @@ footer{margin-top:40px;font-size:12px;color:var(--ink-soft);border-top:1px solid
       <button type="button" class="new-round-btn" id="newRoundBtn"></button>
     </div>
     <p class="clamp-note" id="clampNote" hidden></p>
-  </div>
+  </details>
 
   <div class="status-bar">
     <span id="txMatchedLabel">Matched <b id="statMatched">0</b>/<b id="statTotal">0</b></span>
@@ -214,7 +231,7 @@ const T = {
     h1:"Patent Match",
     lede1:"Match each real patent drawing to the description of what it covers. Every image, title and summary here comes straight from the MTB Patent Atlas's own verified entries — nothing on this page is invented.",
     lede2:n=>`This pool is every one of the Atlas's ${n} entries that has a drawing, across all nine categories. Descriptions are trimmed automatically from each entry's own summary, so some lead with filing details rather than the mechanism — see the note in this page's own source for why.`,
-    pairsLabel:"Pairs", catLabel:"Categories", timerLabel:"Show timer", newRound:"New round",
+    controlsSummary:"Filters & options", pairsLabel:"Pairs", catLabel:"Categories", timerLabel:"Show timer", newRound:"New round",
     matchedLabel:(m,t)=>`Matched ${m}/${t}`, mistakesLabel:m=>`Mistakes ${m}`, timeLabel:t=>`Time ${t}`,
     drawingsH:"Drawings", descriptionsH:"Descriptions",
     clampNote:(actual,wanted)=>`Only ${actual} ${actual===1?"entry":"entries"} match the current category filter, so this round plays with ${actual} pair${actual===1?"":"s"} instead of ${wanted}.`,
@@ -231,7 +248,7 @@ const T = {
     h1:"Patent Match",
     lede1:"Associez chaque dessin de brevet réel à la description de ce qu'il couvre. Chaque image, titre et résumé provient directement des entrées vérifiées du MTB Patent Atlas — rien sur cette page n'est inventé.",
     lede2:n=>`Cette réserve regroupe les ${n} entrées de l'Atlas qui possèdent un dessin, dans les neuf catégories. Les descriptions sont raccourcies automatiquement à partir du résumé propre à chaque entrée, donc certaines commencent par des détails de dépôt plutôt que par le mécanisme — voir la note dans le code source de cette page.`,
-    pairsLabel:"Paires", catLabel:"Catégories", timerLabel:"Afficher le chronomètre", newRound:"Nouvelle manche",
+    controlsSummary:"Filtres et options", pairsLabel:"Paires", catLabel:"Catégories", timerLabel:"Afficher le chronomètre", newRound:"Nouvelle manche",
     matchedLabel:(m,t)=>`Associées ${m}/${t}`, mistakesLabel:m=>`Erreurs ${m}`, timeLabel:t=>`Temps ${t}`,
     drawingsH:"Dessins", descriptionsH:"Descriptions",
     clampNote:(actual,wanted)=>`Seulement ${actual} entrée${actual===1?"":"s"} correspond${actual===1?"":"ent"} au filtre de catégorie actuel, donc cette manche se joue avec ${actual} paire${actual===1?"":"s"} au lieu de ${wanted}.`,
@@ -283,6 +300,7 @@ function applyStaticText(){
   $("#txH1").textContent = t("h1");
   $("#txLede1").textContent = t("lede1");
   $("#txLede2").textContent = t("lede2", MATCH_DATA.length);
+  $("#controlsSummaryText").textContent = t("controlsSummary");
   $("#pairsLabel").textContent = t("pairsLabel");
   $("#catLabel").textContent = t("catLabel");
   $("#txTimerLabel").textContent = t("timerLabel");
@@ -475,6 +493,11 @@ $("#langBtn").onclick=()=>{
 applyStaticText();
 buildControls();
 startRound();
+// Mobile-first markup ships the Filters & options panel closed (no [open]
+// attribute on the <details> -- see the CSS comment above .controls). On a
+// wide enough viewport to show the board side-by-side, open it by default
+// instead, matching the panel's one-time pre-this-change behavior there.
+if(window.matchMedia("(min-width: 760px)").matches) $("#controlsPanel").open = true;
 
 /* ======================================================================
    Regenerating MATCH_DATA from index.html's D array
