@@ -540,6 +540,61 @@ Given that:
   patent/marking page is sometimes reachable when the aggregator isn't).
 - Never silently fall back to guessing when a fetch is blocked — say so.
 
+### Fetching patent figures from a Claude Code session
+
+Which path depends on where the session runs. `tools/README.md` documents
+the browser path (Actions → Fetch patent figure → Run workflow), which is
+for working without Claude. A session has two other options:
+
+- **Local session (e.g. Jon's Mac):** patent hosts are normally reachable,
+  so run the script directly, as `tools/README.md` describes:
+  `python3 tools/fetch_patent_figure.py US4889521`. It needs Pillow and
+  poppler installed locally. If it prints 403s, treat the session as the
+  cloud case below.
+- **Cloud session (claude.ai/code container):** patent hosts return 403
+  (see the constraint above), so run the same script through the workflow.
+  1. Trigger it with the GitHub tool: `actions_run_trigger`, method
+     `run_workflow`, `workflow_id: "patent-figure.yml"`, `ref: "main"`,
+     `inputs: {"numbers": "US4889521", "candidates": "4"}` (input values
+     are strings). Use `actions_list` → `list_workflow_runs` to watch it;
+     a run takes about 30–40 seconds.
+  2. **Submit one patent number per run.** As of 2026-10-06 a single
+     failed number exits the fetch step, which skips the upload and branch
+     steps, so the successful patents' candidates are discarded too.
+  3. Find the output on the branch `patent-figures/<run id>`. A pull
+     request may not open (the repo setting that lets Actions open PRs may
+     be off), so don't wait for one. Fetch the branch and extract only its
+     `figures-out/` directory into the scratchpad:
+     `git fetch origin patent-figures/<id>` then
+     `git archive FETCH_HEAD figures-out | tar -x -C <scratch>`.
+     Don't check the branch out over the working tree; it is based on an
+     older `main` and would revert your edits.
+  4. Look at the candidates and read `<patent>.report.txt` as
+     `tools/README.md` says, then crop and name the chosen sheet by hand.
+
+Known behavior to plan for:
+
+- **Candidates are the first N drawing sheets, not the best N.** Some
+  applications open with prior-art figures (labeled "PRIOR ART"); the
+  patent's own drawings start later. Re-run with a larger `candidates`
+  value (12 covered US 2011/0227312) rather than guessing.
+- **Recent grants (2025 on) may have no retrievable PDF.** The tool tried
+  USPTO (403) and a Google Patents page with no PDF link. Pass `pdf_url`
+  (copied from the Google Patents page by Jon) with a single number.
+- **Image-only scans have no text layer.** The report then can't show the
+  front page and the sheet selection is unreliable (a WO 1993 scan's first
+  candidate was a PCT country-code page). Check the front page by eye
+  before setting a tier.
+- **Sheets can come off sideways.** View the result and rotate before
+  saving; check the figure label reads upright.
+- **Crops are loose.** Trim to the drawing's bounding box and confirm the
+  "U.S. Patent / Sheet n of m" header is gone.
+- **Naming:** `US<number><kind>.png`, e.g. `US4889521A.png`; for a
+  published application, `US20110227312A1.png`.
+
+After wiring `img`/`imgs`, regenerate `MATCH_DATA` (snippet at the bottom
+of `match/index.html`'s `<script>`) and add the README changelog bullet.
+
 ## Workflow: sourcing a batch of new entries (Jon hasn't named specific patents)
 
 This is the process for a request like "add 10 more entries" — as opposed to
