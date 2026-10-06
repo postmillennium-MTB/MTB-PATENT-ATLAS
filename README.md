@@ -19,8 +19,8 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 | **Active patents** | 166 |
 | **Expired patents** | 137 |
 | **Pending applications** | 46 |
-| **Litigated entries** | 30 |
-| **Patent Fights (named rivalries)** | 8 |
+| **Litigated entries** | 31 |
+| **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 209 |
 | **Named inventors** | 76 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
@@ -664,6 +664,20 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Two queued research items closed without a data change.** The **Mavic UST** reconciliation (submitted as US 6,102,485, Jean-Pierre Mercat) is a dead end: that number is not a Mavic patent — per Jon's own lookup it belongs to Casio Computer Co. Ltd., consistent with the typo the queue note already suspected. The atlas's existing UST entry (US 6,257,676 plus its two continuations) is correct as it stands. Separately, the **Mavic X-Tend e-bike motor platform already exists** in the atlas (US 12,434,786 with US 12,325,488 in `nums[]`, `conf:"v"`, catalogued as a 15-patent family crediting Jean-Pierre Mercat), so no entry was created for it; what it still lacks is a figure and a citation to the BicycleRetailer piece documenting the motor's patent trail. Three further Mavic candidates — R2R continuous-carbon spoke lacing, the iTgMax laser brake-surface treatment, and the 1999 Mektronic wireless group — are recorded in `RESEARCH_QUEUE.md` as unscreened leads. The Mektronic one is the most valuable of the three, since a real number for it or for Zap would move the atlas's existing `num:null`/`conf:"m"` Mavic Zap entry off the medium tier.
 
 - **`match/index.html`'s `MATCH_DATA` regenerated, 252 → 253 entries**, since the new goggle entry carries drawings and that block is a static snapshot of every `D` entry with one rather than a live read. Rebuilt with the Node snippet kept in that file's own `<script>` comment rather than hand-edited, and its header comment's stated count and as-of date moved in step.
+
+- **Added a ninth Patent Fight: Specialized v. Scott USA (2004–2005), the FSR four-bar import ban.** This started as issue #103's "scan the Scott Sports assignee listing" lead, which the blocked databases made look like a batch-sourcing job. It wasn't. US litigation refers to patents by their last three digits, and the "'679" and "'837" patents named in contemporary coverage are **US 5,509,679 and US 5,678,837** — both already in the atlas as the Horst Link entries. The work was connecting them, not sourcing them.
+
+  That identification was deliberately not acted on until the full numbers were confirmed, since last-three-digits is not unique and Specialized's FSR family has at least a third member (US 5,899,480) that could have been the one asserted. Jon supplied the docket — **Case 3:04-cv-01496, Northern District of California, filed April 16, 2004** — and both patents in full, each titled "Rear suspension for bicycles," inventor Horst Leitner. The case number checks out against govinfo's own docket record (`USCOURTS-cand-3_04-cv-01496`).
+
+  The fight: Specialized asserted both patents against Scott's Genius full-suspension frame, seeking a preliminary injunction against US Genius sales plus damages and royalties. Scott answered with a nine-part defense and two counterclaims, one alleging fraud, which the court dismissed. After roughly eighteen months it settled — Scott admitted the existing Genius design infringed both patents, agreed not to import Genius bicycles into the US, and agreed not to challenge the FSR patents' validity again. Outcome cross-confirmed across SGB, BikeBiz and a Scott press release carried by Velo.
+
+  `cards:["5509679","5678837"]` auto-wires the tap-to-jump chips to the two existing entries via `fightCardMatches()`. **US 5,678,837 also gained the `litigated` badge** as a direct consequence — it was carrying only `acquired` despite being a patent-in-suit here, which is exactly the kind of gap a fight entry surfaces in the entries it points at.
+
+  Worth noting on the bar applied: `FIGHTS` has no `conf` field. A `D` entry can ship honestly at `conf:"m"` with `num:null`, but everything in a fight's `stakes`/`outcome` reads as settled fact, and the existing entries set a docket-level standard (Knolly v. Intense carries its case number and dismissal date; Fox v. SRAM carries the venue transfer and PTAB claim invalidations). So this one was held back until the case number, both full patent numbers, and the outcome were each confirmed — not written from the single press snippet that first suggested it.
+
+- **`RESEARCH_QUEUE.md` added to `CLAUDE.md`'s file map.** It had been invisible: the contributor guide never mentioned the file, so a session following the file map would not know the research queue exists and would re-chase leads already recorded there as dead ends. The new row also states the intended workflow — GitHub issues are the capture inbox, the queue file is the durable system of record, and a session's job is to triage an issue into the file and close it rather than leaving the same leads tracked in two places that drift apart.
+
+- **Counts synced: litigated 30 → 31, Patent Fights 8 → 9.** Total, active, and the confidence tiers are unchanged (no new `D` entry), so the hardcoded `index.html` count strings were not touched.
 
 ## Recent updates (July 2026)
 
