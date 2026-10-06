@@ -21,15 +21,13 @@ submitted number is a related family member, a plain error in the source
 list, or evidence the existing entry needs a correction — not an assumption
 either way.
 
-1. **Shimano SPD** — submitted as Satoshi Naito, US 5,125,288 (1992).
-   Atlas already has SPD at `num:"5115692"`, inventor **Masashi Nagano**
-   (same inventor credited on the submitted Biopace patent, below — worth
-   checking that's not a mix-up in the source list; the 2026-10-06 pass on
-   item 3 found Nagano is genuinely the Hyperglide inventor, which makes a
-   shuffle of inventor names within the submitted list the more likely
-   explanation, not a coincidence). Check whether
-   5,125,288 is a real related Shimano pedal patent (a continuation, a
-   different claim set) or whether "Naito" is misattributed.
+1. ~~**Shimano SPD**~~ — **Resolved 2026-10-06, dead end.** Per Jon's own
+   lookup, US 5,125,288 is not bicycle-related at all, so the "Satoshi
+   Naito" attribution has nothing behind it and there is no related
+   Shimano pedal filing to reconcile. The atlas's existing SPD entry
+   (US 5,115,692, Shimano, `conf:"v"`) stands unchanged. Combined with
+   item 3 below, the pattern in that submitted list is now clear: its
+   patent numbers are unreliable and its inventor names more so.
 
 2. **CamelBak hydration pack** — submitted as Michael Eidson, US 5,060,833
    (1991). **Exact number match** to the atlas's existing entry, which
@@ -55,11 +53,16 @@ either way.
    session that did this, so the primary page was never opened directly —
    a future session with working access should re-check the exact dates.
 
-4. **Trek Y-bike / URT frame** — submitted as James P. Cole et al., US
-   5,611,557 (1997). Atlas's existing Y-bike entry uses US 5,685,553. Check
-   whether 5,611,557 is a related Trek filing in the same family (the atlas
-   already documents a Castellano URT patent + Trek's design-around, so a
-   third related number wouldn't be surprising) before assuming an error.
+4. ~~**Trek Y-bike / URT frame**~~ — **Resolved 2026-10-06, dead end.**
+   Per Jon's own lookup, US 5,611,557 is not bicycle-related, so it is not
+   a third Trek filing in the Y-bike family and there is nothing to
+   reconcile. The atlas's existing Y-bike entry (US 5,685,553) stands
+   unchanged. **Note for whoever reads this later:** a web-search snippet
+   during the 2026-10-06 pass described 5,611,557 as "issued March 18,
+   1997 for a bicycle suspension system." That snippet was wrong. It is
+   exactly the kind of unsourced secondary summary CLAUDE.md's sourcing
+   discipline warns about, and it should not be used to reopen this
+   item.
 
 5. ~~**Cannondale Lefty (single-sided strut)**~~ — **Resolved 2026-10-06,
    no change needed.** US 5,957,473 is "Rear suspension bicycle," inventor
@@ -225,6 +228,50 @@ picks, then write):
   is the suggested starting point. Finding a real number for either Zap or
   Mektronic would let that existing entry move off `"m"`, which is the
   higher-value outcome of the three.
+
+## Scott Sports portfolio — screening material (2026-10-06)
+
+The one part of issue #103 still genuinely open. The assignee listings are
+on blocked hosts, so no session here can enumerate the portfolio; this is
+what could be established from outside them.
+
+**Pull the listing from two pages, not one** — older filings sit under the
+US entity:
+
+- `patents.justia.com/assignee/scott-sports-sa`
+- `patents.justia.com/assignee/scott-usa-inc`
+
+**Candidates surfaced without the listing.** All are publications rather
+than confirmed grants unless noted, and none is in `D`:
+
+| Number | Title | Confidence |
+|---|---|---|
+| US 2019/0092417 A1 | Eccentric bicycle fork shaft — inventor Rico Süsse, published 2019-03-28 | Assignee reported as Scott Sports SA; not independently re-checked |
+| US 2023/0136136 A1 | Protective helmet with a shell and a movable visor | Assignee reported as Scott Sports SA |
+| EP 4 125 480 A1 | Same helmet invention, filed 2021-01-19, Scott Sports SA, Givisiez | Same |
+| US 11,083,239 | "Visor system for a protective sport helmet" | **Assignee NOT confirmed as Scott** — surfaced in a Scott helmet search and may belong to another company. Verify before use. |
+
+US 9,039,026 also surfaced once as a possible "bicycle suspension system"
+hit and could not be verified at all on re-search. It is recorded here only
+so a future session does not spend budget rediscovering it; do not treat it
+as a Scott number.
+
+**Subject areas reported for the portfolio** (useful for screening the real
+listing): protective helmets with movable visors, handlebar stems with
+integrated cable guidance, cycling power meters, shock absorbers, eccentric
+fork shafts, bicycle wheels, and frame components.
+
+**Pre-exclude when screening** — already in `D`: US 10,071,786 (Scott/Bold
+integrated hidden-shock frame) and US 4,750,754 (Boone Lennon aero bar /
+Scott DH bar). Also note US 5,509,679 and US 5,678,837 are Scott-adjacent
+through the `specialized-scott` fight but are Specialized's patents, not
+Scott's.
+
+**Highest-value target in the whole portfolio:** the atlas's **TwinLoc
+simultaneous lockout** entry is `num:null`, `conf:"l"`, crediting Scott
+generally with no number. Finding its patent upgrades an existing draft-tier
+entry rather than adding a new one — the same reasoning that makes Mektronic
+the pick among the Mavic leads.
 
 ## Process reminder for whoever picks this up
 
