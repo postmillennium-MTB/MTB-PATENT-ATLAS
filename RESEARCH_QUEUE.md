@@ -70,14 +70,16 @@ either way.
    the atlas's existing Lefty entry (US 5,308,099 + 5,509,674) is
    unaffected. Nothing to change in either entry.
 
-6. **Mavic UST tubeless** — submitted as Jean-Pierre Mercat, US 6,102,485
-   (2000). Atlas's existing UST entry uses US 6,257,676 (filed 1998,
-   granted 2001, credited to Jean-Pierre Lacombe and Jean-Pierre Mercat) as
-   the primary number, with 6,443,533 and 6,641,227 as continuations. A
-   2000-filed 6,102,485 doesn't fit that continuation family's dates as
-   described (continuations of a 1998 filing don't usually issue with an
-   earlier-appearing number) — check whether this is a distinct related
-   Mavic filing or a mismatch in the submitted list.
+6. ~~**Mavic UST tubeless**~~ — **Resolved 2026-10-06, no change needed.**
+   US 6,102,485 is not a Mavic patent at all: per Jon's own lookup it is
+   assigned to Casio Computer Co. Ltd., which fits the original suspicion
+   that the submitted list carried a typo rather than a real second Mavic
+   filing. (Search could not independently surface this number's record
+   from this environment, so the Casio attribution rests on that lookup
+   rather than on a source read here — but it does not change the
+   outcome.) The atlas's existing UST entry (US 6,257,676, with 6,443,533
+   and 6,641,227 as continuations, Lacombe and Mercat) is correct as it
+   stands and needs no edit.
 
 7. ~~**Tioga Disk Drive wheel**~~ — **Resolved 2026-09-26, no change needed.**
    US 5,064,249 is a real patent, but it's a completely unrelated automotive
@@ -152,13 +154,21 @@ rather than left implied.
    to turn either into real numbers; then follow *Workflow: sourcing a batch of
    new entries* — candidate list first, Jon picks, nothing written before that.
 
-2. **US 11,318,049 B2** — unresolved, and the lowest-value item in the queue.
-   Repeated searches could not surface this number's title, abstract, or
-   assignee at all. The submitted link's own query string names assignee "Vog
-   Image Police Inc," and what little the number's neighbourhood suggests
-   points at law-enforcement imaging, not cycling. **Recommend dropping it**
-   unless Jon knows why it was captured — the burden here is to show it belongs
-   in a mountain-bike atlas, and nothing found so far does.
+2. ~~**US 11,318,049 B2**~~ — **Added 2026-10-06.** Resolved once Jon
+   supplied the bibliographic data the blocked databases would not give up:
+   it is "Goggle," inventor Gavin Michael Vos, assigned to VOG — Image
+   Police Inc. of Taichung, Taiwan. Confirmed against the patent's own
+   front page, pulled via the `Fetch patent figure` workflow: filed
+   October 23, 2018 as PCT/CN2018/111340 (published WO 2020/082222), US
+   national phase March 26, 2020, granted May 3, 2022 with zero term
+   adjustment. It is a roll-off goggle — two reels with a film sheet
+   across the lens — whose point of novelty is that the control assembly
+   mounts to either reel, so one goggle sets up left- or right-handed.
+   Filed under `cat:"tech"`, following the 100% Speedlab protective-eyewear
+   entry's precedent for rider-worn eyewear, `conf:"v"`, with Figs. 1 and 2
+   wired in (both rotated 90° clockwise from the source sheets). `who` is
+   left empty: the assignee is a Taichung company with no identified
+   consumer brand, the same handling the Ghaly anti-theft entry got.
 
 3. **TQ Systems — EP 2,582,571 B1** — real, relevant, and deliberately *not*
    added, because the one fact that would justify adding it is the one that
@@ -185,6 +195,35 @@ rather than left implied.
    useful for enriching the existing 1870 Starley & Hillman entry or for
    sourcing early entries, and neither is a primary source to cite directly in
    an `s` field. Left as reading, which is what the issue already called them.
+
+## Mavic leads (added 2026-10-06, from Jon)
+
+The **X-Tend e-bike motor platform is already in the atlas** — US 12,434,786
+plus US 12,325,488 in `nums[]`, `conf:"v"`, catalogued as a 15-patent family
+and crediting Jean-Pierre Mercat. No new entry needed. Two things that would
+still improve it: it currently has **no figure**, and the
+[BicycleRetailer piece on Mavic's motor patent trail](https://www.bicycleretailer.com/product-tech/2024/02/14/industry-patent-watch-mavics-minimalist-motor-has-long-patent-trail)
+is a usable secondary source for the entry's history that nothing in the
+entry cites yet.
+
+Three further Mavic candidates, none screened against `D` yet and none
+verified — these need the batch-sourcing workflow (candidate list, Jon
+picks, then write):
+
+- **R2R spoke lacing** — continuous carbon-fibre spokes running from one
+  side of the rim straight through the hub to the other, per
+  [Bike Europe](https://www.bike-eu.com/3274/mavic-patents-spoke-lacing-technology).
+  Would be a `wheel` entry. Note the atlas already holds Mavic wheel
+  entries (UST, ISM/FORE) plus other continuous/composite-spoke art, so
+  screen against those for overlap before treating it as distinct.
+- **iTgMax** — a laser treatment of the braking surface on carbon rims.
+  `wheel`. No patent number in hand.
+- **Mektronic (1999) wireless group** — would pair with the atlas's
+  existing Mavic Zap entry, which is still `num:null`/`conf:"m"` with no
+  US number located. [Disraeligears' Mavic page](https://www.disraeligears.co.uk/site/documents_-_mavic.html)
+  is the suggested starting point. Finding a real number for either Zap or
+  Mektronic would let that existing entry move off `"m"`, which is the
+  higher-value outcome of the three.
 
 ## Process reminder for whoever picks this up
 

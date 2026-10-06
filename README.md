@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 372 |
+| **Total entries** | 373 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 165 |
+| **Active patents** | 166 |
 | **Expired patents** | 137 |
 | **Pending applications** | 46 |
 | **Litigated entries** | 30 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 | **Brands** | 209 |
 | **Named inventors** | 76 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 273 |
+| **Verified entries** | 274 |
 | **Medium confidence** | 57 |
 | **Draft / in progress** | 42 |
 
@@ -652,6 +652,18 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Hyperglide upgraded from `conf:"m"` to `conf:"v"` with a real patent number.** The entry had sat at `num:null` crediting Shimano generally, with no named inventor. It is **US 4,889,521, "Multistage sprocket assembly for a bicycle," inventor Masashi Nagano, filed October 24, 1988, granted December 26, 1989**, assigned to Shimano Industrial Co. The grant year was also wrong in the data (`g:1990` → 1989), and `exp` moves 2010 → 2008 under the corrected term rule. The number was cross-confirmed across independent sources: the EPO family member EP 0313345 carrying the same title, and three later Shimano sprocket patents (US 6,923,741, US 8,177,670, US 9,376,165) whose own Background sections cite 4,889,521 by number as the Hyper Glide assembly. Google Patents itself is blocked from this sandbox, so the primary page was not opened directly — a session with working access should re-check the exact dates. Nagano is credited in the entry's `a` field but not added to `INVENTORS`, following the existing precedent for engineers credited on a single entry.
 
   This came out of a queued research item that submitted the patent as inventor "Nobuo Ozaki" — the number was right and the inventor was wrong. Two neighbouring items in the same submitted list had the same defect (SPD credited to "Naito," Biopace to "Nagano"), so **inventor names from that source list should be treated as unreliable even where its numbers check out.**
+
+- **Added the Vog roll-off goggle, US 11,318,049 B2, `conf:"v"` — the one item from issue #103 that a previous pass had recommended dropping.** It had been unresolvable: no search from this environment could surface the number's title, assignee or abstract, and the only clue (an assignee string reading "Vog Image Police Inc") pointed at law-enforcement imaging rather than cycling. Jon supplied the bibliographic record and asked to keep it, which unblocked the whole thing. It is **"Goggle," inventor Gavin Michael Vos, assigned to VOG — Image Police Inc. of Taichung, Taiwan**, filed October 23, 2018 as PCT/CN2018/111340 (published WO 2020/082222), entering the US national phase March 26, 2020 and granted May 3, 2022 with zero term adjustment — so `exp:2038` is a plain filing + 20. Verified against the patent's own front page, retrieved through the `Fetch patent figure` workflow rather than a blocked database, and against the published abstract.
+
+  The mechanism is a roll-off: two reels in chambers at the left and right ends of the frame, a soft film sheet strung between them across the lens's outer face, and the rider winds the fouled section onto one reel to draw clean film off the other. The claimed point of novelty is that the **control assembly mounts to either reel** — Fig. 2 draws it and a plain end cap as interchangeable parts — so a single goggle is configured left- or right-handed to match the wearer.
+
+  Filed under `cat:"tech"` on the precedent of the existing 100% Speedlab protective-eyewear entry, which is where rider-worn eyewear already lives. `who` is left empty: the assignee is a Taichung company and no consumer brand selling this goggle could be identified, the same honest handling the Ghaly anti-theft entry got rather than inventing a brand tag. Two figures wired in via `imgs[]` (Fig. 1, the assembled goggle with the control knob; Fig. 2, the exploded view showing the swap), both rotated 90° clockwise from the source sheets, which came off the PDF sideways.
+
+- **Counts synced: total 372 → 373, active 165 → 166, verified 273 → 274.** README's At-a-glance table plus all eight hardcoded `index.html` count locations — the three meta description tags, `T.en`/`T.fr` `shareText`, `T.en`/`T.fr` `mtBannerText`, and the explanatory comment above the machine-translation banner, which also states the entry count and is easy to miss because it reads as a code comment rather than a counter. Four other lines in `index.html` contain the digits "372" inside real patent numbers and were deliberately left alone. `verify_data.js` and the Playwright smoke test both pass clean at the new 373-entry baseline.
+
+- **Two queued research items closed without a data change.** The **Mavic UST** reconciliation (submitted as US 6,102,485, Jean-Pierre Mercat) is a dead end: that number is not a Mavic patent — per Jon's own lookup it belongs to Casio Computer Co. Ltd., consistent with the typo the queue note already suspected. The atlas's existing UST entry (US 6,257,676 plus its two continuations) is correct as it stands. Separately, the **Mavic X-Tend e-bike motor platform already exists** in the atlas (US 12,434,786 with US 12,325,488 in `nums[]`, `conf:"v"`, catalogued as a 15-patent family crediting Jean-Pierre Mercat), so no entry was created for it; what it still lacks is a figure and a citation to the BicycleRetailer piece documenting the motor's patent trail. Three further Mavic candidates — R2R continuous-carbon spoke lacing, the iTgMax laser brake-surface treatment, and the 1999 Mektronic wireless group — are recorded in `RESEARCH_QUEUE.md` as unscreened leads. The Mektronic one is the most valuable of the three, since a real number for it or for Zap would move the atlas's existing `num:null`/`conf:"m"` Mavic Zap entry off the medium tier.
+
+- **`match/index.html`'s `MATCH_DATA` regenerated, 252 → 253 entries**, since the new goggle entry carries drawings and that block is a static snapshot of every `D` entry with one rather than a live read. Rebuilt with the Node snippet kept in that file's own `<script>` comment rather than hand-edited, and its header comment's stated count and as-of date moved in step.
 
 ## Recent updates (July 2026)
 
