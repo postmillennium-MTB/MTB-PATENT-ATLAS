@@ -1,0 +1,102 @@
+patent: EP2582571B1
+source: https://patentimages.storage.googleapis.com/62/ab/63/2197d7fa11e28a/EP2582571B1.pdf
+pages: 26
+per-page extracted text length: {1: 2053, 2: 6154, 3: 6063, 4: 6001, 5: 5753, 6: 6410, 7: 6202, 8: 6190, 9: 2861, 10: 4968, 11: 4749, 12: 4737, 13: 5111, 14: 215, 15: 19, 16: 19, 17: 19, 18: 19, 19: 19, 20: 19, 21: 19, 22: 19, 23: 19, 24: 19, 25: 19, 26: 496}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+TEPZZ 58 57_B_T
+
+(19)
+
+(11)
+
+EP 2 582 571 B1
+
+EUROPEAN PATENT SPECIFICATION
+
+(12)
+
+(45) Date of publication and mention
+
+(51) Int Cl.:
+
+B62M 11/04 (2006.01)
+B62M 6/55 (2010.01)
+B62M 23/02 (2006.01)
+F16H 61/02 (2006.01)
+
+of the grant of the patent:
+19.10.2016 Bulletin 2016/42
+
+(21) Application number: 11795288.7
+
+B62M 6/50 (2010.01)
+B62M 9/06 (2006.01)
+F16H 9/24 (2006.01)
+
+(86) International application number:
+
+(22) Date of filing: 17.06.2011
+
+PCT/IB2011/052659
+
+(87) International publication number:
+WO 2011/158220 (22.12.2011 Gazette 2011/51)
+
+(54) CONTROL UNIT FOR A VEHICLE AND METHOD FOR CHANGING GEARS OF A VEHICLE
+STEUEREINHEIT FÜR EIN FAHRZEUG UND GANGÄNDERUNGSVERFAHREN FÜR EIN
+FAHRZEUG
+UNITÉ DE COMMANDE POUR UN VÉHICULE ET PROCÉDÉ POUR CHANGER LES VITESSES
+D’UN VÉHICULE
+(84) Designated Contracting States:
+
+(74) Representative: Schweiger, Martin
+
+AL AT BE BG CH CY CZ DE DK EE ES FI FR GB
+GR HR HU IE IS IT LI LT LU LV MC MK MT NL NO
+PL PT RO RS SE SI SK SM TR
+
+Schweiger & Partners
+Intellectual Property Law Firm
+Elsenheimer Strasse 1
+80687 München (DE)
+
+(30) Priority: 04.08.2010 DE 102010036833
+17.06.2010 DE 102010017412
+
+(43) Date of publication of application:
+24.04.2013 Bulletin 2013/17
+
+(73) Proprietor: TQ-Systems GmbH
+82229 Seefeld (DE)
+
+(56) References cited:
+EP-A1- 1 923 683
+EP-A2- 1 236 640
+JP-A- 10 287 150
+US-A- 5 922 035
+US-A1- 2004 102 269
+US-A1- 2004 206 188
+US-B1- 6 364 044
+
+EP-A2- 0 820 926
+EP-A2- 1 617 107
+JP-A- 61 014 256
+US-A1- 2002 108 816
+US-A1- 2004 206 188
+US-A1- 2005 189 157
+US-B1- 6 569 045
+
+(72) Inventor: JÄKEL, Jürgen
+
+EP 2 582 571 B1
+
+82024 Taufkirchen (DE)
+
+Note: Within nine months of the publication of the mention of the grant of the European patent in the European Patent
+Bulletin, any person may give notice to the European Patent Office of opposition to that patent, in accordance with the
+Implementing Regulations. Notice of opposition shall not be deemed to have been filed until the opposition fee has been
+paid. (Art. 99(1) European Patent Convention).
+Printed by Jouve, 75001 PARIS (FR)
+
+
