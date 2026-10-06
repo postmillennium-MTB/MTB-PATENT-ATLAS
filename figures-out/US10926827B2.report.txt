@@ -1,0 +1,171 @@
+patent: US10926827B2
+source: https://patentimages.storage.googleapis.com/38/3f/7d/d61fac3e576f7f/US10926827.pdf
+pages: 14
+per-page extracted text length: {1: 2660, 2: 450, 3: 127, 4: 116, 5: 101, 6: 118, 7: 7436, 8: 7847, 9: 7901, 10: 7455, 11: 7451, 12: 7383, 13: 6248, 14: 3049}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010926827B2
+
+( 12 ) Süsse
+United States Patent
+
+( 10) Patent No .: US 10,926,827 B2
+(45 ) Date of Patent :
+Feb. 23 , 2021
+( 56 )
+
+( 54 ) ECCENTRIC BICYCLE FORK SHAFT
+( 71 ) Applicant: Scott Sports SA , Givisiez ( CH )
+( 72 ) Inventor: Ricco Süsse , Givisiez (CH )
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+2,687,898 A * 8/1954 Schwinn
+
+7,891,687 B2 * 2/2011 Schmider
+7,938,422 B2 * 5/2011 Clari
+
+( 73 ) Assignee : SCOTT SPORTS SA , Givisiez (CH )
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 319 days .
+( 21 ) Appl. No .: 16 /133,886
+Sep. 18, 2018
+( 22 ) Filed :
+( * ) Notice :
+
+(65 )
+
+7,976,045 B2 *
+
+7/2011 Lane
+
+8,684,386 B2 *
+
+4/2014 Matthews
+
+9,056,646 B1 * 6/2015 D'Aluisio
+9,079,631 B1 * 7/2015 Costa
+9,446,812 B2 * 9/2016 Nago
+
+B62K 25/08
+280/276
+B62K 19/30
+280 /281.1
+B62K 21/04
+280/280
+B62K 19/16
+280/279
+B62K 19/32
+280/279
+B62K 19/06
+B62K 19/30
+B62K 21/12
+
+(Continued )
+
+Prior Publication Data
+US 2019/0092417 A1
+Mar. 28 , 2019
+
+FOREIGN PATENT DOCUMENTS
+202017004993 U1
+
+DE
+
+10/2017
+
+Foreign Application Priority Data
+( 30 )
+20 2017 004 993.7
+Sep. 26 , 2017 (DE)
+
+Primary Examiner Kevin Hurley
+
+( 51 ) Int . Ci .
+
+Jeffrey D. Tekanic ; Scott T. Wakeman
+ABSTRACT
+( 57 )
+A bicycle fork includes a fork shaft configured to be rotat
+ably borne by headset bearings in a head tube of a bicycle
+frame so as to rotate about a steering axis. The fork shaft
+includes a cylindrical fork shaft segment that is disposed
+eccentrically with respect to the steering axis . The cylindri
+
+B62K 21/02
+
+( 2006.01 )
+
+B62 ) 99/00
+B62K 19/32
+B62K 21/06
+
+( 2006.01 )
+
+B62K 21/18
+B62 ) 11/13
+
+Assistant Examiner - Michael R Stabley
+( 74 ) Attorney, Agent, or Firm - J - Tek Law PLLC ;
+
+( 2020.01 )
+
+( 2006.01 )
+( 2006.01 )
+
+( 2020.01 )
+
+cal fork shaft segment is a right circular cylinder having a
+hollow interior, a cylindrical inner surface and a central
+longitudinal axis that lies within a symmetry plane of the
+bicycle frame and extends parallel to the steering axis. The
+central longitudinal axis of the cylindrical fork shaft seg
+ment is spaced apart from the steering axis in a direction of
+eccentricity that points in an opposite direction with respect
+
+( 52 ) U.S. CI .
+CPC
+
+B62K 21/02 (2013.01 ) ; B62 ) 99/00
+
+(2013.01 ) ; B62K 19/32 (2013.01 ) ; B62K 21/06
+( 2013.01 ) ; B62K 21/18 (2013.01 ) ; B62 ) 11/13
+(2020.02 )
+
+( 58 ) Field of Classification Search
+
+CPC ........ B62K 21/02 ; B62K 19/32 ; B62K 21/06 ;
+B62K 21/18
+See application file for complete search history .
+
+to a forward direction of travel of the bicycle .
+20 Claims , 4 Drawing Sheets
+
+16
+
+14
+
+12
+15
+33
+17
+
+-4
+
+10
+
+13
+2
+3
+
+11
+
+5
+
+1
+
+20
+
+
