@@ -1,0 +1,149 @@
+patent: US11318049B2
+source: https://patentimages.storage.googleapis.com/f7/d4/6b/19ea8f04312601/US11318049.pdf
+pages: 16
+per-page extracted text length: {1: 2303, 2: 91, 3: 131, 4: 101, 5: 159, 6: 163, 7: 106, 8: 132, 9: 110, 10: 125, 11: 167, 12: 109, 13: 7213, 14: 7048, 15: 7607, 16: 1804}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011318049B2
+
+( 12 ) Vos
+United States Patent
+
+( 10) Patent No .: US 11,318,049 B2
+(45) Date of Patent :
+May 3, 2022
+
+( 54 ) GOGGLE
+( 71 ) Applicant: VOG — IMAGE POLICE INC . ,
+Taichung (TW)
+( 72 ) Inventor: Gavin Michael Vos, Taichung ( TW)
+( 73 ) Assignee : VOG — IMAGE POLICE INC . ,
+Taichung (TW)
+
+( * ) Notice:
+( 21 ) Appl . No.:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 (b ) by 0 days.
+16 /651,112
+
+Oct. 23 , 2018
+(22 ) PCT Filed :
+PCT/CN2018/ 111340
+( 86 ) PCT No .:
+§ 371 (c ) ( 1 ) ,
+Mar. 26 , 2020
+( 2 ) Date:
+( 87 ) PCT Pub . No .: W02020 /082222
+PCT Pub . Date : Apr. 30 , 2020
+( 65 )
+
+U.S. PATENT DOCUMENTS
+1/1984 Smith
+4,428,081 A
+4,542,538 A * 9/1985 Moretti
+2012/0023647 Al
+2014/0157496 Al
+
+A62B 18/082
+
+2/2012 Park
+6/2014 Ginter et al .
+
+2/205
+
+FOREIGN PATENT DOCUMENTS
+CN
+
+103941854 A
+
+CN
+CN
+
+205750163 U
+
+CN
+
+106646921 A
+106646921 A
+
+WO
+
+WO 2017189130 A1
+
+7/2014
+11/2016
+5/2017
+5/2017
+11/2017
+
+A61F 9/025
+
+Primary Examiner F Griffin Hall
+
+(74 ) Attorney, Agent, or Firm - Muncy, Geissler, Olds &
+
+Lowe, P.C.
+( 57 )
+
+Prior Publication Data
+Jan. 21 , 2021
+
+( 51 ) Int. CI.
+
+( 2006.01 )
+
+( 52 ) U.S. CI .
+CPC
+
+References Cited
+
+* cited by examiner
+
+US 2021/0015669 A1
+
+A61F 9/02
+
+( 56 )
+
+A61F 9/025 ( 2013.01 ) ; A61F 9/029
+(2013.01 )
+
+( 58) Field of Classification Search
+CPC
+A61F 9/025 ; A61F 9/029 ; A42B 3/26
+USPC
+2/9 , 431 , 438
+
+See application file for complete search history.
+
+ABSTRACT
+
+A goggle includes a goggle frame, a lens assembly including
+a lens mounted on the goggle frame, two reels rotatably
+mounted on the goggle frame on opposing left and right ends
+of the lens and a soft sheet mounted between the two reels
+and abutting the outer surface of the lens , and a control
+assembly that can be set on one of the two reels according
+to the dominant hand of the wearer. With this, once the soft
+sheet is dirty, the wearer operates the control assembly with
+his dominant hand, so that the control assembly drives the
+reel set to rotate . At this time , the driven reel will further
+drive the soft sheet to move laterally relative to the lens , and
+then roll up the dirty part, so that the soft sheet can always
+be kept clean in the part corresponding to the lens .
+5 Claims , 11 Drawing Sheets
+
+31
+
+Qua
+65
+
+65
+
+43
+
+42
+
+
