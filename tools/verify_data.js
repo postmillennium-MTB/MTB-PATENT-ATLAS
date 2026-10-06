@@ -92,6 +92,47 @@ D.forEach(d => ['t', 's', 'w', 'long'].forEach(f => {
 console.log('still-plain-string fields (informational, not blocking):',
   notBilingual.length ? notBilingual : 'none');
 
+/* Patent-term check -- informational only, like the bilingual check above, and
+   for the same reason: a mismatch can be a documented exception rather than an
+   error, so hard-failing would just train people to ignore the run.
+
+   Scope is deliberately narrow: single-number, non-design, PRE-1995 filings.
+   That is exactly the set CLAUDE.md's "Expiration rule (exp)" section got wrong
+   until 2026-10-06. The old one-line rule said flatly "filed before June 8,
+   1995 -> grant + 17" and omitted the other half of 35 U.S.C. 154(c): a patent
+   still in force on June 8, 1995 gets the GREATER of grant+17 and filing+20
+   (MPEP 2701). Reaching for grant+17 alone understates every patent that issued
+   less than three years after filing -- which was ~21 entries.
+
+   Deliberately NOT checked, because a mismatch there is usually legitimate and
+   the noise would drown the signal:
+     - post-1995 filings. Continuations inherit the PARENT application's filing
+       date (see CLAUDE.md), so exp != y+20 is normal and expected for them, and
+       they're common enough after 1995 to make the check useless there.
+     - design patents, spotted by pt:"design" OR a D-prefixed num. They sit
+       outside 154(c), and a pre-1982 design term was ELECTED by the applicant
+       at 3.5/7/14 years, so it cannot be derived from the grant year at all.
+     - num:null era/estimate entries ("Freehub cassette hub"), where exp is an
+       editorial estimate for a technology rather than one patent's real term.
+     - multi-patent bundles (nums[] > 1), whose exp tracks the newest member. */
+const preGattExp = d => {
+  const fromGrant = d.g + 17;
+  // 154(c) reaches it only if it was still alive on 1995-06-08 (or issued later).
+  return (fromGrant >= 1995 || d.g >= 1995) ? Math.max(fromGrant, d.y + 20) : fromGrant;
+};
+const expIssues = [];
+D.forEach(d => {
+  if (!d.num) return;
+  if (d.pt === 'design' || /^D/.test(String(d.num))) return;
+  if ((d.nums || []).length > 1) return;
+  if (typeof d.y !== 'number' || typeof d.g !== 'number' || typeof d.exp !== 'number') return;
+  if (d.y >= 1995) return;
+  const want = preGattExp(d);
+  if (d.exp !== want) expIssues.push(`${d.num}: exp ${d.exp}, rule gives ${want} (y:${d.y} g:${d.g})`);
+});
+console.log('\npre-1995 patent-term mismatches (informational, not blocking):',
+  expIssues.length ? expIssues : 'none');
+
 if (hardFailures.length) {
   console.error(`\n::error::${hardFailures.length} schema-integrity issue(s) found -- see list above.`);
   process.exit(1);

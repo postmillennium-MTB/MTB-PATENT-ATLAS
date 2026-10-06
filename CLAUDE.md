@@ -225,10 +225,46 @@ actually serve the entry's point just because a source happened to include it.
 **Expiration rule (`exp`):**
 - Filed **on or after June 8, 1995** (the post-GATT rule, which covers nearly
   everything in this dataset): `exp = filing year + 20`.
-- Filed **before June 8, 1995**: `exp = grant year + 17` (utility) or `+ 14`
-  (design, `pt:"design"`). This has mattered exactly three times so far (the
-  Schwinn entries), but apply it correctly to any old filing added later —
-  filing+20 would understate the real term by years.
+- Filed **before June 8, 1995** — this is the sub-case this note itself got
+  wrong until 2026-10-06, so read it properly. It is not one rule, it is
+  three, and it applies to far more of this dataset than the old text
+  claimed (it said "exactly three times so far (the Schwinn entries)";
+  the real figure is 57 single-patent entries):
+  - **Utility patent still in force on June 8, 1995** — i.e. grant year + 17
+    lands in 1995 or later. This covers essentially everything in the atlas
+    filed from the late 1970s on. Under 35 U.S.C. §154(c) the term is the
+    **greater** of `grant year + 17` and `filing year + 20` (see
+    [MPEP 2701](https://www.uspto.gov/web/offices/pac/mpep/s2701.html)).
+    Take the later of the two. GATT gave these patents whichever term was
+    longer, so reaching for `grant + 17` by reflex *understates* any patent
+    that issued less than three years after it was filed — which is most of
+    them. The old one-line version of this rule is exactly why ~21 entries
+    shipped with an `exp` that was off by two years or more.
+  - **Utility patent that had already expired before June 8, 1995** — grant
+    year + 17 lands in 1994 or earlier. Every 19th- and early-20th-century
+    entry in the atlas is here. §154(c) never reached these patents, so the
+    term is simply `grant year + 17`, the law of their own day. Do **not**
+    apply the "greater of" test to them; it hands a patent years it never
+    actually had, which is the same class of error in the opposite
+    direction.
+  - **Design patents (`pt:"design"`) sit outside §154(c) entirely**, and
+    before October 1, 1982 there was no single design term to compute: the
+    applicant *elected* 3½, 7, or 14 years at filing and paid a fee to
+    match. A pre-1982 design patent's `exp` therefore **cannot be derived
+    from the grant year at all** — read it off the record, or leave the best
+    available estimate and say in the entry that the term was an election.
+    The Schwinn Sting-Ray banana seat (`US D204,121`, granted 1966,
+    `exp: 1970`) is a 3½-year election, not a miscalculation — don't
+    "correct" it to grant + 14. Design patents from applications filed
+    between October 1, 1982 and May 12, 2015 run a flat 14 years from grant;
+    filed on or after May 13, 2015, 15 years from grant.
+  - Because the atlas stores *years*, not dates, all of the above is
+    year-level arithmetic and carries an inherent ±1 ambiguity against the
+    real docket dates. That's accepted and consistent across the dataset —
+    `tools/verify_data.js` reports entries that don't match the formula so
+    the inconsistency stays visible, but it does **not** hard-fail, because
+    a documented exception (a design-term election, a bundled portfolio
+    whose `exp` tracks its newest member) is legitimate.
 - **Continuations inherit their parent application's filing date**, not their
   own later one — the 20-year clock runs from the earliest non-provisional
   U.S. filing in the priority chain (a provisional alone doesn't count). Two

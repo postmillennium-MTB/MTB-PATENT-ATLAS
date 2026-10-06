@@ -4,7 +4,8 @@ Not yet added to `index.html`. This is a holding pen for candidates Jon
 supplied on 2026-09-26, pending verification per CLAUDE.md's sourcing
 discipline (web-search confirmation, primary-source check, resolvable
 links, honest `conf` tiering) before any of them become real `D` entries.
-No code or dataset changes have been made — this file is notes only.
+Items struck through below have since been resolved — see each one's own
+note for what was found and whether the atlas changed as a result.
 
 Every patent number below is **as submitted, unverified**. Do not treat any
 of them as confirmed — cross-check against Google Patents / USPTO (subject
@@ -23,7 +24,10 @@ either way.
 1. **Shimano SPD** — submitted as Satoshi Naito, US 5,125,288 (1992).
    Atlas already has SPD at `num:"5115692"`, inventor **Masashi Nagano**
    (same inventor credited on the submitted Biopace patent, below — worth
-   checking that's not a mix-up in the source list). Check whether
+   checking that's not a mix-up in the source list; the 2026-10-06 pass on
+   item 3 found Nagano is genuinely the Hyperglide inventor, which makes a
+   shuffle of inventor names within the submitted list the more likely
+   explanation, not a coincidence). Check whether
    5,125,288 is a real related Shimano pedal patent (a continuation, a
    different claim set) or whether "Naito" is misattributed.
 
@@ -37,12 +41,19 @@ either way.
    prototype detail, the specific race) — fold into the existing entry's
    sourcing rather than creating a second entry.
 
-3. **Hyperglide shifting** — submitted as Nobuo Ozaki, US 4,889,521 (1989).
-   Atlas has a Hyperglide entry already but with `num:null`, `conf:"m"`,
-   crediting Shimano generally with no named inventor or number. If
-   4,889,521 checks out, this is a strong candidate to **upgrade** the
-   existing entry rather than add a new one — would take it from `"m"` to
-   `"v"` with a real number.
+3. ~~**Hyperglide shifting**~~ — **Resolved 2026-10-06, entry upgraded.**
+   The submitted number was right and the submitted inventor was wrong.
+   US 4,889,521 is "Multistage sprocket assembly for a bicycle," inventor
+   **Masashi Nagano** (not "Nobuo Ozaki"), filed October 24, 1988, granted
+   December 26, 1989, assigned to Shimano Industrial Co. Cross-confirmed
+   via the EPO family member EP 0313345 (same title) and the Background
+   sections of three later Shimano sprocket patents (US 6,923,741,
+   US 8,177,670, US 9,376,165), each citing 4,889,521 by number as the
+   Hyper Glide assembly. The atlas entry is now `conf:"v"` with that
+   number, a corrected grant year (`g:1990` → 1989) and a corrected
+   `exp` (2010 → 2008). Google Patents itself was blocked from the
+   session that did this, so the primary page was never opened directly —
+   a future session with working access should re-check the exact dates.
 
 4. **Trek Y-bike / URT frame** — submitted as James P. Cole et al., US
    5,611,557 (1997). Atlas's existing Y-bike entry uses US 5,685,553. Check
@@ -50,16 +61,14 @@ either way.
    already documents a Castellano URT patent + Trek's design-around, so a
    third related number wouldn't be surprising) before assuming an error.
 
-5. **Cannondale Lefty (single-sided strut)** — submitted as James F. Turner,
-   US 5,957,473 (1999). **This number is already in the atlas — but
-   attached to a completely different entry**: the Lawwill four-bar
-   suspension family (Gary Fisher RS-1), where it's cited as "Rear
-   suspension bicycle." That's a direct conflict worth resolving carefully:
-   either the submitted list has the wrong number for the Lefty, or there
-   are two unrelated patents that happen to share this number in the
-   submitted source (unlikely — verify), or the Lawwill citation is the one
-   that's wrong. Don't touch the existing Lawwill entry without confirming
-   which is correct.
+5. ~~**Cannondale Lefty (single-sided strut)**~~ — **Resolved 2026-10-06,
+   no change needed.** US 5,957,473 is "Rear suspension bicycle," inventor
+   **Mert Lawwill**, granted September 28, 1999, assigned to Schwinn
+   Cycling & Fitness — exactly what the atlas already says, and it stays
+   in the Lawwill entry's `nums[]` where it is. The submitted attribution
+   to Cannondale's Lefty and inventor "James F. Turner" is simply wrong;
+   the atlas's existing Lefty entry (US 5,308,099 + 5,509,674) is
+   unaffected. Nothing to change in either entry.
 
 6. **Mavic UST tubeless** — submitted as Jean-Pierre Mercat, US 6,102,485
    (2000). Atlas's existing UST entry uses US 6,257,676 (filed 1998,
@@ -111,24 +120,71 @@ CamelBak remains out of scope as a new entry — see the duplicates section
 above; that submission's detail was folded into the existing entry's own
 sourcing note rather than creating a second entry.
 
-- **Bicycle with integrated anti-theft system** — Bassem Ghaly, assignee
-  12226448 Canada Inc., US 20230312034A1 (a *published application*, not
-  yet a granted patent — WO/US/EP family, worldwide filing 2020). A
-  spindle-blocking mechanism built into a bicycle sub-assembly (bore that
-  receives a wheel/BB/headset-type spindle) with a locked/unlocked state
-  toggled by an authorized user — an integrated, non-retrofit anti-theft
-  approach rather than a bolt-on lock. Nothing in the atlas today covers
-  integrated/frame-level anti-theft (only conventional add-on locks would
-  be adjacent, and none of those are in `D` either) — this would be a
-  genuinely new angle, not just a new company. Notes for whoever
-  researches it: confirm current prosecution status (published ≠ granted,
-  so `st` would likely be `"pending"` and `exp` should stay `null` until a
-  grant date exists, per the schema's own pending-patent handling);
-  identify what product/brand this maps to, if any, since the assignee
-  name here is a numbered holding company rather than a recognizable
-  brand; and check whether "spindle" in the claims covers a wheel axle,
-  a bottom bracket spindle, or both, since the entry's `cat` depends on
-  that (likely `comp`, possibly `wheel`).
+- ~~**Bicycle with integrated anti-theft system**~~ — **Added 2026-09-30;
+  this note is retained only as provenance.** Shipped as a real `D` entry
+  (`num:"20230312034"`, `cat:"wheel"`, `st:"unknown"`, `conf:"m"`, with a
+  drawing) — Bassem Ghaly, assignor to 12226448 Canada Inc. The research
+  notes below were answered in the entry itself: `y` follows the confirmed
+  2020 priority year, `g`/`exp` are left unset rather than guessed because
+  the examination status could not be confirmed, and the claimed mechanism
+  sits at a wheel spindle, which settled `cat` as `wheel`. The assignee is
+  still a numbered holding company with no identified consumer product —
+  that gap is stated in the entry's own `w` text.
+
+## From issue #103 — research leads (triaged 2026-10-06)
+
+Moved here from GitHub issue #103 so the leads live with the rest of the
+queue. Each was worked as far as this session's blocked-egress constraint
+allowed; **none produced a `D` entry**, and the reason is recorded per item
+rather than left implied.
+
+1. **Scott Sports SA portfolio** — still open, and still a batch-sourcing job.
+   The submitted lead is a Justia assignee listing, which is one of the hosts
+   blocked from this environment, so the listing itself could not be read.
+   `WebSearch` confirms Scott Sports SA (Givisiez, CH) holds bicycle filings
+   covering shock absorbers, eccentric fork shafts and wheels, but produced
+   nothing precise enough to screen against `D` by number. One genuinely
+   promising angle surfaced that the issue didn't mention: **Specialized sued
+   Scott over the Genius rear suspension**, asserting two FSR patents referred
+   to in coverage as the "679" and "837" patents. That is a `FIGHTS` candidate
+   as much as a `D` candidate, and the atlas already carries FSR-family
+   entries to hang it off. Needs a session with working patent-database access
+   to turn either into real numbers; then follow *Workflow: sourcing a batch of
+   new entries* — candidate list first, Jon picks, nothing written before that.
+
+2. **US 11,318,049 B2** — unresolved, and the lowest-value item in the queue.
+   Repeated searches could not surface this number's title, abstract, or
+   assignee at all. The submitted link's own query string names assignee "Vog
+   Image Police Inc," and what little the number's neighbourhood suggests
+   points at law-enforcement imaging, not cycling. **Recommend dropping it**
+   unless Jon knows why it was captured — the burden here is to show it belongs
+   in a mountain-bike atlas, and nothing found so far does.
+
+3. **TQ Systems — EP 2,582,571 B1** — real, relevant, and deliberately *not*
+   added, because the one fact that would justify adding it is the one that
+   could not be confirmed. Established: the patent is "Control unit for a
+   vehicle and method for changing gears of a vehicle," application
+   EP 11795288, filed June 17, 2011, priorities DE 10 2010 017 412
+   (June 17, 2010) and DE 10 2010 036 833 (August 4, 2010), B1 published
+   October 19, 2016. The mechanism is shift-control logic, not gearing: a
+   control unit connected to the electric motor **cuts motor torque during a
+   gear change**, so the shift happens unloaded. That is genuinely distinct
+   from the atlas's existing TQ entry (EP 3,163,122, the harmonic pin-ring
+   gearbox, a mechanical invention), so it would be its own entry rather than
+   context folded into that one. **The blocker:** no source reached this pass
+   actually confirms TQ Systems GmbH as applicant/proprietor — that came only
+   from the submitted link's query string. The German priority filings are
+   consistent with a German assignee but prove nothing on their own. Crediting
+   TQ in `a`/`who[]` on that basis would be guessing the single fact that puts
+   this patent in a mountain-bike atlas at all, so it stays out until the
+   proprietor is confirmed on the EPO register. Everything else needed to write
+   the entry is above; this should take minutes once that one field resolves.
+
+4–5. **Starley background reading, and the Hadland & Lessing *Bicycle Design*
+   piece** — no action needed or taken. Both are secondary-source background,
+   useful for enriching the existing 1870 Starley & Hillman entry or for
+   sourcing early entries, and neither is a primary source to cite directly in
+   an `s` field. Left as reading, which is what the issue already called them.
 
 ## Process reminder for whoever picks this up
 
