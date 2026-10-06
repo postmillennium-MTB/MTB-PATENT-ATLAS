@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 374 |
+| **Total entries** | 376 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 167 |
+| **Active patents** | 168 |
 | **Expired patents** | 137 |
-| **Pending applications** | 46 |
+| **Pending applications** | 47 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 209 |
 | **Named inventors** | 76 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 275 |
+| **Verified entries** | 277 |
 | **Medium confidence** | 57 |
 | **Draft / in progress** | 42 |
 
@@ -686,6 +686,26 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
   The entry's `w` points readers at the Nicolai bottom-bracket gearbox entry, which attacks the same problem from the opposite end — Nicolai adds a mechanical clutch so the drivetrain survives shifting under load; TQ briefly removes the load so there is nothing to survive.
 
 - **Counts synced: total 373 → 374, active 166 → 167, verified 274 → 275.** README's At-a-glance table plus all eight hardcoded `index.html` count locations. `MATCH_DATA` was deliberately **not** regenerated — it snapshots only entries carrying drawings, and this entry has none, so it stays at 253.
+
+- **Two Scott Sports entries added from the portfolio screening, both `conf:"v"`.** These came out of the one part of issue #103 that stayed open after the Specialized v. Scott fight resolved the rest. Neither could be sourced from this environment — both assignee listings are on blocked hosts — so the records came from Jon directly, and two corrections to the first screening pass fell out of them: the fork shaft had **granted** since the publication that first surfaced it, and the two helmet numbers turned out to be one family rather than two candidates.
+
+- **Eccentric bicycle fork shaft, US 10,926,827 B2** — inventor Ricco Süsse, Scott Sports SA. German priority 2017; US application 16/133,886 filed September 18, 2018, published as US 2019/0092417 A1, granted February 23, 2021. The headset bearings still carry the shaft so it turns about the steering axis, but one segment of that shaft is a hollow right circular cylinder whose own axis runs parallel to the steering axis rather than on it — in the frame's symmetry plane, displaced rearward, opposite the direction of travel. Filed `fork`; screened against the adjacent existing entries (US 10,328,993 variant-stiffness steerer, the AeroSet internally-routed headset) and it is a distinct mechanism, not a duplicate.
+
+  **`exp` is 2039, not 2038, and the entry says why.** Twenty years from the 2018 US filing lands on 2038-09-18; the patent's own front page states it is extended under 35 U.S.C. 154(b) by **319 days**, which puts expiry at 2039-08-03 — matching the adjusted-expiration date on the record exactly. The 2017 German priority does not start the US clock. Stating the adjustment in the entry follows the Star Ratchet EXP precedent: landing on a correct number no reader can reproduce from the filing year is its own kind of unverifiable.
+
+  **Two figures, and they changed how the entry reads.** Fetched through the `Fetch patent figure` workflow. Fig. 1 is a cross-section down the head tube that dimensions the offset as **e** between the steering axis (5) and the eccentric segment's own axis (6) — the claimed feature made visible. Fig. 2 is the exploded view, and it shows something the claim language never says: a **port through the shaft wall just above the crown**, with lines running up through a slotted top cap. Displacing the hollow shaft rearward opens space ahead of it inside the head tube, and that space is where cables go. The entry says this as what the drawings show rather than as what the patent claims, because the claims cover the eccentric geometry alone — but it makes the cross-reference to the existing AeroSet internally-routed headset entry concrete: the same problem, solved by moving the steerer instead of reshaping the bearing seats around it.
+
+- **Protective helmet with a movable visor, US 2023/0136136 A1** — inventors Anatole Dehéselle and Mathilde Lamaud, Scott Sports SA. Filed January 19, 2021, published May 4, 2023, **still pending**, so `st:"pending"` with `g` and `exp` both null. The European family member, EP 4 125 480 A1, published February 8, 2023 and is also pending; it is recorded in the entry's own text rather than as a second entry, since it is one invention. The visor's edge carries fastening elements and the shell carries at least two mating sets, so the same releasable connection holds the visor either across the open facial region or parked on the shell outside it, with flexible side elements keeping it captive as it moves between the two.
+
+  **On whether a helmet patent belongs in a mountain-bike atlas:** the patent's own Background settles it rather than an editorial judgment call — it names bicycle and ski helmets as the field, and gives the reason visors took hold (the eye protection cannot be forgotten, and helmet and lens match mechanically and optically because they are designed together). Filed `comp`, where the Giro, Bell and WaveCel helmet entries already live.
+
+  Two drawing sheets, both uploaded to `pictures/` ahead of the session: `US20230136136A1.png` (visor parked on the shell, clear of the face opening) and `US20230136136A1.1.png` (visor deployed across it). Wired via `imgs[]` because together they show both claimed positions, which is the invention. Only the first was mentioned in the request — the second was found by checking `pictures/` for the number, per the file-map rule about uploads arriving without a note.
+
+- **`BRAND_HQ` gained `Scott: "Switzerland"`** (Scott Sports SA, Givisiez), so state/region search reaches these two without either entry's prose having to name the country.
+
+- **US 11,083,239 excluded from the screening, recorded as a dead end.** It surfaced in a Scott helmet search and was flagged then as assignee-unconfirmed; it is **Bauer Hockey LLC**, a hockey visor system — not Scott, not mountain biking, and never a portfolio item. Noted in `RESEARCH_QUEUE.md` so the same search result does not resurface it.
+
+- **Counts synced: total 374 → 376, active 167 → 168, pending 46 → 47, verified 275 → 277.** README's table plus all eight hardcoded `index.html` count locations. `MATCH_DATA` regenerated 253 → 255, since both new entries carry drawings.
 
 ## Recent updates (July 2026)
 
