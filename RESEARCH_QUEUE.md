@@ -241,15 +241,41 @@ US entity:
 - `patents.justia.com/assignee/scott-sports-sa`
 - `patents.justia.com/assignee/scott-usa-inc`
 
-**Candidates surfaced without the listing.** All are publications rather
-than confirmed grants unless noted, and none is in `D`:
+**Candidates, verified 2026-10-06 against the records Jon pulled.** Neither
+is in `D`; both screened by number and by title/assignee. Two corrections to
+the first pass are folded in — the fork shaft had *granted* since the
+publication that first surfaced, and the two helmet numbers turned out to be
+one family, not two candidates:
 
-| Number | Title | Confidence |
-|---|---|---|
-| US 2019/0092417 A1 | Eccentric bicycle fork shaft — inventor Rico Süsse, published 2019-03-28 | Assignee reported as Scott Sports SA; not independently re-checked |
-| US 2023/0136136 A1 | Protective helmet with a shell and a movable visor | Assignee reported as Scott Sports SA |
-| EP 4 125 480 A1 | Same helmet invention, filed 2021-01-19, Scott Sports SA, Givisiez | Same |
-| US 11,083,239 | "Visor system for a protective sport helmet" | **Assignee NOT confirmed as Scott** — surfaced in a Scott helmet search and may belong to another company. Verify before use. |
+1. **Eccentric bicycle fork shaft — US 10,926,827 B2.** Inventor Ricco
+   Süsse, assignee Scott Sports SA. DE priority 2017; US application
+   16/133,886 filed September 18, 2018; published as US 2019/0092417 A1 on
+   March 28, 2019; **granted February 23, 2021**. Status active, adjusted
+   expiration **2039-08-03**. The claim: a fork shaft whose cylindrical
+   segment sits eccentric to the steering axis, the eccentricity pointing
+   opposite the direction of travel — offset, and therefore trail, set by
+   where that eccentric sits rather than by the fork crown. Ready to write;
+   note the `exp` is **2039, not 2038** — a filing+20 of 2038-09-18 plus
+   patent term adjustment. State the PTA in the entry explicitly rather than
+   landing on 2039 by coincidence, the same handling the Star Ratchet EXP
+   entry got.
+
+2. **Protective helmet with a shell and a movable visor — US 2023/0136136 A1
+   (= EP 4 125 480 A1).** Inventors Anatole Dehéselle and Mathilde Lamaud,
+   assignee Scott Sports SA. One invention, two family members: US
+   application 17/914,517 and EP application 21700933.1, both filed
+   January 19, 2021; US publication May 4, 2023, EP publication February 8,
+   2023. **Both still pending** — so `st:"pending"`, `g:null` and `exp:null`
+   per the schema's pending handling, and the US publication number is the
+   one to put in `num`. The visor detaches and re-seats via fastening
+   elements on the shell, holding either over the face opening or parked on
+   the shell outside it, with flexible elements on each side keeping it
+   captive.
+
+**Excluded: US 11,083,239.** Surfaced in a Scott helmet search and flagged
+then as unconfirmed; it is **Bauer Hockey LLC**, a hockey visor system, not
+Scott and not mountain biking. Not a portfolio item at all — recorded here
+so the same search result doesn't resurface it as one.
 
 US 9,039,026 also surfaced once as a possible "bicycle suspension system"
 hit and could not be verified at all on re-search. It is recorded here only
