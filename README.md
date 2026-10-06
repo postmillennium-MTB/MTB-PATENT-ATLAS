@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 376 |
+| **Total entries** | 378 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 168 |
-| **Expired patents** | 137 |
+| **Expired patents** | 139 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 209 |
-| **Named inventors** | 76 |
+| **Brands** | 210 |
+| **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 277 |
+| **Verified entries** | 279 |
 | **Medium confidence** | 57 |
 | **Draft / in progress** | 42 |
 
@@ -706,6 +706,16 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **US 11,083,239 excluded from the screening, recorded as a dead end.** It surfaced in a Scott helmet search and was flagged then as assignee-unconfirmed; it is **Bauer Hockey LLC**, a hockey visor system — not Scott, not mountain biking, and never a portfolio item. Noted in `RESEARCH_QUEUE.md` so the same search result does not resurface it.
 
 - **Counts synced: total 374 → 376, active 167 → 168, pending 46 → 47, verified 275 → 277.** README's table plus all eight hardcoded `index.html` count locations. `MATCH_DATA` regenerated 253 → 255, since both new entries carry drawings.
+
+- **Oakley added as a brand with two entries, both `conf:"v"`: US 5,550,599 (surface-modified lens) and US 4,416,166 (two-sleeve handle grip).** Both records came from Jon's Google Patents pages — that host is blocked from this environment, so the primary pages were not opened directly — and both drawing sheets were uploaded to `pictures/` ahead of the session (two each, wired via `imgs[]`). Both filed pre-GATT and still in force on June 8, 1995, so `exp` is the later of grant + 17 and filing + 20: **2014** for the lens (filed January 10, 1994, granted August 27, 1996) and **2002** for the grip (filed March 30, 1982, granted November 22, 1983), matching the "anticipated expiration" dates on both records. Both `st:"expired"`, both filed `comp`.
+
+  **Lens, US 5,550,599:** inventor James H. Jannard; the entry restates the abstract (optical zone plus peripheral zone, with surface material removed or added in the periphery; one lens across the whole field of vision or independent left and right lenses) and describes only what the two figures show, a grooved band around the lens edge, nose cut-out and temple ends. The abstract does not name cycling, so the entry's place in a mountain-bike atlas rests on the same editorial call as the Scott helmet and the Giro/Bell entries: rider-worn protective gear, filed under Components. The pasted record also carried a line reading "US case filed in California Eastern District Court" with no case number, court docket or date; it is not on the entry, and no `litigated` badge was applied, because nothing identifies the case.
+
+  **Grip, US 4,416,166:** inventors Jannard and George J. Tackles; assignment to Oakley recorded on the filing date. The pasted notes described this as the original 1975 Oakley Grip and as the patent behind "Unobtainium." Neither is supported by the record: the patent was filed seven years after the company's 1975 founding, its abstract describes a two-sleeve construction with differential hardnesses, and it names no material. The entry says only that Oakley began in 1975 as a motocross-grip company and that this patent covers a later two-sleeve design. The Unobtainium-versus-trademark point stays out until a source for it is located.
+
+- **`BRANDS` gained `Oakley`; `BRAND_HQ` gained `Oakley: "California"`** (Foothill Ranch). **`INVENTORS` gained `James Jannard`** — a judgment call: he is the named inventor on both entries and the founder, which clears the "recurring, notable figure" bar, but the rule says to default to omission, so it is easy to drop.
+
+- **Counts synced: total 376 → 378, expired 137 → 139, verified 277 → 279, brands 209 → 210, inventors 76 → 77.** README's table plus all eight hardcoded `index.html` count locations. `MATCH_DATA` regenerated 255 → 257. `verify_data.js` and `smoke_test.js` both pass; the term check reports no mismatches.
 
 ## Recent updates (July 2026)
 
