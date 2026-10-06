@@ -140,19 +140,23 @@ queue. Each was worked as far as this session's blocked-egress constraint
 allowed; **none produced a `D` entry**, and the reason is recorded per item
 rather than left implied.
 
-1. **Scott Sports SA portfolio** — still open, and still a batch-sourcing job.
-   The submitted lead is a Justia assignee listing, which is one of the hosts
-   blocked from this environment, so the listing itself could not be read.
-   `WebSearch` confirms Scott Sports SA (Givisiez, CH) holds bicycle filings
-   covering shock absorbers, eccentric fork shafts and wheels, but produced
-   nothing precise enough to screen against `D` by number. One genuinely
-   promising angle surfaced that the issue didn't mention: **Specialized sued
-   Scott over the Genius rear suspension**, asserting two FSR patents referred
-   to in coverage as the "679" and "837" patents. That is a `FIGHTS` candidate
-   as much as a `D` candidate, and the atlas already carries FSR-family
-   entries to hang it off. Needs a session with working patent-database access
-   to turn either into real numbers; then follow *Workflow: sourcing a batch of
-   new entries* — candidate list first, Jon picks, nothing written before that.
+1. ~~**Scott Sports SA portfolio**~~ — **Resolved 2026-10-06 as a Patent
+   Fight, not a portfolio scan.** The lead was framed as "scan the Justia
+   assignee listing," which is a blocked host and looked like a batch job.
+   It wasn't. US litigation names patents by their last three digits, and
+   the "'679"/"'837" patents in contemporary coverage of the Specialized
+   suit are **US 5,509,679 and US 5,678,837** — both already in the atlas
+   as the Horst Link entries. Confirmed against the docket Jon supplied:
+   **Case 3:04-cv-01496, N.D. Cal., filed April 16, 2004**, both patents
+   titled "Rear suspension for bicycles," inventor Horst Leitner; the case
+   number corroborates against govinfo's own record
+   (`USCOURTS-cand-3_04-cv-01496`). Shipped as a ninth `FIGHTS` entry,
+   `specialized-scott`, and US 5,678,837 picked up the `litigated` badge
+   it had been missing. **Still genuinely open:** the rest of the Scott
+   Sports portfolio was never screened — that part still needs the
+   assignee listing, which no source reachable from here provides.
+
+
 
 2. ~~**US 11,318,049 B2**~~ — **Added 2026-10-06.** Resolved once Jon
    supplied the bibliographic data the blocked databases would not give up:
@@ -170,25 +174,22 @@ rather than left implied.
    left empty: the assignee is a Taichung company with no identified
    consumer brand, the same handling the Ghaly anti-theft entry got.
 
-3. **TQ Systems — EP 2,582,571 B1** — real, relevant, and deliberately *not*
-   added, because the one fact that would justify adding it is the one that
-   could not be confirmed. Established: the patent is "Control unit for a
-   vehicle and method for changing gears of a vehicle," application
-   EP 11795288, filed June 17, 2011, priorities DE 10 2010 017 412
-   (June 17, 2010) and DE 10 2010 036 833 (August 4, 2010), B1 published
-   October 19, 2016. The mechanism is shift-control logic, not gearing: a
-   control unit connected to the electric motor **cuts motor torque during a
-   gear change**, so the shift happens unloaded. That is genuinely distinct
-   from the atlas's existing TQ entry (EP 3,163,122, the harmonic pin-ring
-   gearbox, a mechanical invention), so it would be its own entry rather than
-   context folded into that one. **The blocker:** no source reached this pass
-   actually confirms TQ Systems GmbH as applicant/proprietor — that came only
-   from the submitted link's query string. The German priority filings are
-   consistent with a German assignee but prove nothing on their own. Crediting
-   TQ in `a`/`who[]` on that basis would be guessing the single fact that puts
-   this patent in a mountain-bike atlas at all, so it stays out until the
-   proprietor is confirmed on the EPO register. Everything else needed to write
-   the entry is above; this should take minutes once that one field resolves.
+3. ~~**TQ Systems — EP 2,582,571 B1**~~ — **Resolved 2026-10-06, entry
+   added.** The single blocker was the proprietor, which no reachable
+   source confirmed — it had come only from the submitted link's query
+   string. Settled by running the patent through the `Fetch patent figure`
+   workflow, which reaches the EPO document server from GitHub's runners
+   where this sandbox cannot: the B1 front page reads **"(73) Proprietor:
+   TQ-Systems GmbH, 82229 Seefeld (DE)"**, inventor **Jürgen Jäkel**. Also
+   confirmed there: application 11795288.7, filed June 17, 2011 as
+   PCT/IB2011/052659 (WO 2011/158220), priorities DE 10 2010 017 412 and
+   DE 10 2010 036 833, grant published October 19, 2016, IPC in B62M 6/xx
+   (electric bicycles). Added as its own `emtb` entry at `conf:"v"` rather
+   than folded into the pin-ring gearbox entry, since it claims control
+   logic (cut motor torque for the duration of a shift) rather than
+   mechanism. **Generalisable lesson:** the figure workflow is not just for
+   drawings — its front-page report is the way to read bibliographic data
+   off any patent this environment's egress policy blocks.
 
 4–5. **Starley background reading, and the Hadland & Lessing *Bicycle Design*
    piece** — no action needed or taken. Both are secondary-source background,

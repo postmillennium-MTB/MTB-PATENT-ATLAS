@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 373 |
+| **Total entries** | 374 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 166 |
+| **Active patents** | 167 |
 | **Expired patents** | 137 |
 | **Pending applications** | 46 |
 | **Litigated entries** | 31 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 | **Brands** | 209 |
 | **Named inventors** | 76 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 274 |
+| **Verified entries** | 275 |
 | **Medium confidence** | 57 |
 | **Draft / in progress** | 42 |
 
@@ -678,6 +678,14 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **`RESEARCH_QUEUE.md` added to `CLAUDE.md`'s file map.** It had been invisible: the contributor guide never mentioned the file, so a session following the file map would not know the research queue exists and would re-chase leads already recorded there as dead ends. The new row also states the intended workflow — GitHub issues are the capture inbox, the queue file is the durable system of record, and a session's job is to triage an issue into the file and close it rather than leaving the same leads tracked in two places that drift apart.
 
 - **Counts synced: litigated 30 → 31, Patent Fights 8 → 9.** Total, active, and the confidence tiers are unchanged (no new `D` entry), so the hardcoded `index.html` count strings were not touched.
+
+- **Added the second TQ Systems patent, EP 2,582,571 B1, `conf:"v"` — issue #103's last open lead, unblocked at the EPO front page.** The hold-up was never the technology; it was that no source reachable from this environment confirmed **who owned it**. The assignee had come only from a query string in the submitted link, and crediting TQ on that basis would have been guessing the one fact that puts the patent in a mountain-bike atlas at all. Running the patent through the `Fetch patent figure` workflow — which reaches the EPO's document server from GitHub's runners — returned the B1 specification's own front page: **"(73) Proprietor: TQ-Systems GmbH, 82229 Seefeld (DE)"**, inventor **Jürgen Jäkel**. Also confirmed there: application 11795288.7, filed June 17, 2011 as PCT/IB2011/052659 (published WO 2011/158220), priority to DE 10 2010 017 412 (June 17, 2010) and DE 10 2010 036 833 (August 4, 2010), grant published October 19, 2016, and IPC marks in B62M 6/xx — the electric-bicycle classes — which independently corroborate that this is e-bike art rather than general vehicle control.
+
+  It is a genuinely separate invention from the existing TQ entry, which answers the question the issue itself raised. EP 3,163,122 is the harmonic pin-ring gearbox — mechanical. This one claims control logic: a control unit tied to the electric motor cuts the torque the motor is contributing for the duration of a gear change, so the shift happens unloaded, then restores assistance once the new ratio engages. So it is its own entry rather than context folded into the gearbox one. Filed `emtb` alongside it, following the rule that a system controlling how the bike itself functions stays in its functional category rather than moving to `tech` for being electronic.
+
+  The entry's `w` points readers at the Nicolai bottom-bracket gearbox entry, which attacks the same problem from the opposite end — Nicolai adds a mechanical clutch so the drivetrain survives shifting under load; TQ briefly removes the load so there is nothing to survive.
+
+- **Counts synced: total 373 → 374, active 166 → 167, verified 274 → 275.** README's At-a-glance table plus all eight hardcoded `index.html` count locations. `MATCH_DATA` was deliberately **not** regenerated — it snapshots only entries carrying drawings, and this entry has none, so it stays at 253.
 
 ## Recent updates (July 2026)
 
