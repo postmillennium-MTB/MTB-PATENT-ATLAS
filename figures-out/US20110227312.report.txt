@@ -1,0 +1,66 @@
+patent: US20110227312
+source: https://patentimages.storage.googleapis.com/70/22/f1/8a9d638e809e57/US20110227312A1.pdf
+pages: 16
+per-page extracted text length: {1: 1309, 2: 79, 3: 97, 4: 110, 5: 79, 6: 97, 7: 97, 8: 98, 9: 16, 10: 79, 11: 89, 12: 80, 13: 93, 14: 6444, 15: 7231, 16: 5278}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US 20110227312A1
+
+(19) United States
+
+(12) Patent Application Publication (10) Pub. No.: US 2011/0227312 A1
+Earle
+
+(43) Pub. Date:
+
+Sep. 22, 2011
+
+(54) BICYCLE REAR SUSPENSION SYSTEM
+
+(52) U.S. Cl. ........................................................ 280/283
+
+(76) Inventor:
+
+David Earle, Watsonville, CA (US)
+
+(21) Appl. No.:
+1-1.
+(22) Filed:
+
+13/046,755
+
+(57)
+ABSTRACT
+A bicycle rear Suspension system is connected between front
+and rear triangles. The Suspension system includes an eccen
+tric bearing unit disposed within one of the front and rear
+triangles, a connecting member connected pivotally to the
+
+Mar. 13, 2011
+O
+
+O
+
+Related U.S. Application Data
+(60) Provisional application No. 61/340,344, filed on Mar.
+16, 2010.
+Publication Classificati
+ublication Classification
+
+(51) Int. Cl.
+B62K 25/20
+
+(2006.01)
+
+other one of the front and rear triangles, and a pivot. The
+
+eccentric bearing unit includes an outer bearing, and an inner
+bearing movable within the outer bearing along an annular
+path. The pivot extends through the inner bearing of the
+eccentric bearing unit and into the connecting member Such
+that, application of a force to the rear triangle results in
+pivoting movement of the rear triangle relative to the front
+triangle, and movement of the inner bearing along the annular
+path.
+
+
