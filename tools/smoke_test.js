@@ -73,6 +73,26 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     }
   }
 
+  /* Card cross-links ([[card:ref|text]] -> a.card-xref): from each end of the
+     required pairs, open the card, click the link, and confirm the target card
+     opens. Keep in step with REQUIRED_CROSSLINKS in verify_data.js. */
+  const XLINK_PAIRS = [['615003', '667348'], ['667348', '615003'], ['9701361', '10088020'], ['10088020', '9701361']];
+  for (const [from, to] of XLINK_PAIRS) {
+    errors.length = 0;
+    await page.evaluate(ref => jumpToCard(ref), from);
+    await page.waitForTimeout(500);
+    const link = page.locator(`#p-${from} a.card-xref[data-xref="${to}"]`).first();
+    const found = await link.count();
+    if (found) await link.click();
+    await page.waitForTimeout(500);
+    const opened = await page.locator(`#p-${to}.open`).count();
+    console.log(`cross-link ${from} -> ${to}: link found ${found}, target opened ${opened}, errors: ${JSON.stringify(errors)}`);
+    if (!found || !opened || errors.length) {
+      failed = true;
+      console.error(`::error::Cross-link ${from} -> ${to} is missing or did not open its target.`);
+    }
+  }
+
   await browser.close();
   if (failed) {
     console.error('\n::error::Browser smoke test FAILED.');
