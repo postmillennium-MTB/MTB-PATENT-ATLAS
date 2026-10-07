@@ -66,11 +66,11 @@ shared body font and the `:root` fallback.
 | `index.html` | Everything: `<head>` meta/SEO tags (lines ~1–20), `<style>` (~21–400), body markup (~402–503), `<script>` (~504–end) — which itself opens with the data registries (`CATS`, `BRAND_HQ`, `BADGES`, `BADGE_TIPS`, `INVENTORS`, `BRANDS`, then the `D` array of patent entries, then `FIGHTS`) before the rendering/filtering logic. **Line numbers drift with every edit — `grep -n` for the constant name rather than trusting a remembered line number.** |
 | `README.md` | Full public documentation: at-a-glance stats table, feature tour, data schema reference, confidence-tier and sourcing rules, methodology, and a chronological "Recent updates" changelog that's the closest thing this repo has to commit history in prose. |
 | `RESEARCH_QUEUE.md` | **The repo's system of record for leads not yet in `D`.** Candidate patents, submitted numbers that conflict with existing entries, and research leads triaged out of GitHub issues. Resolved items are struck through in place with a note on what was found and whether the atlas changed, rather than deleted — the dead ends are the point, since the same wrong number tends to get resubmitted. Jon files leads as GitHub issues (that's what's convenient from the web UI); a session's job is to triage the issue into this file and close it, so there is one durable home and not two that drift apart. Check this file before starting a research pass — a lead you're about to chase may already be recorded here as resolved or as a known dead end. |
-| `tools/` | Repo tooling, not runtime: `fetch_patent_figure.py` (downloads a patent PDF, picks out the drawing sheets, crops the margin and the "U.S. Patent / Sheet n of m" header, emits candidate PNGs plus a report of the PDF's own front page), `verify_data.js`/`smoke_test.js` (the parse/schema/bilingual check and the real-browser smoke test — see **Verifying a change** below), `package.json` (Playwright as a dev dependency for the smoke test only — `tools/node_modules` is gitignored), and `tools/README.md` documenting all of it. Paired with two `workflow_dispatch`/automatic GitHub Actions jobs: `.github/workflows/patent-figure.yml` (figure fetching, manual) and `.github/workflows/verify-data.yml` (the two checks above, automatic on every PR and push to `main`). Deliberately stops short of choosing which figure to use or writing `imgAlt` — both are editorial. Nothing here is loaded by `index.html`; deleting the directory changes nothing a reader sees, so it does not breach the single-file rule. |
+| `tools/` | Repo tooling, not runtime: `fetch_patent_figure.py` (downloads a patent PDF, picks out the drawing sheets, crops the margin and the "U.S. Patent / Sheet n of m" header, emits candidate PNGs plus a report of the PDF's own front page), `verify_data.js`/`smoke_test.js` (the parse/schema/bilingual check and the real-browser smoke test — see **Verifying a change** below), `regen_match_data.js` (rebuilds `match/index.html`'s `MATCH_DATA` snapshot; `verify_data.js` reports when it has drifted), `package.json` (Playwright as a dev dependency for the smoke test only — `tools/node_modules` is gitignored), and `tools/README.md` documenting all of it. Paired with two `workflow_dispatch`/automatic GitHub Actions jobs: `.github/workflows/patent-figure.yml` (figure fetching, manual) and `.github/workflows/verify-data.yml` (the two checks above, automatic on every PR and push to `main`). Deliberately stops short of choosing which figure to use or writing `imgAlt` — both are editorial. Nothing here is loaded by `index.html`; deleting the directory changes nothing a reader sees, so it does not breach the single-file rule. |
 | `pictures/` | Patent drawing images referenced by individual entries' `img` field. Two naming patterns coexist: `US<number><kindcode>.png` (e.g. `US7665929B2.png` — the majority pattern) and a few bare-number files from an earlier pass (`9102378.png`). Prefer the full `US<number><kind>.png` form for anything new. |
 | `favicon.ico`, `favicon-32x32.png`, `apple-touch-icon.png` | Site favicons. No reason to touch these for a data addition. |
 | `social-preview.png` | The `og:image`/`twitter:image` social-card asset (1000×852), referenced by absolute URL in `index.html`'s `<head>`. Not loaded by the page's own runtime code — only fetched by link-preview bots. |
-| `match/index.html` | **Added as a prototype 2026-09-30; wired live 2026-10-01 at `postmillenniumrenaissance.com/atlas/match`** (Jon asked for it explicitly) via a wrapper page in the `pmr-website` repo (`atlas/match/index.html`, same pattern as the main Atlas's own `/atlas/` wrapper — iframes this repo's GitHub Pages URL) plus a `sitemap.xml` entry there. A matching game: pair a real patent drawing with its description. Its own single file, own `<style>`/`<script>`. `MATCH_DATA` is every `D` entry with a drawing (252 as of this writing, any confidence tier, all nine categories — regenerated 2026-10-01 to pick up 6 entries added since the page first went live) — not a live link to `index.html`'s `D` array, but a full snapshot of it, regenerated with the Node script kept as a comment in the file's own `<script>` block; re-run that snippet after a data session adds or edits entries with images rather than hand-editing `MATCH_DATA`. The Rabbit Holes section (`index.html`'s own home tab) has no equivalent drift: its auto-fill reads `D` live on every render (`D.filter(d=>(d.img||d.imgs) && d.w && !used.has(d))`, same image-presence rule, no snapshot step), so it never needs a manual resync the way `MATCH_DATA` does. `title`/`assignee`/`img`/`imgAlt`/the full summary are all copied verbatim; `teaser` is the one field this page invents, and it's algorithmic, not hand-written — the first ~200 characters of the entry's own summary, cut at a word boundary. That's a real quality trade against the original 27-entry demo's hand-written, mechanism-first one-liners: an algorithmic cut often leads with filing/citation boilerplate instead of the mechanism. Bilingual (EN/FR toggle, `localStorage`-persisted preference, same `tx()`/`t()` pattern as the main Atlas) — the entry data was already fully bilingual in `D`, so this was free; the game's own chrome strings live in a `T` object in this file, not shared with the main Atlas's `T`. `../pictures/` references into the shared image folder. The `noindex,nofollow` robots meta and the red "Prototype" badge are both removed now that the page is intentionally public; the badge was replaced with a neutral "Beta — descriptions are auto-generated for now" pill (same honest-gap pattern as the main Atlas's `MT_UNREVIEWED` banner) rather than dropped outright, since the teaser-quality gap below is real and still worth flagging to a player. **Still open, by Jon's own explicit call to launch now and improve after:** hand-written teasers to replace the algorithmic ones (at least for the entries where the auto-cut reads worst) — once that pass happens, consider whether the beta pill should come off too. **Also still open, not yet asked for:** a link to the game from this repo's own `index.html` nav/chrome — the game is reachable today only by URL (direct, via the wrapper, or via `pmr-website`'s sitemap), not by clicking anything inside the main Atlas. |
+| `match/index.html` | **Added as a prototype 2026-09-30; wired live 2026-10-01 at `postmillenniumrenaissance.com/atlas/match`** (Jon asked for it explicitly) via a wrapper page in the `pmr-website` repo (`atlas/match/index.html`, same pattern as the main Atlas's own `/atlas/` wrapper — iframes this repo's GitHub Pages URL) plus a `sitemap.xml` entry there. A matching game: pair a real patent drawing with its description. Its own single file, own `<style>`/`<script>`. `MATCH_DATA` is every `D` entry with a drawing (252 as of this writing, any confidence tier, all nine categories — regenerated 2026-10-01 to pick up 6 entries added since the page first went live) — not a live link to `index.html`'s `D` array, but a full snapshot of it, regenerated with `node tools/regen_match_data.js` (`--check` reports drift without writing); re-run it after a data session adds or edits entries with images rather than hand-editing `MATCH_DATA`. `node tools/verify_data.js` also reports the drift, as information rather than a failure. The Rabbit Holes section (`index.html`'s own home tab) has no equivalent drift: its auto-fill reads `D` live on every render (`D.filter(d=>(d.img||d.imgs) && d.w && !used.has(d))`, same image-presence rule, no snapshot step), so it never needs a manual resync the way `MATCH_DATA` does. `title`/`assignee`/`img`/`imgAlt`/the full summary are all copied verbatim; `teaser` is the one field this page invents, and it's algorithmic, not hand-written — the first ~200 characters of the entry's own summary, cut at a word boundary. That's a real quality trade against the original 27-entry demo's hand-written, mechanism-first one-liners: an algorithmic cut often leads with filing/citation boilerplate instead of the mechanism. Bilingual (EN/FR toggle, `localStorage`-persisted preference, same `tx()`/`t()` pattern as the main Atlas) — the entry data was already fully bilingual in `D`, so this was free; the game's own chrome strings live in a `T` object in this file, not shared with the main Atlas's `T`. `../pictures/` references into the shared image folder. The `noindex,nofollow` robots meta and the red "Prototype" badge are both removed now that the page is intentionally public; the badge was replaced with a neutral "Beta — descriptions are auto-generated for now" pill (same honest-gap pattern as the main Atlas's `MT_UNREVIEWED` banner) rather than dropped outright, since the teaser-quality gap below is real and still worth flagging to a player. **Still open, by Jon's own explicit call to launch now and improve after:** hand-written teasers to replace the algorithmic ones (at least for the entries where the auto-cut reads worst) — once that pass happens, consider whether the beta pill should come off too. **Also still open, not yet asked for:** a link to the game from this repo's own `index.html` nav/chrome — the game is reachable today only by URL (direct, via the wrapper, or via `pmr-website`'s sitemap), not by clicking anything inside the main Atlas. |
 
 ## The data model
 
@@ -558,9 +558,11 @@ for working without Claude. A session has two other options:
      `inputs: {"numbers": "US4889521", "candidates": "4"}` (input values
      are strings). Use `actions_list` → `list_workflow_runs` to watch it;
      a run takes about 30–40 seconds.
-  2. **Submit one patent number per run.** As of 2026-10-06 a single
-     failed number exits the fetch step, which skips the upload and branch
-     steps, so the successful patents' candidates are discarded too.
+  2. Several numbers in one run are fine: since 2026-10-07 a patent that
+     fails no longer discards the others' candidates (the run is marked
+     failed at the end, and the "Fetch and crop" log says which one and
+     why). Before that, a single failure skipped the upload step. The
+     `pages` and `rotate` inputs take one number only.
   3. Find the output on the branch `patent-figures/<run id>`. A pull
      request may not open (the repo setting that lets Actions open PRs may
      be off), so don't wait for one. Fetch the branch and extract only its
@@ -569,31 +571,38 @@ for working without Claude. A session has two other options:
      `git archive FETCH_HEAD figures-out | tar -x -C <scratch>`.
      Don't check the branch out over the working tree; it is based on an
      older `main` and would revert your edits.
-  4. Look at the candidates and read `<patent>.report.txt` as
-     `tools/README.md` says, then crop and name the chosen sheet by hand.
+  4. Open `<patent>__contact.png` first: every drawing sheet on one
+     labelled grid, with the candidates marked. Pick from that, then read
+     `<patent>.report.txt` as `tools/README.md` says. If the sheet you want
+     is not a candidate, run again with `pages` (e.g. `"12"`), and `rotate`
+     (e.g. `"12:cw"`) for a sideways one; the output is already trimmed and
+     upright, so no hand-cropping is needed.
 
 Known behavior to plan for:
 
-- **Candidates are the first N drawing sheets, not the best N.** Some
-  applications open with prior-art figures (labeled "PRIOR ART"); the
-  patent's own drawings start later. Re-run with a larger `candidates`
-  value (12 covered US 2011/0227312) rather than guessing.
+- **Candidates are the first N drawing sheets, not the best N.** Sheets
+  whose text says PRIOR ART / RELATED ART / etc. are ranked last, but that
+  needs a text layer and can misjudge a sheet mixing both kinds of figure.
+  The contact sheet shows everything; use `pages` for the one you want.
 - **Recent grants (2025 on) may have no retrievable PDF.** The tool tried
   USPTO (403) and a Google Patents page with no PDF link. Pass `pdf_url`
   (copied from the Google Patents page by Jon) with a single number.
 - **Image-only scans have no text layer.** The report then can't show the
-  front page and the sheet selection is unreliable (a WO 1993 scan's first
-  candidate was a PCT country-code page). Check the front page by eye
-  before setting a tier.
-- **Sheets can come off sideways.** View the result and rotate before
-  saving; check the figure label reads upright.
-- **Crops are loose.** Trim to the drawing's bounding box and confirm the
-  "U.S. Patent / Sheet n of m" header is gone.
+  front page and the sheet selection is a guess (a WO 1993 scan's first
+  candidate was a PCT country-code page). The contact sheet shows what is
+  there; check the front page by eye before setting a tier.
+- **Sheets can come off sideways, and are not auto-detected.** Check the
+  contact sheet for any whose figure label does not read upright and pass
+  `rotate` (`cw` or `ccw`; if the result is upside down, use the other).
+- **Crops are tight as of 2026-10-07** (scan specks in the margins no longer
+  stretch the box), but still confirm the header is gone and no part of the
+  figure was clipped before saving.
 - **Naming:** `US<number><kind>.png`, e.g. `US4889521A.png`; for a
   published application, `US20110227312A1.png`.
 
-After wiring `img`/`imgs`, regenerate `MATCH_DATA` (snippet at the bottom
-of `match/index.html`'s `<script>`) and add the README changelog bullet.
+After wiring `img`/`imgs`, run `node tools/regen_match_data.js` and add the
+README changelog bullet. `node tools/verify_data.js` lists `pictures/` files
+no entry references, which is also a ready list of sheets waiting to be wired.
 
 ## Workflow: sourcing a batch of new entries (Jon hasn't named specific patents)
 

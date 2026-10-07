@@ -16,6 +16,16 @@
    unrelated bugs. A missing field doesn't break parsing, only rendering,
    so this script exists specifically to catch what parsing alone can't.
 
+   Two more checks are reported but do NOT fail the run, for the same reason
+   as the bilingual one -- someone editing through the GitHub web UI cannot run
+   Node to fix them, so a red build would only block them:
+
+     - MATCH_DATA drift: match/index.html carries a static snapshot of every
+       entry with a drawing; this says when it no longer matches D, and the one
+       command that fixes it (node tools/regen_match_data.js).
+     - unreferenced pictures: files in pictures/ that no entry points at --
+       sheets uploaded ahead of a data session, waiting to be wired in.
+
    Bilingual completeness (t/s/w/long still a plain string somewhere) is
    reported but does NOT fail the run -- CLAUDE.md documents "English now,
    French later" as an acceptable, deliberate interim state, not an error.
@@ -132,6 +142,48 @@ D.forEach(d => {
 });
 console.log('\npre-1995 patent-term mismatches (informational, not blocking):',
   expIssues.length ? expIssues : 'none');
+
+/* MATCH_DATA drift -- informational. The builder is shared with
+   tools/regen_match_data.js, so "current" here means exactly "that script would
+   write nothing new". */
+try {
+  const { buildMatchData, currentMatchData } = require('./regen_match_data.js');
+  const want = buildMatchData(html);
+  const have = currentMatchData(fs.readFileSync(path.join(repoRoot, 'match', 'index.html'), 'utf8'));
+  const key = e => (e.title && e.title.en) || e.num;
+  const haveByKey = new Map(have.map(e => [key(e), e]));
+  const wantByKey = new Map(want.map(e => [key(e), e]));
+  const missing = want.filter(e => !haveByKey.has(key(e))).map(key);
+  const stale = have.filter(e => !wantByKey.has(key(e))).map(key);
+  const changed = want.filter(e => haveByKey.has(key(e))
+    && JSON.stringify(haveByKey.get(key(e))) !== JSON.stringify(e)).map(key);
+  if (!missing.length && !stale.length && !changed.length) {
+    console.log(`\nMATCH_DATA is current (${want.length} entries).`);
+  } else {
+    console.log(`\nMATCH_DATA is out of date (informational, not blocking): ` +
+      `${have.length} entries in match/index.html, ${want.length} with drawings in D.`);
+    if (missing.length) console.log('  not yet in the game:', missing);
+    if (stale.length) console.log('  in the game but gone from D (or lost their drawing):', stale);
+    if (changed.length) console.log('  drawing, alt text or summary changed:', changed);
+    console.log('  fix: node tools/regen_match_data.js');
+  }
+} catch (e) {
+  console.log('\nMATCH_DATA drift check skipped:', e.message);
+}
+
+/* Unreferenced pictures -- informational. Matched as plain text against the
+   whole of index.html, which covers img, imgs[].src and RABBIT_HOLES alike. */
+try {
+  const picDir = path.join(repoRoot, 'pictures');
+  const orphans = fs.readdirSync(picDir)
+    .filter(f => /\.(png|jpe?g|webp|gif|svg)$/i.test(f))
+    .filter(f => !html.includes('pictures/' + f))
+    .sort();
+  console.log('pictures/ files no entry references (informational, not blocking):',
+    orphans.length ? orphans : 'none');
+} catch (e) {
+  console.log('unreferenced-pictures check skipped:', e.message);
+}
 
 if (hardFailures.length) {
   console.error(`\n::error::${hardFailures.length} schema-integrity issue(s) found -- see list above.`);

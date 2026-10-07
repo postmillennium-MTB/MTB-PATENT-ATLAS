@@ -32,6 +32,16 @@ on:
         required: false
         default: "4"
         type: string
+      pages:
+        description: "Optional. Exact PDF pages to emit instead of the first drawing sheets, e.g. 10-13 (page numbers as labelled on the contact sheet). One patent number only."
+        required: false
+        default: ""
+        type: string
+      rotate:
+        description: "Optional. Turn sideways sheets upright, e.g. 12:cw,13:ccw (cw, ccw or 180). One patent number only."
+        required: false
+        default: ""
+        type: string
       keep_header:
         description: "Keep the 'U.S. Patent / Sheet n of m' header band"
         required: false
@@ -61,12 +71,32 @@ jobs:
       - name: Self-test the tool before using it
         run: python3 tools/test_fetch_patent_figure.py
 
+      # continue-on-error, because the tool already carries on past a patent it
+      # cannot fetch and writes candidates for the rest, then exits non-zero if
+      # any failed. Without this the non-zero exit skipped the upload and branch
+      # steps below, so one unreachable number discarded the good ones with it.
+      # The run is still marked failed, by the last step, after the good
+      # candidates are safely uploaded.
+      #
+      # Inputs go through env vars rather than being pasted into the script, so
+      # a stray quote or $( ) in a box cannot become shell code.
       - name: Fetch and crop
         id: fetch
+        continue-on-error: true
+        env:
+          NUMBERS: ${{ inputs.numbers }}
+          CANDIDATES: ${{ inputs.candidates }}
+          PDF_URL: ${{ inputs.pdf_url }}
+          PAGES: ${{ inputs.pages }}
+          ROTATE: ${{ inputs.rotate }}
+          KEEP_HEADER: ${{ inputs.keep_header }}
         run: |
-          ARGS=(${{ inputs.numbers }} --out figures-out --candidates "${{ inputs.candidates }}")
-          if [ -n "${{ inputs.pdf_url }}" ]; then ARGS+=(--url "${{ inputs.pdf_url }}"); fi
-          if [ "${{ inputs.keep_header }}" = "true" ]; then ARGS+=(--keep-header); fi
+          read -ra NUMS <<< "$NUMBERS"
+          ARGS=("${NUMS[@]}" --out figures-out --candidates "$CANDIDATES")
+          if [ -n "$PDF_URL" ]; then ARGS+=(--url "$PDF_URL"); fi
+          if [ -n "$PAGES" ]; then ARGS+=(--pages "$PAGES"); fi
+          if [ -n "$ROTATE" ]; then ARGS+=(--rotate "$ROTATE"); fi
+          if [ "$KEEP_HEADER" = "true" ]; then ARGS+=(--keep-header); fi
           python3 tools/fetch_patent_figure.py "${ARGS[@]}"
 
       - name: Fail if no candidates were produced
@@ -115,9 +145,11 @@ jobs:
 
             These are **candidates**, not finished entries. To use one:
 
-            1. Look at the images in `figures-out/` and pick the figure that
-               actually shows the mechanism. The first drawing sheet is often
-               not the best one.
+            1. Open `<patent>__contact.png` to see every drawing sheet at once,
+               and pick the figure that actually shows the mechanism. The first
+               drawing sheet is often not the best one. If it is not among the
+               candidates, re-run with the `pages` input (and `rotate` for a
+               sideways sheet).
             2. Rename it to `US<number><kind>.png` and move it into `pictures/`.
             3. Open the matching `*.report.txt`. It contains the PDF's own front
                page — title, inventor, assignee, filing and grant dates. Check
@@ -148,3 +180,13 @@ jobs:
           echo "from opening pull requests. To make this automatic:"
           echo "  Settings -> Actions -> General -> Workflow permissions ->"
           echo "  tick 'Allow GitHub Actions to create and approve pull requests'"
+
+      # Last on purpose: the candidates for every patent that did work are
+      # already uploaded and pushed by now, so failing here only marks the run
+      # red and names what needs another look (the fetch step's log has the
+      # per-patent reason).
+      - name: Fail the run if any patent could not be fetched
+        if: steps.fetch.outcome == 'failure'
+        run: |
+          echo "::error::At least one patent could not be fetched. Candidates for the others were still uploaded -- see the 'Fetch and crop' step for which failed and why."
+          exit 1

@@ -19,6 +19,11 @@ WHAT THIS DELIBERATELY DOES NOT DO (the judgement part)
   - invent anything. If the download fails it says so and exits non-zero. It
     never emits a placeholder image, and it never guesses a patent number.
 
+Alongside the candidates it writes <patent>__contact.png, a labelled thumbnail
+grid of every drawing sheet, so the right figure can be chosen from one image
+instead of guessing how many candidates to ask for. Sheets labelled "prior art"
+are ranked last for the default candidates (they stay on the contact sheet).
+
 It also dumps the PDF's own front-page text to report.txt, so the title,
 inventor, assignee and filing/grant dates can be read off the primary document
 instead of being taken from secondhand coverage. That is the part that decides
@@ -34,6 +39,8 @@ USAGE
   python3 tools/fetch_patent_figure.py US12570369B1 --url <pdf link>  # lookup blocked
   python3 tools/fetch_patent_figure.py US12570369B1 --pdf saved.pdf   # already have it
   python3 tools/fetch_patent_figure.py DE102017116754B4               # non-US number
+  python3 tools/fetch_patent_figure.py US2011227312A1 --pages 10-13   # exact sheets
+  python3 tools/fetch_patent_figure.py US2011227312A1 --pages 12 --rotate 12:cw
 
   Accepts "US12570369B1", "12570369", "D1140680", "RE45684", or a non-US
   number with its own office prefix, e.g. "DE102017116754B4", "EP3111109" --
@@ -67,6 +74,24 @@ HEADER_MAX_FRAC = 0.09    # a top band shorter than this fraction of the sheet
 HEADER_GAP_FRAC = 0.012   # ...but only if this much blank space separates it
                           # from whatever is below, so a tall figure that
                           # happens to start near the top is never truncated.
+SPECK_INK_PX = 150        # an isolated edge mark with this few ink pixels or fewer
+                          # is scan dust, not drawing, and must not stretch the
+                          # crop box. A real drawing element (a label, even a
+                          # long thin line) carries far more than this.
+SPECK_GAP_FRAC = 0.01     # blank run, as a fraction of the sheet's height or
+                          # width, that separates one cluster of ink from the next.
+CONTACT_DPI = 70          # thumbnails need far less resolution than candidates.
+CONTACT_MAX_SHEETS = 24   # a 56-sheet patent would make an unreadable grid;
+                          # the report says how many were left off.
+CONTACT_COLS = 4
+CONTACT_CELL = (340, 390) # width, height of one thumbnail cell, label included.
+CONTACT_LABEL_H = 30
+CONTACT_PAD = 6           # white border kept around each thumbnail's drawing.
+# Figures a patent labels as background art. They are rarely the figure a card
+# wants, but they come first in the PDF often enough (US 2011/0227312 opens with
+# eight of them) that the default candidates were all prior art.
+BACKGROUND_ART_RE = re.compile(r"(PRIOR|RELATED|CONVENTIONAL|BACKGROUND)\s+ART", re.I)
+ROTATIONS = {"cw": -90, "ccw": 90, "180": 180}  # PIL rotates counter-clockwise
 MAX_WIDTH = 1600          # downscale wider output than this. Cards never
                           # display larger, and the repo has no CDN.
 HTTP_TIMEOUT = 60
@@ -263,7 +288,13 @@ def require_tool(name):
 
 def page_text_lengths(pdf, workdir):
     """Extracted-text length per page, 1-indexed, used to spot drawing sheets."""
-    lengths = {}
+    return read_pages(pdf, workdir)[0]
+
+
+def read_pages(pdf, workdir):
+    """(lengths, texts): extracted text length and the text itself, per page,
+    1-indexed. The text is kept so sheets labelled "prior art" can be spotted."""
+    lengths, texts = {}, {}
     page = 1
     while True:
         out = os.path.join(workdir, "p%d.txt" % page)
@@ -275,13 +306,26 @@ def page_text_lengths(pdf, workdir):
             break
         txt = open(out, encoding="utf-8", errors="replace").read()
         lengths[page] = len(txt.strip())
+        texts[page] = txt
         page += 1
         if page > 400:  # a runaway guard; no patent in this atlas is near this
             break
-    return lengths
+    return lengths, texts
 
 
-def pick_drawing_pages(lengths, want):
+def background_art_pages(lengths, texts):
+    """Drawing-density pages whose text says PRIOR ART / RELATED ART / etc.
+
+    Only sparse pages are considered: a specification column mentions "prior
+    art" constantly and is not a candidate in the first place. This is a
+    heuristic over a text layer, so it finds nothing on an image-only scan, and
+    it can flag a sheet that mixes a prior-art figure with the invention's own.
+    That is why such sheets are ranked last, never dropped."""
+    return {p for p, txt in texts.items()
+            if lengths.get(p, 0) <= DRAWING_TEXT_MAX and BACKGROUND_ART_RE.search(txt)}
+
+
+def pick_drawing_pages(lengths, want, avoid=()):
     """Pick the drawing sheets by text density. Three real document shapes:
 
       modern grant, text layer  p1 bibliographic (thousands of chars), then
@@ -310,29 +354,36 @@ def pick_drawing_pages(lengths, want):
         # Nothing distinguishes any page -- no text layer anywhere. Density is
         # useless here, so fall back to the one structural fact that still
         # holds for a modern grant: page 1 is the bibliographic front page.
-        return [p for p in sorted(lengths) if p > 1][:want]
-
-    if low:
+        ordered = [p for p in sorted(lengths) if p > 1]
+    elif low:
         # Some pages are text-heavy and some are not, so the split is real.
         # Keep page 1 if it landed on the sparse side: that means it is a
         # drawing (the inverted old-patent shape), not a front page.
-        return low[:want]
+        ordered = low
+    else:
+        # Every page is text-heavy. Rank by relative sparseness instead of an
+        # absolute threshold, so the least text-like pages still surface rather
+        # than handing back the first N pages in document order.
+        ordered = sorted(sorted(lengths), key=lambda p: lengths[p])
 
-    # Every page is text-heavy. Rank by relative sparseness instead of an
-    # absolute threshold, so the least text-like pages still surface rather
-    # than handing back the first N pages in document order.
-    return sorted(sorted(lengths), key=lambda p: lengths[p])[:want]
+    # Sheets labelled as background art go last, not away: still reachable by
+    # asking for more candidates, and always visible on the contact sheet.
+    if avoid:
+        ordered = ([p for p in ordered if p not in avoid]
+                   + [p for p in ordered if p in avoid])
+    return ordered[:want]
 
 
-def render_page(pdf, page, workdir):
-    prefix = os.path.join(workdir, "render%d" % page)
+def render_page(pdf, page, workdir, dpi=RENDER_DPI):
+    stem = "render%d_%d" % (dpi, page)
+    prefix = os.path.join(workdir, stem)
     subprocess.run(
         ["pdftoppm", "-f", str(page), "-l", str(page),
-         "-r", str(RENDER_DPI), "-png", "-gray", pdf, prefix],
+         "-r", str(dpi), "-png", "-gray", pdf, prefix],
         check=True, capture_output=True,
     )
     hits = sorted(f for f in os.listdir(workdir)
-                  if f.startswith("render%d-" % page) and f.endswith(".png"))
+                  if f.startswith(stem + "-") and f.endswith(".png"))
     if not hits:
         raise RuntimeError("pdftoppm produced no image for page %d" % page)
     return os.path.join(workdir, hits[0])
@@ -364,10 +415,74 @@ def ink_row_bands(img):
     return bands
 
 
-def crop_sheet(path, strip_header=True):
-    from PIL import Image, ImageChops, ImageOps
+def _ink_counts(mask):
+    """Ink pixels in each row of a 0/255 'L' mask. bytes.count runs in C, so
+    this stays fast on a 200dpi sheet without needing numpy."""
+    w, h = mask.size
+    data = mask.tobytes()
+    return [data.count(255, y * w, (y + 1) * w) for y in range(h)]
+
+
+def _content_span(counts):
+    """(first, last) index of real content in a per-row (or per-column) ink
+    count list, ignoring specks at either end. None if there is no real ink.
+
+    Ink is grouped into clusters separated by blank runs; a cluster with no
+    more than SPECK_INK_PX ink pixels in total is scan dust. Dust at the edge
+    is what used to stretch the crop box: a plain bounding box treats one stray
+    dot in a margin as drawing. Counting pixels (rather than rows) is what keeps
+    a long thin line, such as a dimension line reaching beyond the rest of the
+    figure, from being mistaken for dust."""
+    gap = max(8, int(len(counts) * SPECK_GAP_FRAC))
+    clusters, start, last, ink = [], None, None, 0
+    for i, c in enumerate(counts):
+        if not c:
+            continue
+        if start is not None and i - last > gap:
+            clusters.append((start, last, ink))
+            start, ink = None, 0
+        if start is None:
+            start = i
+        last = i
+        ink += c
+    if start is not None:
+        clusters.append((start, last, ink))
+    real = [c for c in clusters if c[2] > SPECK_INK_PX]
+    if not real:
+        return None
+    return real[0][0], real[-1][1]
+
+
+def content_box(img):
+    """Bounding box of the drawing on a white-background sheet, ignoring
+    scan specks. Falls back to the plain bounding box if nothing survives."""
+    from PIL import Image, ImageChops
+
+    mask = ImageChops.difference(img, Image.new("L", img.size, 255)).point(
+        lambda v: 255 if v > 18 else 0)
+    rows = _content_span(_ink_counts(mask))
+    if rows is None:
+        return mask.getbbox()
+    top, bottom = rows
+    transpose = getattr(Image, "Transpose", Image).TRANSPOSE
+    band = mask.crop((0, top, mask.size[0], bottom + 1))
+    cols = _content_span(_ink_counts(band.transpose(transpose)))
+    if cols is None:
+        return mask.getbbox()
+    return (cols[0], top, cols[1] + 1, bottom + 1)
+
+
+def crop_sheet(path, strip_header=True, rotate=0, pad=CROP_PAD):
+    from PIL import Image, ImageOps
 
     img = Image.open(path).convert("L")
+
+    # Some sheets are laid out sideways in the PDF (a landscape figure on a
+    # portrait page). pdftoppm renders them as stored, so the caller says which
+    # pages need turning; see --rotate. Done before cropping so the header
+    # logic below still sees the header at the top.
+    if rotate:
+        img = img.rotate(rotate, expand=True, fillcolor=255)
 
     # Patent PDFs render light-on-dark essentially never, but screenshots taken
     # from a dark-mode viewer do, and one such file was already in pictures/.
@@ -382,10 +497,8 @@ def crop_sheet(path, strip_header=True):
     if edge and sum(edge) / len(edge) < 128:
         img = ImageOps.invert(img)
 
-    # Trim the page margin.
-    bg = Image.new("L", img.size, 255)
-    mask = ImageChops.difference(img, bg).point(lambda v: 255 if v > 18 else 0)
-    box = mask.getbbox()
+    # Trim the page margin (and any scan specks in it).
+    box = content_box(img)
     if box:
         img = img.crop(box)
 
@@ -402,9 +515,7 @@ def crop_sheet(path, strip_header=True):
             if (band_h <= img.size[1] * HEADER_MAX_FRAC
                     and gap >= img.size[1] * HEADER_GAP_FRAC):
                 img = img.crop((0, bands[1][0], img.size[0], img.size[1]))
-                box2 = ImageChops.difference(
-                    img, Image.new("L", img.size, 255)
-                ).point(lambda v: 255 if v > 18 else 0).getbbox()
+                box2 = content_box(img)
                 if box2:
                     img = img.crop(box2)
 
@@ -414,11 +525,87 @@ def crop_sheet(path, strip_header=True):
             (MAX_WIDTH, max(1, int(img.size[1] * ratio))), Image.LANCZOS
         )
 
-    from PIL import ImageOps as _IO
-    return _IO.expand(img, border=CROP_PAD, fill=255)
+    return ImageOps.expand(img, border=pad, fill=255)
 
 
-def process(raw, outdir, want, strip_header, local_pdf=None, direct_url=None):
+def parse_pages(spec):
+    """"6,10-12" -> [6, 10, 11, 12]. Order kept, duplicates dropped."""
+    pages = []
+    for part in spec.replace(" ", "").split(","):
+        m = re.match(r"^(\d+)(?:-(\d+))?$", part)
+        if not m:
+            raise ValueError("cannot parse %r in --pages; expected e.g. 6,10-12" % part)
+        lo = int(m.group(1))
+        hi = int(m.group(2) or lo)
+        if lo < 1 or hi < lo:
+            raise ValueError("bad page range %r in --pages" % part)
+        pages += [p for p in range(lo, hi + 1) if p not in pages]
+    return pages
+
+
+def parse_rotate(spec):
+    """"12:cw,13:ccw" -> {12: -90, 13: 90}. cw/ccw/180 say which way to turn
+    the rendered sheet; words rather than degrees because the sign convention
+    of image libraries (counter-clockwise positive) is easy to get backwards,
+    and was, by hand, the first time this was needed."""
+    out = {}
+    for part in spec.replace(" ", "").split(","):
+        m = re.match(r"^(\d+):(cw|ccw|180)$", part, re.I)
+        if not m:
+            raise ValueError("cannot parse %r in --rotate; expected e.g. 12:cw,13:ccw "
+                             "(cw, ccw or 180)" % part)
+        out[int(m.group(1))] = ROTATIONS[m.group(2).lower()]
+    return out
+
+
+def _label_font(size):
+    from PIL import ImageFont
+    try:
+        return ImageFont.load_default(size=size)   # Pillow >= 10.1
+    except TypeError:
+        return ImageFont.load_default()
+
+
+def build_contact_sheet(pdf, sheets, chosen, prior, rotations, work, dest):
+    """One labelled thumbnail grid of the drawing sheets, saved to dest.
+
+    sheets   page numbers to show, in page order
+    chosen   {page: candidate number} for the sheets also written as candidates
+    prior    pages flagged as background art
+
+    Returns (sheets_shown, sheets_left_off). Looking at this one image is how
+    the right figure is picked; the alternative was re-running with a bigger
+    --candidates until it appeared."""
+    from PIL import Image, ImageDraw
+
+    shown = sheets[:CONTACT_MAX_SHEETS]
+    cw, ch = CONTACT_CELL
+    rows = (len(shown) + CONTACT_COLS - 1) // CONTACT_COLS
+    grid = Image.new("L", (cw * CONTACT_COLS, ch * max(rows, 1)), 255)
+    draw = ImageDraw.Draw(grid)
+    font = _label_font(18)
+    for i, page in enumerate(shown):
+        x, y = (i % CONTACT_COLS) * cw, (i // CONTACT_COLS) * ch
+        rendered = render_page(pdf, page, work, dpi=CONTACT_DPI)
+        thumb = crop_sheet(rendered, strip_header=True,
+                           rotate=rotations.get(page, 0), pad=CONTACT_PAD)
+        thumb.thumbnail((cw - 10, ch - CONTACT_LABEL_H - 8))
+        grid.paste(thumb, (x + (cw - thumb.width) // 2,
+                           y + CONTACT_LABEL_H + 2))
+        label = "p%d" % page
+        if page in chosen:
+            label += "  = cand %d" % chosen[page]
+        if page in prior:
+            label += "  PRIOR ART"
+        draw.text((x + 8, y + 5), label, fill=0, font=font)
+        draw.rectangle((x, y, x + cw - 1, y + ch - 1), outline=170)
+    grid.save(dest, optimize=True)
+    return shown, sheets[CONTACT_MAX_SHEETS:]
+
+
+def process(raw, outdir, want, strip_header, local_pdf=None, direct_url=None,
+            pages=None, rotations=None):
+    rotations = rotations or {}
     digits, canonical = parse_number(raw)
     os.makedirs(outdir, exist_ok=True)
     work = tempfile.mkdtemp(prefix="patfig-")
@@ -435,12 +622,29 @@ def process(raw, outdir, want, strip_header, local_pdf=None, direct_url=None):
             source = download_pdf(digits, canonical, pdf, direct_url)
             print("  downloaded %s from %s" % (canonical, source))
 
-        lengths = page_text_lengths(pdf, work)
+        lengths, texts = read_pages(pdf, work)
         if not lengths:
             raise RuntimeError("pdftotext read no pages from the PDF")
-        pages = pick_drawing_pages(lengths, want)
+        prior = background_art_pages(lengths, texts)
+        # Every drawing sheet in rank order, for the contact sheet; the first
+        # `want` of them are the candidates unless --pages named them outright.
+        ranked = pick_drawing_pages(lengths, len(lengths), avoid=prior)
+        if pages:
+            bad = [p for p in pages if p not in lengths]
+            if bad:
+                raise RuntimeError("--pages %s: the PDF has only %d pages"
+                                   % (bad, len(lengths)))
+            chosen_pages = pages
+        else:
+            chosen_pages = ranked[:want]
+        for p in rotations:
+            if p not in lengths:
+                raise RuntimeError("--rotate names page %d but the PDF has only "
+                                   "%d pages" % (p, len(lengths)))
         print("  %d pages; drawing-sheet candidates: %s"
-              % (len(lengths), pages or "none"))
+              % (len(lengths), chosen_pages or "none"))
+        if prior:
+            print("  sheets labelled prior art, ranked last: %s" % sorted(prior))
 
         # Front-page text is the primary-source record. Write it out so the
         # number, title, inventor and dates can be checked against the entry.
@@ -448,7 +652,16 @@ def process(raw, outdir, want, strip_header, local_pdf=None, direct_url=None):
         report = os.path.join(outdir, "%s.report.txt" % canonical)
         with open(report, "w", encoding="utf-8") as fh:
             fh.write("patent: %s\nsource: %s\npages: %d\n" % (canonical, source, len(lengths)))
-            fh.write("per-page extracted text length: %s\n\n" % lengths)
+            fh.write("per-page extracted text length: %s\n" % lengths)
+            fh.write("drawing sheets, best first: %s\n" % ranked)
+            if prior:
+                fh.write("labelled prior art / background art (ranked last): %s\n"
+                         % sorted(prior))
+            if all(v == 0 for v in lengths.values()):
+                fh.write("NO TEXT LAYER: sheets are listed in page order only; the "
+                         "ranking above is a guess, not a classification. Check "
+                         "the contact sheet.\n")
+            fh.write("contact sheet: %s__contact.png\n\n" % canonical)
             fh.write("=== FRONT PAGE TEXT (primary source -- check the entry against this) ===\n")
             front_text = ""
             if os.path.exists(front):
@@ -472,9 +685,10 @@ def process(raw, outdir, want, strip_header, local_pdf=None, direct_url=None):
         print("  wrote %s" % report)
 
         made = []
-        for i, page in enumerate(pages, 1):
+        for i, page in enumerate(chosen_pages, 1):
             rendered = render_page(pdf, page, work)
-            img = crop_sheet(rendered, strip_header=strip_header)
+            img = crop_sheet(rendered, strip_header=strip_header,
+                             rotate=rotations.get(page, 0))
             name = "%s__cand%d_p%d.png" % (canonical, i, page)
             dest = os.path.join(outdir, name)
             img.save(dest, optimize=True)
@@ -482,6 +696,17 @@ def process(raw, outdir, want, strip_header, local_pdf=None, direct_url=None):
             print("  candidate %d: %s  (page %d, %dx%d, %.0fKB)"
                   % (i, name, page, img.size[0], img.size[1],
                      os.path.getsize(dest) / 1024))
+
+        sheets = sorted(ranked)
+        if sheets:
+            contact = os.path.join(outdir, "%s__contact.png" % canonical)
+            shown, left_off = build_contact_sheet(
+                pdf, sheets, {p: i for i, p in enumerate(chosen_pages, 1)},
+                prior, rotations, work, contact)
+            print("  contact sheet: %s (%d sheets%s)" % (
+                os.path.basename(contact), len(shown),
+                "; %d more not shown: pages %s" % (len(left_off), left_off)
+                if left_off else ""))
         return canonical, made
     finally:
         shutil.rmtree(work, ignore_errors=True)
@@ -509,7 +734,25 @@ def main():
                          "it up. Use the PDF link shown under the title on the "
                          "Google Patents page. Only valid with a single patent "
                          "number, which is used for naming.")
+    ap.add_argument("--pages",
+                    help="emit exactly these PDF pages as candidates, e.g. 6,10-12, "
+                         "instead of the first --candidates drawing sheets. Page "
+                         "numbers are the ones printed on the contact sheet. Only "
+                         "valid with a single patent number.")
+    ap.add_argument("--rotate",
+                    help="turn sideways sheets upright, e.g. 12:cw,13:ccw (cw, ccw "
+                         "or 180, keyed by PDF page). Only valid with a single "
+                         "patent number.")
     args = ap.parse_args()
+    for flag in ("pages", "rotate"):
+        if getattr(args, flag) and len(args.numbers) != 1:
+            sys.exit("error: --%s names pages of one PDF, so it takes exactly "
+                     "one patent number." % flag)
+    try:
+        pages = parse_pages(args.pages) if args.pages else None
+        rotations = parse_rotate(args.rotate) if args.rotate else {}
+    except ValueError as e:
+        sys.exit("error: %s" % e)
     if args.pdf and len(args.numbers) != 1:
         sys.exit("error: --pdf takes exactly one patent number, for naming.")
     if args.url and len(args.numbers) != 1:
@@ -529,7 +772,7 @@ def main():
         print("\n%s" % raw)
         try:
             process(raw, args.out, args.candidates, not args.keep_header,
-                    args.pdf, args.url)
+                    args.pdf, args.url, pages, rotations)
         except Exception as e:                      # noqa: BLE001
             print("  FAILED: %s" % e)
             failures.append((raw, str(e)))
@@ -537,7 +780,9 @@ def main():
     print("\n" + "=" * 66)
     print("Candidates are in %s/ -- nothing has been added to pictures/." % args.out)
     print("To finish a figure:")
-    print("  1. look at the candidates and pick the one that shows the mechanism")
+    print("  1. open <patent>__contact.png to see every drawing sheet at once, then")
+    print("     pick the one that shows the mechanism (re-run with --pages N to get")
+    print("     a sheet that is not among the candidates; --rotate N:cw if sideways)")
     print("  2. rename it to US<number><kind>.png and move it into pictures/")
     print("  3. read <patent>.report.txt and check the entry's number, title,")
     print("     inventor and dates against the PDF's own front page")

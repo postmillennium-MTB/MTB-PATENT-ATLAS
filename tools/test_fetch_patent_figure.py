@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Self-test for fetch_patent_figure.py. No dependencies, no network.
+"""Self-test for fetch_patent_figure.py. No network. Pillow and poppler are
+needed only for the image and end-to-end checks at the bottom, which are
+skipped, with a message, when either is missing.
 
     python3 tools/test_fetch_patent_figure.py
 
@@ -203,6 +205,159 @@ def test_non_us_canonical_skips_uspto_and_kind_code_guessing():
 test_kind_code_fallback_recovers_from_a_wrong_guess()
 test_403_does_not_trigger_kind_code_guessing()
 test_non_us_canonical_skips_uspto_and_kind_code_guessing()
+
+# --- prior-art ranking, option parsing (no image libraries needed) ----------
+
+# US 2011/0227312 is the real case: sheets 2-9 are labelled PRIOR ART and the
+# application's own drawings start on sheet 10, so the default four candidates
+# were all background art. Densities are the measured ones.
+lengths_227312 = {1: 1309, 2: 79, 3: 97, 4: 110, 5: 79, 6: 97, 7: 97, 8: 98,
+                  9: 16, 10: 79, 11: 89, 12: 80, 13: 93, 14: 6444, 15: 7231, 16: 5278}
+check("prior-art sheets are ranked last, not dropped",
+      pick_drawing_pages(lengths_227312, 4, avoid={2, 3, 4, 5, 6, 7, 8, 9}),
+      [10, 11, 12, 13])
+check("asking for more than the invention's own sheets reaches the prior art",
+      pick_drawing_pages(lengths_227312, 6, avoid={2, 3, 4, 5, 6, 7, 8, 9}),
+      [10, 11, 12, 13, 2, 3])
+check("no avoid set leaves the ranking unchanged",
+      pick_drawing_pages(lengths_227312, 4), [2, 3, 4, 5])
+check("background art is detected on sparse pages only",
+      F.background_art_pages({1: 5000, 2: 80, 3: 90},
+                             {1: "the prior art teaches", 2: "FIG. 1\nPRIOR ART", 3: "FIG. 2"}),
+      {2})
+check("related-art wording is detected too",
+      F.background_art_pages({2: 80}, {2: "FIG. 1 Related Art"}), {2})
+
+check("page list and ranges", F.parse_pages("6,10-12"), [6, 10, 11, 12])
+check("page list drops duplicates", F.parse_pages("3, 3-4"), [3, 4])
+check("rotation words map to PIL's counter-clockwise degrees",
+      F.parse_rotate("12:cw,13:ccw,14:180"), {12: -90, 13: 90, 14: 180})
+for bad, fn in (("0", F.parse_pages), ("5-2", F.parse_pages), ("x", F.parse_pages),
+                ("12", F.parse_rotate), ("12:90", F.parse_rotate)):
+    try:
+        fn(bad)
+        check("rejects malformed %r" % bad, "no exception raised", "ValueError")
+    except ValueError:
+        print("PASS  rejects malformed %r" % bad)
+
+# --- image handling and an end-to-end run on generated PDFs ------------------
+#
+# The PDFs are generated here, not downloaded, so this runs offline. A
+# PIL-saved PDF has no text layer (the "pure image scan" shape); a hand-written
+# one has real text, which is what the prior-art detection needs.
+
+import shutil  # noqa: E402
+
+try:
+    from PIL import Image, ImageDraw  # noqa: E402
+    HAVE_IMAGING = shutil.which("pdftoppm") and shutil.which("pdftotext")
+except ImportError:
+    HAVE_IMAGING = False
+
+if not HAVE_IMAGING:
+    print("SKIP  image and end-to-end checks (Pillow and poppler-utils needed)")
+else:
+    def drawing_sheet(size=(800, 1000), specks=True, sideways=False):
+        """A white page with a drawing, optional scan dust in the margins."""
+        im = Image.new("L", size, 255)
+        d = ImageDraw.Draw(im)
+        d.rectangle((200, 300, 600, 600), outline=0, width=3)
+        d.line((400, 100, 400, 800), fill=0, width=2)      # long thin line
+        d.text((350, 850), "FIG. 1", fill=0)
+        if specks:
+            for x, y in ((20, 20), (780, 15), (30, 980), (770, 990), (15, 500)):
+                d.ellipse((x, y, x + 4, y + 4), fill=0)
+        return im.rotate(90, expand=True) if sideways else im
+
+    # Specks must not stretch the crop box; the long thin line must survive.
+    with tempfile.TemporaryDirectory() as td:
+        clean_path = os.path.join(td, "clean.png")
+        dusty_path = os.path.join(td, "dusty.png")
+        drawing_sheet(specks=False).save(clean_path)
+        drawing_sheet(specks=True).save(dusty_path)
+        clean = F.crop_sheet(clean_path, strip_header=False)
+        dusty = F.crop_sheet(dusty_path, strip_header=False)
+        check("scan specks do not change the crop", dusty.size, clean.size)
+        check("the long thin line is not mistaken for dust (height kept)",
+              dusty.size[1] > 700, True)
+        turned = F.crop_sheet(clean_path, strip_header=False, rotate=F.ROTATIONS["cw"])
+        check("rotate turns the sheet (width and height swap)",
+              (turned.size[0] > turned.size[1]), True)
+
+    def write_text_pdf(path, pages):
+        """Minimal PDF, one text string per page, with a rectangle so the
+        page renders to something. Offsets are computed, so poppler reads it
+        without repair."""
+        objs = ["<< /Type /Catalog /Pages 2 0 R >>", None]
+        kids = []
+        for text in pages:
+            page_id = len(objs) + 1
+            kids.append("%d 0 R" % page_id)
+            lines = text if isinstance(text, list) else [text]
+            stream = "BT /F1 12 Tf 50 750 Td 14 TL " + " ".join(
+                "(%s) Tj T*" % ln for ln in lines) + " ET 100 300 300 200 re S"
+            objs.append("<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] "
+                        "/Contents %d 0 R /Resources << /Font << /F1 << /Type /Font "
+                        "/Subtype /Type1 /BaseFont /Helvetica >> >> >> >>" % (page_id + 1))
+            objs.append("<< /Length %d >>\nstream\n%s\nendstream" % (len(stream), stream))
+        objs[1] = "<< /Type /Pages /Kids [%s] /Count %d >>" % (" ".join(kids), len(pages))
+        out, offsets = b"%PDF-1.4\n", []
+        for i, body in enumerate(objs, 1):
+            offsets.append(len(out))
+            out += ("%d 0 obj\n%s\nendobj\n" % (i, body)).encode()
+        xref = len(out)
+        out += ("xref\n0 %d\n0000000000 65535 f \n" % (len(objs) + 1)).encode()
+        out += b"".join(("%010d 00000 n \n" % o).encode() for o in offsets)
+        out += ("trailer\n<< /Size %d /Root 1 0 R >>\nstartxref\n%d\n%%%%EOF\n"
+                % (len(objs) + 1, xref)).encode()
+        open(path, "wb").write(out)
+
+    front = ["Front page line %d of the bibliographic page" % i for i in range(60)]
+    with tempfile.TemporaryDirectory() as td:
+        pdf = os.path.join(td, "doc.pdf")
+        write_text_pdf(pdf, [front, "FIG. 1 PRIOR ART", "FIG. 2 PRIOR ART",
+                             "FIG. 3", "FIG. 4"])
+        out = os.path.join(td, "out")
+        canonical, made = F.process("US9999999B2", out, 2, True, local_pdf=pdf)
+        names = sorted(os.listdir(out))
+        check("end to end: prior-art sheets 2-3 are skipped; candidates are 4 and 5",
+              [n for n in names if "__cand" in n],
+              ["US9999999B2__cand1_p4.png", "US9999999B2__cand2_p5.png"])
+        check("end to end: a contact sheet and report are written",
+              ("US9999999B2__contact.png" in names, "US9999999B2.report.txt" in names),
+              (True, True))
+        report = open(os.path.join(out, "US9999999B2.report.txt")).read()
+        check("report names the prior-art sheets", "prior art / background art" in report
+              and "[2, 3]" in report, True)
+
+        out2 = os.path.join(td, "out2")
+        F.process("US9999999B2", out2, 2, True, local_pdf=pdf, pages=[3],
+                  rotations={3: F.ROTATIONS["cw"]})
+        check("--pages picks exactly the named sheet",
+              [n for n in os.listdir(out2) if "__cand" in n], ["US9999999B2__cand1_p3.png"])
+        try:
+            F.process("US9999999B2", os.path.join(td, "out3"), 2, True,
+                      local_pdf=pdf, pages=[99])
+            check("--pages beyond the PDF is rejected", "no exception raised", "RuntimeError")
+        except RuntimeError:
+            print("PASS  --pages beyond the PDF is rejected")
+
+        # An image-only scan: every page extracts 0 chars. Specks everywhere.
+        scan = os.path.join(td, "scan.pdf")
+        sheets = [drawing_sheet(specks=True) for _ in range(6)]
+        sheets[0].save(scan, save_all=True, append_images=sheets[1:])
+        out4 = os.path.join(td, "out4")
+        F.process("US8888888A", out4, 3, True, local_pdf=scan)
+        check("image-only scan: page 1 skipped, pages in order",
+              [n for n in sorted(os.listdir(out4)) if "__cand" in n],
+              ["US8888888A__cand1_p2.png", "US8888888A__cand2_p3.png",
+               "US8888888A__cand3_p4.png"])
+        report = open(os.path.join(out4, "US8888888A.report.txt")).read()
+        check("image-only scan: report says the ranking is a guess",
+              "NO TEXT LAYER: sheets are listed in page order only" in report, True)
+        contact = Image.open(os.path.join(out4, "US8888888A__contact.png"))
+        check("contact sheet covers every drawing sheet (5 sheets, 4 columns, 2 rows)",
+              contact.size, (F.CONTACT_CELL[0] * F.CONTACT_COLS, F.CONTACT_CELL[1] * 2))
 
 print()
 if FAILURES:

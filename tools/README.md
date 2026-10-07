@@ -17,6 +17,18 @@ cd tools && npm install && cd ..
 node tools/smoke_test.js      # real-browser check: search + Rabbit Holes
 ```
 
+`verify_data.js` also prints two informational reports (they never fail the run,
+since someone editing through the GitHub web UI cannot run Node to fix them):
+
+- **MATCH_DATA drift.** `match/index.html` holds a static snapshot of every
+  entry that has a drawing. This says when it no longer matches `D`, and names
+  the fix: `node tools/regen_match_data.js` (add `--check` to only report).
+  That script replaces a Node snippet that used to live in a comment at the
+  bottom of `match/index.html`; `verify_data.js` calls the same builder, so
+  there is one copy of the logic.
+- **Unreferenced pictures.** Files in `pictures/` that no entry points at:
+  sheets uploaded ahead of a data session and waiting to be wired in.
+
 `verify_data.js` needs only Node. `smoke_test.js` needs Playwright (`npm
 install` inside `tools/` once) and a Chromium build — it uses the one
 pre-installed at `/opt/pw-browsers/chromium` if that path exists (true in
@@ -68,6 +80,16 @@ candidates to its **Artifacts** section, which needs no permissions at all, and
 the branch `patent-figures/<run id>` is pushed before the PR is attempted — the
 run log prints a one-click compare link for it.
 
+**One patent failing no longer costs the others.** With several numbers in one
+run, every patent that works is still uploaded and pushed; the run is marked
+failed at the very end and the "Fetch and crop" log says which number failed
+and why. (Before 2026-10-07 a single unreachable number skipped the upload, so
+the good candidates were lost with it.)
+
+**To get a different sheet or turn one upright**, use the optional inputs on a
+second run, with a single patent number: **pages** (e.g. `10-13`, the page
+numbers printed on the contact sheet) and **rotate** (e.g. `12:cw,13:ccw`).
+
 **If the automatic lookup fails**, the run log says which URLs it tried. Open
 the patent on Google Patents, copy the PDF link under the title, and put it in
 the optional **pdf_url** box with a single patent number. That skips both
@@ -84,6 +106,8 @@ python3 tools/fetch_patent_figure.py US12570369B1 US11866114B2
 python3 tools/fetch_patent_figure.py 4733881 --out /tmp/figs --candidates 6
 python3 tools/fetch_patent_figure.py US12570369B1 --url <pdf link>  # lookup blocked
 python3 tools/fetch_patent_figure.py US9102197B2 --pdf saved.pdf   # already have the PDF
+python3 tools/fetch_patent_figure.py US20110227312A1 --pages 10-13  # these exact sheets
+python3 tools/fetch_patent_figure.py US20110227312A1 --pages 12 --rotate 12:cw
 ```
 
 Those last two matter more than they look. Downloading a PDF is the one step
@@ -95,10 +119,15 @@ Accepts `US12570369B1`, `12570369`, `D1140680`, `RE45684`.
 
 ### After it runs
 
-1. Look at the candidates. Pick the figure that shows the mechanism — the first
-   drawing sheet is frequently a generic whole-bike view, and the useful one is
-   further in. The DW-Link entry uses the abstract kinematic diagram from sheet
-   1 of 56 precisely because the geometry is the point.
+1. Open `<patent>__contact.png`: a labelled thumbnail grid of every drawing
+   sheet (up to 24; the report says how many were left off), with the sheets
+   written out as candidates marked `= cand N`. Pick the figure that shows the
+   mechanism — the first drawing sheet is frequently a generic whole-bike view,
+   and the useful one is further in. The DW-Link entry uses the abstract
+   kinematic diagram from sheet 1 of 56 precisely because the geometry is the
+   point. If the sheet you want is not a candidate, re-run with `--pages N`
+   (workflow input **pages**); if it is sideways, add `--rotate N:cw` or
+   `N:ccw` (workflow input **rotate**).
 2. Rename to `US<number><kind>.png`, move into `pictures/`.
 3. Read `<patent>.report.txt`. It holds the PDF's own front page — the title,
    inventor, assignee, application number and dates. **Check the atlas entry
@@ -107,7 +136,8 @@ Accepts `US12570369B1`, `12570369`, `D1140680`, `RE45684`.
    for a long time describing the wrong invention and the wrong assignee, and
    reading the drawing sheet is what exposed it.
 4. Add `img` and bilingual `imgAlt` to the entry.
-5. Delete the candidates you did not use.
+5. Delete the candidates and the contact sheet you did not use.
+6. After wiring `img`/`imgs`, run `node tools/regen_match_data.js`.
 
 ### Self-test
 
@@ -115,13 +145,29 @@ Accepts `US12570369B1`, `12570369`, `D1140680`, `RE45684`.
 python3 tools/test_fetch_patent_figure.py
 ```
 
-No network, no dependencies. It pins the page-classification rule against the
-real measured page-length profiles of three patents, plus number parsing. The
-workflow runs it before every fetch. The fixtures are measurements, not
+No network. It pins the page-classification rule against the real measured
+page-length profiles of three patents, number parsing, the prior-art ranking
+(against US 2011/0227312's measured profile), option parsing, speck-tolerant
+cropping, and an end-to-end run on PDFs it generates itself — one with a text
+layer, one image-only. The image checks need Pillow and poppler and are skipped
+with a message without them. The workflow runs it before every fetch. The fixtures are measurements, not
 inventions — if a run turns up a fourth document shape, add its real numbers
 rather than tuning the rule until the output looks plausible.
 
 ### Known limits
+
+- **Prior-art ranking is a heuristic.** Sheets whose text says PRIOR ART /
+  RELATED ART / CONVENTIONAL ART / BACKGROUND ART are ranked last for the
+  default candidates (never dropped; the contact sheet marks them). It needs a
+  text layer, so it finds nothing on an image-only scan, and it can flag a
+  sheet that mixes a prior-art figure with the invention's own.
+- **Sideways sheets are not auto-detected.** Which way to turn one cannot be
+  read from the text layer, and there is no real sideways PDF to test a
+  detector against, so `--rotate` is manual: look at the contact sheet, then
+  name the page and direction.
+- **Image-only scans are still guesswork.** With no text layer, sheets are
+  listed in page order and page 1 is assumed to be the front page. The report
+  says so; the contact sheet is how to check.
 
 - **Figure choice is not automatable in any honest way.** Which drawing explains
   a mechanism to a reader is an editorial call.
