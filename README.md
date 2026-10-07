@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 396 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 395 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 392 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
@@ -15,18 +15,18 @@ An interactive timeline of mountain bike intellectual property: 392 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 396 |
+| **Total entries** | 395 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 175 |
 | **Expired patents** | 148 |
-| **Pending applications** | 48 |
+| **Pending applications** | 47 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 211 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
 | **Verified entries** | 302 |
-| **Medium confidence** | 52 |
+| **Medium confidence** | 51 |
 | **Draft / in progress** | 42 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -771,6 +771,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Dave Weagle portfolio timeline panel.** Cards whose credit line names Weagle get a "Weagle portfolio timeline" button that opens a wide side panel (same chrome as the Colorado MTB Innovation panel, with its own minimize tab) holding a Gantt-style chart: one bar per entry, filing year to estimated expiry, colored by status, with a "Now" marker. It is built live from `D` on each open and language switch, so a new Weagle-credited entry adds a bar with no other edit; open-ended bars mark pending or unconfirmed-term entries. The lawsuit card (no patent term) and other people's patents that only carry his tag (Giant's Maestro) are left out. Bar clicks jump to the card. Bilingual EN/FR. Built as a replacement for the hand-maintained chart in the separate `weagle-patents` repo, which is not maintained and not cross-checked here. Checked in a real browser at 1000px and 360px.
 - **DW-Link family entry gets a `long` disclosure from Wikipedia's DW-link article.** Covers the suspension-bob causes and what anti-squat does about them, the anti-squat and braking-squat curves, the floating-brake point, the earlier similar four-bar systems (Schwinn, Fisher, Karpiel) and Giant's Maestro (linked to its card), the licensee list and the six elite UCI downhill world titles, 2005 to 2007. Independent Fabrication added to the licensee list in `a`. Wikipedia is a secondary source and attributed as such in the text; the patent facts in `s` are unchanged. Left out as promotional or uncited: the claim that US 7,128,329 is the world's first and only published account of the method, and the "most successful linkage platform in downhill" line. The title and `exp` are unchanged; note the entry bundles three patents, so `exp` follows the newest (US 7,661,503).
 - **Third drawing added to the US 2022/0297790 card:** Figs. 14A/14B, the rear wheel and cassette (sheet uploaded to `pictures/` as `US20220297790A1.2.png`). No count changes.
+- **Merged the two sequential adjacent drive entries (US 2022/0297790 and EP 4,059,824) into one card, "Rocky Mountain Underground sequential adjacent drive" (396 → 395).** Same family: the EP application (EP 22162773.0) was filed two days after the US one. The merged card keeps the US application as its primary number with the EP publication in `nums`, `conf:"v"` on the strength of the US record. The EP publication number comes from Pinkbike's coverage and is flagged in the text as unchecked against the EP register. `j:"EP"` is dropped (US primary, per the schema rule). The old `#p=EP4059824A2` link is kept in `REF_ALIASES`. The RMU attribution is Jon's; the record lists Weagle as inventor and applicant with no assignee. Counts synced: total 396 → 395, pending 48 → 47, medium confidence 52 → 51; the six `index.html` count strings and the README table updated.
 
 ## Recent updates (July 2026)
 
