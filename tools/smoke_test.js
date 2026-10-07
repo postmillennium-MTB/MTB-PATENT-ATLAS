@@ -115,6 +115,16 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     }
   }
 
+  /* Old slug deep links must still open their card (REF_ALIASES in index.html). */
+  for (const [oldRef, newRef] of [['priority-stillpoint-suspension-system', '20250256807'], ['hayes-hydraulic-disc-brake', '5390771']]) {
+    errors.length = 0;
+    await page.evaluate(ref => jumpToCard(ref), oldRef);
+    await page.waitForTimeout(500);
+    const opened = await page.locator(`#p-${newRef}.open`).count();
+    console.log(`alias ${oldRef} -> ${newRef}: opened ${opened}, errors: ${JSON.stringify(errors)}`);
+    if (!opened || errors.length) { failed = true; console.error(`::error::Old deep link #p=${oldRef} no longer opens its card.`); }
+  }
+
   await browser.close();
   if (failed) {
     console.error('\n::error::Browser smoke test FAILED.');
