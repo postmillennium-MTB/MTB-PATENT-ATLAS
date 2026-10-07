@@ -223,8 +223,8 @@ header::before{
 .home-sec{margin:0 0 26px}
 .home-sec-h,.home-sec h3.home-sec-h{font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:17px;letter-spacing:.01em;margin:0 0 10px}
 /* Rabbit holes: a swipe row on phones, three across from 640px. The pool
-   (RABBIT_HOLES_SHOWN, in the data section) runs bigger than what's ever
-   visible at once, so .rh-row always scrolls -- .rh-head's prev/next
+   (appended in RABBIT_HOLES_SHOWN batches, in the data section) runs bigger
+   than what's ever visible at once, so .rh-row always scrolls -- .rh-head's prev/next
    buttons (wired in renderStats(), reusing the same 30px round-button look
    as the filter-row .scroll-btn arrows for visual consistency) step it one
    card at a time, and a timer there auto-advances every HOME_RABBIT_CYCLE_MS.
@@ -246,7 +246,7 @@ header::before{
 .rh-title{font-weight:700;font-size:15px;line-height:1.25}
 .rh-blurb{font-size:13.5px;color:var(--ink-soft);line-height:1.4}
 .rh-go{margin-top:auto;font-size:13px;color:var(--primary);font-weight:700}
-@media(min-width:640px){.rh-row{grid-auto-columns:calc((100% - 20px)/3);overflow-x:hidden}}
+@media(min-width:640px){.rh-row{grid-auto-columns:calc((100% - 20px)/3)}}
 /* Hero search */
 .home-hero{margin:0 0 20px}
 .home-kicker{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
@@ -1539,21 +1539,20 @@ const FIGHTS = [
 ];
 
 /* ---- RABBIT HOLES (Atlas tab, top row) ----
-   Hand-picked story cards shown first on the Atlas (home) tab. Up to
-   RABBIT_HOLES_SHOWN appear per visit: every `pin:true` hole first, then a
-   random pick of the rest, then any empty slots are filled automatically
-   with a random entry that has a patent drawing (img or imgs) and a `w`
-   (its own title and the first sentence of that `w`) -- any conf tier,
-   not just "v". An empty array is valid -- the row is then fully automatic.
+   Hand-picked story cards shown first on the Atlas (home) tab. The row is
+   an infinite scroll over the whole pool: every `pin:true` hole first, then
+   the rest of the holes in random order, then every entry that has a patent
+   drawing (img or imgs) and a `w` (its own title and the first sentence of
+   that `w`) in random order -- any conf tier, not just "v". An empty array
+   is valid -- the row is then fully automatic.
 
    Only 3 show on screen at once (78% width on phones, an exact third from
-   640px -- see .rh-row's CSS), but RABBIT_HOLES_SHOWN itself sets the full
-   pool size behind the scroll -- the prev/next arrows and the 5-second
-   auto-advance (both in renderStats()) page through the rest of it one
-   card at a time. Raising it gives a reader more to page through per
-   visit at the cost of a few more thumbnails decoded (all lazy-loaded, so
-   the cost is real but small); it doesn't change how many are ever on
-   screen together.
+   640px -- see .rh-row's CSS). RABBIT_HOLES_SHOWN is the batch size: the
+   first batch renders up front, and each time the reader scrolls (or uses
+   the prev/next arrows or the 5-second auto-advance, all in renderStats())
+   within ~2 cards of the right edge, the next batch is appended, until the
+   pool runs out. Thumbnails are lazy-loaded, so only the batches reached
+   cost anything.
 
    Each hole:
    {
@@ -3057,12 +3056,12 @@ function firstImg(d){
 function pickRabbitHoles(){
   if(rabbitPicks) return rabbitPicks;
   const shuffle=a=>{ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+  // The full pool, not just the first screenful: the row appends the next
+  // RABBIT_HOLES_SHOWN cards as the reader scrolls toward its right edge.
   const curated=[...RABBIT_HOLES.filter(h=>h.pin), ...shuffle(RABBIT_HOLES.filter(h=>!h.pin))]
-    .slice(0,RABBIT_HOLES_SHOWN)
     .map(h=>{ const d=h.go&&h.go.card ? fightCardMatches(h.go.card)[0] : null; return {hole:h, d}; });
   const used=new Set(curated.map(c=>c.d).filter(Boolean));
   const auto=shuffle(D.filter(d=>(d.img||d.imgs) && d.w && !used.has(d)))
-    .slice(0,Math.max(0,RABBIT_HOLES_SHOWN-curated.length))
     .map(d=>({hole:null, d}));
   rabbitPicks=[...curated,...auto];
   return rabbitPicks;
@@ -3076,8 +3075,12 @@ function autoBlurb(d){
   if(first.length<=RABBIT_AUTO_BLURB_MAX) return first;
   return first.slice(0, first.lastIndexOf(" ", RABBIT_AUTO_BLURB_MAX-3))+"…";
 }
-function rabbitHolesHTML(){
-  return pickRabbitHoles().map(({hole,d},i)=>{
+/* How many cards of the pool are in the DOM. Survives a language-switch
+   re-render so the row doesn't snap back to the first batch. */
+let rabbitCount=RABBIT_HOLES_SHOWN;
+function rabbitHolesHTML(from=0,to=rabbitCount){
+  return pickRabbitHoles().slice(from,to).map(({hole,d},i0)=>{
+    const i=from+i0;
     const di = firstImg(d);
     const img = hole ? (hole.img || di?.src) : di?.src;
     const alt = hole ? tx(hole.imgAlt || di?.alt) : tx(di?.alt);
@@ -3224,10 +3227,13 @@ function renderStats(){
   </div>`;
   // Atlas (home) blocks
   const holes=pickRabbitHoles();
-  tl.querySelectorAll("[data-rh]").forEach(b=>{ b.onclick=()=>{
+  // Delegated so cards appended by the infinite scroll need no re-binding.
+  const rhClickRow=$("#rhRow");
+  if(rhClickRow) rhClickRow.onclick=e=>{
+    const b=e.target.closest("[data-rh]"); if(!b) return;
     const {hole,d}=holes[Number(b.dataset.rh)];
     followGo(hole ? hole.go : {card:d.num || txEN(d.t)});
-  };});
+  };
   tl.querySelectorAll("[data-suggest]").forEach(b=>{ b.onclick=()=>runHomeSearch(HOME_SEARCH_SUGGESTIONS[Number(b.dataset.suggest)].q); });
   tl.querySelectorAll("[data-go-st]").forEach(b=>{ b.onclick=()=>followGo({st:b.dataset.goSt}); });
   tl.querySelectorAll("[data-go-tab]").forEach(b=>{ b.onclick=()=>followGo({tab:b.dataset.goTab}); });
@@ -3302,8 +3308,17 @@ function renderStats(){
       return c1 ? c1.getBoundingClientRect().left - c0.getBoundingClientRect().left : c0.getBoundingClientRect().width;
     };
     const rhAtStart=()=>rhRow.scrollLeft<=2;
-    const rhAtEnd=()=>rhRow.scrollLeft>=rhRow.scrollWidth-rhRow.clientWidth-2;
-    const rhUpdateBtns=()=>{ rhPrevBtn.disabled=rhAtStart(); rhNextBtn.disabled=rhAtEnd(); };
+    // Infinite scroll: within ~2 cards of the right edge, append the next batch.
+    const rhPoolAll=pickRabbitHoles();
+    const rhLoadMore=()=>{
+      while(rabbitCount<rhPoolAll.length && rhRow.scrollWidth-rhRow.scrollLeft-rhRow.clientWidth < 2*rhStep()+4){
+        const to=Math.min(rabbitCount+RABBIT_HOLES_SHOWN, rhPoolAll.length);
+        rhRow.insertAdjacentHTML("beforeend", rabbitHolesHTML(rabbitCount,to));
+        rabbitCount=to;
+      }
+    };
+    const rhAtEnd=()=>rabbitCount>=rhPoolAll.length && rhRow.scrollLeft>=rhRow.scrollWidth-rhRow.clientWidth-2;
+    const rhUpdateBtns=()=>{ rhLoadMore(); rhPrevBtn.disabled=rhAtStart(); rhNextBtn.disabled=rhAtEnd(); };
     const rhAdvance=dir=>rhRow.scrollBy({left:dir*rhStep(), behavior:rhReducedMotion?"auto":"smooth"});
     const rhArmTimer=()=>{
       if(rabbitTimer){ clearInterval(rabbitTimer); rabbitTimer=null; }
