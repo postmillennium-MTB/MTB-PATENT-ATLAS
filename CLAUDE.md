@@ -236,6 +236,11 @@ hard-fails on any token whose target doesn't exist and on any pair in its
 clicks those pairs in a real browser (keep its `XLINK_PAIRS` in step). When you
 wire a new pair on purpose, add it to both lists.
 
+**Linking to an outside page:** `[[link:https://…|link text]]` in `s`/`w`/`long`,
+same rules as the card token (stripped to plain text in search, Rabbit Holes and
+Patent Match). `https` only, hard-checked by `verify_data.js`. It does not check
+that the URL resolves; confirm that yourself before adding one.
+
 **Changing an entry's `num` changes its deep link.** A `num:null` entry's `#p=`
 ref is a title slug; once it gets a number the ref becomes the number (and a
 renamed title or a merged entry changes it too). Every old ref people have
