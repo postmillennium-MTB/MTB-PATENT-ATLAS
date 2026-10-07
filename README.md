@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 380 |
+| **Total entries** | 381 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 169 |
-| **Expired patents** | 140 |
+| **Expired patents** | 141 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 210 |
+| **Brands** | 211 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 282 |
+| **Verified entries** | 283 |
 | **Medium confidence** | 56 |
 | **Draft / in progress** | 42 |
 
@@ -731,6 +731,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Added Specialized's articulating-frame assembly (US 6,953,202), `frame`, tier `v`.** Granted October 11, 2005 to Jason L. Chamberlain and Christopher P. D'Aluisio; a continuation of US 6,866,281 (granted March 15, 2005), itself a continuation of US 6,712,373 (granted March 30, 2004), with a provisional of April 15, 2002. `exp: 2022` runs from the April 29, 2002 parent filing, matching Google Patents' anticipated-expiration date. Number, dates and inventors for 6,953,202 were read from its Google Patents page; the two parents' grant dates come from search-result snippets only, since patent-site fetches are blocked in-session. Not confirmed: the patent's claims (the text describes the abstract's "preferred" tube arrangement, not claim language) and any production Specialized model that uses it. Same-titled US 7,052,029 and 7,059,620 appeared in search and were not checked for family membership, so they are not in the entry. Three sheets from `pictures/` wired in as `imgs[]` (Fig. 1, the frame-only view, Fig. 5). Counts synced: total 378 → 379, expired 139 → 140, verified 280 → 281 (the README's verified figure had drifted one low), across the README table and the eight hardcoded strings in `index.html`.
 
 - **Added GoPro's content-proxy patent for multicamera highlights (US 10,402,445), `tech`, tier `v`.** Granted September 3, 2019 to David Newman, Mark Vaden, Rolf Fischer and Vadim Polonichko; application 16/131,542 filed September 14, 2018, published as US 2019/0012332. Number, dates, inventors and the 2036-01-19 anticipated expiry were read from its Google Patents page. `y: 2016` and `exp: 2036` follow that priority date and expiry, since the 2018 filing is a continuation. Not confirmed: the parent application and its number (a same-titled US 10,078,644 appeared in search, but the priority chain was not visible, so it is not cited), and the claims. No link to a specific GoPro product feature is asserted. Three sheets from `pictures/` wired in as `imgs[]` (Fig. 7A trail-ride overlay, Fig. 8 elevation trace, camera body view). Counts synced: total 379 → 380, active 168 → 169, verified 281 → 282, across the README table and the eight hardcoded strings in `index.html`.
+
+- **Added Samsung's virtual-ride motion platform (US 9,694,235), `tech`, tier `v`.** Granted July 4, 2017 to Heungno Oh and six co-inventors for Samsung Electronics; application 14/324,898 filed July 7, 2014 with a 2013 Korean priority. `exp: 2034` is the 2014 filing + 20, matching Google Patents' anticipated expiration, but the status is `expired` because Google lists it as Expired – Fee Related (maintenance fees unpaid); the lapse date was not seen. Details were read from its Google Patents page. Despite the "virtual hiking" title, the abstract describes indoor biking on a motion platform. Not confirmed: the claims, and any commercial product. **Judgment call on category:** `tech` is defined as rider-worn camera and data-capture accessories, and an indoor simulator doesn't fit that label literally; it was placed there because it is orthogonal to the bike's own systems and no other category fits better. Say if you'd rather it sit in `comp`. `Samsung` added to `BRANDS` and `BRAND_HQ` (South Korea). Two sheets from `pictures/` wired in as `imgs[]` (the rig, and a slope-limit chart). Counts synced: total 380 → 381, expired 140 → 141, verified 282 → 283, brands 210 → 211, across the README table and the eight hardcoded strings in `index.html`.
 
 ## Recent updates (July 2026)
 
