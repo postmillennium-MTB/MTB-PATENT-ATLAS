@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 383 |
+| **Total entries** | 384 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 170 |
-| **Expired patents** | 142 |
+| **Expired patents** | 143 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 212 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 285 |
+| **Verified entries** | 286 |
 | **Medium confidence** | 56 |
 | **Draft / in progress** | 42 |
 
@@ -737,6 +737,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Added Scott USA's stud-and-slot pedal system (US 4,893,523), `comp`, tier `v`.** Granted January 16, 1990 to Dan C. Lennon (application 07/142,049, filed January 7, 1988; assigned to Scott USA Limited Partnership in July 1989). Lennon is the inventor of the Scott DH bar already in the atlas (US 4,750,754), so the entry uses the existing `Scott` and `Boone Lennon` tags; the identity rests on the matching name and assignee. `exp: 2008` is the later of grant + 17 (2007) and filing + 20 (2008) under the pre-GATT rule, matching Google Patents. Status is `expired` per Google's Expired – Fee Related, which means it lapsed earlier on unpaid maintenance fees; the lapse date was not seen. Details were read from its Google Patents page. Not confirmed: the claims, and whether any product was sold under it. Two sheets from `pictures/` wired in as `imgs[]` (Fig. 10; Figs. 11–13). Counts synced: total 381 → 382, expired 141 → 142, verified 283 → 284, across the README table and the eight hardcoded strings in `index.html`.
 
 - **Added Magic Leap's augmented-reality sensor-fusion patent (US 11,210,808), `tech`, tier `v`.** Granted December 28, 2021 to Michael Janusz Woods and Andrew Rabinovich for Magic Leap, Inc.; application 16/833,093 filed March 27, 2020, in a family Google Patents dates to 2017. It is a general AR patent: the abstract claims generic fusion of a high-frequency and a low-frequency sensor, and cycling appears only in the drawings (Fig. 60A handlebar AR panels; Fig. 70 stationary-bike scene, taken from the Google Patents figure caption — that sheet is not in `pictures/`). `y: 2017` and `exp: 2038` follow Google's family date and its adjusted expiration of January 6, 2038, which includes patent term adjustment, so the plain filing + 20 formula does not apply here. The earlier family members were not examined and the claims were not read. Two sheets wired in as `imgs[]`; the second (Fig. 61E) is a non-cycling game scene and its alt text says so, so say if you'd rather drop it. `Magic Leap` added to `BRANDS` and `BRAND_HQ` (Florida). Counts synced: total 382 → 383, active 169 → 170, verified 284 → 285, brands 211 → 212, across the README table and the eight hardcoded strings in `index.html`.
+
+- **Added Reisinger's flexing-seatstay frame patent (US 5,803,477), `susp`, tier `v`; widened the Pro-Stop entry (US 5,193,833); added the Mantis author's note.** US 5,803,477 was filed September 7, 1995 and granted September 8, 1998 to Robert Reisinger as an individual; filed after June 8, 1995, so `exp: 2015` is filing + 20, matching Google Patents. Status `expired` per Expired – Fee Related (lapse date not seen). Details read from its Google Patents page; claims not read; whether it shipped on a Mountain Cycle frame is not confirmed. The existing Pro-Stop entry (US 5,193,833) already covered the patent, so the pasted duplicate became an update: its two unused sheets (`.1`, `.2`) are now wired in as `imgs[]` with the original drawing, and a sentence from the abstract was added (elastic-cell telescoping tubes, offset dropout, floating self-centering disc). The existing entry's "inverted 'Suspenders' fork" wording is not stated in the abstract and was left as written. The Mantis entry's `w` now carries Jon's own account of why no patent was filed, in his voice and labelled as his read; the Yeti Ultimate and Nishiki Alien follow-on designs are corroborated by search results (Cunningham designed the Nishiki), but the claim that no licensing fees were paid is his own observation and unsourced. Not added from the pasted Mountain Cycle text: the multiple elastomer-damper patents, the 6D helmet link and the monocoque San Andreas claims, none of which were verified. Mantis keeps `conf: "l"`. Counts synced: total 383 → 384, expired 142 → 143, verified 285 → 286, across the README table and the eight hardcoded strings in `index.html`.
 
 ## Recent updates (July 2026)
 
