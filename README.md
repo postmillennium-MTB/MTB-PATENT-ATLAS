@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 379 |
+| **Total entries** | 383 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 168 |
-| **Expired patents** | 140 |
+| **Active patents** | 170 |
+| **Expired patents** | 142 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 210 |
+| **Brands** | 212 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 281 |
+| **Verified entries** | 285 |
 | **Medium confidence** | 56 |
 | **Draft / in progress** | 42 |
 
@@ -729,6 +729,14 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Rut Rack gained three drawings; the Mach2 sheet was rotated.** The Rut Rack entry now carries three figures (FIG. 17, FIG. 9 and an unlabeled rack-at-hitch view) supplied by Jon from the Singletracks article, captioned "Drawings: USPTO filings, via Singletracks" to match that article's own credit. The entry's text, tier (`"m"`) and counts are unchanged. One open discrepancy: Singletracks calls the application "recently published," while the entry says no publication number is public yet; with no number located, the entry stays as written. The Mach2 rack portfolio drawing (US 9,956,922, FIG. 1) was rotated 90° clockwise so the bike reads upright. `MATCH_DATA` regenerated (262 → 263).
 
 - **Added Specialized's articulating-frame assembly (US 6,953,202), `frame`, tier `v`.** Granted October 11, 2005 to Jason L. Chamberlain and Christopher P. D'Aluisio; a continuation of US 6,866,281 (granted March 15, 2005), itself a continuation of US 6,712,373 (granted March 30, 2004), with a provisional of April 15, 2002. `exp: 2022` runs from the April 29, 2002 parent filing, matching Google Patents' anticipated-expiration date. Number, dates and inventors for 6,953,202 were read from its Google Patents page; the two parents' grant dates come from search-result snippets only, since patent-site fetches are blocked in-session. Not confirmed: the patent's claims (the text describes the abstract's "preferred" tube arrangement, not claim language) and any production Specialized model that uses it. Same-titled US 7,052,029 and 7,059,620 appeared in search and were not checked for family membership, so they are not in the entry. Three sheets from `pictures/` wired in as `imgs[]` (Fig. 1, the frame-only view, Fig. 5). Counts synced: total 378 → 379, expired 139 → 140, verified 280 → 281 (the README's verified figure had drifted one low), across the README table and the eight hardcoded strings in `index.html`.
+
+- **Added GoPro's content-proxy patent for multicamera highlights (US 10,402,445), `tech`, tier `v`.** Granted September 3, 2019 to David Newman, Mark Vaden, Rolf Fischer and Vadim Polonichko; application 16/131,542 filed September 14, 2018, published as US 2019/0012332. Number, dates, inventors and the 2036-01-19 anticipated expiry were read from its Google Patents page. `y: 2016` and `exp: 2036` follow that priority date and expiry, since the 2018 filing is a continuation. Not confirmed: the parent application and its number (a same-titled US 10,078,644 appeared in search, but the priority chain was not visible, so it is not cited), and the claims. No link to a specific GoPro product feature is asserted. Three sheets from `pictures/` wired in as `imgs[]` (Fig. 7A trail-ride overlay, Fig. 8 elevation trace, camera body view). Counts synced: total 379 → 380, active 168 → 169, verified 281 → 282, across the README table and the eight hardcoded strings in `index.html`.
+
+- **Added Samsung's virtual-ride motion platform (US 9,694,235), `tech`, tier `v`.** Granted July 4, 2017 to Heungno Oh and six co-inventors for Samsung Electronics; application 14/324,898 filed July 7, 2014 with a 2013 Korean priority. `exp: 2034` is the 2014 filing + 20, matching Google Patents' anticipated expiration, but the status is `expired` because Google lists it as Expired – Fee Related (maintenance fees unpaid); the lapse date was not seen. Details were read from its Google Patents page. Despite the "virtual hiking" title, the abstract describes indoor biking on a motion platform. Not confirmed: the claims, and any commercial product. **Judgment call on category:** `tech` is defined as rider-worn camera and data-capture accessories, and an indoor simulator doesn't fit that label literally; it was placed there because it is orthogonal to the bike's own systems and no other category fits better. Say if you'd rather it sit in `comp`. `Samsung` added to `BRANDS` and `BRAND_HQ` (South Korea). Two sheets from `pictures/` wired in as `imgs[]` (the rig, and a slope-limit chart). Counts synced: total 380 → 381, expired 140 → 141, verified 282 → 283, brands 210 → 211, across the README table and the eight hardcoded strings in `index.html`.
+
+- **Added Scott USA's stud-and-slot pedal system (US 4,893,523), `comp`, tier `v`.** Granted January 16, 1990 to Dan C. Lennon (application 07/142,049, filed January 7, 1988; assigned to Scott USA Limited Partnership in July 1989). Lennon is the inventor of the Scott DH bar already in the atlas (US 4,750,754), so the entry uses the existing `Scott` and `Boone Lennon` tags; the identity rests on the matching name and assignee. `exp: 2008` is the later of grant + 17 (2007) and filing + 20 (2008) under the pre-GATT rule, matching Google Patents. Status is `expired` per Google's Expired – Fee Related, which means it lapsed earlier on unpaid maintenance fees; the lapse date was not seen. Details were read from its Google Patents page. Not confirmed: the claims, and whether any product was sold under it. Two sheets from `pictures/` wired in as `imgs[]` (Fig. 10; Figs. 11–13). Counts synced: total 381 → 382, expired 141 → 142, verified 283 → 284, across the README table and the eight hardcoded strings in `index.html`.
+
+- **Added Magic Leap's augmented-reality sensor-fusion patent (US 11,210,808), `tech`, tier `v`.** Granted December 28, 2021 to Michael Janusz Woods and Andrew Rabinovich for Magic Leap, Inc.; application 16/833,093 filed March 27, 2020, in a family Google Patents dates to 2017. It is a general AR patent: the abstract claims generic fusion of a high-frequency and a low-frequency sensor, and cycling appears only in the drawings (Fig. 60A handlebar AR panels; Fig. 70 stationary-bike scene, taken from the Google Patents figure caption — that sheet is not in `pictures/`). `y: 2017` and `exp: 2038` follow Google's family date and its adjusted expiration of January 6, 2038, which includes patent term adjustment, so the plain filing + 20 formula does not apply here. The earlier family members were not examined and the claims were not read. Two sheets wired in as `imgs[]`; the second (Fig. 61E) is a non-cycling game scene and its alt text says so, so say if you'd rather drop it. `Magic Leap` added to `BRANDS` and `BRAND_HQ` (Florida). Counts synced: total 382 → 383, active 169 → 170, verified 284 → 285, brands 211 → 212, across the README table and the eight hardcoded strings in `index.html`.
 
 ## Recent updates (July 2026)
 
