@@ -1,0 +1,82 @@
+patent: US4889521
+source: https://patentimages.storage.googleapis.com/9c/71/dc/be36e8600975fd/US4889521.pdf
+pages: 15
+per-page extracted text length: {1: 1871, 2: 51, 3: 287, 4: 51, 5: 225, 6: 6831, 7: 6520, 8: 7193, 9: 7258, 10: 4398, 11: 634, 12: 2343, 13: 6523, 14: 7197, 15: 751}
+drawing sheets, best first: [2, 3, 4, 5, 11, 15]
+contact sheet: US4889521__contact.png
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent to
+
+11
+45
+
+Nagano
+
+Patent Number:
+Date of Patent:
+
+4,889,521
+Dec. 26, 1989
+
+54 MULTISTAGE SPROCKETASSEMBLY FOR
+
+Attorney, Agent, or Firm-Stevens, Davis, Miller &
+
+75 Inventor: Masashi Nagano, Izumi, Japan
+73 Assignee: Shimano Industrial Company
+
+A multistage sprocket assembly is provided which in
+
+A BICYCLE
+
+Limited, Osaka, Japan
+21 Appl. No.: 261,323
+(22 Filed:
+Oct. 24, 1988
+30
+Foreign Application Priority Data
+Oct. 21, 1987 JP
+Jun. 4, 1988 JP
+
+Japan ................................ 62-16539
+Japan .................................. 63-74583
+
+51 Int. Cl'.............................................. F16H 11/08
+52 U.S. C. .................................................... 474/164
+58 Field of Search ............... 474/160, 162, 164, 152,
+474/155-157; 74/594.2; 29/159 R
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+4,330,286 5/1982 Nagano ............................ 474/16 X
+
+Primary Examiner-Thuy M. Bui
+
+Mosher
+
+57
+
+ABSTRACT
+
+cludes at least one larger diameter sprocket and at least
+one smaller diameter sprocket assembled in a relation
+
+ship such that the center point between a pair of adja
+cent teeth at the larger diameter sprocket and the center
+point between a pair of adjacent teeth at the smaller
+diameter sprocket are positioned on a tangent extending
+along the chain path when the chain is being shifted
+from the smaller diameter sprocket to the larger diame
+ter sprocket. The distance between both the center
+points is equal to an integer multiple of the chain pitch.
+A chain guide portion is provided at the inside surface
+of the larger diameter sprocket and at a position corre
+sponding to a moving path of a driving chain traveling
+between the aforesaid center points for allowing the
+chain to move axially of the sprocket assembly slightly
+toward the larger diameter sprocket during shifting.
+6 Claims, 4 Drawing Sheets
+
+
