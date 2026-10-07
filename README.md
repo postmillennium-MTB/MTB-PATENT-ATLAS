@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 392 |
+| **Total entries** | 391 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 172 |
-| **Expired patents** | 148 |
+| **Expired patents** | 147 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 214 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 294 |
+| **Verified entries** | 293 |
 | **Medium confidence** | 56 |
 | **Draft / in progress** | 42 |
 
@@ -747,6 +747,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Fixed the Manitou portfolio's headline number (US 9,378,160 → US 9,376,160) and added Atari's bicycle-riding simulator (US 5,240,417), `tech`, tier `v`.** US 9,378,160 was a digit transposition: the entry's own drawing description named "Axle assembly", the title of US 9,376,160 (Nicholas William Pye, Hayes Bicycle Group; filed October 22, 2014, granted June 28, 2016; `exp: 2034` was already right). The `num` and the `nums[]` member now point at 9,376,160. The four re-uploaded sheets (`US9376160B2.png`, `.1`, `.2`, `.3`) are wired in as `imgs[]` with new alt text (the old alt also mislabelled the figure's "W", which is the wheel, not a skewer lever). The summary gained one sentence on what the axle patent covers; the link to Manitou's Hexlock axle is Jon's identification and was not checked against Manitou's marking page. The entry's `y`/`g` (2012/2014) predate that patent and were left as they were, since the other members of the portfolio were not re-examined. US 5,240,417 was filed March 14, 1991 by Atari Games Corp and granted August 31, 1993 to five inventors (Smithson, Aknin, Lichac, Moncrief, Winblad); it describes a motion-platform bicycle simulator with a screen, motorized pedaling resistance and assistance, a wheelie pivot near the rear tire, audio and a blower. Pre-GATT, still in force in 1995, so `exp: 2011` is the later of grant + 17 and filing + 20, matching Google Patents; Expired – Fee Related (lapse date not seen). Claims not read; no drawing sourced. `Atari Games` added to `BRANDS` and `BRAND_HQ` (California). Patent Match data regenerated. Counts synced: total 388 → 389, expired 144 → 145, verified 290 → 291, brands 213 → 214, across the README table and the eight hardcoded strings in `index.html`.
 
 - **Added three entries: RockShox's three-link rear suspension (US 5,452,910, `susp`), Smirneos's full-floating rear suspension (EP 1,024,994 B1, `susp`) and a Fichtel & Sachs twist-shifter seal (US 5,799,541, `drive`), all tier `v`.** US 5,452,910 was filed September 9, 1994 by RockShox and granted September 26, 1995 to Trevor L. Harris (now SRAM LLC); filed before June 8, 1995 and in force then, so `exp: 2014` is filing + 20, matching Google Patents. EP 1,024,994 B1 was filed August 26, 1999 (1998 Greek priority) and granted November 29, 2006 to John Nelson Smirneos; `exp: 2019` is filing + 20. **It is not tagged RockShox or SRAM:** the request listed those brands, but Google Patents gives the assignee as an individual and no link was found, so `who` is empty; add the tags if a source ties them to it. US 5,799,541 was filed March 4, 1996 by Fichtel & Sachs AG and granted September 1, 1998 to Markus Arbeiter (now SRAM Deutschland GmbH). It is a continuation-in-part of US 5,588,925 (filed November 29, 1995) and US 5,666,859, so `y: 1995` and `exp: 2015` follow the earliest non-provisional filing, matching Google's 2015-11-29; Expired – Fee Related. The two parent patents are cited in the text but are not separate atlas entries. All details come from the Google Patents pages supplied; no claims were read. Sheets wired in: three for US 5,452,910 (Figs. 6, 9 and a perspective of the links), two for the EP patent and two for US 5,799,541 (Fig. 1 exploded, and a side view whose sheet is printed sideways and was left as printed). Patent Match regenerated (275 drawn entries). Counts synced: total 389 → 392, expired 145 → 148, verified 291 → 294, across the README table and the eight hardcoded strings in `index.html`.
+
+- **Consolidated the two Manitou fork cards into one, kept under the 1993 entry.** The "Manitou / Answer suspension fork family" card (US 5,470,090, 5,445,401, 5,509,677; Bradbury, 1993–96) and the "Manitou fork & shock portfolio" card (nine later numbers led by US 9,376,160) are now one card, "Manitou fork & axle patents (US 5,470,090 → US 9,376,160)", with `nums[]` holding all twelve numbers and five drawings. The **Reverse Arch fork chassis (US 6,607,185) stays a separate entry**, as requested. Trade-offs, all accepted: the card has one status, so it reads `active` with `exp: 2034` (the axle patent's date; the bundle rule has `exp` follow the newest member, and the later members were not examined), and the summary says the three Bradbury patents have expired; the card sits at 1993 in the timeline and Stats, so the 2014–2016 filings no longer appear under the 2010s; and the deep link `#p=9376160` (earlier `#p=9378160`, a mistyped number) no longer resolves, while `#p=5470090` now opens the combined card. `Doug Bradbury`, `Manitou`, `Answer` and `Hayes` are all in `who[]`. The old portfolio card's note about needing a code change to link the reissue was dropped as process narration. Patent Match regenerated. Counts synced: total 392 → 391, expired 148 → 147, verified 294 → 293, across the README table and the eight hardcoded strings in `index.html`.
 
 ## Recent updates (July 2026)
 
