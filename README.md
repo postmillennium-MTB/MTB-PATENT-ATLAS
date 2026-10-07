@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 381 |
+| **Total entries** | 382 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 169 |
-| **Expired patents** | 141 |
+| **Expired patents** | 142 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 211 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 283 |
+| **Verified entries** | 284 |
 | **Medium confidence** | 56 |
 | **Draft / in progress** | 42 |
 
@@ -733,6 +733,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Added GoPro's content-proxy patent for multicamera highlights (US 10,402,445), `tech`, tier `v`.** Granted September 3, 2019 to David Newman, Mark Vaden, Rolf Fischer and Vadim Polonichko; application 16/131,542 filed September 14, 2018, published as US 2019/0012332. Number, dates, inventors and the 2036-01-19 anticipated expiry were read from its Google Patents page. `y: 2016` and `exp: 2036` follow that priority date and expiry, since the 2018 filing is a continuation. Not confirmed: the parent application and its number (a same-titled US 10,078,644 appeared in search, but the priority chain was not visible, so it is not cited), and the claims. No link to a specific GoPro product feature is asserted. Three sheets from `pictures/` wired in as `imgs[]` (Fig. 7A trail-ride overlay, Fig. 8 elevation trace, camera body view). Counts synced: total 379 → 380, active 168 → 169, verified 281 → 282, across the README table and the eight hardcoded strings in `index.html`.
 
 - **Added Samsung's virtual-ride motion platform (US 9,694,235), `tech`, tier `v`.** Granted July 4, 2017 to Heungno Oh and six co-inventors for Samsung Electronics; application 14/324,898 filed July 7, 2014 with a 2013 Korean priority. `exp: 2034` is the 2014 filing + 20, matching Google Patents' anticipated expiration, but the status is `expired` because Google lists it as Expired – Fee Related (maintenance fees unpaid); the lapse date was not seen. Details were read from its Google Patents page. Despite the "virtual hiking" title, the abstract describes indoor biking on a motion platform. Not confirmed: the claims, and any commercial product. **Judgment call on category:** `tech` is defined as rider-worn camera and data-capture accessories, and an indoor simulator doesn't fit that label literally; it was placed there because it is orthogonal to the bike's own systems and no other category fits better. Say if you'd rather it sit in `comp`. `Samsung` added to `BRANDS` and `BRAND_HQ` (South Korea). Two sheets from `pictures/` wired in as `imgs[]` (the rig, and a slope-limit chart). Counts synced: total 380 → 381, expired 140 → 141, verified 282 → 283, brands 210 → 211, across the README table and the eight hardcoded strings in `index.html`.
+
+- **Added Scott USA's stud-and-slot pedal system (US 4,893,523), `comp`, tier `v`.** Granted January 16, 1990 to Dan C. Lennon (application 07/142,049, filed January 7, 1988; assigned to Scott USA Limited Partnership in July 1989). Lennon is the inventor of the Scott DH bar already in the atlas (US 4,750,754), so the entry uses the existing `Scott` and `Boone Lennon` tags; the identity rests on the matching name and assignee. `exp: 2008` is the later of grant + 17 (2007) and filing + 20 (2008) under the pre-GATT rule, matching Google Patents. Status is `expired` per Google's Expired – Fee Related, which means it lapsed earlier on unpaid maintenance fees; the lapse date was not seen. Details were read from its Google Patents page. Not confirmed: the claims, and whether any product was sold under it. Two sheets from `pictures/` wired in as `imgs[]` (Fig. 10; Figs. 11–13). Counts synced: total 381 → 382, expired 141 → 142, verified 283 → 284, across the README table and the eight hardcoded strings in `index.html`.
 
 ## Recent updates (July 2026)
 
