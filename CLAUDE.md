@@ -223,6 +223,19 @@ to either omit something worth keeping or bloat the default card view for
 every reader — not as a place to dump biographical color that doesn't
 actually serve the entry's point just because a source happened to include it.
 
+**Linking one card to another:** write `[[card:<ref>|link text]]` inside `s`, `w`
+or `long` (both languages). `<ref>` is the target's `cardRef()` — its `num`, or
+`num-N` if two entries share a number — i.e. the `#p=` deep-link string. The
+card renders an in-page link (`a.card-xref`, handled by one delegated click
+listener that calls `jumpToCard`); search, the Rabbit Holes blurb and Patent
+Match see only the link text (`stripCardLinks`). Do not link to `num:null`
+entries (slug refs are fragile), and don't hand-write `<a href="#p=…">` — it
+bypasses both the dead-link check and the click handler. `verify_data.js`
+hard-fails on any token whose target doesn't exist and on any pair in its
+`REQUIRED_CROSSLINKS` list missing a direction or a language; `smoke_test.js`
+clicks those pairs in a real browser (keep its `XLINK_PAIRS` in step). When you
+wire a new pair on purpose, add it to both lists.
+
 **Expiration rule (`exp`):**
 - Filed **on or after June 8, 1995** (the post-GATT rule, which covers nearly
   everything in this dataset): `exp = filing year + 20`.
