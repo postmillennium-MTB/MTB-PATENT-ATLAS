@@ -82,6 +82,62 @@ D.forEach(d => {
   });
 });
 
+// No empty filter chips: every BRANDS entry and INVENTORS key must be used by at
+// least one entry's who[]. A registered name nothing is tagged with renders a
+// Brands/Inventors chip that returns zero results (BMC and SCOR did, because
+// they were only ever named in prose, which typed search matches but the chip
+// filter does not). Tag an entry or remove the registration.
+BRANDS.forEach(b => {
+  if (!D.some(d => (d.who || []).includes(b))) hardFailures.push(`BRANDS "${b}" is used by no entry's who[] (would render an empty filter chip)`);
+});
+INVENTORS.forEach(i => {
+  if (!D.some(d => (d.who || []).includes(i.key))) hardFailures.push(`INVENTORS "${i.key}" is used by no entry's who[] (would render an empty filter chip)`);
+});
+
+/* Card cross-links: [[card:<ref>|text]] inside s/w/long (see CARD_LINK_RE in
+   index.html). <ref> must be a real card's #p= deep-link ref, computed here the
+   same way index.html's _REF map does (the patent number, or number-N when a
+   number is shared; num:null entries use a title slug and are not linkable).
+   Hard failure on any dead target, so a renumbered or deleted card can't leave
+   a link that opens nothing. */
+const refOf = new Map();
+(() => {
+  const counts = {}, seen = {};
+  D.forEach(d => { if (d.num) counts[d.num] = (counts[d.num] || 0) + 1; });
+  D.forEach(d => {
+    if (!d.num) return;
+    seen[d.num] = (seen[d.num] || 0) + 1;
+    refOf.set(d, counts[d.num] > 1 ? `${d.num}-${seen[d.num]}` : d.num);
+  });
+})();
+const validRefs = new Set(refOf.values());
+const xrefs = [];   // {from: ref|title, to: ref}
+D.forEach(d => ['s', 'w', 'long'].forEach(f => {
+  const langs = d[f] && typeof d[f] === 'object' ? Object.entries(d[f]) : [];
+  langs.forEach(([lang, text]) => {
+    for (const m of String(text).matchAll(/\[\[card:([^|\]]+)\|([^\]]+)\]\]/g)) {
+      const from = refOf.get(d) || (d.t && d.t.en);
+      xrefs.push({ from, to: m[1], where: `${from}.${f}.${lang}` });
+      if (!validRefs.has(m[1])) hardFailures.push(`${from}.${f}.${lang}: card link target "${m[1]}" matches no entry`);
+    }
+  });
+}));
+/* Cross-links that must exist in BOTH directions and in BOTH languages. Add a
+   pair here whenever two cards are deliberately wired to each other, so a later
+   edit that drops one side fails CI instead of silently orphaning the other. */
+const REQUIRED_CROSSLINKS = [
+  ['615003', '667348'],    // Crampon design patents D615,003 <-> D667,348
+  ['9701361', '10088020'], // Spot Brand Living Link <-> Gates CenterTrack / Drop-Out
+];
+REQUIRED_CROSSLINKS.forEach(([a, b]) => [[a, b], [b, a]].forEach(([from, to]) => {
+  ['en', 'fr'].forEach(lang => {
+    if (!xrefs.some(x => x.to === to && x.where.startsWith(from + '.') && x.where.endsWith('.' + lang))) {
+      hardFailures.push(`required cross-link missing: card ${from} must link to card ${to} (${lang})`);
+    }
+  });
+}));
+console.log('card cross-links:', xrefs.length, '(all targets resolve)');
+
 console.log('\nschema-integrity issues:', hardFailures.length ? hardFailures : 'none');
 
 // Bilingual completeness -- informational only, does not fail the run.
