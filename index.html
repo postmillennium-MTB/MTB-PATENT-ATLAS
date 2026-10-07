@@ -1575,7 +1575,7 @@ const FIGHTS = [
    }
    Same sourcing rules as D entries apply to title/blurb: nothing here that
    the linked entries don't already support. */
-const RABBIT_HOLES_SHOWN = 9;
+const RABBIT_HOLES_SHOWN = 30;
 const RABBIT_HOLES = [
 ];
 
@@ -3289,10 +3289,9 @@ function renderStats(){
     applyCatMode();
   };
   stopHomeTimers();
-  /* Rabbit Holes: prev/next step the row by exactly one card (native
-     scrollLeft clamping means a click near either end just settles at the
-     natural last/first position -- no wraparound, no manual index to keep
-     in sync with a reader's own touch-swipe on phones), and every
+  /* Rabbit Holes: prev/next step the row by exactly one card (reading the
+     live scrollLeft, with no manual index to keep in sync with a reader's
+     own touch-swipe on phones), wrapping around at either end, and every
      HOME_RABBIT_CYCLE_MS it auto-advances the same way, pausing on
      hover/focus and skipped entirely under prefers-reduced-motion. A
      manual click also re-arms the timer so it doesn't immediately
@@ -3307,14 +3306,22 @@ function renderStats(){
     };
     const rhAtStart=()=>rhRow.scrollLeft<=2;
     const rhAtEnd=()=>rhRow.scrollLeft>=rhRow.scrollWidth-rhRow.clientWidth-2;
-    const rhUpdateBtns=()=>{ rhPrevBtn.disabled=rhAtStart(); rhNextBtn.disabled=rhAtEnd(); };
-    const rhAdvance=dir=>rhRow.scrollBy({left:dir*rhStep(), behavior:rhReducedMotion?"auto":"smooth"});
+    /* Wraparound: past the last card, next jumps back to the first; before the
+       first, prev jumps to the last. The jump is instant ("auto") rather than a
+       smooth scroll back across all thirty cards, and the buttons never
+       disable since there is always somewhere to go. */
+    const rhUpdateBtns=()=>{ rhPrevBtn.disabled=false; rhNextBtn.disabled=false; };
+    const rhAdvance=dir=>{
+      if(dir>0 && rhAtEnd()) return rhRow.scrollTo({left:0, behavior:"auto"});
+      if(dir<0 && rhAtStart()) return rhRow.scrollTo({left:rhRow.scrollWidth, behavior:"auto"});
+      rhRow.scrollBy({left:dir*rhStep(), behavior:rhReducedMotion?"auto":"smooth"});
+    };
     const rhArmTimer=()=>{
       if(rabbitTimer){ clearInterval(rabbitTimer); rabbitTimer=null; }
       if(rhReducedMotion) return;
       rabbitTimer=setInterval(()=>{
         if(!rhRow.isConnected){ clearInterval(rabbitTimer); rabbitTimer=null; return; }
-        if(rhPaused || rhAtEnd()) return;
+        if(rhPaused) return;
         rhAdvance(1);
       },HOME_RABBIT_CYCLE_MS);
     };
