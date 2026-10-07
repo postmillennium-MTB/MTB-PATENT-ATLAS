@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 379 |
+| **Total entries** | 381 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 169 |
+| **Active patents** | 170 |
 | **Expired patents** | 139 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 | **Brands** | 210 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 281 |
+| **Verified entries** | 283 |
 | **Medium confidence** | 56 |
 | **Draft / in progress** | 42 |
 
@@ -727,6 +727,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Eggbeater pedal entry corrected and upgraded to verified: now US 7,225,703 (B2).** The placeholder had no patent number and dated the invention 2000/2002. The patent is California Crank Brothers' "Bicycle pedal and crank apparatus" (inventors Carl Winefordner and Frank Hermansen), filed March 16, 2004 and granted June 5, 2007 (publication US 2005/0204859 A1). `y`/`g`/`exp` moved to 2004/2007/2024, and `s`/`w` were rewritten to match the abstract: a fixed pedal shaft turning in a sealed cartridge bearing in the crank arm. The old text credited the wing-and-spring mechanism and a design/utility pairing, neither of which this patent claims, so both were dropped. Tier `"v"` against the Google Patents record (bibliographic data and abstract supplied by Jon). Whether this patent is the one Crankbrothers marks on Eggbeater pedals, or whether separate patents cover the clip-in mechanism, is not confirmed; the entry says only what the abstract says. No drawing sourced. Counts: verified 279 → 280, medium 57 → 56; total unchanged at 378.
 
 - **Crank Brothers: Eggbeater entry rebuilt around the original patent, and a new multi-tool entry (378 → 379).** The Eggbeater card now leads with US 6,205,885 B1 ("Clipless bicycle pedal," Frank Hermansen and Carl Winefordner, filed September 8, 1999, granted March 27, 2001), the four-sided-entry pedal with a spindle-concentric latch release, per Jon as the first Eggbeater patent. US 7,225,703 (the fixed-shaft pedal and crank apparatus added earlier in this cycle) is kept as the second number in the same card, so `y`/`g` are now 1999/2001 and `exp` follows the newest member (2024). The new card pairs the multi-tool design patent US D437,541 (filed 2000-09-08, granted 2001-02-13) with utility patent US 9,227,315 B2 ("Multiple tool," granted 2016-01-05; `exp` 2032 is Google's adjusted date, which includes patent term adjustment, not the filing-year formula). All numbers `"v"` against the Google Patents data supplied by Jon; the pages themselves were blocked in-session, and a web search confirmed the inventors and assignee for US 6,205,885 and US 9,227,315 but not the "first Eggbeater patent" claim. Drawings already in `pictures/` wired in: two sheets for the pedal, four for the multi-tool. Not added, pending a decision: the abandoned application US 2004/0200314 A1 (hollow crank arm) and US 7,635,170 B2 (spoked wheel, anticipated expiry October 11, 2026). Counts: total 378 → 379, active 168 → 169, verified 280 → 281; the six `index.html` count strings were updated.
+
+- **Two more Crank Brothers entries, per direct request (379 → 381).** The paired-spoke wheel, US 7,635,170 B2 ("Bicycle wheel," Frank Hermansen and Carl Winefordner; filed October 11, 2006, published as US 2008/0088175 A1, granted December 22, 2009), goes in `wheel`, `active`, `exp` 2026. Its term ends October 11, 2026, so it appears under *Expiring soon* until then and should flip to `expired` afterward; Google lists it as active, and whether maintenance fees were paid through the end of the term wasn't checked. The `w` line is Jon's own take (the signature Crank Brothers wheel of the mid-2000s). The hollow stamped-cover crank arm, US 2004/0200314 A1 (filed April 12, 2003, assigned to California Crank Brothers in 2006; PCT/EP/DE/TW counterparts), goes in `drive` as an abandoned application that never granted. The schema has no "abandoned" status, so it carries `st:"unknown"` and `exp:null`, with the abandonment stated in `s`; adding a status would touch the filters and the Stats view, so it is flagged as a design question rather than done inline. Both tier `"v"` against the Google Patents data supplied by Jon; the pages themselves were blocked in-session, and a web search confirmed the inventors, assignee and abstracts for both. Drawings already in `pictures/` wired in (three sheets for the wheel, two for the crank arm). Counts: total 379 → 381, active 169 → 170, verified 281 → 283; the six `index.html` count strings and `MATCH_DATA` (264 → 266) updated.
 
 ## Recent updates (July 2026)
 
