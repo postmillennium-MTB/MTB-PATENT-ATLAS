@@ -236,6 +236,13 @@ hard-fails on any token whose target doesn't exist and on any pair in its
 clicks those pairs in a real browser (keep its `XLINK_PAIRS` in step). When you
 wire a new pair on purpose, add it to both lists.
 
+**Changing an entry's `num` changes its deep link.** A `num:null` entry's `#p=`
+ref is a title slug; once it gets a number the ref becomes the number (and a
+renamed title or a merged entry changes it too). Every old ref people have
+shared would then open nothing. Add `"old-ref":"new-ref"` to `REF_ALIASES` in
+`index.html` (next to `cardRef`) in the same edit; `jumpToCard()` resolves it,
+and `verify_data.js` fails on a dead alias target or one shadowing a live ref.
+
 **Expiration rule (`exp`):**
 - Filed **on or after June 8, 1995** (the post-GATT rule, which covers nearly
   everything in this dataset): `exp = filing year + 20`.

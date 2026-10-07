@@ -136,6 +136,18 @@ REQUIRED_CROSSLINKS.forEach(([a, b]) => [[a, b], [b, a]].forEach(([from, to]) =>
     }
   });
 }));
+/* REF_ALIASES (old #p= refs kept alive after an entry's ref changed): every
+   target must be a real card, and no alias may shadow a ref that is live. */
+const aliasBlock = html.match(/const REF_ALIASES = (\{[\s\S]*?\n\});/);
+if (!aliasBlock) hardFailures.push('REF_ALIASES not found in index.html');
+else {
+  const aliases = eval('(' + aliasBlock[1] + ')');
+  Object.entries(aliases).forEach(([from, to]) => {
+    if (!validRefs.has(to)) hardFailures.push(`REF_ALIASES "${from}" -> "${to}": target matches no entry`);
+    if (validRefs.has(from)) hardFailures.push(`REF_ALIASES "${from}" is a live card ref; remove the alias`);
+  });
+  console.log('ref aliases:', Object.keys(aliases).length, '(all targets resolve)');
+}
 console.log('card cross-links:', xrefs.length, '(all targets resolve)');
 
 console.log('\nschema-integrity issues:', hardFailures.length ? hardFailures : 'none');
