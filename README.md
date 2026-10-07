@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 394 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 395 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 392 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
@@ -15,17 +15,17 @@ An interactive timeline of mountain bike intellectual property: 392 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 394 |
+| **Total entries** | 395 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 175 |
-| **Expired patents** | 147 |
+| **Expired patents** | 148 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 209 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 300 |
+| **Verified entries** | 301 |
 | **Medium confidence** | 52 |
 | **Draft / in progress** | 42 |
 
@@ -764,6 +764,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Boost 148 entry rewritten in Jon's own words, with a link to his Pinkbike article.** The summary now covers Trek's unsupported stiffness/durability claims for wider flange spacing and the absence of published test data a decade on; the "why it matters" line is now the closed-development-process argument (Trek and SRAM developed Boost internally, adoption followed market pressure). It replaces the earlier "control case ... UDH" line. English and French. Links "Ten Years Later: The Missing Data Behind 148x12 Boost" (Pinkbike, redfoxrun). New prose markup `[[link:https://…|text]]` for outside pages (https-only, hard-checked by `verify_data.js`, plain text in search, Rabbit Holes and Patent Match); the URL's resolving is not checked automatically and could not be opened from this environment.
 - **Rotated the drawing on the three-way damping cartridge entry (US 9,404,552) 90° clockwise** so the figure and its "Fig. 1" label read upright; the sheet had been uploaded sideways. The image's alt text said "FIG. 2" while the sheet shows Fig. 1 (side view with the B-B section), so it now says Fig. 1. No count changes.
 - **Hayes hydraulic disc brake and MIPS moved to `v`, with real patent numbers and corrected dates.** Hayes: `num: null` → US 5,390,771 (Hinkens & Blaszczyk, Hayes Ind Brake Inc.), `y` 1996 → 1993 (filed April 22, 1993), `g` 1998 → 1995 (granted February 21, 1995), `exp` 2018 → 2013 (filed before June 8, 1995; the later of grant + 17 and filing + 20 is 2013, matching Google Patents' stated expiry). The card's existing "Mag" framing is unchanged; the patent text never names the Mag, so that link is not independently confirmed. MIPS: the entry now rests on US 8,578,520 B2 (published as US 2013/0042397 A1; inventor Peter Halldin alone, so the earlier von Holst credit is dropped), `y` 1996 → 2011, `g` 1998 → 2013, `exp` null → 2031, `j:"SE"` removed (US filing), title and both languages updated, the unsupported "first patents date to the mid-1990s" replaced with MIPS's own 1996 research-phase date, and the July 2026 BrainGuard/Revelyst settlement ($3.25M, per Bicycle Retailer) added to `w`. No `litigated` badge: the suit was over BrainGuard's patents, not this one. Counts: README table 293 → 295 verified, 56 → 54 medium; no index.html count strings changed (total unchanged). Primary pages (Google Patents/USPTO) were not directly fetched; the facts come from the Google Patents record text supplied for each patent. MIPS drawings wired in as `imgs[]` (Fig. 1 cross-section, Fig. 4 angled-impact view from `US20130042397A1.png`/`.1.png`); the figure alt text names only labelled parts, and the reference-numeral meanings come from the drawings, not the patent's description text, which wasn't read in full. Hayes drawings (US5390771A.png/.1/.2) are in `pictures/` but not yet wired in. `match/index.html` `MATCH_DATA` regenerated: 277 entries, picking up the MIPS card plus entries added to the atlas since its last regeneration.
+- **Devinci SPHP entry gets its real number and drawings; Devinci's 2006 design patent added as its own entry (394 → 395).** The Split Pivot High Pivot entry (previously `num:null`) is now **US 11,845,509 B2**, application US 17/186,602 (published as US 2021/0276659 A1): inventors Michel Giroux and Christophe Riopel-Benoit, Cycles Devinci Inc., filed February 26, 2021, granted December 19, 2023, priority to CA 3,075,064 (March 9, 2020) and US provisional 62/986,088 (March 6, 2020). Mechanism taken from the application's summary: separate wheel and brake links joined at a floating pivot concentric with the rear axle, main pivot 30%–125% of travel above it, idler axis below the line between the two. That text is the application's summary, not the granted claims. Source is the Google Patents record supplied by Jon; the page itself is not reachable from this environment. Three sheets wired in (whole-bike view, Fig. 4, Fig. 6). `exp` stays 2041 (filing + 20); Google Patents lists an adjusted expiration of June 4, 2042, which includes patent term adjustment, so the real date is likely later. The old `#p=split-pivot-high-pivot-sphp` link is kept alive in `REF_ALIASES`. The earlier "Canada + US patented" wording was dropped because only the Canadian application is documented, not a Canadian grant. **US D523,380 S1**, "Double suspension bicycle frame" (Érick Auger, Félix Gauthier, Cycles Devinci Inc.), filed August 2, 2004, granted June 20, 2006, expired June 20, 2020 — `conf:"v"`, `cat:"susp"` placed beside the Split Pivot cluster. No drawing: none was supplied, and the summary says nothing about the frame's appearance. Both new entries cross-link to the Split Pivot card. Counts synced: total 394 → 395, expired 147 → 148, verified 300 → 301; all six `index.html` count strings and the README table updated. `verify_data.js` and `smoke_test.js` both pass. The five loose drawing files in the repo root (Shimano US 11,697,473 / US 2023/0348018) had already been moved into `pictures/` upstream.
 
 ## Recent updates (July 2026)
 
