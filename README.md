@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 385 |
+| **Total entries** | 388 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 170 |
+| **Active patents** | 172 |
 | **Expired patents** | 144 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 | **Brands** | 213 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 287 |
+| **Verified entries** | 290 |
 | **Medium confidence** | 56 |
 | **Draft / in progress** | 42 |
 
@@ -741,6 +741,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Added Reisinger's flexing-seatstay frame patent (US 5,803,477), `susp`, tier `v`; widened the Pro-Stop entry (US 5,193,833); added the Mantis author's note.** US 5,803,477 was filed September 7, 1995 and granted September 8, 1998 to Robert Reisinger as an individual; filed after June 8, 1995, so `exp: 2015` is filing + 20, matching Google Patents. Status `expired` per Expired – Fee Related (lapse date not seen). Details read from its Google Patents page; claims not read; whether it shipped on a Mountain Cycle frame is not confirmed. The existing Pro-Stop entry (US 5,193,833) already covered the patent, so the pasted duplicate became an update: its two unused sheets (`.1`, `.2`) are now wired in as `imgs[]` with the original drawing, and a sentence from the abstract was added (elastic-cell telescoping tubes, offset dropout, floating self-centering disc). The existing entry's "inverted 'Suspenders' fork" wording is not stated in the abstract and was left as written. The Mantis entry's `w` now carries Jon's own account of why no patent was filed, in his voice and labelled as his read; the Yeti Ultimate and Nishiki Alien follow-on designs are corroborated by search results (Cunningham designed the Nishiki), but the claim that no licensing fees were paid is his own observation and unsourced. Not added from the pasted Mountain Cycle text: the multiple elastomer-damper patents, the 6D helmet link and the monocoque San Andreas claims, none of which were verified. Mantis keeps `conf: "l"`. Counts synced: total 383 → 384, expired 142 → 143, verified 285 → 286, across the README table and the eight hardcoded strings in `index.html`.
 
 - **Added Brooks's cycle-saddle attachment patent (US 662,346), `comp`, tier `v`.** Filed March 6, 1900 and granted November 20, 1900 to John Boultbee Brooks and John Holt, assigned to J. B. Brooks & Co. Ltd. Pre-1995 and already expired by 1995, so `exp: 1917` is grant + 17, matching Google Patents. Read from its Google Patents front page and drawing only; the patent text was not read, so the summary stays at what the title and Fig. 1 show. `Brooks` added to `BRANDS` and `BRAND_HQ` (England). Counts synced: total 384 → 385, expired 143 → 144, verified 286 → 287, brands 212 → 213, across the README table and the eight hardcoded strings in `index.html`.
+
+- **Crank Brothers: Eggbeater rebuilt around US 6,205,885, plus three new Crank Brothers entries; Patent Match data regenerated.** Ported from the `crankbrothers-eggbeater-multitool` branch, which had been built before several later merges and conflicted on the count strings, so only its four data entries were applied to current `main` and the counts recomputed. (1) The Eggbeater card now leads with US 6,205,885 (filed September 8, 1999, granted March 27, 2001; cleat engages on any of four sides, torsion spring coaxial with the spindle) with US 7,225,703 as the second number; `exp: 2024` follows the newer filing. Its two sheets are wired in, which is what was missing from the live atlas. (2) New: Crank Brothers multi-tool (US D437,541 + 9,227,315, `comp`, `exp: 2032` per Google's adjusted expiration) with four sheets. (3) New: Crank Brothers paired-spoke wheel (US 7,635,170, `wheel`, `exp: 2026`; the term ends October 11, 2026, so it enters the Going-free-soon list). (4) New: the hollow stamped-cover crank-arm application (US 2004/0200314 A1, `drive`, `st: unknown`, no grant); the branch records it as abandoned, which was not independently re-checked here. All four are `conf: "v"` per the branch's reading of the abstracts; claims were not read. `MATCH_DATA` in `match/index.html` was regenerated from `D` with the documented snippet (263 → 274 drawn entries), which also picks up the Specialized, GoPro, Samsung, Scott, Magic Leap, Reisinger and Brooks entries added since the last regeneration. **Open, pre-existing:** the Manitou entry (`num` 9378160) points at `pictures/US9378160B2.png`, but the uploaded file is named `US9376160B2.png`, so that image is broken on the live atlas and in Patent Match. It was left as is because it is unclear whether the entry's number or the filename is the typo. Counts synced: total 385 → 388, active 170 → 172, verified 287 → 290, across the README table and the eight hardcoded strings in `index.html`.
 
 ## Recent updates (July 2026)
 
