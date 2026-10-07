@@ -588,6 +588,35 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 @keyframes coPop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
 .co-tab:hover{background:var(--primary)}
 @media(max-width:480px){.co-panel-title{font-size:16px}.co-tab{font-size:12.5px;padding:9px 14px}}
+/* Dave Weagle portfolio panel: reuses the Colorado panel's chrome (.co-*),
+   just wider because the timeline needs room, plus its own floating tab
+   stacked above the Colorado one. The chart is plain HTML rows (label +
+   track with percent-positioned bars) rather than SVG so labels wrap and
+   the theme variables apply with no extra plumbing. */
+.co-panel.wg-panel{width:min(760px,96vw)}
+.wg-tab{bottom:68px}
+.wg-link{display:inline-flex;align-items:center;gap:4px;margin-top:10px;margin-left:6px;background:var(--chip-bg);border:1px solid var(--card-border);color:var(--primary);border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:600;cursor:pointer}
+.wg-link:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+.wg-intro{font-size:13.5px;margin-bottom:12px}
+.wg-chart{position:relative;padding-right:14px}
+.wg-axis,.wg-row{display:grid;grid-template-columns:minmax(96px,32%) 1fr;column-gap:8px;align-items:center}
+.wg-axis{font-family:var(--font-mono);font-size:10px;color:var(--ink-soft)}
+.wg-axis-track{position:relative;height:16px}
+.wg-axis-track span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+.wg-row{margin:4px 0}
+.wg-lbl{font-size:12.5px;line-height:1.2;color:var(--ink);text-align:right}
+.wg-track{position:relative;height:26px;background:
+  repeating-linear-gradient(to right,transparent 0,transparent calc(var(--wg-tick) - 1px),var(--card-border) calc(var(--wg-tick) - 1px),var(--card-border) var(--wg-tick))}
+.wg-bar{position:absolute;top:2px;height:22px;border:0;border-radius:4px;padding:0 6px;cursor:pointer;font-family:var(--font-mono);font-size:10px;color:#fff;white-space:nowrap;overflow:hidden;text-align:center;box-sizing:border-box}
+.wg-bar:hover,.wg-bar:focus-visible{filter:brightness(1.15);outline:none;box-shadow:0 0 0 2px var(--ink)}
+.wg-bar.open{border-radius:4px 0 0 4px}
+.wg-bar.open::after{content:"";position:absolute;right:0;top:0;bottom:0;width:14px;background:var(--surface);clip-path:polygon(0 0,100% 50%,0 100%);opacity:.35}
+.wg-now{position:absolute;top:0;bottom:0;width:0;border-left:2px dashed var(--st-lit);pointer-events:none}
+.wg-now-lbl{position:absolute;bottom:-17px;transform:translateX(-50%);font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--st-lit)}
+.wg-body{position:relative}
+.wg-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:26px;font-size:12px;color:var(--ink-soft)}
+.wg-legend .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+@media(max-width:480px){.wg-axis-track .wg-alt{display:none}.wg-lbl{font-size:11px}.wg-bar{font-size:9px;padding:0 3px}}
 /* ---------- Patent Fights view ---------- */
 .tab-fights{color:var(--st-lit);font-weight:700}
 .tab-fights.on{background:var(--st-lit);border-color:var(--st-lit);color:#fff}
@@ -769,6 +798,20 @@ html,body{overflow-x:hidden;max-width:100%}
   </div>
 </aside>
 <button id="coTab" class="co-tab" hidden data-i18n="coPanelTitle">📍 Colorado MTB Innovation</button>
+
+<!-- Dave Weagle portfolio panel (timeline built live from D[] by renderWeaglePanel()) -->
+<div id="wgOverlay" class="co-overlay" hidden></div>
+<aside id="wgPanel" class="co-panel wg-panel" hidden data-i18n-aria-label="wgAriaLabel" aria-label="Dave Weagle patent portfolio">
+  <div class="co-panel-head">
+    <span class="co-panel-title" data-i18n="wgPanelTitle">Dave Weagle Portfolio</span>
+    <div class="co-panel-btns">
+      <button id="wgMin" class="co-btn" data-i18n-title="minimize" title="Minimize">▁</button>
+      <button id="wgClose" class="co-btn" data-i18n-title="close" title="Close">✕</button>
+    </div>
+  </div>
+  <div class="co-panel-body" id="wgPanelBody"></div>
+</aside>
+<button id="wgTab" class="co-tab wg-tab" hidden data-i18n="wgPanelTitle">Dave Weagle Portfolio</button>
 
 <footer>
   <div class="hwrap">
@@ -1870,6 +1913,11 @@ const T = {
     origDrawingFor:title=>`Original patent drawing for ${title}`,
     readFullStory:"Read the full story →",
     coPanelTitle:"📍 Colorado MTB Innovation", coLinkBtn:"📍 Colorado MTB innovation", coAriaLabel:"Colorado MTB innovation",
+    wgPanelTitle:"Dave Weagle Portfolio", wgLinkBtn:"Weagle portfolio timeline", wgAriaLabel:"Dave Weagle patent portfolio timeline",
+    wgIntro:(n,a,e,p)=>`${n} entries in this atlas credit Dave Weagle: ${a} active, ${e} expired, ${p} still pending or without a confirmed term. Each bar runs from the filing year to the estimated expiry. Tap a bar to open its card.`,
+    wgNow:"Now", wgOpenEnded:"no confirmed expiry",
+    wgNote:"Years only, so dates can be off by one. Bundled family entries (such as DW-Link) run to the newest member's expiry. Lawsuit entries have no patent term and are left out.",
+    wgBarTip:(title,y,end)=>`${title} (${y}–${end}) — click to view`,
     minimize:"Minimize", close:"Close", dismiss:"Dismiss",
     eraCount:n=>`${n} ${n===1?"entry":"entries"}`,
     emptyState:"No patents match these filters. Loosen one and the timeline comes back.",
@@ -1979,6 +2027,11 @@ const T = {
     origDrawingFor:title=>`Dessin de brevet original pour ${title}`,
     readFullStory:"Lire l'histoire complète →",
     coPanelTitle:"📍 Innovation VTT du Colorado", coLinkBtn:"📍 Innovation VTT du Colorado", coAriaLabel:"Innovation VTT du Colorado",
+    wgPanelTitle:"Portefeuille de Dave Weagle", wgLinkBtn:"Chronologie du portefeuille Weagle", wgAriaLabel:"Chronologie du portefeuille de brevets de Dave Weagle",
+    wgIntro:(n,a,e,p)=>`${n} fiches de cet atlas citent Dave Weagle : ${a} actives, ${e} expirées, ${p} encore en instance ou sans échéance confirmée. Chaque barre va de l'année de dépôt à l'expiration estimée. Touchez une barre pour ouvrir sa fiche.`,
+    wgNow:"Auj.", wgOpenEnded:"expiration non confirmée",
+    wgNote:"Années seulement : les dates peuvent différer d'un an. Les fiches regroupant une famille (comme DW-Link) vont jusqu'à l'expiration du membre le plus récent. Les fiches de litige n'ont pas de durée de brevet et sont exclues.",
+    wgBarTip:(title,y,end)=>`${title} (${y}–${end}) — cliquer pour voir`,
     minimize:"Réduire", close:"Fermer", dismiss:"Fermer",
     eraCount:n=>`${n} entrée${n===1?"":"s"}`,
     emptyState:"Aucun brevet ne correspond à ces filtres. Retirez-en un et la chronologie réapparaît.",
@@ -2147,6 +2200,7 @@ document.querySelectorAll(".langbtn").forEach(b=>{
     try{ localStorage.setItem(LANG_STORAGE_KEY,state.lang); }catch(e){ /* storage blocked — language still switches for this session */ }
     applyStaticI18n();
     renderTabs(); render();
+    if(window.renderWeaglePanel) renderWeaglePanel();
     syncHash(); // keep the address bar's own &lang= in step immediately, not just at share-time
   };
 });
@@ -2686,6 +2740,7 @@ function cardHTML(d){
      no need to check both languages here the way search does. */
   const isColorado = (d.who||[]).some(w=>BRAND_HQ[w]==="Colorado") || /Colorado|Golden, CO|Carbondale|Longmont|Denver|Boulder|Grand Junction/.test(d.a+" "+tx(d.s)+" "+tx(d.w));
   const coLink = isColorado ? `<button class="co-link" data-co="1">${t("coLinkBtn")}</button>` : "";
+  const wgLink = (d.who||[]).includes("Dave Weagle") ? `<button class="wg-link" data-wg="1">${t("wgLinkBtn")}</button>` : "";
   const needsTrans=NON_ENGLISH_JUR.has(jur);
   const transNote=needsTrans?`<span class="gp-trans">${t("patentTextIn",jurLangName(jur))}</span>`:"";
   /* Design patents store d.num as bare digits (e.g. "615003"), matching every
@@ -2805,7 +2860,7 @@ function cardHTML(d){
         <div><b>${t("jurisdictionLbl")}</b>${jur}</div>
       </div>
       ${gp}
-      ${coLink}
+      ${coLink}${wgLink}
     </div>
   </article>`;
 }
@@ -3501,6 +3556,9 @@ function render(){
   tl.querySelectorAll(".co-link").forEach(b=>{
     b.onclick=(e)=>{ e.stopPropagation(); openColorado(); };
   });
+  tl.querySelectorAll(".wg-link").forEach(b=>{
+    b.onclick=(e)=>{ e.stopPropagation(); openWeagle(); };
+  });
   tl.querySelectorAll(".card-fav-btn").forEach(b=>{
     b.onclick=(e)=>{ e.stopPropagation(); toggleFav(b.dataset.ref, b); };
   });
@@ -3924,6 +3982,62 @@ document.getElementById("eraScopeToggle").addEventListener("click",()=>{
   document.getElementById("coClose").onclick=close;
   overlay.onclick=minimize;
   tab.onclick=window.openColorado;
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&!panel.hidden) minimize(); });
+})();
+
+/* ======== DAVE WEAGLE PORTFOLIO PANEL ========
+   A Gantt-style timeline of every D[] entry tagged who:["Dave Weagle"], built
+   live on each open (and language switch), so adding an entry with that tag
+   adds a bar with no other edit. Bar = filing year (y) to estimated expiry
+   (exp); an entry with no exp (pending/unknown) runs open-ended to the axis
+   edge. Entries must also name Weagle in `a` (credit line), which leaves out
+   other people's patents that merely carry his tag, e.g. Giant's Maestro.
+   Entries with no term at all (st:"expired" and exp:null, i.e. the
+   Split Pivot v. Trek lawsuit card) are skipped. */
+const WG_TICK_STEP_YR = 5;   // axis label / gridline spacing
+(()=>{
+  const panel=document.getElementById("wgPanel"), overlay=document.getElementById("wgOverlay"), tab=document.getElementById("wgTab");
+  const body=document.getElementById("wgPanelBody");
+  const rows=()=>D.filter(d=>(d.who||[]).includes("Dave Weagle") && /Weagle/.test(d.a) && typeof d.y==="number" && !(d.exp==null && d.st==="expired"))
+                  .sort((a,b)=>a.y-b.y || (a.exp??9999)-(b.exp??9999));
+  window.renderWeaglePanel=()=>{
+    const list=rows(); if(!list.length){ body.innerHTML=""; return; }
+    const first=Math.floor(Math.min(...list.map(d=>d.y))/WG_TICK_STEP_YR)*WG_TICK_STEP_YR;
+    const lastExp=Math.max(NOW, ...list.map(d=>d.exp||0));
+    const last=Math.ceil((lastExp+1)/WG_TICK_STEP_YR)*WG_TICK_STEP_YR;
+    const span=last-first, x=yr=>((yr-first)/span*100);
+    const ticks=[]; for(let y=first;y<=last;y+=WG_TICK_STEP_YR) ticks.push(y);
+    const tickPct=(100/(span/WG_TICK_STEP_YR)).toFixed(3)+"%";
+    const col=d=>d.st==="expired"?"var(--st-expired)":d.st==="active"?"var(--st-active)":"var(--st-pending)";
+    const nAct=list.filter(d=>d.st==="active").length, nExp=list.filter(d=>d.st==="expired").length;
+    const rowHTML=list.map(d=>{
+      const open=d.exp==null, end=open?last:d.exp;
+      const title=tx(d.t), endTxt=open?t("wgOpenEnded"):d.exp;
+      const label=open?`${d.y}→`:`${d.y}–${d.exp}`;
+      return `<div class="wg-row"><div class="wg-lbl">${title}</div>
+        <div class="wg-track" style="--wg-tick:${tickPct}">
+          <button type="button" class="wg-bar${open?" open":""}" data-ref="${cardRef(d)}" style="left:${x(d.y).toFixed(2)}%;width:${Math.max(x(end)-x(d.y),1.5).toFixed(2)}%;background:${col(d)}" title="${t("wgBarTip",title,d.y,endTxt).replace(/"/g,"&quot;")}">${label}</button>
+        </div></div>`;
+    }).join("");
+    const nowPct=x(NOW+0.5).toFixed(2);
+    body.innerHTML=`<p class="wg-intro">${t("wgIntro",list.length,nAct,nExp,list.length-nAct-nExp)}</p>
+      <div class="wg-chart">
+        <div class="wg-axis"><div></div><div class="wg-axis-track">${ticks.map((y,i)=>`<span class="${i%2?"wg-alt":""}" style="left:${x(y).toFixed(2)}%">${y}</span>`).join("")}</div></div>
+        <div class="wg-body">${rowHTML}
+          <div class="wg-row" style="position:absolute;inset:0;pointer-events:none;margin:0;align-items:stretch"><div></div><div style="position:relative;height:100%"><div class="wg-now" style="left:${nowPct}%"><span class="wg-now-lbl">${t("wgNow")}</span></div></div></div>
+        </div>
+      </div>
+      <div class="wg-legend"><span><span class="dot" style="background:var(--st-active)"></span>${statusWord("active")}</span><span><span class="dot" style="background:var(--st-expired)"></span>${statusWord("expired")}</span><span><span class="dot" style="background:var(--st-pending)"></span>${statusWord("pending")} / ${statusWord("unknown")}</span></div>
+      <p class="co-note">${t("wgNote")}</p>`;
+    body.querySelectorAll(".wg-bar").forEach(b=>{ b.onclick=()=>{ minimize(); jumpToCard(b.dataset.ref); }; });
+  };
+  window.openWeagle=()=>{ renderWeaglePanel(); panel.hidden=false; overlay.hidden=false; tab.hidden=true; };
+  function minimize(){ panel.hidden=true; overlay.hidden=true; tab.hidden=false; }
+  function close(){ panel.hidden=true; overlay.hidden=true; tab.hidden=true; }
+  document.getElementById("wgMin").onclick=minimize;
+  document.getElementById("wgClose").onclick=close;
+  overlay.onclick=minimize;
+  tab.onclick=window.openWeagle;
   document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&!panel.hidden) minimize(); });
 })();
 </script>
