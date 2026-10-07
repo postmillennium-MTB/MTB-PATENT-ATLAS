@@ -514,7 +514,7 @@ if(window.matchMedia("(min-width: 760px)").matches) $("#controlsPanel").open = t
    const D = eval('let D=[' + extract(/const D = \[([\s\S]*?)\n\];/) + '\n];D');
    const withImg = D.filter(d=>d.img || (d.imgs&&d.imgs.length));
    const MAX=200;
-   const strip = x => (x||'').replace(/\[\[card:[^|\]]+\|([^\]]+)\]\]/g, '$1');
+   const strip = x => (x||'').replace(/\[\[(?:card|link):[^|\]]+\|([^\]]+)\]\]/g, '$1');
    function teaser(text){
      if(!text) return '';
      if(text.length<=MAX) return text;

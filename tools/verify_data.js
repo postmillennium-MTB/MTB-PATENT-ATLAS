@@ -148,6 +148,18 @@ else {
   });
   console.log('ref aliases:', Object.keys(aliases).length, '(all targets resolve)');
 }
+// External links in prose: [[link:URL|text]] must be https (anything else, or a
+// malformed token, would render as a broken or unsafe link).
+D.forEach(d => ['s', 'w', 'long'].forEach(f => {
+  const o = d[f] && typeof d[f] === 'object' ? d[f] : {};
+  Object.entries(o).forEach(([lang, text]) => {
+    for (const m of String(text).matchAll(/\[\[link:([^|\]]*)\|([^\]]*)\]\]/g)) {
+      if (!/^https:\/\/[^\s"<>]+$/.test(m[1]) || !m[2].trim()) {
+        hardFailures.push(`${d.num || d.t.en}.${f}.${lang}: bad [[link:…]] token "${m[0]}" (needs an https URL and link text)`);
+      }
+    }
+  });
+}));
 console.log('card cross-links:', xrefs.length, '(all targets resolve)');
 
 console.log('\nschema-integrity issues:', hardFailures.length ? hardFailures : 'none');
