@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 388 |
+| **Total entries** | 389 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 172 |
-| **Expired patents** | 144 |
+| **Expired patents** | 145 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 213 |
+| **Brands** | 214 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 290 |
+| **Verified entries** | 291 |
 | **Medium confidence** | 56 |
 | **Draft / in progress** | 42 |
 
@@ -743,6 +743,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Added Brooks's cycle-saddle attachment patent (US 662,346), `comp`, tier `v`.** Filed March 6, 1900 and granted November 20, 1900 to John Boultbee Brooks and John Holt, assigned to J. B. Brooks & Co. Ltd. Pre-1995 and already expired by 1995, so `exp: 1917` is grant + 17, matching Google Patents. Read from its Google Patents front page and drawing only; the patent text was not read, so the summary stays at what the title and Fig. 1 show. `Brooks` added to `BRANDS` and `BRAND_HQ` (England). Counts synced: total 384 → 385, expired 143 → 144, verified 286 → 287, brands 212 → 213, across the README table and the eight hardcoded strings in `index.html`.
 
 - **Crank Brothers: Eggbeater rebuilt around US 6,205,885, plus three new Crank Brothers entries; Patent Match data regenerated.** Ported from the `crankbrothers-eggbeater-multitool` branch, which had been built before several later merges and conflicted on the count strings, so only its four data entries were applied to current `main` and the counts recomputed. (1) The Eggbeater card now leads with US 6,205,885 (filed September 8, 1999, granted March 27, 2001; cleat engages on any of four sides, torsion spring coaxial with the spindle) with US 7,225,703 as the second number; `exp: 2024` follows the newer filing. Its two sheets are wired in, which is what was missing from the live atlas. (2) New: Crank Brothers multi-tool (US D437,541 + 9,227,315, `comp`, `exp: 2032` per Google's adjusted expiration) with four sheets. (3) New: Crank Brothers paired-spoke wheel (US 7,635,170, `wheel`, `exp: 2026`; the term ends October 11, 2026, so it enters the Going-free-soon list). (4) New: the hollow stamped-cover crank-arm application (US 2004/0200314 A1, `drive`, `st: unknown`, no grant); the branch records it as abandoned, which was not independently re-checked here. All four are `conf: "v"` per the branch's reading of the abstracts; claims were not read. `MATCH_DATA` in `match/index.html` was regenerated from `D` with the documented snippet (263 → 274 drawn entries), which also picks up the Specialized, GoPro, Samsung, Scott, Magic Leap, Reisinger and Brooks entries added since the last regeneration. **Open, pre-existing:** the Manitou entry (`num` 9378160) points at `pictures/US9378160B2.png`, but the uploaded file is named `US9376160B2.png`, so that image is broken on the live atlas and in Patent Match. It was left as is because it is unclear whether the entry's number or the filename is the typo. Counts synced: total 385 → 388, active 170 → 172, verified 287 → 290, across the README table and the eight hardcoded strings in `index.html`.
+
+- **Fixed the Manitou portfolio's headline number (US 9,378,160 → US 9,376,160) and added Atari's bicycle-riding simulator (US 5,240,417), `tech`, tier `v`.** US 9,378,160 was a digit transposition: the entry's own drawing description named "Axle assembly", the title of US 9,376,160 (Nicholas William Pye, Hayes Bicycle Group; filed October 22, 2014, granted June 28, 2016; `exp: 2034` was already right). The `num` and the `nums[]` member now point at 9,376,160. The broken image reference was removed rather than repointed, because the uploaded sheet `US9376160B2.png` was deleted from `pictures/` for re-upload; wire the new sheets in under `US9376160B2.png` when they land (the old alt text also mislabelled the figure's "W", which is the wheel, not a skewer lever). The summary gained one sentence on what the axle patent covers; the link to Manitou's Hexlock axle is Jon's identification and was not checked against Manitou's marking page. The entry's `y`/`g` (2012/2014) predate that patent and were left as they were, since the other members of the portfolio were not re-examined. US 5,240,417 was filed March 14, 1991 by Atari Games Corp and granted August 31, 1993 to five inventors (Smithson, Aknin, Lichac, Moncrief, Winblad); it describes a motion-platform bicycle simulator with a screen, motorized pedaling resistance and assistance, a wheelie pivot near the rear tire, audio and a blower. Pre-GATT, still in force in 1995, so `exp: 2011` is the later of grant + 17 and filing + 20, matching Google Patents; Expired – Fee Related (lapse date not seen). Claims not read; no drawing sourced. `Atari Games` added to `BRANDS` and `BRAND_HQ` (California). Patent Match data regenerated (273 drawn entries; Manitou drops out until its sheets are re-uploaded). Counts synced: total 388 → 389, expired 144 → 145, verified 290 → 291, brands 213 → 214, across the README table and the eight hardcoded strings in `index.html`.
 
 ## Recent updates (July 2026)
 
