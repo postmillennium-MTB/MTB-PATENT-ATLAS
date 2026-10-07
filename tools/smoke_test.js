@@ -124,7 +124,7 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
   if (!ext || errors.length) { failed = true; console.error('::error::External [[link:]] did not render on the Boost 148 card.'); }
 
   /* Old slug deep links must still open their card (REF_ALIASES in index.html). */
-  for (const [oldRef, newRef] of [['priority-stillpoint-suspension-system', '20250256807'], ['hayes-hydraulic-disc-brake', '5390771']]) {
+  for (const [oldRef, newRef] of [['priority-stillpoint-suspension-system', '20250256807'], ['hayes-hydraulic-disc-brake', '5390771'], ['isospeed-decoupler', '10086899']]) {
     errors.length = 0;
     await page.evaluate(ref => jumpToCard(ref), oldRef);
     await page.waitForTimeout(500);

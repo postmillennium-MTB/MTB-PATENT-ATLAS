@@ -299,6 +299,23 @@ generally with no number. Finding its patent upgrades an existing draft-tier
 entry rather than adding a new one — the same reasoning that makes Mektronic
 the pick among the Mavic leads.
 
+## Trek IsoSpeed (resolved 2026-10-07)
+
+1. ~~**US 8,210,554 as "the key IsoSpeed patent" (inventor "Mark Cole")**~~ —
+   **Resolved 2026-10-07, dead end.** A WheelBased summary gives this number,
+   title "Decoupled Seat Tube" and inventor Mark Cole. Google Patents' record
+   for US 8,210,554 B2 is "Bicycle frame having a multiple step and lap joint"
+   (David Guzik, Christopher Pomering; Trek; filed 2009-07-09, granted
+   2012-07-03), a frame-joint patent unrelated to IsoSpeed. Do not resubmit.
+   The IsoSpeed entry now cites US 10,086,899 / 10,351,192 / 10,676,145
+   ("Adjustable compliance bicycle", Hartung and Moechnig).
+2. **Open lead: the original 2012 Domane decoupler patent.** The family above
+   dates from 2015 provisionals and 2016 filing, after the 2012 launch, and
+   covers the adjustable version. A pre-2016 Trek filing may exist; not found.
+   Also unchecked: US 11,242,111 (same "Adjustable compliance bicycle" family
+   per search results) and US 10,150,530 ("Rigid frame with high-compliance
+   seat tube and internal cable routing", Trek, per a Golden.com listing).
+
 ## Process reminder for whoever picks this up
 
 Follow CLAUDE.md's full workflow, not just this list — in particular:
