@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 378 |
+| **Total entries** | 379 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 168 |
-| **Expired patents** | 139 |
+| **Expired patents** | 140 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 210 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 280 |
+| **Verified entries** | 281 |
 | **Medium confidence** | 56 |
 | **Draft / in progress** | 42 |
 
@@ -727,6 +727,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Eggbeater pedal entry corrected and upgraded to verified: now US 7,225,703 (B2).** The placeholder had no patent number and dated the invention 2000/2002. The patent is California Crank Brothers' "Bicycle pedal and crank apparatus" (inventors Carl Winefordner and Frank Hermansen), filed March 16, 2004 and granted June 5, 2007 (publication US 2005/0204859 A1). `y`/`g`/`exp` moved to 2004/2007/2024, and `s`/`w` were rewritten to match the abstract: a fixed pedal shaft turning in a sealed cartridge bearing in the crank arm. The old text credited the wing-and-spring mechanism and a design/utility pairing, neither of which this patent claims, so both were dropped. Tier `"v"` against the Google Patents record (bibliographic data and abstract supplied by Jon). Whether this patent is the one Crankbrothers marks on Eggbeater pedals, or whether separate patents cover the clip-in mechanism, is not confirmed; the entry says only what the abstract says. No drawing sourced. Counts: verified 279 → 280, medium 57 → 56; total unchanged at 378.
 
 - **Rut Rack gained three drawings; the Mach2 sheet was rotated.** The Rut Rack entry now carries three figures (FIG. 17, FIG. 9 and an unlabeled rack-at-hitch view) supplied by Jon from the Singletracks article, captioned "Drawings: USPTO filings, via Singletracks" to match that article's own credit. The entry's text, tier (`"m"`) and counts are unchanged. One open discrepancy: Singletracks calls the application "recently published," while the entry says no publication number is public yet; with no number located, the entry stays as written. The Mach2 rack portfolio drawing (US 9,956,922, FIG. 1) was rotated 90° clockwise so the bike reads upright. `MATCH_DATA` regenerated (262 → 263).
+
+- **Added Specialized's articulating-frame assembly (US 6,953,202), `frame`, tier `v`.** Granted October 11, 2005 to Jason L. Chamberlain and Christopher P. D'Aluisio; a continuation of US 6,866,281 (granted March 15, 2005), itself a continuation of US 6,712,373 (granted March 30, 2004), with a provisional of April 15, 2002. `exp: 2022` runs from the April 29, 2002 parent filing, matching Google Patents' anticipated-expiration date. Number, dates and inventors for 6,953,202 were read from its Google Patents page; the two parents' grant dates come from search-result snippets only, since patent-site fetches are blocked in-session. Not confirmed: the patent's claims (the text describes the abstract's "preferred" tube arrangement, not claim language) and any production Specialized model that uses it. Same-titled US 7,052,029 and 7,059,620 appeared in search and were not checked for family membership, so they are not in the entry. Three sheets from `pictures/` wired in as `imgs[]` (Fig. 1, the frame-only view, Fig. 5). Counts synced: total 378 → 379, expired 139 → 140, verified 280 → 281 (the README's verified figure had drifted one low), across the README table and the eight hardcoded strings in `index.html`.
 
 ## Recent updates (July 2026)
 
