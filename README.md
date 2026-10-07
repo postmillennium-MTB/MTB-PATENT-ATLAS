@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 379 |
+| **Total entries** | 380 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 168 |
+| **Active patents** | 169 |
 | **Expired patents** | 140 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
@@ -24,7 +24,7 @@ An interactive timeline of mountain bike intellectual property: 372 patents and 
 | **Brands** | 210 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 281 |
+| **Verified entries** | 282 |
 | **Medium confidence** | 56 |
 | **Draft / in progress** | 42 |
 
@@ -729,6 +729,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Rut Rack gained three drawings; the Mach2 sheet was rotated.** The Rut Rack entry now carries three figures (FIG. 17, FIG. 9 and an unlabeled rack-at-hitch view) supplied by Jon from the Singletracks article, captioned "Drawings: USPTO filings, via Singletracks" to match that article's own credit. The entry's text, tier (`"m"`) and counts are unchanged. One open discrepancy: Singletracks calls the application "recently published," while the entry says no publication number is public yet; with no number located, the entry stays as written. The Mach2 rack portfolio drawing (US 9,956,922, FIG. 1) was rotated 90° clockwise so the bike reads upright. `MATCH_DATA` regenerated (262 → 263).
 
 - **Added Specialized's articulating-frame assembly (US 6,953,202), `frame`, tier `v`.** Granted October 11, 2005 to Jason L. Chamberlain and Christopher P. D'Aluisio; a continuation of US 6,866,281 (granted March 15, 2005), itself a continuation of US 6,712,373 (granted March 30, 2004), with a provisional of April 15, 2002. `exp: 2022` runs from the April 29, 2002 parent filing, matching Google Patents' anticipated-expiration date. Number, dates and inventors for 6,953,202 were read from its Google Patents page; the two parents' grant dates come from search-result snippets only, since patent-site fetches are blocked in-session. Not confirmed: the patent's claims (the text describes the abstract's "preferred" tube arrangement, not claim language) and any production Specialized model that uses it. Same-titled US 7,052,029 and 7,059,620 appeared in search and were not checked for family membership, so they are not in the entry. Three sheets from `pictures/` wired in as `imgs[]` (Fig. 1, the frame-only view, Fig. 5). Counts synced: total 378 → 379, expired 139 → 140, verified 280 → 281 (the README's verified figure had drifted one low), across the README table and the eight hardcoded strings in `index.html`.
+
+- **Added GoPro's content-proxy patent for multicamera highlights (US 10,402,445), `tech`, tier `v`.** Granted September 3, 2019 to David Newman, Mark Vaden, Rolf Fischer and Vadim Polonichko; application 16/131,542 filed September 14, 2018, published as US 2019/0012332. Number, dates, inventors and the 2036-01-19 anticipated expiry were read from its Google Patents page. `y: 2016` and `exp: 2036` follow that priority date and expiry, since the 2018 filing is a continuation. Not confirmed: the parent application and its number (a same-titled US 10,078,644 appeared in search, but the priority chain was not visible, so it is not cited), and the claims. No link to a specific GoPro product feature is asserted. Three sheets from `pictures/` wired in as `imgs[]` (Fig. 7A trail-ride overlay, Fig. 8 elevation trace, camera body view). Counts synced: total 379 → 380, active 168 → 169, verified 281 → 282, across the README table and the eight hardcoded strings in `index.html`.
 
 ## Recent updates (July 2026)
 
