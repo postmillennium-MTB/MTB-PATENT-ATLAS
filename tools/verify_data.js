@@ -82,6 +82,18 @@ D.forEach(d => {
   });
 });
 
+// No empty filter chips: every BRANDS entry and INVENTORS key must be used by at
+// least one entry's who[]. A registered name nothing is tagged with renders a
+// Brands/Inventors chip that returns zero results (BMC and SCOR did, because
+// they were only ever named in prose, which typed search matches but the chip
+// filter does not). Tag an entry or remove the registration.
+BRANDS.forEach(b => {
+  if (!D.some(d => (d.who || []).includes(b))) hardFailures.push(`BRANDS "${b}" is used by no entry's who[] (would render an empty filter chip)`);
+});
+INVENTORS.forEach(i => {
+  if (!D.some(d => (d.who || []).includes(i.key))) hardFailures.push(`INVENTORS "${i.key}" is used by no entry's who[] (would render an empty filter chip)`);
+});
+
 /* Card cross-links: [[card:<ref>|text]] inside s/w/long (see CARD_LINK_RE in
    index.html). <ref> must be a real card's #p= deep-link ref, computed here the
    same way index.html's _REF map does (the patent number, or number-N when a

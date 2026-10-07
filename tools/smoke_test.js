@@ -73,6 +73,28 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     }
   }
 
+  /* Every Brands / Inventors chip must return at least one card. A registered
+     name that no entry's who[] uses renders a chip that filters to nothing
+     (BMC and SCOR did, 2026-10-07). verify_data.js catches it from the data;
+     this checks the rendered behavior. */
+  errors.length = 0;
+  await page.fill('#searchInput', '');
+  await page.waitForTimeout(300);
+  const emptyChips = await page.evaluate(() => {
+    const out = [];
+    document.querySelectorAll('.chip[data-fset="brand"], .chip[data-fset="inv"]').forEach(b => {
+      b.click();
+      if (!document.querySelectorAll('.card').length) out.push(b.dataset.fset + ':' + b.dataset.fkey);
+      b.click();
+    });
+    return out;
+  });
+  console.log(`brand/inventor chips returning zero cards: ${JSON.stringify(emptyChips)}, errors: ${JSON.stringify(errors)}`);
+  if (emptyChips.length || errors.length) {
+    failed = true;
+    console.error('::error::Filter chips that return no results: ' + emptyChips.join(', '));
+  }
+
   /* Card cross-links ([[card:ref|text]] -> a.card-xref): from each end of the
      required pairs, open the card, click the link, and confirm the target card
      opens. Keep in step with REQUIRED_CROSSLINKS in verify_data.js. */
