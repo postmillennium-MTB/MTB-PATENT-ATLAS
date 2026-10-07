@@ -2966,9 +2966,10 @@ function renderStatsTimelineChart(buckets, segmentsFor, mode, legendItems, dense
     return `<div class="stats-col" style="${style}" title="${b.tip} — ${b.total}">${segHTML}</div>`;
   }).join("");
   const labels=perBucket.map(b=>{
-    /* denseLabels (litigation chart only, see litTimelineHTML below) shows
-       every bucket's year unconditionally -- the category chart keeps its
-       original narrow-screen thinning either way. denseLabels intentionally
+    /* denseLabels (both over-time charts now; the category chart used to thin
+       to decades) shows every bucket's year unconditionally. The non-dense
+       branch below is kept for any future chart that wants thinning.
+       denseLabels intentionally
        ignores `narrow` rather than falling back to a from%10===0 check: on
        this chart's 5-year-stepped buckets every `from` is already a
        multiple of 5, so %10===0 is only ever true for HALF of them (the
@@ -3008,7 +3009,9 @@ function catTimelineHTML(){
     color:CAT_COLORS[k], count:items.filter(d=>d.cat===k).length, label:catLabel(k), key:k
   }));
   const legendItems=catKeys.map(k=>({color:CAT_COLORS[k], label:catLabel(k)}));
-  return renderStatsTimelineChart(buckets, segmentsFor, catTimelineMode, legendItems, false, true);
+  /* denseLabels=true: label every 5-year bracket (1985, 1995, ... 2025), not just
+     the decades -- same labelling as the litigation chart below. */
+  return renderStatsTimelineChart(buckets, segmentsFor, catTimelineMode, legendItems, true, true);
 }
 /* "Litigation over time" — a 2-segment stack per bracket (litigated vs.
    not), reusing the exact same STATS_TIMELINE_* buckets as the category
