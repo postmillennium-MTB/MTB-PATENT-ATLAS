@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 395 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 396 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 392 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
@@ -15,9 +15,9 @@ An interactive timeline of mountain bike intellectual property: 392 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 395 |
+| **Total entries** | 396 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 175 |
+| **Active patents** | 176 |
 | **Expired patents** | 148 |
 | **Pending applications** | 47 |
 | **Litigated entries** | 31 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 392 patents and 
 | **Brands** | 211 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 302 |
+| **Verified entries** | 303 |
 | **Medium confidence** | 51 |
 | **Draft / in progress** | 42 |
 
@@ -773,6 +773,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Third drawing added to the US 2022/0297790 card:** Figs. 14A/14B, the rear wheel and cassette (sheet uploaded to `pictures/` as `US20220297790A1.2.png`). No count changes.
 - **Merged the two sequential adjacent drive entries (US 2022/0297790 and EP 4,059,824) into one card, "Rocky Mountain Underground sequential adjacent drive" (396 → 395).** Same family: the EP application (EP 22162773.0) was filed two days after the US one. The merged card keeps the US application as its primary number with the EP publication in `nums`, `conf:"v"` on the strength of the US record. The EP publication number comes from Pinkbike's coverage and is flagged in the text as unchecked against the EP register. `j:"EP"` is dropped (US primary, per the schema rule). The old `#p=EP4059824A2` link is kept in `REF_ALIASES`. The RMU attribution is Jon's; the record lists Weagle as inventor and applicant with no assignee. Counts synced: total 396 → 395, pending 48 → 47, medium confidence 52 → 51; the six `index.html` count strings and the README table updated.
 - **eBike ABS pressure modulator (US 11,364,968): second drawing rotated 90° clockwise so Fig. 1 reads upright; its alt text, which described a different figure (modulator housing near a rear pivot), now describes what the sheet shows.** No count changes.
+- **DT Swiss terrain-sensing damper control (US 10,343,741) added to the Forks category (395 → 396).** "Bicycle component, bicycle and method," filed May 18, 2016 on a 2015 German priority filing by Martin Walthert, Valentin Wendel and Stefan Battlogg, granted July 9, 2019 to DT Swiss Inc.; a sensor on a steering-pivoting component feeds a detection device that rates terrain difficulty and adjusts damping. `conf:"v"`: number, dates, inventors, assignee and abstract all match the Google Patents record supplied for this entry; the page itself could not be fetched from the sandbox, and only the abstract and background were read, not the claims. `exp:2036` is filing year + 20 (Google Patents lists an adjusted expiry of July 9, 2036). Placed after the DT Swiss magnetorheological damper entry and cross-linked to Fox Live Valve. Unconfirmed: whether any DT Swiss product uses it. No drawing yet. Counts moved: total 395 → 396, active 175 → 176, verified 302 → 303.
 
 ## Recent updates (July 2026)
 
