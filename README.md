@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 397 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 398 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 397 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 397 |
+| **Total entries** | 398 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 176 |
+| **Active patents** | 177 |
 | **Expired patents** | 148 |
 | **Pending applications** | 48 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 212 |
+| **Brands** | 213 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 304 |
+| **Verified entries** | 305 |
 | **Medium confidence** | 51 |
 | **Draft / in progress** | 42 |
 
@@ -778,6 +778,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Merged the two Hypershell entries into one (397 → 396) and resolved the merge with `main`.** The utility application (US 2025/0170009 A1) is the primary number with the design patent (US D1,104,096, stored as `D1104096` in `nums`) alongside; the entry is `pending` with `exp:null` because the application has no term yet, and the 2040 design-patent expiry is stated in the text. The earlier "no mountain-bike use is documented" line is replaced: per Jon, you can ride a mountain bike in a Hypershell. It stays in `tech`. A `long` disclosure now summarizes a June 2025 YouTube review of the Pro X on a mountain bike (trails, jumps, a climb with the unit on versus off, and a jump-bike clash with the frame); the video's specs are Hypershell's own claims and the link was supplied by Jon, not fetched from this environment. Counts synced: total 397 → 396, active 176 → 175, verified 304 → 303; the six `index.html` count strings and the README table updated. Also removed a stale duplicate README intro line that still said 392 patents.
 - **DT Swiss terrain-sensing damper control (US 10,343,741) added to the Forks category (396 → 397).** "Bicycle component, bicycle and method," filed May 18, 2016 on a 2015 German priority filing by Martin Walthert, Valentin Wendel and Stefan Battlogg, granted July 9, 2019 to DT Swiss Inc.; a sensor on a steering-pivoting component feeds a detection device that rates terrain difficulty and adjusts damping. `conf:"v"`: number, dates, inventors, assignee and abstract all match the Google Patents record supplied for this entry; the page itself could not be fetched from the sandbox, and only the abstract and background were read, not the claims. `exp:2036` is filing year + 20 (Google Patents lists an adjusted expiry of July 9, 2036). Placed after the DT Swiss magnetorheological damper entry and cross-linked to Fox Live Valve. Both drawing sheets already in `pictures/` (Fig. 1 and Fig. 2a) are wired in as `imgs[]`. Unconfirmed: whether any DT Swiss product uses it. Counts moved: total 396 → 397, active 175 → 176, verified 303 → 304.
 - **Hypershell exoskeleton entry gets its two drawings.** The perspective view and the schematic front view of US 2025/0170009 A1, already uploaded to `pictures/`, are wired in as `imgs[]` with bilingual alt text. No text, count or tier changed. One further upload, `US4942778A.1.png`, is in `pictures/` but not yet referenced by its entry.
+- **Virzoom VR exercise-bike game (US 10,379,604) added to Cameras & Wearables (397 → 398).** "Virtual reality exercise game," filed March 31, 2016 by Eric Malafeew, assigned to Virzoom Inc. and granted August 13, 2019; head rotation and lean from sensors on a stationary bike set how the virtual body turns. Placed beside the Atari and Samsung trainer-simulator entries and cross-linked to both; Virzoom added to `BRANDS` (no HQ recorded). `conf:"v"` against the Google Patents record supplied for this entry (abstract and filing history; the claims were not read, so the summary stays at the abstract's level); `exp:2036` is filing year + 20, matching Google's anticipated expiry of March 31, 2036. The three drawing sheets already in `pictures/` (Fig. 1, Fig. 3, Fig. 6) are wired in. Unconfirmed: the status of the 2019 U.S. application (US 16/449,658) and of the EP, JP and WO counterparts, and whether any Virzoom product uses the patent. Not a mountain-bike component; included with the trainer-based riding simulators. Counts moved: total 397 → 398, active 176 → 177, verified 304 → 305, brands 212 → 213.
 
 ## Recent updates (July 2026)
 
