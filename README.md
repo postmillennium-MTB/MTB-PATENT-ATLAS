@@ -2,8 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 396 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
-An interactive timeline of mountain bike intellectual property: 392 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 397 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -15,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 392 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 396 |
+| **Total entries** | 397 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 176 |
 | **Expired patents** | 148 |
-| **Pending applications** | 47 |
+| **Pending applications** | 48 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 211 |
+| **Brands** | 212 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 303 |
+| **Verified entries** | 304 |
 | **Medium confidence** | 51 |
 | **Draft / in progress** | 42 |
 
@@ -773,7 +772,9 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Third drawing added to the US 2022/0297790 card:** Figs. 14A/14B, the rear wheel and cassette (sheet uploaded to `pictures/` as `US20220297790A1.2.png`). No count changes.
 - **Merged the two sequential adjacent drive entries (US 2022/0297790 and EP 4,059,824) into one card, "Rocky Mountain Underground sequential adjacent drive" (396 → 395).** Same family: the EP application (EP 22162773.0) was filed two days after the US one. The merged card keeps the US application as its primary number with the EP publication in `nums`, `conf:"v"` on the strength of the US record. The EP publication number comes from Pinkbike's coverage and is flagged in the text as unchecked against the EP register. `j:"EP"` is dropped (US primary, per the schema rule). The old `#p=EP4059824A2` link is kept in `REF_ALIASES`. The RMU attribution is Jon's; the record lists Weagle as inventor and applicant with no assignee. Counts synced: total 396 → 395, pending 48 → 47, medium confidence 52 → 51; the six `index.html` count strings and the README table updated.
 - **eBike ABS pressure modulator (US 11,364,968): second drawing rotated 90° clockwise so Fig. 1 reads upright; its alt text, which described a different figure (modulator housing near a rear pivot), now describes what the sheet shows.** No count changes.
-- **DT Swiss terrain-sensing damper control (US 10,343,741) added to the Forks category (395 → 396).** "Bicycle component, bicycle and method," filed May 18, 2016 on a 2015 German priority filing by Martin Walthert, Valentin Wendel and Stefan Battlogg, granted July 9, 2019 to DT Swiss Inc.; a sensor on a steering-pivoting component feeds a detection device that rates terrain difficulty and adjusts damping. `conf:"v"`: number, dates, inventors, assignee and abstract all match the Google Patents record supplied for this entry; the page itself could not be fetched from the sandbox, and only the abstract and background were read, not the claims. `exp:2036` is filing year + 20 (Google Patents lists an adjusted expiry of July 9, 2036). Placed after the DT Swiss magnetorheological damper entry and cross-linked to Fox Live Valve. Unconfirmed: whether any DT Swiss product uses it. No drawing yet. Counts moved: total 395 → 396, active 175 → 176, verified 302 → 303.
+- **Added Hypershell's powered-exoskeleton filings as two `tech` entries, tier `v` (395 → 397), and rotated the DT Swiss Star Ratchet drawing 90° clockwise.** US D1,104,096 (design, inventor Kuan Sun, filed June 18, 2024, granted December 2, 2025; `exp` 2040 = grant + 15 under the post-May 2015 rule) and US 2025/0170009 A1 (single-actuator assist device, Kuan Sun and Yingjie Qiao, filed January 24, 2025 with 2022 Chinese priority, published May 29, 2025, pending, `exp: null`) are cross-linked. Both are tiered `v` on the Google Patents bibliographic records supplied directly; the patent pages themselves were not independently re-fetched. Filed under `tech` because the device is rider-worn and independent of the bike; no mountain-bike use is documented, so the cards say it is marketed for hiking and load carrying. Registered Hypershell as a brand (no `BRAND_HQ` — headquarters unconfirmed). No drawings sourced yet. `y` on the application is its US filing year (2025), not the 2022 Chinese priority. The Star Ratchet figure (`pictures/US5676227A.png`) was saved sideways; it is now 2057×1351 with its labels upright, and the `imgAlt` is unchanged. Counts synced: README At-a-glance (395→397 total, 175→176 active, 47→48 pending, 302→304 verified, 211→212 brands) and all `index.html` count strings.
+- **Merged the two Hypershell entries into one (397 → 396) and resolved the merge with `main`.** The utility application (US 2025/0170009 A1) is the primary number with the design patent (US D1,104,096, stored as `D1104096` in `nums`) alongside; the entry is `pending` with `exp:null` because the application has no term yet, and the 2040 design-patent expiry is stated in the text. The earlier "no mountain-bike use is documented" line is replaced: per Jon, you can ride a mountain bike in a Hypershell. It stays in `tech`. A `long` disclosure now summarizes a June 2025 YouTube review of the Pro X on a mountain bike (trails, jumps, a climb with the unit on versus off, and a jump-bike clash with the frame); the video's specs are Hypershell's own claims and the link was supplied by Jon, not fetched from this environment. Counts synced: total 397 → 396, active 176 → 175, verified 304 → 303; the six `index.html` count strings and the README table updated. Also removed a stale duplicate README intro line that still said 392 patents.
+- **DT Swiss terrain-sensing damper control (US 10,343,741) added to the Forks category (396 → 397).** "Bicycle component, bicycle and method," filed May 18, 2016 on a 2015 German priority filing by Martin Walthert, Valentin Wendel and Stefan Battlogg, granted July 9, 2019 to DT Swiss Inc.; a sensor on a steering-pivoting component feeds a detection device that rates terrain difficulty and adjusts damping. `conf:"v"`: number, dates, inventors, assignee and abstract all match the Google Patents record supplied for this entry; the page itself could not be fetched from the sandbox, and only the abstract and background were read, not the claims. `exp:2036` is filing year + 20 (Google Patents lists an adjusted expiry of July 9, 2036). Placed after the DT Swiss magnetorheological damper entry and cross-linked to Fox Live Valve. Both drawing sheets already in `pictures/` (Fig. 1 and Fig. 2a) are wired in as `imgs[]`. Unconfirmed: whether any DT Swiss product uses it. Counts moved: total 396 → 397, active 175 → 176, verified 303 → 304.
 
 ## Recent updates (July 2026)
 
