@@ -247,6 +247,26 @@ console.log('\nunreferenced drawings in pictures/ (informational, not blocking):
 if (orphanNone.length) console.log('  no sheet wired in (' + orphanNone.length + '):', orphanNone.join(', '));
 if (orphanExtra.length) console.log('  extra sheet(s) of a patent that has a drawing (' + orphanExtra.length + '):', orphanExtra.join(', '));
 
+/* Card thumbnails (pictures/thumbs/) -- informational, never blocking.
+   index.html shows the first drawing of each entry as a small picture and
+   falls back to the full-size file when its thumbnail is missing, so a gap
+   here costs speed, not correctness. thumbName() must match thumbSrc() in
+   index.html and thumb_path() in tools/make_thumbs.py. Run
+   `python3 tools/make_thumbs.py` to fill gaps (the "Make thumbnails"
+   workflow does it after an upload). Orphans are thumbnails whose drawing is
+   no longer any entry's first one. */
+const thumbName = src => decodeURIComponent(src).split('/').pop().replace(/\.[^.]+$/, '') + '.webp';
+const firstDrawings = [...new Set(D.map(d => (d.imgs && d.imgs.length ? d.imgs[0].src : d.img)).filter(Boolean))];
+const thumbDir = path.join(picDir, 'thumbs');
+const haveThumbs = new Set(fs.existsSync(thumbDir) ? fs.readdirSync(thumbDir) : []);
+const wantThumbs = new Set(firstDrawings.map(thumbName));
+const noThumb = firstDrawings.filter(s => !haveThumbs.has(thumbName(s)));
+const orphanThumbs = [...haveThumbs].filter(f => !wantThumbs.has(f)).sort();
+console.log('\ncard thumbnails (informational, not blocking):',
+  `${firstDrawings.length - noThumb.length} of ${firstDrawings.length} first drawings have one`);
+if (noThumb.length) console.log('  missing (' + noThumb.length + '), run python3 tools/make_thumbs.py:', noThumb.join(', '));
+if (orphanThumbs.length) console.log('  no longer used (' + orphanThumbs.length + '):', orphanThumbs.join(', '));
+
 if (hardFailures.length) {
   console.error(`\n::error::${hardFailures.length} schema-integrity issue(s) found -- see list above.`);
   process.exit(1);

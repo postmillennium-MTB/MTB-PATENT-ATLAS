@@ -28,6 +28,7 @@
   --font-body:'Barlow',system-ui,sans-serif;
   --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
   --ui-weight:600; /* weight for small display-font UI text (tabs, sub-heads); a theme overrides this when its display font reads heavy at small sizes */
+  --thumb-bg:#F3F4F1; /* paper tone behind a card thumbnail; the drawing is multiplied onto it, so its white background takes on this tone. Each theme sets its own. */
 }
 /* ===== WMBC — clean trail / topographic (soft, rounded, organic) ===== */
 [data-theme="wmbc"]{
@@ -41,6 +42,7 @@
   --card-shadow:0 1px 2px rgba(20,38,28,.05); --pill-radius:999px; --era-line:2px;
   --header-bg:linear-gradient(160deg,#1B4332 0%,#225239 100%);
   --font-display:'Nunito',system-ui,sans-serif;
+  --thumb-bg:#F2F7F1;
 }
 /* ===== COMBA — vintage editorial print (warm cream, heavy serif-feel, squared) ===== */
 [data-theme="comba"]{
@@ -59,6 +61,7 @@
      display-font text in this theme drops to a lighter weight than the
      other themes' shared default (see --ui-weight below). */
   --ui-weight:500;
+  --thumb-bg:#F2EAD8;
 }
 /* ===== CAMBA — bold racing / high contrast (sharp, black rules, urgent) ===== */
 [data-theme="camba"]{
@@ -72,6 +75,7 @@
   --card-shadow:3px 3px 0 rgba(22,22,22,.10); --pill-radius:0; --era-line:4px;
   --header-bg:#161616;
   --font-display:'Anton',system-ui,sans-serif;
+  --thumb-bg:#F4F4F4;
 }
 /* ===== CAMBR — technical blueprint (navy structure, orange accents, mono-forward) ===== */
 [data-theme="cambr"]{
@@ -85,6 +89,7 @@
   --card-shadow:0 1px 3px rgba(11,22,42,.07); --pill-radius:4px; --era-line:2px;
   --header-bg:linear-gradient(160deg,#0B162A 0%,#13294B 100%);
   --font-display:'IBM Plex Mono',ui-monospace,monospace;
+  --thumb-bg:#F1F4F9;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -681,6 +686,111 @@ html,body{overflow-x:hidden;max-width:100%}
   .tab-btn{font-size:13px;padding:8px 10px}
 }
 @media(max-width:380px){.tab-row{flex-wrap:wrap;overflow-x:visible}}
+/* ---------- Card views ----------
+   render() stamps #timeline with data-view = the reader's chosen view (see
+   CARD VIEWS in the script). "text" is the original list and has no rules
+   here. The other three add a thumbnail -- .thumb, the first child of
+   .chead-row -- and re-flow the row around it:
+     plate  small framed drawing left of the title        (Specimen plate)
+     tint   large drawing on a category-colored panel at the right edge
+     grid   tiles in a CSS grid; an open card spans the full row
+   Slot sizes are custom properties on #timeline so changing one is one edit.
+   If you replace the placeholder art (PLACEHOLDER_IMG), the sizes below are
+   the ones it has to fit; the script comment on that registry lists them. */
+#timeline{--plate-w:104px;--plate-h:88px;--tint-w:200px;--tint-cut:28px;--tile-min:168px;--open-thumb:140px}
+@media(max-width:639px){#timeline{--plate-w:84px;--plate-h:84px;--tint-w:104px;--tint-cut:16px;--tile-min:136px;--open-thumb:96px}}
+/* --cat comes from the card's inline style (CAT_COLORS); --cat-tint is that
+   color diluted into the card surface -- the tinted view's panel and the
+   no-drawing placeholder both use it. color-mix() is ignored by a browser
+   that lacks it, which leaves the slot on --thumb-bg, still readable. */
+#timeline .card{--cat-tint:color-mix(in srgb,var(--cat,#898781) 14%,var(--surface))}
+.thumb{position:relative;display:block;overflow:hidden;background:var(--thumb-bg);border:1px solid var(--card-border);border-radius:calc(var(--radius) - 4px);cursor:pointer}
+.thumb img{display:block;width:100%;height:100%;padding:8px;object-fit:contain;mix-blend-mode:multiply}
+.thumb-yr{position:absolute;left:5px;top:5px;z-index:1;font-family:var(--font-mono);font-size:11px;font-weight:600;line-height:1.3;color:var(--primary);background:var(--chip-bg);border-radius:6px;padding:2px 6px}
+.thumb-flags{display:none}
+/* Typographic placeholder for an entry with no drawing and no PLACEHOLDER_IMG:
+   the year large, the category small, on the category tint. The year chip is
+   hidden visually (kept for screen readers) since the year is already the picture. */
+.thumb-none{background:var(--cat-tint)}
+.thumb-none .thumb-yr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;padding:0}
+.thumb-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:6px;text-align:center;color:color-mix(in srgb,var(--cat,#898781) 62%,#000)}
+.thumb-ph-y{font-family:var(--font-display);font-weight:var(--head-weight);font-size:var(--ph-year,24px);line-height:1;letter-spacing:var(--head-spacing)}
+.thumb-ph-c{font-family:var(--font-mono);font-size:9px;font-weight:600;line-height:1.25;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
+/* The year lives on the thumbnail in plate/grid; the tinted view keeps the
+   original chip in the title row. */
+#timeline[data-view="plate"] .chead .yr,#timeline[data-view="grid"] .chead .yr{display:none}
+#timeline[data-view="tint"] .thumb-yr{display:none}
+/* --- plate (and an open card in the grid): thumb | title | 3 icon buttons --- */
+#timeline[data-view="plate"] .chead-row,
+#timeline[data-view="grid"] .card.open .chead-row{display:grid;grid-template-columns:var(--plate-w) minmax(0,1fr) auto auto auto;align-items:start}
+#timeline[data-view="grid"] .card.open{--plate-w:var(--open-thumb);--plate-h:var(--open-thumb);--ph-year:30px}
+#timeline[data-view="plate"] .thumb,
+#timeline[data-view="grid"] .card.open .thumb{grid-column:1;grid-row:1 / span 3;align-self:center;width:var(--plate-w);height:var(--plate-h);margin:12px 0 12px 12px}
+#timeline[data-view="plate"] .chead,
+#timeline[data-view="grid"] .card.open .chead{grid-column:2;grid-row:1 / span 3;align-self:center;flex-wrap:nowrap;padding:12px 8px 12px 14px}
+#timeline[data-view="plate"] .chead .ct,
+#timeline[data-view="grid"] .card.open .chead .ct{order:0;flex:1 1 auto}
+#timeline[data-view="plate"] .chead .caret,
+#timeline[data-view="grid"] .card.open .chead .caret{margin-left:0}
+#timeline[data-view="plate"] .card-fav-btn,#timeline[data-view="grid"] .card.open .card-fav-btn{grid-column:3;grid-row:1}
+#timeline[data-view="plate"] .card-share-btn,#timeline[data-view="grid"] .card.open .card-share-btn{grid-column:4;grid-row:1}
+#timeline[data-view="plate"] .card-cite-btn,#timeline[data-view="grid"] .card.open .card-cite-btn{grid-column:5;grid-row:1}
+/* --- tint: title | 3 icon buttons | drawing panel with a slanted left edge --- */
+#timeline[data-view="tint"] .chead-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto var(--tint-w);align-items:start}
+#timeline[data-view="tint"] .thumb{grid-column:5;grid-row:1 / span 3;align-self:stretch;min-height:132px;margin:0;border:0;border-radius:0;background:var(--cat-tint);clip-path:polygon(var(--tint-cut) 0,100% 0,100% 100%,0 100%)}
+#timeline[data-view="tint"] .thumb img{padding:14px 14px 14px calc(var(--tint-cut) + 12px)}
+#timeline[data-view="tint"] .chead{grid-column:1;grid-row:1 / span 3}
+#timeline[data-view="tint"] .card-fav-btn{grid-column:2;grid-row:1}
+#timeline[data-view="tint"] .card-share-btn{grid-column:3;grid-row:1}
+#timeline[data-view="tint"] .card-cite-btn{grid-column:4;grid-row:1}
+/* --- phone: the three icon buttons stack in one narrow column --- */
+@media(max-width:639px){
+  #timeline[data-view="plate"] .chead-row,
+  #timeline[data-view="grid"] .card.open .chead-row{grid-template-columns:var(--plate-w) minmax(0,1fr) 34px}
+  #timeline[data-view="tint"] .chead-row{grid-template-columns:minmax(0,1fr) 34px var(--tint-w)}
+  #timeline[data-view="tint"] .thumb{grid-column:3}
+  #timeline[data-view="plate"] .card-fav-btn,#timeline[data-view="grid"] .card.open .card-fav-btn{grid-column:3;grid-row:1}
+  #timeline[data-view="plate"] .card-share-btn,#timeline[data-view="grid"] .card.open .card-share-btn{grid-column:3;grid-row:2}
+  #timeline[data-view="plate"] .card-cite-btn,#timeline[data-view="grid"] .card.open .card-cite-btn{grid-column:3;grid-row:3}
+  #timeline[data-view="tint"] .card-fav-btn{grid-column:2;grid-row:1}
+  #timeline[data-view="tint"] .card-share-btn{grid-column:2;grid-row:2}
+  #timeline[data-view="tint"] .card-cite-btn{grid-column:2;grid-row:3}
+  #timeline[data-view="plate"] .card-icon-btn,#timeline[data-view="tint"] .card-icon-btn,#timeline[data-view="grid"] .card.open .card-icon-btn{margin:8px 4px 0 0}
+  #timeline[data-view="plate"] .chead,#timeline[data-view="grid"] .card.open .chead{padding:12px 4px 12px 12px}
+}
+/* --- grid: tiles --- */
+#timeline[data-view="grid"] .tl{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--tile-min),1fr));gap:16px 14px;padding-left:0}
+#timeline[data-view="grid"] .tl::before,#timeline[data-view="grid"] .card::before{display:none}
+#timeline[data-view="grid"] .card{margin-bottom:0;min-width:0}
+#timeline[data-view="grid"] .card[data-era]{scroll-margin-top:130px}
+#timeline[data-view="grid"] .card.open{grid-column:1 / -1}
+#timeline[data-view="grid"] .card:not(.open){--ph-year:32px}
+#timeline[data-view="grid"] .card:not(.open) .chead-row{display:flex;flex-direction:column;align-items:stretch}
+#timeline[data-view="grid"] .card:not(.open) .thumb{width:100%;aspect-ratio:1 / 1;margin:0;border:0;border-bottom:1px solid var(--card-border);border-radius:0}
+#timeline[data-view="grid"] .card:not(.open) .thumb img{padding:12px}
+#timeline[data-view="grid"] .card:not(.open) .thumb-flags{display:flex;flex-wrap:wrap;gap:4px;position:absolute;left:6px;right:6px;bottom:6px;z-index:1}
+#timeline[data-view="grid"] .card:not(.open) .card-icon-btn,
+#timeline[data-view="grid"] .card:not(.open) .chead .jtag,
+#timeline[data-view="grid"] .card:not(.open) .chead .caret,
+#timeline[data-view="grid"] .card:not(.open) .chead .pills,
+#timeline[data-view="grid"] .card:not(.open) .chead .conf{display:none}
+#timeline[data-view="grid"] .card:not(.open) .chead{display:block;min-height:0;padding:10px 12px 12px}
+#timeline[data-view="grid"] .card:not(.open) .chead .ct{display:block}
+#timeline[data-view="grid"] .card:not(.open) .ct .t,
+#timeline[data-view="grid"] .card:not(.open) .ct .a{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+#timeline[data-view="grid"] .card:not(.open) .ct .t{font-size:14px;-webkit-line-clamp:3}
+#timeline[data-view="grid"] .card:not(.open) .ct .a{font-size:12px;-webkit-line-clamp:2}
+@media(hover:hover){#timeline[data-view="grid"] .card:not(.open):hover{border-color:var(--primary)}}
+/* ---------- View toggle (in the results row) ---------- */
+.fmeta{flex-wrap:wrap;gap:6px 10px}
+.fmeta-actions{flex-wrap:wrap;justify-content:flex-end}
+.view-seg{display:flex;gap:2px;padding:2px;border:1px solid var(--card-border);border-radius:999px;background:var(--surface)}
+.view-seg[hidden]{display:none}
+.view-btn{display:flex;align-items:center;justify-content:center;min-width:36px;min-height:30px;padding:0 8px;border:0;border-radius:999px;background:transparent;color:var(--ink-soft);transition:background .15s,color .15s}
+.view-btn .icon-inline{width:16px;height:16px;margin:0}
+.view-btn:hover{color:var(--primary)}
+.view-btn[aria-pressed="true"]{background:var(--primary);color:#fff}
+.view-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -758,6 +868,7 @@ html,body{overflow-x:hidden;max-width:100%}
   <div class="fmeta">
     <span id="resultCount"></span>
     <span class="fmeta-actions">
+      <span class="view-seg" id="viewSeg" role="group" data-i18n-aria-label="viewGroup" aria-label="Card view"></span>
       <button class="mini-btn" id="sortBtn" data-i18n-title="sortTipAsc" title="Sort oldest to newest"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock-arrow-up icon-inline" aria-hidden="true" focusable="false"><path d="M12 6v6l1.56.78"/><path d="M13.227 21.925a10 10 0 1 1 8.767-9.588"/><path d="m14 18 4-4 4 4"/><path d="M18 22v-8"/></svg><span data-i18n="sortOldest">Oldest first</span></button>
       <button class="mini-btn" id="surpriseBtn" data-i18n-title="surpriseTip" title="Jump to a random patent"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dices icon-inline" aria-hidden="true" focusable="false"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg><span data-i18n="surpriseBtn">Surprise me</span></button>
       <details class="share-menu" id="shareMenu">
@@ -1891,6 +2002,9 @@ const T = {
     surpriseBtn:"Surprise me", surpriseTip:"Jump to a random patent",
     sortOldest:"Oldest first", sortNewest:"Newest first",
     sortTipAsc:"Sort oldest to newest", sortTipDesc:"Sort newest to oldest",
+    viewGroup:"Card view",
+    viewGridTip:"Grid of drawings", viewPlateTip:"List with a small drawing beside each entry",
+    viewTintTip:"List with a large drawing on a category-colored panel", viewTextTip:"List without images",
     shareBtn:"Share", shareTip:"Share this view",
     copyLink:"📋 Copy link", shareX:"𝕏 Share on X", shareFacebook:"📘 Share on Facebook", shareReddit:"👽 Share on Reddit",
     copiedConfirm:"✓ Copied", copyLinkShown:"Copy the link shown",
@@ -2005,6 +2119,9 @@ const T = {
     surpriseBtn:"Surprends-moi", surpriseTip:"Aller à un brevet au hasard",
     sortOldest:"Plus anciens d'abord", sortNewest:"Plus récents d'abord",
     sortTipAsc:"Trier du plus ancien au plus récent", sortTipDesc:"Trier du plus récent au plus ancien",
+    viewGroup:"Affichage des fiches",
+    viewGridTip:"Grille de dessins", viewPlateTip:"Liste avec un petit dessin à côté de chaque entrée",
+    viewTintTip:"Liste avec un grand dessin sur un panneau teinté selon la catégorie", viewTextTip:"Liste sans images",
     shareBtn:"Partager", shareTip:"Partager cette vue",
     copyLink:"📋 Copier le lien", shareX:"𝕏 Partager sur X", shareFacebook:"📘 Partager sur Facebook", shareReddit:"👽 Partager sur Reddit",
     copiedConfirm:"✓ Copié", copyLinkShown:"Copier le lien affiché",
@@ -2209,6 +2326,175 @@ document.querySelectorAll(".langbtn").forEach(b=>{
 });
 $("#mtBannerClose")?.addEventListener("click",()=>{ const b=$("#mtBanner"); if(b) b.hidden=true; });
 applyStaticI18n(); // apply restored/default language to static markup before the chip rows below get built
+
+/* ======== CARD VIEWS ========
+   The reader chooses how a card list looks with the four-button toggle in the
+   results row (#viewSeg). Each view is a different way of showing the SAME
+   cards, so this is one registry and one attribute, not four render paths:
+
+     grid   Contact sheet  tiles of the first drawing, open card spans the row
+     plate  Specimen plate small framed drawing beside each title
+     tint   Tinted plate   large drawing on a category-colored panel
+     text   No images      the original list; downloads no images
+
+   Defaults (the reader's own choice, once made, always wins and is remembered
+   as a preference only -- the page works with storage blocked):
+     640px and wider  ->  grid      narrower  ->  plate
+   640 is the width the card layout already switches to a desktop arrangement
+   at (@media(min-width:640px) in the stylesheet). Measured inside the iframe,
+   so a narrow embed gets the phone default, which is the right call.
+
+   The CSS for all of this is the "Card views" block at the end of <style>.
+   To add a view: one VIEW_MODES entry, its CSS under #timeline[data-view="x"],
+   and its viewXTip string in T.en/T.fr. */
+const ICON_VIEW_GRID = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-layout-grid icon-inline\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"7\" height=\"7\" x=\"3\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"7\" x=\"14\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"7\" x=\"14\" y=\"14\" rx=\"1\"/><rect width=\"7\" height=\"7\" x=\"3\" y=\"14\" rx=\"1\"/></svg>";
+const ICON_VIEW_PLATE = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-view-plate icon-inline\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"6\" height=\"6\" x=\"3\" y=\"4\" rx=\"1\"/><path d=\"M13 5.5h8\"/><path d=\"M13 8.5h5\"/><rect width=\"6\" height=\"6\" x=\"3\" y=\"14\" rx=\"1\"/><path d=\"M13 15.5h8\"/><path d=\"M13 18.5h5\"/></svg>";
+const ICON_VIEW_TINT = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-view-tint icon-inline\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"18\" height=\"7\" x=\"3\" y=\"3\" rx=\"1\"/><path d=\"M15 3v7\"/><rect width=\"18\" height=\"7\" x=\"3\" y=\"14\" rx=\"1\"/><path d=\"M15 14v7\"/></svg>";
+const ICON_VIEW_TEXT = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-list icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M3 5h.01\"/><path d=\"M3 12h.01\"/><path d=\"M3 19h.01\"/><path d=\"M8 5h13\"/><path d=\"M8 12h13\"/><path d=\"M8 19h13\"/></svg>";
+const VIEW_MODES = [
+  {key:"grid",  tipKey:"viewGridTip",  icon:ICON_VIEW_GRID},
+  {key:"plate", tipKey:"viewPlateTip", icon:ICON_VIEW_PLATE},
+  {key:"tint",  tipKey:"viewTintTip",  icon:ICON_VIEW_TINT},
+  {key:"text",  tipKey:"viewTextTip",  icon:ICON_VIEW_TEXT},
+];
+const VIEW_DESKTOP_DEFAULT = "grid";
+const VIEW_PHONE_DEFAULT = "plate";
+const VIEW_DESKTOP_MIN_PX = 640; /* viewport width at which VIEW_DESKTOP_DEFAULT applies; keep equal to the stylesheet's desktop breakpoint */
+const VIEW_STORAGE_KEY = "pmr-patent-atlas-view";
+
+/* Card thumbnails are small WebP copies of each entry's first drawing, made by
+   tools/make_thumbs.py (the "Make thumbnails" workflow runs it after an
+   upload). THUMB_DIR + the drawing's file name without its extension, as
+   .webp -- thumbSrc() below, thumb_path() in that script and thumbName() in
+   tools/verify_data.js all apply this one rule. A missing thumbnail falls back
+   to the full-size drawing (thumbFallback), slower but never broken. */
+const THUMB_DIR = "pictures/thumbs/";
+
+/* Picture for an entry that has no drawing. null = use the built-in
+   typographic tile (the year large, the category small, on the category
+   color). To use your own art, put the file in pictures/placeholders/ and set
+   its path here: "default" covers every category without its own entry, or
+   give each category its own (keys are the CATS keys).
+     e.g.  default:"pictures/placeholders/default.png"
+   Sizes the art has to work at (CSS px; shown with object-fit:contain, so a
+   different shape letterboxes rather than crops):
+     grid tile        about 200 x 200 (4 across at desktop width)
+     plate            104 x 88; phones 84 x 84
+     tinted panel     200 wide, and the left 40px is cut off by the slanted edge; phones 104 wide
+     open grid card   140 x 140; phones 96 x 96
+   Make it square, 400 x 400 px (2x the largest slot, for high-density
+   screens), PNG or WebP, with a white or transparent background: the slot's
+   paper tone and the category tint are multiplied onto it, so white takes on
+   the tone. Keep the artwork inside the central ~320 x 320 so no slot crowds
+   its edges. The year is NOT drawn over it in the tinted view and IS in the
+   others (a small chip, top-left), so leave that corner clear. */
+const PLACEHOLDER_IMG = {
+  default:null,
+  susp:null, fork:null, drive:null, wheel:null, comp:null,
+  emtb:null, frame:null, transport:null, tech:null
+};
+
+/* The first drawing of an entry (imgs[0] when it has several, else img) --
+   the one picture its thumbnail shows. tools/first_images.js makes the same
+   choice when it decides which thumbnails to build. */
+function firstDrawing(d){ return (d.imgs&&d.imgs.length) ? d.imgs[0].src : (d.img||null); }
+function thumbSrc(src){
+  const name=decodeURIComponent(src).split("/").pop().replace(/\.[^.]+$/,"");
+  return THUMB_DIR+encodeURIComponent(name)+".webp";
+}
+/* onerror target for a thumbnail <img>: swap to the full-size drawing once. */
+function thumbFallback(img){ img.onerror=null; if(img.dataset.full) img.src=img.dataset.full; }
+/* The .thumb element for a card (see the Card views CSS for how each view
+   places it). The year chip and status/litigated flags are inside it because
+   the plate and grid views show them over the picture instead of in the title
+   row; the CSS hides whichever copy a view does not use. */
+function thumbHTML(d){
+  const src=firstDrawing(d);
+  const ph=PLACEHOLDER_IMG[d.cat]||PLACEHOLDER_IMG.default;
+  const flags=`<span class="thumb-flags"><span class="pill ${d.st}">${statusWord(d.st)}</span>${(d.b||[]).includes("litigated")?`<span class="pill litigated">${t("litigatedWord")}</span>`:""}</span>`;
+  let cls="thumb", inner;
+  if(src){
+    inner=`<img src="${thumbSrc(src)}" data-full="${src}" alt="" loading="lazy" decoding="async" onerror="thumbFallback(this)">`;
+  } else if(ph){
+    inner=`<img src="${ph}" alt="" loading="lazy" decoding="async">`;
+  } else {
+    cls+=" thumb-none";
+    inner=`<span class="thumb-ph" aria-hidden="true"><span class="thumb-ph-y">${d.y}</span><span class="thumb-ph-c">${catLabel(d.cat)}</span></span>`;
+  }
+  return `<span class="${cls}">${inner}<span class="thumb-yr">${d.y}</span>${flags}</span>`;
+}
+
+/* Opens or closes a card. In the grid view an open card spans its whole row
+   (CSS), which would leave a hole where its row-mates were, so the opened
+   card is moved in front of the first card on its row; a comment node marks
+   its old place (cardHome) so closing puts it back. Every other view just
+   toggles. A re-render rebuilds the list and drops the markers with it. */
+const cardHome = new WeakMap();
+function setCardOpen(card,open){
+  const head=card.querySelector(".chead");
+  if(head) head.setAttribute("aria-expanded",open);
+  const list=card.parentNode;
+  const inGrid = viewMode==="grid" && list && list.classList.contains("tl");
+  if(inGrid && open && !card.classList.contains("open")){
+    const row=card.offsetTop;
+    const first=[...list.children].find(c=>c.classList.contains("card") && !c.classList.contains("open") && c.offsetTop===row);
+    if(first && first!==card){
+      const mark=document.createComment("card-home");
+      list.insertBefore(mark,card);
+      cardHome.set(card,mark);
+      list.insertBefore(card,first);
+    }
+  }
+  card.classList.toggle("open",open);
+  if(inGrid && !open){
+    const mark=cardHome.get(card);
+    if(mark && mark.parentNode===list){ list.insertBefore(card,mark); mark.remove(); }
+    cardHome.delete(card);
+  }
+}
+
+/* The current view. Starts at the reader's saved choice if there is one, else
+   the default for this width; viewChosen records which, so a later resize
+   across the breakpoint only re-picks the default for a reader who never chose. */
+let viewMode = VIEW_DESKTOP_DEFAULT;
+let viewChosen = false;
+function defaultView(){
+  const wide = window.matchMedia ? window.matchMedia(`(min-width:${VIEW_DESKTOP_MIN_PX}px)`).matches : true;
+  return wide ? VIEW_DESKTOP_DEFAULT : VIEW_PHONE_DEFAULT;
+}
+(function initView(){
+  let saved=null;
+  try{ saved=localStorage.getItem(VIEW_STORAGE_KEY); }catch(e){ /* storage blocked -- use the width default */ }
+  if(VIEW_MODES.some(v=>v.key===saved)){ viewMode=saved; viewChosen=true; }
+  else viewMode=defaultView();
+})();
+function syncViewButtons(){
+  document.querySelectorAll("#viewSeg .view-btn").forEach(b=>b.setAttribute("aria-pressed",b.dataset.view===viewMode?"true":"false"));
+}
+function setView(key,fromReader){
+  if(!VIEW_MODES.some(v=>v.key===key)) return;
+  viewMode=key;
+  if(fromReader){
+    viewChosen=true;
+    try{ localStorage.setItem(VIEW_STORAGE_KEY,key); }catch(e){ /* storage blocked -- the choice still holds for this visit */ }
+  }
+  syncViewButtons();
+  render();
+}
+/* Built here from VIEW_MODES rather than written into the HTML, so a new view
+   is one registry entry. Icon-only, so the tooltip/aria text carries the name;
+   applyStaticI18n() relabels these on a language switch through the
+   data-i18n-* attributes. */
+(function buildViewToggle(){
+  const seg=$("#viewSeg"); if(!seg) return;
+  seg.innerHTML=VIEW_MODES.map(v=>`<button type="button" class="view-btn" data-view="${v.key}" aria-pressed="${v.key===viewMode}" data-i18n-title="${v.tipKey}" title="${t(v.tipKey)}" data-i18n-aria-label="${v.tipKey}" aria-label="${t(v.tipKey)}">${v.icon}</button>`).join("");
+  seg.querySelectorAll(".view-btn").forEach(b=>{ b.onclick=()=>{ if(b.dataset.view!==viewMode) setView(b.dataset.view,true); }; });
+  if(window.matchMedia){
+    const mq=window.matchMedia(`(min-width:${VIEW_DESKTOP_MIN_PX}px)`);
+    const onChange=()=>{ if(!viewChosen && viewMode!==defaultView()) setView(defaultView(),false); };
+    if(mq.addEventListener) mq.addEventListener("change",onChange); else if(mq.addListener) mq.addListener(onChange);
+  }
+})();
 
 /* Era-bucketing core, parameterized on step size — shared by getEras() (the
    top nav chart, reading the user's 2yr/1yr/5yr toggle) and the Stats tab's
@@ -2437,6 +2723,7 @@ function renderTabs(){
      hide the same chip panes. */
   const noPanesMode=activeTab==="fights"||activeTab==="stats"||activeTab==="fav";
   document.body.classList.toggle("home-view", activeTab==="stats");
+  const viewSeg=$("#viewSeg"); if(viewSeg) viewSeg.hidden = activeTab==="stats"||activeTab==="fights";
   $("#filters").setAttribute("data-mode", activeTab==="all"?"all":"single");
   $("#filterPanes").classList.toggle("hidden-pane", noPanesMode);
   Object.entries(paneEls).forEach(([k,el])=>{
@@ -2670,7 +2957,9 @@ function stripCardLinks(str){
   return str==null ? str : str.replace(CARD_LINK_RE,"$2").replace(EXT_LINK_RE,"$2");
 }
 
-function cardHTML(d){
+/* eraKey (optional) marks the first card of an era in the grid view, which has
+   no era sections to carry the id the era bars scroll to. */
+function cardHTML(d,eraKey){
   /* An EU Registered Community Design always carries num:null by design (see
      CLAUDE.md's RCD exception — numLink()/patentUrl() are Google-Patents-only
      and have no branch for the NNNNNNNNN-NNNN RCD format, so the identifying
@@ -2830,8 +3119,13 @@ function cardHTML(d){
      long can be written as one string, same as s/w. Absent on every entry
      that doesn't set it, so this renders nothing for the ordinary case. */
   const deepHTML = d.long ? `<details class="deep-story"><summary>${t("readFullStory")}</summary><div class="deep-story-body">${cardLinks(tx(d.long)).split(/\n{2,}/).map(p=>`<p>${p}</p>`).join("")}</div></details>` : "";
-  return `<article class="card ${d.st==='pending'?'pending-card':''} ${(d.b&&d.b.includes('litigated'))?'lit-card':''}" data-y="${d.y}" id="p-${ref}">
+  /* The thumbnail is skipped entirely in the text view (not just hidden) so
+     that view downloads no images at all. --cat feeds the tinted view's panel
+     and the no-drawing placeholder (see the Card views CSS). */
+  const thumb = viewMode==="text" ? "" : thumbHTML(d);
+  return `<article class="card ${d.st==='pending'?'pending-card':''} ${(d.b&&d.b.includes('litigated'))?'lit-card':''}" data-y="${d.y}"${eraKey?` data-era="${eraKey}"`:""} id="p-${ref}" style="--cat:${CAT_COLORS[d.cat]||"#898781"}">
     <div class="chead-row">
+    ${thumb}
     <button class="chead" aria-expanded="false">
       <span class="yr">${d.y}</span>${showJurTag?`<span class="jtag">${jur}</span>`:''}
       <span class="ct">
@@ -2921,8 +3215,7 @@ function renderFights(){
         const target=cards.find(c=>c.querySelector(".t")?.textContent.trim()===title.trim())
                    ||cards.find(c=>c.querySelector(".t")?.textContent.includes(title.slice(0,20)));
         if(target){
-          target.classList.add("open");
-          const h=target.querySelector(".chead"); if(h) h.setAttribute("aria-expanded","true");
+          setCardOpen(target,true);
           if(target.scrollIntoView) target.scrollIntoView({behavior:"smooth",block:"center"});
           target.classList.add("card-flash");
           setTimeout(()=>target.classList.remove("card-flash"),ANIMATION_CLEANUP_MS);
@@ -3537,6 +3830,8 @@ function render(){
   if(typeof activeTab!=="undefined" && activeTab==="stats"){ renderStats(); return; }
   const list=D.filter(passes).sort((a,b)=>sortDesc ? b.y-a.y : a.y-b.y);
   const tl=$("#timeline");
+  tl.dataset.view=viewMode; // the Card views CSS keys off this
+
   /* Era buckets are always built oldest-first (buildEras walks lo->hi);
      reverse the section order under sortDesc so the era headings read
      newest-first too, matching the cards' own order within each section
@@ -3544,18 +3839,32 @@ function render(){
   const eras=sortDesc ? [...getEras()].reverse() : getEras();
   if(!list.length){ tl.innerHTML=`<div class="empty">${activeTab==="fav"?t("favEmpty"):t("emptyState")}</div>`; }
   else{
-    tl.innerHTML=eras.map(e=>{
-      const items=list.filter(d=>d.y>=e.from&&d.y<=e.to);
-      if(!items.length) return "";
-      return `<section class="era" id="${e.k}">
-        <div class="era-head"><h2>${e.label}</h2><span class="count">${t("eraCount",items.length)}</span></div>
-        <div class="tl">${items.map(cardHTML).join("")}</div>
-      </section>`;
-    }).join("");
+    if(viewMode==="grid"){
+      /* One continuous grid, no per-era sections: most eras hold only a card
+         or two, so a grid per era would be a string of nearly empty rows.
+         Each tile already carries its year, and the era bars above still jump
+         to an era via the data-era mark on its first card (see renderBars). */
+      tl.innerHTML=`<div class="tl">${eras.map(e=>list.filter(d=>d.y>=e.from&&d.y<=e.to).map((d,i)=>cardHTML(d,i===0?e.k:null)).join("")).join("")}</div>`;
+    } else {
+      tl.innerHTML=eras.map(e=>{
+        const items=list.filter(d=>d.y>=e.from&&d.y<=e.to);
+        if(!items.length) return "";
+        return `<section class="era" id="${e.k}">
+          <div class="era-head"><h2>${e.label}</h2><span class="count">${t("eraCount",items.length)}</span></div>
+          <div class="tl">${items.map(d=>cardHTML(d)).join("")}</div>
+        </section>`;
+      }).join("");
+    }
   }
   // expand/collapse
   tl.querySelectorAll(".chead").forEach(h=>{
-    h.onclick=()=>{ const c=h.closest(".card"); const open=c.classList.toggle("open"); h.setAttribute("aria-expanded",open); };
+    h.onclick=()=>{ const c=h.closest(".card"); setCardOpen(c,!c.classList.contains("open")); };
+  });
+  /* The thumbnail sits beside .chead, not inside it (see .chead-row), so it
+     forwards its click to the real button; keyboard and screen-reader users
+     already have .chead itself. */
+  tl.querySelectorAll(".thumb").forEach(el=>{
+    el.onclick=()=>el.closest(".card").querySelector(".chead").click();
   });
   tl.querySelectorAll(".co-link").forEach(b=>{
     b.onclick=(e)=>{ e.stopPropagation(); openColorado(); };
@@ -3645,7 +3954,7 @@ function renderBars(list){
     const blabel = show ? (decade?String(e.from):`'${String(e.from).slice(2)}`) : "";
     b.innerHTML=`<span class="bcount">${cur}</span>`+
       (blabel?`<span class="blabel${decade?" bl-decade":""}">${blabel}</span>`:"");
-    b.onclick=()=>{ const el=document.getElementById(e.k); if(el) el.scrollIntoView({behavior:"smooth",block:"start"}); };
+    b.onclick=()=>{ const el=document.getElementById(e.k)||document.querySelector(`[data-era="${e.k}"]`); if(el) el.scrollIntoView({behavior:"smooth",block:"start"}); };
     bars.appendChild(b);
   });
 }
@@ -3725,8 +4034,7 @@ function jumpToCard(ref){
       target=document.getElementById("p-"+ref);
     }
     if(target){
-      target.classList.add("open");
-      const h=target.querySelector(".chead"); if(h) h.setAttribute("aria-expanded","true");
+      setCardOpen(target,true);
       if(target.scrollIntoView) target.scrollIntoView({behavior:"smooth",block:"center"});
       target.classList.add("card-flash");
       setTimeout(()=>target.classList.remove("card-flash"),ANIMATION_CLEANUP_MS);
