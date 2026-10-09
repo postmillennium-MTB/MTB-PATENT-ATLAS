@@ -20,6 +20,12 @@
    reported but does NOT fail the run -- CLAUDE.md documents "English now,
    French later" as an acceptable, deliberate interim state, not an error.
 
+   Unreferenced drawings in pictures/ are reported the same way (see the
+   orphan-image block near the bottom): a sheet uploaded through GitHub's
+   web UI that no entry's img/imgs points at is invisible to a reader, and
+   nothing else notices. Informational, since some extra sheets are left
+   unwired on purpose.
+
    Run standalone: `node tools/verify_data.js` from the repo root, or
    `node verify_data.js` from inside tools/ -- both resolve index.html
    relative to this file, not the working directory. */
@@ -212,6 +218,34 @@ D.forEach(d => {
 });
 console.log('\npre-1995 patent-term mismatches (informational, not blocking):',
   expIssues.length ? expIssues : 'none');
+
+/* Orphan-image check -- informational only. Lists drawings in pictures/ that
+   index.html never references. Jon uploads sheets through GitHub's web UI
+   ahead of (or between) data sessions, so a sheet can land for an entry that
+   already exists without an img, or for a patent that has no entry yet; a
+   session that only greps for the number it was told about never sees it.
+   Two groups, because they mean different things:
+     - "no sheet wired in": none of this patent's files is used anywhere --
+       most likely a missed drawing for an existing entry, or a lead for a
+       new one.
+     - "extra sheet(s)": another sheet of the same patent IS wired in, so the
+       entry has a drawing but may be missing a second embodiment.
+   Files are grouped by name with any ".N" sheet suffix removed, so
+   US4942778A.png and US4942778A.1.png count as one patent. */
+const IMG_EXT = /\.(png|jpe?g|webp|gif|svg)$/i;
+const picDir = path.join(repoRoot, 'pictures');
+const usedImgs = new Set([...html.matchAll(/pictures\/([^"'\\\s]+)/g)].map(m => m[1]));
+const patentKey = f => f.replace(IMG_EXT, '').replace(/\.\d+$/, '');
+const usedKeys = new Set([...usedImgs].map(patentKey));
+const orphanNone = [], orphanExtra = [];
+if (fs.existsSync(picDir)) {
+  fs.readdirSync(picDir).filter(f => IMG_EXT.test(f) && !usedImgs.has(f)).sort()
+    .forEach(f => (usedKeys.has(patentKey(f)) ? orphanExtra : orphanNone).push(f));
+}
+console.log('\nunreferenced drawings in pictures/ (informational, not blocking):',
+  (orphanNone.length || orphanExtra.length) ? '' : 'none');
+if (orphanNone.length) console.log('  no sheet wired in (' + orphanNone.length + '):', orphanNone.join(', '));
+if (orphanExtra.length) console.log('  extra sheet(s) of a patent that has a drawing (' + orphanExtra.length + '):', orphanExtra.join(', '));
 
 if (hardFailures.length) {
   console.error(`\n::error::${hardFailures.length} schema-integrity issue(s) found -- see list above.`);
