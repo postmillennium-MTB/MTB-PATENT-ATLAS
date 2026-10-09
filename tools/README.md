@@ -14,7 +14,7 @@ by `.github/workflows/verify-data.yml` on every PR and every push to `main`.
 ```bash
 node tools/verify_data.js     # parse check + schema-integrity + counts + unreferenced drawings
 cd tools && npm install && cd ..
-node tools/smoke_test.js      # real-browser check: search + Rabbit Holes
+node tools/smoke_test.js      # real-browser check: search, Rabbit Holes, cross-links, card views
 ```
 
 `verify_data.js` also prints an informational **unreferenced drawings** block:
@@ -40,6 +40,36 @@ shared root cause was found. `verify_data.js`'s schema-integrity check would
 have caught it as a data gap; `smoke_test.js` would have caught it as an
 actual crash. Neither existed at the time. See CLAUDE.md's incident note
 under "Verifying a change" for the full account.
+
+## `make_thumbs.py` — card thumbnails
+
+The card views in `index.html` (grid, plate, tinted) show the first drawing of
+each entry as a small picture. The full drawings are 150 KB on average and up
+to 2.8 MB, so this makes a ≤400 px WebP of each into `pictures/thumbs/`.
+
+```bash
+python3 tools/make_thumbs.py            # make anything missing or out of date
+python3 tools/make_thumbs.py --force    # remake all of them
+python3 tools/make_thumbs.py pictures/US5509679A.png   # just this drawing
+```
+
+Needs Pillow and Node (`first_images.js` reads which drawings are first
+drawings, using the same rule as `thumbSrc()` in `index.html`). It trims the
+white margin and removes the "U.S. Patent / Sheet n of m" header band when it
+finds one (a thin strip of text at the top, in three or more blocks across most
+of the sheet's width, followed by a clear gap; a "FIG. 1" label does not match).
+It never chooses a different sheet: if an entry's first drawing makes a poor
+thumbnail, reorder that entry's `imgs[]`.
+
+Naming: `pictures/<name>.<ext>` becomes `pictures/thumbs/<name>.webp`.
+`index.html`, this script and `verify_data.js` each apply that rule; if you
+change it, change all three.
+
+`.github/workflows/thumbs.yml` runs the script after a push to `main` that
+touches `pictures/` or `index.html` (and on demand from the Actions tab) and
+opens a pull request with whatever is new. Until that PR is merged the page
+still works: a card whose thumbnail is missing loads the full-size drawing.
+That workflow has not yet run on GitHub; the first real run is its test.
 
 ## `fetch_patent_figure.py` — patent drawings, semi-automated
 
