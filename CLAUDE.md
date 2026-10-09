@@ -96,6 +96,19 @@ mostly proper nouns), `num`/`nums`/`j`/`pt`/`cat`/`st`/`exp`/`b`/`who`/`conf`/
 `img` (all codes or file paths, not prose), and on `FIGHTS`, `combatants`/
 `era` (same reasoning).
 
+**By design, proper nouns and assignee names are left untranslated in the
+French text too.** Company, brand, product, person, and place names, and the
+names of cited documents (a patent's own title, an article title), stay in
+their original form inside `fr` strings exactly as they appear in `en` — "Trek,"
+"Horst Link," "Split Pivot," "Spoke & Blossom's *Gear Profile*." This is a
+deliberate rule, not a gap a translation pass should "fix": a patent's quoted
+title is its identity on the record, and translating a brand or an assignee
+would break search and make the entry harder to match against the USPTO or
+Google Patents. A common noun *around* a proper name is still translated ("the
+Rocky Mountain rear-suspension patent" → "le brevet de suspension arrière
+Rocky Mountain"). When reviewing French text, don't flag an untranslated proper
+noun as an omission.
+
 **Read a field with `tx(field)`**, never `field` directly or `field.en`
 directly — `tx()` returns the current-language string, falls back to English
 if the current language's translation is missing, and — critically —
