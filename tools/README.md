@@ -12,10 +12,17 @@ logic instead of two that can silently drift apart. Also run automatically
 by `.github/workflows/verify-data.yml` on every PR and every push to `main`.
 
 ```bash
-node tools/verify_data.js     # parse check + schema-integrity + counts
+node tools/verify_data.js     # parse check + schema-integrity + counts + unreferenced drawings
 cd tools && npm install && cd ..
 node tools/smoke_test.js      # real-browser check: search + Rabbit Holes
 ```
+
+`verify_data.js` also prints an informational **unreferenced drawings** block:
+every file in `pictures/` that no entry's `img`/`imgs` points at, split into
+patents with no sheet wired in (likely a missed drawing or a lead for a new
+entry) and extra sheets of patents that already have one. It never fails the
+run, because leaving an extra sheet out can be deliberate; it exists so an
+upload made through GitHub's web UI can't sit unnoticed.
 
 `verify_data.js` needs only Node. `smoke_test.js` needs Playwright (`npm
 install` inside `tools/` once) and a Chromium build — it uses the one

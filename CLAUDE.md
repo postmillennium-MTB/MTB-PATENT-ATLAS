@@ -197,7 +197,24 @@ automatically.
 
 **Before finalizing `img`/`imgs` on any entry, check `pictures/` for every
 number in that entry's `num` and `nums[]`, not just the one you were pointed
-at.** Jon sometimes uploads several sheets for a single patent directly
+at — and only after your checkout has been synced with `origin/main`.** A
+`ls pictures/` against a stale tree answers "what did I have at session
+start," not "what is in the repo": on 2026-10-09 the DT Swiss US 10,343,741
+entry was added reporting "no drawing yet" when two sheets had been uploaded
+the day before, because the check ran before the sync (the fetch's own file
+list showed them, unread). Sync first (workflow step 0), then run the check,
+then read the `pictures/` lines of the fetch/merge file list.
+
+**Don't rely on this per-entry check alone.** An upload can land for an entry
+that *already exists without an image* and that nobody is editing — the
+Hypershell exoskeleton entry shipped without its two sheets, both already in
+`pictures/`, for exactly that reason. So at the start of any data session,
+also run `node tools/verify_data.js` and read its **unreferenced drawings**
+block (it lists every file in `pictures/` that no entry's `img`/`imgs`
+references, split into patents with no wired-in sheet and extra sheets of
+patents that have one). Wire in or knowingly skip each one, and note a
+deliberate skip in the changelog — some extra sheets are left out on purpose,
+which is why the check is informational and doesn't fail CI. Jon sometimes uploads several sheets for a single patent directly
 through GitHub's web UI ahead of a data session, without saying so in the
 request — the base file (`<NUM><KIND>.png`) plus numbered variants
 (`.1.png`, `.2.png`, `.3.png`, ...). A session that only looks up the sheet
@@ -655,7 +672,8 @@ request from one session to the next.
    (see the bilingual section above) landed on `main` once already without
    this session noticing until it went looking. A stale local file doesn't
    just risk a bad merge — it risks writing an entry against a schema that's
-   no longer accurate.
+   no longer accurate. Merge or fast-forward to it (don't just fetch), and
+   read the file list for `pictures/` — new uploads are the usual surprise.
 1. **Verify** per *Sourcing discipline* above: real invention, real
    number/date/inventor, resolvable link.
 2. **Decide placement in `D`.** Entries are *not* strictly chronological —
