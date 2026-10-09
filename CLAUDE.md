@@ -88,13 +88,27 @@ field — `t`, `s`, `w`, `imgAlt` on `D` entries; `title`, `sub`, `stakes`,
 not a plain string:
 
 ```js
-t: {en:"Title (US 1,234,567)", fr:"Titre (US 1 234 567)"},
+t: {en:"Title (US 1,234,567)", fr:"Titre (US 1,234,567)"},
 ```
 
 Fields that are **not** translated and stay plain strings: `a` (assignee,
 mostly proper nouns), `num`/`nums`/`j`/`pt`/`cat`/`st`/`exp`/`b`/`who`/`conf`/
 `img` (all codes or file paths, not prose), and on `FIGHTS`, `combatants`/
 `era` (same reasoning).
+
+**Patent, application and serial numbers keep English comma grouping in the French
+text too** (`US 5,509,679`, `n° de série 16/453,474`), decided 2026-10-09. They are
+identifiers people copy into USPTO or Google Patents, and the French has to
+match the English so one number means one thing across both. The accepted
+tradeoff is that a French comma is normally a decimal point, so in a list
+write the numbers with "et" or semicolons between them rather than bare commas.
+Do not "fix" them to French spacing (`5 509 679`), and do not use the French
+style in a new entry's `fr`. Two limits: identifiers the English itself writes with spaces
+(`DE 20 2017 104 416 U1`, `EP 4 125 480 A1`) are mirrored exactly as in the
+English, and ordinary quantities in French prose keep French conventions
+("plus de 1 600 brevets", "25 000 $", decimal comma). The `fr` text of an entry
+should differ from its `en` only where the language requires it, and a number
+that is an identifier is not one of those places.
 
 **By design, proper nouns and assignee names are left untranslated in the
 French text too.** Company, brand, product, person, and place names, and the
@@ -158,7 +172,7 @@ take by default.
 {
   y: 1996,                    // year filed (required)
   g: 1997,                    // year granted, or null if still pending
-  t: {en:"Title (US 1,234,567)", fr:"Titre (US 1 234 567)"}, // headline patent number in the title when one exists
+  t: {en:"Title (US 1,234,567)", fr:"Titre (US 1,234,567)"}, // headline patent number in the title when one exists
   a: "Assignee / inventor",   // free text, shown on the card — NOT translated (see above)
   num: "1234567",             // primary patent number — plain digits, no commas, no "US" prefix
   nums: ["1234567","7654321"],// OPTIONAL — only when a real portfolio needs multiple linked numbers
