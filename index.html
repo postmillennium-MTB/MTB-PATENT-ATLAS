@@ -2376,6 +2376,11 @@ const THUMB_DIR = "pictures/thumbs/";
    its path here: "default" covers every category without its own entry, or
    give each category its own (keys are the CATS keys).
      e.g.  default:"pictures/placeholders/default.png"
+   A value can also be a list of paths; placeholderSrc() then shows one per
+   calendar day (the reader's local date, so it flips at their midnight):
+   list[date of the month % list length]. Two files give even-date and
+   odd-date art; note the 31st and the 1st are both odd, so those two days
+   repeat the same picture.
    Sizes the art has to work at (CSS px; shown with object-fit:contain, so a
    different shape letterboxes rather than crops):
      grid tile        about 200 x 200 (4 across at desktop width)
@@ -2389,10 +2394,17 @@ const THUMB_DIR = "pictures/thumbs/";
    its edges. The year is NOT drawn over it in the tinted view and IS in the
    others (a small chip, top-left), so leave that corner clear. */
 const PLACEHOLDER_IMG = {
-  default:"pictures/placeholders/default.webp",
+  default:["pictures/placeholders/default-even.webp","pictures/placeholders/default-odd.webp"],
   susp:null, fork:null, drive:null, wheel:null, comp:null,
   emtb:null, frame:null, transport:null, tech:null
 };
+
+/* The placeholder path for a category today (see PLACEHOLDER_IMG), or null for
+   the typographic tile. */
+function placeholderSrc(cat){
+  const p=PLACEHOLDER_IMG[cat]||PLACEHOLDER_IMG.default;
+  return Array.isArray(p) ? (p.length ? p[new Date().getDate()%p.length] : null) : p;
+}
 
 /* The first drawing of an entry (imgs[0] when it has several, else img) --
    the one picture its thumbnail shows. tools/first_images.js makes the same
@@ -2410,7 +2422,7 @@ function thumbFallback(img){ img.onerror=null; if(img.dataset.full) img.src=img.
    row; the CSS hides whichever copy a view does not use. */
 function thumbHTML(d){
   const src=firstDrawing(d);
-  const ph=PLACEHOLDER_IMG[d.cat]||PLACEHOLDER_IMG.default;
+  const ph=placeholderSrc(d.cat);
   const flags=`<span class="thumb-flags"><span class="pill ${d.st}">${statusWord(d.st)}</span>${(d.b||[]).includes("litigated")?`<span class="pill litigated">${t("litigatedWord")}</span>`:""}</span>`;
   let cls="thumb", inner;
   if(src){
