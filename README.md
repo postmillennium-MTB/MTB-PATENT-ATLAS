@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 406 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 410 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 406 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 406 |
+| **Total entries** | 410 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 178 |
-| **Expired patents** | 155 |
+| **Expired patents** | 159 |
 | **Pending applications** | 48 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 213 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 314 |
+| **Verified entries** | 318 |
 | **Medium confidence** | 51 |
 | **Draft / in progress** | 41 |
 
@@ -793,6 +793,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Fix: clicking a year bar on the Atlas tab now opens the All tab at that year.** The era bars scrolled to a section that only the card-list tabs render, so on the Atlas (and Fights) tab the click did nothing. `jumpToEra()` in `index.html` switches to All first, then scrolls; if a leftover filter or search hides that year, it clears them and retries, the same fallback `jumpToCard()` uses. On the filtered tabs the bars scroll as before and do not clear anything. The bars are hidden at phone width on the Atlas tab, so the bug only appeared on desktop.
 - **Niner MCR entry renamed** to "Niner Magic Carpet Ride (MCR) full-suspension gravel frame (US 11,091,219)" (English and French). The deep link `#p=11091219` is number-based and unchanged.
 - **Two entries added (404 → 406), both `conf:"v"`, drawings already in `pictures/`.** **US 6,736,414** (Yana Farrally-Plourde, individual inventor, filed 2002, granted 2004, `frame`): an in-line-ski snow vehicle with handlebar steering, a seat and a rear suspension; Google Patents lists it as expired for non-payment of fees, so `exp` is the nominal 2022 term end. The grant's own title is spelled "Snow skiiing device". The one sheet wired in is Fig. 2, uploaded under the application number (`US20030038434A1.png`); the grant carries the same drawings. **US 4,443,008** (Shimano Industrial / Keizo Shimano, filed 1980, granted 1984, `tech`): a pedalled vehicle with a microprocessor-set training period and pulse count, a rider pulse detector, timer and finish indicator, an early heart-rate-based training device from a company now known for drivetrains. `exp` 2001 (the later of grant + 17 and filing + 20; Google Patents agrees). Both sheets wired in (Figs. 3 and 4). **Category calls:** the snow vehicle sits in `frame` as the nearest fit (steering, seat and suspension layout), the Shimano device in `tech` under the ride-telemetry reading of that category — both are open to a different home. **Not directly read:** Google Patents and USPTO pages were blocked or fragmentary in-session, so number, title, application number and dates rest on the Google Patents text supplied with the request plus two search cross-checks; the inventor name on US 6,736,414 and the Fig. 4 labels on US 4,443,008 were not independently confirmed beyond that. French text is AI-drafted like the rest. Counts moved: total 406, expired 155, verified 314; the README table, meta/og/twitter descriptions, both share strings and both banner strings were updated.
+- **Four entries added (406 → 410), all `conf:"v"`, drawings already in `pictures/`.** **US 790,063** (Karl Lange, Berlin; filed 1904, granted 1905; `frame`): a circus 'double bicycle' with a second pair of wheels over the rider's head for riding out of a broken loop upside down. **US 6,406,048** (John P. Castellano; filed 2000, granted 2002; `susp`): a pivotless rear triangle with a wide, thin planar chainstay and a seatstay-integrated shock; tagged to the existing John Castellano filter and linked to the Sweet Spot URT card. **US 2,578,886** (Isherwood & Moore / Buzz Boy Motor Bike Co.; filed 1948, granted 1951; `emtb`): an add-on motor driving the rear tire through a roller. **US D268,339** (Inae & Fukuchi / Mitsuboshi Belting; filed 1982, granted 1983; `wheel`, `pt:"design"`, tagged Tioga): the tread pattern identified with the Tioga Comp III BMX tire. **Gaps and judgement calls:** (1) The Castellano match to the Sweet Spot inventor rests on the shared name and Ibis's own history page crediting him with pivotless designs; the patent record does not link the two. (2) US D268,339 was filed before October 1982, so its term was an elected 3½, 7 or 14 years; `exp: 1997` follows Google Patents' 14-year assumption and is flagged as one in the entry. (3) The patent names no product; the Comp III and Mitsuboshi-as-manufacturer link comes from secondary accounts and is worded that way. (4) For US 2,578,886 only the drawings were available, so the summary describes what the figures show and nothing from the claims. (5) Categories: Lange in `frame` and Buzz Boy in `emtb` are nearest-fit calls. **Not directly read:** Google Patents and USPTO pages were blocked or fragmentary in-session; numbers, dates, inventors and assignees rest on the Google Patents text supplied with the request, with Castellano and Tioga's product context cross-checked by search. French text is AI-drafted like the rest. Counts moved: total 410, expired 159, verified 318; README table, meta/og/twitter descriptions, both share strings and both banner strings updated.
 
 ## Recent updates (July 2026)
 
