@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 404 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 406 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 404 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 404 |
+| **Total entries** | 406 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 178 |
-| **Expired patents** | 153 |
+| **Expired patents** | 155 |
 | **Pending applications** | 48 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 213 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 312 |
+| **Verified entries** | 314 |
 | **Medium confidence** | 51 |
 | **Draft / in progress** | 41 |
 
@@ -792,6 +792,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Added the RockShox co-founding to the Simons motorcycle fork entry (US 4,561,669):** its `w` now ends "Steve Simons then paired up with Paul Turner to co-found RockShox in 1989" (English and French), in Jon's wording. Company histories (Reference for Business / Funding Universe, the retrobike wiki, the Mountain Bike Hall of Fame) agree that Turner and Simons founded RockShox in 1989 with Simons as president; Wikipedia credits Turner alone, and a few accounts date the partnership to 1988. The entry text follows the 1989 histories. The sentence also makes a search for "steve simons" find this card: it only said "Stephen W. Simons" before, so that search matched the RS-1 card alone. No new entry, tier unchanged (`m`), no count changes.
 - **Fix: clicking a year bar on the Atlas tab now opens the All tab at that year.** The era bars scrolled to a section that only the card-list tabs render, so on the Atlas (and Fights) tab the click did nothing. `jumpToEra()` in `index.html` switches to All first, then scrolls; if a leftover filter or search hides that year, it clears them and retries, the same fallback `jumpToCard()` uses. On the filtered tabs the bars scroll as before and do not clear anything. The bars are hidden at phone width on the Atlas tab, so the bug only appeared on desktop.
 - **Niner MCR entry renamed** to "Niner Magic Carpet Ride (MCR) full-suspension gravel frame (US 11,091,219)" (English and French). The deep link `#p=11091219` is number-based and unchanged.
+- **Two entries added (404 → 406), both `conf:"v"`, drawings already in `pictures/`.** **US 6,736,414** (Yana Farrally-Plourde, individual inventor, filed 2002, granted 2004, `frame`): an in-line-ski snow vehicle with handlebar steering, a seat and a rear suspension; Google Patents lists it as expired for non-payment of fees, so `exp` is the nominal 2022 term end. The grant's own title is spelled "Snow skiiing device". The one sheet wired in is Fig. 2, uploaded under the application number (`US20030038434A1.png`); the grant carries the same drawings. **US 4,443,008** (Shimano Industrial / Keizo Shimano, filed 1980, granted 1984, `tech`): a pedalled vehicle with a microprocessor-set training period and pulse count, a rider pulse detector, timer and finish indicator, an early heart-rate-based training device from a company now known for drivetrains. `exp` 2001 (the later of grant + 17 and filing + 20; Google Patents agrees). Both sheets wired in (Figs. 3 and 4). **Category calls:** the snow vehicle sits in `frame` as the nearest fit (steering, seat and suspension layout), the Shimano device in `tech` under the ride-telemetry reading of that category — both are open to a different home. **Not directly read:** Google Patents and USPTO pages were blocked or fragmentary in-session, so number, title, application number and dates rest on the Google Patents text supplied with the request plus two search cross-checks; the inventor name on US 6,736,414 and the Fig. 4 labels on US 4,443,008 were not independently confirmed beyond that. French text is AI-drafted like the rest. Counts moved: total 406, expired 155, verified 314; the README table, meta/og/twitter descriptions, both share strings and both banner strings were updated.
 
 ## Recent updates (July 2026)
 
