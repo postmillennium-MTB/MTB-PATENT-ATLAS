@@ -15,6 +15,10 @@ Naming (index.html's thumbSrc() must agree with this, byte for byte):
 where <name> is the percent-decoded file name without its extension.
 
 What it does to each drawing:
+  0. Applies the file's EXIF orientation tag. Browsers honor it when they draw
+     the full-size image, so a sheet saved sideways with a "rotate" flag looks
+     upright there; a thumbnail made from the raw pixels would come out
+     sideways (the Niner CVA card did, 2026-10-13).
   1. Flattens transparency onto white.
   2. Removes the "U.S. Patent / Sheet n of m / patent number" header band when
      one is detected (see find_header_band for the exact rule). Older sheets
@@ -37,7 +41,7 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote
 
-from PIL import Image, ImageChops
+from PIL import Image, ImageChops, ImageOps
 
 REPO = Path(__file__).resolve().parent.parent
 THUMB_DIR = REPO / "pictures" / "thumbs"
@@ -170,7 +174,7 @@ def make(src, force):
         return "missing", None
     if dest.exists() and not force and dest.stat().st_mtime >= source.stat().st_mtime:
         return "current", None
-    img = flatten(Image.open(source))
+    img = flatten(ImageOps.exif_transpose(Image.open(source)))
     y = find_header_band(img)
     note = None
     if y:
