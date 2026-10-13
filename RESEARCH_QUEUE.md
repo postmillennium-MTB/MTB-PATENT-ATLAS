@@ -316,6 +316,39 @@ the pick among the Mavic leads.
    per search results) and US 10,150,530 ("Rigid frame with high-compliance
    seat tube and internal cable routing", Trek, per a Golden.com listing).
 
+## Continental MTB patents (added 2026-10-13, from Jon)
+
+Source was an unattributed summary of Continental's MTB tire patent base,
+submitted alongside the atlas's existing "Continental MTB construction
+patents" entry (`conf:"l"`). One number held up; the rest did not.
+
+- **US 7,968,635** — confirmed (Continental AG, "Tire compositions and
+  components containing free-flowing filler compositions", filed 2006-12-28,
+  granted 2011-06-28, from a joint research agreement with GE's silicones
+  unit). General tire-compound patent. Cited in the Continental entry's `s`
+  with the caveat that nothing ties it to the Kryptotal/Argotal/Xynotal/
+  Hydrotal compounds. Promote to a numbered entry only if that link is found.
+- ~~**US 12,397,590 B2**~~ — **Resolved 2026-10-13.** Jon supplied the Google
+  Patents record: "Pneumatic tyre for a two-wheeled vehicle", Continental Reifen
+  Deutschland GmbH, granted 2025-08-26. The Continental entry is now numbered
+  on it. Its link to MTB tires is still unconfirmed.
+- **DE 20 2020 104 281 U1**, **EP 3,174,738 A1** — submitted in the same
+  line. No search turned up a record for either (EP 3,174,738 returns unrelated
+  results). Unverified.
+- **DE 20 2015 000 366 U1 / EP 0,484,831** — submitted as bead-reinforcement and
+  tubeless-interface patents. Not found; an EP 0,484,xxx number would date from
+  about 1991, which doesn't fit a 2015 German utility model, so the pairing looks
+  malformed. Unverified.
+- The summary's claims about ply layouts, TPI and the SuperSoft/Soft/Endurance
+  compounds being trade secrets have no cited source. Treat as unsourced.
+
+## Niner leads (added 2026-10-13, from Jon)
+
+- MCR 9 RDO discontinuation (submitted as November 2023) — not confirmed.
+- ~~United Wheels pause (2026)~~ — **Resolved 2026-10-13.** Reported May 19–20, 2026 by Bicycle Retailer, Pinkbike, BikeRadar and others; now in the CVA entry.
+- Assignment of US 7,934,739 itself to UWHK not yet seen; only 8,590,914's
+  record was checked.
+
 ## Process reminder for whoever picks this up
 
 Follow CLAUDE.md's full workflow, not just this list — in particular:
