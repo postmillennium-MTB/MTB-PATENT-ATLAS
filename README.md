@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 398 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 400 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,17 +14,17 @@ An interactive timeline of mountain bike intellectual property: 398 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 398 |
+| **Total entries** | 400 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 177 |
-| **Expired patents** | 148 |
+| **Active patents** | 178 |
+| **Expired patents** | 149 |
 | **Pending applications** | 48 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 213 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 306 |
+| **Verified entries** | 308 |
 | **Medium confidence** | 50 |
 | **Draft / in progress** | 42 |
 
@@ -798,6 +798,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Surprise Me now shimmers** at a random 20–90 second interval as a passive discoverability hint. Subtle by design, respects `prefers-reduced-motion`, and never blocks the click target.
 - **New entries:** the Yeti Sixfinity entry now covers the July 2026 Yeti LT, which moves off the Switch Infinity platform onto the six-bar layout — the first time that migration has shown up on a non-assist bike. Added a verified action-camera chin-mount patent (US 10,021,931, Sopro Mounts Inc.) and four bundled GoPro entries covering image processing/FOV, stabilization, hardware/design, and telemetry, rather than attempting to catalogue a 1,600+ patent portfolio one filing at a time.
 - **Corrected a mismatched patent reference:** an earlier candidate for the camera chin-mount category (US 7,735,160) turned out to be an unrelated football helmet chin-guard patent with no camera-mount claims. Replaced with the correct filing.
+- **Two entries added (398 → 400), Niner CVA assignment history, Continental entry rewritten.** **Niner MCR full-suspension gravel frame (US 11,091,219)**, Suspension, `conf:"v"`: filed February 27, 2019 by UWHK Ltd., inventor George Parry, granted August 17, 2021; shock moved behind the seat tube, leaving the front triangle open. `exp` 2039 (filing + 20; Google Patents lists an adjusted December 5, 2039). Number, dates, inventor and assignee are from the Google Patents record; the link to the MCR 9 RDO product is not stated in the patent and rests on the layout match and filing timing, so the card says "matches", not "is". Cross-linked both ways with the Niner CVA entry (added to `REQUIRED_CROSSLINKS` and the smoke test's `XLINK_PAIRS`). **Shimano pedal with movable tread cage (US 5,784,931)**, Components, `conf:"v"`: filed July 8, 1996, granted July 28, 1998, inventor Yutaka Ueda; expired 2016. The patent names no product and none is claimed. **Niner CVA (US 7,934,739 / 8,590,914)**: added the ownership history: Chapter 11 in November 2017, acquired March 2018 by UWHK Ltd. (United Wheels, which also owns Huffy), assignment on US 8,590,914 from Niner, Inc. to UWHK Limited. The assignment record was confirmed for 8,590,914 only, not independently for 7,934,739. Singletracks says UWHK was formed for the purchase; Bicycle Retailer says it was formerly Emersion International, so the entry says neither. **Continental MTB tire patents**: kept at `conf:"l"`. The only number confirmed is US 7,968,635 (Continental AG, filed December 28, 2006, granted June 28, 2011), a general tire-rubber filler patent from a joint research agreement with GE's silicones unit (now Momentive); the entry says it is not confirmed as used in bicycle compounds. Five further numbers from the submitted list could not be confirmed and are logged in `RESEARCH_QUEUE.md`, not in the atlas. Not added: the MCR's discontinuation date and a 2026 report that United Wheels is pausing Niner (single secondary sources, unchecked). Counts synced: Total 400, Active 178, Expired 149, Verified 308, plus the six `index.html` strings.
 - **Added Schwinn** as a registered brand, with three verified entries spanning the company's two most historically significant filings: the 1938 cantilever frame (US 2,151,533) and Knee-Action Spring Fork (US 2,160,034) — filed the same day by Frank W. Schwinn — and the 1965 Sting-Ray banana seat design patent (US D204,121) by Frank P. Brilando, which was itself invalidated on appeal in 1970 after Schwinn's own prior advertising became prior art against its own patent. All three predate the atlas's existing entries by decades and fill in real ground between the 1890s bicycle-mechanics patents and the 1970s mountain-bike-specific ones. Corrected `exp` for all three using the pre-1995 statutory term (grant + 17/14 years) rather than the atlas's usual filing + 20 shorthand, which would have been wrong by nearly a decade for patents this old.
 - **Open question, not yet decided:** whether GoPro-type entries (currently split across `comp` and `emtb`) warrant a ninth category — tentatively "Tech" or similar — rather than being absorbed into the existing eight. See *A note on the "Tech" category question*, below, for the tradeoffs as they stand today.
 
