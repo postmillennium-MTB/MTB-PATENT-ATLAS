@@ -853,6 +853,35 @@ When asked to review or clean up rather than just add an entry, run all seven:
    or an equivalent guard) — a bare `d.field.map(...)`/`.includes(...)` is
    a latent full-page crash waiting for one old entry to trigger it.
 
+## Icons
+
+**When an icon is called for or requested, use Lucide** (https://lucide.dev/icons/).
+It is the icon set for every PMR tool, and the Atlas already uses it throughout.
+
+- **Inline SVG only.** Paste the icon's SVG into the page. No CDN script, icon font
+  or npm package: the single-file rule (non-negotiable #1) applies to icons too.
+- **Copy the SVG from lucide.dev and keep its attributes**: `xmlns`,
+  `width="24" height="24" viewBox="0 0 24 24"`, `fill="none"`,
+  `stroke="currentColor"`, `stroke-width="2"`, `stroke-linecap="round"`,
+  `stroke-linejoin="round"`. Add `class="lucide lucide-<icon-name>"`,
+  `aria-hidden="true"` and `focusable="false"`. Do not edit the path data.
+- **Color and size come from CSS**, not the SVG: the stroke is `currentColor`, so the
+  icon follows the text color and every theme for free; see the `.icon-inline` rule
+  for sizing next to a label.
+- **Accessibility:** the SVG is decorative, so the button or link carries the name
+  (`aria-label` / `data-i18n-aria-label`), never the icon.
+- **Declare it once.** Icons used in more than one place live as `ICON_*` constants in
+  the script (grep `const ICON_`), not copied into both `T.en` and `T.fr`.
+- **Keep an icon out of any element with `data-i18n`.** `applyStaticI18n()` sets
+  `textContent` on those, which turns an embedded `<svg>` into literal text on screen.
+  Put the icon in a sibling span instead. The comment above the `ICON_*` constants
+  explains the failure.
+- **Never hand-draw an icon or invent path data.** If Lucide has no suitable icon,
+  say so and ask Jon.
+- **Emoji:** use Lucide, not an emoji, for any new icon. Some existing buttons still
+  carry an emoji (e.g. the share menu); they were swapped to Lucide "icon by icon,
+  requested directly", so don't replace the rest unprompted.
+
 ## What not to do
 
 - Don't add a framework, bundler, or `package.json` — the single file is the
@@ -864,6 +893,7 @@ When asked to review or clean up rather than just add an entry, run all seven:
 - Don't add a ninth category, a sixth badge, or restructure the `D` schema
   without flagging it as a design decision first — these ripple into the
   Stats view, filter-tab row, and every existing entry's assumptions.
+- Don't draw an icon by hand, add an icon font, or load an icon library from a CDN: icons are inline Lucide SVGs (see **Icons**).
 - Don't silently skip the count-sync step (README table + the four
   `index.html` strings) — this is the single most common way this repo's
   data and its own self-description drift apart.
