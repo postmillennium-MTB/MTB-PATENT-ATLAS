@@ -3948,6 +3948,29 @@ function render(){
   renderBars(list);
 }
 
+/* Era-bar click target. The Atlas (stats) and Fights tabs render no era
+   sections, so from either one the bar first switches to the All tab, same
+   as jumpToCard() does for a card. If the era is still missing after that
+   (a leftover chip/search filter hid every entry in it), the filters are
+   cleared and the lookup retried, again mirroring jumpToCard(). On the
+   filtered tabs the bar only scrolls, as before, so a dimmed bar doesn't
+   silently wipe the reader's filters. */
+function jumpToEra(k){
+  const find=()=>document.getElementById(k)||document.querySelector(`[data-era="${k}"]`);
+  const fromHome=activeTab==="stats"||activeTab==="fights";
+  if(fromHome){ activeTab="all"; renderTabs(); render(); }
+  requestAnimationFrame(()=>{
+    let el=find();
+    if(!el && fromHome){
+      clearFilterState();
+      searchQ=''; const si=document.getElementById("searchInput"); if(si) si.value='';
+      syncChipsToState(); render();
+      el=find();
+    }
+    if(el) el.scrollIntoView({behavior:"smooth",block:"start"});
+  });
+}
+
 /* Draws the era histogram above the timeline: one bar per bracket from
    getChartEras() (respects the MTB/ALL eraScope toggle), sized by how many
    entries in `list` fall in that bracket relative to the full dataset,
@@ -3995,7 +4018,7 @@ function renderBars(list){
     const blabel = show ? (decade?String(e.from):`'${String(e.from).slice(2)}`) : "";
     b.innerHTML=`<span class="bcount">${cur}</span>`+
       (blabel?`<span class="blabel${decade?" bl-decade":""}">${blabel}</span>`:"");
-    b.onclick=()=>{ const el=document.getElementById(e.k)||document.querySelector(`[data-era="${e.k}"]`); if(el) el.scrollIntoView({behavior:"smooth",block:"start"}); };
+    b.onclick=()=>jumpToEra(e.k);
     bars.appendChild(b);
   });
 }
