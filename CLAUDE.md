@@ -685,7 +685,8 @@ request from one session to the next.
    Find the most relevant existing entry and insert near it; check the
    surrounding `/* ---- Section Name ---- */` comment banners for the
    category's rough grouping.
-3. **Write the object** following the schema above. Match the existing prose
+3. **Title starts with the brand name whenever there is one** (Jon's call, 2026-10-14): "Shimano Ice Tech clad disc brake rotor (US 9,234,553)", not "Ice Tech clad disc brake rotor (US 9,234,553)". Use the brand as the company or product line is known ("Niner CVA suspension", "Fox Live Valve"); skip it when the entry has no single brand (a lone inventor, a historical patent, a multi-brand technology like Horst Link or VPP, a lawsuit titled by its parties). Write the French title brand-first too. Existing entries are being brought into line gradually; a title change on a `num:null` entry changes its deep link, so add the `REF_ALIASES` entry in the same edit.
+   Write the object following the schema above. Match the existing prose
    style: `s` is factual (what it covers, filing/grant history, the
    mechanism in concrete terms); `w` is the editorial payoff (why a reader
    should care, what it changed, how it connects to other entries). See
