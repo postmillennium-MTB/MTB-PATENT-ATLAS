@@ -28,32 +28,33 @@
   --font-body:'Barlow',system-ui,sans-serif;
   --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
   --ui-weight:600; /* weight for small display-font UI text (tabs, sub-heads); a theme overrides this when its display font reads heavy at small sizes */
-  --thumb-bg:#F3F4F1; /* paper tone behind a card thumbnail; the drawing is multiplied onto it, so its white background takes on this tone. Each theme sets its own. */
+  --thumb-bg:#F3F4F1; /* paper tone behind a card thumbnail; the drawing is multiplied onto it, so its white background takes on this tone. Each theme sets its own. Keep it visibly different from --bg (a near-white, slightly warm or cool paper): at the same tone as the page the thumbnail reads as a hole in the card. */
+  --card-edge:var(--card-border); /* the card's own outline. Soft themes set a darker value than --card-border so a white card separates from the pale page; --card-border stays the lighter line used by chips, buttons and dividers. */
 }
 /* ===== WMBC — clean trail / topographic (soft, rounded, organic) ===== */
 [data-theme="wmbc"]{
   --bg:#EEF3EC; --surface:#FFFFFF; --ink:#16261C; --ink-soft:#4b5f53;
   --spine:#4F7A5E; --primary:#2D6A4F; --accent:#8AB17D; --deep:#1B4332;
-  --chip-bg:#E3ECE4; --card-border:#D8E2D9;
+  --chip-bg:#E3ECE4; --card-border:#D8E2D9; --card-edge:#C2D0C5;
   --st-active:#2D6A4F; --st-expired:#7d8a80; --st-pending:#A9762B; --st-lit:#B5532A;
   --lit-solid:1;
   --radius:14px; --spine-w:3px; --spine-radius:3px; --card-accent-w:0px; --dot-radius:50%;
   --head-weight:700; --head-spacing:.01em; --head-transform:uppercase;
-  --card-shadow:0 1px 2px rgba(20,38,28,.05); --pill-radius:999px; --era-line:2px;
+  --card-shadow:0 1px 2px rgba(20,38,28,.08),0 8px 16px -8px rgba(20,38,28,.20); --pill-radius:999px; --era-line:2px;
   --header-bg:linear-gradient(160deg,#1B4332 0%,#225239 100%);
   --font-display:'Nunito',system-ui,sans-serif;
-  --thumb-bg:#F2F7F1;
+  --thumb-bg:#FBFAF4;
 }
 /* ===== COMBA — vintage editorial print (warm cream, heavy serif-feel, squared) ===== */
 [data-theme="comba"]{
   --bg:#EFE7D6; --surface:#FBF6EC; --ink:#33291C; --ink-soft:#6E6259;
   --spine:#8C6B43; --primary:#6E5C49; --accent:#C19A6B; --deep:#3D3122;
-  --chip-bg:#E6D9C2; --card-border:#D2C2A4;
+  --chip-bg:#E6D9C2; --card-border:#D2C2A4; --card-edge:#C2AF8B;
   --st-active:#5C7148; --st-expired:#8C8377; --st-pending:#A9762B; --st-lit:#9C4A2F;
   --lit-solid:1;
   --radius:3px; --spine-w:2px; --spine-radius:0; --card-accent-w:0px; --dot-radius:0;
   --head-weight:700; --head-spacing:.04em; --head-transform:none;
-  --card-shadow:none; --pill-radius:3px; --era-line:3px;
+  --card-shadow:0 1px 2px rgba(51,41,28,.08),0 6px 14px -8px rgba(51,41,28,.20); --pill-radius:3px; --era-line:3px;
   --header-bg:#3D3122;
   --font-display:'Bitter',Georgia,serif;
   /* Bitter's bold weights read heavy/muddy at small UI sizes (tabs, sub-
@@ -61,7 +62,7 @@
      display-font text in this theme drops to a lighter weight than the
      other themes' shared default (see --ui-weight below). */
   --ui-weight:500;
-  --thumb-bg:#F2EAD8;
+  --thumb-bg:#FFFCF4;
 }
 /* ===== CAMBA — bold racing / high contrast (sharp, black rules, urgent) ===== */
 [data-theme="camba"]{
@@ -81,15 +82,15 @@
 [data-theme="cambr"]{
   --bg:#EDF0F5; --surface:#FFFFFF; --ink:#0B162A; --ink-soft:#4a566b;
   --spine:#C83803; --primary:#13294B; --accent:#C83803; --deep:#0B162A;
-  --chip-bg:#E0E6F0; --card-border:#C3CCDC;
+  --chip-bg:#E0E6F0; --card-border:#C3CCDC; --card-edge:#AEB9CC;
   --st-active:#1f7a33; --st-expired:#8a8f99; --st-pending:#C83803; --st-lit:#A52A1A;
   --lit-solid:1;
   --radius:6px; --spine-w:2px; --spine-radius:0; --card-accent-w:0px; --dot-radius:50%;
   --head-weight:600; --head-spacing:.06em; --head-transform:uppercase;
-  --card-shadow:0 1px 3px rgba(11,22,42,.07); --pill-radius:4px; --era-line:2px;
+  --card-shadow:0 1px 2px rgba(11,22,42,.08),0 8px 16px -8px rgba(11,22,42,.20); --pill-radius:4px; --era-line:2px;
   --header-bg:linear-gradient(160deg,#0B162A 0%,#13294B 100%);
   --font-display:'IBM Plex Mono',ui-monospace,monospace;
-  --thumb-bg:#F1F4F9;
+  --thumb-bg:#FAFBFD;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -494,7 +495,7 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .era-head::after{content:"";flex:1;height:var(--era-line);background:var(--spine);opacity:.35;border-radius:2px}
 .tl{position:relative;padding-left:26px}
 .tl::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:var(--spine-w);background:var(--spine);opacity:.5;border-radius:var(--spine-radius)}
-.card{position:relative;background:var(--surface);border:1px solid var(--card-border);border-left:calc(1px + var(--card-accent-w)) solid var(--card-border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;box-shadow:var(--card-shadow)}
+.card{position:relative;background:var(--surface);border:1px solid var(--card-edge,var(--card-border));border-left:calc(1px + var(--card-accent-w)) solid var(--card-edge,var(--card-border));border-radius:var(--radius);margin-bottom:10px;overflow:hidden;box-shadow:var(--card-shadow)}
 .card.lit-card{border-left-color:var(--st-lit)}
 .card::before{content:"";position:absolute;left:-22px;top:20px;width:11px;height:11px;border-radius:var(--dot-radius,50%);background:var(--spine);border:2px solid var(--bg)}
 .card.pending-card{border-style:dashed;border-width:2px}
