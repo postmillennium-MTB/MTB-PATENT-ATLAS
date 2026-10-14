@@ -149,9 +149,14 @@ const aliasBlock = html.match(/const REF_ALIASES = (\{[\s\S]*?\n\});/);
 if (!aliasBlock) hardFailures.push('REF_ALIASES not found in index.html');
 else {
   const aliases = eval('(' + aliasBlock[1] + ')');
+  // A num:null card's live ref is its title slug (same formula as index.html's
+  // _REF). Cross-links may not point at those, but an alias may: renaming a
+  // num:null entry changes its slug, and the old shared link has to land on it.
+  const slugRefs = new Set(D.filter(d => !d.num).map(d => d.t.en.toLowerCase()
+    .replace(/\(.*?\)/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40)));
   Object.entries(aliases).forEach(([from, to]) => {
-    if (!validRefs.has(to)) hardFailures.push(`REF_ALIASES "${from}" -> "${to}": target matches no entry`);
-    if (validRefs.has(from)) hardFailures.push(`REF_ALIASES "${from}" is a live card ref; remove the alias`);
+    if (!validRefs.has(to) && !slugRefs.has(to)) hardFailures.push(`REF_ALIASES "${from}" -> "${to}": target matches no entry`);
+    if (validRefs.has(from) || slugRefs.has(from)) hardFailures.push(`REF_ALIASES "${from}" is a live card ref; remove the alias`);
   });
   console.log('ref aliases:', Object.keys(aliases).length, '(all targets resolve)');
 }
