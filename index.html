@@ -20,7 +20,7 @@
 <meta name="twitter:description" content="An interactive timeline of 410 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta name="twitter:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/social-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Nunito:wght@600;700&family=Bitter:wght@500;600;700&family=Anton&family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Nunito:wght@600;700&family=Bitter:wght@500;600;700&family=Anton&family=IBM+Plex+Mono:wght@600;700&family=Special+Elite&display=swap" rel="stylesheet">
 <style>
 :root{
   --radius:10px;
@@ -376,6 +376,8 @@ button.stats-seg:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
   .stats-timeline-labels.dense-labels{gap:1px}
   .stats-timeline-labels.dense-labels span{font-size:7.5px;letter-spacing:-.03em}}
 h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clamp(30px,6vw,46px);line-height:1.02;letter-spacing:var(--head-spacing);text-transform:var(--head-transform);margin-top:14px}
+/* Green (WMBC) theme only: typewriter face for the title, like a patent filing. Special Elite has one weight, so no faux bold; slightly tighter size since it runs wider than Nunito. */
+[data-theme="wmbc"] h1{font-family:'Special Elite','Courier New',monospace;font-weight:400;letter-spacing:.01em;font-size:clamp(28px,5.6vw,42px)}
 .sub{font-size:14px;opacity:.85;max-width:560px;margin-top:4px}
 .themes{display:flex;gap:8px;margin-top:12px;align-items:center}
 /* Theme row now sits directly under the PMR link, above the title.
