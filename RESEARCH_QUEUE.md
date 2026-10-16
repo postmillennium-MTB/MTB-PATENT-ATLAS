@@ -349,6 +349,10 @@ patents" entry (`conf:"l"`). One number held up; the rest did not.
 - Assignment of US 7,934,739 itself to UWHK not yet seen; only 8,590,914's
   record was checked.
 
+## Shimano V-Brake patent (added 2026-10-16)
+
+- The atlas's former "V-Brake" entry (US 5,636,716) turned out to describe a four-bar link driven by a cantilever brake; its text never uses the name V-Brake. The patent that actually covers the single-cable linear-pull V-Brake (introduced c. 1991) is not yet identified. Search Shimano filings of 1989–1991 by title ("Bicycle brake device", "Brake assembly") and confirm the claim language before adding an entry.
+
 ## Process reminder for whoever picks this up
 
 Follow CLAUDE.md's full workflow, not just this list — in particular:
