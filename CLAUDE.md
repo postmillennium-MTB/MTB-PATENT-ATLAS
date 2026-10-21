@@ -898,3 +898,7 @@ It is the icon set for every PMR tool, and the Atlas already uses it throughout.
 - Don't silently skip the count-sync step (README table + the four
   `index.html` strings) — this is the single most common way this repo's
   data and its own self-description drift apart.
+
+## License and notice (do not remove)
+
+This repo is licensed under PolyForm Noncommercial 1.0.0 (`LICENSE`). Every edit and rebuild must keep: the `Required Notice:` line at the top of `LICENSE`; the (c) / SPDX comment right after the doctype of each HTML page; and the visible `.pmr-license` footer on each page. Do not remove, reword or hide them. New pages get the same footer. Third-party material keeps its own license: never relicense it, and keep its notices. Jon holds the copyright and decides any license change.
