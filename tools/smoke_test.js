@@ -234,6 +234,34 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
   }
   await page.evaluate(() => { try { localStorage.removeItem('pmr-patent-atlas-view'); } catch (e) {} });
 
+  /* Match tab (Patent Match): a full round plays to the end without errors,
+     every drawing on the board loads, and the pool is read live from D --
+     every entry with a drawing and a summary -- so it can't drift behind the
+     atlas the way the old standalone match/index.html snapshot did. */
+  errors.length = 0;
+  await page.click('.tab-btn[data-tab="match"]');
+  await page.waitForTimeout(600);
+  const pool = await page.evaluate(() => ({
+    game: matchPool().length,
+    drawn: D.filter(d => firstDrawing(d) && (d.s || d.w)).length
+  }));
+  for (let k = 0; k < 9; k++) {
+    const tile = page.locator('button.mg-img').first();
+    if (!(await tile.count())) break;
+    const i = await tile.getAttribute('data-mg');
+    await tile.click();
+    await page.click(`.mg-desc[data-mg="${i}"]`);
+    await page.waitForTimeout(80);
+  }
+  const mgDone = await page.locator('.mg-done').count();
+  const mgBroken = await page.evaluate(() =>
+    [...document.querySelectorAll('.mg-img img')].filter(im => !im.complete || !im.naturalWidth).length);
+  console.log(`match tab: pool ${pool.game}/${pool.drawn}, round complete: ${mgDone === 1}, broken drawings: ${mgBroken}, errors: ${JSON.stringify(errors)}`);
+  if (errors.length || mgDone !== 1 || mgBroken || pool.game !== pool.drawn || pool.game < 1) {
+    failed = true;
+    console.error('::error::Match tab crashed, could not finish a round, showed a broken drawing, or its pool is not every drawn entry.');
+  }
+
   await browser.close();
   if (failed) {
     console.error('\n::error::Browser smoke test FAILED.');
