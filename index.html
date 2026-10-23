@@ -588,6 +588,33 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .deep-story-body{margin-top:8px;font-size:14px;line-height:1.55}
 .deep-story-body p{margin:0 0 10px}
 .deep-story-body p:last-child{margin-bottom:0}
+/* ---------- "See it move" linkage viewer ----------
+   Patent-sheet look: one ink weight, paper fill inside every tube so nearer
+   parts hide farther ones. The stage keeps the sheet's white in every theme,
+   same as .patent-fig. */
+.lk-fig .lk-host{padding:0 0 10px}
+.lk-stage{background:#fff;touch-action:pan-y;cursor:grab}
+.lk-stage:active{cursor:grabbing}
+.lk-svg{display:block;width:100%;height:auto;max-height:440px}
+.lk-line{stroke:#111;stroke-width:var(--lk-ink);fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lk-tube-o{stroke:#111;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lk-tube-i{stroke:#fff;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lk-eye{fill:#fff;stroke:#111;stroke-width:var(--lk-ink)}
+.lk-dash{stroke:#111;stroke-width:var(--lk-ink);stroke-dasharray:calc(var(--lk-ink)*8) calc(var(--lk-ink)*5);fill:none}
+.lk-path{stroke:var(--primary);stroke-width:calc(var(--lk-ink)*1.2);stroke-dasharray:calc(var(--lk-ink)*.8) calc(var(--lk-ink)*3.5);stroke-linecap:round;fill:none}
+.lk-tick{fill:var(--primary)}
+.lk-num{font-family:Arial,Helvetica,sans-serif;fill:#111;text-anchor:middle;dominant-baseline:middle}
+.lk-ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 10px 0}
+.lk-slider{flex:1 1 100%;display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--ink-soft);font-family:var(--font-mono)}
+.lk-slider input{width:100%;accent-color:var(--primary);min-height:28px}
+.lk-btn{background:var(--chip-bg);border:1px solid var(--card-border);color:var(--primary);border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:600;cursor:pointer;min-height:32px}
+.lk-btn:hover,.lk-btn[aria-pressed="true"]{background:var(--primary);color:#fff;border-color:var(--primary)}
+.lk-read{display:grid;grid-template-columns:1fr;gap:4px 14px;margin:10px 10px 0;font-size:12.5px}
+.lk-read div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--card-border);padding-bottom:3px}
+.lk-read dt{color:var(--ink-soft)}
+.lk-read dd{margin:0;font-family:var(--font-mono);text-align:right}
+.lk-note{margin:10px 10px 0;font-size:11.5px;color:var(--ink-soft);line-height:1.5}
+@media(min-width:640px){.lk-slider{flex:1 1 220px}.lk-read{grid-template-columns:1fr 1fr}}
 /* ---------- Colorado MTB innovation feature ---------- */
 .co-link{display:inline-flex;align-items:center;gap:4px;margin-top:10px;background:var(--chip-bg);border:1px solid var(--card-border);color:var(--primary);border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:var(--font-body)}
 .co-link:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
@@ -1812,6 +1839,122 @@ const RABBIT_HOLES_SHOWN = 30;
 const RABBIT_HOLES = [
 ];
 
+/* ---- LINKAGE MODELS ("See it move" viewer on suspension cards) ----
+   One entry per card that gets an animated version of its own patent figure.
+   The viewer (LINKAGE VIEWER, below the render code) is generic: any planar
+   four-bar rear end can be added here with no new code. Every coordinate is
+   read off the patent sheet named in `sheet`, in that image's own pixels
+   (x right, y down), so a reader can check a pivot against the drawing.
+
+   {
+     card:  "7717212",              // the D[] entry's num (cardRef) that shows it
+     sheet: "pictures/….png",       // the drawing the coordinates were read from
+     caption:{en,fr},               // summary line of the disclosure
+     note:{en,fr},                  // what is approximate and why — shown under the viewer
+     mmPerUnit: 0.728 | null,       // drawing px -> mm, from the tire size; null = show % only
+     travel: 220,                   // full-slider vertical axle travel, drawing px
+     view:[x,y,w,h],                // crop of the sheet to show (drawing px)
+     pts:{NAME:[x,y]},              // every named point at full extension (slider 0)
+     ground:["P4","P5"],            // the two frame pivots of the four-bar
+     driver:"AX", follower:"P7",    // driver link = ground[0]->driver, follower = ground[1]->follower,
+                                    // coupler = driver->follower. The slider turns the driver link.
+     axle:"AX",                     // the rear axle (any point on any body)
+     body:{driver:[…],coupler:[…],follower:[…]}, // extra points riding on each moving body; the rest are frame
+     shock:["P8","P9"] | null,      // shock eyes, for the leverage-ratio readout; coil:true draws a spring
+     wheels:[{c:"AX",r:467}],       // tire circles (r in drawing px)
+     members:[{p:["A","B",…], w:22, z:40, closed?:true}], // tubes; z>0 draws a left/right pair z px apart
+     nums:[{n:"1", at:[x,y], to:"A"}], // the sheet's own reference numerals: text at `at` (where the
+                                    // sheet prints it), leader to point `to`. Optional: tt+t aims t of the
+                                    // way from `to` to `tt` (a tube's middle); r aims at a circle of radius r
+                                    // around `to` (a tire); ic:"driver"|"follower" + t aims along that
+                                    // link's construction line toward the instant center.
+     ic:{n:"15", at:[x,y]} | true,  // draw the coupler's instant center and the two links extended to it;
+                                    // n/at label it with the sheet's own numeral when the sheet has one
+   }
+   Numerals are reproduced only where the sheet itself prints them; the
+   viewer never invents a numeral for a part the sheet leaves unlabelled. */
+const LINKAGE_MODELS = [
+  {
+    card:"7717212",
+    sheet:"pictures/US7717212B2_b.png",
+    caption:{en:"Fig. 4 in motion — drag to turn it, slide to compress",fr:"La Fig. 4 en mouvement — glissez pour la faire pivoter, curseur pour comprimer"},
+    note:{en:"Pivot positions are measured off Fig. 4, and the instant center they produce lands on the patent's own point 15 to within a few pixels. Millimetres assume a 26-inch tire about 680 mm across, since the patent gives no scale, and the 160 mm travel range is illustrative. The chainstay turns about pivot 4, so the axle path is an arc. The seatstay rides on the axle pivot and drives the rocker, which compresses the shock. The dashed lines through 4 and 5 meet at the seatstay's instant center, which is where the brake reacts against the frame.",
+          fr:"Les positions des pivots sont relevées sur la Fig. 4, et le centre instantané qu'elles donnent tombe à quelques pixels près sur le point 15 du brevet. Les millimètres supposent un pneu de 26 pouces d'environ 680 mm de diamètre, faute d'échelle dans le brevet, et la plage de 160 mm de débattement est indicative. La base tourne autour du pivot 4 : la trajectoire de l'axe est donc un arc. Le hauban s'appuie sur le pivot d'axe et entraîne la biellette, qui comprime l'amortisseur. Les lignes pointillées passant par 4 et 5 se croisent au centre instantané du hauban, là où le frein prend appui sur le cadre."},
+    mmPerUnit:0.728,
+    travel:220,
+    view:[-30,0,2638,1560],
+    pts:{AX:[497,933],P4:[1020,823],P5:[1062,681],P7:[940,669],P8:[1104,613],P9:[1154,791],
+         BB:[1102,913],FA:[2045,935],STT:[918,351],STJ:[985,478],HTT:[1650,128],HTB:[1712,292],
+         DTJ:[1690,250],CRN:[1735,330],ST9:[1172,770]},
+    ground:["P4","P5"], driver:"AX", follower:"P7", axle:"AX",
+    body:{driver:[],coupler:[],follower:["P8"]},
+    shock:["P8","P9"], coil:true,
+    wheels:[{c:"AX",r:467},{c:"FA",r:465}],
+    members:[
+      {p:["STT","BB"],w:30,z:0},             // seat tube
+      {p:["STJ","HTT"],w:30,z:0},            // top tube
+      {p:["BB","DTJ"],w:36,z:0},             // down tube
+      {p:["HTT","HTB"],w:40,z:0},            // head tube
+      {p:["CRN","FA"],w:28,z:52},            // fork legs
+      {p:["P4","BB"],w:16,z:30},             // chainstay pivot mount
+      {p:["P9","ST9"],w:14,z:0},             // shock mount tab
+      {p:["P4","AX"],w:26,z:52},             // chainstay
+      {p:["AX","P7"],w:24,z:56},             // seatstay
+      {p:["P5","P7","P8"],w:12,z:24,closed:true} // rocker
+    ],
+    nums:[
+      {n:"1",at:[705,995],to:"AX",tt:"P4",t:.5},
+      {n:"2",at:[585,735],to:"AX",tt:"P7",t:.4},
+      {n:"3",at:[968,762],to:"P7",tt:"P5",t:.5},
+      {n:"4",at:[1013,965],to:"P4"},
+      {n:"5",at:[1082,490],to:"P5"},
+      {n:"7",at:[897,553],to:"P7"},
+      {n:"8",at:[1142,505],to:"P8"},
+      {n:"9",at:[1262,890],to:"P9"},
+      {n:"6",at:[394,1050],to:"AX"},
+      {n:"12",at:[1262,475],to:"P8",tt:"P9",t:.35},
+      {n:"11",at:[1352,170],to:"STJ",tt:"HTT",t:.55},
+      {n:"16",at:[2072,372],to:"FA",r:465},
+      {n:"17",at:[555,372],to:"AX",r:467},
+      {n:"13",at:[1308,556],ic:"follower",t:.45},
+      {n:"14",at:[1390,852],ic:"driver",t:.7}
+    ],
+    ic:{n:"15",at:[1553,616]}
+  },
+  {
+    card:"7128329",
+    sheet:"pictures/US7661503B2.png",
+    caption:{en:"Fig. 1a in motion — drag to turn it, slide to compress",fr:"La Fig. 1a en mouvement — glissez pour la faire pivoter, curseur pour comprimer"},
+    note:{en:"Fig. 1a of US 7,661,503 is a skeletal vehicle, not a specific bike, and it gives no scale, so travel is shown as a share of the stroke drawn here and there is no shock to give a leverage ratio. Pivot positions are measured off the sheet; the instant center they produce lands on the small construction circle the patent draws above the lower link. The rear axle rides on the rear triangle, which hangs from two short links, so the axle path is not an arc about any fixed pivot. The dashed lines are the two links extended; where they cross is the rear triangle's instant center, the point the squat construction is built from.",
+          fr:"La Fig. 1a de l'US 7 661 503 représente un véhicule schématique, pas un vélo précis, et ne donne aucune échelle : le débattement est donc exprimé en part de la course dessinée ici, et l'absence d'amortisseur empêche de calculer un rapport de levier. Les positions des pivots sont relevées sur la planche ; le centre instantané qu'elles donnent tombe sur le petit cercle de construction que le brevet trace au-dessus de la biellette inférieure. L'axe arrière est porté par le triangle arrière, suspendu à deux biellettes courtes : sa trajectoire n'est donc un arc autour d'aucun pivot fixe. Les lignes pointillées prolongent les deux biellettes ; leur croisement est le centre instantané du triangle arrière, le point à partir duquel se construit le squat."},
+    mmPerUnit:null,
+    travel:70,
+    view:[20,470,1100,500],
+    pts:{AX:[251.7,726],U:[299.3,692.3],L:[470,734.7],LF:[465.7,703.3],UF:[514.3,676],
+         BB:[504.3,729.3],FA:[885,726],FK:[625,673]},
+    ground:["LF","UF"], driver:"L", follower:"U", axle:"AX",
+    body:{driver:[],coupler:["AX"],follower:[]},
+    shock:null,
+    wheels:[{c:"AX",r:189},{c:"FA",r:190}],
+    members:[
+      {p:["UF","FK","FA"],w:8,z:0},         // frame (16)
+      {p:["BB","FA"],w:7,z:0},
+      {p:["LF","BB"],w:8,z:10},
+      {p:["UF","BB"],w:8,z:10},
+      {p:["AX","U","L"],w:7,z:22,closed:true}, // rear triangle
+      {p:["UF","U"],w:6,z:14},               // upper link
+      {p:["LF","L"],w:6,z:14}                // lower link
+    ],
+    nums:[
+      {n:"1",at:[150,568],to:"AX",r:189},
+      {n:"16",at:[640,615],to:"FK",tt:"FA",t:.25},
+      {n:"8",at:[402,577],to:"UF",tt:"U",t:.5},
+      {n:"46",at:[540,790],to:"BB"}
+    ],
+    ic:true
+  }
+];
+
 /* ---- HOME SEARCH SUGGESTIONS (Atlas tab, under the big search box) ----
    One-tap example searches. `q` is exactly what gets typed into the search
    box, so the match count shown on each chip is live and always agrees with
@@ -2103,6 +2246,10 @@ const T = {
     wgPanelTitle:"Dave Weagle Portfolio", wgLinkBtn:"Weagle portfolio timeline", wgAriaLabel:"Dave Weagle patent portfolio timeline",
     wgIntro:(n,a,e,p)=>`${n} entries in this atlas credit Dave Weagle: ${a} active, ${e} expired, ${p} still pending or without a confirmed term. Each bar runs from the filing year to the estimated expiry. Tap a bar to open its card.`,
     wgNow:"Now", wgOpenEnded:"no confirmed expiry",
+    lkTravel:"Wheel travel", lkStroke:"Shock stroke used", lkLR:"Leverage ratio", lkIC:"Instant center",
+    lkICpos:(a,ahead,u,up)=>`${a} mm ${ahead?"ahead of":"behind"} the bottom bracket, ${u} mm ${up?"above":"below"} it`,
+    lkPlay:"Play", lkPause:"Pause", lkSide:"Side view", lk3D:"3D view",
+    lkAria:"Animated patent drawing of the rear suspension linkage. Use the wheel-travel slider to compress it.",
     wgNote:"Years only, so dates can be off by one. Bundled family entries (such as DW-Link) run to the newest member's expiry. Lawsuit entries have no patent term and are left out.",
     wgBarTip:(title,y,end)=>`${title} (${y}–${end}) — click to view`,
     minimize:"Minimize", close:"Close", dismiss:"Dismiss",
@@ -2221,6 +2368,10 @@ const T = {
     wgPanelTitle:"Portefeuille de Dave Weagle", wgLinkBtn:"Chronologie du portefeuille Weagle", wgAriaLabel:"Chronologie du portefeuille de brevets de Dave Weagle",
     wgIntro:(n,a,e,p)=>`${n} fiches de cet atlas citent Dave Weagle : ${a} actives, ${e} expirées, ${p} encore en instance ou sans échéance confirmée. Chaque barre va de l'année de dépôt à l'expiration estimée. Touchez une barre pour ouvrir sa fiche.`,
     wgNow:"Auj.", wgOpenEnded:"expiration non confirmée",
+    lkTravel:"Débattement de roue", lkStroke:"Course d'amortisseur utilisée", lkLR:"Rapport de levier", lkIC:"Centre instantané",
+    lkICpos:(a,ahead,u,up)=>`${a} mm ${ahead?"devant":"derrière"} le boîtier de pédalier, ${u} mm ${up?"au-dessus":"en dessous"}`,
+    lkPlay:"Lecture", lkPause:"Pause", lkSide:"Vue de profil", lk3D:"Vue 3D",
+    lkAria:"Dessin de brevet animé de la biellette de suspension arrière. Utilisez le curseur de débattement pour la comprimer.",
     wgNote:"Années seulement : les dates peuvent différer d'un an. Les fiches regroupant une famille (comme DW-Link) vont jusqu'à l'expiration du membre le plus récent. Les fiches de litige n'ont pas de durée de brevet et sont exclues.",
     wgBarTip:(title,y,end)=>`${title} (${y}–${end}) — cliquer pour voir`,
     minimize:"Réduire", close:"Fermer", dismiss:"Fermer",
@@ -3243,6 +3394,13 @@ function cardHTML(d,eraKey){
      own. Paragraphs are split on a literal blank line so a multi-paragraph
      long can be written as one string, same as s/w. Absent on every entry
      that doesn't set it, so this renders nothing for the ordinary case. */
+  /* "See it move": cards with a LINKAGE_MODELS entry get their patent figure
+     as a live drawing, closed by default and built only when opened (see
+     LINKAGE VIEWER). Skipped in the text view, which loads no drawings. */
+  const lk = viewMode==="text" ? null : linkageFor(d);
+  const linkHTML = lk ? `<figure class="patent-fig lk-fig" data-lk="${ref}"><details>
+      <summary>${tx(lk.caption)}</summary><div class="lk-host"></div>
+    </details></figure>` : "";
   const deepHTML = d.long ? `<details class="deep-story"><summary>${t("readFullStory")}</summary><div class="deep-story-body">${cardLinks(tx(d.long)).split(/\n{2,}/).map(p=>`<p>${p}</p>`).join("")}</div></details>` : "";
   /* The thumbnail is skipped entirely in the text view (not just hidden) so
      that view downloads no images at all. --cat feeds the tinted view's panel
@@ -3274,6 +3432,7 @@ function cardHTML(d,eraKey){
     <div class="cbody">
       <p>${cardLinks(tx(d.s))}</p>
       ${figHTML}
+      ${linkHTML}
       <p class="why">${t("whyItMatters")} ${cardLinks(tx(d.w))}</p>
       ${deepHTML}
       <div class="meta">
@@ -3287,6 +3446,295 @@ function cardHTML(d,eraKey){
     </div>
   </article>`;
 }
+
+/* ======== LINKAGE VIEWER ("See it move") ========
+   Turns a LINKAGE_MODELS entry into a live, patent-style line drawing: a
+   travel slider compresses the rear end, a drag turns the drawing in 3D, and
+   the readouts update from the same geometry. Mounted lazily the first time
+   a reader opens the disclosure on a card, so a card list costs nothing.
+
+   The kinematics are a plain four-bar. The slider value is wheel travel;
+   precomputeLinkage() sweeps the driver link once, in small steps, and
+   records where everything is, so the slider only interpolates a table and
+   can never land on a pose the linkage can't reach. Sheet y runs down, so
+   "up" travel is a falling y. The 3D is an orthographic turn of a flat
+   drawing: every member is drawn as a left/right pair `z` px apart, joined by
+   cross-axles at its pivots, then sorted back to front. */
+const LK_STEP_RAD = 0.0005;        // driver-link step in the precomputed sweep; smaller = smoother, slower to build
+const LK_MAX_STEPS = 6000;         // safety cap on that sweep
+const LK_SPIN_YAW = 0.55;          // radians: the three-quarter view the intro turns to and the 3D button restores
+const LK_SPIN_PITCH = 0.2;         // radians of downward tilt in that view
+const LK_MAX_PITCH = 0.6;          // drag never tilts further than this, so the drawing can't flip over
+const LK_DRAG_RAD_PER_PX = 0.008;  // how far a one-pixel drag turns the drawing
+const LK_INTRO_MS = 1800;          // the "comes to life" turn + one compression when first opened
+const LK_PLAY_PERIOD_MS = 2600;    // one full compress-and-return cycle while playing
+const LK_CIRCLE_SEGS = 72;         // polygon sides for a tire; pivots use LK_PIVOT_SEGS
+const LK_PIVOT_SEGS = 14;
+const LK_PIVOT_R = 11;             // pivot eye radius, drawing px
+const LK_INK = 2.6;                // line weight, drawing px — patent drawings use one weight throughout
+const LK_NUM_SIZE = 40;            // reference-numeral text size, drawing px
+const LK_TICK_MM = 25;             // tick spacing along the axle path when the model has a scale
+/* The sizes above are drawing px on a sheet whose view is LK_REF_VIEW_W wide
+   (the Split Pivot sheet). A model cropped narrower is shown more magnified,
+   so lkScale() shrinks ink, eyes and numerals to match and every sheet reads
+   at the same line weight on screen. */
+const LK_REF_VIEW_W = 2578;
+function lkScale(m){ return m.view[2]/LK_REF_VIEW_W; }
+
+function lkRot(p,c,a){const s=Math.sin(a),k=Math.cos(a),x=p[0]-c[0],y=p[1]-c[1];return [c[0]+x*k-y*s,c[1]+x*s+y*k];}
+function lkDist(a,b){return Math.hypot(a[0]-b[0],a[1]-b[1]);}
+function lkLerp(a,b,t){return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];}
+/* Circle-circle intersection, choosing the solution nearer `prev` so the
+   linkage never snaps to its mirror-image assembly mid-sweep. */
+function lkCircles(c0,r0,c1,r1,prev){
+  const dx=c1[0]-c0[0],dy=c1[1]-c0[1],d=Math.hypot(dx,dy);
+  if(d>r0+r1||d<Math.abs(r0-r1)||d===0) return null;
+  const a=(r0*r0-r1*r1+d*d)/(2*d),h=Math.sqrt(Math.max(0,r0*r0-a*a));
+  const mx=c0[0]+a*dx/d,my=c0[1]+a*dy/d;
+  const s1=[mx+h*dy/d,my-h*dx/d],s2=[mx-h*dy/d,my+h*dx/d];
+  return lkDist(s1,prev)<lkDist(s2,prev)?s1:s2;
+}
+/* Rigid motion that carries segment a0->b0 onto a1->b1, applied to p. */
+function lkCarry(p,a0,b0,a1,b1){
+  const ang=Math.atan2(b1[1]-a1[1],b1[0]-a1[0])-Math.atan2(b0[1]-a0[1],b0[0]-a0[0]);
+  const q=lkRot(p,a0,ang); return [q[0]+a1[0]-a0[0],q[1]+a1[1]-a0[1]];
+}
+function lkLineX(p1,p2,p3,p4){
+  const d=(p1[0]-p2[0])*(p3[1]-p4[1])-(p1[1]-p2[1])*(p3[0]-p4[0]);
+  if(Math.abs(d)<1e-9) return null;
+  const a=p1[0]*p2[1]-p1[1]*p2[0], b=p3[0]*p4[1]-p3[1]*p4[0];
+  return [(a*(p3[0]-p4[0])-(p1[0]-p2[0])*b)/d,(a*(p3[1]-p4[1])-(p1[1]-p2[1])*b)/d];
+}
+
+/* Pose of every named point for driver angle th, or null past a dead centre. */
+function lkPose(m,th,prevF){
+  const P=m.pts,[g0,g1]=m.ground;
+  const D=lkRot(P[m.driver],P[g0],th);
+  const F=lkCircles(P[g1],lkDist(P[m.follower],P[g1]),D,lkDist(P[m.follower],P[m.driver]),prevF||P[m.follower]);
+  if(!F) return null;
+  const out={...P}; out[m.driver]=D; out[m.follower]=F;
+  const fAng=Math.atan2(F[1]-P[g1][1],F[0]-P[g1][0])-Math.atan2(P[m.follower][1]-P[g1][1],P[m.follower][0]-P[g1][0]);
+  (m.body.driver||[]).forEach(k=>out[k]=lkRot(P[k],P[g0],th));
+  (m.body.follower||[]).forEach(k=>out[k]=lkRot(P[k],P[g1],fAng));
+  (m.body.coupler||[]).forEach(k=>out[k]=lkCarry(P[k],P[m.driver],P[m.follower],D,F));
+  out.IC=lkLineX(P[g0],D,P[g1],F);
+  return out;
+}
+/* One sweep per model: the driver direction that lifts the axle, then a
+   table of poses out to the model's full travel. */
+function precomputeLinkage(m){
+  if(m._table) return m._table;
+  const y0=m.pts[m.axle][1];
+  const probe=lkPose(m,LK_STEP_RAD*20);
+  const dir=probe&&probe[m.axle][1]<y0?1:-1;
+  const table=[]; let prevF=null;
+  for(let i=0;i<LK_MAX_STEPS;i++){
+    const pose=lkPose(m,dir*i*LK_STEP_RAD,prevF); if(!pose) break;
+    prevF=pose[m.follower];
+    const travel=y0-pose[m.axle][1];
+    pose._travel=travel;
+    pose._shock=m.shock?lkDist(pose[m.shock[0]],pose[m.shock[1]]):null;
+    table.push(pose);
+    if(travel>=m.travel) break;
+  }
+  m._table=table;
+  return table;
+}
+/* Pose at a travel fraction 0..1, interpolated between the two nearest rows. */
+function lkAt(m,frac){
+  const tb=precomputeLinkage(m), want=frac*Math.min(m.travel,tb[tb.length-1]._travel);
+  let i=1; while(i<tb.length-1&&tb[i]._travel<want) i++;
+  const a=tb[i-1],b=tb[i],span=b._travel-a._travel||1,t=Math.min(1,Math.max(0,(want-a._travel)/span));
+  const out={}; for(const k in a){ if(Array.isArray(a[k])&&b[k]) out[k]=lkLerp(a[k],b[k],t); }
+  out.IC=a.IC&&b.IC?lkLerp(a.IC,b.IC,t):null;
+  out._travel=want;
+  if(m.shock){
+    out._shock=a._shock+(b._shock-a._shock)*t;
+    // leverage ratio = wheel travel per unit of shock stroke, from the table's neighbours
+    const j=Math.max(1,Math.min(tb.length-2,i)),p=tb[j-1],n=tb[j+1];
+    out._lr=Math.abs((n._travel-p._travel)/((p._shock-n._shock)||1e-9));
+  }
+  return out;
+}
+
+/* 3D: yaw turns about the vertical axis through the bottom bracket (or the
+   view centre), pitch tilts toward the reader. Returns [screenX, screenY, depth]. */
+function lkProject(p,z,cam){
+  const x=p[0]-cam.cx, y=p[1]-cam.cy;
+  const cy=Math.cos(cam.yaw), sy=Math.sin(cam.yaw), cp=Math.cos(cam.pitch), sp=Math.sin(cam.pitch);
+  const X=x*cy+z*sy, Z=-x*sy+z*cy;
+  const Y=y*cp-Z*sp, D=Z*cp+y*sp;
+  return [X+cam.cx, Y+cam.cy, D];
+}
+function lkTubeD(pts){ return "M"+pts.map(p=>p[0].toFixed(1)+" "+p[1].toFixed(1)).join("L"); }
+
+function buildLinkageSVG(m,pose,cam){
+  const prims=[]; // {d:depth, s:svg}
+  const k=lkScale(m), ink=LK_INK*k, eyeR=LK_PIVOT_R*k;
+  const push=(d,s)=>prims.push({d,s});
+  const zOf={}; m.members.forEach(mb=>mb.p.forEach(k=>{ zOf[k]=Math.max(zOf[k]||0,mb.z); }));
+  const pr=(p,z)=>lkProject(p,z,cam);
+  // tires: two concentric circles each, as the sheet draws them
+  m.wheels.forEach(w=>{
+    const c=pose[w.c];
+    [1,.87].forEach(f=>{
+      const ring=[]; for(let i=0;i<=LK_CIRCLE_SEGS;i++){const a=i/LK_CIRCLE_SEGS*Math.PI*2; ring.push(pr([c[0]+Math.cos(a)*w.r*f,c[1]+Math.sin(a)*w.r*f],0));}
+      push(Math.max(...ring.map(q=>q[2]))+1e4,`<path d="${lkTubeD(ring)}" class="lk-line" fill="none"/>`);
+    });
+  });
+  // tubes: outline drawn as a dark stroke with a paper-coloured core, so a nearer tube hides a farther one
+  m.members.forEach(mb=>{
+    const sides=mb.z>0?[-mb.z/2,mb.z/2]:[0];
+    sides.forEach(z=>{
+      const pts=mb.p.map(k=>pose[k]); if(mb.closed) pts.push(pts[0]);
+      const sp=pts.map(p=>pr(p,z));
+      const d=lkTubeD(sp), depth=sp.reduce((s,q)=>s+q[2],0)/sp.length;
+      push(depth,`<path d="${d}" class="lk-tube-o" stroke-width="${mb.w+ink*2}"/><path d="${d}" class="lk-tube-i" stroke-width="${mb.w}"/>`);
+    });
+    if(mb.z>0) mb.p.forEach(n=>{
+      const a=pr(pose[n],-mb.z/2-6*k),b=pr(pose[n],mb.z/2+6*k);
+      push((a[2]+b[2])/2-1,`<path d="M${a[0].toFixed(1)} ${a[1].toFixed(1)}L${b[0].toFixed(1)} ${b[1].toFixed(1)}" class="lk-line"/>`);
+    });
+  });
+  // pivot eyes on the near side of every member
+  const pivots=new Set(); m.members.forEach(mb=>{ if(mb.w<=26) mb.p.forEach(k=>pivots.add(k)); });
+  [...m.ground,m.driver,m.follower,...(m.shock||[])].forEach(k=>pivots.add(k));
+  pivots.forEach(n=>{
+    const z=(zOf[n]||0)/2+2*k, c=pose[n], ring=[];
+    for(let i=0;i<=LK_PIVOT_SEGS;i++){const a=i/LK_PIVOT_SEGS*Math.PI*2; ring.push(pr([c[0]+Math.cos(a)*eyeR,c[1]+Math.sin(a)*eyeR],z));}
+    push(pr(c,z)[2]-2,`<path d="${lkTubeD(ring)}Z" class="lk-eye"/>`);
+  });
+  // shock: body from the lower eye, shaft from the upper eye, coil between collars
+  if(m.shock){
+    const [a,b]=m.shock.map(k=>pose[k]), L0=lkDist(m.pts[m.shock[0]],m.pts[m.shock[1]]);
+    const u=[(a[0]-b[0])/lkDist(a,b),(a[1]-b[1])/lkDist(a,b)];
+    const bodyEnd=[b[0]+u[0]*L0*.55,b[1]+u[1]*L0*.55], shaftEnd=[a[0]-u[0]*L0*.6,a[1]-u[1]*L0*.6];
+    const B=[b,bodyEnd].map(p=>pr(p,0)), S=[a,shaftEnd].map(p=>pr(p,0));
+    let s=`<path d="${lkTubeD(S)}" class="lk-tube-o" stroke-width="${12+ink*2}"/><path d="${lkTubeD(S)}" class="lk-tube-i" stroke-width="12"/>`;
+    s+=`<path d="${lkTubeD(B)}" class="lk-tube-o" stroke-width="${30+ink*2}"/><path d="${lkTubeD(B)}" class="lk-tube-i" stroke-width="30"/>`;
+    if(m.coil){
+      const c0=lkLerp(b,a,.22), c1=lkLerp(a,b,.18), n=[-u[1],u[0]], turns=7, pts=[];
+      for(let i=0;i<=turns*2;i++){const q=lkLerp(c0,c1,i/(turns*2)), s2=(i%2?1:-1)*30; pts.push(pr([q[0]+n[0]*s2,q[1]+n[1]*s2],0));}
+      s+=`<path d="${lkTubeD(pts)}" class="lk-line" fill="none"/>`;
+    }
+    push(pr(lkLerp(a,b,.5),0)[2]-0.5,s);
+  }
+  // instant center + its two construction lines (the driver and follower links, extended)
+  const g0=pose[m.ground[0]], g1=pose[m.ground[1]];
+  if(m.ic&&pose.IC){
+    const v=m.view, inView=pose.IC[0]>v[0]-v[2]&&pose.IC[0]<v[0]+2*v[2]&&pose.IC[1]>v[1]-v[3]&&pose.IC[1]<v[1]+2*v[3];
+    if(inView){
+      const I=pr(pose.IC,0);
+      [[pose[m.driver],g0],[pose[m.follower],g1]].forEach(([p])=>{
+        const q=pr(p,0); push(-1e5,`<path d="M${q[0].toFixed(1)} ${q[1].toFixed(1)}L${I[0].toFixed(1)} ${I[1].toFixed(1)}" class="lk-dash"/>`);
+      });
+      push(-1e5,`<circle cx="${I[0].toFixed(1)}" cy="${I[1].toFixed(1)}" r="${eyeR}" class="lk-eye lk-ic"/>`);
+    }
+  }
+  // axle path, faint, with a tick every LK_TICK_MM when there's a scale
+  const tb=precomputeLinkage(m), path=tb.filter((_,i)=>i%8===0).map(p=>pr(p[m.axle],0));
+  let ap=`<path d="${lkTubeD(path)}" class="lk-path"/>`;
+  if(m.mmPerUnit){
+    const step=LK_TICK_MM/m.mmPerUnit;
+    for(let t=step;t<=m.travel+1e-6;t+=step){
+      const row=tb.find(r=>r._travel>=t); if(!row) break;
+      const q=pr(row[m.axle],0); ap+=`<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="${5*k}" class="lk-tick"/>`;
+    }
+  }
+  push(-2e5,ap);
+  // reference numerals with hand-drawn-style leaders, as on the sheet
+  (m.nums||[]).concat(m.ic&&m.ic.n?[{n:m.ic.n,at:m.ic.at,icPoint:true}]:[]).forEach(nm=>{
+    let tgt, z=0;
+    if(nm.icPoint){ if(!pose.IC) return; tgt=pose.IC; }
+    else if(nm.ic){ if(!pose.IC) return; tgt=lkLerp(nm.ic==="driver"?pose[m.driver]:pose[m.follower],pose.IC,nm.t); }
+    else { tgt=nm.tt?lkLerp(pose[nm.to],pose[nm.tt],nm.t):pose[nm.to]; z=(zOf[nm.to]||0)/2;
+      if(nm.r){ const d=lkDist(nm.at,tgt)||1; tgt=lkLerp(tgt,nm.at,nm.r/d); z=0; } }
+    const A=pr(nm.at,0), T=pr(tgt,z);
+    const mid=[(A[0]+T[0])/2+(T[1]-A[1])*.18,(A[1]+T[1])/2-(T[0]-A[0])*.18];
+    const start=lkLerp(A,T,Math.min(.45,LK_NUM_SIZE*k*.75/(lkDist(A,T)||1)));
+    push(-3e5,`<path d="M${start[0].toFixed(1)} ${start[1].toFixed(1)}Q${mid[0].toFixed(1)} ${mid[1].toFixed(1)} ${T[0].toFixed(1)} ${T[1].toFixed(1)}" class="lk-line" fill="none"/><text x="${A[0].toFixed(1)}" y="${A[1].toFixed(1)}" class="lk-num" font-size="${LK_NUM_SIZE*k}">${nm.n}</text>`);
+  });
+  prims.sort((a,b)=>b.d-a.d);
+  return prims.map(p=>p.s).join("");
+}
+
+function mountLinkage(host,m){
+  if(host.dataset.mounted) return; host.dataset.mounted="1";
+  precomputeLinkage(m);
+  const v=m.view, cx=m.pts.BB?m.pts.BB[0]:v[0]+v[2]/2, cyy=m.pts.BB?m.pts.BB[1]:v[1]+v[3]/2;
+  const cam={yaw:0,pitch:0,cx,cy:cyy};
+  const st={frac:0,playing:false,raf:0};
+  const reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  host.innerHTML=`<div class="lk-stage"><svg class="lk-svg" viewBox="${v.join(" ")}" style="--lk-ink:${LK_INK*lkScale(m)}" role="img" aria-label="${t("lkAria")}"></svg></div>
+    <div class="lk-ctrl">
+      <label class="lk-slider"><span>${t("lkTravel")}</span><input type="range" min="0" max="1000" value="0" aria-label="${t("lkTravel")}"></label>
+      <button type="button" class="lk-btn lk-play" aria-pressed="false">${t("lkPlay")}</button>
+      <button type="button" class="lk-btn lk-flat">${t("lkSide")}</button>
+      <button type="button" class="lk-btn lk-3d">${t("lk3D")}</button>
+    </div>
+    <dl class="lk-read"></dl>
+    <p class="lk-note">${tx(m.note)}</p>`;
+  const svg=host.querySelector("svg"), range=host.querySelector("input"), read=host.querySelector(".lk-read"), play=host.querySelector(".lk-play");
+  const fmt=(n,d=0)=>n.toLocaleString(state.lang==="fr"?"fr-CA":"en-US",{maximumFractionDigits:d,minimumFractionDigits:d});
+  function draw(){
+    const pose=lkAt(m,st.frac);
+    svg.innerHTML=buildLinkageSVG(m,pose,cam);
+    const pct=Math.round(st.frac*100), rows=[];
+    rows.push([t("lkTravel"), m.mmPerUnit?`${fmt(pose._travel*m.mmPerUnit)} mm`:`${pct} %`]);
+    if(m.shock){
+      const used=(lkDist(m.pts[m.shock[0]],m.pts[m.shock[1]])-pose._shock)*(m.mmPerUnit||1);
+      rows.push([t("lkStroke"), m.mmPerUnit?`${fmt(used)} mm`:fmt(used)]);
+      rows.push([t("lkLR"), `${fmt(pose._lr,2)} : 1`]);
+    }
+    if(pose.IC&&m.mmPerUnit&&m.pts.BB){
+      const ahead=(pose.IC[0]-m.pts.BB[0])*m.mmPerUnit, up=(m.pts.BB[1]-pose.IC[1])*m.mmPerUnit;
+      rows.push([t("lkIC"), t("lkICpos",fmt(Math.abs(ahead)),ahead>=0,fmt(Math.abs(up)),up>=0)]);
+    }
+    read.innerHTML=rows.map(([k,val])=>`<div><dt>${k}</dt><dd>${val}</dd></div>`).join("");
+    range.value=Math.round(st.frac*1000);
+    range.setAttribute("aria-valuetext",rows[0][1]);
+  }
+  function stop(){ st.playing=false; cancelAnimationFrame(st.raf); play.setAttribute("aria-pressed","false"); play.textContent=t("lkPlay"); }
+  function tween(ms,fn,done){
+    const t0=performance.now();
+    const step=now=>{ const k=Math.min(1,(now-t0)/ms); fn(k); draw(); if(k<1) st.raf=requestAnimationFrame(step); else if(done) done(); };
+    cancelAnimationFrame(st.raf); st.raf=requestAnimationFrame(step);
+  }
+  const ease=k=>k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+  function turnTo(yaw,pitch){
+    if(reduce){ cam.yaw=yaw; cam.pitch=pitch; draw(); return; }
+    const y0=cam.yaw,p0=cam.pitch; tween(600,k=>{const e=ease(k); cam.yaw=y0+(yaw-y0)*e; cam.pitch=p0+(pitch-p0)*e;});
+  }
+  range.oninput=()=>{ stop(); st.frac=range.value/1000; draw(); };
+  play.onclick=()=>{
+    if(st.playing){ stop(); return; }
+    st.playing=true; play.setAttribute("aria-pressed","true"); play.textContent=t("lkPause");
+    const t0=performance.now()-Math.acos(1-2*st.frac)/Math.PI*LK_PLAY_PERIOD_MS/2;
+    const loop=now=>{ if(!st.playing) return; if(!host.isConnected){ stop(); return; } st.frac=(1-Math.cos((now-t0)/LK_PLAY_PERIOD_MS*2*Math.PI))/2; draw(); st.raf=requestAnimationFrame(loop); };
+    st.raf=requestAnimationFrame(loop);
+  };
+  host.querySelector(".lk-flat").onclick=()=>{ stop(); turnTo(0,0); };
+  host.querySelector(".lk-3d").onclick=()=>{ stop(); turnTo(LK_SPIN_YAW,LK_SPIN_PITCH); };
+  /* Drag to turn. touch-action:pan-y on the stage (see CSS) keeps a vertical
+     swipe scrolling the page on a phone, so only a sideways drag turns it. */
+  let drag=null;
+  svg.addEventListener("pointerdown",e=>{ drag={x:e.clientX,y:e.clientY,yaw:cam.yaw,pitch:cam.pitch}; svg.setPointerCapture(e.pointerId); });
+  svg.addEventListener("pointermove",e=>{
+    if(!drag) return;
+    if(!st.playing) cancelAnimationFrame(st.raf);
+    cam.yaw=drag.yaw+(e.clientX-drag.x)*LK_DRAG_RAD_PER_PX;
+    cam.pitch=Math.max(-LK_MAX_PITCH,Math.min(LK_MAX_PITCH,drag.pitch+(e.clientY-drag.y)*LK_DRAG_RAD_PER_PX));
+    if(!st.playing) draw();
+  });
+  const end=()=>{ drag=null; }; svg.addEventListener("pointerup",end); svg.addEventListener("pointercancel",end);
+  // stop playing when the disclosure is closed, so a hidden drawing never keeps animating
+  const det=host.closest("details"); if(det) det.addEventListener("toggle",()=>{ if(!det.open) stop(); });
+  draw();
+  // the drawing "comes to life": turn to three-quarter and compress once
+  if(!reduce) tween(LK_INTRO_MS,k=>{ const e=ease(k); cam.yaw=LK_SPIN_YAW*e; cam.pitch=LK_SPIN_PITCH*e; st.frac=.7*Math.sin(Math.PI*k); });
+  else { cam.yaw=LK_SPIN_YAW; cam.pitch=LK_SPIN_PITCH; draw(); }
+}
+function linkageFor(d){ return LINKAGE_MODELS.find(m=>m.card===cardRef(d)); }
 
 /* ======== PATENT FIGHTS VIEW ======== */
 function fightCardMatches(matcher){
@@ -3990,6 +4438,13 @@ function render(){
      already have .chead itself. */
   tl.querySelectorAll(".thumb").forEach(el=>{
     el.onclick=()=>el.closest(".card").querySelector(".chead").click();
+  });
+  tl.querySelectorAll(".lk-fig details").forEach(det=>{
+    det.addEventListener("toggle",()=>{
+      if(!det.open) return;
+      const m=LINKAGE_MODELS.find(x=>x.card===det.parentNode.dataset.lk);
+      if(m) mountLinkage(det.querySelector(".lk-host"),m);
+    });
   });
   tl.querySelectorAll(".co-link").forEach(b=>{
     b.onclick=(e)=>{ e.stopPropagation(); openColorado(); };
