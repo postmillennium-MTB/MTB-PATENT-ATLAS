@@ -260,6 +260,8 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
   if (errors.length || mgDone !== 1 || mgBroken || pool.game !== pool.drawn || pool.game < 1) {
     failed = true;
     console.error('::error::Match tab crashed, could not finish a round, showed a broken drawing, or its pool is not every drawn entry.');
+  }
+
   // "See it move" linkage viewers: every LINKAGE_MODELS card opens its
   // viewer, draws, and the slider moves the readout. A model whose pivots
   // can't reach its stated travel, or whose card ref is wrong, fails here.
