@@ -836,6 +836,13 @@ html,body{overflow-x:hidden;max-width:100%}
 #timeline[data-view="grid"] .card.open{--plate-w:var(--open-thumb);--plate-h:var(--open-thumb);--ph-year:30px}
 #timeline[data-view="plate"] .thumb,
 #timeline[data-view="grid"] .card.open .thumb{grid-column:1;grid-row:1 / span 3;align-self:center;width:var(--plate-w);height:var(--plate-h);margin:12px 0 12px 12px}
+/* Plate drawings sit on the card as-is: no frame, no panel, no inner padding (Jon,
+   2026-10-24: the framed box looked crowded on a phone). The no-drawing placeholder
+   keeps its tinted tile, since the tile is the picture there. */
+#timeline[data-view="plate"] .thumb:not(.thumb-none),
+#timeline[data-view="grid"] .card.open .thumb:not(.thumb-none){border:0;border-radius:0;background:transparent}
+#timeline[data-view="plate"] .thumb:not(.thumb-none) img,
+#timeline[data-view="grid"] .card.open .thumb:not(.thumb-none) img{padding:0}
 #timeline[data-view="plate"] .chead,
 #timeline[data-view="grid"] .card.open .chead{grid-column:2;grid-row:1 / span 3;align-self:center;flex-wrap:nowrap;padding:12px 8px 12px 14px}
 #timeline[data-view="plate"] .chead .ct,
