@@ -689,6 +689,74 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 @keyframes cardFlash{0%,100%{box-shadow:0 0 0 0 transparent}30%{box-shadow:0 0 0 3px var(--st-lit)}}
 .card-flash{animation:cardFlash 1.5s ease}
 @media(max-width:480px){.fight-titles h3{font-size:20px}.fights-h{font-size:25px}}
+/* ---------- Patent Match view (the Match tab) ----------
+   Folded in from the old standalone match/index.html (2026-10-23). Every
+   class is mg- prefixed so nothing collides with the Atlas's own .chip,
+   .tile, .badge or .panel. Colors come from the active theme's tokens, so
+   all four themes restyle it with no per-theme rules. Mobile-first: the
+   board stacks, and goes side by side from 760px. */
+.mg{--mg-ok:var(--st-active);--mg-bad:var(--st-lit);--mg-ok-bg:color-mix(in srgb,var(--st-active) 13%,var(--surface));--mg-bad-bg:color-mix(in srgb,var(--st-lit) 13%,var(--surface));margin-top:18px}
+.mg-h{font-family:var(--font-display);font-size:30px;font-weight:700;color:var(--primary);letter-spacing:.02em}
+.mg-lede{font-size:14px;color:var(--ink-soft);margin-top:4px;max-width:620px}
+.mg-lede.small{font-size:12.5px}
+.mg-controls{background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:4px 14px;margin:14px 0}
+.mg-controls[open]{padding-bottom:14px}
+.mg-controls summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:40px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft)}
+.mg-controls summary::-webkit-details-marker{display:none}
+.mg-controls summary::after{content:"\25BE";font-size:15px;transition:transform .15s}
+.mg-controls[open] summary::after{transform:rotate(180deg)}
+.mg-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-top:10px}
+.mg-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);min-width:90px}
+/* phones: the nine-chip category row scrolls sideways instead of wrapping */
+.mg-chips{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px;padding-bottom:2px;-webkit-overflow-scrolling:touch;max-width:100%}
+.mg-chip{flex:none;border:1px solid var(--card-border);background:var(--bg);color:var(--ink);border-radius:var(--pill-radius,999px);padding:5px 13px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;min-height:40px;display:inline-flex;align-items:center}
+.mg-chip[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}
+.mg-chip:hover{border-color:var(--primary)}
+.mg-chip:focus-visible,.mg-btn:focus-visible,.mg-tile:focus-visible,.mg-open:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.mg-toggle{display:flex;align-items:center;gap:8px;font-size:13px}
+.mg-btn{background:var(--primary);color:#fff;border:none;border-radius:8px;padding:9px 16px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;min-height:40px}
+.mg-btn:hover{opacity:.92}
+.mg-row .mg-btn{margin-left:auto}
+.mg-clamp{font-size:12.5px;color:var(--mg-bad);margin-top:10px}
+.mg-status{display:flex;flex-wrap:wrap;gap:16px;align-items:center;font-size:14px;margin:0 0 14px;padding:0 2px}
+.mg-status b{font-variant-numeric:tabular-nums}
+.mg-status .mg-miss b{color:var(--mg-bad)}
+.mg-board{display:flex;flex-direction:column;gap:22px}
+.mg-panel h3{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);margin:0 0 8px}
+.mg-imgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.mg-descs{display:flex;flex-direction:column;gap:8px}
+.mg-tile{position:relative;border:2px solid var(--card-border);border-radius:var(--radius);background:var(--surface);cursor:pointer;text-align:left;font:inherit;color:inherit;padding:0;overflow:hidden;transition:border-color .15s,transform .1s,background .2s}
+.mg-tile:hover:not(.matched){border-color:var(--primary);transform:translateY(-1px)}
+.mg-tile.selected{border-color:var(--primary);box-shadow:0 0 0 3px color-mix(in srgb,var(--primary) 22%,transparent)}
+.mg-tile.wrong{border-color:var(--mg-bad);background:var(--mg-bad-bg);animation:mg-shake .3s}
+.mg-tile.matched{border-color:var(--mg-ok);background:var(--mg-ok-bg);cursor:default;transform:none}
+@keyframes mg-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+@media(prefers-reduced-motion:reduce){.mg-tile{transition:none}.mg-tile.wrong{animation:none}}
+.mg-img{display:flex;flex-direction:column}
+.mg-img .mg-pic{display:block;position:relative;aspect-ratio:1/1;background:#fff}
+.mg-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6px;display:block}
+.mg-imgs{align-items:start}
+.mg-badge{flex:none;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--surface);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.mg-img .mg-badge{position:absolute;top:6px;left:6px;z-index:2;background:#26382E;color:#fff}
+.mg-tile.matched .mg-badge{background:var(--mg-ok);color:#fff}
+.mg-reveal{font-size:11.5px;padding:6px 8px;border-top:1px solid var(--card-border);color:var(--ink-soft);line-height:1.3}
+.mg-open{display:inline-block;margin-top:3px;background:none;border:0;padding:4px 0;font:inherit;font-size:12px;font-weight:700;color:var(--primary);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.mg-desc{display:flex;gap:10px;padding:11px 12px;align-items:flex-start}
+.mg-desc .mg-badge{margin-top:1px}
+.mg-desc .mg-txt{font-size:13.5px;line-height:1.4}
+.mg-desc.matched .mg-txt{color:var(--ink-soft)}
+.mg-done{background:var(--mg-ok-bg);border:1px solid var(--mg-ok);border-radius:var(--radius);padding:18px;margin:18px 0;text-align:center}
+.mg-done h3{margin:0 0 6px;font-size:18px;color:var(--mg-ok)}
+.mg-done p{margin:0 0 12px;font-size:14px;color:var(--ink-soft)}
+.mg-note{margin-top:26px;font-size:12px;color:var(--ink-soft)}
+@media(min-width:760px){
+  .mg-board{flex-direction:row}
+  .mg-panel{flex:1;min-width:0}
+  .mg-chips{flex-wrap:wrap;overflow-x:visible}
+  .mg-imgs{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+}
+@media(max-width:480px){.mg-h{font-size:25px}}
+.mg-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .jtag{font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:.08em;background:var(--ink);color:var(--surface);border-radius:4px;padding:2px 5px;flex:0 0 auto;margin-top:3px;opacity:.65;white-space:nowrap}
 .pill.design{background:transparent;color:var(--ink-soft);border:1px dashed var(--ink-soft)}
 .empty{text-align:center;color:var(--ink-soft);padding:40px 10px;font-size:14px}
@@ -2187,6 +2255,7 @@ const ICON_CLOCK_ARROW_UP = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"2
 const ICON_CLOCK_ARROW_DOWN = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-clock-arrow-down icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 6v6l2 1\"/><path d=\"M12.337 21.994a10 10 0 1 1 9.588-8.767\"/><path d=\"m14 18 4 4 4-4\"/><path d=\"M18 14v8\"/></svg>";
 const ICON_SWORDS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-swords icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m13 19 6-6\"/><path d=\"M14.5 17.5 3.586 6.586A2 2 0 013 5.172V3h2.172a2 2 0 011.414.586L17.5 14.5\"/><path d=\"m14.828 6.172 2.586-2.586A2 2 0 0118.828 3H21v2.172a2 2 0 01-.586 1.414l-2.586 2.586\"/><path d=\"m16 16 4 4\"/><path d=\"m19 21 2-2\"/><path d=\"m5 14 4 4\"/><path d=\"m5 21-2-2\"/><path d=\"M7.5 16.5 4 20\"/></svg>";
 const ICON_COMPASS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-compass icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z\"/><circle cx=\"12\" cy=\"12\" r=\"10\"/></svg>";
+const ICON_PUZZLE = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-puzzle icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z\"/></svg>";
 const ICON_CHART = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chart-no-axes-combined icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 16v5\"/><path d=\"M16 14.639V21\"/><path d=\"M20 10.656V21\"/><path d=\"m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15\"/><path d=\"M4 18.463V21\"/><path d=\"M8 14.656V21\"/></svg>";
 /* Favorites: heart-plus for the not-yet-saved state of the per-card toggle,
    plain heart for the Favorites tab label and (filled, via the fill="currentColor"
@@ -2265,6 +2334,17 @@ const T = {
     majorDisputes:n=>`${n} major disputes`,
     fightsTitle:"Patent Fights",
     fightsIntro:"The lawsuits are where the drama lives. These are the major disputes in the atlas — who fought, what over, and how it ended. Tap any patent to jump to its full card.",
+    tabMatch:"Match",
+    matchTitle:"Patent Match", matchIntro:"Match each real patent drawing to the description of what it covers. Tap a drawing, then the description you think goes with it.",
+    matchPoolNote:n=>`Drawn from all ${n} atlas entries that have a drawing, across every category. Each description is the opening of that entry's own summary, trimmed automatically, so some start with filing details before the mechanism.`,
+    matchOptions:"Filters & options", matchPairs:"Pairs", matchShowTimer:"Show timer", matchNewRound:"New round",
+    matchClamp:(a,w)=>`Only ${a} ${a===1?"entry matches":"entries match"} these categories, so this round has ${a} pair${a===1?"":"s"} instead of ${w}.`,
+    matchMatched:(m,n)=>`Matched ${m}/${n}`, matchMistakes:m=>`Mistakes ${m}`, matchTime:s=>`Time ${s}`,
+    matchDrawings:"Drawings", matchDescriptions:"Descriptions", matchOpenCard:"Open the card →",
+    matchDoneH:"Round complete", matchDoneStats:(n,time,m)=>`All ${n} matched in ${time} with ${m} mistake${m===1?"":"s"}.`, matchPlayAgain:"Play again",
+    matchAnnounceOk:title=>`Matched: ${title}`, matchAnnounceBad:"Not a match, try again.",
+    matchNote:"Every drawing, title and description comes straight from the atlas's own entries, so new entries join the game as soon as they are added.",
+    matchCount:n=>`${n} drawings in the pool`,
     whatItsAbout:"What it's about — ", howItEnded:"How it ended — ", patentsInFight:"Patents in this fight",
     vsWord:"v.",
     statsTitle:"Atlas by the numbers",
@@ -2387,6 +2467,17 @@ const T = {
     majorDisputes:n=>`${n} litiges majeurs`,
     fightsTitle:"Batailles de brevets",
     fightsIntro:"Les procès sont là où se joue le vrai drame. Voici les principaux litiges de l'atlas — qui s'est affronté, à quel sujet, et comment ça s'est terminé. Touchez un brevet pour aller à sa fiche complète.",
+    tabMatch:"Match",
+    matchTitle:"Patent Match", matchIntro:"Associez chaque dessin de brevet réel à la description de ce qu'il couvre. Touchez un dessin, puis la description qui lui correspond selon vous.",
+    matchPoolNote:n=>`Tiré des ${n} entrées de l'atlas qui possèdent un dessin, toutes catégories confondues. Chaque description est le début du résumé de l'entrée, raccourci automatiquement : certaines commencent donc par les détails de dépôt avant le mécanisme.`,
+    matchOptions:"Filtres et options", matchPairs:"Paires", matchShowTimer:"Afficher le chronomètre", matchNewRound:"Nouvelle manche",
+    matchClamp:(a,w)=>`Seulement ${a} entrée${a===1?" correspond":"s correspondent"} à ces catégories, donc cette manche compte ${a} paire${a===1?"":"s"} au lieu de ${w}.`,
+    matchMatched:(m,n)=>`Associées ${m}/${n}`, matchMistakes:m=>`Erreurs ${m}`, matchTime:s=>`Temps ${s}`,
+    matchDrawings:"Dessins", matchDescriptions:"Descriptions", matchOpenCard:"Ouvrir la fiche →",
+    matchDoneH:"Manche terminée", matchDoneStats:(n,time,m)=>`Les ${n} associées en ${time} avec ${m} erreur${m===1?"":"s"}.`, matchPlayAgain:"Rejouer",
+    matchAnnounceOk:title=>`Association trouvée : ${title}`, matchAnnounceBad:"Ce n'est pas la bonne association, réessayez.",
+    matchNote:"Chaque dessin, titre et description provient directement des entrées de l'atlas : les nouvelles entrées rejoignent le jeu dès leur ajout.",
+    matchCount:n=>`${n} dessins dans la réserve`,
     whatItsAbout:"De quoi il s'agit — ", howItEnded:"Comment ça s'est terminé — ", patentsInFight:"Brevets concernés",
     vsWord:"c.",
     statsTitle:"L'atlas en chiffres",
@@ -2883,8 +2974,8 @@ const tabRow=$("#filterTabs");
    itself and out of the data-i18n span below for the same reason as the
    ICONS section's own comment: a language switch's textContent reset
    would turn a baked-in <svg> into literal on-screen markup. */
-const TAB_ICONS={stats:ICON_COMPASS, fights:ICON_SWORDS};
-[{key:"stats",tkey:"tabStats"}].concat(TAB_DEFS,[{key:"all",tkey:"tabAll"},{key:"fights",tkey:"tabFights"}]).forEach(tabDef=>{
+const TAB_ICONS={stats:ICON_COMPASS, fights:ICON_SWORDS, match:ICON_PUZZLE};
+[{key:"stats",tkey:"tabStats"}].concat(TAB_DEFS,[{key:"all",tkey:"tabAll"},{key:"fights",tkey:"tabFights"},{key:"match",tkey:"tabMatch"}]).forEach(tabDef=>{
   const btn=document.createElement("button");
   btn.className="tab-btn"+(tabDef.key===activeTab?" on":"")+(tabDef.key==="fights"?" tab-fights":"");
   /* Label lives in its own span (relabeled by applyStaticI18n's generic
@@ -2960,9 +3051,9 @@ function renderTabs(){
      (rivalries and the stats snapshot aren't chip-filterable, and a saved
      collection is its own list rather than a facet to narrow) -- all three
      hide the same chip panes. */
-  const noPanesMode=activeTab==="fights"||activeTab==="stats"||activeTab==="fav";
+  const noPanesMode=activeTab==="fights"||activeTab==="stats"||activeTab==="fav"||activeTab==="match";
   document.body.classList.toggle("home-view", activeTab==="stats");
-  const viewSeg=$("#viewSeg"); if(viewSeg) viewSeg.hidden = activeTab==="stats"||activeTab==="fights";
+  const viewSeg=$("#viewSeg"); if(viewSeg) viewSeg.hidden = activeTab==="stats"||activeTab==="fights"||activeTab==="match";
   $("#filters").setAttribute("data-mode", activeTab==="all"?"all":"single");
   $("#filterPanes").classList.toggle("hidden-pane", noPanesMode);
   Object.entries(paneEls).forEach(([k,el])=>{
@@ -3807,6 +3898,162 @@ function renderFights(){
   renderBars(D.filter(d=>d.b&&d.b.includes("litigated")));
 }
 
+/* ======== PATENT MATCH VIEW (the Match tab) ========
+   Pair each patent drawing with the description of what it covers. Folded
+   in from the old standalone match/index.html on 2026-10-23: that page
+   carried a frozen MATCH_DATA copy of D that had to be regenerated by hand
+   after every data session, and had fallen ~20 entries behind. This view
+   reads D live, so a new entry with a drawing joins the pool the moment it
+   is added -- the same no-snapshot rule the Rabbit Holes picker follows.
+   match/index.html is now just a redirect to #tab=match.
+   The pool is every entry with a drawing and a summary, any category, any
+   confidence tier. A description is the first ~MATCH_TEASER_MAX characters
+   of the entry's own `s` (or `w` when it has no `s`), cut at a word
+   boundary -- the entry's own words, never a paraphrase. MG holds the round
+   across renders, so a language switch or a trip to another tab and back
+   keeps the same board instead of reshuffling it. */
+const MATCH_PAIR_OPTIONS = [6,9];      // round sizes offered in the Pairs chip row
+const MATCH_DEFAULT_PAIRS = 6;
+const MATCH_MISMATCH_MS = 550;         // how long a wrong pair flashes before resetting
+const MATCH_TEASER_MAX = 200;
+const MG = {
+  pairs: MATCH_DEFAULT_PAIRS,
+  cats: new Set(Object.keys(CATS)),
+  round: [], imgOrder: [], descOrder: [],
+  selImg: null, selDesc: null,
+  matched: new Set(), mistakes: 0,
+  startedAt: null, timerOn: true, timerHandle: null,
+  clamped: false, ctrlOpen: null, busy: false
+};
+/* Entry text goes into HTML attributes and text here, so escape it (the alt
+   text and titles carry quotes and ampersands). */
+function mgEsc(s){ return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function matchPool(){ return D.filter(d=>firstDrawing(d) && (d.s||d.w)); }
+function matchTeaser(d){
+  const text=stripCardLinks(tx(d.s||d.w))||"";
+  if(text.length<=MATCH_TEASER_MAX) return text;
+  const cut=text.lastIndexOf(" ",MATCH_TEASER_MAX);
+  return text.slice(0,cut>40?cut:MATCH_TEASER_MAX)+"…";
+}
+function matchAlt(d){
+  const alt=d.imgs&&d.imgs.length ? d.imgs[0].alt : d.imgAlt;
+  return tx(alt)||tx(d.t);
+}
+function startMatchRound(){
+  stopMatchTimer();
+  const pool=matchPool().filter(d=>MG.cats.has(d.cat));
+  const n=Math.min(MG.pairs,pool.length);
+  MG.clamped=n<MG.pairs;
+  const shuffle=a=>{ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+  MG.round=shuffle(pool).slice(0,n);
+  MG.imgOrder=shuffle(MG.round.map((_,i)=>i));
+  MG.descOrder=shuffle(MG.round.map((_,i)=>i));
+  MG.selImg=null; MG.selDesc=null;
+  MG.matched=new Set(); MG.mistakes=0;
+  MG.startedAt=null; MG.doneAt=null; // the clock starts on the first tile tap, not on deal
+  MG.busy=false;
+}
+function stopMatchTimer(){ if(MG.timerHandle){ clearInterval(MG.timerHandle); MG.timerHandle=null; } }
+function matchDone(){ return MG.round.length>0 && MG.matched.size===MG.round.length; }
+function matchElapsed(){
+  if(MG.startedAt==null) return "0:00";
+  const s=Math.floor(((MG.doneAt||Date.now())-MG.startedAt)/1000);
+  return `${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`;
+}
+function ensureMatchTimer(){
+  if(MG.timerHandle || !MG.timerOn || MG.startedAt==null || matchDone()) return;
+  MG.timerHandle=setInterval(()=>{
+    const el=document.getElementById("mgTime");
+    if(!el || activeTab!=="match"){ stopMatchTimer(); return; }
+    el.textContent=matchElapsed();
+  },1000);
+}
+function renderMatch(){
+  if(!MG.round.length) startMatchRound();
+  if(MG.ctrlOpen==null) MG.ctrlOpen=window.matchMedia("(min-width: 760px)").matches;
+  const tl=$("#timeline");
+  const cats=Object.keys(CATS).filter(k=>matchPool().some(d=>d.cat===k));
+  tl.innerHTML=`<section class="mg" aria-labelledby="mgH">
+    <h2 class="mg-h" id="mgH">${t("matchTitle")}</h2>
+    <p class="mg-lede">${t("matchIntro")}</p>
+    <p class="mg-lede small">${t("matchPoolNote",matchPool().length)}</p>
+    <details class="mg-controls" id="mgControls"${MG.ctrlOpen?" open":""}>
+      <summary>${t("matchOptions")}</summary>
+      <div class="mg-row"><span class="mg-label" id="mgPairsL">${t("matchPairs")}</span>
+        <div class="mg-chips" role="group" aria-labelledby="mgPairsL">${MATCH_PAIR_OPTIONS.map(n=>`<button type="button" class="mg-chip" data-mg-pairs="${n}" aria-pressed="${n===MG.pairs}">${n}</button>`).join("")}</div></div>
+      <div class="mg-row"><span class="mg-label" id="mgCatsL">${t("tabCategory")}</span>
+        <div class="mg-chips" role="group" aria-labelledby="mgCatsL">${cats.map(k=>`<button type="button" class="mg-chip" data-mg-cat="${k}" aria-pressed="${MG.cats.has(k)}">${mgEsc(catLabel(k))}</button>`).join("")}</div></div>
+      <div class="mg-row"><label class="mg-toggle"><input type="checkbox" id="mgTimerToggle"${MG.timerOn?" checked":""}> ${t("matchShowTimer")}</label>
+        <button type="button" class="mg-btn" id="mgNew">${t("matchNewRound")}</button></div>
+      ${MG.clamped?`<p class="mg-clamp">${t("matchClamp",MG.round.length,MG.pairs)}</p>`:""}
+    </details>
+    <div class="mg-status">
+      <span>${t("matchMatched",`<b>${MG.matched.size}</b>`,`<b>${MG.round.length}</b>`)}</span>
+      <span class="mg-miss">${t("matchMistakes",`<b>${MG.mistakes}</b>`)}</span>
+      ${MG.timerOn?`<span>${t("matchTime",`<b id="mgTime">${matchElapsed()}</b>`)}</span>`:""}
+    </div>
+    <div class="mg-board">
+      <div class="mg-panel"><h3>${t("matchDrawings")}</h3><div class="mg-imgs">${MG.imgOrder.map((i,pos)=>matchImgTile(i,pos)).join("")}</div></div>
+      <div class="mg-panel"><h3>${t("matchDescriptions")}</h3><div class="mg-descs">${MG.descOrder.map((i,pos)=>matchDescTile(i,pos)).join("")}</div></div>
+    </div>
+    ${matchDone()?`<div class="mg-done" role="status"><h3>${t("matchDoneH")}</h3><p>${t("matchDoneStats",MG.round.length,matchElapsed(),MG.mistakes)}</p><button type="button" class="mg-btn" id="mgAgain">${t("matchPlayAgain")}</button></div>`:""}
+    <p class="mg-note">${t("matchNote")}</p>
+    <div class="mg-sr" aria-live="polite" id="mgLive"></div>
+  </section>`;
+  $("#mgControls").addEventListener("toggle",e=>{ MG.ctrlOpen=e.target.open; });
+  tl.querySelectorAll("[data-mg-pairs]").forEach(b=>b.onclick=()=>{ MG.pairs=Number(b.dataset.mgPairs); startMatchRound(); renderMatch(); });
+  tl.querySelectorAll("[data-mg-cat]").forEach(b=>b.onclick=()=>{
+    const k=b.dataset.mgCat;
+    if(MG.cats.has(k) && MG.cats.size>1) MG.cats.delete(k); else MG.cats.add(k);
+    startMatchRound(); renderMatch();
+  });
+  $("#mgTimerToggle").onchange=e=>{ MG.timerOn=e.target.checked; stopMatchTimer(); renderMatch(); };
+  $("#mgNew").onclick=()=>{ startMatchRound(); renderMatch(); };
+  const again=$("#mgAgain"); if(again) again.onclick=()=>{ startMatchRound(); renderMatch(); };
+  tl.querySelectorAll(".mg-img:not(.matched)").forEach(b=>b.onclick=()=>pickMatch("img",Number(b.dataset.mg)));
+  tl.querySelectorAll(".mg-desc:not(.matched)").forEach(b=>b.onclick=()=>pickMatch("desc",Number(b.dataset.mg)));
+  tl.querySelectorAll(".mg-open").forEach(b=>b.onclick=e=>{ e.stopPropagation(); stopMatchTimer(); jumpToCard(b.dataset.ref); });
+  ensureMatchTimer();
+  $("#resultCount").textContent=t("matchCount",matchPool().length);
+  $("#clearAll").hidden=true;
+  updateTabDots();
+  renderBars(matchPool());
+}
+/* A matched drawing is a <div>, not a <button>, so its "Open the card" link
+   is a real button that isn't nested inside another one. */
+function matchImgTile(i,pos){
+  const d=MG.round[i], src=firstDrawing(d);
+  const done=MG.matched.has(i), sel=MG.selImg===i;
+  const pic=`<span class="mg-badge">${pos+1}</span><span class="mg-pic"><img src="${thumbSrc(src)}" data-full="${src}" onerror="thumbFallback(this)" alt="${mgEsc(matchAlt(d))}" loading="lazy"></span>`;
+  if(done) return `<div class="mg-tile mg-img matched" data-mg="${i}">${pic}<span class="mg-reveal">${mgEsc(tx(d.t))}<br><button type="button" class="mg-open" data-ref="${mgEsc(cardRef(d))}">${t("matchOpenCard")}</button></span></div>`;
+  return `<button type="button" class="mg-tile mg-img${sel?" selected":""}" data-mg="${i}" aria-pressed="${sel}">${pic}</button>`;
+}
+function matchDescTile(i,pos){
+  const d=MG.round[i], done=MG.matched.has(i), sel=MG.selDesc===i;
+  return `<button type="button" class="mg-tile mg-desc${done?" matched":""}${sel?" selected":""}" data-mg="${i}" ${done?"disabled":""} aria-pressed="${sel}"><span class="mg-badge">${String.fromCharCode(65+pos)}</span><span class="mg-txt">${mgEsc(matchTeaser(d))}</span></button>`;
+}
+function pickMatch(side,i){
+  if(MG.busy || MG.matched.has(i)) return;
+  if(MG.startedAt==null) MG.startedAt=Date.now();
+  if(side==="img") MG.selImg=i; else MG.selDesc=i;
+  if(MG.selImg==null || MG.selDesc==null){ renderMatch(); return; }
+  if(MG.selImg===MG.selDesc){
+    MG.matched.add(i);
+    MG.selImg=null; MG.selDesc=null;
+    if(matchDone()){ MG.doneAt=Date.now(); stopMatchTimer(); } else MG.doneAt=null;
+    renderMatch();
+    const live=$("#mgLive"); if(live) live.textContent=t("matchAnnounceOk",tx(MG.round[i].t));
+    return;
+  }
+  MG.mistakes++;
+  renderMatch();
+  document.querySelector(`.mg-img[data-mg="${MG.selImg}"]`)?.classList.add("wrong");
+  document.querySelector(`.mg-desc[data-mg="${MG.selDesc}"]`)?.classList.add("wrong");
+  const live=$("#mgLive"); if(live) live.textContent=t("matchAnnounceBad");
+  MG.busy=true;
+  setTimeout(()=>{ MG.busy=false; MG.selImg=null; MG.selDesc=null; if(activeTab==="match") renderMatch(); },MATCH_MISMATCH_MS);
+}
+
 /* ======== STATS SNAPSHOT VIEW ======== */
 /* ===== Shared bar-chart math/markup =====
    Three different visuals in the Stats tab and timeline all reduce to
@@ -4403,6 +4650,8 @@ function renderStats(){
    the current step size (getEras) and rebuilds the card list. */
 function render(){
   if(typeof syncHash==="function") syncHash();
+  if(typeof activeTab!=="undefined" && activeTab==="match"){ renderMatch(); return; }
+  if(typeof stopMatchTimer==="function") stopMatchTimer();
   if(typeof activeTab!=="undefined" && activeTab==="fights"){ renderFights(); return; }
   if(typeof activeTab!=="undefined" && activeTab==="stats"){ renderStats(); return; }
   const list=D.filter(passes).sort((a,b)=>sortDesc ? b.y-a.y : a.y-b.y);
@@ -4500,7 +4749,7 @@ function render(){
    silently wipe the reader's filters. */
 function jumpToEra(k){
   const find=()=>document.getElementById(k)||document.querySelector(`[data-era="${k}"]`);
-  const fromHome=activeTab==="stats"||activeTab==="fights";
+  const fromHome=activeTab==="stats"||activeTab==="fights"||activeTab==="match";
   if(fromHome){ activeTab="all"; renderTabs(); render(); }
   requestAnimationFrame(()=>{
     let el=find();
@@ -4630,7 +4879,7 @@ function initFromHash(){
 }
 function jumpToCard(ref){
   ref=REF_ALIASES[ref]||ref;
-  if(activeTab==="fights"||activeTab==="stats"){ activeTab="all"; renderTabs(); render(); }
+  if(activeTab==="fights"||activeTab==="stats"||activeTab==="match"){ activeTab="all"; renderTabs(); render(); }
   requestAnimationFrame(()=>{
     let target=document.getElementById("p-"+ref);
     if(!target){ // card may be filtered out, or (Favorites tab) simply not saved — reset and retry
@@ -4687,7 +4936,7 @@ sortBtn.addEventListener("click",()=>{
 
 /* ======== SURPRISE ME ======== */
 document.getElementById("surpriseBtn").addEventListener("click",()=>{
-  const pool=(activeTab!=="fights"&&activeTab!=="stats")?D.filter(passes):D;
+  const pool=(activeTab!=="fights"&&activeTab!=="stats"&&activeTab!=="match")?D.filter(passes):D;
   const pick=(pool.length?pool:D)[Math.floor(Math.random()*(pool.length?pool.length:D.length))];
   if(pick) jumpToCard(cardRef(pick));
 });
@@ -4879,7 +5128,7 @@ document.getElementById("eraScopeToggle").addEventListener("click",()=>{
   inp.addEventListener("input",()=>{ clearTimeout(searchTimer); searchTimer=setTimeout(()=>{
     searchQ=inp.value.trim();
     // Atlas and Fights don't show search results -- typing moves to the full list.
-    if(searchQ && (activeTab==="stats"||activeTab==="fights")){
+    if(searchQ && (activeTab==="stats"||activeTab==="fights"||activeTab==="match")){
       // Those views hide the filter chips, so any filter still set from earlier would be invisible -- start clean.
       clearFilterState(); syncChipsToState(); activeTab="all"; renderTabs();
     }
