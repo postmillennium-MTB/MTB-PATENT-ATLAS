@@ -468,6 +468,8 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .clearbtn{background:none;border:none;color:var(--primary);font-size:12px;font-weight:600;text-decoration:underline;padding:4px}
 /* ---------- Filter tabs ---------- */
 .tab-row{max-width:880px;margin:0 auto;display:flex;gap:5px;overflow-x:auto;padding:3px 16px;scrollbar-width:none}
+/* Fades the cut-off edge so a phone reader can tell more tabs sit past it. */
+.tab-row.more-right{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 40px),transparent)}
 .tab-row::-webkit-scrollbar{display:none}
 .tab-btn{flex:0 0 auto;position:relative;border:1px solid var(--card-border);background:var(--surface);color:var(--ink-soft);border-radius:8px 8px 0 0;padding:9px 14px;font-size:14px;font-weight:var(--ui-weight);border-bottom:none;font-family:var(--font-display);letter-spacing:.01em;min-height:44px}
 .tab-btn.on{background:var(--primary);color:#fff;border-color:var(--primary)}
@@ -828,8 +830,12 @@ html,body{overflow-x:hidden;max-width:100%}
 .thumb-ph-c{font-family:var(--font-mono);font-size:9px;font-weight:600;line-height:1.25;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
 /* The year lives on the thumbnail in plate/grid; the tinted view keeps the
    original chip in the title row. */
-#timeline[data-view="plate"] .chead .yr,#timeline[data-view="grid"] .chead .yr{display:none}
+#timeline[data-view="plate"] .chead .yr,#timeline[data-view="grid"] .card:not(.open) .chead .yr{display:none}
 #timeline[data-view="tint"] .thumb-yr{display:none}
+/* Jon, 2026-10-24: the chip sat on the drawing's corner. The plate list already
+   prints the year as the group heading, so its chip goes; an open grid card
+   shows the title-row chip instead of covering its drawing. */
+#timeline[data-view="plate"] .thumb-yr,#timeline[data-view="grid"] .card.open .thumb-yr{display:none}
 /* --- plate (and an open card in the grid): thumb | title | 3 icon buttons --- */
 #timeline[data-view="plate"] .chead-row,
 #timeline[data-view="grid"] .card.open .chead-row{display:grid;grid-template-columns:var(--plate-w) minmax(0,1fr) auto auto auto;align-items:start}
@@ -845,6 +851,8 @@ html,body{overflow-x:hidden;max-width:100%}
 #timeline[data-view="grid"] .card.open .thumb:not(.thumb-none) img{padding:0}
 #timeline[data-view="plate"] .chead,
 #timeline[data-view="grid"] .card.open .chead{grid-column:2;grid-row:1 / span 3;align-self:center;flex-wrap:nowrap;padding:12px 8px 12px 14px}
+/* On a phone the open card's year chip gets its own line above the title. */
+@media(max-width:600px){#timeline[data-view="grid"] .card.open .chead{flex-wrap:wrap;row-gap:6px}#timeline[data-view="grid"] .card.open .chead .ct{flex-basis:100%}}
 #timeline[data-view="plate"] .chead .ct,
 #timeline[data-view="grid"] .card.open .chead .ct{order:0;flex:1 1 auto}
 #timeline[data-view="plate"] .chead .caret,
@@ -884,7 +892,9 @@ html,body{overflow-x:hidden;max-width:100%}
 #timeline[data-view="grid"] .card:not(.open){--ph-year:32px}
 #timeline[data-view="grid"] .card:not(.open) .chead-row{display:flex;flex-direction:column;align-items:stretch}
 #timeline[data-view="grid"] .card:not(.open) .thumb{width:100%;aspect-ratio:1 / 1;margin:0;border:0;border-bottom:1px solid var(--card-border);border-radius:0}
-#timeline[data-view="grid"] .card:not(.open) .thumb img{padding:12px}
+/* Top and bottom padding clear the year chip and status flags, so they sit
+   on the blank paper above and below the drawing instead of over it. */
+#timeline[data-view="grid"] .card:not(.open) .thumb img{padding:30px 12px}
 #timeline[data-view="grid"] .card:not(.open) .thumb-flags{display:flex;flex-wrap:wrap;gap:4px;position:absolute;left:6px;right:6px;bottom:6px;z-index:1}
 #timeline[data-view="grid"] .card:not(.open) .card-icon-btn,
 #timeline[data-view="grid"] .card:not(.open) .chead .jtag,
@@ -3067,8 +3077,25 @@ function renderTabs(){
     el.classList.toggle("hidden-pane", noPanesMode || !(activeTab==="all"||activeTab===k));
   });
   // recompute scroll arrows once the now-visible row has real width
-  requestAnimationFrame(()=>{ if(typeof updInv==="function")updInv(); if(typeof updBrand==="function")updBrand(); });
+  requestAnimationFrame(()=>{ if(typeof updInv==="function")updInv(); if(typeof updBrand==="function")updBrand(); showActiveTab(); });
 }
+/* On a phone the tab row is wider than the screen, so a tab opened from a
+   link (#tab=match) could be selected yet out of sight. Scroll the row itself
+   (not the page) to bring it in, and fade the right edge while tabs remain. */
+function showActiveTab(){
+  const on=tabRow.querySelector(".tab-btn.on");
+  if(on){
+    const l=on.getBoundingClientRect().left-tabRow.getBoundingClientRect().left+tabRow.scrollLeft, r=l+on.offsetWidth;
+    if(l<tabRow.scrollLeft) tabRow.scrollLeft=l-16;
+    else if(r>tabRow.scrollLeft+tabRow.clientWidth) tabRow.scrollLeft=r-tabRow.clientWidth+16;
+  }
+  updTabFade();
+}
+function updTabFade(){
+  tabRow.classList.toggle("more-right", tabRow.scrollLeft+tabRow.clientWidth<tabRow.scrollWidth-2);
+}
+tabRow.addEventListener("scroll",updTabFade,{passive:true});
+window.addEventListener("resize",updTabFade);
 function updateTabDots(){
   TAB_DEFS.forEach(tabDef=>{
     const dot=document.querySelector(`.tab-btn[data-tab="${tabDef.key}"] .tab-dot`);
