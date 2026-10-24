@@ -562,8 +562,8 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .patent-fig summary{padding:6px 10px;font-family:var(--font-mono);font-size:10.5px;color:var(--ink-soft);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px}
 .patent-fig summary::-webkit-details-marker{display:none}
 .patent-fig summary:hover{color:var(--primary)}
-.patent-fig summary::after{content:"\25BE";flex:none;transition:transform .15s}
-.patent-fig details:not([open]) summary::after{transform:rotate(-90deg)}
+.patent-fig .fig-ico{flex:none;width:16px;height:16px}
+.patent-fig details[open] .fig-ico-closed,.patent-fig details:not([open]) .fig-ico-open{display:none}
 .patent-fig details[open] summary{border-bottom:1px solid var(--card-border)}
 .patent-fig figcaption{padding:6px 10px;font-family:var(--font-mono);font-size:10.5px;color:var(--ink-soft);border-top:1px solid var(--card-border);text-align:right}
 .patent-fig figcaption a{color:var(--primary);text-decoration:none}
@@ -588,6 +588,33 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .deep-story-body{margin-top:8px;font-size:14px;line-height:1.55}
 .deep-story-body p{margin:0 0 10px}
 .deep-story-body p:last-child{margin-bottom:0}
+/* ---------- "See it move" linkage viewer ----------
+   Patent-sheet look: one ink weight, paper fill inside every tube so nearer
+   parts hide farther ones. The stage keeps the sheet's white in every theme,
+   same as .patent-fig. */
+.lk-fig .lk-host{padding:0 0 10px}
+.lk-stage{background:#fff;touch-action:pan-y;cursor:grab}
+.lk-stage:active{cursor:grabbing}
+.lk-svg{display:block;width:100%;height:auto;max-height:440px}
+.lk-line{stroke:#111;stroke-width:var(--lk-ink);fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lk-tube-o{stroke:#111;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lk-tube-i{stroke:#fff;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lk-eye{fill:#fff;stroke:#111;stroke-width:var(--lk-ink)}
+.lk-dash{stroke:#111;stroke-width:var(--lk-ink);stroke-dasharray:calc(var(--lk-ink)*8) calc(var(--lk-ink)*5);fill:none}
+.lk-path{stroke:var(--primary);stroke-width:calc(var(--lk-ink)*1.2);stroke-dasharray:calc(var(--lk-ink)*.8) calc(var(--lk-ink)*3.5);stroke-linecap:round;fill:none}
+.lk-tick{fill:var(--primary)}
+.lk-num{font-family:Arial,Helvetica,sans-serif;fill:#111;text-anchor:middle;dominant-baseline:middle}
+.lk-ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 10px 0}
+.lk-slider{flex:1 1 100%;display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--ink-soft);font-family:var(--font-mono)}
+.lk-slider input{width:100%;accent-color:var(--primary);min-height:28px}
+.lk-btn{background:var(--chip-bg);border:1px solid var(--card-border);color:var(--primary);border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:600;cursor:pointer;min-height:32px}
+.lk-btn:hover,.lk-btn[aria-pressed="true"]{background:var(--primary);color:#fff;border-color:var(--primary)}
+.lk-read{display:grid;grid-template-columns:1fr;gap:4px 14px;margin:10px 10px 0;font-size:12.5px}
+.lk-read div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--card-border);padding-bottom:3px}
+.lk-read dt{color:var(--ink-soft)}
+.lk-read dd{margin:0;font-family:var(--font-mono);text-align:right}
+.lk-note{margin:10px 10px 0;font-size:11.5px;color:var(--ink-soft);line-height:1.5}
+@media(min-width:640px){.lk-slider{flex:1 1 220px}.lk-read{grid-template-columns:1fr 1fr}}
 /* ---------- Colorado MTB innovation feature ---------- */
 .co-link{display:inline-flex;align-items:center;gap:4px;margin-top:10px;background:var(--chip-bg);border:1px solid var(--card-border);color:var(--primary);border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:var(--font-body)}
 .co-link:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
@@ -1731,7 +1758,7 @@ const D = [
   {"y":2015,"g":null,"t":{"en":"Garbaruk — deliberately patent-free (trade secret)","fr":"Garbaruk — délibérément sans brevet (secret industriel)"},"a":"Garbaruk (Poland)","num":null,"cat":"drive","st":"unknown","exp":null,"j":"PL","b":["priorart"],"who":["Garbaruk"],"conf":"l","s":{"en":"Garbaruk, known for ultralight CNC-machined cassettes, chainrings, and derailleur cages, protects its construction methods as trade secrets rather than filing utility patents.","fr":"Garbaruk, connu pour ses cassettes, plateaux et chapes de dérailleur ultralégers usinés en CNC, protège ses méthodes de construction comme secrets industriels plutôt que par le dépôt de brevets d'utilité."},"w":{"en":"Same philosophy as the SE Quadangle entry elsewhere in this atlas: not every important design choice shows up in a patent search, and a company can choose secrecy over disclosure as a deliberate IP strategy, not an oversight.","fr":"La même philosophie que la fiche SE Quadangle ailleurs dans cet atlas : tous les choix de conception importants n'apparaissent pas dans une recherche de brevets, et une entreprise peut choisir le secret plutôt que la divulgation comme stratégie de propriété intellectuelle délibérée, pas un oubli."}},
   {"y":2012,"g":null,"t":{"en":"Sotto Group drivetrain patents for Praxis Works (bundle, 6 filings)","fr":"Brevets de transmission de Sotto Group pour Praxis Works (regroupement, 6 dépôts)"},"a":"Sotto Group LLC (David Earle) → Praxis Works","num":"20120214629","nums":["20120214629","20130230266","9004771","9168976","20170056955","20150307156"],"cat":"drive","st":"unknown","exp":null,"b":[],"who":["Sotto Group","David Earle","Praxis"],"conf":"m","img":"pictures/US20120214629A1.png","imgAlt":{"en":"Fig. 1 of US 2012/0214629 (Levatime): a bicycle sprocket (12) on a crank (2, 3) with a drive chain (4) shown at two positions, its teeth's bottom-edge center points at two different radii (D1, D2) and a chain-pin guiding groove (14, 141, 142) called out where the chain engages","fr":"Fig. 1 du brevet US 2012/0214629 (Levatime) : un pignon de vélo (12) sur une manivelle (2, 3) avec une chaîne d'entraînement (4) représentée à deux positions, les points centraux des bords inférieurs de ses dents à deux rayons différents (D1, D2) et une rainure de guidage d'axe de chaîne (14, 141, 142) indiquée là où la chaîne s'engage"},"s":{"en":"Six more Sotto Group filings, this time contract-engineered for crankset and cassette maker Praxis Works rather than a suspension client: Levatime (US 2012/0214629), the Praxis BB System (US 2013/0230266), a bottom-bracket bearing-preload design (US 9,004,771), two cassette-and-wheel filings (US 9,168,976 and US 2017/0056955), and a magnetic chain-retention system (US 2015/0307156). Per Sotto's own patent notice, these were 'developed exclusively' for Praxis rather than filed under Sotto's own name — bundled here as one entry rather than individually re-verified against each application's own record this pass.","fr":"Six autres dépôts de Sotto Group, cette fois développés sous contrat pour le fabricant de boîtiers de pédalier et cassettes Praxis Works plutôt que pour un client de suspension : Levatime (US 2012/0214629), le Praxis BB System (US 2013/0230266), une conception de précharge de roulement de boîtier de pédalier (US 9 004 771), deux dépôts liés aux cassettes et roues (US 9 168 976 et US 2017/0056955), et un système de rétention de chaîne magnétique (US 2015/0307156). Selon l'avis de brevet propre à Sotto, ceux-ci ont été « développés exclusivement » pour Praxis plutôt que déposés sous le nom propre de Sotto — regroupés ici en une seule fiche plutôt que vérifiés individuellement au regard du dossier de chaque demande cette fois-ci."},"w":{"en":"Extends the Sotto Group story past suspension entirely: the same firm behind Yeti's Switch and Apro's OIC/SPPS also quietly engineers drivetrain hardware for a cassette-and-crank brand most riders would never think to connect to a suspension-linkage designer. A contract engineering shop's IP footprint, seen whole, looks nothing like a single product category.","fr":"Étend l'histoire de Sotto Group bien au-delà de la suspension : la même entreprise derrière le Switch de Yeti et les OIC/SPPS d'Apro conçoit aussi discrètement du matériel de transmission pour une marque de cassettes et de boîtiers de pédalier que la plupart des cyclistes ne penseraient jamais à relier à un concepteur de biellettes de suspension. Vu dans son ensemble, l'empreinte de propriété intellectuelle d'un bureau d'études sous contrat ne ressemble en rien à une seule catégorie de produit."}},
   {"y":2021,"g":null,"t":{"en":"AMS Rise Grips (patent pending)","fr":"Poignées AMS Rise (brevet en instance)"},"a":"All Mountain Style (Barcelona, Spain)","num":null,"cat":"comp","st":"pending","exp":null,"j":"ES","b":[],"who":["AMS"],"conf":"l","s":{"en":"AMS's Rise Grips carry patent-pending status, alongside other modular accessories like the AMS Adjustable Kickstand, also listed as patent pending.","fr":"Les poignées Rise d'AMS ont un statut de brevet en instance, aux côtés d'autres accessoires modulaires comme la béquille réglable AMS, également listée comme en instance de brevet."},"w":{"en":"A small Barcelona accessories brand filing on grips and a kickstand — proof patent activity in this industry isn't confined to suspension and drivetrains; even the smallest touchpoints get IP attention now.","fr":"Une petite marque d'accessoires de Barcelone déposant des brevets sur des poignées et une béquille — la preuve que l'activité de brevet dans cette industrie ne se limite pas à la suspension et à la transmission ; même les plus petits points de contact reçoivent désormais une attention en propriété intellectuelle."}},
-  {"y":1980,"g":1982,"t":{"en":"Oakley handle grips (US 4,308,762 + US D267,147 + US 4,416,166)","fr":"Poignées Oakley (US 4 308 762 + US D267 147 + US 4 416 166)"},"a":"James H. Jannard & George J. Tackles / Oakley, Inc.","num":"4308762","nums":["4308762","D267147","4416166"],"cat":"comp","st":"expired","exp":2002,"b":[],"who":["Oakley","James Jannard"],"conf":"v","imgs":[{"src":"pictures/US4308762A.png","link":"https://patents.google.com/patent/US4308762A/en","alt":{"en":"Fig. 1 of US 4,308,762: side view of the lightened grip (10) on its axis (13) beside the bar end (14), with a field of raised circular studs (15) on the grip body (11), four oval hand openings (21, 21a) through the body and a large flange (16) with its own opening","fr":"Fig. 1 du brevet US 4 308 762 : vue latérale de la poignée allégée (10) sur son axe (13) à côté de l'extrémité du guidon (14), avec un champ de plots circulaires en relief (15) sur le corps (11), quatre ouvertures ovales pour la main (21, 21a) à travers le corps et une grande collerette (16) percée d'une ouverture"},"caption":{"en":"US 4,308,762, Fig. 1 — studded body with oval openings","fr":"US 4 308 762, Fig. 1 — corps à plots avec ouvertures ovales"}},{"src":"pictures/US4308762A.1.png","link":"https://patents.google.com/patent/US4308762A/en","alt":{"en":"Fig. 4 of US 4,308,762: a second embodiment (110) in partial section, the hollow grip body (111) with a row of round openings (121) cut through its lower edge (111a), bar bore (112) and flanges (116, 119) at each end","fr":"Fig. 4 du brevet US 4 308 762 : un second mode de réalisation (110) en coupe partielle, le corps creux de la poignée (111) avec une rangée d'ouvertures rondes (121) découpées dans son bord inférieur (111a), l'alésage du guidon (112) et des collerettes (116, 119) à chaque extrémité"},"caption":{"en":"US 4,308,762, Fig. 4 — second embodiment, round openings","fr":"US 4 308 762, Fig. 4 — second mode de réalisation, ouvertures rondes"}},{"src":"pictures/US4416166A.png","alt":{"en":"Sectioned side view of the grip (10) on the end of a handlebar (12): the inner support sleeve (11a) closed by an end wall (11b), the outer sleeve (13) with its end flanges (13b), and the tread holes (20, 21) through which the inner sleeve's raised studs show","fr":"Vue latérale en coupe de la poignée (10) à l'extrémité d'un guidon (12) : le manchon de support intérieur (11a) fermé par une paroi d'extrémité (11b), le manchon extérieur (13) avec ses collerettes d'extrémité (13b), et les trous de bande de roulement (20, 21) par lesquels apparaissent les plots en relief du manchon intérieur"},"caption":{"en":"US 4,416,166 — section through the two-sleeve grip","fr":"US 4 416 166 — coupe de la poignée à deux manchons"},"link":"https://patents.google.com/patent/US4416166A/en"},{"src":"pictures/US4416166A.1.png","alt":{"en":"Fig. 7 of US 4,416,166: detail of the closed end of the grip, showing the handlebar end (12), the inner sleeve's end wall (11b), the outer sleeve's end flange (13b) wrapped around it, and an end element (30b)","fr":"Fig. 7 du brevet US 4 416 166 : détail de l'extrémité fermée de la poignée, montrant l'extrémité du guidon (12), la paroi d'extrémité du manchon intérieur (11b), la collerette d'extrémité du manchon extérieur (13b) qui l'enveloppe, et un élément d'extrémité (30b)"},"caption":{"en":"US 4,416,166, Fig. 7 — closed end, inner and outer sleeve","fr":"US 4 416 166, Fig. 7 — extrémité fermée, manchons intérieur et extérieur"},"link":"https://patents.google.com/patent/US4416166A/en"}],"s":{"en":"Three Oakley grip patents, all naming James H. Jannard. US 4,308,762, \"Lightened hand grip\": filed April 14, 1980, granted January 5, 1982, expired April 2000. Its abstract describes a grip with hand-engageable openings in a flange and/or the grip body, optionally with a tread pattern on the body. US D267,147, a grip design patent: filed December 8, 1980, granted December 7, 1982, expired December 1996 (14 years from grant); no drawing sheet is shown here. US 4,416,166, \"Handle grip\" (with George J. Tackles): filed March 30, 1982, granted November 22, 1983, expired March 2002, with an Australian counterpart filed in 1983. It is a two-part grip for a bicycle or motorcycle handlebar: an inner support sleeve that fits on and grips the bar, and an outer sleeve over it that the hand grasps. The sleeves may interlock by tongue-and-groove elements, the grooves being holes in the outer sleeve that also serve as tread, and they may have differential hardnesses for better grip support and more comfortable gripping. The entry's expiry year follows the newest member, 2002.","fr":"Trois brevets de poignées Oakley, tous au nom de James H. Jannard. US 4 308 762, « Lightened hand grip » : déposé le 14 avril 1980, délivré le 5 janvier 1982, expiré en avril 2000. Son résumé décrit une poignée dont la collerette et/ou le corps comportent des ouvertures où la main s'engage, avec éventuellement un motif de bande de roulement sur le corps. US D267 147, brevet de dessin d'une poignée : déposé le 8 décembre 1980, délivré le 7 décembre 1982, expiré en décembre 1996 (14 ans après la délivrance) ; aucune planche de dessin n'est présentée ici. US 4 416 166, « Handle grip » (avec George J. Tackles) : déposé le 30 mars 1982, délivré le 22 novembre 1983, expiré en mars 2002, avec un équivalent australien déposé en 1983. Il s'agit d'une poignée en deux parties pour guidon de vélo ou de moto : un manchon de support intérieur qui se monte sur le guidon et s'y accroche, et un manchon extérieur que la main saisit. Les manchons peuvent s'emboîter par des éléments à tenon et rainure, les rainures étant des trous du manchon extérieur qui servent aussi de bande de roulement, et ils peuvent avoir des duretés différentes pour un meilleur soutien et un maintien plus confortable. L'année d'expiration de la fiche suit le membre le plus récent, 2002."},"w":{"en":"Oakley began in 1975 as a motocross-grip company. These three filings, from 1980 to 1982, show the grip being reworked on paper: first lightened by cutting openings through the flange and body, then split into a sleeve that holds the bar and a sleeve the hand touches, so hardness can be set separately for each job and the holes that lock the two together double as tread.","fr":"Oakley est née en 1975 comme fabricant de poignées de motocross. Ces trois dépôts, de 1980 à 1982, montrent la poignée retravaillée sur le papier : d'abord allégée par des ouvertures dans la collerette et le corps, puis scindée en un manchon qui tient le guidon et un manchon que touche la main, de sorte que la dureté de chacun se règle séparément et que les trous qui verrouillent les deux pièces servent aussi de bande de roulement."}},
+  {"y":1980,"g":1982,"t":{"en":"Oakley handle grips (US 4,308,762 + US D267,147 + US 4,416,166)","fr":"Poignées Oakley (US 4 308 762 + US D267 147 + US 4 416 166)"},"a":"James H. Jannard & George J. Tackles / Oakley, Inc.","num":"4308762","nums":["4308762","D267147","4416166"],"cat":"comp","st":"expired","exp":2002,"b":[],"who":["Oakley","James Jannard"],"conf":"v","imgs":[{"src":"pictures/US4308762A.png","link":"https://patents.google.com/patent/US4308762A/en","alt":{"en":"Fig. 1 of US 4,308,762: side view of the lightened grip (10) on its axis (13) beside the bar end (14), with a field of raised circular studs (15) on the grip body (11), four oval hand openings (21, 21a) through the body and a large flange (16) with its own opening","fr":"Fig. 1 du brevet US 4 308 762 : vue latérale de la poignée allégée (10) sur son axe (13) à côté de l'extrémité du guidon (14), avec un champ de plots circulaires en relief (15) sur le corps (11), quatre ouvertures ovales pour la main (21, 21a) à travers le corps et une grande collerette (16) percée d'une ouverture"},"caption":{"en":"US 4,308,762, Fig. 1 — studded body with oval openings","fr":"US 4 308 762, Fig. 1 — corps à plots avec ouvertures ovales"}},{"src":"pictures/US4308762A.1.png","link":"https://patents.google.com/patent/US4308762A/en","alt":{"en":"Fig. 4 of US 4,308,762: a second embodiment (110) in partial section, the hollow grip body (111) with a row of round openings (121) cut through its lower edge (111a), bar bore (112) and flanges (116, 119) at each end","fr":"Fig. 4 du brevet US 4 308 762 : un second mode de réalisation (110) en coupe partielle, le corps creux de la poignée (111) avec une rangée d'ouvertures rondes (121) découpées dans son bord inférieur (111a), l'alésage du guidon (112) et des collerettes (116, 119) à chaque extrémité"},"caption":{"en":"US 4,308,762, Fig. 4 — second embodiment, round openings","fr":"US 4 308 762, Fig. 4 — second mode de réalisation, ouvertures rondes"}},{"src":"pictures/US4416166A.png","alt":{"en":"Sectioned side view of the grip (10) on the end of a handlebar (12): the inner support sleeve (11a) closed by an end wall (11b), the outer sleeve (13) with its end flanges (13b), and the tread holes (20, 21) through which the inner sleeve's raised studs show","fr":"Vue latérale en coupe de la poignée (10) à l'extrémité d'un guidon (12) : le manchon de support intérieur (11a) fermé par une paroi d'extrémité (11b), le manchon extérieur (13) avec ses collerettes d'extrémité (13b), et les trous de bande de roulement (20, 21) par lesquels apparaissent les plots en relief du manchon intérieur"},"caption":{"en":"US 4,416,166 — section through the two-sleeve grip","fr":"US 4 416 166 — coupe de la poignée à deux manchons"},"link":"https://patents.google.com/patent/US4416166A/en"},{"src":"pictures/US4416166A.1.png","alt":{"en":"Fig. 7 of US 4,416,166: detail of the closed end of the grip, showing the handlebar end (12), the inner sleeve's end wall (11b), the outer sleeve's end flange (13b) wrapped around it, and an end element (30b)","fr":"Fig. 7 du brevet US 4 416 166 : détail de l'extrémité fermée de la poignée, montrant l'extrémité du guidon (12), la paroi d'extrémité du manchon intérieur (11b), la collerette d'extrémité du manchon extérieur (13b) qui l'enveloppe, et un élément d'extrémité (30b)"},"caption":{"en":"US 4,416,166, Fig. 7 — closed end, inner and outer sleeve","fr":"US 4 416 166, Fig. 7 — extrémité fermée, manchons intérieur et extérieur"},"link":"https://patents.google.com/patent/US4416166A/en"}],"s":{"en":"Three Oakley grip patents, all naming James H. Jannard. US 4,308,762, \"Lightened hand grip\": filed April 14, 1980, granted January 5, 1982, expired April 2000. Its abstract describes a grip with hand-engageable openings in a flange and/or the grip body, optionally with a tread pattern on the body. US D267,147, a grip design patent: filed December 8, 1980, granted December 7, 1982, expired December 1996 (14 years from grant); no drawing sheet is shown here. US 4,416,166, \"Handle grip\" (with George J. Tackles): filed March 30, 1982, granted November 22, 1983, expired March 2002, with an Australian counterpart filed in 1983. It is a two-part grip for a bicycle or motorcycle handlebar: an inner support sleeve that fits on and grips the bar, and an outer sleeve over it that the hand grasps. The sleeves may interlock by tongue-and-groove elements, the grooves being holes in the outer sleeve that also serve as tread, and they may have differential hardnesses for better grip support and more comfortable gripping. The entry's expiry year follows the newest member, 2002.","fr":"Trois brevets de poignées Oakley, tous au nom de James H. Jannard. US 4 308 762, « Lightened hand grip » : déposé le 14 avril 1980, délivré le 5 janvier 1982, expiré en avril 2000. Son résumé décrit une poignée dont la collerette et/ou le corps comportent des ouvertures où la main s'engage, avec éventuellement un motif de bande de roulement sur le corps. US D267 147, brevet de dessin d'une poignée : déposé le 8 décembre 1980, délivré le 7 décembre 1982, expiré en décembre 1996 (14 ans après la délivrance) ; aucune planche de dessin n'est présentée ici. US 4 416 166, « Handle grip » (avec George J. Tackles) : déposé le 30 mars 1982, délivré le 22 novembre 1983, expiré en mars 2002, avec un équivalent australien déposé en 1983. Il s'agit d'une poignée en deux parties pour guidon de vélo ou de moto : un manchon de support intérieur qui se monte sur le guidon et s'y accroche, et un manchon extérieur que la main saisit. Les manchons peuvent s'emboîter par des éléments à tenon et rainure, les rainures étant des trous du manchon extérieur qui servent aussi de bande de roulement, et ils peuvent avoir des duretés différentes pour un meilleur soutien et un maintien plus confortable. L'année d'expiration de la fiche suit le membre le plus récent, 2002."},"w":{"en":"Oakley began in 1975 as a motocross-grip company. These three filings, from 1980 to 1982, show the grip being reworked on paper: first lightened by cutting openings through the flange and body, then split into a sleeve that holds the bar and a sleeve the hand touches, so hardness can be set separately for each job and the holes that lock the two together double as tread. The rubber compound Oakley sold these grips with is called Unobtainium, and that name is protected as a trademark, not by any of these patents: U.S. Reg. No. 1,740,532, filed May 17, 1991, registered December 15, 1992 and since renewed, for nose pieces and ear stems for eyeglasses and sunglasses. None of the three patents names a material.","fr":"Oakley est née en 1975 comme fabricant de poignées de motocross. Ces trois dépôts, de 1980 à 1982, montrent la poignée retravaillée sur le papier : d'abord allégée par des ouvertures dans la collerette et le corps, puis scindée en un manchon qui tient le guidon et un manchon que touche la main, de sorte que la dureté de chacun se règle séparément et que les trous qui verrouillent les deux pièces servent aussi de bande de roulement. Le composé de caoutchouc dont Oakley dote ces poignées s'appelle Unobtainium, et ce nom est protégé par une marque, non par l'un de ces brevets : marque américaine n° 1 740 532, déposée le 17 mai 1991, enregistrée le 15 décembre 1992 et renouvelée depuis, pour des plaquettes nasales et des branches de lunettes de vue et de soleil. Aucun des trois brevets ne nomme de matériau."}},
   {"y":2019,"g":null,"t":{"en":"RideWrap frame protection film (proprietary, no patent located)","fr":"Film de protection de cadre RideWrap (propriétaire, aucun brevet localisé)"},"a":"RideWrap (Whistler, BC)","num":null,"cat":"frame","st":"unknown","exp":null,"b":[],"who":["RideWrap","Velocity Hucking Systems","Dyedbro"],"conf":"l","s":{"en":"RideWrap engineers its own 9-mil TPU film in-house (Lotus Pro), paired with proprietary frame-mapping software for near-complete coverage, a self-healing ceramic top coat, and hydrophobic surface properties — described throughout as proprietary engineering rather than patented invention. In May 2025 RideWrap acquired the assets of Velocity Hucking Systems Limited (VHS), the cult-favorite maker of the 'Slapper Tape' chain-slap dampener — a malleable silicone strip with low-profile air-cushioned bubbles that absorbs chain impact and kills chainstay noise — relaunching the line as the VHS V-3 in July 2025.","fr":"RideWrap conçoit son propre film TPU de 9 mil en interne (Lotus Pro), associé à un logiciel de cartographie de cadre propriétaire pour une couverture quasi complète, une couche de finition céramique auto-cicatrisante, et des propriétés de surface hydrophobes — décrit systématiquement comme de l'ingénierie propriétaire plutôt qu'une invention brevetée. En mai 2025, RideWrap a acquis les actifs de Velocity Hucking Systems Limited (VHS), le fabricant culte du « Slapper Tape », un amortisseur de claquement de chaîne — une bande de silicone malléable à bulles coussinées de faible profil qui absorbe l'impact de la chaîne et supprime le bruit des bases — relançant la gamme sous le nom VHS V-3 en juillet 2025."},"w":{"en":"Included as a deliberate contrast to the patent-heavy entries around it: a real, differentiated product built on trade secrets and in-house process rather than a single defensible patent claim. The VHS acquisition wasn't a quiet one either — VHS founder Ferris Fairbairn publicly alleged corporate sabotage in the run-up to the sale, naming a Dyedbro co-owner (maker of the competing SHUSH dampener) as involved. Worth its own entry if the allegations firm up into something citable, but noted here since it's directly downstream of a RideWrap acquisition.","fr":"Inclus comme contraste délibéré avec les fiches à forte densité de brevets qui l'entourent : un produit réel et différencié construit sur des secrets industriels et un procédé interne plutôt qu'une seule revendication de brevet défendable. L'acquisition de VHS n'a pas non plus été discrète — le fondateur de VHS, Ferris Fairbairn, a publiquement allégué un sabotage d'entreprise dans les préparatifs de la vente, impliquant un copropriétaire de Dyedbro (fabricant de l'amortisseur concurrent SHUSH). Mériterait sa propre fiche si les allégations se confirment en quelque chose de citable, mais notée ici car directement en aval d'une acquisition de RideWrap."}},
   {"y":2023,"g":2025,"t":{"en":"Aenomaly SwitchGrade saddle-angle adjuster (US 12,448,072)","fr":"Aenomaly, ajusteur d'angle de selle SwitchGrade (US 12,448,072)"},"a":"Aenomaly Constructs","num":"12448072","cat":"comp","st":"active","exp":2045,"b":[],"who":["Aenomaly"],"conf":"v","s":{"en":"A mechanism fitting between the saddle rails and dropper post that lets a rider toggle saddle angle on the fly — nose-down for climbing, level for flats, nose-up for descending — via a single lever, with 2 to 8 discrete positions depending on model.","fr":"Un mécanisme s'insérant entre les rails de selle et la tige télescopique qui permet à un pilote de basculer l'angle de la selle à la volée — pointe vers le bas pour grimper, à plat sur le plat, pointe vers le haut pour descendre — via un seul levier, avec 2 à 8 positions discrètes selon le modèle."},"w":{"en":"A genuinely new touchpoint in the bike's adjustability stack: geometry has gotten size-specific, suspension has gotten tunable, and now saddle angle itself is becoming a mid-ride control rather than a fixed setup choice.","fr":"Un point de contact véritablement nouveau dans la pile de réglages du vélo : la géométrie est devenue spécifique à la taille, la suspension est devenue réglable, et maintenant l'angle de selle lui-même devient une commande en cours de sortie plutôt qu'un choix de réglage fixe."}},
   {"y":2020,"g":2021,"t":{"en":"Specialized Mirror lattice saddle (US 11,186,336)","fr":"Selle à structure en treillis Specialized Mirror (US 11 186 336)"},"a":"Philip Alan Primeaux, Garrett Yale Davis Getter, Christopher Yu / Specialized Bicycle Components, Inc.","num":"11186336","cat":"comp","st":"active","exp":2040,"b":[],"who":["Specialized"],"conf":"v","s":{"en":"US 11,186,336, \"Bicycle Saddle,\" filed July 13, 2020 and granted November 30, 2021 to Specialized Bicycle Components, Inc. Claims a cushion built from concentric regions of different stiffness — a firmer outer region enclosing a softer middle region, which itself encloses an even softer inner region — rather than one uniform density of foam. Manufactured as a 3D-printed elastomer lattice via Carbon's Digital Light Synthesis process, marketed as Mirror Technology.","fr":"US 11 186 336, « Bicycle Saddle », déposé le 13 juillet 2020 et délivré le 30 novembre 2021 à Specialized Bicycle Components, Inc. Revendique un coussin construit à partir de régions concentriques de raideur différente — une région extérieure plus ferme entourant une région médiane plus souple, elle-même entourant une région intérieure encore plus souple — plutôt qu'une densité de mousse uniforme. Fabriqué comme un treillis élastomère imprimé en 3D via le procédé Digital Light Synthesis de Carbon, commercialisé sous le nom de Mirror Technology."},"w":{"en":"The saddle equivalent of a suspension tune: instead of one foam density compromising between support and pressure relief everywhere, the lattice varies its own give region by region — firm where the sit bones load it, softer where a rider's soft tissue needs relief. Specialized's S-Works Power with Mirror was the first production saddle built this way; the same Carbon DLS process has since spread to grips and shoe midsoles.","fr":"L'équivalent, pour une selle, d'un réglage de suspension : plutôt qu'une seule densité de mousse faisant partout un compromis entre soutien et décompression, le treillis fait varier sa propre souplesse région par région — ferme là où les ischions chargent la selle, plus souple là où les tissus mous du cycliste ont besoin de décompression. La S-Works Power à technologie Mirror de Specialized fut la première selle de série construite ainsi ; le même procédé Carbon DLS s'est depuis répandu vers les poignées et les semelles de chaussures."},"img":"pictures/US11186336B2.png","imgAlt":{"en":"Fig. 1 of US 11,186,336: the top view of the cushion (102) with its concentric lattice-density stiffness regions (110, 112, 114, 116) mapped by shading, above the rigid base structure (104) it mounts to","fr":"Fig. 1 du brevet US 11 186 336 : vue de dessus du coussin (102) avec ses régions de raideur en treillis concentriques (110, 112, 114, 116) représentées par des hachures, au-dessus de la structure de base rigide (104) sur laquelle il se fixe"}},
@@ -1878,6 +1905,122 @@ const FIGHTS = [
    the linked entries don't already support. */
 const RABBIT_HOLES_SHOWN = 30;
 const RABBIT_HOLES = [
+];
+
+/* ---- LINKAGE MODELS ("See it move" viewer on suspension cards) ----
+   One entry per card that gets an animated version of its own patent figure.
+   The viewer (LINKAGE VIEWER, below the render code) is generic: any planar
+   four-bar rear end can be added here with no new code. Every coordinate is
+   read off the patent sheet named in `sheet`, in that image's own pixels
+   (x right, y down), so a reader can check a pivot against the drawing.
+
+   {
+     card:  "7717212",              // the D[] entry's num (cardRef) that shows it
+     sheet: "pictures/….png",       // the drawing the coordinates were read from
+     caption:{en,fr},               // summary line of the disclosure
+     note:{en,fr},                  // what is approximate and why — shown under the viewer
+     mmPerUnit: 0.728 | null,       // drawing px -> mm, from the tire size; null = show % only
+     travel: 220,                   // full-slider vertical axle travel, drawing px
+     view:[x,y,w,h],                // crop of the sheet to show (drawing px)
+     pts:{NAME:[x,y]},              // every named point at full extension (slider 0)
+     ground:["P4","P5"],            // the two frame pivots of the four-bar
+     driver:"AX", follower:"P7",    // driver link = ground[0]->driver, follower = ground[1]->follower,
+                                    // coupler = driver->follower. The slider turns the driver link.
+     axle:"AX",                     // the rear axle (any point on any body)
+     body:{driver:[…],coupler:[…],follower:[…]}, // extra points riding on each moving body; the rest are frame
+     shock:["P8","P9"] | null,      // shock eyes, for the leverage-ratio readout; coil:true draws a spring
+     wheels:[{c:"AX",r:467}],       // tire circles (r in drawing px)
+     members:[{p:["A","B",…], w:22, z:40, closed?:true}], // tubes; z>0 draws a left/right pair z px apart
+     nums:[{n:"1", at:[x,y], to:"A"}], // the sheet's own reference numerals: text at `at` (where the
+                                    // sheet prints it), leader to point `to`. Optional: tt+t aims t of the
+                                    // way from `to` to `tt` (a tube's middle); r aims at a circle of radius r
+                                    // around `to` (a tire); ic:"driver"|"follower" + t aims along that
+                                    // link's construction line toward the instant center.
+     ic:{n:"15", at:[x,y]} | true,  // draw the coupler's instant center and the two links extended to it;
+                                    // n/at label it with the sheet's own numeral when the sheet has one
+   }
+   Numerals are reproduced only where the sheet itself prints them; the
+   viewer never invents a numeral for a part the sheet leaves unlabelled. */
+const LINKAGE_MODELS = [
+  {
+    card:"7717212",
+    sheet:"pictures/US7717212B2_b.png",
+    caption:{en:"Fig. 4 in motion — drag to turn it, slide to compress",fr:"La Fig. 4 en mouvement — glissez pour la faire pivoter, curseur pour comprimer"},
+    note:{en:"Pivot positions are measured off Fig. 4, and the instant center they produce lands on the patent's own point 15 to within a few pixels. Millimetres assume a 26-inch tire about 680 mm across, since the patent gives no scale, and the 160 mm travel range is illustrative. The chainstay turns about pivot 4, so the axle path is an arc. The seatstay rides on the axle pivot and drives the rocker, which compresses the shock. The dashed lines through 4 and 5 meet at the seatstay's instant center, which is where the brake reacts against the frame.",
+          fr:"Les positions des pivots sont relevées sur la Fig. 4, et le centre instantané qu'elles donnent tombe à quelques pixels près sur le point 15 du brevet. Les millimètres supposent un pneu de 26 pouces d'environ 680 mm de diamètre, faute d'échelle dans le brevet, et la plage de 160 mm de débattement est indicative. La base tourne autour du pivot 4 : la trajectoire de l'axe est donc un arc. Le hauban s'appuie sur le pivot d'axe et entraîne la biellette, qui comprime l'amortisseur. Les lignes pointillées passant par 4 et 5 se croisent au centre instantané du hauban, là où le frein prend appui sur le cadre."},
+    mmPerUnit:0.728,
+    travel:220,
+    view:[-30,0,2638,1560],
+    pts:{AX:[497,933],P4:[1020,823],P5:[1062,681],P7:[940,669],P8:[1104,613],P9:[1154,791],
+         BB:[1102,913],FA:[2045,935],STT:[918,351],STJ:[985,478],HTT:[1650,128],HTB:[1712,292],
+         DTJ:[1690,250],CRN:[1735,330],ST9:[1172,770]},
+    ground:["P4","P5"], driver:"AX", follower:"P7", axle:"AX",
+    body:{driver:[],coupler:[],follower:["P8"]},
+    shock:["P8","P9"], coil:true,
+    wheels:[{c:"AX",r:467},{c:"FA",r:465}],
+    members:[
+      {p:["STT","BB"],w:30,z:0},             // seat tube
+      {p:["STJ","HTT"],w:30,z:0},            // top tube
+      {p:["BB","DTJ"],w:36,z:0},             // down tube
+      {p:["HTT","HTB"],w:40,z:0},            // head tube
+      {p:["CRN","FA"],w:28,z:52},            // fork legs
+      {p:["P4","BB"],w:16,z:30},             // chainstay pivot mount
+      {p:["P9","ST9"],w:14,z:0},             // shock mount tab
+      {p:["P4","AX"],w:26,z:52},             // chainstay
+      {p:["AX","P7"],w:24,z:56},             // seatstay
+      {p:["P5","P7","P8"],w:12,z:24,closed:true} // rocker
+    ],
+    nums:[
+      {n:"1",at:[705,995],to:"AX",tt:"P4",t:.5},
+      {n:"2",at:[585,735],to:"AX",tt:"P7",t:.4},
+      {n:"3",at:[968,762],to:"P7",tt:"P5",t:.5},
+      {n:"4",at:[1013,965],to:"P4"},
+      {n:"5",at:[1082,490],to:"P5"},
+      {n:"7",at:[897,553],to:"P7"},
+      {n:"8",at:[1142,505],to:"P8"},
+      {n:"9",at:[1262,890],to:"P9"},
+      {n:"6",at:[394,1050],to:"AX"},
+      {n:"12",at:[1262,475],to:"P8",tt:"P9",t:.35},
+      {n:"11",at:[1352,170],to:"STJ",tt:"HTT",t:.55},
+      {n:"16",at:[2072,372],to:"FA",r:465},
+      {n:"17",at:[555,372],to:"AX",r:467},
+      {n:"13",at:[1308,556],ic:"follower",t:.45},
+      {n:"14",at:[1390,852],ic:"driver",t:.7}
+    ],
+    ic:{n:"15",at:[1553,616]}
+  },
+  {
+    card:"7128329",
+    sheet:"pictures/US7661503B2.png",
+    caption:{en:"Fig. 1a in motion — drag to turn it, slide to compress",fr:"La Fig. 1a en mouvement — glissez pour la faire pivoter, curseur pour comprimer"},
+    note:{en:"Fig. 1a of US 7,661,503 is a skeletal vehicle, not a specific bike, and it gives no scale, so travel is shown as a share of the stroke drawn here and there is no shock to give a leverage ratio. Pivot positions are measured off the sheet; the instant center they produce lands on the small construction circle the patent draws above the lower link. The rear axle rides on the rear triangle, which hangs from two short links, so the axle path is not an arc about any fixed pivot. The dashed lines are the two links extended; where they cross is the rear triangle's instant center, the point the squat construction is built from.",
+          fr:"La Fig. 1a de l'US 7 661 503 représente un véhicule schématique, pas un vélo précis, et ne donne aucune échelle : le débattement est donc exprimé en part de la course dessinée ici, et l'absence d'amortisseur empêche de calculer un rapport de levier. Les positions des pivots sont relevées sur la planche ; le centre instantané qu'elles donnent tombe sur le petit cercle de construction que le brevet trace au-dessus de la biellette inférieure. L'axe arrière est porté par le triangle arrière, suspendu à deux biellettes courtes : sa trajectoire n'est donc un arc autour d'aucun pivot fixe. Les lignes pointillées prolongent les deux biellettes ; leur croisement est le centre instantané du triangle arrière, le point à partir duquel se construit le squat."},
+    mmPerUnit:null,
+    travel:70,
+    view:[20,470,1100,500],
+    pts:{AX:[251.7,726],U:[299.3,692.3],L:[470,734.7],LF:[465.7,703.3],UF:[514.3,676],
+         BB:[504.3,729.3],FA:[885,726],FK:[625,673]},
+    ground:["LF","UF"], driver:"L", follower:"U", axle:"AX",
+    body:{driver:[],coupler:["AX"],follower:[]},
+    shock:null,
+    wheels:[{c:"AX",r:189},{c:"FA",r:190}],
+    members:[
+      {p:["UF","FK","FA"],w:8,z:0},         // frame (16)
+      {p:["BB","FA"],w:7,z:0},
+      {p:["LF","BB"],w:8,z:10},
+      {p:["UF","BB"],w:8,z:10},
+      {p:["AX","U","L"],w:7,z:22,closed:true}, // rear triangle
+      {p:["UF","U"],w:6,z:14},               // upper link
+      {p:["LF","L"],w:6,z:14}                // lower link
+    ],
+    nums:[
+      {n:"1",at:[150,568],to:"AX",r:189},
+      {n:"16",at:[640,615],to:"FK",tt:"FA",t:.25},
+      {n:"8",at:[402,577],to:"UF",tt:"U",t:.5},
+      {n:"46",at:[540,790],to:"BB"}
+    ],
+    ic:true
+  }
 ];
 
 /* ---- HOME SEARCH SUGGESTIONS (Atlas tab, under the big search box) ----
@@ -2120,6 +2263,10 @@ const ICON_CHART = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" heigh
    by icon, same as every other ICON_* above. */
 const ICON_HEART_PLUS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-heart-plus icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49\"/><path d=\"M15 15h6\"/><path d=\"M18 12v6\"/></svg>";
 const ICON_HEART = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-heart icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5\"/></svg>";
+/* Lucide chevron-down / chevron-right for the per-drawing fold toggle (see .patent-fig CSS):
+   down while the drawing is open, right once it is folded. */
+const ICON_FIG_OPEN='<svg class="fig-ico fig-ico-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+const ICON_FIG_CLOSED='<svg class="fig-ico fig-ico-closed" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>';
 const ICON_HEART_FILLED = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-heart icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5\"/></svg>";
 const T = {
   en:{
@@ -2172,6 +2319,10 @@ const T = {
     wgPanelTitle:"Dave Weagle Portfolio", wgLinkBtn:"Weagle portfolio timeline", wgAriaLabel:"Dave Weagle patent portfolio timeline",
     wgIntro:(n,a,e,p)=>`${n} entries in this atlas credit Dave Weagle: ${a} active, ${e} expired, ${p} still pending or without a confirmed term. Each bar runs from the filing year to the estimated expiry. Tap a bar to open its card.`,
     wgNow:"Now", wgOpenEnded:"no confirmed expiry",
+    lkTravel:"Wheel travel", lkStroke:"Shock stroke used", lkLR:"Leverage ratio", lkIC:"Instant center",
+    lkICpos:(a,ahead,u,up)=>`${a} mm ${ahead?"ahead of":"behind"} the bottom bracket, ${u} mm ${up?"above":"below"} it`,
+    lkPlay:"Play", lkPause:"Pause", lkSide:"Side view", lk3D:"3D view",
+    lkAria:"Animated patent drawing of the rear suspension linkage. Use the wheel-travel slider to compress it.",
     wgNote:"Years only, so dates can be off by one. Bundled family entries (such as DW-Link) run to the newest member's expiry. Lawsuit entries have no patent term and are left out.",
     wgBarTip:(title,y,end)=>`${title} (${y}–${end}) — click to view`,
     minimize:"Minimize", close:"Close", dismiss:"Dismiss",
@@ -2301,6 +2452,10 @@ const T = {
     wgPanelTitle:"Portefeuille de Dave Weagle", wgLinkBtn:"Chronologie du portefeuille Weagle", wgAriaLabel:"Chronologie du portefeuille de brevets de Dave Weagle",
     wgIntro:(n,a,e,p)=>`${n} fiches de cet atlas citent Dave Weagle : ${a} actives, ${e} expirées, ${p} encore en instance ou sans échéance confirmée. Chaque barre va de l'année de dépôt à l'expiration estimée. Touchez une barre pour ouvrir sa fiche.`,
     wgNow:"Auj.", wgOpenEnded:"expiration non confirmée",
+    lkTravel:"Débattement de roue", lkStroke:"Course d'amortisseur utilisée", lkLR:"Rapport de levier", lkIC:"Centre instantané",
+    lkICpos:(a,ahead,u,up)=>`${a} mm ${ahead?"devant":"derrière"} le boîtier de pédalier, ${u} mm ${up?"au-dessus":"en dessous"}`,
+    lkPlay:"Lecture", lkPause:"Pause", lkSide:"Vue de profil", lk3D:"Vue 3D",
+    lkAria:"Dessin de brevet animé de la biellette de suspension arrière. Utilisez le curseur de débattement pour la comprimer.",
     wgNote:"Années seulement : les dates peuvent différer d'un an. Les fiches regroupant une famille (comme DW-Link) vont jusqu'à l'expiration du membre le plus récent. Les fiches de litige n'ont pas de durée de brevet et sont exclues.",
     wgBarTip:(title,y,end)=>`${title} (${y}–${end}) — cliquer pour voir`,
     minimize:"Réduire", close:"Fermer", dismiss:"Fermer",
@@ -3324,7 +3479,7 @@ function cardHTML(d,eraKey){
   const figHTML = figList.length ? figList.map(f=>{
     const figLink = f.link ? `<a href="${f.link}" target="_blank" rel="noopener">${t("viewFullPatent")}</a>` : (f.link!==false&&numForUrl ? `<a href="${patentUrl(numForUrl,jur)}" target="_blank" rel="noopener">${t("viewFullPatent")}</a>` : "");
     return `<figure class="patent-fig"><details open>
-      <summary title="${t("figToggle")}">${tx(f.caption)||t("figCaptionDefault")}</summary>
+      <summary title="${t("figToggle")}"><span>${tx(f.caption)||t("figCaptionDefault")}</span>${ICON_FIG_OPEN}${ICON_FIG_CLOSED}</summary>
       <img src="${f.src}" alt="${tx(f.alt) || t("origDrawingFor", titleShown.replace(/\(.*?\)/g,'').trim())}" loading="lazy">
       ${figLink?`<figcaption>${figLink}</figcaption>`:""}
     </details></figure>`;
@@ -3334,6 +3489,13 @@ function cardHTML(d,eraKey){
      own. Paragraphs are split on a literal blank line so a multi-paragraph
      long can be written as one string, same as s/w. Absent on every entry
      that doesn't set it, so this renders nothing for the ordinary case. */
+  /* "See it move": cards with a LINKAGE_MODELS entry get their patent figure
+     as a live drawing, closed by default and built only when opened (see
+     LINKAGE VIEWER). Skipped in the text view, which loads no drawings. */
+  const lk = viewMode==="text" ? null : linkageFor(d);
+  const linkHTML = lk ? `<figure class="patent-fig lk-fig" data-lk="${ref}"><details>
+      <summary>${tx(lk.caption)}</summary><div class="lk-host"></div>
+    </details></figure>` : "";
   const deepHTML = d.long ? `<details class="deep-story"><summary>${t("readFullStory")}</summary><div class="deep-story-body">${cardLinks(tx(d.long)).split(/\n{2,}/).map(p=>`<p>${p}</p>`).join("")}</div></details>` : "";
   /* The thumbnail is skipped entirely in the text view (not just hidden) so
      that view downloads no images at all. --cat feeds the tinted view's panel
@@ -3365,6 +3527,7 @@ function cardHTML(d,eraKey){
     <div class="cbody">
       <p>${cardLinks(tx(d.s))}</p>
       ${figHTML}
+      ${linkHTML}
       <p class="why">${t("whyItMatters")} ${cardLinks(tx(d.w))}</p>
       ${deepHTML}
       <div class="meta">
@@ -3378,6 +3541,295 @@ function cardHTML(d,eraKey){
     </div>
   </article>`;
 }
+
+/* ======== LINKAGE VIEWER ("See it move") ========
+   Turns a LINKAGE_MODELS entry into a live, patent-style line drawing: a
+   travel slider compresses the rear end, a drag turns the drawing in 3D, and
+   the readouts update from the same geometry. Mounted lazily the first time
+   a reader opens the disclosure on a card, so a card list costs nothing.
+
+   The kinematics are a plain four-bar. The slider value is wheel travel;
+   precomputeLinkage() sweeps the driver link once, in small steps, and
+   records where everything is, so the slider only interpolates a table and
+   can never land on a pose the linkage can't reach. Sheet y runs down, so
+   "up" travel is a falling y. The 3D is an orthographic turn of a flat
+   drawing: every member is drawn as a left/right pair `z` px apart, joined by
+   cross-axles at its pivots, then sorted back to front. */
+const LK_STEP_RAD = 0.0005;        // driver-link step in the precomputed sweep; smaller = smoother, slower to build
+const LK_MAX_STEPS = 6000;         // safety cap on that sweep
+const LK_SPIN_YAW = 0.55;          // radians: the three-quarter view the intro turns to and the 3D button restores
+const LK_SPIN_PITCH = 0.2;         // radians of downward tilt in that view
+const LK_MAX_PITCH = 0.6;          // drag never tilts further than this, so the drawing can't flip over
+const LK_DRAG_RAD_PER_PX = 0.008;  // how far a one-pixel drag turns the drawing
+const LK_INTRO_MS = 1800;          // the "comes to life" turn + one compression when first opened
+const LK_PLAY_PERIOD_MS = 2600;    // one full compress-and-return cycle while playing
+const LK_CIRCLE_SEGS = 72;         // polygon sides for a tire; pivots use LK_PIVOT_SEGS
+const LK_PIVOT_SEGS = 14;
+const LK_PIVOT_R = 11;             // pivot eye radius, drawing px
+const LK_INK = 2.6;                // line weight, drawing px — patent drawings use one weight throughout
+const LK_NUM_SIZE = 40;            // reference-numeral text size, drawing px
+const LK_TICK_MM = 25;             // tick spacing along the axle path when the model has a scale
+/* The sizes above are drawing px on a sheet whose view is LK_REF_VIEW_W wide
+   (the Split Pivot sheet). A model cropped narrower is shown more magnified,
+   so lkScale() shrinks ink, eyes and numerals to match and every sheet reads
+   at the same line weight on screen. */
+const LK_REF_VIEW_W = 2578;
+function lkScale(m){ return m.view[2]/LK_REF_VIEW_W; }
+
+function lkRot(p,c,a){const s=Math.sin(a),k=Math.cos(a),x=p[0]-c[0],y=p[1]-c[1];return [c[0]+x*k-y*s,c[1]+x*s+y*k];}
+function lkDist(a,b){return Math.hypot(a[0]-b[0],a[1]-b[1]);}
+function lkLerp(a,b,t){return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];}
+/* Circle-circle intersection, choosing the solution nearer `prev` so the
+   linkage never snaps to its mirror-image assembly mid-sweep. */
+function lkCircles(c0,r0,c1,r1,prev){
+  const dx=c1[0]-c0[0],dy=c1[1]-c0[1],d=Math.hypot(dx,dy);
+  if(d>r0+r1||d<Math.abs(r0-r1)||d===0) return null;
+  const a=(r0*r0-r1*r1+d*d)/(2*d),h=Math.sqrt(Math.max(0,r0*r0-a*a));
+  const mx=c0[0]+a*dx/d,my=c0[1]+a*dy/d;
+  const s1=[mx+h*dy/d,my-h*dx/d],s2=[mx-h*dy/d,my+h*dx/d];
+  return lkDist(s1,prev)<lkDist(s2,prev)?s1:s2;
+}
+/* Rigid motion that carries segment a0->b0 onto a1->b1, applied to p. */
+function lkCarry(p,a0,b0,a1,b1){
+  const ang=Math.atan2(b1[1]-a1[1],b1[0]-a1[0])-Math.atan2(b0[1]-a0[1],b0[0]-a0[0]);
+  const q=lkRot(p,a0,ang); return [q[0]+a1[0]-a0[0],q[1]+a1[1]-a0[1]];
+}
+function lkLineX(p1,p2,p3,p4){
+  const d=(p1[0]-p2[0])*(p3[1]-p4[1])-(p1[1]-p2[1])*(p3[0]-p4[0]);
+  if(Math.abs(d)<1e-9) return null;
+  const a=p1[0]*p2[1]-p1[1]*p2[0], b=p3[0]*p4[1]-p3[1]*p4[0];
+  return [(a*(p3[0]-p4[0])-(p1[0]-p2[0])*b)/d,(a*(p3[1]-p4[1])-(p1[1]-p2[1])*b)/d];
+}
+
+/* Pose of every named point for driver angle th, or null past a dead centre. */
+function lkPose(m,th,prevF){
+  const P=m.pts,[g0,g1]=m.ground;
+  const D=lkRot(P[m.driver],P[g0],th);
+  const F=lkCircles(P[g1],lkDist(P[m.follower],P[g1]),D,lkDist(P[m.follower],P[m.driver]),prevF||P[m.follower]);
+  if(!F) return null;
+  const out={...P}; out[m.driver]=D; out[m.follower]=F;
+  const fAng=Math.atan2(F[1]-P[g1][1],F[0]-P[g1][0])-Math.atan2(P[m.follower][1]-P[g1][1],P[m.follower][0]-P[g1][0]);
+  (m.body.driver||[]).forEach(k=>out[k]=lkRot(P[k],P[g0],th));
+  (m.body.follower||[]).forEach(k=>out[k]=lkRot(P[k],P[g1],fAng));
+  (m.body.coupler||[]).forEach(k=>out[k]=lkCarry(P[k],P[m.driver],P[m.follower],D,F));
+  out.IC=lkLineX(P[g0],D,P[g1],F);
+  return out;
+}
+/* One sweep per model: the driver direction that lifts the axle, then a
+   table of poses out to the model's full travel. */
+function precomputeLinkage(m){
+  if(m._table) return m._table;
+  const y0=m.pts[m.axle][1];
+  const probe=lkPose(m,LK_STEP_RAD*20);
+  const dir=probe&&probe[m.axle][1]<y0?1:-1;
+  const table=[]; let prevF=null;
+  for(let i=0;i<LK_MAX_STEPS;i++){
+    const pose=lkPose(m,dir*i*LK_STEP_RAD,prevF); if(!pose) break;
+    prevF=pose[m.follower];
+    const travel=y0-pose[m.axle][1];
+    pose._travel=travel;
+    pose._shock=m.shock?lkDist(pose[m.shock[0]],pose[m.shock[1]]):null;
+    table.push(pose);
+    if(travel>=m.travel) break;
+  }
+  m._table=table;
+  return table;
+}
+/* Pose at a travel fraction 0..1, interpolated between the two nearest rows. */
+function lkAt(m,frac){
+  const tb=precomputeLinkage(m), want=frac*Math.min(m.travel,tb[tb.length-1]._travel);
+  let i=1; while(i<tb.length-1&&tb[i]._travel<want) i++;
+  const a=tb[i-1],b=tb[i],span=b._travel-a._travel||1,t=Math.min(1,Math.max(0,(want-a._travel)/span));
+  const out={}; for(const k in a){ if(Array.isArray(a[k])&&b[k]) out[k]=lkLerp(a[k],b[k],t); }
+  out.IC=a.IC&&b.IC?lkLerp(a.IC,b.IC,t):null;
+  out._travel=want;
+  if(m.shock){
+    out._shock=a._shock+(b._shock-a._shock)*t;
+    // leverage ratio = wheel travel per unit of shock stroke, from the table's neighbours
+    const j=Math.max(1,Math.min(tb.length-2,i)),p=tb[j-1],n=tb[j+1];
+    out._lr=Math.abs((n._travel-p._travel)/((p._shock-n._shock)||1e-9));
+  }
+  return out;
+}
+
+/* 3D: yaw turns about the vertical axis through the bottom bracket (or the
+   view centre), pitch tilts toward the reader. Returns [screenX, screenY, depth]. */
+function lkProject(p,z,cam){
+  const x=p[0]-cam.cx, y=p[1]-cam.cy;
+  const cy=Math.cos(cam.yaw), sy=Math.sin(cam.yaw), cp=Math.cos(cam.pitch), sp=Math.sin(cam.pitch);
+  const X=x*cy+z*sy, Z=-x*sy+z*cy;
+  const Y=y*cp-Z*sp, D=Z*cp+y*sp;
+  return [X+cam.cx, Y+cam.cy, D];
+}
+function lkTubeD(pts){ return "M"+pts.map(p=>p[0].toFixed(1)+" "+p[1].toFixed(1)).join("L"); }
+
+function buildLinkageSVG(m,pose,cam){
+  const prims=[]; // {d:depth, s:svg}
+  const k=lkScale(m), ink=LK_INK*k, eyeR=LK_PIVOT_R*k;
+  const push=(d,s)=>prims.push({d,s});
+  const zOf={}; m.members.forEach(mb=>mb.p.forEach(k=>{ zOf[k]=Math.max(zOf[k]||0,mb.z); }));
+  const pr=(p,z)=>lkProject(p,z,cam);
+  // tires: two concentric circles each, as the sheet draws them
+  m.wheels.forEach(w=>{
+    const c=pose[w.c];
+    [1,.87].forEach(f=>{
+      const ring=[]; for(let i=0;i<=LK_CIRCLE_SEGS;i++){const a=i/LK_CIRCLE_SEGS*Math.PI*2; ring.push(pr([c[0]+Math.cos(a)*w.r*f,c[1]+Math.sin(a)*w.r*f],0));}
+      push(Math.max(...ring.map(q=>q[2]))+1e4,`<path d="${lkTubeD(ring)}" class="lk-line" fill="none"/>`);
+    });
+  });
+  // tubes: outline drawn as a dark stroke with a paper-coloured core, so a nearer tube hides a farther one
+  m.members.forEach(mb=>{
+    const sides=mb.z>0?[-mb.z/2,mb.z/2]:[0];
+    sides.forEach(z=>{
+      const pts=mb.p.map(k=>pose[k]); if(mb.closed) pts.push(pts[0]);
+      const sp=pts.map(p=>pr(p,z));
+      const d=lkTubeD(sp), depth=sp.reduce((s,q)=>s+q[2],0)/sp.length;
+      push(depth,`<path d="${d}" class="lk-tube-o" stroke-width="${mb.w+ink*2}"/><path d="${d}" class="lk-tube-i" stroke-width="${mb.w}"/>`);
+    });
+    if(mb.z>0) mb.p.forEach(n=>{
+      const a=pr(pose[n],-mb.z/2-6*k),b=pr(pose[n],mb.z/2+6*k);
+      push((a[2]+b[2])/2-1,`<path d="M${a[0].toFixed(1)} ${a[1].toFixed(1)}L${b[0].toFixed(1)} ${b[1].toFixed(1)}" class="lk-line"/>`);
+    });
+  });
+  // pivot eyes on the near side of every member
+  const pivots=new Set(); m.members.forEach(mb=>{ if(mb.w<=26) mb.p.forEach(k=>pivots.add(k)); });
+  [...m.ground,m.driver,m.follower,...(m.shock||[])].forEach(k=>pivots.add(k));
+  pivots.forEach(n=>{
+    const z=(zOf[n]||0)/2+2*k, c=pose[n], ring=[];
+    for(let i=0;i<=LK_PIVOT_SEGS;i++){const a=i/LK_PIVOT_SEGS*Math.PI*2; ring.push(pr([c[0]+Math.cos(a)*eyeR,c[1]+Math.sin(a)*eyeR],z));}
+    push(pr(c,z)[2]-2,`<path d="${lkTubeD(ring)}Z" class="lk-eye"/>`);
+  });
+  // shock: body from the lower eye, shaft from the upper eye, coil between collars
+  if(m.shock){
+    const [a,b]=m.shock.map(k=>pose[k]), L0=lkDist(m.pts[m.shock[0]],m.pts[m.shock[1]]);
+    const u=[(a[0]-b[0])/lkDist(a,b),(a[1]-b[1])/lkDist(a,b)];
+    const bodyEnd=[b[0]+u[0]*L0*.55,b[1]+u[1]*L0*.55], shaftEnd=[a[0]-u[0]*L0*.6,a[1]-u[1]*L0*.6];
+    const B=[b,bodyEnd].map(p=>pr(p,0)), S=[a,shaftEnd].map(p=>pr(p,0));
+    let s=`<path d="${lkTubeD(S)}" class="lk-tube-o" stroke-width="${12+ink*2}"/><path d="${lkTubeD(S)}" class="lk-tube-i" stroke-width="12"/>`;
+    s+=`<path d="${lkTubeD(B)}" class="lk-tube-o" stroke-width="${30+ink*2}"/><path d="${lkTubeD(B)}" class="lk-tube-i" stroke-width="30"/>`;
+    if(m.coil){
+      const c0=lkLerp(b,a,.22), c1=lkLerp(a,b,.18), n=[-u[1],u[0]], turns=7, pts=[];
+      for(let i=0;i<=turns*2;i++){const q=lkLerp(c0,c1,i/(turns*2)), s2=(i%2?1:-1)*30; pts.push(pr([q[0]+n[0]*s2,q[1]+n[1]*s2],0));}
+      s+=`<path d="${lkTubeD(pts)}" class="lk-line" fill="none"/>`;
+    }
+    push(pr(lkLerp(a,b,.5),0)[2]-0.5,s);
+  }
+  // instant center + its two construction lines (the driver and follower links, extended)
+  const g0=pose[m.ground[0]], g1=pose[m.ground[1]];
+  if(m.ic&&pose.IC){
+    const v=m.view, inView=pose.IC[0]>v[0]-v[2]&&pose.IC[0]<v[0]+2*v[2]&&pose.IC[1]>v[1]-v[3]&&pose.IC[1]<v[1]+2*v[3];
+    if(inView){
+      const I=pr(pose.IC,0);
+      [[pose[m.driver],g0],[pose[m.follower],g1]].forEach(([p])=>{
+        const q=pr(p,0); push(-1e5,`<path d="M${q[0].toFixed(1)} ${q[1].toFixed(1)}L${I[0].toFixed(1)} ${I[1].toFixed(1)}" class="lk-dash"/>`);
+      });
+      push(-1e5,`<circle cx="${I[0].toFixed(1)}" cy="${I[1].toFixed(1)}" r="${eyeR}" class="lk-eye lk-ic"/>`);
+    }
+  }
+  // axle path, faint, with a tick every LK_TICK_MM when there's a scale
+  const tb=precomputeLinkage(m), path=tb.filter((_,i)=>i%8===0).map(p=>pr(p[m.axle],0));
+  let ap=`<path d="${lkTubeD(path)}" class="lk-path"/>`;
+  if(m.mmPerUnit){
+    const step=LK_TICK_MM/m.mmPerUnit;
+    for(let t=step;t<=m.travel+1e-6;t+=step){
+      const row=tb.find(r=>r._travel>=t); if(!row) break;
+      const q=pr(row[m.axle],0); ap+=`<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="${5*k}" class="lk-tick"/>`;
+    }
+  }
+  push(-2e5,ap);
+  // reference numerals with hand-drawn-style leaders, as on the sheet
+  (m.nums||[]).concat(m.ic&&m.ic.n?[{n:m.ic.n,at:m.ic.at,icPoint:true}]:[]).forEach(nm=>{
+    let tgt, z=0;
+    if(nm.icPoint){ if(!pose.IC) return; tgt=pose.IC; }
+    else if(nm.ic){ if(!pose.IC) return; tgt=lkLerp(nm.ic==="driver"?pose[m.driver]:pose[m.follower],pose.IC,nm.t); }
+    else { tgt=nm.tt?lkLerp(pose[nm.to],pose[nm.tt],nm.t):pose[nm.to]; z=(zOf[nm.to]||0)/2;
+      if(nm.r){ const d=lkDist(nm.at,tgt)||1; tgt=lkLerp(tgt,nm.at,nm.r/d); z=0; } }
+    const A=pr(nm.at,0), T=pr(tgt,z);
+    const mid=[(A[0]+T[0])/2+(T[1]-A[1])*.18,(A[1]+T[1])/2-(T[0]-A[0])*.18];
+    const start=lkLerp(A,T,Math.min(.45,LK_NUM_SIZE*k*.75/(lkDist(A,T)||1)));
+    push(-3e5,`<path d="M${start[0].toFixed(1)} ${start[1].toFixed(1)}Q${mid[0].toFixed(1)} ${mid[1].toFixed(1)} ${T[0].toFixed(1)} ${T[1].toFixed(1)}" class="lk-line" fill="none"/><text x="${A[0].toFixed(1)}" y="${A[1].toFixed(1)}" class="lk-num" font-size="${LK_NUM_SIZE*k}">${nm.n}</text>`);
+  });
+  prims.sort((a,b)=>b.d-a.d);
+  return prims.map(p=>p.s).join("");
+}
+
+function mountLinkage(host,m){
+  if(host.dataset.mounted) return; host.dataset.mounted="1";
+  precomputeLinkage(m);
+  const v=m.view, cx=m.pts.BB?m.pts.BB[0]:v[0]+v[2]/2, cyy=m.pts.BB?m.pts.BB[1]:v[1]+v[3]/2;
+  const cam={yaw:0,pitch:0,cx,cy:cyy};
+  const st={frac:0,playing:false,raf:0};
+  const reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  host.innerHTML=`<div class="lk-stage"><svg class="lk-svg" viewBox="${v.join(" ")}" style="--lk-ink:${LK_INK*lkScale(m)}" role="img" aria-label="${t("lkAria")}"></svg></div>
+    <div class="lk-ctrl">
+      <label class="lk-slider"><span>${t("lkTravel")}</span><input type="range" min="0" max="1000" value="0" aria-label="${t("lkTravel")}"></label>
+      <button type="button" class="lk-btn lk-play" aria-pressed="false">${t("lkPlay")}</button>
+      <button type="button" class="lk-btn lk-flat">${t("lkSide")}</button>
+      <button type="button" class="lk-btn lk-3d">${t("lk3D")}</button>
+    </div>
+    <dl class="lk-read"></dl>
+    <p class="lk-note">${tx(m.note)}</p>`;
+  const svg=host.querySelector("svg"), range=host.querySelector("input"), read=host.querySelector(".lk-read"), play=host.querySelector(".lk-play");
+  const fmt=(n,d=0)=>n.toLocaleString(state.lang==="fr"?"fr-CA":"en-US",{maximumFractionDigits:d,minimumFractionDigits:d});
+  function draw(){
+    const pose=lkAt(m,st.frac);
+    svg.innerHTML=buildLinkageSVG(m,pose,cam);
+    const pct=Math.round(st.frac*100), rows=[];
+    rows.push([t("lkTravel"), m.mmPerUnit?`${fmt(pose._travel*m.mmPerUnit)} mm`:`${pct} %`]);
+    if(m.shock){
+      const used=(lkDist(m.pts[m.shock[0]],m.pts[m.shock[1]])-pose._shock)*(m.mmPerUnit||1);
+      rows.push([t("lkStroke"), m.mmPerUnit?`${fmt(used)} mm`:fmt(used)]);
+      rows.push([t("lkLR"), `${fmt(pose._lr,2)} : 1`]);
+    }
+    if(pose.IC&&m.mmPerUnit&&m.pts.BB){
+      const ahead=(pose.IC[0]-m.pts.BB[0])*m.mmPerUnit, up=(m.pts.BB[1]-pose.IC[1])*m.mmPerUnit;
+      rows.push([t("lkIC"), t("lkICpos",fmt(Math.abs(ahead)),ahead>=0,fmt(Math.abs(up)),up>=0)]);
+    }
+    read.innerHTML=rows.map(([k,val])=>`<div><dt>${k}</dt><dd>${val}</dd></div>`).join("");
+    range.value=Math.round(st.frac*1000);
+    range.setAttribute("aria-valuetext",rows[0][1]);
+  }
+  function stop(){ st.playing=false; cancelAnimationFrame(st.raf); play.setAttribute("aria-pressed","false"); play.textContent=t("lkPlay"); }
+  function tween(ms,fn,done){
+    const t0=performance.now();
+    const step=now=>{ const k=Math.min(1,(now-t0)/ms); fn(k); draw(); if(k<1) st.raf=requestAnimationFrame(step); else if(done) done(); };
+    cancelAnimationFrame(st.raf); st.raf=requestAnimationFrame(step);
+  }
+  const ease=k=>k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+  function turnTo(yaw,pitch){
+    if(reduce){ cam.yaw=yaw; cam.pitch=pitch; draw(); return; }
+    const y0=cam.yaw,p0=cam.pitch; tween(600,k=>{const e=ease(k); cam.yaw=y0+(yaw-y0)*e; cam.pitch=p0+(pitch-p0)*e;});
+  }
+  range.oninput=()=>{ stop(); st.frac=range.value/1000; draw(); };
+  play.onclick=()=>{
+    if(st.playing){ stop(); return; }
+    st.playing=true; play.setAttribute("aria-pressed","true"); play.textContent=t("lkPause");
+    const t0=performance.now()-Math.acos(1-2*st.frac)/Math.PI*LK_PLAY_PERIOD_MS/2;
+    const loop=now=>{ if(!st.playing) return; if(!host.isConnected){ stop(); return; } st.frac=(1-Math.cos((now-t0)/LK_PLAY_PERIOD_MS*2*Math.PI))/2; draw(); st.raf=requestAnimationFrame(loop); };
+    st.raf=requestAnimationFrame(loop);
+  };
+  host.querySelector(".lk-flat").onclick=()=>{ stop(); turnTo(0,0); };
+  host.querySelector(".lk-3d").onclick=()=>{ stop(); turnTo(LK_SPIN_YAW,LK_SPIN_PITCH); };
+  /* Drag to turn. touch-action:pan-y on the stage (see CSS) keeps a vertical
+     swipe scrolling the page on a phone, so only a sideways drag turns it. */
+  let drag=null;
+  svg.addEventListener("pointerdown",e=>{ drag={x:e.clientX,y:e.clientY,yaw:cam.yaw,pitch:cam.pitch}; svg.setPointerCapture(e.pointerId); });
+  svg.addEventListener("pointermove",e=>{
+    if(!drag) return;
+    if(!st.playing) cancelAnimationFrame(st.raf);
+    cam.yaw=drag.yaw+(e.clientX-drag.x)*LK_DRAG_RAD_PER_PX;
+    cam.pitch=Math.max(-LK_MAX_PITCH,Math.min(LK_MAX_PITCH,drag.pitch+(e.clientY-drag.y)*LK_DRAG_RAD_PER_PX));
+    if(!st.playing) draw();
+  });
+  const end=()=>{ drag=null; }; svg.addEventListener("pointerup",end); svg.addEventListener("pointercancel",end);
+  // stop playing when the disclosure is closed, so a hidden drawing never keeps animating
+  const det=host.closest("details"); if(det) det.addEventListener("toggle",()=>{ if(!det.open) stop(); });
+  draw();
+  // the drawing "comes to life": turn to three-quarter and compress once
+  if(!reduce) tween(LK_INTRO_MS,k=>{ const e=ease(k); cam.yaw=LK_SPIN_YAW*e; cam.pitch=LK_SPIN_PITCH*e; st.frac=.7*Math.sin(Math.PI*k); });
+  else { cam.yaw=LK_SPIN_YAW; cam.pitch=LK_SPIN_PITCH; draw(); }
+}
+function linkageFor(d){ return LINKAGE_MODELS.find(m=>m.card===cardRef(d)); }
 
 /* ======== PATENT FIGHTS VIEW ======== */
 function fightCardMatches(matcher){
@@ -4239,6 +4691,13 @@ function render(){
      already have .chead itself. */
   tl.querySelectorAll(".thumb").forEach(el=>{
     el.onclick=()=>el.closest(".card").querySelector(".chead").click();
+  });
+  tl.querySelectorAll(".lk-fig details").forEach(det=>{
+    det.addEventListener("toggle",()=>{
+      if(!det.open) return;
+      const m=LINKAGE_MODELS.find(x=>x.card===det.parentNode.dataset.lk);
+      if(m) mountLinkage(det.querySelector(".lk-host"),m);
+    });
   });
   tl.querySelectorAll(".co-link").forEach(b=>{
     b.onclick=(e)=>{ e.stopPropagation(); openColorado(); };

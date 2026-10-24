@@ -260,6 +260,32 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
   if (errors.length || mgDone !== 1 || mgBroken || pool.game !== pool.drawn || pool.game < 1) {
     failed = true;
     console.error('::error::Match tab crashed, could not finish a round, showed a broken drawing, or its pool is not every drawn entry.');
+  // "See it move" linkage viewers: every LINKAGE_MODELS card opens its
+  // viewer, draws, and the slider moves the readout. A model whose pivots
+  // can't reach its stated travel, or whose card ref is wrong, fails here.
+  const lkRefs = await page.evaluate(() => LINKAGE_MODELS.map(m => m.card));
+  for (const ref of lkRefs) {
+    errors.length = 0;
+    await page.evaluate(r => jumpToCard(r), ref);
+    await page.waitForTimeout(400);
+    const card = page.locator(`[id="p-${ref}"]`);
+    const found = await card.count();
+    let paths = 0, before = '', after = '';
+    if (found) {
+      if (!(await card.evaluate(c => c.classList.contains('open')))) await card.locator('.chead').click();
+      await card.locator('.lk-fig summary').click();
+      await page.waitForTimeout(300);
+      paths = await card.locator('.lk-svg path').count();
+      before = await card.locator('.lk-read').innerText();
+      await card.locator('.lk-fig input[type=range]').fill('1000');
+      await page.waitForTimeout(100);
+      after = await card.locator('.lk-read').innerText();
+    }
+    console.log(`linkage viewer ${ref}: card ${found}, ${paths} paths, slider moves readout ${before !== after}, errors: ${JSON.stringify(errors)}`);
+    if (!found || errors.length || paths < 20 || before === after) {
+      failed = true;
+      console.error(`::error::The linkage viewer on card ${ref} did not draw or respond.`);
+    }
   }
 
   await browser.close();
