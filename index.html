@@ -516,6 +516,12 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .tab-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 .tab-dot{position:absolute;top:6px;right:6px;width:6px;height:6px;border-radius:50%;background:var(--accent);display:none}
 .tab-dot.show{display:block}
+/* Sub-tabs of the Category group (see TAB_GROUP_KEYS): a row of smaller
+   pills under the main tabs, left-aligned, shown only while one is open. */
+.subtab-row{padding-top:6px;padding-bottom:4px;gap:6px}
+.subtab-row[hidden]{display:none}
+.subtab-btn{border-radius:var(--pill-radius);border-bottom:1px solid var(--card-border);min-height:36px;padding:6px 12px;font-size:13px;background:var(--chip-bg);color:var(--ink)}
+.subtab-btn.on{background:var(--deep);border-color:var(--deep);color:#fff}
 /* Favorites tab doesn't exist in the DOM until the first entry is favorited
    (see ensureFavTabBtn) -- this only plays on that first appearance, not on
    every reload of a return visit (see the `animate` param it's gated on). */
@@ -1055,6 +1061,7 @@ footer a{color:inherit;text-decoration:underline}
     </div>
   </div>
   <div class="tab-row" id="filterTabs"></div>
+  <div class="tab-row subtab-row" id="subTabs" hidden></div>
   <div class="tab-panes" id="filterPanes">
     <div class="scroller" id="scrollCat">
       <button class="scroll-btn sb-left" data-i18n-aria-label="scrollLeft" aria-label="Scroll left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg></button>
@@ -1992,8 +1999,9 @@ const RABBIT_HOLES = [
    entries whose own s/w text supports it. */
 const LANDING_WALL_TILES = 9;
 const LANDING_THEMES = [
+  {key:"rear-1990s", label:{en:"1990s rear suspension", fr:"Suspension arrière des années 1990"}, match:{cat:"susp", yFrom:1990, yTo:1999}},
   {key:"rear-2010s", label:{en:"2010s rear suspension", fr:"Suspension arrière des années 2010"}, match:{cat:"susp", yFrom:2010, yTo:2019}},
-  {key:"weird-drivetrains", label:{en:"Weird drivetrains", fr:"Transmissions étranges"},
+  {key:"drivetrains", label:{en:"Drivetrains", fr:"Transmissions"},
    match:{cards:["FR727193A","6029990","321932","6182991","20220297790","11697473","11560201","4127038","4170188","6241636","7712566","4522610","EP4536547","8608610","DE102023207638B3","10088020","20150008059"]}},
   {key:"before-mtb", label:{en:"Before the mountain bike", fr:"Avant le VTT"}, match:{yTo:1974}},
   {key:"in-court", label:{en:"Fought in court", fr:"Devant les tribunaux"}, match:{badge:"litigated"}},
@@ -3072,8 +3080,26 @@ const tabRow=$("#filterTabs");
    ICONS section's own comment: a language switch's textContent reset
    would turn a baked-in <svg> into literal on-screen markup. */
 const TAB_ICONS={stats:ICON_COMPASS, fights:ICON_SWORDS, match:ICON_PUZZLE};
-[{key:"stats",tkey:"tabStats"}].concat(TAB_DEFS,[{key:"all",tkey:"tabAll"},{key:"fights",tkey:"tabFights"},{key:"match",tkey:"tabMatch"}]).forEach(tabDef=>{
+/* The five chip-filter tabs (TAB_DEFS) sit behind one "Category" tab in the
+   main row; while any of them is open, they show as sub-tabs in #subTabs
+   under it. Each keeps its own activeTab key, so #tab=st / #tab=brand links
+   still open the right pane. The group button has no data-tab (renderTabs()
+   lights it whenever activeTab is one of its members) and reopens the last
+   sub-tab used. */
+const subTabRow=$("#subTabs");
+const TAB_GROUP_KEYS=TAB_DEFS.map(d=>d.key);
+let lastSubTab=TAB_GROUP_KEYS[0];
+[{key:"stats",tkey:"tabStats"},{group:true,tkey:"tabCategory"}].concat(TAB_DEFS,[{key:"all",tkey:"tabAll"},{key:"fights",tkey:"tabFights"},{key:"match",tkey:"tabMatch"}]).forEach(tabDef=>{
   const btn=document.createElement("button");
+  if(tabDef.group){
+    btn.className="tab-btn tab-group";
+    btn.innerHTML=`<span data-i18n="${tabDef.tkey}">${t(tabDef.tkey)}</span><span class="tab-dot" data-dot="group"></span>`;
+    btn.setAttribute("aria-pressed","false");
+    btn.onclick=()=>{ activeTab=lastSubTab; renderTabs(); render(); };
+    tabRow.appendChild(btn);
+    return;
+  }
+  const isSub=TAB_GROUP_KEYS.includes(tabDef.key);
   btn.className="tab-btn"+(tabDef.key===activeTab?" on":"")+(tabDef.key==="fights"?" tab-fights":"");
   /* Label lives in its own span (relabeled by applyStaticI18n's generic
      [data-i18n] handler on a language switch) so the tab-dot sibling (and
@@ -3084,7 +3110,8 @@ const TAB_ICONS={stats:ICON_COMPASS, fights:ICON_SWORDS, match:ICON_PUZZLE};
   btn.dataset.tab=tabDef.key;
   btn.setAttribute("aria-pressed",tabDef.key===activeTab?"true":"false");
   btn.onclick=()=>{ activeTab=tabDef.key; renderTabs(); render(); };
-  tabRow.appendChild(btn);
+  if(isSub) btn.classList.add("subtab-btn");
+  (isSub?subTabRow:tabRow).appendChild(btn);
 });
 
 /* The Favorites tab doesn't exist in the fixed list above -- per the
@@ -3140,10 +3167,13 @@ function toggleFav(ref,btnEl){
 
 function renderTabs(){
   document.querySelectorAll(".tab-btn").forEach(b=>{
-    const on=b.dataset.tab===activeTab;
+    const on=b.classList.contains("tab-group") ? TAB_GROUP_KEYS.includes(activeTab) : b.dataset.tab===activeTab;
     b.classList.toggle("on",on);
     b.setAttribute("aria-pressed",on?"true":"false");
   });
+  const inGroup=TAB_GROUP_KEYS.includes(activeTab);
+  if(inGroup) lastSubTab=activeTab;
+  subTabRow.hidden=!inGroup;
   /* Fights, Stats and Favorites all bypass the chip-filter system entirely
      (rivalries and the stats snapshot aren't chip-filterable, and a saved
      collection is its own list rather than a facet to narrow) -- all three
@@ -3181,6 +3211,8 @@ function updateTabDots(){
     const dot=document.querySelector(`.tab-btn[data-tab="${tabDef.key}"] .tab-dot`);
     if(dot) dot.classList.toggle("show", state[tabDef.key].size>0);
   });
+  const groupDot=document.querySelector('.tab-group .tab-dot');
+  if(groupDot) groupDot.classList.toggle("show", TAB_DEFS.some(d=>state[d.key].size>0));
   const allDot=document.querySelector('.tab-btn[data-tab="all"] .tab-dot');
   if(allDot) allDot.classList.toggle("show", anyFilterActive());
 }

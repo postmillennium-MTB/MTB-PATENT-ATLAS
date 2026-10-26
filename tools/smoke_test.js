@@ -323,7 +323,7 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     }
     await ctx.close();
   }
-  for (const [url, want] of [['?start=in-court', 'in-court'], ['#start=weird-drivetrains', 'weird-drivetrains'], ['?start=no-such-theme', null]]) {
+  for (const [url, want] of [['?start=in-court', 'in-court'], ['#start=drivetrains', 'drivetrains'], ['?start=no-such-theme', null]]) {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
     const p = await ctx.newPage();
     const errs = [];
@@ -343,6 +343,39 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     if (got.on !== expect || !opened || errs.length) {
       failed = true;
       console.error(`::error::Landing link ${url} picked the wrong theme or its tile did not open a card.`);
+    }
+    await ctx.close();
+  }
+
+  /* Category tab group: Status/Story/Inventors/Brands are sub-tabs under
+     Category (TAB_GROUP_KEYS). The sub-row shows only inside the group, the
+     Category tab lights for any member, it reopens the last sub-tab used, and
+     old #tab=<sub> links still land on that pane. */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    const p = await ctx.newPage();
+    const errs = [];
+    p.on('pageerror', e => errs.push(e.message));
+    await p.goto(filePath + '#tab=brand');
+    await p.waitForTimeout(700);
+    const st = () => p.evaluate(() => ({
+      main: [...document.querySelectorAll('#filterTabs .tab-btn')].map(b => b.dataset.tab || 'group'),
+      subHidden: document.getElementById('subTabs').hidden,
+      groupOn: document.querySelector('.tab-group').classList.contains('on'),
+      active: activeTab,
+      brandPane: !document.getElementById('rowBrand').closest('.hidden-pane')
+    }));
+    const a = await st();
+    await p.click('.tab-btn[data-tab="stats"]');
+    await p.waitForTimeout(300);
+    const b = await st();
+    await p.click('.tab-group');
+    await p.waitForTimeout(300);
+    const c = await st();
+    console.log(`category group: main tabs ${a.main.join(',')}; #tab=brand -> sub-row shown ${!a.subHidden}, group lit ${a.groupOn}, brand pane ${a.brandPane}; Atlas hides sub-row ${b.subHidden}; group reopens ${c.active}, errors: ${JSON.stringify(errs)}`);
+    if (a.main.some(k => ['cat', 'st', 'badge', 'inv', 'brand'].includes(k)) || a.subHidden || !a.groupOn || a.active !== 'brand' || !a.brandPane || !b.subHidden || c.active !== 'brand' || errs.length) {
+      failed = true;
+      console.error('::error::The Category tab group (sub-tabs) is wrong.');
     }
     await ctx.close();
   }
