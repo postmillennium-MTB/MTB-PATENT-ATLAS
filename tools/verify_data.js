@@ -88,6 +88,28 @@ D.forEach(d => {
   });
 });
 
+/* No-patent entries (np). np:true or np:"trademark"|"standard"|"secret" means
+   it is confirmed there is no patent, which is different from a num:null entry
+   whose patent just hasn't been located. Such an entry can't carry a patent
+   number, a grant year, an expiry, or a patent status. See CLAUDE.md
+   "Entries with no patent". */
+const NP_KINDS = [true, 'trademark', 'standard', 'secret'];
+D.forEach((d, i) => {
+  if (d.np === undefined) return;
+  const id = `D[${i}] "${d.t && d.t.en}"`;
+  if (!NP_KINDS.includes(d.np)) hardFailures.push(`${id}: np must be true, "trademark", "standard" or "secret" (got ${JSON.stringify(d.np)})`);
+  if (d.num || (d.nums && d.nums.length)) hardFailures.push(`${id}: np entry has a patent number`);
+  if (d.g != null) hardFailures.push(`${id}: np entry has a grant year (g must be null)`);
+  if (d.exp != null) hardFailures.push(`${id}: np entry has an expiry (exp must be null)`);
+  if (d.st !== 'unknown') hardFailures.push(`${id}: np entry must have st "unknown" (got "${d.st}")`);
+});
+// The reverse slip: a title that says there's no patent but no np flag, so the
+// card would still say "Filed / Granted pending". "no patent located" style
+// titles are the not-yet-found case and are skipped.
+const npTitleMisses = D.filter(d => d.np === undefined && d.t && /\(no patent\)|not a patent|not the patent|un-patent|patent-free/i.test(d.t.en)).map(d => d.t.en);
+if (npTitleMisses.length) hardFailures.push(`title says no patent but np is not set: ${npTitleMisses.join(' | ')}`);
+console.log('no-patent entries (np):', D.filter(d => d.np !== undefined).length);
+
 // No empty filter chips: every BRANDS entry and INVENTORS key must be used by at
 // least one entry's who[]. A registered name nothing is tagged with renders a
 // Brands/Inventors chip that returns zero results (BMC and SCOR did, because
