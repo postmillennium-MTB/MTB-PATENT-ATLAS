@@ -1978,14 +1978,14 @@ const RABBIT_HOLES = [
    with fewer than LANDING_WALL_TILES drawn entries is left out of the chip row
    on its own (and verify_data.js says so), rather than showing a gap.
 
-   The plain URL opens one theme per day, rotating through this list in order
-   (the reader's local date). ?start=<key> or #start=<key> opens a chosen one;
+   The plain URL opens the first theme in this list (Jon's call: the order is
+   the priority order). ?start=<key> or #start=<key> opens a chosen one;
    use the # form for links to postmillenniumrenaissance.com/atlas/, whose
    wrapper page passes its hash, not its query, to this file.
 
    Each theme:
    {
-     key: "in-court",               // required -- URL-safe, used by ?start=
+     key: "litigation",               // required -- URL-safe, used by ?start=
      label: {en:"...", fr:"..."},   // required -- the chip text
      match: {...}                   // required -- which entries; every field given must hold:
                                     //   cat:"susp"           category key (CATS)
@@ -2000,11 +2000,13 @@ const RABBIT_HOLES = [
 const LANDING_WALL_TILES = 9;
 const LANDING_THEMES = [
   {key:"rear-1990s", label:{en:"1990s rear suspension", fr:"Suspension arrière des années 1990"}, match:{cat:"susp", yFrom:1990, yTo:1999}},
+  {key:"rear-2000s", label:{en:"2000s rear suspension", fr:"Suspension arrière des années 2000"}, match:{cat:"susp", yFrom:2000, yTo:2009}},
   {key:"rear-2010s", label:{en:"2010s rear suspension", fr:"Suspension arrière des années 2010"}, match:{cat:"susp", yFrom:2010, yTo:2019}},
+  {key:"front", label:{en:"Front suspension", fr:"Suspension avant"}, match:{cat:"fork"}},
   {key:"drivetrains", label:{en:"Drivetrains", fr:"Transmissions"},
    match:{cards:["FR727193A","6029990","321932","6182991","20220297790","11697473","11560201","4127038","4170188","6241636","7712566","4522610","EP4536547","8608610","DE102023207638B3","10088020","20150008059"]}},
-  {key:"before-mtb", label:{en:"Before the mountain bike", fr:"Avant le VTT"}, match:{yTo:1974}},
-  {key:"in-court", label:{en:"Fought in court", fr:"Devant les tribunaux"}, match:{badge:"litigated"}},
+  {key:"vintage", label:{en:"Vintage", fr:"Vintage"}, match:{yTo:1974}},
+  {key:"litigation", label:{en:"Litigation", fr:"Litiges"}, match:{badge:"litigated"}},
   {key:"in-force", label:{en:"Still in force", fr:"Toujours en vigueur"}, match:{st:"active"}},
 ];
 
@@ -4475,8 +4477,8 @@ function rhStripSrcs(d, lead){
 /* ======== LANDING WALL (Atlas tab, top) ======== */
 /* See LANDING_THEMES in the data section. landingKey is the theme on screen;
    landingChosen is true once the reader (or a ?start= link) picked it, and
-   only then does syncHash() write it into the URL, so a plain link keeps the
-   daily rotation. landingTiles is the current random pick, kept across
+   only then does syncHash() write it into the URL, so a plain link stays on
+   the first theme. landingTiles is the current random pick, kept across
    re-renders (language switch, returning to the tab) until a chip or Shuffle
    changes it. */
 /* Read once at load, before syncHash() rewrites the hash. */
@@ -4505,20 +4507,17 @@ function landingPool(theme){
 }
 /* Themes with enough drawn entries to fill the wall with no blank tile. */
 function landingThemes(){ return LANDING_THEMES.filter(th=>landingPool(th).length>=LANDING_WALL_TILES); }
-/* Today's theme: the reader's local calendar day, counted from the epoch,
-   modulo the number of themes, so it moves one chip along each midnight. */
+/* The theme a plain URL opens: the first one that can fill the wall. */
 function landingDefaultKey(){
-  const th=landingThemes(); if(!th.length) return null;
-  const now=new Date();
-  const day=Math.floor((now.getTime()-now.getTimezoneOffset()*60000)/86400000);
-  return th[day%th.length].key;
+  const th=landingThemes();
+  return th.length ? th[0].key : null;
 }
 function landingTheme(){
   const th=landingThemes();
   if(!landingKey){
     const want=LANDING_START_FROM_URL && th.find(x=>x.key===LANDING_START_FROM_URL);
     if(want) landingKey=want.key;
-    else { landingKey=landingDefaultKey(); landingChosen=false; } // unknown or too-small theme in the link: fall back to today's
+    else { landingKey=landingDefaultKey(); landingChosen=false; } // unknown or too-small theme in the link: fall back to the first
   }
   return th.find(x=>x.key===landingKey)||null;
 }

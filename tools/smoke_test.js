@@ -323,7 +323,7 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     }
     await ctx.close();
   }
-  for (const [url, want] of [['?start=in-court', 'in-court'], ['#start=drivetrains', 'drivetrains'], ['?start=no-such-theme', null]]) {
+  for (const [url, want] of [['?start=litigation', 'litigation'], ['#start=drivetrains', 'drivetrains'], ['?start=no-such-theme', null], ['', null]]) {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
     const p = await ctx.newPage();
     const errs = [];
@@ -331,7 +331,8 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     await p.goto(filePath + url);
     await p.waitForTimeout(700);
     const got = await p.evaluate(() => ({ on: document.querySelector('.lw-chip[aria-pressed="true"]')?.dataset.lw, today: landingDefaultKey() }));
-    const expect = want || got.today;
+    const expect = want || 'rear-1990s'; // a plain or unknown link opens the first theme
+    if (!want && got.today !== 'rear-1990s') { failed = true; console.error('::error::landingDefaultKey() is not the first theme.'); }
     let opened = 1;
     if (want) {
       const ref = await p.evaluate(() => cardRef(landingPick()[0]));
