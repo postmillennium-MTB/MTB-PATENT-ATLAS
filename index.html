@@ -1978,8 +1978,8 @@ const RABBIT_HOLES = [
    with fewer than LANDING_WALL_TILES drawn entries is left out of the chip row
    on its own (and verify_data.js says so), rather than showing a gap.
 
-   The plain URL opens one theme per day, rotating through this list in order
-   (the reader's local date). ?start=<key> or #start=<key> opens a chosen one;
+   The plain URL opens the first theme in this list (Jon's call: the order is
+   the priority order). ?start=<key> or #start=<key> opens a chosen one;
    use the # form for links to postmillenniumrenaissance.com/atlas/, whose
    wrapper page passes its hash, not its query, to this file.
 
@@ -4477,8 +4477,8 @@ function rhStripSrcs(d, lead){
 /* ======== LANDING WALL (Atlas tab, top) ======== */
 /* See LANDING_THEMES in the data section. landingKey is the theme on screen;
    landingChosen is true once the reader (or a ?start= link) picked it, and
-   only then does syncHash() write it into the URL, so a plain link keeps the
-   daily rotation. landingTiles is the current random pick, kept across
+   only then does syncHash() write it into the URL, so a plain link stays on
+   the first theme. landingTiles is the current random pick, kept across
    re-renders (language switch, returning to the tab) until a chip or Shuffle
    changes it. */
 /* Read once at load, before syncHash() rewrites the hash. */
@@ -4507,20 +4507,17 @@ function landingPool(theme){
 }
 /* Themes with enough drawn entries to fill the wall with no blank tile. */
 function landingThemes(){ return LANDING_THEMES.filter(th=>landingPool(th).length>=LANDING_WALL_TILES); }
-/* Today's theme: the reader's local calendar day, counted from the epoch,
-   modulo the number of themes, so it moves one chip along each midnight. */
+/* The theme a plain URL opens: the first one that can fill the wall. */
 function landingDefaultKey(){
-  const th=landingThemes(); if(!th.length) return null;
-  const now=new Date();
-  const day=Math.floor((now.getTime()-now.getTimezoneOffset()*60000)/86400000);
-  return th[day%th.length].key;
+  const th=landingThemes();
+  return th.length ? th[0].key : null;
 }
 function landingTheme(){
   const th=landingThemes();
   if(!landingKey){
     const want=LANDING_START_FROM_URL && th.find(x=>x.key===LANDING_START_FROM_URL);
     if(want) landingKey=want.key;
-    else { landingKey=landingDefaultKey(); landingChosen=false; } // unknown or too-small theme in the link: fall back to today's
+    else { landingKey=landingDefaultKey(); landingChosen=false; } // unknown or too-small theme in the link: fall back to the first
   }
   return th.find(x=>x.key===landingKey)||null;
 }
