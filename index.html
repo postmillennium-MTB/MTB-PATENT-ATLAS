@@ -254,16 +254,56 @@ header::before{
 .rh-arrow:hover,.rh-arrow:focus-visible{opacity:1;border-color:var(--primary);outline:none}
 .rh-arrow:disabled{opacity:.3;cursor:default}
 .rh-arrow svg{width:16px;height:16px;pointer-events:none}
-.rh-row{display:grid;grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding:2px 2px 6px;scrollbar-width:thin}
+.rh-row{display:grid;grid-auto-flow:column;grid-auto-columns:70%;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding:2px 2px 6px;scrollbar-width:thin}
 .rh-card{scroll-snap-align:start;display:flex;flex-direction:column;text-align:left;background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);overflow:hidden;padding:0;cursor:pointer;color:inherit;font:inherit;transition:border-color .15s,transform .15s}
 .rh-card:hover,.rh-card:focus-visible{border-color:var(--primary);transform:translateY(-2px);outline:none}
-.rh-card img{display:block;width:100%;height:140px;object-fit:contain;background:#fff;border-bottom:1px solid var(--card-border);padding:8px;box-sizing:border-box}
-.rh-body{display:flex;flex-direction:column;gap:6px;padding:12px 14px;flex:1}
+/* Compact hole: a strip of three drawings (rhStripSrcs()) instead of one big
+   picture, then year, title and a two-line blurb. */
+.rh-strip{display:grid;grid-template-columns:repeat(3,1fr);background:var(--thumb-bg);border-bottom:1px solid var(--card-border)}
+/* Multiplied onto the strip's paper tone like the card thumbnails, so the
+   image box itself stays transparent; the divider is a border, not a gap,
+   because a gap would show the card colour through the multiply. */
+.rh-strip img{display:block;width:100%;height:74px;object-fit:contain;padding:5px;box-sizing:border-box;mix-blend-mode:multiply;min-width:0}
+.rh-strip img+img{border-left:1px solid var(--card-border)}
+.rh-body{display:flex;flex-direction:column;gap:4px;padding:9px 12px 10px;flex:1}
 .rh-body .yr{align-self:flex-start}
-.rh-title{font-weight:700;font-size:15px;line-height:1.25}
-.rh-blurb{font-size:13.5px;color:var(--ink-soft);line-height:1.4}
-.rh-go{margin-top:auto;font-size:13px;color:var(--primary);font-weight:700}
-@media(min-width:640px){.rh-row{grid-auto-columns:calc((100% - 20px)/3)}}
+.rh-title{font-weight:700;font-size:14px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rh-blurb{font-size:12.5px;color:var(--ink-soft);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rh-go{margin-top:auto;font-size:12.5px;color:var(--primary);font-weight:700}
+@media(min-width:640px){.rh-row{grid-auto-columns:calc((100% - 20px)/3)}.rh-strip img{height:88px}}
+/* Landing wall: theme chips (one swipe row, never wrapping) over a grid of
+   drawings from that theme -- 3 across in 2 rows on phones, 3 rows from
+   640px. landingWallHTML() always renders LANDING_WALL_TILES (9) tiles; the
+   7th-9th are hidden below 640px rather than re-rendered on resize. */
+.lw-chips{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 2px 8px;margin:0 -2px 4px;scrollbar-width:none}
+.lw-chips::-webkit-scrollbar{display:none}
+.lw-chip{flex:none;scroll-snap-align:start;border:1px solid var(--card-border);background:var(--surface);color:var(--ink);border-radius:var(--pill-radius);padding:8px 14px;min-height:40px;font:inherit;font-size:14px;font-weight:600;white-space:nowrap;cursor:pointer}
+.lw-chip:hover,.lw-chip:focus-visible{border-color:var(--primary);outline:none}
+.lw-chip[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}
+.lw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.lw-tile{display:flex;flex-direction:column;padding:0;margin:0;background:var(--surface);border:1px solid var(--card-edge);border-radius:var(--radius);overflow:hidden;cursor:pointer;font:inherit;color:inherit;text-align:left;transition:border-color .15s,transform .15s}
+.lw-tile:hover,.lw-tile:focus-visible{border-color:var(--primary);transform:translateY(-2px);outline:none}
+.lw-tile:nth-child(n+7){display:none}
+.lw-pic{position:relative;display:block;aspect-ratio:1 / 1;overflow:hidden;background:var(--thumb-bg);border-bottom:1px solid var(--card-border)}
+/* Absolutely placed so a tall drawing can't stretch its tile past the
+   aspect-ratio box and leave the row's tiles at different heights. */
+.lw-pic img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;mix-blend-mode:multiply}
+.lw-cap{display:flex;justify-content:space-between;align-items:baseline;gap:4px;padding:5px 7px 6px;font-size:11.5px;line-height:1.2}
+.lw-brand{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.lw-yr{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-soft);flex:none}
+.lw-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.lw-count{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+/* Capped so the 3x3 fits one desktop screen with the rabbit holes peeking
+   below it; uncapped, a 1280px window made each tile ~400px wide. */
+@media(min-width:640px){
+  .lw{max-width:760px}
+  .lw-grid{gap:12px}
+  .lw-tile:nth-child(n+7){display:flex}
+  .lw-pic{aspect-ratio:4 / 3}
+  .lw-pic img{padding:10px}
+  .lw-cap{padding:8px 12px 9px;font-size:14px}
+  .lw-yr{font-size:12px}
+}
 /* Hero search */
 .home-hero{margin:0 0 20px}
 .home-kicker{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
@@ -1896,7 +1936,7 @@ const FIGHTS = [
    that `w`) in random order -- any conf tier, not just "v". An empty array
    is valid -- the row is then fully automatic.
 
-   Only 3 show on screen at once (78% width on phones, an exact third from
+   Only 3 show on screen at once (70% width on phones, an exact third from
    640px -- see .rh-row's CSS). RABBIT_HOLES_SHOWN is the batch size: the
    first batch renders up front, and each time the reader scrolls (or uses
    the prev/next arrows or the 5-second auto-advance, all in renderStats())
@@ -1922,6 +1962,42 @@ const FIGHTS = [
    the linked entries don't already support. */
 const RABBIT_HOLES_SHOWN = 30;
 const RABBIT_HOLES = [
+];
+
+/* ---- LANDING THEMES (Atlas tab, the image wall at the very top) ----
+   The chips above the wall, in this order. Each theme is a set of entries; the
+   wall shows a random LANDING_WALL_TILES of them (6 on phones, 9 from 640px)
+   and only ever entries that have a drawing, so a tile is never blank. A theme
+   with fewer than LANDING_WALL_TILES drawn entries is left out of the chip row
+   on its own (and verify_data.js says so), rather than showing a gap.
+
+   The plain URL opens one theme per day, rotating through this list in order
+   (the reader's local date). ?start=<key> or #start=<key> opens a chosen one;
+   use the # form for links to postmillenniumrenaissance.com/atlas/, whose
+   wrapper page passes its hash, not its query, to this file.
+
+   Each theme:
+   {
+     key: "in-court",               // required -- URL-safe, used by ?start=
+     label: {en:"...", fr:"..."},   // required -- the chip text
+     match: {...}                   // required -- which entries; every field given must hold:
+                                    //   cat:"susp"           category key (CATS)
+                                    //   yFrom:2010, yTo:2019 filing year range, inclusive (either end optional)
+                                    //   st:"active"          status
+                                    //   badge:"litigated"    has this badge
+                                    //   cards:["6029990", …] hand-picked: num, a nums[] member, or an English
+                                    //                        title substring (same matcher as FIGHTS[].cards)
+   }
+   A hand-picked theme makes an editorial claim about each card, so pick only
+   entries whose own s/w text supports it. */
+const LANDING_WALL_TILES = 9;
+const LANDING_THEMES = [
+  {key:"rear-2010s", label:{en:"2010s rear suspension", fr:"Suspension arrière des années 2010"}, match:{cat:"susp", yFrom:2010, yTo:2019}},
+  {key:"weird-drivetrains", label:{en:"Weird drivetrains", fr:"Transmissions étranges"},
+   match:{cards:["FR727193A","6029990","321932","6182991","20220297790","11697473","11560201","4127038","4170188","6241636","7712566","4522610","EP4536547","8608610","DE102023207638B3","10088020","20150008059"]}},
+  {key:"before-mtb", label:{en:"Before the mountain bike", fr:"Avant le VTT"}, match:{yTo:1974}},
+  {key:"in-court", label:{en:"Fought in court", fr:"Devant les tribunaux"}, match:{badge:"litigated"}},
+  {key:"in-force", label:{en:"Still in force", fr:"Toujours en vigueur"}, match:{st:"active"}},
 ];
 
 /* ---- LINKAGE MODELS ("See it move" viewer on suspension cards) ----
@@ -2366,6 +2442,8 @@ const T = {
     vsWord:"v.",
     statsTitle:"Atlas by the numbers",
     homeHolesH:"Pick a rabbit hole", homeReadStory:"Read the story →",
+    wallThemesAria:"Picture themes", wallShuffle:"Shuffle", wallShuffleAria:"Show other drawings from this theme",
+    wallCount:n=>`${n} drawings in this theme`, wallTileAria:(brand,y,title)=>`${brand}, ${y}: ${title}`,
     homeKicker:(n,first,now)=>`${n} patents · ${first}–${now} · every one sourced`,
     homeHeadline:"Who invented your bike?",
     homeSub:n=>`Search ${n} mountain bike patents — the suspension layouts, drivetrains and lawsuits behind the bike you ride.`,
@@ -2499,6 +2577,8 @@ const T = {
     vsWord:"c.",
     statsTitle:"L'atlas en chiffres",
     homeHolesH:"Choisissez une piste", homeReadStory:"Lire l'histoire →",
+    wallThemesAria:"Thèmes en images", wallShuffle:"Mélanger", wallShuffleAria:"Afficher d'autres dessins de ce thème",
+    wallCount:n=>`${n} dessins dans ce thème`, wallTileAria:(brand,y,title)=>`${brand}, ${y} : ${title}`,
     homeKicker:(n,first,now)=>`${n} brevets · ${first}–${now} · tous sourcés`,
     homeHeadline:"Qui a inventé votre vélo ?",
     homeSub:n=>`Explorez ${n} brevets de VTT — les suspensions, transmissions et procès derrière le vélo que vous roulez.`,
@@ -4264,6 +4344,7 @@ function stopCatTimelineCycle(){ if(catTimelineTimer){ clearInterval(catTimeline
    something they set earlier. */
 function followGo(go){
   if(!go) return;
+  if(go.ref){ clearFilterState(); searchQ=''; const si1=document.getElementById("searchInput"); if(si1) si1.value=''; syncChipsToState(); jumpToCard(go.ref); return; }
   if(go.card){
     const d=fightCardMatches(go.card)[0];
     if(d){ clearFilterState(); searchQ=''; const si0=document.getElementById("searchInput"); if(si0) si0.value=''; syncChipsToState(); jumpToCard(cardRef(d)); }
@@ -4338,6 +4419,148 @@ function autoBlurb(d){
   if(first.length<=RABBIT_AUTO_BLURB_MAX) return first;
   return first.slice(0, first.lastIndexOf(" ", RABBIT_AUTO_BLURB_MAX-3))+"…";
 }
+/* The three drawings on a rabbit-hole card: the hole's own picture, then the
+   nearest-in-year drawings from the same brand and finally the same category
+   -- a glimpse of where the hole leads. Only each entry's FIRST drawing, never
+   its later sheets: pictures/thumbs/ holds first drawings only, so a later
+   sheet would load at full size (often several MB) on the landing view.
+   Fixed per entry (no randomness), so the strip doesn't change on a
+   re-render. */
+const RH_STRIP_IMGS = 3;
+function rhStripSrcs(d, lead){
+  const out=[];
+  const add=src=>{ if(src && !out.includes(src) && out.length<RH_STRIP_IMGS) out.push(src); };
+  add(lead);
+  if(!d) return out;
+  add(firstDrawing(d));
+  const near=(a,b)=>Math.abs(a.y-d.y)-Math.abs(b.y-d.y);
+  const brand=(d.who||[])[0];
+  if(brand) D.filter(e=>e!==d && firstDrawing(e) && (e.who||[])[0]===brand).sort(near).forEach(e=>add(firstDrawing(e)));
+  D.filter(e=>e!==d && firstDrawing(e) && e.cat===d.cat).sort(near).forEach(e=>add(firstDrawing(e)));
+  return out;
+}
+
+/* ======== LANDING WALL (Atlas tab, top) ======== */
+/* See LANDING_THEMES in the data section. landingKey is the theme on screen;
+   landingChosen is true once the reader (or a ?start= link) picked it, and
+   only then does syncHash() write it into the URL, so a plain link keeps the
+   daily rotation. landingTiles is the current random pick, kept across
+   re-renders (language switch, returning to the tab) until a chip or Shuffle
+   changes it. */
+/* Read once at load, before syncHash() rewrites the hash. */
+const LANDING_START_FROM_URL=(()=>{
+  try{ return new URLSearchParams(location.search).get("start") || new URLSearchParams(location.hash.slice(1)).get("start"); }
+  catch(e){ return null; }
+})();
+let landingKey=null, landingChosen=!!LANDING_START_FROM_URL, landingTiles=null;
+function landingMatches(m,d){
+  if(m.cat && d.cat!==m.cat) return false;
+  if(m.yFrom!=null && d.y<m.yFrom) return false;
+  if(m.yTo!=null && d.y>m.yTo) return false;
+  if(m.st && d.st!==m.st) return false;
+  if(m.badge && !(d.b||[]).includes(m.badge)) return false;
+  return true;
+}
+const _landingPools=new Map();
+function landingPool(theme){
+  if(_landingPools.has(theme.key)) return _landingPools.get(theme.key);
+  const m=theme.match||{};
+  let base=D;
+  if(m.cards) base=[...new Set(m.cards.flatMap(c=>fightCardMatches(c)))];
+  const pool=base.filter(d=>firstDrawing(d) && landingMatches(m,d));
+  _landingPools.set(theme.key,pool);
+  return pool;
+}
+/* Themes with enough drawn entries to fill the wall with no blank tile. */
+function landingThemes(){ return LANDING_THEMES.filter(th=>landingPool(th).length>=LANDING_WALL_TILES); }
+/* Today's theme: the reader's local calendar day, counted from the epoch,
+   modulo the number of themes, so it moves one chip along each midnight. */
+function landingDefaultKey(){
+  const th=landingThemes(); if(!th.length) return null;
+  const now=new Date();
+  const day=Math.floor((now.getTime()-now.getTimezoneOffset()*60000)/86400000);
+  return th[day%th.length].key;
+}
+function landingTheme(){
+  const th=landingThemes();
+  if(!landingKey){
+    const want=LANDING_START_FROM_URL && th.find(x=>x.key===LANDING_START_FROM_URL);
+    if(want) landingKey=want.key;
+    else { landingKey=landingDefaultKey(); landingChosen=false; } // unknown or too-small theme in the link: fall back to today's
+  }
+  return th.find(x=>x.key===landingKey)||null;
+}
+function landingPick(){
+  const th=landingTheme(); if(!th) return [];
+  if(!landingTiles){
+    const a=landingPool(th).slice();
+    for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+    landingTiles=a.slice(0,LANDING_WALL_TILES);
+  }
+  return landingTiles;
+}
+/* The short name on a tile: the entry's first brand tag, or an inventor's
+   surname ("John J. Tower" -> "Tower": a phone tile is ~110px wide), else the
+   assignee up to its first separator ("Shimano Inc. / ..." -> "Shimano Inc."). */
+function landingBrand(d){
+  const w=d.who&&d.who[0];
+  if(w && INVENTORS.some(i=>i.key===w)) return w.replace(/,?\s+(Jr\.?|Sr\.?|II|III)$/,"").split(/\s+/).pop();
+  return w || String(d.a||"").split(/\s*[\/,&(→]\s*/)[0];
+}
+function landingChipsHTML(){
+  const cur=landingTheme();
+  return landingThemes().map(th=>{
+    const on=cur&&th.key===cur.key;
+    return `<button type="button" class="lw-chip" data-lw="${th.key}" aria-pressed="${on}">${tx(th.label)}</button>`;
+  }).join("");
+}
+function landingTilesHTML(){
+  return landingPick().map((d,i)=>{
+    const src=firstDrawing(d), brand=landingBrand(d);
+    return `<button type="button" class="lw-tile" data-lwi="${i}" aria-label="${mgEsc(t("wallTileAria",brand,d.y,stripCardLinks(tx(d.t))))}">
+      <span class="lw-pic"><img src="${thumbSrc(src)}" data-full="${src}" onerror="thumbFallback(this)" alt="" decoding="async"></span>
+      <span class="lw-cap"><span class="lw-brand">${mgEsc(brand)}</span><span class="lw-yr">${d.y}</span></span>
+    </button>`;
+  }).join("");
+}
+function landingWallHTML(){
+  const th=landingTheme(); if(!th) return "";
+  return `<section class="home-sec lw" id="landingWall">
+    <div class="lw-chips" id="lwChips" role="group" aria-label="${t("wallThemesAria")}">${landingChipsHTML()}</div>
+    <div class="lw-grid" id="lwGrid">${landingTilesHTML()}</div>
+    <div class="lw-foot"><span class="lw-count" id="lwCount">${t("wallCount",landingPool(th).length)}</span>
+      <button type="button" class="mini-btn lw-shuffle" id="lwShuffle" aria-label="${t("wallShuffleAria")}">${t("wallShuffle")}</button></div>
+  </section>`;
+}
+/* Repaints only the wall (not the whole tab) so the rabbit-hole row below
+   keeps its scroll position when the reader switches theme. */
+function paintLandingWall(){
+  const grid=$("#lwGrid"), chips=$("#lwChips"), count=$("#lwCount"), th=landingTheme();
+  if(!grid||!th) return;
+  grid.innerHTML=landingTilesHTML();
+  chips.querySelectorAll(".lw-chip").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lw===th.key)));
+  count.textContent=t("wallCount",landingPool(th).length);
+}
+function wireLandingWall(){
+  const chips=$("#lwChips"), grid=$("#lwGrid"), shuffle=$("#lwShuffle");
+  if(!chips) return;
+  chips.onclick=e=>{
+    const b=e.target.closest("[data-lw]"); if(!b) return;
+    if(b.dataset.lw!==landingKey){ landingKey=b.dataset.lw; landingTiles=null; }
+    landingChosen=true; paintLandingWall(); syncHash();
+    b.scrollIntoView({block:"nearest",inline:"nearest"});
+  };
+  grid.onclick=e=>{
+    const b=e.target.closest("[data-lwi]"); if(!b) return;
+    const d=landingPick()[Number(b.dataset.lwi)];
+    if(d) followGo({ref:cardRef(d)});
+  };
+  if(shuffle) shuffle.onclick=()=>{ landingTiles=null; paintLandingWall(); };
+  // Bring the selected chip into view if a deep link picked one off-screen.
+  const on=chips.querySelector('[aria-pressed="true"]');
+  if(on && chips.scrollWidth>chips.clientWidth) chips.scrollLeft=Math.max(0,on.offsetLeft-chips.offsetLeft-16);
+}
+
 /* How many cards of the pool are in the DOM. Survives a language-switch
    re-render so the row doesn't snap back to the first batch. */
 let rabbitCount=RABBIT_HOLES_SHOWN;
@@ -4350,8 +4573,10 @@ function rabbitHolesHTML(from=0,to=rabbitCount){
     const kicker = hole ? (tx(hole.kicker) ?? d?.y ?? "") : d.y;
     const title = hole ? tx(hole.title) : tx(d.t);
     const blurb = hole ? tx(hole.blurb) : autoBlurb(d);
+    const strip = rhStripSrcs(d, img).map((src,k)=>
+      `<img src="${thumbSrc(src)}" data-full="${src}" onerror="thumbFallback(this)" alt="${k===0?(alt||""):""}" loading="lazy" decoding="async">`).join("");
     return `<button type="button" class="rh-card" data-rh="${i}">
-      ${img?`<img src="${img}" alt="${alt||""}" loading="lazy">`:""}
+      ${strip?`<span class="rh-strip">${strip}</span>`:""}
       <span class="rh-body">
         ${kicker!==""?`<span class="yr">${kicker}</span>`:""}
         <span class="rh-title">${title}</span>
@@ -4412,6 +4637,7 @@ function renderStats(){
       <button type="button" class="rh-arrow" id="rhNext" aria-label="${t('scrollRight')}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>
     </div>` : "";
   tl.innerHTML=`<div class="stats-wrap">
+    ${landingWallHTML()}
     <section class="home-sec">
       <div class="rh-head">
         <h3 class="home-sec-h">${t("homeHolesH")}</h3>
@@ -4489,6 +4715,7 @@ function renderStats(){
     <p class="stats-note">${t("statsNote")}</p>
   </div>`;
   // Atlas (home) blocks
+  wireLandingWall();
   const holes=pickRabbitHoles();
   // Delegated so cards appended by the infinite scroll need no re-binding.
   const rhClickRow=$("#rhRow");
@@ -4886,6 +5113,8 @@ function syncHash(){
   HASH_SETS.forEach(k=>{ if(state[k].size) p.set(k,[...state[k]].join(",")); });
   if(searchQ) p.set("q",searchQ);
   if(state.lang!=="en") p.set("lang",state.lang); // langFromHash() already reads this back
+  const lt=activeTab===DEFAULT_TAB && landingChosen ? landingTheme() : null; // the wall's theme, once picked -- see LANDING THEMES
+  if(lt) p.set("start",lt.key);
   const s=p.toString();
   try{
     history.replaceState(null,"", s?("#"+s):location.pathname+location.search);

@@ -290,6 +290,63 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     }
   }
 
+  /* Landing wall (LANDING_THEMES): at phone width 6 tiles show, from 640px 9;
+     every tile's drawing loads; each chip repaints the wall from its own
+     theme; ?start= and #start= pick the theme (an unknown key falls back);
+     and tapping a tile opens that entry's card. */
+  for (const [w, wantVisible] of [[390, 6], [1280, 9]]) {
+    const ctx = await browser.newContext({ viewport: { width: w, height: 900 } });
+    const p = await ctx.newPage();
+    const errs = [];
+    p.on('pageerror', e => errs.push(e.message));
+    await p.goto(filePath);
+    await p.waitForTimeout(800);
+    const wall = await p.evaluate(async () => {
+      const visible = () => [...document.querySelectorAll('.lw-tile')].filter(t => t.offsetParent !== null);
+      const imgs = [...document.querySelectorAll('.lw-tile img')];
+      await Promise.all(imgs.map(i => i.complete ? 0 : new Promise(r => { i.addEventListener('load', r); i.addEventListener('error', r); setTimeout(r, 8000); })));
+      const broken = imgs.filter(i => !i.naturalWidth).length;
+      const chips = [...document.querySelectorAll('.lw-chip')];
+      const wrongTheme = [];
+      for (const c of chips) {
+        c.click();
+        const th = LANDING_THEMES.find(x => x.key === c.dataset.lw);
+        const pool = new Set(landingPool(th));
+        if (c.getAttribute('aria-pressed') !== 'true' || !landingPick().every(d => pool.has(d) && firstDrawing(d))) wrongTheme.push(th.key);
+      }
+      return { visible: visible().length, total: document.querySelectorAll('.lw-tile').length, broken, chips: chips.length, wrongTheme, hash: location.hash };
+    });
+    console.log(`landing wall at ${w}px: ${wall.visible}/${wall.total} tiles visible (want ${wantVisible}), broken drawings ${wall.broken}, ${wall.chips} chips, wrong theme ${JSON.stringify(wall.wrongTheme)}, hash ${wall.hash}, errors: ${JSON.stringify(errs)}`);
+    if (wall.visible !== wantVisible || wall.broken || wall.chips < 3 || wall.wrongTheme.length || !/start=/.test(wall.hash) || errs.length) {
+      failed = true;
+      console.error(`::error::Landing wall at ${w}px is wrong: tiles, drawings, chips or theme switching.`);
+    }
+    await ctx.close();
+  }
+  for (const [url, want] of [['?start=in-court', 'in-court'], ['#start=weird-drivetrains', 'weird-drivetrains'], ['?start=no-such-theme', null]]) {
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    const p = await ctx.newPage();
+    const errs = [];
+    p.on('pageerror', e => errs.push(e.message));
+    await p.goto(filePath + url);
+    await p.waitForTimeout(700);
+    const got = await p.evaluate(() => ({ on: document.querySelector('.lw-chip[aria-pressed="true"]')?.dataset.lw, today: landingDefaultKey() }));
+    const expect = want || got.today;
+    let opened = 1;
+    if (want) {
+      const ref = await p.evaluate(() => cardRef(landingPick()[0]));
+      await p.click('.lw-tile >> nth=0');
+      await p.waitForTimeout(700);
+      opened = await p.locator(`[id="p-${ref}"].open`).count();
+    }
+    console.log(`landing link ${url}: theme ${got.on} (want ${expect}), first tile opens its card ${!!opened}, errors: ${JSON.stringify(errs)}`);
+    if (got.on !== expect || !opened || errs.length) {
+      failed = true;
+      console.error(`::error::Landing link ${url} picked the wrong theme or its tile did not open a card.`);
+    }
+    await ctx.close();
+  }
+
   await browser.close();
   if (failed) {
     console.error('\n::error::Browser smoke test FAILED.');

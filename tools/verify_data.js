@@ -174,6 +174,44 @@ D.forEach(d => ['s', 'w', 'long'].forEach(f => {
 }));
 console.log('card cross-links:', xrefs.length, '(all targets resolve)');
 
+/* Landing wall themes (LANDING_THEMES): every hand-picked card must resolve
+   to an entry with a drawing (hard failure -- a picked entry with no drawing
+   is silently dropped from the wall, so the pick is a typo or a stale ref),
+   and a theme with fewer drawn entries than LANDING_WALL_TILES is reported:
+   index.html hides that chip rather than show a blank tile. */
+{
+  const themesSrc = html.match(/const LANDING_THEMES = \[([\s\S]*?)\n\];/);
+  const tilesSrc = html.match(/const LANDING_WALL_TILES = (\d+);/);
+  if (!themesSrc || !tilesSrc) hardFailures.push('LANDING_THEMES / LANDING_WALL_TILES not found in index.html');
+  else {
+    const themes = eval('[' + themesSrc[1] + '\n]');
+    const tiles = Number(tilesSrc[1]);
+    const drawn = d => (d.imgs && d.imgs.length) || d.img;
+    const en = f => (f && typeof f === 'object') ? f.en : f;
+    const cardMatches = c => D.filter(d => d.num === c || (d.nums || []).includes(c) || String(en(d.t)).includes(c));
+    const keys = new Set();
+    const sizes = [];
+    themes.forEach(th => {
+      if (keys.has(th.key)) hardFailures.push(`LANDING_THEMES: duplicate key "${th.key}"`);
+      keys.add(th.key);
+      const m = th.match || {};
+      let base = D;
+      if (m.cards) {
+        m.cards.forEach(c => {
+          const hit = cardMatches(c);
+          if (!hit.length) hardFailures.push(`LANDING_THEMES "${th.key}": card "${c}" matches no entry`);
+          else if (!hit.some(drawn)) hardFailures.push(`LANDING_THEMES "${th.key}": card "${c}" has no drawing`);
+        });
+        base = [...new Set(m.cards.flatMap(cardMatches))];
+      }
+      const n = base.filter(d => drawn(d) && (!m.cat || d.cat === m.cat) && (m.yFrom == null || d.y >= m.yFrom) &&
+        (m.yTo == null || d.y <= m.yTo) && (!m.st || d.st === m.st) && (!m.badge || (d.b || []).includes(m.badge))).length;
+      sizes.push(`${th.key} ${n}${n < tiles ? ` (under ${tiles}: chip hidden)` : ''}`);
+    });
+    console.log('\nlanding wall themes, drawn entries (informational):', sizes.join(', '));
+  }
+}
+
 console.log('\nschema-integrity issues:', hardFailures.length ? hardFailures : 'none');
 
 // Bilingual completeness -- informational only, does not fail the run.
