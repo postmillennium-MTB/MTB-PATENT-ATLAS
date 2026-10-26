@@ -202,7 +202,7 @@ introduction year, not a filing year. Title ends "(no patent)" / "(sans
 brevet)" or says what it is instead ("— the trademark, not the patent").
 Images are the maker's own drawings or marketing art with a visible source
 caption and no patent link. The card then shows
-"Year" / "Patent: none (…)" instead of "Filed" / "Granted", a "no patent"
+"Introduced" / "Patent: none (…)" instead of "Filed" / "Granted", a "no patent"
 pill instead of "unknown", no Google Patents link, and cites as "no patent".
 `verify_data.js` enforces the field rules, and fails a title that says "(no
 patent)", "not a patent", "not the patent", "un-patent" or "patent-free"
