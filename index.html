@@ -1985,7 +1985,7 @@ const RABBIT_HOLES = [
 
    Each theme:
    {
-     key: "in-court",               // required -- URL-safe, used by ?start=
+     key: "litigation",               // required -- URL-safe, used by ?start=
      label: {en:"...", fr:"..."},   // required -- the chip text
      match: {...}                   // required -- which entries; every field given must hold:
                                     //   cat:"susp"           category key (CATS)
@@ -2000,11 +2000,13 @@ const RABBIT_HOLES = [
 const LANDING_WALL_TILES = 9;
 const LANDING_THEMES = [
   {key:"rear-1990s", label:{en:"1990s rear suspension", fr:"Suspension arrière des années 1990"}, match:{cat:"susp", yFrom:1990, yTo:1999}},
+  {key:"rear-2000s", label:{en:"2000s rear suspension", fr:"Suspension arrière des années 2000"}, match:{cat:"susp", yFrom:2000, yTo:2009}},
   {key:"rear-2010s", label:{en:"2010s rear suspension", fr:"Suspension arrière des années 2010"}, match:{cat:"susp", yFrom:2010, yTo:2019}},
+  {key:"front", label:{en:"Front suspension", fr:"Suspension avant"}, match:{cat:"fork"}},
   {key:"drivetrains", label:{en:"Drivetrains", fr:"Transmissions"},
    match:{cards:["FR727193A","6029990","321932","6182991","20220297790","11697473","11560201","4127038","4170188","6241636","7712566","4522610","EP4536547","8608610","DE102023207638B3","10088020","20150008059"]}},
-  {key:"before-mtb", label:{en:"Before the mountain bike", fr:"Avant le VTT"}, match:{yTo:1974}},
-  {key:"in-court", label:{en:"Fought in court", fr:"Devant les tribunaux"}, match:{badge:"litigated"}},
+  {key:"vintage", label:{en:"Vintage", fr:"Vintage"}, match:{yTo:1974}},
+  {key:"litigation", label:{en:"Litigation", fr:"Litiges"}, match:{badge:"litigated"}},
   {key:"in-force", label:{en:"Still in force", fr:"Toujours en vigueur"}, match:{st:"active"}},
 ];
 

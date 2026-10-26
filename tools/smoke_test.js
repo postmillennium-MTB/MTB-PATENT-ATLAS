@@ -323,7 +323,7 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     }
     await ctx.close();
   }
-  for (const [url, want] of [['?start=in-court', 'in-court'], ['#start=drivetrains', 'drivetrains'], ['?start=no-such-theme', null]]) {
+  for (const [url, want] of [['?start=litigation', 'litigation'], ['#start=drivetrains', 'drivetrains'], ['?start=no-such-theme', null]]) {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
     const p = await ctx.newPage();
     const errs = [];
