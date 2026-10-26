@@ -167,7 +167,7 @@ take by default.
   st: "active",               // active | expired | pending | unknown
   exp: 2017,                  // estimated expiry year, or null — see the expiration rule below
   j: "DE",                    // OPTIONAL — omit entirely for US filings; see the jurisdiction table below
-  np: true,                   // OPTIONAL — only when it's confirmed no patent exists (not just "not found yet"); y becomes the product year, g must be null
+  np: true,                   // OPTIONAL — confirmed no patent exists; true | "trademark" | "standard" | "secret" — see "Entries with no patent" below
   b: ["litigated"],           // zero or more of: licensor | acquired | givenaway | litigated | priorart
   who: ["Trek"],              // filter tags — every value MUST already exist in BRANDS or INVENTORS
   conf: "v",                  // v = verified | m = story confirmed, number unverified | l = draft
@@ -180,6 +180,33 @@ take by default.
   // long: {en:"…", fr:"…"},           // OPTIONAL — see below — a deeper narrative, rendered as an inline <details> disclosure below w
 }
 ```
+
+### Entries with no patent
+
+Two different situations both have `num: null`, and the card must not blur them:
+
+1. **Patent not yet located** (may or may not exist). `num: null`, no `np`,
+   usually `conf: "l"`. The card keeps "Filed / Granted" and the Google
+   Patents search link, because a patent may still turn up. Titles say so
+   plainly when useful ("no patent located", "numbers unknown").
+2. **Confirmed no patent.** Set `np`. Use it only when a primary source says
+   so: the maker or inventor directly (Hadley, Banshee), an open-standard
+   publication (ISIS, Boost), a registered trademark in place of a patent (GT
+   Triple Triangle), or the company's stated trade-secret policy (Garbaruk).
+   "Our searches found nothing" alone is case 1, not case 2.
+
+`np` values: `true` (plain no patent), `"trademark"`, `"standard"` (open
+standard) or `"secret"` (trade secret). An `np` entry must have `num: null`,
+no `nums`, `g: null`, `exp: null`, `st: "unknown"`; `y` is the product's
+introduction year, not a filing year. Title ends "(no patent)" / "(sans
+brevet)" or says what it is instead ("— the trademark, not the patent").
+Images are the maker's own drawings or marketing art with a visible source
+caption and no patent link. The card then shows
+"Introduced" / "Patent: none (…)" instead of "Filed" / "Granted", a "no patent"
+pill instead of "unknown", no Google Patents link, and cites as "no patent".
+`verify_data.js` enforces the field rules, and fails a title that says "(no
+patent)", "not a patent", "not the patent", "un-patent" or "patent-free"
+without `np`.
 
 **`searchUrl`** overrides the card's auto-built "Search related patents on
 Google Patents" link with a specific URL you supply. The auto-built version
