@@ -167,6 +167,7 @@ take by default.
   st: "active",               // active | expired | pending | unknown
   exp: 2017,                  // estimated expiry year, or null — see the expiration rule below
   j: "DE",                    // OPTIONAL — omit entirely for US filings; see the jurisdiction table below
+  np: true,                   // OPTIONAL — only when it's confirmed no patent exists (not just "not found yet"); y becomes the product year, g must be null
   b: ["litigated"],           // zero or more of: licensor | acquired | givenaway | litigated | priorart
   who: ["Trek"],              // filter tags — every value MUST already exist in BRANDS or INVENTORS
   conf: "v",                  // v = verified | m = story confirmed, number unverified | l = draft
