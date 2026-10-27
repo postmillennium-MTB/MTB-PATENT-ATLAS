@@ -273,8 +273,10 @@ header::before{
 @media(min-width:640px){.rh-row{grid-auto-columns:calc((100% - 20px)/3)}.rh-strip img{height:88px}}
 /* Landing wall: theme chips (one swipe row, never wrapping) over a grid of
    drawings from that theme -- 3 across in 2 rows on phones, 3 rows from
-   640px. landingWallHTML() always renders LANDING_WALL_TILES (9) tiles; the
-   7th-9th are hidden below 640px rather than re-rendered on resize. */
+   640px. landingWallHTML() renders LANDING_WALL_TILES (9) tiles; the 7th-9th
+   are hidden below 640px rather than re-rendered on resize. A theme with only
+   LANDING_WALL_MIN to 8 drawn entries renders 6, so it fills 2 full rows at
+   every width. */
 .lw-chips{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 2px 8px;margin:0 -2px 4px;scrollbar-width:none}
 .lw-chips::-webkit-scrollbar{display:none}
 .lw-chip{flex:none;scroll-snap-align:start;border:1px solid var(--card-border);background:var(--surface);color:var(--ink);border-radius:var(--pill-radius);padding:8px 14px;min-height:40px;font:inherit;font-size:14px;font-weight:600;white-space:nowrap;cursor:pointer}
@@ -1981,7 +1983,8 @@ const RABBIT_HOLES = [
    The chips above the wall, in this order. Each theme is a set of entries; the
    wall shows a random LANDING_WALL_TILES of them (6 on phones, 9 from 640px)
    and only ever entries that have a drawing, so a tile is never blank. A theme
-   with fewer than LANDING_WALL_TILES drawn entries is left out of the chip row
+   with LANDING_WALL_MIN to 8 drawn entries shows 6 at every width (2 full rows
+   of 3). A theme with fewer than LANDING_WALL_MIN is left out of the chip row
    on its own (and verify_data.js says so), rather than showing a gap.
 
    The plain URL opens the first theme in this list (Jon's call: the order is
@@ -1998,12 +2001,14 @@ const RABBIT_HOLES = [
                                     //   yFrom:2010, yTo:2019 filing year range, inclusive (either end optional)
                                     //   st:"active"          status
                                     //   badge:"litigated"    has this badge
+                                    //   np:true              confirmed no patent (any np value)
                                     //   cards:["6029990", …] hand-picked: num, a nums[] member, or an English
                                     //                        title substring (same matcher as FIGHTS[].cards)
    }
    A hand-picked theme makes an editorial claim about each card, so pick only
    entries whose own s/w text supports it. */
 const LANDING_WALL_TILES = 9;
+const LANDING_WALL_MIN = 6;
 const LANDING_THEMES = [
   {key:"rear-1990s", label:{en:"1990s rear suspension", fr:"Suspension arrière des années 1990"}, match:{cat:"susp", yFrom:1990, yTo:1999}},
   {key:"rear-2000s", label:{en:"2000s rear suspension", fr:"Suspension arrière des années 2000"}, match:{cat:"susp", yFrom:2000, yTo:2009}},
@@ -2011,7 +2016,15 @@ const LANDING_THEMES = [
   {key:"front", label:{en:"Front suspension", fr:"Suspension avant"}, match:{cat:"fork"}},
   {key:"drivetrains", label:{en:"Drivetrains", fr:"Transmissions"},
    match:{cards:["FR727193A","6029990","321932","6182991","20220297790","11697473","11560201","4127038","4170188","6241636","7712566","4522610","EP4536547","8608610","DE102023207638B3","10088020","20150008059"]}},
+  /* Hubs (engagement, bearings, spoke flanges, spacing) and wheels (rims, spokes,
+     whole-wheel designs). Tires, valves, inserts, axles and brake adapters stay out. */
+  {key:"hubs-wheels", label:{en:"Hubs & wheels", fr:"Moyeux et roues"},
+   match:{cards:["5964332","5676227","8757341","10442245","9102197","11293500","Hadley Racing","11951768","11999191",
+     "Symmetric fat-bike hub spacing","11090977","EP4017740","6155394","12643343",
+     "7334846","6257676","6402256","7555838","5064250","Berd braided-fiber spoke","102017116754","202017104416U1",
+     "5104199","7635170","5931544","D236609"]}},
   {key:"vintage", label:{en:"Vintage", fr:"Vintage"}, match:{yTo:1974}},
+  {key:"no-patent", label:{en:"No patent", fr:"Sans brevet"}, match:{np:true}},
   {key:"litigation", label:{en:"Litigation", fr:"Litiges"}, match:{badge:"litigated"}},
   {key:"in-force", label:{en:"Still in force", fr:"Toujours en vigueur"}, match:{st:"active"}},
 ];
@@ -4509,6 +4522,7 @@ function landingMatches(m,d){
   if(m.yTo!=null && d.y>m.yTo) return false;
   if(m.st && d.st!==m.st) return false;
   if(m.badge && !(d.b||[]).includes(m.badge)) return false;
+  if(m.np && !d.np) return false;
   return true;
 }
 const _landingPools=new Map();
@@ -4522,7 +4536,9 @@ function landingPool(theme){
   return pool;
 }
 /* Themes with enough drawn entries to fill the wall with no blank tile. */
-function landingThemes(){ return LANDING_THEMES.filter(th=>landingPool(th).length>=LANDING_WALL_TILES); }
+function landingThemes(){ return LANDING_THEMES.filter(th=>landingPool(th).length>=LANDING_WALL_MIN); }
+/* 9 tiles, or 6 for a theme too small for 9, so the last row is never short. */
+function landingTileCount(th){ return landingPool(th).length>=LANDING_WALL_TILES ? LANDING_WALL_TILES : 6; }
 /* The theme a plain URL opens: the first one that can fill the wall. */
 function landingDefaultKey(){
   const th=landingThemes();
@@ -4542,7 +4558,7 @@ function landingPick(){
   if(!landingTiles){
     const a=landingPool(th).slice();
     for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
-    landingTiles=a.slice(0,LANDING_WALL_TILES);
+    landingTiles=a.slice(0,landingTileCount(th));
   }
   return landingTiles;
 }

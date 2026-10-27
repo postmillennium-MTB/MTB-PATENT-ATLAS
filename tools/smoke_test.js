@@ -323,7 +323,28 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     }
     await ctx.close();
   }
-  for (const [url, want] of [['?start=litigation', 'litigation'], ['#start=drivetrains', 'drivetrains'], ['?start=no-such-theme', null], ['', null]]) {
+  /* A theme with 6-8 drawn entries (no-patent) shows exactly 6 tiles at desktop
+     width too, so its second row is full and there is no third row. */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+    const p = await ctx.newPage();
+    await p.goto(filePath + '#start=no-patent');
+    await p.waitForTimeout(700);
+    const small = await p.evaluate(() => ({
+      on: document.querySelector('.lw-chip[aria-pressed="true"]')?.dataset.lw,
+      pool: landingPool(LANDING_THEMES.find(x => x.key === 'no-patent')).length,
+      visible: [...document.querySelectorAll('.lw-tile')].filter(t => t.offsetParent !== null).length,
+      allNp: landingPick().every(d => d.np && firstDrawing(d)),
+    }));
+    const want = small.pool >= 9 ? 9 : 6;
+    console.log(`landing no-patent at 1280px: theme ${small.on}, ${small.visible} tiles (want ${want}, pool ${small.pool}), all no-patent ${small.allNp}`);
+    if (small.on !== 'no-patent' || small.visible !== want || !small.allNp) {
+      failed = true;
+      console.error('::error::No-patent landing theme is missing, mis-sized or shows a patented entry.');
+    }
+    await ctx.close();
+  }
+  for (const [url, want] of [['?start=litigation', 'litigation'], ['#start=drivetrains', 'drivetrains'], ['#start=hubs-wheels', 'hubs-wheels'], ['?start=no-such-theme', null], ['', null]]) {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
     const p = await ctx.newPage();
     const errs = [];
