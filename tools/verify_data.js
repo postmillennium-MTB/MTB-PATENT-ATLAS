@@ -199,15 +199,17 @@ console.log('card cross-links:', xrefs.length, '(all targets resolve)');
 /* Landing wall themes (LANDING_THEMES): every hand-picked card must resolve
    to an entry with a drawing (hard failure -- a picked entry with no drawing
    is silently dropped from the wall, so the pick is a typo or a stale ref),
-   and a theme with fewer drawn entries than LANDING_WALL_TILES is reported:
-   index.html hides that chip rather than show a blank tile. */
+   and a theme with fewer drawn entries than LANDING_WALL_MIN is reported:
+   index.html hides that chip rather than show a blank tile (one with
+   LANDING_WALL_MIN to LANDING_WALL_TILES-1 shows a 6-tile wall). */
 {
   const themesSrc = html.match(/const LANDING_THEMES = \[([\s\S]*?)\n\];/);
   const tilesSrc = html.match(/const LANDING_WALL_TILES = (\d+);/);
-  if (!themesSrc || !tilesSrc) hardFailures.push('LANDING_THEMES / LANDING_WALL_TILES not found in index.html');
+  const minSrc = html.match(/const LANDING_WALL_MIN = (\d+);/);
+  if (!themesSrc || !tilesSrc || !minSrc) hardFailures.push('LANDING_THEMES / LANDING_WALL_TILES / LANDING_WALL_MIN not found in index.html');
   else {
     const themes = eval('[' + themesSrc[1] + '\n]');
-    const tiles = Number(tilesSrc[1]);
+    const tiles = Number(tilesSrc[1]), min = Number(minSrc[1]);
     const drawn = d => (d.imgs && d.imgs.length) || d.img;
     const en = f => (f && typeof f === 'object') ? f.en : f;
     const cardMatches = c => D.filter(d => d.num === c || (d.nums || []).includes(c) || String(en(d.t)).includes(c));
@@ -227,8 +229,8 @@ console.log('card cross-links:', xrefs.length, '(all targets resolve)');
         base = [...new Set(m.cards.flatMap(cardMatches))];
       }
       const n = base.filter(d => drawn(d) && (!m.cat || d.cat === m.cat) && (m.yFrom == null || d.y >= m.yFrom) &&
-        (m.yTo == null || d.y <= m.yTo) && (!m.st || d.st === m.st) && (!m.badge || (d.b || []).includes(m.badge))).length;
-      sizes.push(`${th.key} ${n}${n < tiles ? ` (under ${tiles}: chip hidden)` : ''}`);
+        (m.yTo == null || d.y <= m.yTo) && (!m.st || d.st === m.st) && (!m.badge || (d.b || []).includes(m.badge)) && (!m.np || d.np)).length;
+      sizes.push(`${th.key} ${n}${n < min ? ` (under ${min}: chip hidden)` : n < tiles ? ' (6-tile wall)' : ''}`);
     });
     console.log('\nlanding wall themes, drawn entries (informational):', sizes.join(', '));
   }
