@@ -1,0 +1,72 @@
+patent: US20100109282A1
+source: https://patentimages.storage.googleapis.com/66/83/b6/23baf96a509bc2/US20100109282A1.pdf
+pages: 26
+per-page extracted text length: {1: 1108, 2: 77, 3: 88, 4: 77, 5: 77, 6: 151, 7: 151, 8: 151, 9: 151, 10: 153, 11: 6951, 12: 6919, 13: 7600, 14: 7816, 15: 7799, 16: 7382, 17: 7573, 18: 7381, 19: 7380, 20: 6958, 21: 6885, 22: 7127, 23: 7565, 24: 7553, 25: 8012, 26: 7025}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US 20100109282A1
+
+(19) United States
+
+(12) Patent Application Publication (10) Pub. No.: US 2010/0109282 A1
+Weagle
+
+(43) Pub. Date:
+
+(54) BICYCLE SUSPENSION SYSTEMS
+76) Inventor
+Inventor:
+(76)
+
+David
+t Weagle.
+eagle, Edgartown,
+EdgartOWn, MA
+
+Correspondence Address:
+
+May 6, 2010
+
+Publication Classification
+(51) Int.
+B62KCl.25/10
+
+(2006.01)
+
+(52) U.S. Cl. ........................................................ 280/284
+
+STAHL LAW FRM
+2 MEADOWSWEET LANE
+
+SAN CARLOS, CA 94070 (US)
+
+(21) Appl. No.:
+
+12/584,996
+
+(22) Filed:
+
+Sep.15, 2009
+O
+
+O
+
+Related U.S. Application Data
+(60) Provisional application No. 61/192.219, filed on Sep.
+16, 2008.
+
+(57)
+
+ABSTRACT
+
+The invention relates to Suspension systems comprising, in
+certain embodiments, a linkage arrangement including a
+shock link, wheel link, rate link, and first shock pivot, posi
+tioned so that a first shock pivot is moved in a downward and
+rearward direction as the Suspension is compressed, while
+
+said wheel link and shock link rotate in opposite directions,
+and so that a leverage ratio is tactically controlled through
+said linkage arrangement.
+
+
