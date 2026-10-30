@@ -2073,13 +2073,14 @@ const LANDING_THEMES = [
      ic:{n:"15", at:[x,y]} | true,  // draw the coupler's instant center and the two links extended to it;
                                     // n/at label it with the sheet's own numeral when the sheet has one
      // Optional, for a model that draws a whole bike rather than a schematic:
-     shapes:[{p:[[x,y],…], body?:"driver"|"coupler"|"follower", fill?:1}], // outlines traced from the sheet; body = the
+     shapes:[{p:[[x,y],…], holes?:[[[x,y],…]], body?:"driver"|"coupler"|"follower", fill?:1}], // outlines traced from the sheet; body = the
                                     // moving part one rides (frame if omitted); fill hides what is behind it
      chains:[{a,ra,b,rb,side}],     // chain runs: outer tangent between circles a and b (points + radii), side -1 or 1
      wheels:[{…, top:1}],           // top draws a small wheel (idler, chainring) above the links, not behind them
      rest:.28,                      // slider position the viewer opens on (sag); default 0
      follow:true,                   // side view: hovering with a mouse puts the axle on the nearest point of its
                                     // path; the intro then stays in side view instead of turning to 3D
+     flat:true,                     // side view only: no Side/3D buttons, no drag-to-turn, no 3D intro
      pathAngle:true, pivotHeight:"J1" // extra readouts: axle path off vertical; height of that pivot over the axle
    }
    Numerals are reproduced only where the sheet itself prints them; the
@@ -2173,12 +2174,13 @@ const LINKAGE_MODELS = [
     mmPerUnit:1.15,
     travel:139.1,                     // 160 mm / 1.15
     rest:.28,                         // opens at about 28 percent of travel, like a rider's sag
-    follow:true,                      // hovering the side view drives the axle along its path
+    follow:true,                      // hovering the drawing drives the axle along its path
+    flat:true,                        // side view only: the frame is a flat tracing, so no 3D turn
     pathAngle:true, pivotHeight:"J1", // two extra readouts
     view:[100,220,1800,990],
     pts:{J1:[836,722],J2:[465,848],J3:[852,570],J4:[873,637],J5:[951,634],J6:[898,820],
          IDLER:[822,760],BB:[836,879],FRONT:[1520,848],
-         FKT:[1292,380],FKB:[1514,846],CRL:[692,892],CRR:[986,880]},
+         FKT:[1312,405],FKB:[1514,846],CRL:[692,892],CRR:[986,880]},
     ground:["J1","J4"], driver:"J2", follower:"J3", axle:"J2",
     body:{driver:["IDLER"],coupler:[],follower:["J5"]},
     shock:["J5","J6"], coil:true,
@@ -2188,20 +2190,13 @@ const LINKAGE_MODELS = [
       {p:["FKT","FKB"],w:32,z:0},                 // fork
       {p:["BB","CRR"],w:34,z:0}                   // near crank
     ],
-    shapes:[  // outlines traced from Fig. 1; body = the moving part they ride on, frame if omitted
-      {p:[[900,545],[906,540],[960,490],[1000,454],[1040,418],[1080,382],[1120,347],[1160,313],[1200,283],[1240,260],[1262,248],[1262,248],[1280,273],[1301,314],[1309,331],[1316,368],[1262,370],[1240,373],[1226,378],[1220,380],[1197,420],[1175,460],[1153,500],[1133,540],[1112,580],[1091,620],[1071,660],[1050,700],[1032,740],[1012,780],[999,806],[978,835],[955,856],[930,861],[900,862],[836,879],[815,840],[815,840],[820,790],[822,720],[818,660],[808,615],[792,578],[792,576],[786,540],[775,510],[766,478],[761,455],[752,420],[737,380],[724,340],[710,300],[731,286],[732,300],[748,340],[761,380],[775,420],[788,445],[795,460],[800,470],[811,500],[826,522],[841,540],[858,552],[878,557],[900,547]],fill:1},
-      {p:[[900,545],[906,540],[960,490],[1000,454],[1040,418],[1080,382],[1120,347],[1160,313],[1200,283],[1240,260],[1262,248]]},
-      {p:[[903,577],[939,540],[960,519],[1000,483],[1040,447],[1080,413],[1120,380],[1160,346],[1180,334],[1191,328],[1192,337],[1186,352],[1178,380],[1156,420],[1135,460],[1114,500],[1094,540],[1072,580],[1052,620],[1031,660],[1011,700],[991,740],[971,780],[963,800],[945,813],[918,812]]},
-      {p:[[1262,370],[1240,373],[1226,378],[1220,380],[1197,420],[1175,460],[1153,500],[1133,540],[1112,580],[1091,620],[1071,660],[1050,700],[1032,740],[1012,780],[999,806],[978,835],[955,856],[930,861],[900,862]]},
-      {p:[[1262,248],[1280,273],[1301,314],[1309,331],[1316,368]]},
-      {p:[[732,300],[748,340],[761,380],[775,420],[788,445],[795,460],[800,470],[811,500],[826,522],[841,540],[858,552],[878,557],[900,547]]},
-      {p:[[710,300],[724,340],[737,380],[752,420],[761,455],[766,478],[775,510],[786,540],[792,576]]},
-      {p:[[792,578],[808,615],[818,660],[822,720],[820,790],[815,840]]},
-      {p:[[827,608],[843,650],[853,700],[848,760],[836,810],[830,846]]},
-      {body:"coupler",p:[[850,566],[827,572],[790,590],[738,613],[700,642],[660,669],[580,725],[500,782],[478,800],[500,822],[540,793],[580,764],[620,735],[660,709],[700,681],[740,655],[780,628],[820,603],[848,608]],fill:1},   // brake link
-      {body:"driver",p:[[503,873],[540,861],[580,851],[620,840],[660,830],[700,818],[740,809],[780,797],[822,788],[850,770],[856,744],[854,712],[838,702],[806,708],[800,724],[802,748],[760,758],[700,775],[620,797],[560,815],[508.2,832.3],[499.7,817.8],[486.6,807.4],[470.6,802.3],[453.9,803.4],[438.6,810.3],[426.9,822.3],[420.2,837.7],[419.4,854.4],[424.8,870.3],[435.4,883.2],[450,891.5],[466.6,894],[483,890.3],[497,881.1]],fill:1},    // wheel link
-      {body:"follower",p:[[827,566],[846,552],[858,551],[875,559],[908,582],[940,605],[968,625],[972,640],[955,655],[900,655],[870,658],[850,648],[842,620],[830,585]],fill:1},  // rocker
-      {body:"follower",p:[[870,583],[905,609],[880,628]]}
+    shapes:[  // outlines traced from the Devinci Spartan HP frame (technical manual, p. 5), fitted to the patent pivots; body = the moving part they ride on, frame if omitted
+      {p:[[740,444],[674,317],[678,296],[712,294],[717,303],[769,438]],fill:1},
+      {p:[[654,301],[660,289],[681,279],[722,280],[728,290],[716,296],[678,296]],fill:1},
+      {p:[[740,444],[744,466],[751,483],[773,535],[789,581],[795,601],[799,649],[805,717],[812,794],[819,843],[816,862],[822,884],[844,898],[867,893],[885,885],[901,883],[927,882],[962,872],[988,860],[1009,836],[1023,819],[1065,738],[1072,721],[1132,609],[1180,523],[1190,512],[1233,437],[1244,413],[1250,405],[1266,395],[1290,404],[1310,395],[1337,393],[1335,364],[1318,331],[1301,299],[1286,283],[1262,290],[1241,297],[1203,321],[1030,445],[898,546],[879,555],[853,556],[835,549],[819,534],[802,511],[785,477],[780,457],[772,446],[769,438]],holes:[[[1207,357],[1195,358],[1136,398],[1011,489],[915,565],[905,578],[903,588],[898,637],[891,695],[886,754],[886,798],[902,806],[917,808],[928,808],[960,796],[987,779],[1005,751],[1053,655],[1068,629],[1087,594],[1112,550],[1152,477],[1203,387],[1207,368]]],fill:1},
+      {body:"coupler",p:[[451,837],[460,821],[489,800],[537,770],[584,737],[632,705],[680,674],[728,649],[776,623],[811,600],[830,584],[850,570],[867,581],[864,603],[844,627],[825,641],[811,651],[777,669],[729,690],[681,712],[633,741],[585,771],[538,801],[490,832],[474,849]],fill:1},
+      {body:"driver",p:[[480,831],[538,813],[586,800],[634,787],[683,773],[731,760],[779,744],[798,735],[830,712],[853,723],[856,740],[851,776],[832,786],[782,797],[732,809],[684,822],[636,836],[587,851],[539,863],[505,870],[474,863],[461,850],[467,834]],fill:1},
+      {body:"follower",p:[[843,583],[857,573],[882,577],[916,594],[951,616],[972,635],[970,658],[949,667],[923,661],[894,654],[873,660],[852,653],[839,624]],holes:[[[871,610],[925,638],[873,647]]],fill:1}
     ],
     chains:[{a:"J2",ra:36,b:"IDLER",rb:32,side:-1},{a:"IDLER",ra:32,b:"BB",rb:62,side:1},{a:"J2",ra:36,b:"BB",rb:62,side:1}],
     ic:true
@@ -3938,7 +3933,9 @@ function buildLinkageSVG(m,pose,cam){
   // traced outlines: the frame sits behind the moving parts, and a filled outline hides what is behind it
   (m.shapes||[]).forEach(sh=>{
     const sp=lkShapePts(m,pose,sh).map(p=>pr(p,0));
-    push((sh.body?2e3:5e3)+sp.reduce((s,q)=>s+q[2],0)/sp.length,`<path d="${lkTubeD(sp)}${sh.fill?"Z":""}" class="${sh.fill?"lk-eye":"lk-line"}"/>`);
+    // `holes` are cut-outs (the frame's main triangle); even-odd fill lets what is behind show through
+    const cut=(sh.holes||[]).map(h=>lkTubeD(lkShapePts(m,pose,{...sh,p:h}).map(p=>pr(p,0)))+"Z").join("");
+    push((sh.body?2e3:5e3)+sp.reduce((s,q)=>s+q[2],0)/sp.length,`<path d="${lkTubeD(sp)}${sh.fill?"Z":""}${cut}" fill-rule="evenodd" class="${sh.fill?"lk-eye":"lk-line"}"/>`);
   });
   // chain runs: the outer tangent between two circles
   (m.chains||[]).forEach(c=>{
@@ -4032,8 +4029,8 @@ function mountLinkage(host,m){
     <div class="lk-ctrl">
       <label class="lk-slider"><span>${t("lkTravel")}</span><input type="range" min="0" max="1000" value="0" aria-label="${t("lkTravel")}"></label>
       <button type="button" class="lk-btn lk-play" aria-pressed="false">${t("lkPlay")}</button>
-      <button type="button" class="lk-btn lk-flat">${t("lkSide")}</button>
-      <button type="button" class="lk-btn lk-3d">${t("lk3D")}</button>
+      ${m.flat?"":`<button type="button" class="lk-btn lk-flat">${t("lkSide")}</button>
+      <button type="button" class="lk-btn lk-3d">${t("lk3D")}</button>`}
     </div>
     <dl class="lk-read"></dl>
     <p class="lk-note">${tx(m.note)}</p>`;
@@ -4083,12 +4080,14 @@ function mountLinkage(host,m){
     const loop=now=>{ if(!st.playing) return; if(!host.isConnected){ stop(); return; } st.frac=(1-Math.cos((now-t0)/LK_PLAY_PERIOD_MS*2*Math.PI))/2; draw(); st.raf=requestAnimationFrame(loop); };
     st.raf=requestAnimationFrame(loop);
   };
-  host.querySelector(".lk-flat").onclick=()=>{ stop(); turnTo(0,0); };
-  host.querySelector(".lk-3d").onclick=()=>{ stop(); turnTo(LK_SPIN_YAW,LK_SPIN_PITCH); };
+  if(!m.flat){
+    host.querySelector(".lk-flat").onclick=()=>{ stop(); turnTo(0,0); };
+    host.querySelector(".lk-3d").onclick=()=>{ stop(); turnTo(LK_SPIN_YAW,LK_SPIN_PITCH); };
+  }
   /* Drag to turn. touch-action:pan-y on the stage (see CSS) keeps a vertical
      swipe scrolling the page on a phone, so only a sideways drag turns it. */
   let drag=null;
-  svg.addEventListener("pointerdown",e=>{ drag={x:e.clientX,y:e.clientY,yaw:cam.yaw,pitch:cam.pitch}; svg.setPointerCapture(e.pointerId); });
+  svg.addEventListener("pointerdown",e=>{ if(m.flat) return; drag={x:e.clientX,y:e.clientY,yaw:cam.yaw,pitch:cam.pitch}; svg.setPointerCapture(e.pointerId); });
   /* Side view of a `follow` model: a mouse over the drawing puts the axle on the
      nearest point of its path. Not while dragging, not in 3D (the pointer no
      longer lies on the sheet), and not on touch, where a drag is a scroll. */
@@ -4112,7 +4111,7 @@ function mountLinkage(host,m){
   draw();
   // the drawing "comes to life": turn to three-quarter and compress once
   // a `follow` model skips the turn and stays in side view, where hovering works
-  const spin=m.follow?0:1;
+  const spin=m.follow||m.flat?0:1;
   if(!reduce) tween(LK_INTRO_MS,k=>{ const e=ease(k); cam.yaw=LK_SPIN_YAW*e*spin; cam.pitch=LK_SPIN_PITCH*e*spin; st.frac=rest+(.7-rest)*Math.sin(Math.PI*k); });
   else { cam.yaw=LK_SPIN_YAW*spin; cam.pitch=LK_SPIN_PITCH*spin; draw(); }
 }
