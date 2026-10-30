@@ -17,7 +17,7 @@ An interactive timeline of mountain bike intellectual property: 410 patents and 
 | **Total entries** | 410 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 178 |
-| **Expired patents** | 156 |
+| **Expired patents** | 157 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 10 |
 | **Litigated entries** | 31 |
@@ -25,8 +25,8 @@ An interactive timeline of mountain bike intellectual property: 410 patents and 
 | **Brands** | 213 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 325 |
-| **Medium confidence** | 45 |
+| **Verified entries** | 326 |
+| **Medium confidence** | 44 |
 | **Draft / in progress** | 40 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -814,6 +814,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **SPHP card gets its "in motion" viewer: the axle-path swingarm is back.** Jon's original page, kept as notes in `DeVinciHP/`, is ported into the card as a third "See it move" viewer: the whole bike drawn from the Fig. 1 sheet, the pivots J1 to J6 and the wheel, brake and rocker links, the idler and chain, a 160 mm travel slider, and a mouse that moves the axle along its path. It adds readouts for the axle path's angle off vertical and the main pivot's height over the axle. This is the only viewer where the pointer drives the axle, and the only one that draws a whole bike. Scale assumes a 29 × 2.5 tire (about 740 mm), so millimetres are approximate. As a cross-check, the geometry gives about 63 mm of shock stroke at 160 mm of travel, against the 65 mm on the Spartan HP spec sheet. Fig. 8 of US 11,845,509 (the patent's own kinematic diagram of the same four-bar) is added to the card's drawings as `pictures/US11845509B2.png`, rotated upright from the patent PDF. Viewer additions: `shapes`, `chains`, `rest`, `follow`, `pathAngle`, `pivotHeight` and `top` on wheels, documented above `LINKAGE_MODELS`.
 - **VPP card (US 6,206,397) gets its three extra sheets; DW-Link and RMU wording updated.** The VPP card now carries four drawings: Fig. 1 (first, so the thumbnail is unchanged), Fig. 6 (a lower link bracket), Fig. 4 (the upper link assembly; the uploaded sheet was sideways and is rotated upright) and a side view of frame embodiment 600 whose figure number isn't legible on the sheet, so the caption doesn't give one. The DW-Link card now says US 7,128,329 expired on September 29, 2023 (per Singletracks) and its "why it matters" line no longer says protection is still ending; the card's `exp` stays 2025 because the bundled entry follows its newest member, US 7,661,503, whose term wasn't re-checked. The RMU card title now reads "Rocky Mountain Underground (RMU)". The Patent Match game needed no refresh: since it became the Match tab it reads the atlas's entries live. No counts changed.
 - **SPHP viewer: side view only, frame redrawn from the real Spartan HP.** The SPHP card's viewer drops the Side view / 3D view buttons and drag-to-turn (the 3D spin made the flat tracing look wrong), and its frame, seatpost, saddle, brake link, wheel link and rocker are now outlines traced from the frame photograph in the Devinci Spartan HP technical manual (`DeVinciHP/manueltech_spartan-hp_eng_v3.pdf`, p. 5), scaled and rotated to fit the patent's pivots. The pivots and travel still come from the patent, so the pivots sit within a few millimetres of the production bolts rather than exactly on them. New optional `LINKAGE_MODELS` keys: `flat:true` and `holes` on a shape (cut-outs such as the main triangle). The Split Pivot and DW-Link viewers are unchanged.
+- **Evil DELTA card corrected and given its drawings; Weagle portfolio footnote rewritten.** The DELTA entry now leads with the US application, US 2010/0109282 A1 (linked to Google Patents), and lists WO 2010/033174 A1 and EP 2337730 A4 as family members. Status moves from unknown to expired with `exp:2011`: the US application is listed as abandoned and the WO record shows an anticipated expiration of 2011-03-16, so the Weagle portfolio bar now runs 2009 to 2011. Evil Bikes is placed in Bellingham, WA (was Seattle). `conf` goes from `"m"` to `"v"` at Jon's request, so the card no longer says "number listed, not re-verified"; the US front page (inventor David Weagle, filed Sept. 15, 2009, provisional 61/192,219) was read from the PDF by the figure workflow. Fig. 1A (uncompressed) and Fig. 1B (compressed) are added, rotated upright. The Weagle portfolio footnote now reads "All dates are approximate. When patent term is unavailable or unknown, I may use an estimate." (French text updated to match). Bars of four years or less now print their year label just outside the bar (`WG_SHORT_BAR_YR`), since the two-year DELTA bar was too narrow to show it. The chart's row labels also drop patent numbers (any parenthetical containing a digit); the number stays on the card itself. Counts: expired 156→157, verified 325→326, medium 45→44.
 
 ## Recent updates (July 2026)
 
