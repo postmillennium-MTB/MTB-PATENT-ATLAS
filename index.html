@@ -5652,7 +5652,9 @@ const WG_SHORT_BAR_YR = 4;  // bars this many years or shorter print their label
     const nAct=list.filter(d=>d.st==="active").length, nExp=list.filter(d=>d.st==="expired").length;
     const rowHTML=list.map(d=>{
       const open=d.exp==null, end=open?last:d.exp;
-      const title=tx(d.t), endTxt=open?t("wgOpenEnded"):d.exp;
+      /* Patent numbers are left to the card itself: drop any parenthetical holding a digit,
+         so "Split Pivot (US 7,717,212)" reads "Split Pivot" while "(RMU)" stays. */
+      const title=tx(d.t).replace(/\s*\([^()]*\d[^()]*\)/g,"").trim(), endTxt=open?t("wgOpenEnded"):d.exp;
       const label=open?`${d.y}→`:`${d.y}–${d.exp}`;
       const w=Math.max(x(end)-x(d.y),1.5), short=!open && end-d.y<=WG_SHORT_BAR_YR;
       return `<div class="wg-row"><div class="wg-lbl">${title}</div>
