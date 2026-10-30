@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 410 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 411 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 410 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 410 |
+| **Total entries** | 411 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 178 |
+| **Active patents** | 179 |
 | **Expired patents** | 157 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 10 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 410 patents and 
 | **Brands** | 213 |
 | **Named inventors** | 77 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 326 |
+| **Verified entries** | 327 |
 | **Medium confidence** | 44 |
 | **Draft / in progress** | 40 |
 
@@ -887,6 +887,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Primary-source check of five "medium" entries against Google Patents; all five raised to verified (318 → 323 verified, 51 → 46 medium).** Checked: Simons motorcycle fork (US 4,561,669), Forcite helmet (US 12,016,421), Continental two-wheeler tire (US 12,397,590, plus its second patent US 7,968,635), Chris King headset (US 12,337,923) and Yoshimura pedal (US 12,391,334). Corrections found: **Simons** is a continuation of Ser. No. 454,802 (filed December 30, 1982), so the term ended in 2002, not 2005 (`exp` 2005 → 2002; a documented continuation exception, so `verify_data.js` lists it informationally). **Forcite** was filed April 20, 2020, not 2021 (`y` 2021 → 2020, `exp` 2041 → 2040); the patent is a chin-mounted LED visual-communication system titled "Visual communication system for a helmet," not a HUD/camera system, and the entry was retitled and rewritten with the five named inventors and the Forcite then GoPro assignment chain. **Chris King:** filing date (December 29, 2021), inventors, assignee and grant date (June 24, 2025) confirmed; Google Patents shows an adjusted expiration of November 14, 2043 from patent term adjustment, noted in the entry while `exp` stays on the filing + 20 rule (2041). **Yoshimura:** filed February 7, 2024, granted August 19, 2025 (`g` set to 2025, `exp` 2044), a second inventor (Collin Timmermans) added, and Google Patents lists no assignee, so no assignment to Yoshimura Cycling is shown. **Continental:** all stated facts (publication, grant, inventors, application 18/546,354, DE/WO/EP/CN family, the 2006 silated-polysulfide patent and its GE/Momentive joint research agreement) matched; claim 1 added. Still unconfirmed and stated as such in the entries: the Continental-patent link to named bicycle tires, the AeroSet/GripLock product link (the King patent text names neither), and Simons's reported second patent and upside-down-fork licensing. The "could not reach Google Patents" notes were removed from the Forcite, King and Yoshimura entries. No entries added or removed.
 - **Hadley Racing 72-point hub is now marked "no patent," per Suzanne Hadley.** Jon confirmed with her directly that the hub was never patented, so the card no longer says "filed 1995, granted 1997": `g` cleared, the title carries "(no patent)" like Fatback and Banshee, and a new optional field `np:true` makes the card show "Year / Patent: none" instead of "Filed / Granted", drops the Google Patents search link, and cites the entry as "no patent". The `s` text drops its "4-pawl" claim, because Hadley's own assembly drawing (part no. H500205, rev. 5.0), now the card's image as a 1-bit PNG with a source caption, lists three pawls on a 36-tooth gear. `conf` `"l"` → `"v"` (324 verified, 40 draft); `y` is still 1995 pending a confirmed product year.
 - **A set process for entries with no patent, separating "confirmed no patent" from "patent not yet located," per Jon.** `np` now takes `true` (plain no patent) or `"trademark"`, `"standard"` (open standard) or `"secret"` (trade secret), and the card says "Introduced" in place of "Filed" and "Patent: none", "none (trademark)", "none (open standard)" or "none (trade secret)", with a "no patent" pill in place of "unknown". Ten entries carry it: Hadley, Banshee KS-Link, SE Quadangle, JBX1 and Mondraker Forward Geometry (`true`); Fatback hub spacing, Boost 148 and ISIS Drive (`"standard"`); GT Triple Triangle (`"trademark"`); Garbaruk (`"secret"`). Boost, ISIS and GT lose their patent-style `g` and `st:"expired"` (159 → 156 expired; all ten are `st:"unknown"`, `g`/`exp` null); JBX1 drops its now-unused `searchUrl`. `verify_data.js` hard-fails an `np` entry carrying a number, grant year, expiry or non-`unknown` status, and a title that says "(no patent)", "not a patent", "un-patent" or "patent-free" without `np`. "No patent located" entries (RideWrap, Mantis, CODA and the rest) stay unflagged; they are the not-yet-found case.
+- **New entry: Shimano dropper position sensor that drives shifting and suspension (US 11,136,083, with its continuation US 12,312,039), 410 → 411, `conf:"v"`, `emtb`.** Toyoto Shirai / Shimano: a telescopic post (or fork) with a position detector inside the outer tube whose output signal controls another component, e.g. a harder gear when the saddle drops. US 11,136,083 B2 was read from its own PDF (filed 2017-01-30 as a CIP of abandoned 15/269,986 filed 2016-09-20, granted 2021-10-05, 201 days PTA); Figs. 2 and 8–9 come from that PDF via `tools/fetch_patent_figure.py --pdf`. US 12,312,039 B2 (17/465,874, filed 2021-09-03, pub. US 2021/0394850 A1, granted 2025-05-27, adjusted expiry 2039-02-24) rests on Jon's paste of the Google Patents page plus a search-index copy of the publication with the identical abstract and inventor; Google Patents and USPTO pages were egress-blocked, so its continuation link to 11,136,083 is inferred from that match rather than read from its own Related Applications field. `exp:2039` tracks the newer patent's adjusted date (the 2017 parent ends around 2037). The older `num:null` "Shimano electronically controlled dropper (application)" placeholder is left as is: it describes Shimano's 2021 electronic-actuation filings generally, not this position-output claim.
 
 ---
 
