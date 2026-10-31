@@ -30,6 +30,12 @@
   --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
   --ui-weight:600; /* weight for small display-font UI text (tabs, sub-heads); a theme overrides this when its display font reads heavy at small sizes */
   --thumb-bg:#F3F4F1; /* paper tone behind a card thumbnail; the drawing is multiplied onto it, so its white background takes on this tone. Each theme sets its own. Keep it visibly different from --bg (a near-white, slightly warm or cool paper): at the same tone as the page the thumbnail reads as a hole in the card. */
+  /* Three text sizes for every card and tile face (title / brand-and-meta / year-and-status),
+     so a title, a brand, a year and a status read the same everywhere. Phones step down below. */
+  --fs-title:15px; --fs-meta:13px; --fs-label:11px;
+  /* One drawing-tile treatment (grid tiles, landing wall): square paper on a phone,
+     where a tile is ~110px wide and a 4:3 box shrinks the drawing; 4:3 from 640px. */
+  --tile-ratio:1 / 1; --tile-pad:10px;
   --card-edge:var(--card-border); /* the card's own outline. Soft themes set a darker value than --card-border so a white card separates from the pale page; --card-border stays the lighter line used by chips, buttons and dividers. */
 }
 /* ===== WMBC — clean trail / topographic (soft, rounded, organic) ===== */
@@ -299,13 +305,13 @@ header::before{
 .lw-tile{display:flex;flex-direction:column;padding:0;margin:0;background:var(--surface);border:1px solid var(--card-edge);border-radius:var(--radius);overflow:hidden;cursor:pointer;font:inherit;color:inherit;text-align:left;transition:border-color var(--motion) var(--ease),transform var(--motion) var(--ease)}
 .lw-tile:hover,.lw-tile:focus-visible{border-color:var(--primary);transform:translateY(-2px);outline:none}
 .lw-tile:nth-child(n+7){display:none}
-.lw-pic{position:relative;display:block;aspect-ratio:1 / 1;overflow:hidden;background:var(--thumb-bg);border-bottom:1px solid var(--card-border)}
+.lw-pic{position:relative;display:block;aspect-ratio:var(--tile-ratio);overflow:hidden;background:var(--thumb-bg);border-bottom:1px solid var(--card-border)}
 /* Absolutely placed so a tall drawing can't stretch its tile past the
    aspect-ratio box and leave the row's tiles at different heights. */
-.lw-pic img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;mix-blend-mode:multiply}
-.lw-cap{display:flex;justify-content:space-between;align-items:baseline;gap:4px;padding:5px 7px 6px;font-size:11.5px;line-height:1.2}
-.lw-brand{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
-.lw-yr{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-soft);flex:none}
+.lw-pic img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;padding:var(--tile-pad);box-sizing:border-box;mix-blend-mode:multiply}
+.lw-cap{display:flex;align-items:center;gap:5px;padding:6px 8px 7px;font-size:var(--fs-meta);line-height:1.2}
+.lw-brand{flex:1;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.lw-yr{font-family:var(--font-mono);font-size:var(--fs-label);color:var(--ink-soft);flex:none}
 .lw-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
 .lw-count{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
 /* Capped so the 3x3 fits one desktop screen with the rabbit holes peeking
@@ -314,11 +320,12 @@ header::before{
   .lw{max-width:760px}
   .lw-grid{gap:12px}
   .lw-tile:nth-child(n+7){display:flex}
-  .lw-pic{aspect-ratio:4 / 3}
-  .lw-pic img{padding:10px}
-  .lw-cap{padding:8px 12px 9px;font-size:14px}
-  .lw-yr{font-size:12px}
+  .lw-cap{padding:8px 12px 9px}
 }
+@media(min-width:640px){:root{--tile-ratio:4 / 3}}
+.lw-cap .st-dot{margin-right:0}
+/* A phone tile is ~100px wide: the brand gets its own line, dot and year sit under it. */
+@media(max-width:639px){.lw-cap{flex-wrap:wrap;row-gap:2px}.lw-brand{flex:1 1 100%;order:-1}.lw-yr{margin-left:auto}}
 /* Hero search */
 .home-hero{margin:0 0 20px}
 .home-kicker{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
@@ -482,6 +489,11 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .step-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .bars{display:flex;align-items:flex-end;gap:3px;height:56px}
 .bar{flex:1;background:rgba(255,255,255,.32);border:none;border-radius:3px 3px 0 0;min-width:8px;position:relative;transition:background .15s}
+/* Density cue: under a filter the bar keeps its full height (every entry that
+   year) as a faint track and fills from the bottom with the share that matches
+   (--fill, 0-1, set by renderBars). Unfiltered, the fill is the whole bar. */
+.bar.part{background:linear-gradient(to top,rgba(255,255,255,.62) calc(var(--fill,1) * 100%),rgba(255,255,255,.14) 0)}
+.bar.none{background:rgba(255,255,255,.14)}
 .bar:hover,.bar:focus-visible{background:rgba(255,255,255,.85)}
 .bar:focus-visible{outline:2px solid #fff;outline-offset:1px}
 /* Bar date labels: full-opacity white with a dark shadow so they stay legible
@@ -585,10 +597,25 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .card::before{content:"";position:absolute;left:-22px;top:20px;width:11px;height:11px;border-radius:var(--dot-radius,50%);background:var(--spine);border:2px solid var(--bg)}
 .card.pending-card{border-style:dashed;border-width:2px}
 .chead{width:100%;background:none;border:none;text-align:left;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;color:inherit}
-.yr{font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--primary);background:var(--chip-bg);border-radius:6px;padding:3px 7px;flex:0 0 auto;margin-top:1px}
+.yr{font-family:var(--font-mono);font-size:var(--fs-label);font-weight:600;color:var(--primary);background:var(--chip-bg);border-radius:6px;padding:3px 7px;flex:0 0 auto;margin-top:1px}
 .ct{flex:1;min-width:0}
-.ct .t{font-weight:600;font-size:15px;line-height:1.3}
-.ct .a{font-size:12.5px;color:var(--ink-soft);margin-top:1px}
+.ct .t{font-weight:600;font-size:var(--fs-title);line-height:1.3}
+.ct .a{font-size:var(--fs-meta);color:var(--ink-soft);margin-top:1px}
+.ct .a-yr{display:none}
+/* Status as a quiet dot (one legend: statusLegendHTML). A collapsed card shows
+   only the dot; the open card keeps the worded pill too. No patent is a ring. */
+.st-dot{display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px;background:var(--ink-soft)}
+.st-dot.active{background:var(--st-active)}
+.st-dot.expired{background:var(--st-expired)}
+.st-dot.pending{background:var(--st-pending)}
+.st-dot.unknown{background:color-mix(in srgb,var(--ink-soft) 38%,transparent)}
+.st-dot.np{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink-soft)}
+.card:not(.open) .pills .pill.st{display:none}
+.st-legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-family:var(--font-mono);font-size:var(--fs-label);color:var(--ink-soft)}
+.st-legend[hidden]{display:none}
+.st-legend span{white-space:nowrap}
+.list-legend{max-width:880px;margin:6px auto 2px;padding:0 16px}
+.st-legend .st-dot{margin-right:4px}
 .pills{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
 .pill{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;border-radius:var(--pill-radius,999px);padding:2.5px 8px;color:#fff;font-weight:600}
 .pill.cat{background:var(--ink-soft)}
@@ -618,6 +645,15 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .chead .caret{margin-left:auto}
 .cbody{display:none;padding:0 14px 14px;border-top:1px dashed var(--card-border)}
 .card.open .cbody{display:block}
+/* Previous / next inside an open card: steps through the cards the current
+   filter shows, in their on-screen order (stepCard). Swipe and the arrow keys
+   do the same. */
+.card-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding-top:10px;border-top:1px dashed var(--card-border)}
+.cn-btn{display:inline-flex;align-items:center;gap:4px;min-height:40px;padding:0 14px;border:1px solid var(--card-border);border-radius:var(--pill-radius,999px);background:var(--surface);color:var(--primary);font:inherit;font-size:var(--fs-meta);font-weight:600;cursor:pointer;transition:border-color var(--motion,180ms) var(--ease,ease)}
+.cn-btn:hover,.cn-btn:focus-visible{border-color:var(--primary);outline:none}
+.cn-btn:disabled{opacity:.35;cursor:default;border-color:var(--card-border)}
+.cn-btn svg{width:16px;height:16px}
+.cn-pos{font-family:var(--font-mono);font-size:var(--fs-label);color:var(--ink-soft)}
 .cbody p{font-size:14px;margin-top:10px}
 .cbody .why{font-size:13.5px;color:var(--ink-soft);font-style:italic}
 .card-xref{color:var(--primary);font-weight:600;text-decoration:underline;text-underline-offset:2px}
@@ -863,6 +899,7 @@ html,body{overflow-x:hidden;max-width:100%}
 .chead{min-height:52px}
 @media(max-width:360px){.flabel{display:none}.frow{padding:3px 8px}}
 @media(max-width:480px){
+  :root{--fs-title:14px;--fs-meta:12px;--tile-pad:8px}
   h1{font-size:26px}
   .cbody p,.why{font-size:13.5px}
   .meta{gap:10px}
@@ -969,11 +1006,11 @@ html,body{overflow-x:hidden;max-width:100%}
 #timeline[data-view="grid"] .card.open{grid-column:1 / -1}
 #timeline[data-view="grid"] .card:not(.open){--ph-year:32px}
 #timeline[data-view="grid"] .card:not(.open) .chead-row{display:flex;flex-direction:column;align-items:stretch}
-#timeline[data-view="grid"] .card:not(.open) .thumb{width:100%;aspect-ratio:1 / 1;margin:0;border:0;border-bottom:1px solid var(--card-border);border-radius:0}
-/* Top and bottom padding clear the year chip and status flags, so they sit
-   on the blank paper above and below the drawing instead of over it. */
-#timeline[data-view="grid"] .card:not(.open) .thumb img{padding:30px 12px}
-#timeline[data-view="grid"] .card:not(.open) .thumb-flags{display:flex;flex-wrap:wrap;gap:4px;position:absolute;left:6px;right:6px;bottom:6px;z-index:1}
+/* Same tile as the landing wall: 4:3 paper, the same inset, nothing printed over
+   the drawing. The year and status dot sit in the caption line instead. */
+#timeline[data-view="grid"] .card:not(.open) .thumb{width:100%;aspect-ratio:var(--tile-ratio);margin:0;border:0;border-bottom:1px solid var(--card-border);border-radius:0}
+#timeline[data-view="grid"] .card:not(.open) .thumb img{padding:var(--tile-pad)}
+#timeline[data-view="grid"] .card:not(.open) .thumb-yr{display:none}
 #timeline[data-view="grid"] .card:not(.open) .card-icon-btn,
 #timeline[data-view="grid"] .card:not(.open) .chead .jtag,
 #timeline[data-view="grid"] .card:not(.open) .chead .caret,
@@ -983,8 +1020,10 @@ html,body{overflow-x:hidden;max-width:100%}
 #timeline[data-view="grid"] .card:not(.open) .chead .ct{display:block}
 #timeline[data-view="grid"] .card:not(.open) .ct .t,
 #timeline[data-view="grid"] .card:not(.open) .ct .a{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
-#timeline[data-view="grid"] .card:not(.open) .ct .t{font-size:14px;-webkit-line-clamp:3}
-#timeline[data-view="grid"] .card:not(.open) .ct .a{font-size:12px;-webkit-line-clamp:2}
+#timeline[data-view="grid"] .card:not(.open) .ct .t{-webkit-line-clamp:3}
+#timeline[data-view="grid"] .card:not(.open) .ct .a{display:flex;align-items:center;gap:0;margin-top:4px}
+#timeline[data-view="grid"] .card:not(.open) .ct .a-txt{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#timeline[data-view="grid"] .card:not(.open) .ct .a-yr{display:block;flex:none;margin-left:6px;font-family:var(--font-mono);font-size:var(--fs-label)}
 @media(hover:hover){#timeline[data-view="grid"] .card:not(.open):hover{border-color:var(--primary)}}
 /* ---------- View toggle (in the results row) ---------- */
 .fmeta{flex-wrap:wrap;gap:6px 10px}
@@ -1117,6 +1156,7 @@ footer a{color:inherit;text-decoration:underline}
     <span class="where-text" id="whereText" aria-live="polite"></span>
     <button class="where-clear" id="clearAll" type="button" hidden><span aria-hidden="true">✕</span> <span data-i18n="clearFilters">Clear filters</span></button>
   </div>
+  <div class="st-legend list-legend" id="stLegend" role="note"></div>
   <div class="fmeta">
     <span id="resultCount"></span>
     <span class="fmeta-actions">
@@ -1375,6 +1415,16 @@ const STATUS_WORD = {
 const NO_PATENT_KINDS=["trademark","standard","secret"];
 function noPatentWord(d){ return d.np===true?t("noPatent"):(t("noPatentKind")[d.np]||t("noPatent")); }
 function statusWord(st){ const v=STATUS_WORD[state.lang]||STATUS_WORD.en; return v[st]||STATUS_WORD.en[st]||st; }
+/* The quiet status dot on every card and tile face; statusLegendHTML() is its
+   one key. A confirmed no-patent entry (d.np) gets a hollow ring. */
+function stDotHTML(d){
+  const word=d.np?t("noPatentLegend"):statusWord(d.st);
+  return `<span class="st-dot ${d.np?"np":d.st}" role="img" aria-label="${word}" title="${word}"></span>`;
+}
+function statusLegendHTML(){
+  const item=(cls,word)=>`<span><span class="st-dot ${cls}" aria-hidden="true"></span>${word}</span>`;
+  return ["active","expired","pending","unknown"].map(k=>item(k,statusWord(k))).join("")+item("np",t("noPatentLegend"));
+}
 const INVENTORS = [
   {label:"Canfield (Lance & Chris)", key:"Canfield"},
   {label:"Dave Weagle",  key:"Dave Weagle"},
@@ -2484,6 +2534,8 @@ const ICON_CLOCK_ARROW_DOWN = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\
 const ICON_SWORDS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-swords icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m13 19 6-6\"/><path d=\"M14.5 17.5 3.586 6.586A2 2 0 013 5.172V3h2.172a2 2 0 011.414.586L17.5 14.5\"/><path d=\"m14.828 6.172 2.586-2.586A2 2 0 0118.828 3H21v2.172a2 2 0 01-.586 1.414l-2.586 2.586\"/><path d=\"m16 16 4 4\"/><path d=\"m19 21 2-2\"/><path d=\"m5 14 4 4\"/><path d=\"m5 21-2-2\"/><path d=\"M7.5 16.5 4 20\"/></svg>";
 const ICON_COMPASS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-compass icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z\"/><circle cx=\"12\" cy=\"12\" r=\"10\"/></svg>";
 const ICON_PUZZLE = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-puzzle icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z\"/></svg>";
+const ICON_CHEVRON_LEFT = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-left\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m15 18-6-6 6-6\"/></svg>";
+const ICON_CHEVRON_RIGHT = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-right\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m9 18 6-6-6-6\"/></svg>";
 const ICON_CHART = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chart-no-axes-combined icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 16v5\"/><path d=\"M16 14.639V21\"/><path d=\"M20 10.656V21\"/><path d=\"m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15\"/><path d=\"M4 18.463V21\"/><path d=\"M8 14.656V21\"/></svg>";
 /* Favorites: heart-plus for the not-yet-saved state of the per-card toggle,
    plain heart for the Favorites tab label and (filled, via the fill="currentColor"
@@ -2559,6 +2611,8 @@ const T = {
     emptyState:"No patents match these filters. Loosen one and the timeline comes back.",
     resultCountAll:(total,first)=>`${total} entries · ${first}–${NOW}`,
     resultCountFiltered:(n,total)=>`${n} of ${total} entries`,
+    cardPrev:"Previous", cardNext:"Next", cardPos:(i,n)=>`${i} of ${n}`, cardPrevAria:"Previous card in this list", cardNextAria:"Next card in this list",
+    statusLegendAria:"Status key", noPatentLegend:"no patent",
     entriesAnalyzed:total=>`${total} entries analyzed`,
     majorDisputes:n=>`${n} major disputes`,
     fightsTitle:"Patent Fights",
@@ -2696,6 +2750,8 @@ const T = {
     emptyState:"Aucun brevet ne correspond à ces filtres. Retirez-en un et la chronologie réapparaît.",
     resultCountAll:(total,first)=>`${total} entrées · ${first}–${NOW}`,
     resultCountFiltered:(n,total)=>`${n} sur ${total} entrées`,
+    cardPrev:"Précédente", cardNext:"Suivante", cardPos:(i,n)=>`${i} sur ${n}`, cardPrevAria:"Fiche précédente de cette liste", cardNextAria:"Fiche suivante de cette liste",
+    statusLegendAria:"Légende des statuts", noPatentLegend:"sans brevet",
     entriesAnalyzed:total=>`${total} entrées analysées`,
     majorDisputes:n=>`${n} litiges majeurs`,
     fightsTitle:"Batailles de brevets",
@@ -2971,13 +3027,12 @@ function thumbSrc(src){
 /* onerror target for a thumbnail <img>: swap to the full-size drawing once. */
 function thumbFallback(img){ img.onerror=null; if(img.dataset.full) img.src=img.dataset.full; }
 /* The .thumb element for a card (see the Card views CSS for how each view
-   places it). The year chip and status/litigated flags are inside it because
-   the plate and grid views show them over the picture instead of in the title
-   row; the CSS hides whichever copy a view does not use. */
+   places it). The year chip is inside it for the views that print the year on
+   the picture; the CSS hides it where a view does not use it. Status is not
+   drawn over the picture: it is the dot on the card's assignee line. */
 function thumbHTML(d){
   const src=firstDrawing(d);
   const ph=placeholderSrc(d.cat);
-  const flags=`<span class="thumb-flags"><span class="pill ${d.st}">${d.np?t("noPatentPill"):statusWord(d.st)}</span>${(d.b||[]).includes("litigated")?`<span class="pill litigated">${t("litigatedWord")}</span>`:""}</span>`;
   let cls="thumb", inner;
   if(src){
     inner=`<img src="${thumbSrc(src)}" data-full="${src}" alt="" loading="lazy" decoding="async" onerror="thumbFallback(this)">`;
@@ -2987,7 +3042,7 @@ function thumbHTML(d){
     cls+=" thumb-none";
     inner=`<span class="thumb-ph" aria-hidden="true"><span class="thumb-ph-y">${d.y}</span><span class="thumb-ph-c">${catLabel(d.cat)}</span></span>`;
   }
-  return `<span class="${cls}">${inner}<span class="thumb-yr">${d.y}</span>${flags}</span>`;
+  return `<span class="${cls}">${inner}<span class="thumb-yr">${d.y}</span></span>`;
 }
 
 /* Opens or closes a card. In the grid view an open card spans its whole row
@@ -3012,6 +3067,7 @@ function setCardOpen(card,open){
     }
   }
   card.classList.toggle("open",open);
+  if(open) paintCardNav(card);
   if(inGrid && !open){
     const mark=cardHome.get(card);
     if(mark && mark.parentNode===list){ list.insertBefore(card,mark); mark.remove(); }
@@ -3625,7 +3681,7 @@ function cardHTML(d,eraKey){
               :pt==="trademark"?`<span class="pill badge">${t("trademarkLbl")}</span>`:"";
   const pills=[
     `<span class="pill cat">${catLabel(d.cat)}</span>`,
-    `<span class="pill ${d.st}">${d.np?t("noPatentPill"):statusWord(d.st)}</span>`,
+    `<span class="pill st ${d.st}">${d.np?t("noPatentPill"):statusWord(d.st)}</span>`,
     ...(goingFreeSoon(d)?[`<span class="pill soon">${t("freeBy",d.exp)}</span>`]:[]),
     ...(ptPill?[ptPill]:[]),
     ...(d.b||[]).map(badge=>badge==="litigated"?`<span class="pill litigated">${t("litigatedWord")}</span>`:`<span class="pill badge">${badgeLabel(badge)}</span>`)
@@ -3792,7 +3848,7 @@ function cardHTML(d,eraKey){
       <span class="yr">${d.y}</span>${showJurTag?`<span class="jtag">${jur}</span>`:''}
       <span class="ct">
         <span class="t">${titleShown}</span>
-        <span class="a">${d.a}</span>
+        <span class="a">${stDotHTML(d)}<span class="a-txt">${d.a}</span><span class="a-yr">${d.y}</span></span>
         <span class="pills">${pills}</span>
         ${conf?`<span class="conf ${d.conf==='l'?'low':''}">⚠ ${conf}</span>`:""}
       </span>
@@ -3823,6 +3879,11 @@ function cardHTML(d,eraKey){
       </div>
       ${gp}
       ${coLink}${wgLink}
+      <div class="card-nav">
+        <button type="button" class="cn-btn cn-prev" aria-label="${t("cardPrevAria")}">${ICON_CHEVRON_LEFT}${t("cardPrev")}</button>
+        <span class="cn-pos" aria-live="polite"></span>
+        <button type="button" class="cn-btn cn-next" aria-label="${t("cardNextAria")}">${t("cardNext")}${ICON_CHEVRON_RIGHT}</button>
+      </div>
     </div>
   </article>`;
 }
@@ -4748,7 +4809,7 @@ function landingTilesHTML(){
     const src=firstDrawing(d), brand=landingBrand(d);
     return `<button type="button" class="lw-tile" data-lwi="${i}" aria-label="${mgEsc(t("wallTileAria",brand,d.y,stripCardLinks(tx(d.t))))}">
       <span class="lw-pic"><img src="${thumbSrc(src)}" data-full="${src}" onerror="thumbFallback(this)" alt="" decoding="async"></span>
-      <span class="lw-cap"><span class="lw-brand">${mgEsc(brand)}</span><span class="lw-yr">${d.y}</span></span>
+      <span class="lw-cap">${stDotHTML(d)}<span class="lw-brand">${mgEsc(brand)}</span><span class="lw-yr">${d.y}</span></span>
     </button>`;
   }).join("");
 }
@@ -5156,13 +5217,22 @@ function paintWhere(n,total){
   if(parts.length){ const b=document.createElement("b"); b.textContent=parts.join(" · "); el.append(b," · "); }
   el.append(t("resultCountFiltered",n,total));
 }
+/* Refs of the cards the current list shows, in on-screen order (prev/next
+   walks this), and the card the URL names (#p=), i.e. the last one opened. */
+let shownRefs=[];
+let openRef=null;
 function render(){
+  openRef=null; // a re-render rebuilds every card closed
   if(typeof syncHash==="function") syncHash();
+  /* The one status key, for the dots on the landing tiles and the card list. */
+  const lg=$("#stLegend");
+  if(lg){ lg.hidden=activeTab==="fights"||activeTab==="match"; lg.innerHTML=statusLegendHTML(); lg.setAttribute("aria-label",t("statusLegendAria")); }
   if(typeof activeTab!=="undefined" && activeTab==="match"){ renderMatch(); return; }
   if(typeof stopMatchTimer==="function") stopMatchTimer();
   if(typeof activeTab!=="undefined" && activeTab==="fights"){ renderFights(); return; }
   if(typeof activeTab!=="undefined" && activeTab==="stats"){ renderStats(); return; }
   const list=D.filter(passes).sort((a,b)=>sortDesc ? b.y-a.y : a.y-b.y);
+  shownRefs=list.map(cardRef);
   const tl=$("#timeline");
   tl.dataset.view=viewMode; // the Card views CSS keys off this
 
@@ -5192,8 +5262,10 @@ function render(){
   }
   // expand/collapse
   tl.querySelectorAll(".chead").forEach(h=>{
-    h.onclick=()=>{ const c=h.closest(".card"); setCardOpen(c,!c.classList.contains("open")); };
+    h.onclick=()=>userToggleCard(h.closest(".card"));
   });
+  tl.querySelectorAll(".cn-prev").forEach(b=>{ b.onclick=()=>stepCard(b.closest(".card"),-1); });
+  tl.querySelectorAll(".cn-next").forEach(b=>{ b.onclick=()=>stepCard(b.closest(".card"),1); });
   /* The thumbnail sits beside .chead, not inside it (see .chead-row), so it
      forwards its click to the real button; keyboard and screen-reader users
      already have .chead itself. */
@@ -5292,6 +5364,7 @@ function renderBars(list){
      run of 2+ empty brackets is skipped, insert a visible gap marker so the
      axis doesn't imply continuous data it doesn't have. */
   let skipped=0;
+  const filtered=list.length<D.length;
   eras.forEach(e=>{
     const full=D.filter(d=>d.y>=e.from&&d.y<=e.to).length;
     const cur=list.filter(d=>d.y>=e.from&&d.y<=e.to).length;
@@ -5307,7 +5380,8 @@ function renderBars(list){
     const b=document.createElement("button");
     b.className="bar";
     b.style.height=Math.max(8,pct(full,max))+"%";
-    b.style.opacity=cur?1:.35;
+    if(!cur) b.classList.add("none");
+    else if(filtered){ b.classList.add("part"); b.style.setProperty("--fill",(cur/full).toFixed(3)); }
     b.style.minWidth=minW;
     b.setAttribute("aria-label",t("eraJumpAria",e.label,cur,full));
     /* Labels: show every bar's start year at 5yr; thin out at 2yr/1yr so they
@@ -5365,9 +5439,10 @@ function syncHash(){
   if(state.lang!=="en") p.set("lang",state.lang); // langFromHash() already reads this back
   const lt=activeTab===DEFAULT_TAB && landingChosen ? landingTheme() : null; // the wall's theme, once picked -- see LANDING THEMES
   if(lt) p.set("start",lt.key);
+  if(openRef && activeTab!=="stats" && activeTab!=="fights" && activeTab!=="match") p.set("p",openRef);
   const s=p.toString();
   try{
-    history.replaceState(null,"", s?("#"+s):location.pathname+location.search);
+    history.replaceState(history.state,"", s?("#"+s):location.pathname+location.search);
   }catch(e){ /* URL rewriting blocked (file:// or sandboxed iframe) — deep links still readable, just not written */ }
 }
 function initFromHash(){
@@ -5390,8 +5465,9 @@ function initFromHash(){
   renderTabs();
   }catch(e){ /* hash parsing blocked or malformed — start with a clean view */ }
 }
-function jumpToCard(ref){
+function jumpToCard(ref,opts){
   ref=REF_ALIASES[ref]||ref;
+  if(!(opts&&opts.noHistory)) pushCardEntry();
   if(activeTab==="fights"||activeTab==="stats"||activeTab==="match"){ activeTab="all"; renderTabs(); render(); }
   requestAnimationFrame(()=>{
     let target=document.getElementById("p-"+ref);
@@ -5404,6 +5480,7 @@ function jumpToCard(ref){
     }
     if(target){
       setCardOpen(target,true);
+      openRef=ref; syncHash();
       const rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
       if(target.scrollIntoView) target.scrollIntoView({behavior:rm?"auto":"smooth",block:"center"});
       target.classList.add("card-flash");
@@ -5425,7 +5502,125 @@ document.addEventListener("click",e=>{
 
 initFromHash();
 render();
-if(pendingCardRef){ const r=pendingCardRef; pendingCardRef=null; setTimeout(()=>jumpToCard(r),DEEP_LINK_JUMP_DELAY_MS); }
+if(pendingCardRef){ const r=pendingCardRef; pendingCardRef=null; setTimeout(()=>jumpToCard(r,{noHistory:true}),DEEP_LINK_JUMP_DELAY_MS); }
+
+/* ======== CARD NAVIGATION + BROWSER BACK ========
+   Opening a card adds one history entry (marked {atlasCard:true}) whose URL
+   carries #...&p=<card>, so the address bar is always a shareable link to what
+   is on screen and the browser's Back button closes the card again. Stepping
+   with previous/next, swipe or the arrow keys replaces that entry rather than
+   stacking one per card. Filters and the landing theme keep rewriting the
+   current entry in place (syncHash), as before. Back to an entry whose filters
+   differ re-applies them from its URL (applyHash). */
+function pushCardEntry(){
+  try{ if(!(history.state&&history.state.atlasCard)) history.pushState({atlasCard:true,base:hashSansCard(location.hash)},"",location.href); }
+  catch(e){ /* history blocked (sandboxed iframe): links still work, Back just won't close the card */ }
+}
+function userToggleCard(card){
+  const ref=card.id.slice(2), opening=!card.classList.contains("open");
+  if(opening){
+    pushCardEntry();
+    setCardOpen(card,true);
+    openRef=ref; syncHash();
+    return;
+  }
+  setCardOpen(card,false);
+  if(ref!==openRef) return;
+  openRef=null;
+  /* Step back over the entry the open added, but only when the entry behind it
+     shows this same view; after a filter change (or a jump from the landing
+     wall) Back would land somewhere else, so just drop #p= in place. */
+  const hs=history.state;
+  if(hs&&hs.atlasCard&&hs.base===hashSansCard(currentHash())){ ignorePop=true; history.back(); }
+  else syncHash();
+}
+/* "3 of 78" and the disabled ends, filled each time a card opens. */
+function paintCardNav(card){
+  const i=shownRefs.indexOf(card.id.slice(2)), n=shownRefs.length;
+  const pos=card.querySelector(".cn-pos"), pv=card.querySelector(".cn-prev"), nx=card.querySelector(".cn-next");
+  const nav=card.querySelector(".card-nav");
+  if(nav) nav.hidden = i<0 || n<2;
+  if(i<0) return;
+  if(pos) pos.textContent=t("cardPos",i+1,n);
+  if(pv) pv.disabled=i===0;
+  if(nx) nx.disabled=i===n-1;
+}
+function stepCard(card,dir){
+  if(!card) return;
+  const i=shownRefs.indexOf(card.id.slice(2));
+  const ref=i<0?null:shownRefs[i+dir];
+  const next=ref&&document.getElementById("p-"+ref);
+  if(!next) return;
+  setCardOpen(card,false);
+  setCardOpen(next,true);
+  openRef=ref; syncHash();
+  const rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  next.scrollIntoView({behavior:rm?"auto":"smooth",block:"start"});
+  playIn(next.querySelector(".cbody"));
+  const b=next.querySelector(dir<0?".cn-prev":".cn-next");
+  if(b && !b.disabled && document.activeElement && document.activeElement.closest && document.activeElement.closest(".card-nav")) b.focus({preventScroll:true});
+}
+/* Swipe left/right on an open card's text steps through the list. Skipped on
+   the "See it move" drawing (it has its own drag) and on mostly-vertical moves. */
+let swipe0=null;
+document.getElementById("timeline").addEventListener("touchstart",e=>{
+  const card=e.target.closest(".card.open");
+  swipe0=(card && e.touches.length===1 && !e.target.closest(".lk-fig,input,textarea,select")) ? {card,x:e.touches[0].clientX,y:e.touches[0].clientY} : null;
+},{passive:true});
+document.getElementById("timeline").addEventListener("touchend",e=>{
+  if(!swipe0) return;
+  const t0=swipe0; swipe0=null;
+  const dx=e.changedTouches[0].clientX-t0.x, dy=e.changedTouches[0].clientY-t0.y;
+  if(Math.abs(dx)>=60 && Math.abs(dy)<Math.abs(dx)*.5) stepCard(t0.card,dx<0?1:-1);
+},{passive:true});
+/* Left/right arrow keys step while a card is open and focus is not in a field. */
+document.addEventListener("keydown",e=>{
+  if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey) return;
+  if(e.key!=="ArrowLeft" && e.key!=="ArrowRight") return;
+  const el=document.activeElement;
+  if(el && (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable || (el.closest && el.closest(".lk-fig,.lw-chips,.frow,.rh-row")))) return;
+  const card=openRef && document.getElementById("p-"+openRef);
+  if(!card || !card.classList.contains("open")) return;
+  e.preventDefault();
+  stepCard(card,e.key==="ArrowLeft"?-1:1);
+});
+/* Everything in the URL except the open card, as syncHash() would write it. */
+function hashSansCard(h){
+  const p=new URLSearchParams((h||"").replace(/^#/,"")); p.delete("p"); return p.toString();
+}
+/* Re-applies a URL's tab, filters, search and landing theme (Back/Forward to
+   an entry whose filters differ from what is on screen). */
+function applyHash(){
+  clearFilterState();
+  searchQ=''; const si=document.getElementById("searchInput"); if(si) si.value='';
+  activeTab=DEFAULT_TAB;
+  const p=new URLSearchParams(location.hash.slice(1));
+  const st=p.get("start");
+  if(st && st!==landingKey && landingThemes().some(x=>x.key===st)){ landingKey=st; landingTiles=null; landingChosen=true; }
+  else if(!st && landingChosen){ landingKey=landingDefaultKey(); landingTiles=null; landingChosen=false; }
+  initFromHash();
+  pendingCardRef=null;
+  syncChipsToState(); renderTabs(); render();
+}
+let ignorePop=false;
+window.addEventListener("popstate",()=>{
+  if(ignorePop){ ignorePop=false; return; } // our own history.back() after closing a card by hand
+  const want=new URLSearchParams(location.hash.slice(1)).get("p");
+  const sameView=hashSansCard(location.hash)===hashSansCard(currentHash());
+  if(!sameView) applyHash();
+  else if(openRef){ const c=document.getElementById("p-"+openRef); if(c) setCardOpen(c,false); openRef=null; }
+  if(want){
+    const c=document.getElementById("p-"+want);
+    if(c && sameView){ setCardOpen(c,true); openRef=want; c.scrollIntoView({block:"start"}); }
+    else jumpToCard(want,{noHistory:true});
+  }
+});
+/* The hash syncHash() would write for what is on screen now. */
+function currentHash(){
+  const h=location.hash; syncHash(); const now=location.hash;
+  try{ history.replaceState(history.state,"",h||location.pathname+location.search); }catch(e){}
+  return now;
+}
 
 /* ======== SORT ORDER ========
    Toggles the main card list (see sortDesc above) between oldest-first
