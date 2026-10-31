@@ -1,0 +1,157 @@
+patent: US11203388B2
+source: https://patentimages.storage.googleapis.com/fa/81/4b/6e1d94ae2d577b/US11203388.pdf
+pages: 46
+per-page extracted text length: {1: 2632, 2: 2897, 3: 199, 4: 204, 5: 583, 6: 574, 7: 150, 8: 160, 9: 154, 10: 167, 11: 173, 12: 353, 13: 401, 14: 331, 15: 174, 16: 183, 17: 317, 18: 209, 19: 541, 20: 180, 21: 498, 22: 489, 23: 182, 24: 175, 25: 214, 26: 5741, 27: 7912, 28: 7694, 29: 7705, 30: 7589, 31: 7749, 32: 7581, 33: 7831, 34: 7695, 35: 7549, 36: 7765, 37: 7470, 38: 7713, 39: 7562, 40: 7672, 41: 7564, 42: 7910, 43: 7621, 44: 7603, 45: 5683, 46: 1115}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011203388B2
+
+()12 ) United States Patent
+Komatsu et al .
+
+( 10 ) Patent No.: US 11,203,388 B2
+(45 ) Date of Patent :
+Dec. 21 , 2021
+2015/47 ; B62K 2208/00 ; B62M 9/122 ;
+
+( 54 ) BICYCLE ELECTRIC SUSPENSION
+
+B62M 9/132 ; B62M 25/08 ; HO1M 2/10 ;
+
+HO1M 10/42 ; HO1M 10/54 ; HOLM
+
+( 71 ) Applicant: SHIMANO INC . , Sakai ( JP )
+
+2220/20
+
+( Continued )
+References Cited
+U.S. PATENT DOCUMENTS
+
+( 72 ) Inventors : Atsushi Komatsu , Sakai ( JP ) ;
+
+Takafumi Nishino , Sakai (JP) ; Yuta
+Kurokawa , Sakai (JP )
+( 73 ) Assignee : SHIMANO INC . , Sakai ( JP )
+( * ) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 0 days.
+( 21 ) Appl. No .: 16 /741,758
+(22 ) Filed :
+Jan. 14 , 2020
+Prior Publication Data
+( 65 )
+US 2020/0148300 A1
+May 14, 2020
+
+( 56 )
+
+4,227,140 A
+4,248,942 A
+
+10/1980 Nardella et al .
+
+2/1981 Eby et al.
+
+(Continued )
+FOREIGN PATENT DOCUMENTS
+DE
+DE
+
+3/2011
+9/2016
+
+10 2010 035 674
+10 2016 002 298
+3345817
+
+EP
+
+7/2018
+
+OTHER PUBLICATIONS
+Office Action with Form PTO - 892 Notice of References Cited
+
+issued by the U.S. Patent and Trademark Office for the U.S. Appl.
+
+Related U.S. Application Data
+( 62 ) Division of application No. 15 /453,833 , filed on Mar.
+8 , 2017 , now Pat. No. 10,843,757 .
+( 51 ) Int . Cl .
+B62 ) 43/00
+B62K 23/02
+
+( 2020.01 )
+
+( 2006.01 )
+(Continued )
+
+( 52 ) U.S. CI .
+CPC
+
+B62J 43/00 (2020.02 ) ; B62K 23/02
+
+(2013.01 ) ; B62K 25/08 (2013.01 ) ; B62K 25/10
+( 2013.01 );
+
+( Continued )
+
+( 58 ) Field of Classification Search
+CPC . B62J 2001/085 ; B62J 2099/004 ; B62K 6/80 ;
+
+B62K 6/90 ; B62K 23/02 ; B62K 25/08 ;
+B62K 25/10 ; B62K 2015/45 ; B62K
+
+No. 15 /453,833, dated Feb. 8 , 2019 .
+
+( Continued )
+Primary Examiner Minnah L Seoh
+Assistant Examiner - Maurice L Williams
+
+(74 ) Attorney, Agent, or Firm Mori & Ward, LLP
+ABSTRACT
+( 57 )
+A bicycle electric suspension comprises a first tube, a second
+tube , a positioning structure, an electric positioning actuator,
+and a telescopic controller. The first tube has a center axis .
+The second tube is telescopically received in the first tube .
+The positioning structure is configured to relatively position
+the first tube and the second tube in a telescopic direction
+extending along the center axis of the first tube . The electric
+positioning actuator is configured to actuate the positioning
+structure . The telescopic controller has a pairing signal
+
+transmission mode in which the telescopic controller trans
+mits a pairing signal to a bicycle electric device .
+20 Claims , 23 Drawing Sheets
+
+12
+
+14
+
+16
+
+(RD) SP FS
+
+B2
+B3
+
+-BC3
+
+BC2 ( R1 - R12 )
+
+-10
+
+-B4
+
+B5
+
+B1
+
+BC1
+
+BC11
+
+??
+
+
