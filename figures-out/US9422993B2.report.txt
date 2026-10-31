@@ -1,0 +1,195 @@
+patent: US9422993B2
+source: https://patentimages.storage.googleapis.com/a7/4b/54/fab476956d9bc4/US9422993.pdf
+pages: 26
+per-page extracted text length: {1: 2399, 2: 58, 3: 303, 4: 69, 5: 147, 6: 137, 7: 58, 8: 58, 9: 100, 10: 98, 11: 105, 12: 76, 13: 76, 14: 42, 15: 42, 16: 42, 17: 76, 18: 76, 19: 6922, 20: 6990, 21: 7242, 22: 7056, 23: 7424, 24: 7313, 25: 6604, 26: 1900}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO9422993B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Watarai et al.
+(54) ROTOR COVER, ROTOR COOLING
+APPARATUS, AND TEMPERATURE-LEVEL
+INDICATOR
+71) Applicant:
+Sakai (JP
+(71)
+Applican SHIMANOINC. , Sakai
+(JP)
+
+Aug. 23, 2016
+
+USPC ....... 1887218 XL, 218 A, 218R, 716, 264 A,
+188/264 D, 264 R, 264 AA, 264 W
+See application file for complete search history.
+
+(56)
+
+(72) Inventors: Etsuyoshi Watarai, Sakai (JP); Tatsuya
+Matsushita, Sakai (JP); Kazuki
+Koshiyama, Sakai (JP); Shingo
+Sakurai, Sakai (JP); Masahiro
+Nakakura, Sakai (JP)
+
+References Cited
+U.S. PATENT DOCUMENTS
+4.226.308 A * 10/1980 Nishiyama .............. F16D 55,22
+188,218 A
+4,326,610 A * 4, 1982 Mouza .................... F16D 53.00
+
+s
+
+188,218 A
+
+(73) Assignee: SHIMANO INC., Sakai (JP)
+-
+
+(*) Notice:
+
+US 9,422,993 B2
+
+(45) Date of Patent:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+4,596.312 A *
+
+6/1986 K
+
+hi ............... B62L 1.00
+
+6,364,071 B2 *
+
+4/2002 Aydt ....................... F16D 65/10
+
+awaguchi
+
+188, 18A
+
+188,218 R
+
+7,337,884 B2* 3/2008 Paulik ................... F16D 65,847
+188,264 A
+7,341,130 B2 *
+
+3/2008 Samuelsson ............ F16D 55.00
+
+188,218 A
+
+(21) Appl. No.: 14/444,981
+
+2009,0266655 A1 * 10, 2009 Mikura .................... B62J 23.00
+
+(22) Filed:
+
+2014/0102822 A1*
+
+4/2014 Hara ........................ B62J 23.00
+
+2015,0003765 A1
+
+1/2015 Inoue ...................... F16D 65/12
+
+188,218 A
+
+Jul. 28, 2014
+
+180,206.1
+
+(65)
+
+Prior Publication Data
+
+384,477
+
+US 2016/OO25164A1
+
+Jan. 28, 2016
+
+* cited by examiner
+
+(51) Int. Cl.
+FI6D 65/T2
+
+SR ;
+
+(2006.01)
+
+Primary Examiner — Thomas J Williams
+
+3.08:
+
+Assistant Examiner — Mariano Sy
+
+FI6D 55/OO
+
+(2006.01)
+
+FI6D 66/OO
+
+(2006.01)
+
+(74) Attorney, Agent, or Firm — Mori & Ward, LLP
+
+(52) U.S. Cl.
+
+(57)
+
+CPC .............. FI6D 65/12 (2013.01); FI6D 65/128
+
+(2013.01); FI6D 65/847 (2013.01); G0IK
+
+11/12 (2013.01); F16D 2055,0037 (2013.01)
+
+F16D 2066/001 (2013.01)
+
+(58) Field of Classification Search
+CPC .......... F16D 2055/0037: F16D 65/847; F16D
+65/125; F16D 65/827; F16D 13/72: B62J
+23/OO
+
+ABSTRACT
+
+A rot
+
+O E.
+
+p
+
+rti
+
+a.
+
+po in
+
+d
+
+ti
+
+a F. E.
+
+portionine
+coyerrotor
+portion
+is configure
+leastassembly.
+partly
+cover
+a disc brake
+mounted
+on a bicycleat hub
+The mounting portion is configured to be mounted on the
+
+gp
+bicycle hub assembly.
+
+9.
+
+23 Claims, 17 Drawing Sheets
+
+
