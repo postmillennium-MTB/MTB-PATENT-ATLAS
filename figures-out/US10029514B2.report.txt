@@ -1,0 +1,156 @@
+patent: US10029514B2
+source: https://patentimages.storage.googleapis.com/a0/be/cf/cdd97d6ca50310/US10029514.pdf
+pages: 51
+per-page extracted text length: {1: 2747, 2: 1662, 3: 139, 4: 131, 5: 348, 6: 336, 7: 202, 8: 337, 9: 473, 10: 322, 11: 231, 12: 564, 13: 729, 14: 154, 15: 307, 16: 358, 17: 419, 18: 260, 19: 183, 20: 113, 21: 944, 22: 887, 23: 869, 24: 401, 25: 170, 26: 231, 27: 248, 28: 224, 29: 487, 30: 285, 31: 133, 32: 199, 33: 164, 34: 244, 35: 85, 36: 121, 37: 111, 38: 146, 39: 189, 40: 123, 41: 7170, 42: 7623, 43: 6327, 44: 7979, 45: 8005, 46: 7849, 47: 7722, 48: 7874, 49: 7866, 50: 7422, 51: 3601}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+|HAI LAMA ALTINA A LI UN MATLAMAN
+US010029514B2
+
+(12) United States Patent
+
+( 10) Patent No.: US 10 ,029,514 B2
+(45) Date of Patent:
+Jul. 24 , 2018
+
+Voss
+
+(54) BICYCLE TENSIONING DEVICE
+
+U .S . PATENT DOCUMENTS
+
+(71) Applicant: Darrell W . Voss, Vancouver, WA (US)
+(72) Inventor: Darrell W . Voss, Vancouver, WA (US)
+( * ) Notice :
+
+References Cited
+
+( 56 )
+
+6 ,497, 314 B2 12 /2002 Kanehisa
+7 ,562,942 B2 7 /2009 D ' Aluisio
+
+( Continued )
+
+Subject to any disclaimer, the term of this
+U . S .C . 154 (b ) by 20 days.
+
+patent is extended or adjusted under 35
+
+FOREIGN PATENT DOCUMENTS
+GB
+
+2414971 A
+2006138699 A2
+
+12 / 2005
+12 / 2006
+
+(21) Appl. No.:
+
+14 /777,456
+
+WO
+
+(22 ) PCT Filed :
+( 86 ) PCT No.:
+
+Mar. 13, 2014
+PCT/US2014 /026443
+
+OTHER PUBLICATIONS
+Patent Cooperation Treaty Written Opinion of the International
+Searching Authority for PCT/US2014 /026443 , Applicant: Darrell
+
+§ 371 (C )( 1),
+(2 ) Date :
+Sep . 15 , 2015
+
+(87) PCT Pub. No.: WO2014/151783
+PCT Pub . Date : Sep . 25 , 2014
+Prior Publication Data
+(65)
+US 2016 /0031521 A1 Feb . 4 , 2016
+
+Related U .S . Application Data
+(63 ) Continuation - in -part of application No. 13 /839, 168 ,
+filed on Mar. 15 , 2013 , now Pat. No. 9 ,409 ,619 .
+(60 ) Provisional application No.61/869,015 , filed on Aug .
+22, 2013
+
+(51) BOOB
+Int. Ci27. /02
+
+W . Voss, dated Sep . 15 , 2015 , European Patent Office , Munich ,
+Patent Cooperation Treaty International Preliminary Report on
+Patentability (Chapter I of the Patent Cooperation Treaty ) for
+PCT/US2014 /026443 , Applicant: Darrell W . Voss , dated Sep . 15 ,
+2015 , The International Bureau of WIPO , Geneva , Switzerland .
+(Continued )
+
+Germany.
+
+Primary Examiner — Kip T Kotter
+(74 ) Attorney, Agent, or Firm — Young 's Patent Services,
+LLC ; Bruce A . Young
+ABSTRACT
+
+(57)
+
+A tensioning device for bicycle front and rear wheel assem
+blies. A skewer assembly with a thumbnut is securable to the
+
+wheel assembly with a quick - release assembly . Portions of
+the skewer assembly are removable from the quick -release
+
+B62K 25 /02
+
+( 2006 .01)
+(2006 .01)
+
+B62K 21/02
+
+( 2006 .01)
+
+assembly by turning the thumbnut a partial turn , such as a
+
+CPC ............ B60B 27/026 (2013 .01); B62K 25 / 02
+(2013 .01) ; B62K 21/02 (2013.01); B62K
+2025 /025 (2013.01)
+
+the front wheel to be removed . In another embodiment, the
+skewer assembly is able to be removed by turning the
+
+(52 ) U . S. Ci.
+
+quarter of a turn . Removal of the skewer assembly allows
+
+(58 ) Field of Classification Search
+CPC .. B60B 27 /026 ; B62K 25 /02 ; B62K 2025 /025
+See application file for complete search history .
+
+quick -release assembly by a partial turn , such as a quarter of
+
+a turn .
+
+12 Claims, 38 Drawing Sheets
+489
+
+435
+
+492
+437
+
+486
+
+282
+
+483
+
+488
+
+479
+
+479
+
+
