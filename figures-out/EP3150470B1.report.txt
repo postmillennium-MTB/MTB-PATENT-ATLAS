@@ -1,0 +1,89 @@
+patent: EP3150470B1
+source: https://patentimages.storage.googleapis.com/d1/3b/6e/fad19ca03c2367/EP3150470B1.pdf
+pages: 35
+per-page extracted text length: {1: 1710, 2: 5088, 3: 6089, 4: 6275, 5: 6260, 6: 6444, 7: 6351, 8: 6279, 9: 6377, 10: 6406, 11: 6237, 12: 6242, 13: 5001, 14: 4262, 15: 4369, 16: 1287, 17: 19, 18: 19, 19: 19, 20: 19, 21: 19, 22: 19, 23: 19, 24: 19, 25: 19, 26: 19, 27: 19, 28: 19, 29: 19, 30: 19, 31: 19, 32: 19, 33: 19, 34: 19, 35: 630}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+(19)
+
+*EP003150470B1*
+(11)
+
+EP 3 150 470 B1
+
+EUROPEAN PATENT SPECIFICATION
+
+(12)
+
+(45) Date of publication and mention
+
+(51) Int Cl.:
+
+B62J 1/08 (2006.01)
+B62M 25/08 (2006.01)
+B62M 9/122 (2010.01)
+
+of the grant of the patent:
+11.11.2020 Bulletin 2020/46
+
+B62K 19/36 (2006.01)
+B62M 9/123 (2010.01)
+
+(21) Application number: 16167306.6
+(22) Date of filing: 25.04.2013
+(54) GEAR SHIFTING SYSTEM
+GANGSCHALTUNG
+SYSTEME DE CHANGEMENT DE VITESSE
+(84) Designated Contracting States:
+
+AL AT BE BG CH CY CZ DE DK EE ES FI FR GB
+GR HR HU IE IS IT LI LT LU LV MC MK MT NL NO
+PL PT RO RS SE SI SK SM TR
+
+(30) Priority: 25.04.2012 US 201261638406 P
+15.03.2013 US 201313844516
+
+(43) Date of publication of application:
+05.04.2017 Bulletin 2017/14
+
+(62) Document number(s) of the earlier application(s) in
+accordance with Art. 76 EPC:
+13165362.8 / 2 657 113
+
+(73) Proprietor: Fox Factory, Inc.
+
+Scotts Valley, CA 95066 (US)
+
+(72) Inventors:
+
+• HAUGEN, David M.
+CA 93950 (US)
+• GALASSO, Mario
+CT 06482 (US)
+• PELOT, Sante
+CA 95062 (US)
+• ALLINGER, Wesley, E.
+CA 95060 (US)
+• LAIRD, Andrew
+CA 95033 (US)
+
+(74) Representative: Casbon, Paul Richard
+Lucas & Co
+135 Westhall Road
+Warlingham, Surrey CR6 9HJ (GB)
+
+(56) References cited:
+
+EP 3 150 470 B1
+
+EP-A2- 1 188 661
+
+US-A1- 2008 312 799
+
+Note: Within nine months of the publication of the mention of the grant of the European patent in the European Patent
+Bulletin, any person may give notice to the European Patent Office of opposition to that patent, in accordance with the
+Implementing Regulations. Notice of opposition shall not be deemed to have been filed until the opposition fee has been
+paid. (Art. 99(1) European Patent Convention).
+Printed by Jouve, 75001 PARIS (FR)
+
+
