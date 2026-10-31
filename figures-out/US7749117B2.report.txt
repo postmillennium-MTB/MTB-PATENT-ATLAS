@@ -1,0 +1,161 @@
+patent: US7749117B2
+source: https://patentimages.storage.googleapis.com/3a/6f/c0/9d318000896afe/US7749117.pdf
+pages: 15
+per-page extracted text length: {1: 2275, 2: 66, 3: 67, 4: 98, 5: 67, 6: 56, 7: 262, 8: 67, 9: 67, 10: 71, 11: 7274, 12: 7513, 13: 7213, 14: 7295, 15: 936}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US0077.491.17B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Carrasco Vergara
+
+US 7,749,117 B2
+
+(45) Date of Patent:
+
+(54) OVOID CHAINRINGS FOR OPTIMISING
+
+Jul. 6, 2010
+
+515,499 A * 2, 1894 Scovell ....................... 431,115
+
+CONVENTIONAL PEDALNG
+
+596,289 A * 12/1897 Smith ............
+4,865,577 A * 9/1989 Freudenstein ..
+
+... 474,141
+... 474,141
+
+(75) Inventor: Pablo Carrasco Vergara, Málaga (ES)
+
+5,549,314 A * 8/1996 Sassi et al. .....
+... 280,259
+5,660,386 A * 8/1997 Krieger ......................... 124/7
+
+(73) Assignee: Rotor Components Technologies, S.L.
+
+2004/0074705 A1 * 4/2004 Peyre ...................... 188,24.12
+
+Madrid (ES)
+
+(*) Notice:
+
+FOREIGN PATENT DOCUMENTS
+
+Subject to any disclaimer, the term of this
+
+BE
+
+885299
+
+patent is extended or adjusted under 35
+
+RE
+
+6.
+
+E.
+
+U.S.C. 154(b) by 744 days.
+
+DE
+
+202004OO6544
+
+* 5, 2004
+
+FR
+
+1090949
+
+(21) Appl. No.: 11/351.993
+
+WO
+
+(22) Filed:
+
+* cited by examiner
+
+Feb. 10, 2006
+
+(65)
+
+Prior Publication Data
+
+WO2004O62997
+
+* 1 1977
+* 4f1955
+
+* T 2004
+
+Primary Examiner Bradley T King
+Assistant Examiner James K Hsiao
+
+US 2006/0211529 A1
+
+Sep. 21, 2006
+
+(74) Attorney, Agent, or Firm Margeurite Del Valle
+
+(30)
+Foreign Application Priority Data
+Mar. 15, 2005 (ES) ................................ 2005OO594
+
+(51) Int. Cl.
+FI6H 5.5/30
+
+(2006.01)
+
+(57)
+
+ABSTRACT
+
+Improvement in the design of variable original radius chain
+rings for coupling to conventional bicycle cranks in order to
+apply traction, which primarily consists of its being provided
+
+(52) U.S. Cl. ........................ 474/152.474/141. 280/259
+
+with a plurality of possible anchorages to the crank, so that the
+
+(58) Field of Classification Search
+
+user may adjust the relative position between the crank and
+
+s
+
+474/152
+
+474/141.151: 280/259
+See application file for complete search history.
+
+56
+
+the major radius of the chainring, and thus optimize the bio
+mechanics of his own pedalling; furthermore, other design
+parameters are offered to endow this non-circular pedalling
+
+References Cited
+
+with leg speeds
+optimized within the limitation of pedallin9.
+Sp
+
+U.S. PATENT DOCUMENTS
+
+with cranks at 180 degrees and therefore with a dead spot.
+
+513,589 A
+
+1, 1894 Metz .......................... 474,141
+
+11
+
+4 Claims, 9 Drawing Sheets
+
+

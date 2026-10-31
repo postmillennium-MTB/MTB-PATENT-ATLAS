@@ -1,0 +1,176 @@
+patent: US8082599B2
+source: https://patentimages.storage.googleapis.com/86/f8/33/93719f613d2a09/US8082599.pdf
+pages: 10
+per-page extracted text length: {1: 2798, 2: 165, 3: 77, 4: 57, 5: 76, 6: 154, 7: 7340, 8: 6813, 9: 7503, 10: 3051}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USO08082599B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+ii
+Saiic
+
+US 8,082.599 B2
+
+45) Date of Patent :
+
+(54) BODY PROTECTING DEVICE
+
+Dec.e 27, 2011
+
+3,877.076 A * 4, 1975 Summers et al. ................. 2,414
+
+4.484,364 A * 1 1/1984 Mitchell et al. ...
+
+... 2.f413
+
+(75) Inventor: Peter Sajic, Broadstone (GB)
+
+33: A : E ME to 3:
+
+(73) Assignee: Lloyd (Scotland) Limited (GB)
+
+4,627,1 14 A * 12/1986 Mitchell ........
+5,349,893 A ck 9, 1994 Dunn ......
+5,518,796 A * 5/1996 Tsotsis ........
+
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+
+5,918,309 A * 7/1999 Bachner, Jr. ....................... 2.25
+
+patent is extended or adjusted under 35
+
+2.3%
+f ck
+- -w
+
+U.S.C. 154(b) by 1057 days.
+(21) Appl. No.:
+(22) PCT Filed:
+
+10/583,343
+Dec. 7, 2004
+
+(86). PCT No.:
+
+PCT/GB2OO4/OOS149
+
+... 2.f414
+89,36.05
+... 428,116
+
+28
+
+try et al.
+
+aCKS Cal. . . . . . . . . . . . . . . . . . . . . . . . . .
+
+2/22
+
+7,089,602 B2* 8/2006 Talluri ........
+
+... 2,411
+
+7,150,217 B2* 12/2006 Kershaw .
+
+89.36.05
+
+7,254,843 B2 * 8/2007 Talluri .............................. 2,411
+FOREIGN PATENT DOCUMENTS
+
+EP
+
+OO47712 B1
+
+3, 1982
+
+(Continued)
+
+S371 (c)(1),
+(2), (4) Date:
+
+Aug. 27, 2007
+
+OTHER PUBLICATIONS
+
+(87) PCT Pub. No.: WO2005/060778
+
+International Search Report for PCT/GB2004/005149 (Dated Mar.
+21, 2005).
+International Preliminary Report on Patentability for PCT/GB2004/
+005149 (Dated Nov. 1, 2005).
+Written Opinion for PCT/GB2004/005149 (Dated Jul. 7, 2005).
+
+PCT Pub. Date: Jul. 7, 2005
+(65)
+
+Prior Publication Data
+
+US 2008/O12O764 A1
+
+(30)
+
+May 29, 2008
+
+Foreign Application Priority Data
+
+Dec. 20, 2003
+
+(GB) ......
+
+Primary Examiner — Shaun R Hurley
+
+... O329612.6
+
+Apr. 23, 2004 (GB) ................................... 04.09.0650
+
+(51) Int. Cl.
+A42B3/00
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+2.477,852 A *
+
+(74) Attorney, Agent, or Firm — Flaster/Greenberg P.C.
+(57)
+
+(2006.01)
+
+(52) U.S. Cl. ..................................... 2/411; 2/410; 2/412
+(58) Field of Classification Search ............... 2/410 422
+See application file for complete search history.
+(56)
+
+Assistant Examiner — Andrew Sutton
+
+8, 1949 Bacon ........................... 428,116
+
+3.447,163 A * 6/1969 Tojeiro et al. ..................... 2,412
+3,811,130 A * 5, 1974 Townsend, Jr. ................ 2,175.1
+3,829,900 A
+8/1974 Marangoni
+
+ABSTRACT
+
+A body protecting device for wearing by a user comprising an
+array of energy absorbing cells, wherein each cell comprises
+a tube, and wherein substantially each tube has a side wall
+which is near or adjacent to the side wall of at least another
+tube, and wherein Substantially each tube is configured Such
+that the orientation of the tube is substantially maintained
+when a load is applied parallel to the axis of the tube.
+14 Claims, 4 Drawing Sheets
+
+O
+
+40
+
+20
+
+
