@@ -281,16 +281,22 @@ header::before{
    .rh-arrow look as the rabbit-hole arrows. They sit beside the row, not over
    it, so no chip is ever hidden under a button; at either end the matching
    arrow is disabled, and both hide when every chip already fits. */
-.lw-chipbar{display:flex;align-items:center;gap:6px;margin:0 0 4px}
-.lw-chipbar .rh-arrow{flex:none;margin-bottom:6px}
-.lw-chipbar.no-overflow .rh-arrow{display:none}
-.lw-chips{flex:1;min-width:0;display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 2px 8px;margin:0 -2px;scrollbar-width:none}
+/* Landing chips: one labelled row each for Category / Era / Status (LANDING_ROWS).
+   A row that is wider than the screen scrolls sideways on its own. */
+.lw-rows{display:flex;flex-direction:column;gap:4px;margin:0 0 8px}
+.lw-row{display:flex;align-items:center;gap:8px;min-width:0}
+.lw-rlabel{flex:none;width:68px;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.lw-chips{flex:1;min-width:0;display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px;margin:0 -2px;scrollbar-width:none}
 .lw-chips::-webkit-scrollbar{display:none}
-.lw-chip{flex:none;scroll-snap-align:start;border:1px solid var(--card-border);background:var(--surface);color:var(--ink);border-radius:var(--pill-radius);padding:8px 14px;min-height:40px;font:inherit;font-size:14px;font-weight:600;white-space:nowrap;cursor:pointer}
+.lw-chip{flex:none;scroll-snap-align:start;transition:background-color var(--motion) var(--ease),border-color var(--motion) var(--ease),color var(--motion) var(--ease);border:1px solid var(--card-border);background:var(--surface);color:var(--ink);border-radius:var(--pill-radius);padding:8px 14px;min-height:40px;font:inherit;font-size:14px;font-weight:600;white-space:nowrap;cursor:pointer}
+/* Two-line chip (a theme with `sub`): same 40px height as a one-line chip */
+.lw-chip.lw-two{padding:4px 14px;line-height:1.1}
+.lw-chip .lw-l1,.lw-chip .lw-l2{display:block}
+.lw-chip .lw-l2{font-size:12px;font-weight:500;opacity:.85}
 .lw-chip:hover,.lw-chip:focus-visible{border-color:var(--primary);outline:none}
 .lw-chip[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}
 .lw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.lw-tile{display:flex;flex-direction:column;padding:0;margin:0;background:var(--surface);border:1px solid var(--card-edge);border-radius:var(--radius);overflow:hidden;cursor:pointer;font:inherit;color:inherit;text-align:left;transition:border-color .15s,transform .15s}
+.lw-tile{display:flex;flex-direction:column;padding:0;margin:0;background:var(--surface);border:1px solid var(--card-edge);border-radius:var(--radius);overflow:hidden;cursor:pointer;font:inherit;color:inherit;text-align:left;transition:border-color var(--motion) var(--ease),transform var(--motion) var(--ease)}
 .lw-tile:hover,.lw-tile:focus-visible{border-color:var(--primary);transform:translateY(-2px);outline:none}
 .lw-tile:nth-child(n+7){display:none}
 .lw-pic{position:relative;display:block;aspect-ratio:1 / 1;overflow:hidden;background:var(--thumb-bg);border-bottom:1px solid var(--card-border)}
@@ -503,7 +509,7 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .frow::-webkit-scrollbar{display:none}
 .frow + .frow{margin-top:4px}
 .flabel{font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);align-self:center;flex:0 0 auto;width:52px}
-.chip{flex:0 0 auto;border:1px solid var(--card-border);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;min-height:34px;transition:background .12s,color .12s}
+.chip{flex:0 0 auto;border:1px solid var(--card-border);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;min-height:34px;transition:background var(--motion) var(--ease),color var(--motion) var(--ease)}
 .chip.on{background:var(--primary);border-color:var(--primary);color:#fff}
 .chip:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 .chip-info{font-size:10px;opacity:.6;margin-left:3px;pointer-events:none}
@@ -514,6 +520,13 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
   .frow:hover::-webkit-scrollbar-track{background:transparent}
 }
 .fmeta{max-width:880px;margin:2px auto 0;padding:0 16px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink-soft)}
+/* "Where am I": every active filter, from any sub-tab, plus the count and a
+   one-tap clear. Shown only while #clearAll is (i.e. something is filtered). */
+.where-line{max-width:880px;margin:6px auto 0;padding:0 16px;display:flex;align-items:center;gap:6px 10px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-soft)}
+.where-line:has(> #clearAll[hidden]){display:none}
+.where-text b{color:var(--ink);font-weight:600}
+.where-clear{display:inline-flex;align-items:center;gap:4px;min-height:32px;padding:4px 12px;border:1px solid var(--primary);border-radius:var(--pill-radius);background:none;color:var(--primary);font:inherit;font-size:12px;font-weight:600;cursor:pointer;transition:background var(--motion) var(--ease),color var(--motion) var(--ease)}
+.where-clear:hover,.where-clear:focus-visible{background:var(--primary);color:#fff;outline:none}
 .clearbtn{background:none;border:none;color:var(--primary);font-size:12px;font-weight:600;text-decoration:underline;padding:4px}
 /* ---------- Filter tabs ---------- */
 .tab-row{max-width:880px;margin:0 auto;display:flex;gap:5px;overflow-x:auto;padding:3px 16px;scrollbar-width:none}
@@ -748,6 +761,13 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .fight-jump:hover{background:var(--st-lit);color:#fff}
 @keyframes cardFlash{0%,100%{box-shadow:0 0 0 0 transparent}30%{box-shadow:0 0 0 3px var(--st-lit)}}
 .card-flash{animation:cardFlash 1.5s ease}
+/* Shared motion: one short duration and curve for opening a card, swapping the
+   landing wall and re-filtering the list (playIn). Off under reduced motion. */
+:root{--motion:180ms;--ease:cubic-bezier(.2,.7,.2,1)}
+@keyframes fxIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.fx-in{animation:fxIn var(--motion) var(--ease)}
+.card.open .cbody{animation:fxIn var(--motion) var(--ease)}
+@media(prefers-reduced-motion:reduce){.fx-in,.card.open .cbody{animation:none}}
 @media(max-width:480px){.fight-titles h3{font-size:20px}.fights-h{font-size:25px}}
 /* ---------- Patent Match view (the Match tab) ----------
    Folded in from the old standalone match/index.html (2026-10-23). Every
@@ -1093,6 +1113,10 @@ footer a{color:inherit;text-decoration:underline}
       <button class="scroll-btn sb-right" data-i18n-aria-label="scrollRight" aria-label="Scroll right"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>
     </div>
   </div>
+  <div class="where-line" id="whereLine">
+    <span class="where-text" id="whereText" aria-live="polite"></span>
+    <button class="where-clear" id="clearAll" type="button" hidden><span aria-hidden="true">✕</span> <span data-i18n="clearFilters">Clear filters</span></button>
+  </div>
   <div class="fmeta">
     <span id="resultCount"></span>
     <span class="fmeta-actions">
@@ -1108,7 +1132,6 @@ footer a{color:inherit;text-decoration:underline}
           <button class="share-opt" data-share="reddit" role="menuitem" data-i18n="shareReddit">👽 Share on Reddit</button>
         </div>
       </details>
-      <button class="clearbtn" id="clearAll" hidden data-i18n="clearFilters">Clear filters</button>
     </span>
   </div>
 </div>
@@ -2019,6 +2042,8 @@ const RABBIT_HOLES = [
    {
      key: "litigation",               // required -- URL-safe, used by ?start=
      label: {en:"...", fr:"..."},   // required -- the chip text
+     sub: {en:"...", fr:"..."},     // optional -- a smaller second line under label (the decade chips:
+                                    //   "2020s rear" over "suspension"); give it to all chips of a set or none
      match: {...}                   // required -- which entries; every field given must hold:
                                     //   cat:"susp"           category key (CATS)
                                     //   yFrom:2010, yTo:2019 filing year range, inclusive (either end optional)
@@ -2032,28 +2057,36 @@ const RABBIT_HOLES = [
    entries whose own s/w text supports it. */
 const LANDING_WALL_TILES = 9;
 const LANDING_WALL_MIN = 6;
+/* Each theme sits in one labelled chip row on the landing (LANDING_ROWS, in
+   display order). Array order still decides the default theme: the first one. */
+const LANDING_ROWS = [
+  {key:"cat", label:{en:"Category", fr:"Catégorie"}},
+  {key:"era", label:{en:"Era", fr:"Époque"}},
+  {key:"status", label:{en:"Status", fr:"Statut"}},
+];
 const LANDING_THEMES = [
-  {key:"rear-1990s", label:{en:"1990s rear suspension", fr:"Suspension arrière des années 1990"}, match:{cat:"susp", yFrom:1990, yTo:1999}},
-  {key:"rear-2000s", label:{en:"2000s rear suspension", fr:"Suspension arrière des années 2000"}, match:{cat:"susp", yFrom:2000, yTo:2009}},
-  {key:"rear-2010s", label:{en:"2010s rear suspension", fr:"Suspension arrière des années 2010"}, match:{cat:"susp", yFrom:2010, yTo:2019}},
-  {key:"front", label:{en:"Front suspension", fr:"Suspension avant"}, match:{cat:"fork"}},
-  {key:"drivetrains", label:{en:"Drivetrains", fr:"Transmissions"},
+  {key:"rear-1990s", row:"era", label:{en:"1990s rear", fr:"Années 1990"}, sub:{en:"suspension", fr:"suspension arrière"}, match:{cat:"susp", yFrom:1990, yTo:1999}},
+  {key:"rear-2000s", row:"era", label:{en:"2000s rear", fr:"Années 2000"}, sub:{en:"suspension", fr:"suspension arrière"}, match:{cat:"susp", yFrom:2000, yTo:2009}},
+  {key:"rear-2010s", row:"era", label:{en:"2010s rear", fr:"Années 2010"}, sub:{en:"suspension", fr:"suspension arrière"}, match:{cat:"susp", yFrom:2010, yTo:2019}},
+  {key:"rear-2020s", row:"era", label:{en:"2020s rear", fr:"Années 2020"}, sub:{en:"suspension", fr:"suspension arrière"}, match:{cat:"susp", yFrom:2020}},
+  {key:"front", row:"cat", label:{en:"Front suspension", fr:"Suspension avant"}, match:{cat:"fork"}},
+  {key:"drivetrains", row:"cat", label:{en:"Drivetrains", fr:"Transmissions"},
    match:{cards:["FR727193A","6029990","321932","6182991","11697473","11560201","4127038","4170188","6241636","7712566","4522610","EP4536547","8608610","DE102023207638B3","10088020","20150008059"]}},
   /* Hubs (engagement, bearings, spoke flanges, spacing) and wheels (rims, spokes,
      whole-wheel designs). Tires, valves, inserts, axles and brake adapters stay out. */
-  {key:"hubs-wheels", label:{en:"Hubs & wheels", fr:"Moyeux et roues"},
+  {key:"hubs-wheels", row:"cat", label:{en:"Hubs & wheels", fr:"Moyeux et roues"},
    match:{cards:["5964332","5676227","8757341","10442245","9102197","11293500","Hadley Racing","11951768","11999191",
      "Symmetric fat-bike hub spacing","11090977","EP4017740","6155394","12643343",
      "7334846","6257676","6402256","7555838","5064250","Berd braided-fiber spoke","102017116754","202017104416U1",
      "5104199","7635170","5931544","D236609"]}},
   /* Racks that carry bikes on a car: hitch, roof and tailgate. The Burley trailer
      hitch and the Doppelmayr gondola cabin are bike transport but not car racks. */
-  {key:"car-racks", label:{en:"Car racks", fr:"Porte-vélos de voiture"},
+  {key:"car-racks", row:"cat", label:{en:"Car racks", fr:"Porte-vélos de voiture"},
    match:{cards:["5833074","9956922","10603968","11554724","11518317","7900802","10668866","20250018873",
      "7726529","10780837","11351929","Rut Rack"]}},
-  {key:"vintage", label:{en:"Vintage", fr:"Vintage"}, match:{yTo:1974}},
-  {key:"no-patent", label:{en:"No patent", fr:"Sans brevet"}, match:{np:true}},
-  {key:"litigation", label:{en:"Litigation", fr:"Litiges"}, match:{badge:"litigated"}},
+  {key:"vintage", row:"era", label:{en:"Vintage", fr:"Vintage"}, match:{yTo:1974}},
+  {key:"no-patent", row:"status", label:{en:"No patent", fr:"Sans brevet"}, match:{np:true}},
+  {key:"litigation", row:"status", label:{en:"Litigation", fr:"Litiges"}, match:{badge:"litigated"}},
 ];
 
 /* ---- LINKAGE MODELS ("See it move" viewer on suspension cards) ----
@@ -4695,11 +4728,20 @@ function landingBrand(d){
   return w || String(d.a||"").split(/\s*[\/,&(→]\s*/)[0];
 }
 function landingChipsHTML(){
-  const cur=landingTheme();
-  return landingThemes().map(th=>{
-    const on=cur&&th.key===cur.key;
-    return `<button type="button" class="lw-chip" data-lw="${th.key}" aria-pressed="${on}">${tx(th.label)}</button>`;
+  const cur=landingTheme(), all=landingThemes();
+  return LANDING_ROWS.map(row=>{
+    const chips=all.filter(th=>th.row===row.key).map(th=>{
+      const on=cur&&th.key===cur.key;
+      return `<button type="button" class="lw-chip${th.sub?" lw-two":""}" data-lw="${th.key}" aria-pressed="${on}">${th.sub?`<span class="lw-l1">${tx(th.label)}</span> <span class="lw-l2">${tx(th.sub)}</span>`:tx(th.label)}</button>`;
+    }).join("");
+    return chips ? `<div class="lw-row" role="group" aria-label="${mgEsc(tx(row.label))}"><span class="lw-rlabel" aria-hidden="true">${tx(row.label)}</span><div class="lw-chips">${chips}</div></div>` : "";
   }).join("");
+}
+/* "Era · 2020s rear suspension · 7 drawings": where the reader is on the wall. */
+function landingWhere(th){
+  const row=LANDING_ROWS.find(r=>r.key===th.row);
+  const name=th.sub ? `${tx(th.label)} ${tx(th.sub)}` : tx(th.label);
+  return `${row?tx(row.label)+" · ":""}${name} · ${t("wallCount",landingPool(th).length)}`;
 }
 function landingTilesHTML(){
   return landingPick().map((d,i)=>{
@@ -4713,13 +4755,9 @@ function landingTilesHTML(){
 function landingWallHTML(){
   const th=landingTheme(); if(!th) return "";
   return `<section class="home-sec lw" id="landingWall">
-    <div class="lw-chipbar" id="lwChipBar">
-      <button type="button" class="rh-arrow" id="lwPrev" aria-label="${t('scrollLeft')}" aria-controls="lwChips"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg></button>
-      <div class="lw-chips" id="lwChips" role="group" aria-label="${t("wallThemesAria")}">${landingChipsHTML()}</div>
-      <button type="button" class="rh-arrow" id="lwNext" aria-label="${t('scrollRight')}" aria-controls="lwChips"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>
-    </div>
+    <div class="lw-rows" id="lwChips" role="group" aria-label="${t("wallThemesAria")}">${landingChipsHTML()}</div>
     <div class="lw-grid" id="lwGrid">${landingTilesHTML()}</div>
-    <div class="lw-foot"><span class="lw-count" id="lwCount">${t("wallCount",landingPool(th).length)}</span>
+    <div class="lw-foot"><span class="lw-count" id="lwCount">${landingWhere(th)}</span>
       <button type="button" class="mini-btn lw-shuffle" id="lwShuffle" aria-label="${t("wallShuffleAria")}">${t("wallShuffle")}</button></div>
   </section>`;
 }
@@ -4729,8 +4767,9 @@ function paintLandingWall(){
   const grid=$("#lwGrid"), chips=$("#lwChips"), count=$("#lwCount"), th=landingTheme();
   if(!grid||!th) return;
   grid.innerHTML=landingTilesHTML();
+  playIn(grid);
   chips.querySelectorAll(".lw-chip").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lw===th.key)));
-  count.textContent=t("wallCount",landingPool(th).length);
+  count.textContent=landingWhere(th);
 }
 function wireLandingWall(){
   const chips=$("#lwChips"), grid=$("#lwGrid"), shuffle=$("#lwShuffle");
@@ -4747,41 +4786,10 @@ function wireLandingWall(){
     if(d) followGo({ref:cardRef(d)});
   };
   if(shuffle) shuffle.onclick=()=>{ landingTiles=null; paintLandingWall(); };
-  // Bring the selected chip into view if a deep link picked one off-screen.
-  const on=chips.querySelector('[aria-pressed="true"]');
-  if(on && chips.scrollWidth>chips.clientWidth) chips.scrollLeft=Math.max(0,on.offsetLeft-chips.offsetLeft-16);
-  wireLandingChipArrows(chips);
+  // Bring the selected chip into view if a deep link picked one off-screen in its row.
+  const on=chips.querySelector('[aria-pressed="true"]'), sc=on&&on.parentNode;
+  if(sc && sc.scrollWidth>sc.clientWidth) sc.scrollLeft=Math.max(0,on.offsetLeft-sc.offsetLeft-16);
 }
-let lwChipResize=null, lwChipResizeBound=false;
-/* Each click moves about two chips' widths, capped at 80% of the visible row
-   so on a phone (where one long chip nearly fills it) no chip is skipped. */
-function wireLandingChipArrows(chips){
-  const bar=$("#lwChipBar"), prev=$("#lwPrev"), next=$("#lwNext");
-  if(!bar||!prev||!next) return;
-  const update=()=>{
-    if(!chips.isConnected) return;
-    const max=chips.scrollWidth-chips.clientWidth, x=chips.scrollLeft;
-    bar.classList.toggle("no-overflow", max<=4);
-    prev.disabled = x<=2;
-    next.disabled = x>=max-2;
-  };
-  const step=()=>{
-    const c=chips.querySelector(".lw-chip");
-    return Math.min(chips.clientWidth*0.8, c ? 2*(c.offsetWidth+8) : chips.clientWidth);
-  };
-  const go=dir=>chips.scrollBy ? chips.scrollBy({left:dir*step(),behavior:"smooth"}) : (chips.scrollLeft+=dir*step());
-  prev.onclick=()=>go(-1);
-  next.onclick=()=>go(1);
-  chips.addEventListener("scroll",update,{passive:true});
-  // One shared resize listener: the wall is re-rendered (tab or language
-  // switch), so each wiring swaps in its own update rather than stacking.
-  lwChipResize=update;
-  if(!lwChipResizeBound){ lwChipResizeBound=true; window.addEventListener("resize",()=>lwChipResize&&lwChipResize()); }
-  update();
-  requestAnimationFrame(update);
-  setTimeout(update,SCROLLER_SETTLE_DELAY_MS);
-}
-
 /* How many cards of the pool are in the DOM. Survives a language-switch
    re-render so the row doesn't snap back to the first batch. */
 let rabbitCount=RABBIT_HOLES_SHOWN;
@@ -5130,6 +5138,24 @@ function renderStats(){
 /* Main entry point: applies filters/search, routes to the Fights or Stats
    view if one of those tabs is active, otherwise groups the timeline into
    the current step size (getEras) and rebuilds the card list. */
+/* Replays the shared fade-in (.fx-in) on el. CSS turns it off under reduced motion. */
+function playIn(el){
+  if(!el) return;
+  el.classList.remove("fx-in"); void el.offsetWidth; el.classList.add("fx-in");
+}
+let lastFilterSig=null;
+/* Builds the "where am I" line from the pressed chips themselves, so the
+   labels are whatever the reader sees (language, ⓘ marks dropped). */
+function paintWhere(n,total){
+  const el=$("#whereText"); if(!el) return;
+  const parts=[...document.querySelectorAll('#filterPanes .chip[aria-pressed="true"]')]
+    .map(c=>{ const lab=c.querySelector("[data-i18n]"); return (lab?lab.textContent:c.textContent).replace("ⓘ","").trim(); });
+  if(activeTab==="fav") parts.unshift(t("tabFavorites"));
+  if(searchQ) parts.push(`“${searchQ}”`);
+  el.innerHTML="";
+  if(parts.length){ const b=document.createElement("b"); b.textContent=parts.join(" · "); el.append(b," · "); }
+  el.append(t("resultCountFiltered",n,total));
+}
 function render(){
   if(typeof syncHash==="function") syncHash();
   if(typeof activeTab!=="undefined" && activeTab==="match"){ renderMatch(); return; }
@@ -5216,8 +5242,11 @@ function render(){
      full-dataset "363 entries · 1869–2026" line instead of "N of 363" --
      technically true of the chips, but not of what's actually on screen. */
   const anyFilter=activeTab==="fav"||anyFilterActive()||searchQ;
-  $("#resultCount").textContent = anyFilter?t("resultCountFiltered",n,total):t("resultCountAll",total,FIRST_YEAR);
+  $("#resultCount").textContent = anyFilter?"":t("resultCountAll",total,FIRST_YEAR);
   $("#clearAll").hidden=!anyFilter;
+  if(anyFilter) paintWhere(n,total);
+  const sig=JSON.stringify([activeTab,searchQ,FILTER_KEYS.map(k=>[...state[k]])]);
+  if(sig!==lastFilterSig){ if(lastFilterSig!==null) playIn(tl); lastFilterSig=sig; }
   updateTabDots();
   renderBars(list);
 }
@@ -5375,7 +5404,8 @@ function jumpToCard(ref){
     }
     if(target){
       setCardOpen(target,true);
-      if(target.scrollIntoView) target.scrollIntoView({behavior:"smooth",block:"center"});
+      const rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if(target.scrollIntoView) target.scrollIntoView({behavior:rm?"auto":"smooth",block:"center"});
       target.classList.add("card-flash");
       setTimeout(()=>target.classList.remove("card-flash"),ANIMATION_CLEANUP_MS);
     }

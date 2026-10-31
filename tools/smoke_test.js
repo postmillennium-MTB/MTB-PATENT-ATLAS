@@ -344,7 +344,7 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     }
     await ctx.close();
   }
-  for (const [url, want] of [['?start=litigation', 'litigation'], ['#start=drivetrains', 'drivetrains'], ['#start=hubs-wheels', 'hubs-wheels'], ['?start=no-such-theme', null], ['', null]]) {
+  for (const [url, want] of [['?start=litigation', 'litigation'], ['#start=drivetrains', 'drivetrains'], ['#start=hubs-wheels', 'hubs-wheels'], ['#start=rear-2020s', 'rear-2020s'], ['?start=no-such-theme', null], ['', null]]) {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
     const p = await ctx.newPage();
     const errs = [];
