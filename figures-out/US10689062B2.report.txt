@@ -1,0 +1,195 @@
+patent: US10689062B2
+source: https://patentimages.storage.googleapis.com/64/2a/0f/b9b989175066aa/US10689062.pdf
+pages: 23
+per-page extracted text length: {1: 2618, 2: 911, 3: 263, 4: 0, 5: 209, 6: 236, 7: 191, 8: 196, 9: 153, 10: 137, 11: 133, 12: 249, 13: 6891, 14: 6948, 15: 6524, 16: 7351, 17: 7887, 18: 7640, 19: 7787, 20: 7777, 21: 7874, 22: 7477, 23: 4431}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010689062B2
+
+(12) United
+States Patent
+Southall
+
+( 10 ) Patent No.: US 10,689,062 B2
+(45 ) Date of Patent:
+Jun . 23, 2020
+
+(54 ) BICYCLE REAR WHEEL SUSPENSION
+
+(58 ) Field of Classification Search
+
+SYSTEM
+
+CPC
+
+( 71) Applicant: VASTTECH IP PTY LTD , Clarence
+Park , South Australia (AU )
+
+(56 )
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+( 72 ) Inventor: Timothy James Southall, Clarence
+
+Park (AU )
+(73) Assignee : VASTTECH IP PTY LTD , South
+Australia (AU )
+( * ) Notice : Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b ) by 304 days .
+15 / 321,447
+( 21 ) Appl. No.:
+( 22 ) PCT Filed : Jun . 25 , 2015
+PCT/ AU2015 /000366
+( 86 ) PCT No.:
+
+3,977,697 A * 8/1976 MacPike
+4,440,413 A * 4/1984 Miyakoshi
+
+OTHER PUBLICATIONS
+
+Southall, PCT/AU2015/000366 . Written Opinion (dated Aug. 10 ,
+2015 ).
+Primary Examiner Jacob D Knutson
+
+(74 ) Attorney, Agent, or Firm — Loza & Loza , LLP ;
+Heidi L. Eisenhut
+
+US 2017/0151996 A1
+
+A bicycle rear wheel suspension systems. In one aspect, a
+ing a bicycle rear wheel suspension system comprising a
+
+bicycle rear wheel suspension system is provided compris
+
+frame comprising a bottom bracket and a first chain stay, the
+system further comprising a rear wheel comprising an axle ,
+
+Jun . 1, 2017
+
+and a first linkage member pivotally connected with respect
+to the first chain stay at a first main pivot point, the first
+linkage member extending rearwardly to bridge the main
+
+pivot point and the axle, wherein themain pivot point is in
+a position higher than the bottom bracket, and closer to the
+axle than it is to the bottom bracket, and wherein at least the
+first linkage member further comprises a pivotable connec
+tion point for a shock absorbing mechanism bridging this
+connection point and a portion of a remainder of the frame.
+Further, a bicycle comprising the rear wheel suspension
+system is provided .
+17 Claims, 10 Drawing Sheets
+
+2014902432
+
+(AU )
+(AU )
+(AU )
+
+2015900173
+2015900792
+
+(51) Int. Cl.
+B62K 25/28
+B62K 25/04
+CPC
+
+ABSTRACT
+
+(57)
+
+Foreign Application Priority Data
+
+( 52 ) U.S. CI.
+
+280/284
+
+B62K 25/286
+180/227
+
+Dec. 22 , 2016
+(2 ) Date :
+( 87 ) PCT Pub . No.: WO2015 /196242
+PCT Pub. Date : Dec. 30 , 2015
+(65 )
+Prior Publication Data
+
+Jun . 25 , 2014
+Jan. 21, 2015
+Feb. 28 , 2015
+
+B62K 25/286
+
+(Continued )
+
+$ 371 ( c )( 1) ,
+
+( 30 )
+
+B62K 25/28 ; B62K 25/04 ; B62K 2201/08
+(Continued )
+
+( 2006.01)
+( 2006.01 )
+B62K 25/28 ( 2013.01 ); B62K 25/04
+
+(2013.01 ); B62K 2201/08 (2013.01 )
+10
+
+100
+
+140
+
+s
+
+130
+5
+
+was
+
+132
+
+110 .
+122
+
+44
+
+34
+
+8?
+
+24
+
+32
+
+9a
+
+30
+
+42
+
+h
+
+1120
+
+172
+
+su
+
+20
+6
+
+40
+
+22
+175
+
+170
+
+160
+
+150
+
+
