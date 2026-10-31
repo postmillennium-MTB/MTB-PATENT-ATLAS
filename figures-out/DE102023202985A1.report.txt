@@ -1,0 +1,72 @@
+patent: DE102023202985A1
+source: https://patentimages.storage.googleapis.com/83/67/b3/ddf9a8c4af50de/DE102023202985A1.pdf
+pages: 48
+per-page extracted text length: {1: 1587, 2: 5390, 3: 5629, 4: 5442, 5: 5440, 6: 4922, 7: 5093, 8: 5582, 9: 5768, 10: 5692, 11: 5688, 12: 5702, 13: 5569, 14: 5557, 15: 5712, 16: 5834, 17: 5759, 18: 5652, 19: 5583, 20: 5594, 21: 5792, 22: 5757, 23: 5547, 24: 2479, 25: 1846, 26: 4196, 27: 5041, 28: 4844, 29: 1917, 30: 64, 31: 40, 32: 40, 33: 40, 34: 40, 35: 40, 36: 40, 37: 40, 38: 40, 39: 40, 40: 40, 41: 40, 42: 40, 43: 40, 44: 40, 45: 40, 46: 40, 47: 40, 48: 98}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+(19)
+
+*DE102023202985A120241002*
+(10)
+
+(12)
+
+DE 10 2023 202 985 A1 2024.10.02
+
+Offenlegungsschrift
+B62J 1/08 (2006.01)
+
+(21) Aktenzeichen: 10 2023 202 985.5
+(22) Anmeldetag: 31.03.2023
+(43) Offenlegungstag: 02.10.2024
+
+(51) Int Cl.:
+
+(71) Anmelder:
+Shimano Inc., Sakai City, Osaka, JP
+
+(56) Ermittelter Stand der Technik:
+
+(74) Vertreter:
+Grosse, Schumacher, Knauer, von Hirschhausen,
+80335 München, DE
+
+DE
+DE
+DE
+GB
+
+100 44 342
+10 2015 003 659
+10 2017 208 291
+2 456 315
+
+(72) Erfinder:
+Hara, Nobukatsu, Osaka, JP
+Rechercheantrag gemäß § 43 PatG ist gestellt.
+Die folgenden Angaben sind den vom Anmelder eingereichten Unterlagen entnommen.
+(54) Bezeichnung: SITZVERSTELLVORRICHTUNG UND STEUERSYSTEM FÜR EIN MENSCHLICH
+ANGETRIEBENES FAHRZEUG
+
+(57) Zusammenfassung: Eine Sitzverstellvorrichtung 12 für
+ein menschlich angetriebenes Fahrzeug A ist grundsätzlich
+mit einem ersten Adapter 20, einem zweiten Adapter 22 und
+einem Betätigungsmechanismus 24 versehen. Der erste
+Adapter 20 ist ausgebildet, an einem Sitzrohr SET des
+menschlich angetriebenen Fahrzeugs A montiert zu sein.
+Der zweite Adapter 22 ist ausgebildet, mit einem Sitz S des
+menschlich angetriebenen Fahrzeugs A gekoppelt zu sein.
+Der zweite Adapter 22 ist verschiebbar mit dem ersten
+Adapter 20 gekoppelt. Der Betätigungsmechanismus 24 ist
+ausgebildet, den zweiten Adapter 22 relativ zum ersten
+Adapter 20 zu bewegen, um den Sitz S um eine Schwenk­
+achse PA zu schwenken. Die Schwenkachse PA ist von dem
+zweiten Adapter 22 getrennt. Der erste Adapter 20 ist näher
+an der Schwenkachse PA als der zweite Adapter 22.
+
+A1
+A1
+A1
+A
+
+
