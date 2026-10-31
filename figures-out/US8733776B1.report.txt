@@ -1,0 +1,98 @@
+patent: US8733776B1
+source: https://patentimages.storage.googleapis.com/09/c5/c8/87611fde810641/US8733776.pdf
+pages: 6
+per-page extracted text length: {1: 1633, 2: 56, 3: 56, 4: 68, 5: 6478, 6: 3678}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US00873.3776B1
+
+(12) United States Patent
+Foes
+
+(10) Patent No.:
+
+(54) BUMPER PROTECTION OF STEERING
+
+(56)
+
+STRUCTURE
+
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 95 days.
+
+(21) Appl. No.: 13/506,665
+
+51) Int. C
+
+May 7, 2012
+
+(51)
+27/00
+(52) U.S. Cl.
+
+6,340,142 B1
+
+1/2002 Li ................................ 248.74.1
+
+8,522,983 B2 *
+
+9/2013 Davis ............................ 209/672
+
+2007/0039409 A1* 2/2007 Meng ........................... T4,5518
+
+* cited by examiner
+Primary Examiner — Kevin Hurley
+(74) Attorney, Agent, or Firm — William W. Haelfiger
+ABSTRACT
+
+A bumper assembly for use on a cycle steering column, com
+prising in combination a C-shaped gripper sleeve, an elasto
+
+2006.O1
+( .01)
+
+USPC ........................................ 280/304.3; 280/272
+
+(58) Field of Classification Search
+USPC
+
+References Cited
+1,412,241 A * 4, 1922 Hall ........................... 248/345.1
+
+(57)
+
+(22) Filed:
+
+May 27, 2014
+
+U.S. PATENT DOCUMENTS
+
+(76) Inventor: Brent Foes, Pasadena, CA (US)
+-r
+
+US 8,733,776 B1
+
+(45) Date of Patent:
+
+280/288.4, 304.3, 272
+
+See application file for complete search history.
+
+meric bumper attached to the sleeve, and having a bumper
+
+surface presented outwardly relative to the sleeve, there being
+adjustable retainer means configured to releasably hold the
+bumperand sleeve in selected positions, whereby the sleeve is
+adjustable endwise and rotatably to adjustably position and
+
+retain the sleeve to the steering column, with the bumper
+
+presented outwardly, in a selected direction, as aforesaid.
+
+8 Claims, 3 Drawing Sheets
+
+
