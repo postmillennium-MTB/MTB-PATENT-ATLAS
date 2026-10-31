@@ -1,0 +1,222 @@
+patent: US11548587B2
+source: https://patentimages.storage.googleapis.com/77/79/99/7dedae81398a07/US11548587.pdf
+pages: 36
+per-page extracted text length: {1: 2799, 2: 5292, 3: 480, 4: 277, 5: 279, 6: 284, 7: 278, 8: 341, 9: 259, 10: 202, 11: 204, 12: 201, 13: 202, 14: 212, 15: 7181, 16: 6819, 17: 8106, 18: 7826, 19: 7915, 20: 7964, 21: 8040, 22: 8171, 23: 7986, 24: 7863, 25: 7829, 26: 7843, 27: 7918, 28: 7970, 29: 7811, 30: 7796, 31: 7757, 32: 7789, 33: 7735, 34: 7557, 35: 6523, 36: 5639}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011548587B2
+
+(12) Voss
+United States Patent
+
+( 10 ) Patent No.: US 11,548,587 B2
+(45 ) Date of Patent :
+* Jan. 10 , 2023
+( 58 ) Field of Classification Search
+
+( 54 ) VEHICLE
+
+( 71 ) Applicant: Darrell W Voss, Chehalis, WA (US )
+( 72 ) Inventor: Darrell W Voss, Chehalis , WA (US )
+( * ) Notice : Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 445 days .
+This patent is subject to a terminal dis
+
+CPC
+
+B62K 25/286 ; B62K 19/02 ; B62K 19/34 ;
+B62K 25/30 ; B60G 2300/12 ; B62M 6/55
+
+See application file for complete search history.
+References Cited
+
+(56 )
+
+U.S. PATENT DOCUMENTS
+4,596,302 A
+4,821,833 A
+
+claimer.
+
+( Continued )
+
+( 21 ) Appl . No .: 16 /578,272
+Sep. 20 , 2019
+(22 ) Filed :
+Prior Publication Data
+( 65 )
+US 2020/0031426 A1
+
+FOREIGN PATENT DOCUMENTS
+CN
+
+201030927
+20150329 A
+
+FI
+
+OTHER PUBLICATIONS
+
+USPTO Ex -Parte Quayle Action in related U.S. Appl. No. 15 / 898,545 ,
+filed Feb. 10 , 2020 .
+
+is a continuation - in -part of application No.
+
+15 / 898,645 , filed on Feb. 18 , 2018 , now Pat. No.
+10,723,410 , which is a continuation - in -part of
+application No. 15 / 796,053 , filed on Oct. 27 , 2017 ,
+Pat .
+
+No.
+
+10,618,595 ,
+
+which
+
+is
+
+a
+
+continuation - in -part of application No. 15 /478,229 ,
+
+filed on Apr. 3 , 2017 , now Pat . No. 10,457,349 , said
+application
+
+No.
+
+PCT /US2018 /023462
+
+is
+
+a
+
+continuation - in -part of application No. 15 /468,094,
+(Continued )
+( 51 ) Int . Ci .
+B62K 19/34
+B62K 25/28
+
+( 2006.01 )
+
+( 2006.01 )
+( 2006.01 )
+
+B62K 19/02
+
+(52) U.S. CI.
+
+CPC ............ B62K 25/286 (2013.01 ) ; B62K 19/02
+(2013.01 ) ; B62K 19/34 (2013.01 ) ; B60G
+2300/12 (2013.01 )
+
+100
+
+112
+115
+
+(Continued )
+
+Primary Examiner Kevin Hurley
+Assistant Examiner - Marlon A Arce
+
+(74 ) Attorney, Agent, or Firm - David P. Dickerson
+(57 )
+ABSTRACT
+A vehicle includes a forward frame portion, a rear frame
+
+portion, and a motion control system that movably inter
+connects the forward frame portion and the rear frame
+portion. A forward acceleration of the rear frame portion
+resulting from a driving force imparted by a wheel supported
+by the rear frame portion imparts a first force onto the
+motion control system that counters a second force imparted
+on the motion control system by an acceleration of a payload
+supported by the forward frame portion as a result of the
+forward acceleration .
+
+20 Claims , 11 Drawing Sheets
+
+114
+718
+
+110
+140
+
+118
+
+116
+
+132
+
+124
+
+120
+
+116
+
+160
+
+3/2008
+5/2017
+
+(Continued )
+
+Jan. 30 , 2020
+
+Related U.S. Application Data
+of
+application
+No.
+( 63 ) Continuation
+PCT /US2018 /023462, filed on Mar. 21 , 2018 , which
+
+now
+
+6/1986 Suzuki et al .
+
+4/1989 Yamaguchi
+
+133
+
+150
+
+132
+
+120
+
+134
+
+162
+
+133
+
+184
+
+130
+186
+
+324
+162
+
+/ 119 134
+
+-130
+-335
+117
+
+183
+
+-183
+
+135
+139 182
+
+152
+160
+
+A
+
+110
+
+
