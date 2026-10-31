@@ -287,6 +287,10 @@ header::before{
 .lw-chips{flex:1;min-width:0;display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 2px 8px;margin:0 -2px;scrollbar-width:none}
 .lw-chips::-webkit-scrollbar{display:none}
 .lw-chip{flex:none;scroll-snap-align:start;border:1px solid var(--card-border);background:var(--surface);color:var(--ink);border-radius:var(--pill-radius);padding:8px 14px;min-height:40px;font:inherit;font-size:14px;font-weight:600;white-space:nowrap;cursor:pointer}
+/* Two-line chip (a theme with `sub`): same 40px height as a one-line chip */
+.lw-chip.lw-two{padding:4px 14px;line-height:1.1}
+.lw-chip .lw-l1,.lw-chip .lw-l2{display:block}
+.lw-chip .lw-l2{font-size:12px;font-weight:500;opacity:.85}
 .lw-chip:hover,.lw-chip:focus-visible{border-color:var(--primary);outline:none}
 .lw-chip[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}
 .lw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
@@ -2019,6 +2023,8 @@ const RABBIT_HOLES = [
    {
      key: "litigation",               // required -- URL-safe, used by ?start=
      label: {en:"...", fr:"..."},   // required -- the chip text
+     sub: {en:"...", fr:"..."},     // optional -- a smaller second line under label (the decade chips:
+                                    //   "2020s rear" over "suspension"); give it to all chips of a set or none
      match: {...}                   // required -- which entries; every field given must hold:
                                     //   cat:"susp"           category key (CATS)
                                     //   yFrom:2010, yTo:2019 filing year range, inclusive (either end optional)
@@ -2033,9 +2039,10 @@ const RABBIT_HOLES = [
 const LANDING_WALL_TILES = 9;
 const LANDING_WALL_MIN = 6;
 const LANDING_THEMES = [
-  {key:"rear-1990s", label:{en:"1990s rear suspension", fr:"Suspension arrière des années 1990"}, match:{cat:"susp", yFrom:1990, yTo:1999}},
-  {key:"rear-2000s", label:{en:"2000s rear suspension", fr:"Suspension arrière des années 2000"}, match:{cat:"susp", yFrom:2000, yTo:2009}},
-  {key:"rear-2010s", label:{en:"2010s rear suspension", fr:"Suspension arrière des années 2010"}, match:{cat:"susp", yFrom:2010, yTo:2019}},
+  {key:"rear-1990s", label:{en:"1990s rear", fr:"Années 1990"}, sub:{en:"suspension", fr:"suspension arrière"}, match:{cat:"susp", yFrom:1990, yTo:1999}},
+  {key:"rear-2000s", label:{en:"2000s rear", fr:"Années 2000"}, sub:{en:"suspension", fr:"suspension arrière"}, match:{cat:"susp", yFrom:2000, yTo:2009}},
+  {key:"rear-2010s", label:{en:"2010s rear", fr:"Années 2010"}, sub:{en:"suspension", fr:"suspension arrière"}, match:{cat:"susp", yFrom:2010, yTo:2019}},
+  {key:"rear-2020s", label:{en:"2020s rear", fr:"Années 2020"}, sub:{en:"suspension", fr:"suspension arrière"}, match:{cat:"susp", yFrom:2020}},
   {key:"front", label:{en:"Front suspension", fr:"Suspension avant"}, match:{cat:"fork"}},
   {key:"drivetrains", label:{en:"Drivetrains", fr:"Transmissions"},
    match:{cards:["FR727193A","6029990","321932","6182991","11697473","11560201","4127038","4170188","6241636","7712566","4522610","EP4536547","8608610","DE102023207638B3","10088020","20150008059"]}},
@@ -4698,7 +4705,7 @@ function landingChipsHTML(){
   const cur=landingTheme();
   return landingThemes().map(th=>{
     const on=cur&&th.key===cur.key;
-    return `<button type="button" class="lw-chip" data-lw="${th.key}" aria-pressed="${on}">${tx(th.label)}</button>`;
+    return `<button type="button" class="lw-chip${th.sub?" lw-two":""}" data-lw="${th.key}" aria-pressed="${on}">${th.sub?`<span class="lw-l1">${tx(th.label)}</span> <span class="lw-l2">${tx(th.sub)}</span>`:tx(th.label)}</button>`;
   }).join("");
 }
 function landingTilesHTML(){
