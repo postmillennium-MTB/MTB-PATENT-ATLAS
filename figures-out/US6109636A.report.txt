@@ -1,0 +1,105 @@
+patent: US6109636A
+source: https://patentimages.storage.googleapis.com/45/d5/5a/6f6616080ddf6f/US6109636.pdf
+pages: 18
+per-page extracted text length: {1: 2503, 2: 60, 3: 51, 4: 63, 5: 68, 6: 51, 7: 6074, 8: 7191, 9: 6285, 10: 7267, 11: 7725, 12: 7505, 13: 7367, 14: 6790, 15: 6853, 16: 4003, 17: 4822, 18: 528}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6109636A
+
+United States Patent (19)
+
+11 Patent Number:
+(45) Date of Patent:
+
+Klein et al.
+54 HIGH EFFICIENCY BICYCLE FRAME
+
+6,109,636
+Aug. 29, 2000
+
+FOREIGN PATENT DOCUMENTS
+
+SUSPENSION
+
+2 145 759 3/1973 Germany ............................... 384/297
+
+75 Inventors: Gary G. Klein; Darrell W. Voss, both
+
+Primary Examiner Brian L. Johnson
+
+of Chehalis, Wash.
+
+ASSistant Examiner Avraham H. Lerner
+
+73 Assignee: Klein Bicycle Corporation, Chehalis,
+Wash.
+
+57
+
+ABSTRACT
+
+A bicycle frame Suspension comprises a Single main tube
+having fore and aft ends and left and right Sides with a head
+tube for rotatably mounting the front Steering forks and front
+
+21 Appl. No.: 08/519,160
+22 Filed:
+Aug. 25, 1995
+
+wheel Secured to Said fore end and a Seat retention tube for
+
+(51) Int. Cl. ............................................... B62K 25/28
+52
+
+U.S. Cl. .......................... 280/284; 280/275; 384/229;
+
+58
+
+Field of Search ..................................... 280/274, 275,
+280/281. 1, 283, 284; 267/290, 141.1, 153,
+
+384/912
+
+292, 293; 384/229, 902,908, 912
+56)
+
+Attorney, Agent, or Firm Jim Zegeer
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+392,523 11/1888 Owen.
+2,756,071 7/1956 Riva ........................................ 280/283
+4,085,832 4/1978 Gaines et al. .
+... 267/293 X
+4.575,429 3/1986 Jacobson ......
+... 384/279 X
+5,284,354 2/1994 McWethy ...
+... 280/284
+5,367,918 11/1994 Chang et al. .
+... 280/276
+5,403,028 4/1995 Trimble ........
+... 280/284
+5,474,318 12/1995 Castellano ............................... 280/284
+30
+
+mounting the Seat Secured to the aft end and bearings
+attached to either Side of the main tube. A rigid rear triangle
+assembly has a bottom bracket for rotatably mounting the
+pedal and crank assembly. Left and right chain Stay tubes
+have forward and trailing ends. A wheel fixing dropout is
+Secured to each trailing end, respectively. The forward ends
+are Secured to the bottom bracket. Left and right Seat Stay
+tubes have trailing ends Secured in the proximity of the
+trailing ends of the chain stay tube and the dropouts,
+respectively. Pivot struts have upper and lower ends with the
+lower ends being Secured to the bottom bracket, the upper
+ends being provided with bearing fittings and Spaced apart a
+distance D and joined to forward ends of the Seat Stay tubes.
+A Suspension Spring assembly has one end connected to the
+bottom bracket and the other end connected to Said main
+
+tube and proximate the aft end of the Single main tube.
+6 Claims, 5 Drawing Sheets
+
+
