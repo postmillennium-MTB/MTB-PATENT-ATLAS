@@ -592,7 +592,7 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .era-head::after{content:"";flex:1;height:var(--era-line);background:var(--spine);opacity:.35;border-radius:2px}
 .tl{position:relative;padding-left:26px}
 .tl::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:var(--spine-w);background:var(--spine);opacity:.5;border-radius:var(--spine-radius)}
-.card{position:relative;background:var(--surface);border:1px solid var(--card-edge,var(--card-border));border-left:calc(1px + var(--card-accent-w)) solid var(--card-edge,var(--card-border));border-radius:var(--radius);margin-bottom:10px;overflow:hidden;box-shadow:var(--card-shadow)}
+.card{position:relative;background:var(--surface);border:1px solid var(--card-edge,var(--card-border));border-left:calc(1px + var(--card-accent-w)) solid var(--card-edge,var(--card-border));border-radius:var(--radius);margin-bottom:10px;overflow:hidden;box-shadow:var(--card-shadow);scroll-margin-top:12px}
 .card.lit-card{border-left-color:var(--st-lit)}
 .card::before{content:"";position:absolute;left:-22px;top:20px;width:11px;height:11px;border-radius:var(--dot-radius,50%);background:var(--spine);border:2px solid var(--bg)}
 .card.pending-card{border-style:dashed;border-width:2px}
@@ -4279,7 +4279,7 @@ function renderFights(){
                    ||cards.find(c=>c.querySelector(".t")?.textContent.includes(title.slice(0,20)));
         if(target){
           setCardOpen(target,true);
-          if(target.scrollIntoView) target.scrollIntoView({behavior:"smooth",block:"center"});
+          scrollToCard(target);
           target.classList.add("card-flash");
           setTimeout(()=>target.classList.remove("card-flash"),ANIMATION_CLEANUP_MS);
         }
@@ -5465,6 +5465,42 @@ function initFromHash(){
   renderTabs();
   }catch(e){ /* hash parsing blocked or malformed — start with a clean view */ }
 }
+/* Puts an opened card's title at the top of the screen. Jon, 2026-11-02:
+   landing tiles "often" seemed to open the wrong entry. The right card was
+   open every time, but block:"center" put a card taller than the screen with
+   its title above the top edge (I-Track and Knolly from the 2010s wall, on a
+   phone), so the reader saw drawings and text with no name on them, or a
+   shorter card sat mid-screen under a band of other entries. Now: the title
+   lands at the top; a jump of more than two screens goes straight there
+   instead of a long smooth glide (which a stray scroll or a layout change
+   along the way can cut short); and until the reader scrolls, the card is
+   pinned again when its drawings and fonts finish loading, so a late layout
+   change above it (browsers without scroll anchoring, i.e. Safari) cannot
+   push it off screen. */
+const CARD_PIN_MS = 2500;   // how long scrollToCard() keeps re-pinning an opened card
+function scrollToCard(card){
+  if(!card || !card.scrollIntoView) return;
+  const rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const far=Math.abs(card.getBoundingClientRect().top)>window.innerHeight*2;
+  card.scrollIntoView({behavior:(rm||far)?"auto":"smooth",block:"start"});
+  const evs=["wheel","touchstart","keydown","mousedown"];
+  let done=false;
+  const quit=()=>{ if(done) return; done=true; evs.forEach(ev=>window.removeEventListener(ev,quit,true)); };
+  evs.forEach(ev=>window.addEventListener(ev,quit,{capture:true,passive:true}));
+  const pin=()=>{
+    if(done || !card.isConnected || !card.classList.contains("open")) return;
+    const want=parseFloat(getComputedStyle(card).scrollMarginTop)||0;
+    if(Math.abs(card.getBoundingClientRect().top-want)>4) card.scrollIntoView({block:"start"});
+  };
+  // A smooth glide is still moving for a moment; pin only once it has landed.
+  const settle=(rm||far)?0:700;
+  setTimeout(()=>{
+    pin();
+    card.querySelectorAll("img").forEach(i=>{ if(!i.complete) i.addEventListener("load",pin,{once:true}); });
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(pin);
+  },settle);
+  setTimeout(()=>{ pin(); quit(); },settle+CARD_PIN_MS);
+}
 function jumpToCard(ref,opts){
   ref=REF_ALIASES[ref]||ref;
   if(!(opts&&opts.noHistory)) pushCardEntry();
@@ -5481,8 +5517,7 @@ function jumpToCard(ref,opts){
     if(target){
       setCardOpen(target,true);
       openRef=ref; syncHash();
-      const rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if(target.scrollIntoView) target.scrollIntoView({behavior:rm?"auto":"smooth",block:"center"});
+      scrollToCard(target);
       target.classList.add("card-flash");
       setTimeout(()=>target.classList.remove("card-flash"),ANIMATION_CLEANUP_MS);
     }
