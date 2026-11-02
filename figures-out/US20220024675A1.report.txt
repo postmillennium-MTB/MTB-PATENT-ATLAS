@@ -1,0 +1,119 @@
+patent: US20220024675A1
+source: https://patentimages.storage.googleapis.com/91/be/2a/ced5db7ed4ff7f/US20220024675A1.pdf
+pages: 105
+per-page extracted text length: {1: 1452, 2: 153, 3: 198, 4: 148, 5: 105, 6: 132, 7: 132, 8: 150, 9: 121, 10: 407, 11: 147, 12: 144, 13: 160, 14: 159, 15: 234, 16: 169, 17: 96, 18: 152, 19: 122, 20: 105, 21: 133, 22: 108, 23: 344, 24: 141, 25: 121, 26: 110, 27: 123, 28: 116, 29: 137, 30: 124, 31: 120, 32: 127, 33: 125, 34: 110, 35: 113, 36: 109, 37: 127, 38: 110, 39: 132, 40: 159, 41: 171, 42: 251, 43: 102, 44: 104, 45: 153, 46: 96, 47: 126, 48: 113, 49: 149, 50: 138, 51: 112, 52: 184, 53: 107, 54: 115, 55: 163, 56: 126, 57: 197, 58: 115, 59: 194, 60: 124, 61: 122, 62: 140, 63: 130, 64: 157, 65: 129, 66: 247, 67: 153, 68: 136, 69: 193, 70: 209, 71: 255, 72: 125, 73: 147, 74: 152, 75: 161, 76: 244, 77: 237, 78: 183, 79: 111, 80: 203, 81: 262, 82: 276, 83: 257, 84: 307, 85: 320, 86: 257, 87: 6715, 88: 6175, 89: 7241, 90: 6116, 91: 6462, 92: 7360, 93: 7560, 94: 7314, 95: 7362, 96: 7238, 97: 7427, 98: 7298, 99: 7467, 100: 7300, 101: 0, 102: 0, 103: 0, 104: 0, 105: 0}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+IN
+
+US 20220024675A1
+
+( 19 ) United States
+
+( 12 ) Zawistowski
+Patent Application
+Publication ( 10 ) Pub. No .: US 2022/0024675 A1
+et al .
+(43 ) Pub. Date :
+
+( 54 ) INSULATING CONTAINER
+
+( 71 ) Applicant: YETI DESIGN , LLC , Golden , CO
+(US )
+
+( 72 ) Inventors: Peter Zawistowski , Lakewood, CO
+(US ) ; Steven W. Hoogendoorn ,
+Evergreen, CO (US )
+( 21 ) Appl . No .: 17 /300,516
+
+(22 ) Filed :
+
+Jul. 27, 2021
+
+Related U.S. Application Data
+( 60 ) Provisional application No. 63 /057,042 , filed on Jul .
+
+27 , 2020 , provisional application No. 63 /087,815 ,
+
+filed on Oct. 5 , 2020 .
+
+Jan. 27 , 2022
+
+Publication Classification
+
+(51 ) Int. CI .
+
+(2006.01 )
+
+B65D 8138
+
+(52 ) U.S. CI .
+CPC
+B650 81/3818 ( 2013.01 ) ; B65D 81/3823
+( 2013.01 )
+(57 )
+
+ABSTRACT
+
+Disclosed herein are examples of an insulating container
+with a housing constructed at least partially of a fiber
+reinforced composite material. The composite material may
+at least partially include a continuous fiber reinforced com
+posite such as continuous fiber reinforced thermoplastic .
+The composite material may allow for a decrease in the
+weight of the insulating container, while maintaining or
+increasing durability. An insulator such as foam or vacuum
+may be located between a first and second housing of the
+insulating container to increase the thermal resistance
+thereof.
+
+-415
+
+1
+1
+1
+1
+
+-10
+
+I
+1
+1
+0
+
+400
+
+1
+
+1
+1
+
+406
+1
+
+500
+
+194
+
+108
+
+100
+
+1
+
+1
+0
+
+-300
+0
+
+-200
+102
+
+104
+
+-106
+
+1
+
+
