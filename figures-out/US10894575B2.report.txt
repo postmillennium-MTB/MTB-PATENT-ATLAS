@@ -1,0 +1,140 @@
+patent: US10894575B2
+source: https://patentimages.storage.googleapis.com/11/dd/83/3e9a61de725a48/US10894575.pdf
+pages: 28
+per-page extracted text length: {1: 2438, 2: 3791, 3: 144, 4: 161, 5: 220, 6: 114, 7: 270, 8: 129, 9: 244, 10: 177, 11: 167, 12: 186, 13: 190, 14: 82, 15: 119, 16: 317, 17: 256, 18: 372, 19: 271, 20: 186, 21: 6990, 22: 6919, 23: 7778, 24: 6892, 25: 7819, 26: 7858, 27: 7627, 28: 2799}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010894575B2
+( 12 )
+
+United States Patent
+
+( 10) Patent No .: US 10,894,575 B2
+(45) Date of Patent :
+Jan. 19 , 2021
+
+Zawistowski
+
+( 54 ) LINEAR DERAILLEUR MECHANISM
+( 71 ) Applicant: YETI DESIGN , LLC , Golden , CO
+(US)
+(72) Inventor: Peter Zawistowski , Lakewood , CO
+(US)
+
+( 56 )
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+3,677,103 A * 7/1972 Huret
+
+474/82
+
+3,803,933 A
+
+( * ) Notice:
+
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 252 days .
+( 21 ) Appl. No .: 16 /000,325
+Jun . 5 , 2018
+(22) Filed :
+Prior Publication Data
+( 65 )
+US 2018/0304967 A1
+
+Oct. 25 , 2018
+
+Related U.S. Application Data
+( 63 ) Continuation of application No. 14/ 965,648 , filed on
+Dec. 10 , 2015 , now Pat . No. 10,011,325 .
+(Continued )
+(51 ) Int. Ci.
+B62M 9/1242
+B62M 9/122
+
+( 2010.01 )
+
+( 2010.01)
+(Continued )
+
+( 52 ) U.S. CI .
+
+CPC
+
+B62M 9/1242 ( 2013.01 ) ; B62M 9/122
+(2013.01 ) ; B62M 9/1342 ( 2013.01 ) ; B62M
+9/132 ( 2013.01)
+
+(58) Field of Classification Search
+CPC B62M 9/124 ; B62M 9/1242 ; B62M 9/134 ;
+
+B62M 9/136 ; B62M 9/126
+( Continued )
+
+4/1974 Huret et al .
+
+( Continued )
+
+( 73 ) Assignee : YETI DESIGN , LLC , Golden , CO
+
+( US )
+Subject to any disclaimer, the term of this
+
+B62M 9/16
+
+FOREIGN PATENT DOCUMENTS
+EP
+
+EP
+JP
+
+2465761 A1
+2540609 Al
+
+6/2012
+1/2013
+
+H0725378 A
+
+1/1995
+
+OTHER PUBLICATIONS
+
+Chen , “ Design of Structural Mechanisms ” , A dissertation submitted
+
+for the degree of Doctor of Philosophy in the Department of
+Engineering Science at the University of Oxford , St Hugh's Col
+lege , 2003 , 160 Pages .
+
+(Continued )
+Primary Examiner Henry Y Liu
+
+(74 ) Attorney, Agent, or Firm - Dorsey & Whitney LLP
+ABSTRACT
+
+( 57 )
+
+A derailleur system is provided that moves the derailleur
+cage in a substantially rectilinear path . The derailleur is
+mounted to a frame having a gear cassette mounted thereon .
+The gear cassette includes an axis of rotation . The derailleur
+includes a drive member engaging the gear cassette . The
+derailleur is positioned on the frame adjacent the gear
+cassette, and including a spatial linkage having a stationary
+link , a floating link, and a cage assembly having two pulleys
+each defining an axis of rotation . The drive member engages
+each of the pulleys. The path of the floating link is substan
+tially linear through substantially its entire range of motion
+and variously aligns at least one of the pulleys with the gear
+cassette .
+
+20 Claims , 18 Drawing Sheets
+
+N
+
+1
+
+- 150
+
+
