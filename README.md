@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 422 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 424 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 422 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 422 |
+| **Total entries** | 424 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 185 |
+| **Active patents** | 187 |
 | **Expired patents** | 160 |
 | **Pending applications** | 50 |
 | **Confirmed no patent** | 10 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 422 patents and 
 | **Brands** | 214 |
 | **Named inventors** | 78 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 336 |
+| **Verified entries** | 338 |
 | **Medium confidence** | 45 |
 | **Draft / in progress** | 41 |
 
@@ -896,6 +896,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **A set process for entries with no patent, separating "confirmed no patent" from "patent not yet located," per Jon.** `np` now takes `true` (plain no patent) or `"trademark"`, `"standard"` (open standard) or `"secret"` (trade secret), and the card says "Introduced" in place of "Filed" and "Patent: none", "none (trademark)", "none (open standard)" or "none (trade secret)", with a "no patent" pill in place of "unknown". Ten entries carry it: Hadley, Banshee KS-Link, SE Quadangle, JBX1 and Mondraker Forward Geometry (`true`); Fatback hub spacing, Boost 148 and ISIS Drive (`"standard"`); GT Triple Triangle (`"trademark"`); Garbaruk (`"secret"`). Boost, ISIS and GT lose their patent-style `g` and `st:"expired"` (159 → 156 expired; all ten are `st:"unknown"`, `g`/`exp` null); JBX1 drops its now-unused `searchUrl`. `verify_data.js` hard-fails an `np` entry carrying a number, grant year, expiry or non-`unknown` status, and a title that says "(no patent)", "not a patent", "un-patent" or "patent-free" without `np`. "No patent located" entries (RideWrap, Mantis, CODA and the rest) stay unflagged; they are the not-yet-found case.
 - **New entry: Shimano dropper position sensor that drives shifting and suspension (US 11,136,083, with its continuation US 12,312,039), 410 → 411, `conf:"v"`, `emtb`.** Toyoto Shirai / Shimano: a telescopic post (or fork) with a position detector inside the outer tube whose output signal controls another component, e.g. a harder gear when the saddle drops. US 11,136,083 B2 was read from its own PDF (filed 2017-01-30 as a CIP of abandoned 15/269,986 filed 2016-09-20, granted 2021-10-05, 201 days PTA); Figs. 2 and 8–9 come from that PDF via `tools/fetch_patent_figure.py --pdf`. US 12,312,039 B2 (17/465,874, filed 2021-09-03, pub. US 2021/0394850 A1, granted 2025-05-27, adjusted expiry 2039-02-24) rests on Jon's paste of the Google Patents page plus a search-index copy of the publication with the identical abstract and inventor; Google Patents and USPTO pages were egress-blocked, so its continuation link to 11,136,083 is inferred from that match rather than read from its own Related Applications field. `exp:2039` tracks the newer patent's adjusted date (the 2017 parent ends around 2037). The older `num:null` "Shimano electronically controlled dropper (application)" placeholder is left as is: it describes Shimano's 2021 electronic-actuation filings generally, not this position-output claim.
 - **Eleven queued entries added, plus a US grant on the O-Chain card (now active, filed 2020), 411 → 422. Every new card has a drawing except the Yeti application, the Yeti rotary lead and the Yeti 6-bar.** Fox gear shifting tied to dropper height (EP 3,150,470, `emtb`), Shimano seat adjustment device (DE 10 2023 202 985 + TW 202440393, pending, `emtb`), Shimano bicycle electric suspension (US 11,203,388, `fork`, Figs. 1 and 4), Brent Foes steering bumper (US 8,733,776, `comp`, lapsed for fees), Yeti 6-bar linkage with idler (US 2025/0376238, pending, `susp`), Yeti rotary suspension (`num:null`, `conf:"l"`: Pinkbike reports a September 2026 filing, no number published yet), Vasttech Veli rear suspension (US 10,689,062, `susp`), Klein high efficiency frame suspension (US 6,109,636, `susp`, Figure 1), Darrell Voss "Vehicle" (US 11,548,587, `susp`, Figs. 1B and 6B), Voss quarter-turn tensioning device (US 10,029,514, `wheel`) and Shimano rotor cover (US 9,422,993, `wheel`, Fig. 1, lapsed for fees). Front pages of every numbered patent except the Yeti application were read from the PDFs pulled by the Fetch patent figure workflow; the Yeti 6-bar card is `conf:"m"` for that reason, the rest `"v"`. The O-Chain card gains US 12,151,777 B2 in `nums` and its text; the card's dates now follow the US grant (filed 2020, granted 2024, active to 2042), with the 2023 EP/WO filings noted in the text. Registered `Darrell Voss` in `INVENTORS`, `Vasttech` in `BRANDS`, both in `BRAND_HQ`. Counts synced in the README table and the `index.html` count strings.
+- **Two Peter Zawistowski cards added and one Yeti card widened, 422 → 424, at Jon's request.** (1) **Yeti linear derailleur** (US 10,011,325, filed Dec 10, 2015 off a Dec 2014 provisional, granted Jul 3, 2018; continuations US 10,894,575 and US 11,679,838, applicant Yeti Design, LLC), `drive`, `exp` 2035, Figs. 3A and 1–2. A later continuation, US 2024/0002015, is listed by Google Patents but not added. (2) **Yeti integrated motor mount and suspension pivot** (US 12,384,484, Zawistowski and Hoogendoorn, filed Nov 17, 2021 off a Nov 2020 provisional, granted Aug 12, 2025), `emtb`, `exp` 2044 from Google's adjusted expiration (PTA), Figs. 2 and 3 taken from the published application US 2022/0153381 because the grant PDF would not download. (3) **Yeti Link Suspension System** now lists its two continuations, US 9,561,834 and US 10,343,742, names Zawistowski as inventor, and gets `y` 2011 (actual filing date, was 2012) and `exp` 2032 (Google's adjusted expiration; was null). All three checked against the patents' own front pages (`conf: "v"`). Neither new card says which Yeti models use the patent; Yeti's marking page was not checked for them.
 
 ---
 
