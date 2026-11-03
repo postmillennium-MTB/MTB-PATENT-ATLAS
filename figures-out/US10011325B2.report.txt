@@ -1,0 +1,168 @@
+patent: US10011325B2
+source: https://patentimages.storage.googleapis.com/0f/2a/b4/af6d6e7d10fb54/US10011325.pdf
+pages: 28
+per-page extracted text length: {1: 2754, 2: 4165, 3: 180, 4: 241, 5: 268, 6: 375, 7: 456, 8: 317, 9: 305, 10: 274, 11: 620, 12: 189, 13: 163, 14: 101, 15: 165, 16: 507, 17: 389, 18: 593, 19: 457, 20: 186, 21: 7078, 22: 6919, 23: 7845, 24: 6977, 25: 7903, 26: 7894, 27: 7721, 28: 4445}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+|HAI LUI AUN NOUTOA UTUMWANAMIMI
+US010011325B2
+
+(12) United States Patent
+
+(10 ) Patent No.: US 10 ,011,325 B2
+(45) Date of Patent:
+Jul. 3, 2018
+
+(54) LINEAR DERAILLEUR MECHANISM
+
+..... .... 474 /80 , 82
+USPC .........
+See application file for complete search history .
+
+Zawistowski
+
+(71) Applicant: YETI CYCLING , LLC , Golden, CO
+
+(56 )
+
+(US)
+
+References Cited
+
+U . S . PATENT DOCUMENTS
+3 ,677 ,103 A * 7 /1972 Huret .................. B62M 9 / 16
+474 / 134
+3 ,803, 933 A
+4 /1974 Huret et al.
+
+(72 ) Inventor: Peter Zawistowski, Lakewood , CO
+(US)
+
+(73 ) Assignee: Yeti Cycling, LLC , Golden , CO (US)
+
+(Continued )
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+( * ) Notice :
+
+FOREIGN PATENT DOCUMENTS
+
+U . S .C . 154 (b ) by 0 days.
+
+2540609 AL
+H0725378 A
+
+(21) Appl. No.: 14 /965,648
+( 22 ) Filed : Dec . 10 , 2015
+Prior Publication Data
+(65 )
+US 2016 /0167740 A1 Jun . 16 , 2016
+Related U .S . Application Data
+(60 ) Provisional application No. 62/090 ,220 , filed on Dec .
+10 , 2014 .
+
+(51) Int. Ci.
+F16H 9 / 00
+
+F16H 59 / 00
+F16H 61/00
+
+(2006 .01)
+
+B62M 9 / 1242
+
+B62M 9 /122
+
+( 2010 .01 )
+( 2010 .01)
+
+B62M 9 / 1342
+B62M 9 / 132
+
+( 2010 .01)
+
+(52 ) U . S . CI.
+
+Chen , “ Design of Structural Mechanisms” , A dissertation submitted
+for the degree of Doctor of Philosophy in the Department of
+Engineering Science at the University of Oxford , St Hugh 's Col
+lege, 2003, 160 Pages.
+
+(Continued )
+
+Primary Examiner — Henry Y Liu
+(74 ) Attorney , Agent, or Firm — Dorsey & Whitney LLP
+
+mounted to a framehaving a gear cassette mounted thereon .
+
+(2010 . 01)
+
+CPC .......... B62M 9 /1242 ( 2013.01); B62M 9/ 122
+
+(2013 .01); B62M 9 /1342 (2013.01); B62M
+
+(58 ) Field of Classification Search
+
+OTHER PUBLICATIONS
+
+(57 )
+ABSTRACT
+A derailleur system is provided that moves the derailleur
+cage in a substantially rectilinear path . The derailleur is
+
+(2006 .01)
+( 2006 .01 )
+( 2006 .01)
+
+F16H 63/00
+
+1/ 2013
+1/ 1995
+
+9/ 132 (2013 .01)
+
+CPC .... B62M 9 / 124 ; B62M 9 / 1242 ; B62M 9 / 134 :
+B62M 9 /136 ; B62M 9 / 126
+
+The gear cassette includes an axis of rotation . The derailleur
+includes a drive member engaging the gear cassette . The
+derailleur is positioned on the frame adjacent the gear
+cassette , and including a spatial linkage having a stationary
+link , a floating link , and a cage assembly having two pulleys
+each defining an axis of rotation . The drive member engages
+each of the pulleys . The path of the floating link is substan
+
+tially linear through substantially its entire range of motion
+and variously aligns at least one of the pulleys with the gear
+
+cassette .
+
+30 Claims, 18 Drawing Sheets
+
+- 162
+- - 140
+
+170
+153
+
+-152
+
+146 149
+
+> 110
+
+145a
+
+144
+
+156
+> 100
+
+148
+
+1456 - -- 142
+30 158 150
+
+
