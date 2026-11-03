@@ -1,0 +1,149 @@
+patent: US9561834B2
+source: https://patentimages.storage.googleapis.com/66/56/cc/33bec62548aab6/US9561834.pdf
+pages: 84
+per-page extracted text length: {1: 2485, 2: 4781, 3: 217, 4: 57, 5: 57, 6: 57, 7: 0, 8: 82, 9: 57, 10: 75, 11: 57, 12: 62, 13: 58, 14: 63, 15: 58, 16: 68, 17: 69, 18: 66, 19: 28, 20: 58, 21: 58, 22: 58, 23: 58, 24: 64, 25: 93, 26: 58, 27: 58, 28: 58, 29: 58, 30: 58, 31: 58, 32: 58, 33: 28, 34: 62, 35: 67, 36: 58, 37: 58, 38: 68, 39: 0, 40: 58, 41: 67, 42: 58, 43: 58, 44: 58, 45: 28, 46: 67, 47: 63, 48: 66, 49: 28, 50: 63, 51: 58, 52: 58, 53: 66, 54: 58, 55: 76, 56: 58, 57: 88, 58: 58, 59: 58, 60: 58, 61: 58, 62: 58, 63: 58, 64: 65, 65: 67, 66: 7048, 67: 7525, 68: 6393, 69: 6241, 70: 7438, 71: 7731, 72: 7813, 73: 7587, 74: 7692, 75: 7769, 76: 7678, 77: 7623, 78: 7528, 79: 7517, 80: 7665, 81: 7650, 82: 7742, 83: 7499, 84: 3257}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO956 1834B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 9,561,834 B2
+(45) Date of Patent:
+Feb. 7, 2017
+
+Zawistowski
+(54) LINK SUSPENSION SYSTEM
+(71) Applicant: Yeti Cycling, LLC, Golden, CO (US)
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+421,748 A
+519,855 A
+591.306 A
+
+(72) Inventor: Peter Zawistowski, Lakewood, CO
+(US)
+
+630,232 A
+
+8/1899 Hughes et al.
+
+712,784. A
+724,871 A
+944,795 A
+
+11, 1902 Ellis
+4, 1903 Hunter
+12/1909 Leet et al.
+
+1,043,269 A
+1,168,702 A
+
+11/1912 Stephenson
+1/1916 Babis, Jr.
+
+1,220,606 A
+
+3, 1917 Chelstrom
+
+(73) Assignee: YETI CYCLING, LLC, Golden, CO
+(US)
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+(Continued)
+
+(21) Appl. No.: 14/807,636
+(22) Filed:
+
+FOREIGN PATENT DOCUMENTS
+
+Jul. 23, 2015
+
+(65)
+
+CA
+DE
+
+Prior Publication Data
+
+US 2016/0083O43 A1
+
+2f1890 McErlain
+5, 1894 Whitaker
+10, 1897 Tolson
+
+2293366 A1
+692011 C
+
+12, 1998
+6, 1940
+
+(Continued)
+
+Mar. 24, 2016
+OTHER PUBLICATIONS
+
+Related U.S. Application Data
+(63) Continuation of application No. 13/215,170, filed on
+Aug. 22, 2011, now Pat. No. 9,102.378.
+
+(60) Provisional application No. 61/375.278, filed on Aug.
+20, 2010.
+
+pageS.
+
+(Continued)
+Primary Examiner — Kevin Hurley
+(74) Attorney, Agent, or Firm — Dorsey & Whitney LLP
+(57)
+
+(51) Int. Cl.
+B62K 25/28
+B62K 25/30
+B62K 3/02
+
+International Search Report and Written Opinion for corresponding
+PCT Application No. PCT/US2012/066427, dated Jan. 18, 2013, 12
+
+(2006.01)
+(2006.01)
+(2006.01)
+
+(52) U.S. Cl.
+CPC ................. B62K 25/28 (2013.01); B62K 3/02
+
+(2013.01); B62K 25/286 (2013.01); B62K
+25/30 (2013.01)
+(58) Field of Classification Search
+CPC ...................................................... B62K 25/28
+
+See application file for complete search history.
+
+ABSTRACT
+
+A bicycle includes a frame having a longitudinal axis, a first
+member, and a first pivot link assembly including a first link
+configured to rotate around a first pivot point. The first pivot
+point may have a first axis of rotation that is non-orthogonal
+to the longitudinal axis of the first frame, and the first frame
+may be coupled with the first member through the first pivot
+link assembly. Some examples also include a second pivot
+link assembly including a second link configured to rotate
+around a second pivot point having an axis of rotation that
+is non-orthogonal to the longitudinal axis of the frame.
+18 Claims, 62 Drawing Sheets
+
+LONGITUDINAL
+AXIS OFFRAME
+
+170
+
+
