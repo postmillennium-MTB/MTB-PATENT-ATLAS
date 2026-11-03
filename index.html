@@ -289,8 +289,22 @@ header::before{
    arrow is disabled, and both hide when every chip already fits. */
 /* Landing chips: one labelled row each for Category / Era / Status (LANDING_ROWS).
    A row that is wider than the screen scrolls sideways on its own. */
-.lw-rows{display:flex;flex-direction:column;gap:4px;margin:0 0 8px}
+.lw-rows{display:flex;flex-direction:column;margin:0 0 8px}
 .lw-row{display:flex;align-items:center;gap:8px;min-width:0}
+/* First view shows only the default theme's row (Era). The other rows sit in
+   .lw-reveal wrappers at zero height; picking anything else (or a deep link
+   that lands elsewhere) adds .lw-open and they grow out of the Era row: the
+   row above slides up from it, the row below slides down from it (Jon's ask,
+   2026-11-03). Instant under reduced motion (global rule further down). */
+.lw-reveal{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows var(--reveal) var(--ease-reveal),opacity var(--reveal) var(--ease-reveal)}
+.lw-reveal>.lw-rin{min-height:0;overflow:hidden}
+.lw-reveal .lw-row{transform:translateY(var(--from,0));transition:transform var(--reveal) var(--ease-reveal)}
+.lw-reveal.above{--from:28px}
+.lw-reveal.above .lw-row{padding-bottom:4px}
+.lw-reveal.below{--from:-28px}
+.lw-reveal.below .lw-row{padding-top:4px}
+.lw-rows.lw-open .lw-reveal{grid-template-rows:1fr;opacity:1}
+.lw-rows.lw-open .lw-reveal .lw-row{transform:none}
 .lw-rlabel{flex:none;width:68px;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
 .lw-chips{flex:1;min-width:0;display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px;margin:0 -2px;scrollbar-width:none}
 .lw-chips::-webkit-scrollbar{display:none}
@@ -799,7 +813,7 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .card-flash{animation:cardFlash 1.5s ease}
 /* Shared motion: one short duration and curve for opening a card, swapping the
    landing wall and re-filtering the list (playIn). Off under reduced motion. */
-:root{--motion:180ms;--ease:cubic-bezier(.2,.7,.2,1)}
+:root{--motion:180ms;--reveal:900ms;--ease-reveal:cubic-bezier(.45,0,.25,1);--ease:cubic-bezier(.2,.7,.2,1)}
 @keyframes fxIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 .fx-in{animation:fxIn var(--motion) var(--ease)}
 .card.open .cbody{animation:fxIn var(--motion) var(--ease)}
@@ -4737,6 +4751,10 @@ const LANDING_START_FROM_URL=(()=>{
   catch(e){ return null; }
 })();
 let landingKey=null, landingChosen=!!LANDING_START_FROM_URL, landingTiles=null;
+/* True once the reader has left the default theme (a chip, or a link that
+   lands elsewhere): from then on every chip row shows, not just the default's.
+   It stays true for the visit, so going back to the default keeps all rows. */
+let landingRowsOpen=false;
 function landingMatches(m,d){
   if(m.cat && d.cat!==m.cat) return false;
   if(m.yFrom!=null && d.y<m.yFrom) return false;
@@ -4791,15 +4809,34 @@ function landingBrand(d){
   if(w && INVENTORS.some(i=>i.key===w)) return w.replace(/,?\s+(Jr\.?|Sr\.?|II|III)$/,"").split(/\s+/).pop();
   return w || String(d.a||"").split(/\s*[\/,&(→]\s*/)[0];
 }
+/* The row the first view shows on its own: the default theme's row. */
+function landingHomeRow(){
+  const k=landingDefaultKey(), th=k&&LANDING_THEMES.find(x=>x.key===k);
+  return th ? th.row : LANDING_ROWS[0].key;
+}
 function landingChipsHTML(){
-  const cur=landingTheme(), all=landingThemes();
-  return LANDING_ROWS.map(row=>{
+  const cur=landingTheme(), all=landingThemes(), home=landingHomeRow();
+  if(cur && cur.key!==landingDefaultKey()) landingRowsOpen=true;
+  const homeAt=LANDING_ROWS.findIndex(r=>r.key===home);
+  return LANDING_ROWS.map((row,i)=>{
     const chips=all.filter(th=>th.row===row.key).map(th=>{
       const on=cur&&th.key===cur.key;
       return `<button type="button" class="lw-chip${th.sub?" lw-two":""}" data-lw="${th.key}" aria-pressed="${on}">${th.sub?`<span class="lw-l1">${tx(th.label)}</span> <span class="lw-l2">${tx(th.sub)}</span>`:tx(th.label)}</button>`;
     }).join("");
-    return chips ? `<div class="lw-row" role="group" aria-label="${mgEsc(tx(row.label))}"><span class="lw-rlabel" aria-hidden="true">${tx(row.label)}</span><div class="lw-chips">${chips}</div></div>` : "";
+    if(!chips) return "";
+    const html=`<div class="lw-row" role="group" aria-label="${mgEsc(tx(row.label))}"><span class="lw-rlabel" aria-hidden="true">${tx(row.label)}</span><div class="lw-chips">${chips}</div></div>`;
+    if(row.key===home) return html;
+    // Other rows start folded into the home row; inert keeps them out of Tab order until shown.
+    return `<div class="lw-reveal ${i<homeAt?"above":"below"}"${landingRowsOpen?"":" inert"}><div class="lw-rin">${html}</div></div>`;
   }).join("");
+}
+/* Unfolds the hidden chip rows once the reader leaves the default theme. */
+function revealLandingRows(){
+  const box=$("#lwChips"), th=landingTheme();
+  if(!box||!th) return;
+  if(th.key!==landingDefaultKey()) landingRowsOpen=true;
+  box.classList.toggle("lw-open",landingRowsOpen);
+  box.querySelectorAll(".lw-reveal").forEach(r=>{ if(landingRowsOpen) r.removeAttribute("inert"); });
 }
 /* "Era · 2020s rear suspension · 7 drawings": where the reader is on the wall. */
 function landingWhere(th){
@@ -4818,8 +4855,9 @@ function landingTilesHTML(){
 }
 function landingWallHTML(){
   const th=landingTheme(); if(!th) return "";
+  const chips=landingChipsHTML(); // may set landingRowsOpen
   return `<section class="home-sec lw" id="landingWall">
-    <div class="lw-rows" id="lwChips" role="group" aria-label="${t("wallThemesAria")}">${landingChipsHTML()}</div>
+    <div class="lw-rows${landingRowsOpen?" lw-open":""}" id="lwChips" role="group" aria-label="${t("wallThemesAria")}">${chips}</div>
     <div class="lw-grid" id="lwGrid">${landingTilesHTML()}</div>
     <div class="lw-foot"><span class="lw-count" id="lwCount">${landingWhere(th)}</span>
       <button type="button" class="mini-btn lw-shuffle" id="lwShuffle" aria-label="${t("wallShuffleAria")}">${t("wallShuffle")}</button></div>
@@ -4834,6 +4872,7 @@ function paintLandingWall(){
   playIn(grid);
   chips.querySelectorAll(".lw-chip").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lw===th.key)));
   count.textContent=landingWhere(th);
+  revealLandingRows();
 }
 function wireLandingWall(){
   const chips=$("#lwChips"), grid=$("#lwGrid"), shuffle=$("#lwShuffle");
