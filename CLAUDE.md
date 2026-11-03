@@ -547,6 +547,12 @@ does not apply to this file's own contributor-facing voice.
   the work; they care what's confirmed and what isn't. Write the *state* of
   the fact ("confirmed against the manufacturer's marking page" / "unconfirmed
   — no primary source located"), not the *story* of how you got there.
+- **Don't say what was or wasn't read.** "Neither front page was read," "the
+  claims were not read," "confirmed from the PDF's own front page," "the lapse
+  date was not seen": all describe the research, not the patent. Jon flagged
+  this wording as reading like AI. State the fact ("US 12,403,979 is the
+  parent"), or state the gap as a fact about the record ("no grant is on
+  record," "the priority chain is unconfirmed"), and stop.
 - **Don't refer to "the user."** Jon is not a third party to this dataset —
   he's its author. If a fact came from him directly rather than a document,
   say what kind of source it is ("per the founder's own account," "per the
