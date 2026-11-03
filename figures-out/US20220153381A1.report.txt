@@ -1,0 +1,122 @@
+patent: US20220153381A1
+source: https://patentimages.storage.googleapis.com/4f/6a/af/6fa3051083cc80/US20220153381A1.pdf
+pages: 46
+per-page extracted text length: {1: 1690, 2: 176, 3: 199, 4: 218, 5: 214, 6: 368, 7: 139, 8: 129, 9: 159, 10: 181, 11: 247, 12: 150, 13: 243, 14: 191, 15: 252, 16: 195, 17: 185, 18: 154, 19: 124, 20: 143, 21: 181, 22: 235, 23: 137, 24: 172, 25: 233, 26: 201, 27: 353, 28: 158, 29: 169, 30: 211, 31: 181, 32: 183, 33: 229, 34: 6460, 35: 6728, 36: 7110, 37: 5878, 38: 6571, 39: 7448, 40: 7342, 41: 7493, 42: 7380, 43: 7485, 44: 7426, 45: 7049, 46: 5634}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+IN
+
+US 20220153381A1
+
+( 19) United States
+
+( 12 ) ZAWISTOWSKI
+Patent Application
+Publication ((4310)) Pub
+Pub.. Date
+No .: :US 2022/0153381
+A1
+et al .
+May 19 , 2022
+(52) U.S. CI.
+
+( 54 ) INTEGRATED MOTOR MOUNT AND
+SUSPENSION PIVOT
+
+B62K 25/26 (2013.01 ) ; B62M 6/55
+
+CPC
+
+(2013.01 ) ; B62K 25/286 ( 2013.01 )
+
+( 71 ) Applicant: YETI CYCLING, LLC , Golden , CO
+(US )
+
+( 57 )
+
+( 72 ) Inventors: Peter ZAWISTOWSKI, Lakewood ,
+CO (US ); Steven W.
+HOOGENDOORN , Evergreen , CO
+(US )
+
+( 21 ) Appl . No .: 17 /528,923
+(22) Filed :
+Nov. 17 , 2021
+Related U.S. Application Data
+( 60 ) Provisional application No. 63 / 115,432 , filed on Nov.
+18 , 2020 .
+
+B62K 25/26
+B62K 25/28
+B62M 6/55
+
+Disclosed herein are examples of motive power sources
+suitable to power a two -wheeled vehicle . The vehicle may
+include a suspension linkage and a suspended body. In some
+examples, the motive power source may include a housing
+with a boss extending therefrom . The boss may include a
+first securement structure . The securement structure may
+include an instantaneous velocity center of the suspension
+linkage when coupled to the two wheeled vehicle. In some
+
+examples, a second securement structure is formed in the
+
+Publication Classification
+
+(51 ) Int. Ci .
+
+ABSTRACT
+
+suspended body, a bottom link forms a portion of the
+suspension linkage, the bottom link includes aa third secure
+
+ment structure , and an axle is coupled to the first, second ,
+and third apertures. In some examples, the first, second, and
+third apertures are concentric with the axle .
+
+( 2006.01 )
+
+( 2006.01 )
+
+( 2006.01)
+
+1560
+1560
+
+156a
+
+*****
+
+110
+138
+
+120
+
+100
+
+-102
+
+*****
+
+112
+116
+
+1063
+
+114
+
+TO
+
+198
+
+104
+300
+158
+
+118
+
+108
+
+-144
+
+
