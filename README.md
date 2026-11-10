@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 428 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 430 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 428 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 428 |
+| **Total entries** | 430 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 187 |
+| **Active patents** | 189 |
 | **Expired patents** | 164 |
 | **Pending applications** | 50 |
 | **Confirmed no patent** | 10 |
@@ -25,9 +25,9 @@ An interactive timeline of mountain bike intellectual property: 428 patents and 
 | **Brands** | 215 |
 | **Named inventors** | 78 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 343 |
+| **Verified entries** | 346 |
 | **Medium confidence** | 44 |
-| **Draft / in progress** | 41 |
+| **Draft / in progress** | 40 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -827,6 +827,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Trek Y-bike (US 5,685,553) gets a second image: an early design sketch, per Jon.** Jon supplied the hand-drawn sketch (notes read "Super strong seat boom" and "New main layout"); it is saved as `pictures/trek-y-bike-early-sketch.png`. The card moves from `img` to `imgs[]` with the patent's Fig. 1 first, so the thumbnail is unchanged, and the sketch second, captioned "Trek Y-bike early sketch — not a patent drawing" with `link:false` (no "View full patent" link). The caption claims nothing about the sketch beyond Jon's own description.
 - **Three wheel-truing patents added (Components, next to the Park Tool shop-tool cards, per Jon), all `conf: "v"`, 428 entries.** Motobécane's automatic spoke-tensioning machine (US 3,507,027, Eric Jaulmes, filed 1968, granted 1970, `exp` 1987 = grant + 17); Ronald Buckley's automatic truing machine (US 4,585,046, filed 1984, granted 1986, `exp` 2004 = filing + 20, the greater figure); and the Cornell single-pass truing method of Jeremy J. M. "Jim" Papadopoulos (US 5,103,414, filed 1990, granted 1992, `exp` 2010). Facts checked against each patent's own PDF from `patentimages.storage.googleapis.com` and Jon's Google Patents copy. Buckley and Papadopoulos are Expired – Fee Related; `exp` stays at the formula year and the lapse is stated in `s`, as on other fee-lapsed cards. The Papadopoulos patent cites both earlier patents, so its `w` links to both cards and both link back. Jon confirmed the inventor is the Cornell bicycle-dynamics Jim Papadopoulos; his `w` cites Borrell's Nature feature (21 July 2016) for the Cornell Bicycle Research Project and the 1989 move to Illinois. New brand `Motobécane` (BRAND_HQ France). Drawings from the Fetch patent figure workflow: Jaulmes Fig. 1 and Buckley Figs. 1–2 rotated upright, Jaulmes' inventor block blanked; Buckley leads with Figs. 3 and 7 (the whole machine), per Jon, then Figs. 1–2; Papadopoulos has Figs. 1A–1B then Figs. 2–3.
 - **Park Tool PCS-9.3 stand (US D1,036,319) raised from `m` to `v`, per Jon.** Checked against the design patent's own front page: "Bicycle repair stand," filed August 19, 2021 (29/788,966), granted July 23, 2024 to Bicycle Tools Incorporated (Park Tool), 15-year term, so `exp` 2039 holds. `y` corrected from 2022 to the 2021 filing year, and `s` now gives the dates. The front page cites GB 6185856; the EU and China registrations are unchanged.
+- **Thule hitch-rack card now has its patent, plus two Thule design patents (428 → 430).** The `num:null` "Thule hitch rack portfolio" placeholder (filed 2010 / granted 2014, Swedish-text note, dead links) is replaced by **US 11,155,217 B2**, "Vehicular rack having modular design with outside handle and quick release" (Keith L. Prescott, Jeffrey R. Edgerly; Thule Sweden AB), filed Aug 7, 2019, granted Oct 26, 2021. It is a continuation of US 14/845,640 (filed Sep 4, 2015, now US 10,384,620) on a Sep 2014 provisional, with a terminal disclaimer and 0 days PTA, so `exp` is 2035 (Google's anticipated expiration Sep 4, 2035), not filing year + 20. Google Patents' event log lists a US case filed in Oregon District Court; the card states that and nothing more, and the `litigated` badge is not set because the case has not been identified. New design cards: **US D863,199** "Bicycle carrier" (Adler, Eriksson, Prescott, Edgerly; filed 2018 as a continuation of a 2015 application, granted Oct 15, 2019, `exp` 2034) and **US D906,223** "Carrier" (Johan Larsson, Joseph Settelmayer; filed 2020 as a continuation of a 2018 application, granted Dec 29, 2020, `exp` 2035), both 15-year terms. All three `conf:"v"`, checked against each patent's own front page from the Fetch patent figure workflow and Jon's Google Patents copy. The three cards link to each other (added to `REQUIRED_CROSSLINKS` and `XLINK_PAIRS`); old ref `thule-hitch-rack-portfolio` aliased to `11155217`. Drawings: US 11,155,217 Figs. 2, 3, 4 (3 and 4 rotated upright); D863,199 Figs. 1 and 3; D906,223 Figs. 1 and 6 (design sheets rotated upright). Counts: total 430, active 189, verified 346, draft 40.
 
 ## Recent updates (July 2026)
 
