@@ -1,0 +1,95 @@
+patent: US4585046A
+source: https://patentimages.storage.googleapis.com/62/f2/2e/c58a426955c5df/US4585046.pdf
+pages: 19
+per-page extracted text length: {1: 2457, 2: 78, 3: 60, 4: 50, 5: 50, 6: 153, 7: 7070, 8: 7384, 9: 6796, 10: 7339, 11: 7207, 12: 7249, 13: 7312, 14: 7291, 15: 7487, 16: 7297, 17: 6941, 18: 6559, 19: 2828}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+United States Patent (19)
+
+11)
+(45)
+
+Buckley
+(54) APPARATUS FOR TRUING A SPOKED
+76) Inventor: Ronald E. Buckley, 3057 Wachter
+21 Appl. No.: 664,220
+22). Filed:
+Oct. 24, 1984
+51)
+
+52 U.S.C. .................................... 157/1.55; 81/58.2;
+
+29/159.02
+
+58) Field of Search ............................... 157/1.5, 1.55;
+29/159.02, 159.03, 802; 81/57.14, 58.2
+56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+3,024,834 3/1962 Mennesson ........................... 157/15
+
+3,620,281 11/1971 Hasegawa et al...
+... 157/155
+3,631,577 1/1972 Hasegawa et al. ................... 29/211
+3,636,614 1/1972 Damman et al. ................. 29/21R
+3,758,931 12/1971 Patterson ......................... 29/159.02
+
+3,840,965 9/1972 Meiklejohn ........................... 29/206
+3,908,729 9/1975 Carminati....
+... 157/15
+3,958,315 5/1976 Kinney ...
+29/159.02
+4,045,852 9/1977 Winch .....................
+29/159.02
+4,187,895 6/1976 Saruwatari et al.
+... 157/1.55
+4,418,738 12/1983 Kaufeldt ..............
+... 157/1.55
+4,427,047 1/1984 Guillermier .......................... 157/1.5
+
+Apr. 29, 1986
+
+Primary Examiner-James G. Smith
+Attorney, Agent, or Firm-William D. Lanyi
+(57)
+
+Vaal -
+
+4,585,046
+
+FOREIGN PATENT DOCUMENTS
+281996 7/1928 United Kingdom................. 157/15
+836276 6/1960 United Kingdom................. 157/1.5
+
+WHEEL
+
+Ave., Lower Burrell, Pa. 15068
+
+Patent Number:
+Date of Patent:
+
+ABSTRACT
+
+A spoked wheel truing machine is provided with a tool
+that is capable of clamping the shank of each spoke
+nipple and rotating it an integral number of revolutions.
+The particular direction of rotation of the clamping tool
+is determined by top and bottom limit switches along
+with left and right limit switches. A drive motor is used
+to rotate the spoked wheel about its axle and is provided
+with an automatic brake that maintains the position of
+the wheel when the motor is de-energized. The clamp
+ing tool is rotated into position around the nipple's
+shank when a signal is received indicating that a nipple
+is in an operative position and the rim proximate that
+nipple is axially misaligned. The truing apparatus also
+comprises a means for supporting the spoked wheel by
+its central axle in a position that disposes the axle in a
+horizontal plane. The truing apparatus aligns the radius
+of the rim in a preferred reference circle and aligns the
+rim in a vertical plane that intersects the hub of the
+wheel midway between its flanges.
+17 Claims, 8 Drawing Figures
+
+
