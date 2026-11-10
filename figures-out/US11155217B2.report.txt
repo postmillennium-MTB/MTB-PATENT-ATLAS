@@ -1,0 +1,157 @@
+patent: US11155217B2
+source: https://patentimages.storage.googleapis.com/b3/2d/54/effa9ef46c4509/US11155217.pdf
+pages: 35
+per-page extracted text length: {1: 2699, 2: 2793, 3: 310, 4: 127, 5: 128, 6: 148, 7: 120, 8: 167, 9: 96, 10: 131, 11: 123, 12: 124, 13: 103, 14: 128, 15: 109, 16: 118, 17: 132, 18: 110, 19: 158, 20: 240, 21: 102, 22: 131, 23: 126, 24: 146, 25: 245, 26: 131, 27: 141, 28: 84, 29: 6163, 30: 7641, 31: 7579, 32: 7492, 33: 7668, 34: 7804, 35: 2875}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011155217B2
+
+( 12 )
+
+United States Patent
+
+( 10) Patent No .: US 11,155,217 B2
+(45 ) Date of Patent :
+* Oct . 26 , 2021
+
+Prescott et al .
+( 54 ) VEHICULAR RACK HAVING MODULAR
+
+( 56 )
+
+References Cited
+
+DESIGN WITH OUTSIDE HANDLE AND
+
+U.S. PATENT DOCUMENTS
+
+QUICK RELEASE
+( 71 ) Applicant: Thule Sweden AB , Hillerstorp ( SE )
+( 72 ) Inventors: Keith L. Prescott , Cambridge, VT
+
+3,655,082 A
+
+4,400,129 A
+
+2
+
+8/1983 Eisenberg et al.
+
+(Continued )
+
+(US ) ; Jeffrey R. Edgerly, Bristol, CT
+
+( US )
+
+4/1972 Garrett
+
+FOREIGN PATENT DOCUMENTS
+.
+
+( 73 ) Assignee : Thule Sweden AB , Hillerstorp ( SE )
+( * ) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+U.S.C. 154 ( b ) by 0 days.
+
+This patent is subject to a terminal dis
+claimer.
+
+CN
+DE
+EP
+EP
+
+2763133
+102005061449
+
+3/2006
+7/2007
+7/2003
+11/2009
+
+1059205
+
+2033845
+
+OTHER PUBLICATIONS
+Car Mate USA , Inno INH305 Tire Hold Hitch Instruction Manual,
+
+Published Sep. 2 , 2013 , Retrieved Jul. 16 , 2020. †
+
+( Continued )
+
+( 21 ) Appl. No .: 16 /534,687
+Aug. 7, 2019
+( 22 ) Filed :
+
+Primary Examiner Nathan J Newhouse
+Assistant Examiner Matthew T Theis
+
+(65 )
+
+Goldstein & Fox P.L.L.C.
+
+(74 ) Attorney, Agent, or Firm - Sterne, Kessler,
+
+Prior Publication Data
+US 2020/0023787 A1
+Jan. 23 , 2020
+
+ABSTRACT
+
+(57 )
+
+Related U.S. Application Data
+( 63 ) Continuation of application No. 14/ 845,640 , filed on
+Sep. 4 , 2015 , now Pat. No. 10,384,620 .
+( Continued )
+(51 ) Int. Cl.
+BOOR 9/10
+( 2006.01)
+BOOR 9/06
+
+( 2006.01 )
+( 52) U.S. CI .
+CPC . BOOR 9/10 (2013.01 ) ; B6OR 9/06 (2013.01 )
+( 58 ) Field of Classification Search
+CPC .. B6OR 9/10 ; BOR 9/06 ; BOR 9/048 ; B6OR
+
+9/08 ; B6OR 11/06 ; B62H 3/10 ; Y10S
+224/924
+
+(Continued )
+
+A bicycle carrier convertible between aa first configuration in
+which one or more bicycles are accommodated and a second
+extended configuration in which one or more additional
+bicycles are accommodated for transport on a carrying
+vehicle. The bicycle carrier can include a vehicle engaging
+frame configured to be mounted on a carrying vehicle. An
+
+elongate rearward extending support member can be
+coupled to the frame at a proximate end of the support
+
+member by a variably configurable hub configured to set the
+support member in a plurality of orientations relative to the
+frame. A manual actuator can be operably coupled to the
+variably configurable hub by a linkage. A distal end of the
+support member can be positioned away from the frame and
+configured to be alternately coupled to the actuator, or an
+add - on support member that accommodates one or more
+additional bicycles coupled to the bicycle carrier.
+4 Claims , 26 Drawing Sheets
+266
+
+2582
+
+-126
+228
+
+120
+
+268
+
+270
+
+
