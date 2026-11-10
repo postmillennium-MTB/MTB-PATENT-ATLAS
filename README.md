@@ -2,7 +2,7 @@
 
 **45 years of mountain bike invention — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 425 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 428 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 425 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 425 |
+| **Total entries** | 428 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 187 |
-| **Expired patents** | 161 |
+| **Expired patents** | 164 |
 | **Pending applications** | 50 |
 | **Confirmed no patent** | 10 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 214 |
+| **Brands** | 215 |
 | **Named inventors** | 78 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 339 |
+| **Verified entries** | 342 |
 | **Medium confidence** | 45 |
 | **Draft / in progress** | 41 |
 
@@ -825,6 +825,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Landing tiles (and other card jumps) now land on the card's title, per Jon's report that 2010s rear-suspension tiles often opened the wrong entry.** The right card was always the one opened, but the jump centred it on screen, so a card taller than the screen (I-Track and Knolly on a phone) showed only its drawings and text with the title above the top edge, and a short card sat mid-screen under other entries. `scrollToCard()` now puts the card's top 12 px below the screen edge, jumps straight there when it is more than two screens away instead of a long smooth glide, and re-pins it while its drawings and fonts finish loading until the reader scrolls (for browsers without scroll anchoring, such as Safari). Used by tiles, rabbit holes, card links, deep links and Patent Fights jumps. Checked by tapping every tile of every landing theme: before, 25 of 66 phone taps left the title off screen; after, 0 of 66 on a phone and 0 of 93 on desktop, also with slow image loading.
 - **GT entries credit James S. Busby; RTS / LTS dates corrected, per Jon.** RTS / LTS card: `a` and `who` now name Busby (sole inventor on US 5,259,637 and 5,306,036, with Michael Webb on US 6,056,307, with Stanley A. Needle on EP 0,825,098). GT direct drive card gains US 6,079,726 (parent) and US 6,155,585 (continuation) in `nums` (PR 189). RTS / LTS `g` 1995 → 1993 (5,259,637 granted November 9, 1993) and `exp` 2015 → 2013: 5,259,637 ran to January 13, 2013 (filed pre-GATT, filing + 20 beats grant + 17), 5,306,036 is terminally disclaimed to November 9, 2010, and 6,056,307 lapsed May 2, 2012 for an unpaid fee. EP 0,825,098 is an A2 application; no grant is on record in the entry.
 - **Trek Y-bike (US 5,685,553) gets a second image: an early design sketch, per Jon.** Jon supplied the hand-drawn sketch (notes read "Super strong seat boom" and "New main layout"); it is saved as `pictures/trek-y-bike-early-sketch.png`. The card moves from `img` to `imgs[]` with the patent's Fig. 1 first, so the thumbnail is unchanged, and the sketch second, captioned "Trek Y-bike early sketch — not a patent drawing" with `link:false` (no "View full patent" link). The caption claims nothing about the sketch beyond Jon's own description.
+- **Three wheel-truing patents added (Wheels & Tires), all `conf: "v"`, 428 entries.** Motobécane's automatic spoke-tensioning machine (US 3,507,027, Eric Jaulmes, filed 1968, granted 1970, `exp` 1987 = grant + 17); Ronald Buckley's automatic truing machine (US 4,585,046, filed 1984, granted 1986, `exp` 2004 = filing + 20, the greater figure); and the Papadopoulos / Cornell Research Foundation single-pass truing method (US 5,103,414, filed 1990, granted 1992, `exp` 2010). Facts checked against each patent's own PDF from `patentimages.storage.googleapis.com` and Jon's Google Patents copy. Buckley and Papadopoulos are Expired – Fee Related; `exp` stays at the formula year and the lapse is stated in `s`, as on other fee-lapsed cards. The Papadopoulos patent cites both earlier patents, so its `w` links to both cards and both link back. New brand `Motobécane` (BRAND_HQ France). Drawings from the Fetch patent figure workflow: Jaulmes Fig. 1 and Buckley Figs. 1–2 rotated upright, Jaulmes' inventor block blanked; Buckley and Papadopoulos carry a second sheet (Figs. 3 and 7; Figs. 2–3). Whether inventor Jeremy J. M. Papadopoulos is the Cornell bicycle-dynamics researcher Jim Papadopoulos is unconfirmed, so the card does not say so.
 
 ## Recent updates (July 2026)
 
