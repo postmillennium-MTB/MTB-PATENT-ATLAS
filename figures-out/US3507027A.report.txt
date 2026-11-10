@@ -1,0 +1,32 @@
+patent: US3507027A
+source: https://patentimages.storage.googleapis.com/d8/77/57/2611bf6e36e6cf/US3507027.pdf
+pages: 8
+per-page extracted text length: {1: 207, 2: 193, 3: 170, 4: 7397, 5: 7915, 6: 8243, 7: 7442, 8: 1854}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+April 21, 1970
+
+3,507,027
+
+E. JAUMEs
+
+PROCESS CF AND MACHINE FOR CENTERING SPOKED WHEELS
+
+Filed Feb. 26, 1968
+
+3 Sheets-Sheet .
+
+&ks
+
+777/7S 27/7 a
+C727SSaeepwoo
+
+INVENTOR
+
+4?? ?Z/%'S
+BY
+
+M7AaA M247A/
+ATORNY
+
+
