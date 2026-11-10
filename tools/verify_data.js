@@ -157,6 +157,9 @@ const REQUIRED_CROSSLINKS = [
   ['615003', '667348'],    // Crampon design patents D615,003 <-> D667,348
   ['9701361', '10088020'], // Spot Brand Living Link <-> Gates CenterTrack / Drop-Out
   ['7934739', '11091219'], // Niner CVA <-> Niner MCR full-suspension gravel frame
+  ['11155217', '863199'],  // Thule modular hitch rack <-> Thule wheel-cradle design
+  ['11155217', '906223'],  // Thule modular hitch rack <-> Thule platform carrier design
+  ['863199', '906223'],    // Thule design patents, both directions
 ];
 REQUIRED_CROSSLINKS.forEach(([a, b]) => [[a, b], [b, a]].forEach(([from, to]) => {
   ['en', 'fr'].forEach(lang => {
