@@ -1,0 +1,156 @@
+patent: USD906223S1
+source: https://patentimages.storage.googleapis.com/02/58/29/f343e663c35285/USD906223.pdf
+pages: 10
+per-page extracted text length: {1: 2412, 2: 3521, 3: 82, 4: 92, 5: 105, 6: 225, 7: 156, 8: 163, 9: 85, 10: 117}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOOD906223S
+
+D906,223 S
+( 12 ) Larsson
+Unitedet States
+Design Patent ((4510)) Date
+PatentofNoPatent
+.: : US
+** Dec. 29, 2020
+al .
+( 54 ) CARRIER
+
+4,126,228 A * 11/1978 Bala
+
+( 71 ) Applicant: Thule Sweden AB , Hillerstorp ( SE )
+( 72 ) Inventors: Johan Larsson , Jönköping ( SE ) ;
+Joseph Settelmayer, McKinleyville,
+
+4,629,104 A * 12/1986 Jacquet
+
+B62H 3/08
+211/22
+BOOR 9/10
+
+5,025,932 A * 6/1991 Jay
+
+B6OR 9/048
+
+Related U.S. Application Data
+( 63 ) Continuation of application No. 29/ 663,317 , filed on
+Sep. 13 , 2018 , now Pat . No. Des . 877,685
+12-16
+( 51 ) LOC ( 12) CI .
+( 52 ) U.S. CI.
+USPC
+
+D12 /406
+
+( 58 ) Field of Classification Search
+USPC
+D12 / 111 , 115 , 120 , 159 , 161 , 169 , 400 ,
+D12 /402 , 406,408 , 412 , 414 , 414.1 , 420 ;
+D3 /304–306 ; D6 / 552 , 716.3 ; D8 /356
+CPC B6OR 9/06 ; B6OR 9/10 ; B6OR 11/00 ; BOR
+9/048 ; Y10S 224/924
+See application file for complete search history.
+References Cited
+(56)
+U.S. PATENT DOCUMENTS
+3,865,244 A * 2/1975 Galen
+3,865,245 A * 2/1975 Lieb
+3,883,002 A * 5/1975 Moore
+
+3,964,611 A * 6/1976 Galen
+
+B62H 3/08
+211/5
+B62H 3/10
+211/5
+
+B62H 3/08
+211/18
+B62H 3/00
+211/5
+
+211/20
+
+( Continued )
+
+CA ( US )
+
+( 73 ) Assignee : Thule Sweden AB , Hillerstorp ( SE )
+15 Years
+( ** ) Term :
+( 21 ) Appl . No .: 29 /723,020
+Feb. 4 , 2020
+( 22 ) Filed :
+
+211/17
+
+FOREIGN PATENT DOCUMENTS
+CN
+JP
+
+107380299 A
+2012035788 A
+
+11/2017
+
+2/2012
+
+OTHER PUBLICATIONS
+
+Thule Helium Platform 2 , Thule.com , [ online ] , [ site visited Oct. 13 ,
+2020 ] . <URL : https://www.thule.com/en-us/bike-rack/hitch-bike
+racks / thule -helium -platform - 2 -_-9040 > ( Year: 2020 ) . *
+( Continued )
+Primary Examiner — T Chase Nelson
+Assistant Examiner - Jonathan J. Han
+
+(74 ) Attorney, Agent, or Firm — Sterne, Kessler,
+
+Goldstein & Fox P.L.L.C.
+
+CLAIM
+
+(57 )
+
+The ornamental design for a carrier, as shown and described .
+DESCRIPTION
+
+FIG . 1 is a top front perspective view of a carrier showing
+
+the claimed design ;
+
+FIG . 2 is a front view thereof;
+
+FIG . 3 is a rear view thereof;
+FIG . 4 is a left side view thereof;
+
+FIG . 5 is a right side view thereof;
+FIG . 6 is a top view thereof;
+FIG . 7 is a bottom view thereof; and ,
+FIG . 8 is a bottom rear perspective view thereof.
+The broken lines in the figures show portions of the carrier
+that form no part of the claimed design .
+1 Claim , 8 Drawing Sheets
+
+2
+-.
+-.
+
+.......
+
+----
+
+-.
+
+-----:-----.
+
+. . . ..
+
+:::
+.-.
+....
+"
+
+..
+
+
