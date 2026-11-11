@@ -98,7 +98,7 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
   /* Card cross-links ([[card:ref|text]] -> a.card-xref): from each end of the
      required pairs, open the card, click the link, and confirm the target card
      opens. Keep in step with REQUIRED_CROSSLINKS in verify_data.js. */
-  const XLINK_PAIRS = [['615003', '667348'], ['667348', '615003'], ['9701361', '10088020'], ['10088020', '9701361'], ['7934739', '11091219'], ['11091219', '7934739'], ['4522610', '7749117'], ['7749117', '4522610']];
+  const XLINK_PAIRS = [['615003', '667348'], ['667348', '615003'], ['9701361', '10088020'], ['10088020', '9701361'], ['7934739', '11091219'], ['11091219', '7934739'], ['11155217', '863199'], ['863199', '11155217'], ['11155217', '906223'], ['906223', '11155217'], ['906223', '863199'], ['4522610', '7749117'], ['7749117', '4522610']];
   for (const [from, to] of XLINK_PAIRS) {
     errors.length = 0;
     await page.evaluate(ref => jumpToCard(ref), from);
@@ -344,7 +344,7 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     }
     await ctx.close();
   }
-  for (const [url, want] of [['?start=litigation', 'litigation'], ['#start=drivetrains', 'drivetrains'], ['#start=hubs-wheels', 'hubs-wheels'], ['?start=no-such-theme', null], ['', null]]) {
+  for (const [url, want] of [['?start=litigation', 'litigation'], ['#start=drivetrains', 'drivetrains'], ['#start=hubs-wheels', 'hubs-wheels'], ['#start=rear-2020s', 'rear-2020s'], ['?start=no-such-theme', null], ['', null]]) {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
     const p = await ctx.newPage();
     const errs = [];
