@@ -462,6 +462,12 @@ button.stats-seg:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
 .wn-suggest{font-size:13.5px;margin:10px 0 0}
 .wn-suggest a,.card-fix a{color:var(--primary);font-weight:700}
 .card-fix{font-size:12.5px;color:var(--ink-soft);margin:8px 0 0}
+/* Standard lines by card type (stdNotesHTML): one plain-language reminder of
+   what this kind of record does and does not mean. Quiet on purpose: it sits
+   under the facts, not above them. */
+.std-notes{margin:10px 0 0;padding:6px 0 6px 10px;border-left:3px solid var(--card-border);font-size:12.5px;line-height:1.45;color:var(--ink-soft)}
+.std-notes p{margin:0}
+.std-notes p+p{margin-top:4px}
 /* "The clever bit" (d.clever): one sentence on how the mechanism works,
    shown first in the open card so the idea comes before the docket. */
 .clever{margin:0 0 10px;padding:6px 0 6px 10px;border-left:3px solid var(--cat,var(--primary))}
@@ -2691,6 +2697,7 @@ function correctCardUrl(d,ref){
    is a cardRef the line links to. Dates are when the change went live. Only
    the first WHATS_NEW_SHOWN are shown. */
 const WHATS_NEW = [
+  {date:"2026-11-12", text:{en:"Every patent card now ends with a one-line reminder of what that kind of record means: pending, design, expired, granted or foreign.", fr:"Chaque fiche de brevet se termine désormais par un rappel d'une ligne sur ce que signifie ce type de document : demande en attente, dessin ou modèle, brevet expiré, délivré ou étranger."}},
   {date:"2026-11-12", text:{en:"108 suspension and drivetrain cards now open with \"The clever bit\": one sentence on how the mechanism works.", fr:"108 fiches de suspension et de transmission s'ouvrent désormais sur « L'astuce » : une phrase sur le fonctionnement du mécanisme."}, go:"5509679"},
   {date:"2026-11-12", text:{en:"Confidence labels on cards now say plainly whether a card has been checked against the patent record.", fr:"Les mentions de confiance des fiches indiquent désormais clairement si la fiche a été vérifiée sur le registre des brevets."}},
   {date:"2026-11-12", text:{en:"62 of the shortest cards, Horst Link, Di2 and Reverb among them, now explain how the invention works and when it arrived.", fr:"62 des fiches les plus courtes, dont Horst Link, Di2 et Reverb, expliquent désormais comment fonctionne l'invention et quand elle est arrivée."}, go:"5509679"},
@@ -3020,6 +3027,11 @@ const T = {
     wnH:"What’s new", wnGo:"See it →",
     suggestPatent:"Missing a patent? Suggest one →",
     correctCard:"Spot a mistake? Suggest a correction →",
+    stdPending:"A pending application is not a granted patent, and not a product. Its claims can still change or be refused, and the idea may never ship.",
+    stdDesign:"A design patent covers how a product looks, not how it works.",
+    stdExpired:"An expired patent can no longer block anyone from making or using what it claims, but later patents on improvements to the same idea may still be in force.",
+    stdActive:"What a patent covers is set by its claims, not by its drawings or description.",
+    stdTerritorial:"Patent rights are territorial: this one has effect only in the countries where it was filed or granted.",
     cleverLbl:"The clever bit:",
     footerSuggest:`Missing a patent, or spotted a mistake? <a href="https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS/issues/new?template=suggest-patent.yml" target="_blank" rel="noopener">Suggest it on GitHub</a>. Every suggestion is checked before anything changes.`,
     noneFreeSoon:"No active patents in the atlas are estimated to expire within the next two years.",
@@ -3169,6 +3181,11 @@ const T = {
     wnH:"Quoi de neuf", wnGo:"Voir →",
     suggestPatent:"Un brevet manque ? Proposez-le →",
     correctCard:"Une erreur ? Proposez une correction →",
+    stdPending:"Une demande en attente n'est ni un brevet délivré ni un produit. Ses revendications peuvent encore changer ou être rejetées, et l'idée peut ne jamais être commercialisée.",
+    stdDesign:"Un brevet de dessin ou modèle protège l'apparence d'un produit, pas son fonctionnement.",
+    stdExpired:"Un brevet expiré ne peut plus empêcher quiconque de fabriquer ou d'utiliser ce qu'il revendique, mais des brevets ultérieurs sur des améliorations de la même idée peuvent encore être en vigueur.",
+    stdActive:"Ce que couvre un brevet est fixé par ses revendications, pas par ses dessins ni sa description.",
+    stdTerritorial:"Les droits de brevet sont territoriaux : celui-ci n'a d'effet que dans les pays où il a été déposé ou délivré.",
     cleverLbl:"L'astuce :",
     footerSuggest:`Un brevet manque, ou vous avez repéré une erreur ? <a href="https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS/issues/new?template=suggest-patent.yml" target="_blank" rel="noopener">Proposez-le sur GitHub</a>. Chaque proposition est vérifiée avant toute modification.`,
     noneFreeSoon:"Aucun brevet actif de l'atlas n'est estimé expirer dans les deux prochaines années.",
@@ -4078,6 +4095,25 @@ function stripCardLinks(str){
 
 /* eraKey (optional) marks the first card of an era in the grid view, which has
    no era sections to carry the id the era bars scroll to. */
+/* Standard lines by card type: an automatic reminder of what this kind of
+   record does and does not mean, so it never has to be repeated by hand in
+   each card's own s/w. At most two lines: one for the record type (design
+   beats status, since "looks, not function" is the more useful point for a
+   design patent) and one for a non-US filing. np cards get none: their
+   meta row already says there is no patent. Wording stays legal-neutral
+   (the expired line always carries the later-patents caveat; never "free to copy"). The `trademark`
+   pt and j:"EU" (a design registration, not a patent) are skipped too. */
+function stdNotesHTML(d){
+  if(d.np) return "";
+  const lines=[];
+  if(d.pt==="design") lines.push(t("stdDesign"));
+  else if(d.st==="pending") lines.push(t("stdPending"));
+  else if(d.st==="expired") lines.push(t("stdExpired"));
+  else if(d.st==="active"&&(d.pt??"utility")==="utility") lines.push(t("stdActive"));
+  const jur=d.j??"US";
+  if(jur!=="US"&&jur!=="EU"&&d.pt!=="trademark") lines.push(t("stdTerritorial"));
+  return lines.length?`<div class="std-notes">${lines.map(l=>`<p>${l}</p>`).join("")}</div>`:"";
+}
 function cardHTML(d,eraKey){
   /* An EU Registered Community Design always carries num:null by design (see
      CLAUDE.md's RCD exception — numLink()/patentUrl() are Google-Patents-only
@@ -4294,6 +4330,7 @@ function cardHTML(d,eraKey){
         <div><b>${t("expiryLbl")}</b>${cd}</div>
         <div><b>${t("jurisdictionLbl")}</b>${jur}</div>
       </div>
+      ${stdNotesHTML(d)}
       ${gp}
       ${coLink}${wgLink}
       <p class="card-fix"><a href="${correctCardUrl(d,ref)}" target="_blank" rel="noopener">${t("correctCard")}</a></p>
