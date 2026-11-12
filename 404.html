@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- (c) 2026 Post Millennium Renaissance (https://www.postmillenniumrenaissance.com/). SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0. See LICENSE. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not found — MTB Patent Atlas</title>
+<meta name="robots" content="noindex">
+<!--
+  GitHub Pages serves this for any address in this site that has no file.
+  Its one job: a per-card share link (p/<ref>/, see tools/build_card_pages.js)
+  whose page has not been generated yet -- a card added since the last
+  "Update card link pages" pull request was merged -- still opens that card
+  in the Atlas. Anything else goes to the Atlas home.
+-->
+<script>
+(function(){
+  var atlas="https://postmillenniumrenaissance.com/atlas/";
+  var m=location.pathname.match(/\/p\/([A-Za-z0-9-]+)\/?(?:index\.html)?$/);
+  var lang=null;
+  try{ lang=new URLSearchParams(location.search).get("lang"); }catch(e){}
+  if(m) location.replace(atlas+"#p="+m[1]+(lang&&/^[a-z]{2}$/.test(lang)&&lang!=="en"?"&lang="+lang:""));
+})();
+</script>
+<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:0 auto;padding:24px 16px;background:#f6f3ea;color:#1c1a14;line-height:1.5}a{color:inherit}.pmr-license{margin-top:32px;font-size:12px;text-align:center;border-top:1px solid rgba(128,128,128,.35);padding-top:10px}</style>
+</head>
+<body>
+<h1>Page not found</h1>
+<p><a href="https://postmillenniumrenaissance.com/atlas/">Go to the MTB Patent Atlas</a></p>
+<div class="pmr-license"><p>&copy; 2026 Post Millennium Renaissance &middot; <a href="https://www.postmillenniumrenaissance.com/">postmillenniumrenaissance.com</a> &middot; Free for noncommercial use under <a href="https://polyformproject.org/licenses/noncommercial/1.0.0/">PolyForm Noncommercial 1.0.0</a>. Source studies remain the property of their authors.</p></div>
+</body>
+</html>

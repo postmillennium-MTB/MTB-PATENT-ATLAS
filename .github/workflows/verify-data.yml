@@ -33,6 +33,7 @@ on:
       - "index.html"
       - "tools/verify_data.js"
       - "tools/smoke_test.js"
+      - "tools/build_card_pages.js"
       - "tools/package.json"
       - "tools/package-lock.json"
   push:

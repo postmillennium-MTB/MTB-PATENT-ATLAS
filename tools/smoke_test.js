@@ -402,6 +402,26 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     await ctx.close();
   }
 
+  // Per-card link pages (p/<ref>/, tools/build_card_pages.js): the generator
+  // must compute exactly the refs the page's own cardRef() does, or a shared
+  // link would open a page for the wrong card (or none), and the Share button
+  // must copy that page's address.
+  {
+    const genRefs = JSON.parse(require('child_process').execFileSync(process.execPath, [path.join(__dirname, 'build_card_pages.js'), '--refs'], { encoding: 'utf8' }));
+    const p = await browser.newPage();
+    await p.goto(filePath);
+    await p.waitForTimeout(400);
+    const r = await p.evaluate(() => ({ refs: D.map(cardRef), url: cardShareUrl(cardRef(D[0])) }));
+    const diff = r.refs.map((x, i) => x === genRefs[i] ? null : `${x} vs ${genRefs[i]}`).filter(Boolean);
+    const urlOk = r.url === `https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/p/${encodeURIComponent(r.refs[0])}/`;
+    console.log(`card link pages: ${r.refs.length} refs, ${diff.length} differ from build_card_pages.js; share url ${r.url}`);
+    if (diff.length || r.refs.length !== genRefs.length || !urlOk) {
+      failed = true;
+      console.error(`::error::build_card_pages.js refs disagree with cardRef() (${diff.slice(0, 5).join('; ')}) or the Share URL is wrong.`);
+    }
+    await p.close();
+  }
+
   await browser.close();
   if (failed) {
     console.error('\n::error::Browser smoke test FAILED.');
