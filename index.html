@@ -551,6 +551,13 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .where-line{max-width:880px;margin:6px auto 0;padding:0 16px;display:flex;align-items:center;gap:6px 10px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-soft)}
 .where-line:has(> #clearAll[hidden]){display:none}
 .where-text b{color:var(--ink);font-weight:600}
+/* Note shown when a shared link names a card that no longer exists (missingCard). */
+.link-notice{max-width:880px;margin:10px auto 0;padding:8px 8px 8px 14px;display:flex;align-items:center;gap:10px;border:1px solid var(--primary);border-radius:var(--radius);background:var(--surface);color:var(--ink);font-size:13.5px;box-sizing:border-box}
+@media(max-width:911px){.link-notice{margin-left:16px;margin-right:16px}}
+.link-notice[hidden]{display:none}
+.link-notice span{flex:1}
+.link-notice-x{flex:none;min-width:32px;min-height:32px;border:0;background:none;color:var(--ink-soft);font:inherit;cursor:pointer;border-radius:var(--pill-radius)}
+.link-notice-x:hover,.link-notice-x:focus-visible{color:var(--primary);outline:2px solid var(--primary)}
 .where-clear{display:inline-flex;align-items:center;gap:4px;min-height:32px;padding:4px 12px;border:1px solid var(--primary);border-radius:var(--pill-radius);background:none;color:var(--primary);font:inherit;font-size:12px;font-weight:600;cursor:pointer;transition:background var(--motion) var(--ease),color var(--motion) var(--ease)}
 .where-clear:hover,.where-clear:focus-visible{background:var(--primary);color:#fff;outline:none}
 .clearbtn{background:none;border:none;color:var(--primary);font-size:12px;font-weight:600;text-decoration:underline;padding:4px}
@@ -603,6 +610,9 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .era-head{display:flex;align-items:center;gap:10px;margin:26px 0 12px;scroll-margin-top:130px}
 .era-head h2{font-family:var(--font-display);font-size:30px;font-weight:var(--head-weight);color:var(--primary);letter-spacing:var(--head-spacing);text-transform:var(--head-transform)}
 .era-head .count{font-family:var(--font-mono);font-size:11px;color:var(--ink-soft)}
+/* Search result blocks ("Best matches" / "Also mentioned"): words, not a year, so a smaller size keeps them on one line on a phone. */
+.era-top .era-head h2,.era-rest h2{font-size:22px}
+.era-top .era-head{margin-top:14px}
 .era-head::after{content:"";flex:1;height:var(--era-line);background:var(--spine);opacity:.35;border-radius:2px}
 .tl{position:relative;padding-left:26px}
 .tl::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:var(--spine-w);background:var(--spine);opacity:.5;border-radius:var(--spine-radius)}
@@ -1168,6 +1178,7 @@ footer a{color:inherit;text-decoration:underline}
   </div>
   <div class="where-line" id="whereLine">
     <span class="where-text" id="whereText" aria-live="polite"></span>
+    <button class="where-clear where-back" id="whereBack" type="button" hidden><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left icon-inline" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span id="whereBackText"></span></button>
     <button class="where-clear" id="clearAll" type="button" hidden><span aria-hidden="true">✕</span> <span data-i18n="clearFilters">Clear filters</span></button>
   </div>
   <div class="st-legend list-legend" id="stLegend" role="note"></div>
@@ -1190,6 +1201,7 @@ footer a{color:inherit;text-decoration:underline}
   </div>
 </div>
 
+<div class="link-notice" id="linkNotice" role="status" hidden><span id="linkNoticeText"></span><button type="button" class="link-notice-x" id="linkNoticeClose" data-i18n-aria-label="linkNoticeClose" aria-label="Dismiss"><span aria-hidden="true">✕</span></button></div>
 <main id="timeline"></main>
 
 <!-- Colorado MTB Innovation panel -->
@@ -2361,8 +2373,13 @@ const state = { cat:new Set(), st:new Set(), badge:new Set(), inv:new Set(), bra
    so adding the language switch didn't quietly break every "clear all
    filters" call site (a string has no .clear()/.size). */
 const FILTER_KEYS = ["cat","st","badge","inv","brand"];
-function clearFilterState(){ FILTER_KEYS.forEach(k=>state[k].clear()); }
-function anyFilterActive(){ return FILTER_KEYS.some(k=>state[k].size>0); }
+/* The landing theme a card list is limited to (a LANDING_THEMES key), set when
+   a card is opened from a wall tile so previous/next walks that theme's
+   drawings, not all entries. Written to the URL as theme=<key>. Cleared with
+   the chip filters, and by any tab button. */
+let listTheme=null;
+function clearFilterState(){ FILTER_KEYS.forEach(k=>state[k].clear()); listTheme=null; }
+function anyFilterActive(){ return !!listTheme || FILTER_KEYS.some(k=>state[k].size>0); }
 
 /* ======== FAVORITES ========
    The only reader data this tool persists. A Set of stable cardRef() strings
@@ -2597,7 +2614,7 @@ const T = {
     copyLink:"📋 Copy link", shareX:"𝕏 Share on X", shareFacebook:"📘 Share on Facebook", shareReddit:"👽 Share on Reddit",
     copiedConfirm:"✓ Copied", copyLinkShown:"Copy the link shown",
     shareText:"MTB Patent Atlas — 430 mountain bike patents and applications, 1869 to present.",
-    clearFilters:"Clear filters",
+    clearFilters:"Clear filters", linkMissingSearch:"That link points to an entry that has moved or been renamed. These are the closest matches.", linkMissingHome:"That link points to an entry that has moved or been renamed, so here is the Atlas home.", linkNoticeClose:"Dismiss", searchBest:"Best matches", searchRest:"Also mentioned", backToTheme:name=>`Back to ${name}`,
     goingFreeSoonChip:"Expiring soon",
     goingFreeSoonTip:"Active patents whose estimated expiration falls within the next 2 years — technology about to become free for everyone to use.",
     statusLabelActive:"Active", statusLabelExpired:"Expired", statusLabelPending:"Pending",
@@ -2736,7 +2753,7 @@ const T = {
     copyLink:"📋 Copier le lien", shareX:"𝕏 Partager sur X", shareFacebook:"📘 Partager sur Facebook", shareReddit:"👽 Partager sur Reddit",
     copiedConfirm:"✓ Copié", copyLinkShown:"Copier le lien affiché",
     shareText:"MTB Patent Atlas — 430 brevets et demandes de brevets liés au VTT, de 1869 à aujourd'hui.",
-    clearFilters:"Effacer les filtres",
+    clearFilters:"Effacer les filtres", linkMissingSearch:"Ce lien mène à une fiche déplacée ou renommée. Voici les résultats les plus proches.", linkMissingHome:"Ce lien mène à une fiche déplacée ou renommée : voici l'accueil de l'Atlas.", linkNoticeClose:"Fermer", searchBest:"Meilleurs résultats", searchRest:"Également mentionné", backToTheme:name=>`Retour au thème « ${name} »`,
     goingFreeSoonChip:"Expire bientôt",
     goingFreeSoonTip:"Brevets actifs dont l'expiration estimée survient dans les 2 prochaines années — une technologie sur le point de devenir libre d'usage pour tous.",
     statusLabelActive:"Actif", statusLabelExpired:"Expiré", statusLabelPending:"En attente",
@@ -3304,7 +3321,7 @@ let lastSubTab=TAB_GROUP_KEYS[0];
     btn.className="tab-btn tab-group";
     btn.innerHTML=`<span data-i18n="${tabDef.tkey}">${t(tabDef.tkey)}</span><span class="tab-dot" data-dot="group"></span>`;
     btn.setAttribute("aria-pressed","false");
-    btn.onclick=()=>{ activeTab=lastSubTab; renderTabs(); render(); };
+    btn.onclick=()=>{ listTheme=null; activeTab=lastSubTab; renderTabs(); render(); };
     tabRow.appendChild(btn);
     return;
   }
@@ -3318,7 +3335,7 @@ let lastSubTab=TAB_GROUP_KEYS[0];
   btn.innerHTML=`${icon}<span data-i18n="${tabDef.tkey}">${t(tabDef.tkey)}</span><span class="tab-dot" data-dot="${tabDef.key}"></span>`;
   btn.dataset.tab=tabDef.key;
   btn.setAttribute("aria-pressed",tabDef.key===activeTab?"true":"false");
-  btn.onclick=()=>{ activeTab=tabDef.key; renderTabs(); render(); };
+  btn.onclick=()=>{ listTheme=null; activeTab=tabDef.key; renderTabs(); render(); };
   if(isSub) btn.classList.add("subtab-btn");
   (isSub?subTabRow:tabRow).appendChild(btn);
 });
@@ -3336,7 +3353,7 @@ function buildFavTabBtn(){
   btn.innerHTML=`${ICON_HEART}<span data-i18n="tabFavorites">${t("tabFavorites")}</span>`;
   btn.dataset.tab="fav";
   btn.setAttribute("aria-pressed","false");
-  btn.onclick=()=>{ activeTab="fav"; renderTabs(); render(); };
+  btn.onclick=()=>{ listTheme=null; activeTab="fav"; renderTabs(); render(); };
   return btn;
 }
 function ensureFavTabBtn(animate){
@@ -3390,6 +3407,8 @@ function renderTabs(){
   const noPanesMode=activeTab==="fights"||activeTab==="stats"||activeTab==="fav"||activeTab==="match";
   document.body.classList.toggle("home-view", activeTab==="stats");
   const viewSeg=$("#viewSeg"); if(viewSeg) viewSeg.hidden = activeTab==="stats"||activeTab==="fights"||activeTab==="match";
+  /* Sort order, Surprise me and Share act on the card list; the Match game has none. */
+  ["#sortBtn","#surpriseBtn","#shareMenu"].forEach(sel=>{ const el=$(sel); if(el) el.hidden = activeTab==="match"; });
   $("#filters").setAttribute("data-mode", activeTab==="all"?"all":"single");
   $("#filterPanes").classList.toggle("hidden-pane", noPanesMode);
   Object.entries(paneEls).forEach(([k,el])=>{
@@ -3436,6 +3455,8 @@ $("#clearAll").onclick=()=>{
   render();
 };
 
+$("#whereBack").onclick=()=>backToTheme();
+
 /* ======== THEME ======== */
 document.querySelectorAll(".swatch").forEach(s=>{
   s.onclick=()=>{
@@ -3468,6 +3489,7 @@ function passes(d){
      cardRef/_REF are declared later in the file but hoisted, same as
      passes() itself is called well after full parse. */
   if(activeTab==="fav" && !isFav(cardRef(d))) return false;
+  if(listTheme){ const th=LANDING_THEMES.find(x=>x.key===listTheme); if(th && !landingPool(th).includes(d)) return false; }
   if(searchQ){
     /* Strips accents (é→e, ö→o, …) so "Sunringle" finds "SUNringlé" and
        "Ohlins" finds "Öhlins" — most people typing on a US keyboard won't
@@ -3532,6 +3554,22 @@ function passes(d){
   const allWho=new Set([...state.inv,...state.brand]);
   if(allWho.size && !d.who.some(w=>allWho.has(w))) return false;
   return true;
+}
+
+/* How well entry d answers the search box, for ordering results (passes()
+   decides whether it shows at all): 0 = every query word is in its title,
+   1 = every word is in a brand tag or the assignee, 2 = found only elsewhere
+   (summary, why-it-matters, a synonym, a year). Both languages count, accents
+   folded, spaces ignored for compound names, as in passes(). */
+function searchRank(d){
+  const fold=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  const words=fold(searchQ||"").split(/\s+/).filter(Boolean);
+  if(!words.length) return 2;
+  const holds=txt=>{ const h=fold(txt), hc=h.replace(/\s+/g,''); return words.every(w=>h.includes(w)||hc.includes(w)); };
+  const title=typeof d.t==="object" ? [d.t.en,d.t.fr].filter(Boolean).join(' ') : (d.t||"");
+  if(holds(stripCardLinks(title))) return 0;
+  if(holds([d.a,...(d.who||[])].filter(Boolean).join(' '))) return 1;
+  return 2;
 }
 
 /* ======== RENDER ======== */
@@ -4877,6 +4915,31 @@ function landingWallHTML(){
       <button type="button" class="mini-btn lw-shuffle" id="lwShuffle" aria-label="${t("wallShuffleAria")}">${t("wallShuffle")}</button></div>
   </section>`;
 }
+/* Opens a wall tile's card in a list of just that theme's drawings, so
+   previous/next and "n of N" stay inside the theme; the where line offers the
+   way back to the wall (#whereBack). */
+function openInTheme(key,ref){
+  clearFilterState();
+  searchQ=''; const si=document.getElementById("searchInput"); if(si) si.value='';
+  syncChipsToState();
+  listTheme=key;
+  jumpToCard(ref);
+}
+/* Back from a theme list to the landing wall it came from, same tiles. */
+function backToTheme(){
+  const k=listTheme;
+  clearFilterState();
+  searchQ=''; const si=document.getElementById("searchInput"); if(si) si.value='';
+  syncChipsToState();
+  if(k && k!==landingKey){ landingKey=k; landingTiles=null; }
+  landingChosen=true;
+  activeTab=DEFAULT_TAB; renderTabs(); render();
+  requestAnimationFrame(()=>{ const w=$("#landingWall"); if(w) w.scrollIntoView({block:"start"}); else window.scrollTo({top:0}); });
+}
+function listThemeName(){
+  const th=listTheme && LANDING_THEMES.find(x=>x.key===listTheme);
+  return th ? (th.sub ? `${tx(th.label)} ${tx(th.sub)}` : tx(th.label)) : "";
+}
 /* Repaints only the wall (not the whole tab) so the rabbit-hole row below
    keeps its scroll position when the reader switches theme. */
 function paintLandingWall(){
@@ -4900,7 +4963,7 @@ function wireLandingWall(){
   grid.onclick=e=>{
     const b=e.target.closest("[data-lwi]"); if(!b) return;
     const d=landingPick()[Number(b.dataset.lwi)];
-    if(d) followGo({ref:cardRef(d)});
+    if(d) openInTheme(landingKey,cardRef(d));
   };
   if(shuffle) shuffle.onclick=()=>{ landingTiles=null; paintLandingWall(); };
   // Bring the selected chip into view if a deep link picked one off-screen in its row.
@@ -5268,6 +5331,7 @@ function paintWhere(n,total){
   const parts=[...document.querySelectorAll('#filterPanes .chip[aria-pressed="true"]')]
     .map(c=>{ const lab=c.querySelector("[data-i18n]"); return (lab?lab.textContent:c.textContent).replace("ⓘ","").trim(); });
   if(activeTab==="fav") parts.unshift(t("tabFavorites"));
+  if(listTheme) parts.unshift(listThemeName());
   if(searchQ) parts.push(`“${searchQ}”`);
   el.innerHTML="";
   if(parts.length){ const b=document.createElement("b"); b.textContent=parts.join(" · "); el.append(b," · "); }
@@ -5278,6 +5342,7 @@ function paintWhere(n,total){
 let shownRefs=[];
 let openRef=null;
 function render(){
+  if(typeof hideLinkNoticeOnMove==="function") hideLinkNoticeOnMove();
   openRef=null; // a re-render rebuilds every card closed
   if(typeof syncHash==="function") syncHash();
   /* The one status key, for the dots on the landing tiles and the card list. */
@@ -5287,8 +5352,19 @@ function render(){
   if(typeof stopMatchTimer==="function") stopMatchTimer();
   if(typeof activeTab!=="undefined" && activeTab==="fights"){ renderFights(); return; }
   if(typeof activeTab!=="undefined" && activeTab==="stats"){ renderStats(); return; }
-  const list=D.filter(passes).sort((a,b)=>sortDesc ? b.y-a.y : a.y-b.y);
-  shownRefs=list.map(cardRef);
+  const all=D.filter(passes).sort((a,b)=>sortDesc ? b.y-a.y : a.y-b.y);
+  /* A search puts the cards whose title (then brand or assignee) holds every
+     query word in a "Best matches" block first, in year order; the rest keep
+     the era sections below it. Without it, "horst link" put the Horst Link
+     card 6th, behind older entries that only mention it in passing. */
+  let top=[], list=all;
+  if(searchQ){
+    const ranked=all.map(d=>[d,searchRank(d)]);
+    top=ranked.filter(r=>r[1]<2).sort((a,b)=>a[1]-b[1]).map(r=>r[0]); // sort() is stable: year order holds within each rank
+    if(top.length && top.length<all.length) list=ranked.filter(r=>r[1]===2).map(r=>r[0]);
+    else top=[];
+  }
+  shownRefs=top.concat(list).map(cardRef);
   const tl=$("#timeline");
   tl.dataset.view=viewMode; // the Card views CSS keys off this
 
@@ -5297,6 +5373,11 @@ function render(){
      newest-first too, matching the cards' own order within each section
      (list is already sorted the right way, and filter() preserves it). */
   const eras=sortDesc ? [...getEras()].reverse() : getEras();
+  const topHTML=top.length ? `<section class="era era-top" id="searchTop">
+          <div class="era-head"><h2>${t("searchBest")}</h2><span class="count">${t("eraCount",top.length)}</span></div>
+          <div class="tl">${top.map(d=>cardHTML(d)).join("")}</div>
+        </section>
+        <div class="era-head era-rest"><h2>${t("searchRest")}</h2><span class="count">${t("eraCount",list.length)}</span></div>` : "";
   if(!list.length){ tl.innerHTML=`<div class="empty">${activeTab==="fav"?t("favEmpty"):t("emptyState")}</div>`; }
   else{
     if(viewMode==="grid"){
@@ -5304,9 +5385,9 @@ function render(){
          or two, so a grid per era would be a string of nearly empty rows.
          Each tile already carries its year, and the era bars above still jump
          to an era via the data-era mark on its first card (see renderBars). */
-      tl.innerHTML=`<div class="tl">${eras.map(e=>list.filter(d=>d.y>=e.from&&d.y<=e.to).map((d,i)=>cardHTML(d,i===0?e.k:null)).join("")).join("")}</div>`;
+      tl.innerHTML=topHTML+`<div class="tl">${eras.map(e=>list.filter(d=>d.y>=e.from&&d.y<=e.to).map((d,i)=>cardHTML(d,i===0?e.k:null)).join("")).join("")}</div>`;
     } else {
-      tl.innerHTML=eras.map(e=>{
+      tl.innerHTML=topHTML+eras.map(e=>{
         const items=list.filter(d=>d.y>=e.from&&d.y<=e.to);
         if(!items.length) return "";
         return `<section class="era" id="${e.k}">
@@ -5364,7 +5445,7 @@ function render(){
     };
   });
   // counts + clear
-  const total=D.length, n=list.length;
+  const total=D.length, n=all.length;
   /* Without the activeTab check, viewing Favorites with no chip filters or
      search text set would read anyFilterActive() as false and print the
      full-dataset "363 entries · 1869–2026" line instead of "N of 363" --
@@ -5372,11 +5453,13 @@ function render(){
   const anyFilter=activeTab==="fav"||anyFilterActive()||searchQ;
   $("#resultCount").textContent = anyFilter?"":t("resultCountAll",total,FIRST_YEAR);
   $("#clearAll").hidden=!anyFilter;
+  const wb=$("#whereBack");
+  if(wb){ wb.hidden=!listTheme; if(listTheme) $("#whereBackText").textContent=t("backToTheme",listThemeName()); }
   if(anyFilter) paintWhere(n,total);
   const sig=JSON.stringify([activeTab,searchQ,FILTER_KEYS.map(k=>[...state[k]])]);
   if(sig!==lastFilterSig){ if(lastFilterSig!==null) playIn(tl); lastFilterSig=sig; }
   updateTabDots();
-  renderBars(list);
+  renderBars(all);
 }
 
 /* Era-bar click target. The Atlas (stats) and Fights tabs render no era
@@ -5492,6 +5575,7 @@ function syncHash(){
   if(activeTab!==DEFAULT_TAB) p.set("tab",activeTab);
   HASH_SETS.forEach(k=>{ if(state[k].size) p.set(k,[...state[k]].join(",")); });
   if(searchQ) p.set("q",searchQ);
+  if(listTheme) p.set("theme",listTheme);
   if(state.lang!=="en") p.set("lang",state.lang); // langFromHash() already reads this back
   const lt=activeTab===DEFAULT_TAB && landingChosen ? landingTheme() : null; // the wall's theme, once picked -- see LANDING THEMES
   if(lt) p.set("start",lt.key);
@@ -5509,6 +5593,8 @@ function initFromHash(){
     const v=p.get(k);
     if(v) v.split(",").forEach(x=>{ if(x) state[k].add(decodeURIComponent(x)); });
   });
+  const hashTheme=p.get("theme");
+  if(hashTheme && landingThemes().some(x=>x.key===hashTheme)) listTheme=hashTheme;
   const hashQuery=p.get("q");
   if(hashQuery){ searchQ=hashQuery; const si=document.getElementById("searchInput"); if(si) si.value=hashQuery; }
   const tab=p.get("tab");
@@ -5576,9 +5662,41 @@ function jumpToCard(ref,opts){
       scrollToCard(target);
       target.classList.add("card-flash");
       setTimeout(()=>target.classList.remove("card-flash"),ANIMATION_CLEANUP_MS);
-    }
+    } else missingCard(ref);
   });
 }
+/* A link named a card that doesn't exist (renamed, merged, or mistyped).
+   Rather than leave the reader on an unexplained full list: search the words
+   in the link (a title slug like "trek-abp-..." usually still finds the
+   entry), or, if that finds nothing, go back to the Atlas home. Either way a
+   short note says what happened. */
+function missingCard(ref){
+  const words=String(ref||"").replace(/[-_+]+/g," ").replace(/[^\p{L}\p{N} ]+/gu," ").trim();
+  searchQ=words;
+  const hits=words ? D.filter(passes).length : 0;
+  if(hits){
+    const si=document.getElementById("searchInput"); if(si) si.value=words;
+    activeTab="all";
+  } else {
+    searchQ=""; activeTab=DEFAULT_TAB;
+  }
+  renderTabs(); render();
+  showLinkNotice(hits ? t("linkMissingSearch") : t("linkMissingHome"));
+  window.scrollTo({top:0});
+}
+function showLinkNotice(msg){
+  const el=$("#linkNotice"); if(!el) return;
+  $("#linkNoticeText").textContent=msg;
+  el.hidden=false; linkNoticeAt=Date.now();
+}
+/* The note goes away on the reader's next move (any later render). */
+let linkNoticeAt=0;
+const LINK_NOTICE_HOLD_MS = 1000; // renders this soon after showing are part of the same jump
+function hideLinkNoticeOnMove(){
+  const el=document.getElementById("linkNotice");
+  if(el && !el.hidden && Date.now()-linkNoticeAt>LINK_NOTICE_HOLD_MS) el.hidden=true;
+}
+$("#linkNoticeClose").onclick=()=>{ $("#linkNotice").hidden=true; };
 
 /* In-page handler for cardLinks() anchors: open the target card the same way a
    Rabbit Hole or Patent Fights chip does, instead of following the href (which
