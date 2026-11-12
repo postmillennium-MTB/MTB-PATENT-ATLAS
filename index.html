@@ -441,6 +441,27 @@ button.stats-seg:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
 .soon-list li{background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:9px 12px;margin-bottom:6px;font-size:13.5px;display:flex;gap:10px;align-items:baseline;cursor:pointer;transition:border-color .15s}
 .soon-list li:hover{border-color:var(--primary)}
 .soon-yr{font-family:var(--font-mono);font-weight:700;color:var(--st-pending);flex:0 0 auto}
+/* ---------- Return-visit blocks: Recently expired, Patent of the day, What's new ---------- */
+.went-list .soon-yr{color:var(--st-expired)}
+.home-duo{display:grid;grid-template-columns:minmax(0,1fr);gap:0 18px}
+@media(min-width:760px){.home-duo{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.potd-date{font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--ink-soft);text-transform:none;letter-spacing:0;margin-left:6px}
+.potd-card{display:flex;gap:12px;width:100%;text-align:left;background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:10px;cursor:pointer;color:inherit;font:inherit;transition:border-color .15s}
+.potd-card:hover,.potd-card:focus-visible{border-color:var(--primary);outline:none}
+.potd-img{flex:0 0 96px;height:96px;border-radius:6px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center}
+.potd-img img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.potd-body{display:flex;flex-direction:column;gap:4px;min-width:0}
+.potd-body .yr{align-self:flex-start}
+.potd-title{font-weight:700;font-size:14.5px;line-height:1.25}
+.potd-hook{font-size:13px;color:var(--ink-soft);line-height:1.4;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.wn-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--card-border)}
+.wn-list li{display:flex;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--card-border);font-size:13.5px;line-height:1.4}
+.wn-list time{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--primary);flex:0 0 52px}
+.wn-go{background:none;border:none;padding:0;margin-left:4px;font:inherit;font-weight:700;color:var(--primary);cursor:pointer;white-space:nowrap}
+.wn-go:hover,.wn-go:focus-visible{text-decoration:underline;outline:none}
+.wn-suggest{font-size:13.5px;margin:10px 0 0}
+.wn-suggest a,.card-fix a{color:var(--primary);font-weight:700}
+.card-fix{font-size:12.5px;color:var(--ink-soft);margin:8px 0 0}
 .stats-note{font-size:12px;color:var(--ink-soft);margin-top:14px}
 @media(max-width:480px){.hbar-row{grid-template-columns:110px 1fr 30px;font-size:12px}
   .stats-timeline{height:90px;gap:2px} .stats-timeline-labels{gap:2px} .stats-timeline-labels span{font-size:9px}
@@ -1245,6 +1266,7 @@ footer a{color:inherit;text-decoration:underline}
   <div class="hwrap">
     <p data-i18n-html="footerAbout"><strong>Caveat emptor:</strong> The Patent Atlas is an incomplete, ongoing project compiled from USPTO records, industry reporting, and manufacturer specs. It contains mistakes, omissions, and rough estimates. "Unverified" or "draft" entries are missing exact patent numbers—corrections are welcome. Expiration dates may be basic estimates (filing date + 20 years) and don't account for fee lapses or terminal disclaimers. Nothing here is legal advice.</p>
     <svg class="footer-squirrel" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15.236 22a3 3 0 0 0-2.2-5"/><path d="M16 20a3 3 0 0 1 3-3h1a2 2 0 0 0 2-2v-2a4 4 0 0 0-4-4V4"/><path d="M18 13h.01"/><path d="M18 6a4 4 0 0 0-4 4 7 7 0 0 0-7 7c0-5 4-5 4-10.5a4.5 4.5 0 1 0-9 0 2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10"/></svg>
+    <p style="margin-top:4px" data-i18n-html="footerSuggest">Missing a patent, or spotted a mistake? <a href="https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS/issues/new?template=suggest-patent.yml" target="_blank" rel="noopener">Suggest it on GitHub</a>. Every suggestion is checked before anything changes.</p>
     <p style="margin-top:4px" data-i18n-html="footerCredit">A RedFoxRun / PostMillennium MTB project.</p>
     <p style="margin-top:4px" data-i18n-html="footerTexture">Background pattern from <a href="https://patents.google.com/patent/USD14685S/en" target="_blank" rel="noopener">US Design Patent No. 14,685</a> (Eugene A. Crowe, 1884); the patent has long expired.</p>
   </div>
@@ -2441,6 +2463,93 @@ const NOW = new Date().getFullYear();
    Derived rather than typed so adding an older entry can't leave it stale
    (it read "1884" for a while after the 1869/1870 entries went in). */
 const FIRST_YEAR = Math.min(...D.map(d=>d.y));
+/* ======== RETURN-VISIT BLOCKS (Atlas tab) ========
+   Reasons to come back: a patent of the day, a short "What's new" list, the
+   patents whose estimated expiry fell this year or last, and links that open
+   a GitHub issue form for suggestions and corrections. Rendered in
+   renderStats(); none of it changes which theme the landing wall opens on. */
+const ATLAS_REPO_URL = "https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS";
+/* The issue forms live in .github/ISSUE_TEMPLATE/. GitHub pre-fills a form
+   field from a query parameter named after the field's `id`, which is how the
+   per-card link carries the card's ref and link. An issue is only a lead:
+   nothing reaches the atlas until Jon edits index.html. */
+function suggestPatentUrl(){ return `${ATLAS_REPO_URL}/issues/new?template=suggest-patent.yml`; }
+function correctCardUrl(d,ref){
+  const q=new URLSearchParams({template:"correct-card.yml", title:`Correction: ${txEN(d.t)}`, card:ref, card_link:`${SHARE_BASE_URL}#p=${encodeURIComponent(ref)}`});
+  return `${ATLAS_REPO_URL}/issues/new?${q.toString()}`;
+}
+/* "What's new": hand-maintained, newest first, seeded from README's "Recent
+   updates". One short line per change a reader would notice; `go` (optional)
+   is a cardRef the line links to. Dates are when the change went live. Only
+   the first WHATS_NEW_SHOWN are shown. */
+const WHATS_NEW = [
+  {date:"2026-11-11", text:{en:"Tapping a drawing on the wall now opens a list of just that theme, and search puts the best title matches first.", fr:"Toucher un dessin du mur ouvre désormais une liste limitée à ce thème, et la recherche place en tête les meilleures correspondances de titre."}},
+  {date:"2026-11-11", text:{en:"Five cards moved from active to expired after a status check, including Stan's Bead Socket.", fr:"Cinq fiches passent d'actif à expiré après une vérification du statut, dont Stan's Bead Socket."}, go:"7334846"},
+  {date:"2026-11-10", text:{en:"Thule's hitch-rack card now carries its patent, US 11,155,217, plus two Thule design patents.", fr:"La fiche du porte-vélos d'attelage Thule porte désormais son brevet, US 11,155,217, plus deux brevets de dessin Thule."}, go:"11155217"},
+  {date:"2026-11-10", text:{en:"Three wheel-truing patents added: Motobécane, Ronald Buckley and Jim Papadopoulos.", fr:"Trois brevets de dévoilage de roue ajoutés : Motobécane, Ronald Buckley et Jim Papadopoulos."}, go:"5103414"},
+  {date:"2026-11-09", text:{en:"The Trek Y-bike card gains an early hand-drawn design sketch.", fr:"La fiche du Trek Y-bike reçoit un premier croquis de conception dessiné à la main."}, go:"5685553"},
+  {date:"2026-11-03", text:{en:"New Yeti cards: the linear derailleur, the integrated motor mount and a composite cooler.", fr:"Nouvelles fiches Yeti : le dérailleur linéaire, le support moteur intégré et une glacière composite."}, go:"10011325"},
+  {date:"2026-10-31", text:{en:"Open cards get Previous and Next buttons, and the landing chips sit in Category, Era and Status rows.", fr:"Les fiches ouvertes ont des boutons Précédente et Suivante, et les puces d'accueil sont rangées en lignes Catégorie, Époque et Statut."}},
+];
+const WHATS_NEW_SHOWN = 5;
+/* "Recently expired": entries marked expired whose estimated expiry year is
+   this year or last. Wording stays factual ("expired", "estimated expiry"):
+   an estimate is not a legal opinion on whether anything may be copied. */
+const RECENTLY_EXPIRED_YEARS = 2; // this year + the one before
+function recentlyExpired(d){ return d.st==="expired" && !d.np && !!d.exp && d.exp<=NOW && d.exp>NOW-RECENTLY_EXPIRED_YEARS; }
+/* Patent of the day: everyone who opens the atlas on the same calendar date
+   gets the same card. Each eligible card gets a score from hash(date + ref)
+   and the lowest wins, so adding an entry changes the pick only on the days
+   the new entry happens to win. Eligible = has a drawing and isn't a draft
+   (falls back to any card with a drawing). The date is the reader's own
+   local date. */
+function localDateKey(dt=new Date()){ const p=n=>String(n).padStart(2,"0"); return `${dt.getFullYear()}-${p(dt.getMonth()+1)}-${p(dt.getDate())}`; }
+function dayHash(str){
+  let h=2166136261>>>0;
+  for(let i=0;i<str.length;i++){ h^=str.charCodeAt(i); h=Math.imul(h,16777619)>>>0; }
+  h^=h>>>16; h=Math.imul(h,0x85ebca6b)>>>0; h^=h>>>13; h=Math.imul(h,0xc2b2ae35)>>>0; h^=h>>>16; // spread similar dates apart
+  return h>>>0;
+}
+function patentOfTheDay(key=localDateKey()){
+  const drawn=D.filter(d=>firstImg(d));
+  const pool=drawn.filter(d=>d.conf!=="l");
+  let best=null, bestH=Infinity;
+  (pool.length?pool:drawn).forEach(d=>{ const h=dayHash(`${key}|${cardRef(d)}`); if(h<bestH){ bestH=h; best=d; } });
+  return best;
+}
+/* A one-line teaser: the entry's own `hook` when it has one, else the first
+   sentence of `w` (the same text the rabbit holes use). */
+function cardHook(d){ return d.hook ? stripCardLinks(tx(d.hook)) : autoBlurb(d); }
+function shortDate(iso){
+  const [y,m,dd]=iso.split("-").map(Number);
+  return new Date(y,m-1,dd).toLocaleDateString(state.lang==="fr"?"fr-FR":"en-US",{month:"short",day:"numeric"});
+}
+function patentOfTheDayHTML(){
+  const d=patentOfTheDay(); if(!d) return "";
+  const f=firstImg(d), ref=cardRef(d);
+  const now=new Date(), longDate=now.toLocaleDateString(state.lang==="fr"?"fr-FR":"en-US",{month:"long",day:"numeric"});
+  return `<section class="home-sec potd">
+      <h3 class="home-sec-h">${t("potdH")}<span class="potd-date">${longDate}</span></h3>
+      <button type="button" class="potd-card" data-jumpref="${ref}">
+        <span class="potd-img"><img src="${thumbSrc(f.src)}" data-full="${f.src}" onerror="thumbFallback(this)" alt="${tx(f.alt)||""}" loading="lazy" decoding="async"></span>
+        <span class="potd-body">
+          <span class="yr">${d.y}</span>
+          <span class="potd-title">${tx(d.t)}</span>
+          <span class="potd-hook">${cardHook(d)}</span>
+          <span class="rh-go">${t("potdGo")}</span>
+        </span>
+      </button>
+    </section>`;
+}
+function whatsNewHTML(){
+  const items=WHATS_NEW.slice(0,WHATS_NEW_SHOWN).map(w=>
+    `<li><time datetime="${w.date}">${shortDate(w.date)}</time><span>${tx(w.text)}${w.go?` <button type="button" class="wn-go" data-jumpref="${w.go}">${t("wnGo")}</button>`:""}</span></li>`).join("");
+  return `<section class="home-sec whatsnew">
+      <h3 class="home-sec-h">${t("wnH")}</h3>
+      <ul class="wn-list">${items}</ul>
+      <p class="wn-suggest"><a href="${suggestPatentUrl()}" target="_blank" rel="noopener">${t("suggestPatent")}</a></p>
+    </section>`;
+}
 /* Matches the @media(max-width:480px) breakpoint used throughout the
    stylesheet (mini-btn, hbar-row, bar-gap, co-panel-title, fights headers).
    Previously this was a standalone 560 found nowhere else in the file —
@@ -2692,6 +2801,14 @@ const T = {
     statusSplit:"Status split",
     goingFreeSoonH3:"Expiring soon",
     goingFreeSoonIntro:yr=>`Active patents whose estimated expiration (filing + 20 yrs) falls by ${yr}. Tap one to jump to its card.`,
+    wentFreeH3:(a,b)=>`Expired in ${a}–${b}`,
+    wentFreeIntro:(a,b)=>`Patents now marked expired whose estimated expiry fell in ${a} or ${b}. Expiry is estimated from filing and grant dates; the official record is what counts. Not legal advice. Tap one to jump to its card.`,
+    noneWentFree:"No patents in the atlas have an estimated expiry in the last two years.",
+    potdH:"Patent of the day", potdGo:"Open the card →",
+    wnH:"What’s new", wnGo:"See it →",
+    suggestPatent:"Missing a patent? Suggest one →",
+    correctCard:"Spot a mistake? Suggest a correction →",
+    footerSuggest:`Missing a patent, or spotted a mistake? <a href="https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS/issues/new?template=suggest-patent.yml" target="_blank" rel="noopener">Suggest it on GitHub</a>. Every suggestion is checked before anything changes.`,
     noneFreeSoon:"No active patents in the atlas are estimated to expire within the next two years.",
     byCategory:"Entries by category",
     catTimelineTitle:"Patents by category, over time",
@@ -2831,6 +2948,14 @@ const T = {
     statusSplit:"Répartition par statut",
     goingFreeSoonH3:"Expire bientôt",
     goingFreeSoonIntro:yr=>`Brevets actifs dont l'expiration estimée (dépôt + 20 ans) survient d'ici ${yr}. Touchez-en un pour aller à sa fiche.`,
+    wentFreeH3:(a,b)=>`Expirés en ${a}–${b}`,
+    wentFreeIntro:(a,b)=>`Brevets désormais marqués expirés dont l'expiration estimée tombait en ${a} ou ${b}. L'expiration est estimée d'après les dates de dépôt et de délivrance ; seul le registre officiel fait foi. Ceci n'est pas un avis juridique. Touchez-en un pour aller à sa fiche.`,
+    noneWentFree:"Aucun brevet de l'atlas n'a d'expiration estimée au cours des deux dernières années.",
+    potdH:"Le brevet du jour", potdGo:"Ouvrir la fiche →",
+    wnH:"Quoi de neuf", wnGo:"Voir →",
+    suggestPatent:"Un brevet manque ? Proposez-le →",
+    correctCard:"Une erreur ? Proposez une correction →",
+    footerSuggest:`Un brevet manque, ou vous avez repéré une erreur ? <a href="https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS/issues/new?template=suggest-patent.yml" target="_blank" rel="noopener">Proposez-le sur GitHub</a>. Chaque proposition est vérifiée avant toute modification.`,
     noneFreeSoon:"Aucun brevet actif de l'atlas n'est estimé expirer dans les deux prochaines années.",
     byCategory:"Entrées par catégorie",
     catTimelineTitle:"Brevets par catégorie, dans le temps",
@@ -3948,6 +4073,7 @@ function cardHTML(d,eraKey){
       </div>
       ${gp}
       ${coLink}${wgLink}
+      <p class="card-fix"><a href="${correctCardUrl(d,ref)}" target="_blank" rel="noopener">${t("correctCard")}</a></p>
       <div class="card-nav">
         <button type="button" class="cn-btn cn-prev" aria-label="${t("cardPrevAria")}">${ICON_CHEVRON_LEFT}${t("cardPrev")}</button>
         <span class="cn-pos" aria-live="polite"></span>
@@ -5014,6 +5140,7 @@ function renderStats(){
   D.forEach(d=>{ stCounts[d.st]=(stCounts[d.st]||0)+1; });
   const litigated=D.filter(d=>d.b&&d.b.includes("litigated")).length;
   const soon=D.filter(goingFreeSoon).sort((a,b)=>a.exp-b.exp);
+  const wentFree=D.filter(recentlyExpired).sort((a,b)=>b.exp-a.exp||b.y-a.y);
   // category counts
   const catCounts=Object.keys(CATS).map(k=>({label:catLabel(k),key:k,n:D.filter(d=>d.cat===k).length})).sort((a,b)=>b.n-a.n);
   // who leaderboard (brands + inventors combined, top 12)
@@ -5038,6 +5165,9 @@ function renderStats(){
   const soonList=soon.length?`<ul class="soon-list">${soon.map(d=>
       `<li data-jumpref="${cardRef(d)}"><span class="soon-yr">${d.exp}</span><span>${tx(d.t)} — ${d.a}</span></li>`).join("")}</ul>`
     :`<p class="stats-intro">${t("noneFreeSoon")}</p>`;
+  const wentList=wentFree.length?`<ul class="soon-list went-list">${wentFree.map(d=>
+      `<li data-jumpref="${cardRef(d)}"><span class="soon-yr">${d.exp}</span><span>${tx(d.t)} — ${d.a}</span></li>`).join("")}</ul>`
+    :`<p class="stats-intro">${t("noneWentFree")}</p>`;
   // Rabbit Holes prev/next arrows -- only worth showing once the pool
   // actually holds more than what's on screen at once (3, see .rh-row CSS).
   const rhPool=pickRabbitHoles();
@@ -5066,6 +5196,10 @@ function renderStats(){
       <p class="home-match" id="homeMatch" aria-live="polite"></p>
       <div class="home-chips"><span class="home-lbl">${t("homePopular")}</span>${rotChip}${suggestChips}</div>
     </section>
+    <div class="home-duo">
+      ${patentOfTheDayHTML()}
+      ${whatsNewHTML()}
+    </div>
     <div class="stats-sec">
       <div class="stats-sec-head">
         <h3>${t("catTimelineTitle")}<span class="tap-note">${t("catTapNote")}</span></h3>
@@ -5115,6 +5249,11 @@ function renderStats(){
       <button type="button" class="invite" data-go-st="expired"><span class="n">${stCounts.expired}</span><span class="q">${t("inviteExpired")}</span><span class="go">${t("inviteExpiredGo")}</span></button>
       <button type="button" class="invite lit" data-go-tab="fights"><span class="n">${litigated}</span><span class="q">${t("inviteLit")}</span><span class="go">${t("inviteLitGo")}</span></button>
       <button type="button" class="invite" data-go-st="soon"><span class="n">${soon.length}</span><span class="q">${t("inviteSoon",NOW+2)}</span><span class="go">${t("inviteSoonGo")}</span></button>
+    </div>
+    <div class="stats-sec">
+      <h3>${ICON_HOURGLASS}${t("wentFreeH3",NOW-RECENTLY_EXPIRED_YEARS+1,NOW)}</h3>
+      <p class="stats-intro">${t("wentFreeIntro",NOW-RECENTLY_EXPIRED_YEARS+1,NOW)}</p>
+      ${wentList}
     </div>
     <div class="stats-sec">
       <h3>${ICON_HOURGLASS}${t("goingFreeSoonH3")}</h3>
