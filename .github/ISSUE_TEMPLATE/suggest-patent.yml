@@ -1,0 +1,36 @@
+name: Suggest a patent
+description: Tell us about a patent, application or patent-free invention the Atlas is missing.
+title: "Suggestion: "
+labels: ["suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the lead. Every suggestion is checked against the patent record before anything is added, and nothing appears in the Atlas until the maintainer has reviewed it. This issue is public, so please don't include anything confidential.
+  - type: input
+    id: patent
+    attributes:
+      label: Patent or application number
+      description: For example US 7,717,212, EP 3150470 B1 or US 2025/0376238 A1. Leave blank if you don't know it.
+    validations:
+      required: false
+  - type: input
+    id: who
+    attributes:
+      label: Company or inventor
+    validations:
+      required: false
+  - type: textarea
+    id: what
+    attributes:
+      label: What is it, and why does it belong in the Atlas?
+      description: A sentence or two is plenty.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Links or sources
+      description: Google Patents, the maker's own page, an article or a court filing.
+    validations:
+      required: false
