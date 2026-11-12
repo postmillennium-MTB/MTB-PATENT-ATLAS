@@ -16,18 +16,18 @@ An interactive timeline of mountain bike intellectual property: 430 patents and 
 |---|---|
 | **Total entries** | 430 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 184 |
-| **Expired patents** | 169 |
-| **Pending applications** | 50 |
+| **Active patents** | 186 |
+| **Expired patents** | 168 |
+| **Pending applications** | 48 |
 | **Confirmed no patent** | 10 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 215 |
 | **Named inventors** | 78 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 346 |
+| **Verified entries** | 347 |
 | **Medium confidence** | 44 |
-| **Draft / in progress** | 40 |
+| **Draft / in progress** | 39 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -843,6 +843,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **"The clever bit" on 108 suspension and drivetrain cards (count unchanged; 430).** New optional field `clever: {en, fr}`: one sentence on how the mechanism works, shown first in the open card under the label "The clever bit:" / "L'astuce :". Every line is written only from facts already in that card's own `s`/`w`; nothing new was added, and no other field changed. Covered: 59 of 77 suspension cards and 49 of 59 drivetrain cards. Skipped on purpose: lawsuits, design patents, company-history and lineage cards, duplicate-number cards (the second CBF and WickWerks cards), and cards whose text does not describe a mechanism (Yeti Sixfinity, Yeti Rear Suspension System, Yeti Link Suspension, Orion, Maverick Monolink, Switch/Sine, Wolf Tooth, MRP Wave Ring, Fox gearbox, 1890 belt drive). `verify_data.js` checks both languages, EN ≤200 and FR ≤240 characters, and no markup.
 
 - **Standard lines by card type (count unchanged; 430).** Every card except the ten confirmed no-patent cards now ends with a short, automatic reminder of what its kind of record means, built by `stdNotesHTML()` from fields the card already has (no new data): design patents (15) "covers how a product looks, not how it works"; pending applications (48) "not a granted patent, and not a product"; expired patents "can no longer block anyone from making or using what it claims, but later patents on improvements may still be in force" (never "free to copy"); granted utility patents still in force "what a patent covers is set by its claims, not its drawings"; and any non-US filing (except EU design registrations) adds "patent rights are territorial". Strings are `std*` keys in `T.en`/`T.fr`. Cards with status `unknown` get only the territorial line, if any.
+
+- **Three cards corrected from their Google Patents records (count unchanged; 430).** *VPP US 6,206,397:* `exp` 2019 → 2015. As a continuation-in-part of the January 25, 1995 Outland application, its anticipated expiration is January 25, 2015, and the record lists it as ceased; Jamie W. Calon added as co-inventor. *Fox Fiber Core US 12,570,369:* filed October 24, 2024 (application 18/925,180), granted March 10, 2026, inventor Fraser Andrew; `y` 2026 → 2024, `exp` 2046 → 2044 (anticipated expiration October 24, 2044); GB, TW and DE counterparts filed 2025. *BMX freecoaster clutch hub:* now carries GB 2,372,545 A, "Bicycle freecoaster hub," filed February 22, 2001 by Michael John Jory (individual), published August 28, 2002, withdrawn and never granted. Its abstract describes the cone-clutch freecoaster mechanism on the card. `num` set to `GB2372545`, `j:"GB"`, `g` 2002 → null, `exp` 2021 → null, `st` expired → unknown (a withdrawn application has no term, matching the abandoned Crank Brothers application card), `conf` l → v; a `clever` line and two drawings added (Fig. 1 perspective, Fig. 2 clutch section, `pictures/GB2372545A.png` and `.1.png`). Old link `#p=bmx-freecoaster-clutch-hub` forwards via `REF_ALIASES`. README "At a glance" synced to the current data (active 186, expired 168, pending 48, verified 347, draft 39; some rows had drifted before this change).
 
 ## Recent updates (July 2026)
 
