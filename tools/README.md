@@ -41,6 +41,18 @@ have caught it as a data gap; `smoke_test.js` would have caught it as an
 actual crash. Neither existed at the time. See CLAUDE.md's incident note
 under "Verifying a change" for the full account.
 
+## `build_card_pages.js` — per-card link-preview pages
+
+Writes `p/<ref>/index.html` for every card (and every old ref in `REF_ALIASES`): a tiny page whose `og:`/`twitter:` tags carry the card's own title, description and first drawing, and which forwards a reader to `postmillenniumrenaissance.com/atlas/#p=<ref>`. The card's Share button links here, because link-preview bots ignore the `#p=` part of a URL.
+
+```bash
+node tools/build_card_pages.js           # write p/ (and remove pages for refs that no longer exist)
+node tools/build_card_pages.js --check   # exit 1 if p/ is out of date
+node tools/build_card_pages.js --refs    # print every ref (used by smoke_test.js)
+```
+
+`.github/workflows/card-pages.yml` runs it after a change to `index.html` reaches `main` and opens an "Update card link pages" pull request. Until that is merged, `404.html` sends an unknown `p/<ref>/` to the card, so links work and only the preview is generic. The description is the entry's `hook` if present, else `s` (then `w`), with card-link markup stripped, leading docket-history sentences and any research-process sentence dropped, cut to 200 characters.
+
 ## `make_thumbs.py` — card thumbnails
 
 The card views in `index.html` (grid, plate, tinted) show the first drawing of
