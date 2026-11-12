@@ -1,0 +1,107 @@
+patent: US7712593B2
+source: https://patentimages.storage.googleapis.com/e4/a9/72/6e0a8fe6bb5e8c/US7712593.pdf
+pages: 9
+per-page extracted text length: {1: 2018, 2: 96, 3: 60, 4: 56, 5: 61, 6: 7063, 7: 7299, 8: 7362, 9: 4746}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO7712593B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 7,712,593 B2
+(45) Date of Patent:
+May 11, 2010
+
+Göring
+(54)
+
+BICYCLE FREECOASTER HUB
+
+(75) Inventor: Thomas Göring, Karlsruhe (DE)
+
+FOREIGN PATENT DOCUMENTS
+GB
+
+2 372 545
+
+8, 2002
+
+OTHER PUBLICATIONS
+
+(73) Assignee: KHE Fahrradhandels GmbH,
+Karlsruhe (DE)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 536 days.
+
+U.S. Appl. No. 12/002,658, filed Dec. 18, 2007; in re: Thomas Gör
+ing, entitled Bicycle Freecoaster Hub.
+
+* cited by examiner
+Primary Examiner Rodney H Bonck
+(74) Attorney, Agent, or Firm Womble Carlyle Sandridge &
+
+(21) Appl. No.: 11/706,689
+
+Rice, PLLC
+
+(22) Filed:
+
+(57)
+
+Feb. 15, 2007
+
+(65)
+
+Prior Publication Data
+
+US 2008/O2OO290 A1
+
+(51)
+
+Aug. 21, 2008
+
+Int. C.
+
+FI6D 4/26
+
+(2006.01)
+
+(52) U.S. Cl. .................. 192/64; 192/109 R; 192/110 R
+(58) Field of Classification Search .................... 192/64
+See application file for complete search history.
+References Cited
+(56)
+U.S. PATENT DOCUMENTS
+
+5,718,315 A
+
+ABSTRACT
+
+A bicycle hub comprises an axle 5, a first part 7 being seated
+on the axle 5 and being provided with or connected to a cog 6.
+a second part 8 being movable relative to the first part 7 in
+longitudinal and rotational direction of the axle 5, the first part
+7 and the second part 8 being in contact with each other via a
+screw coupling provided by threads 7" and 8', a hub body 11
+being arranged around at least the second part 8, the second
+part 8 being provided with a first cone surface 9, the hub body
+11 having a second cone 10 surface formed thereon or con
+nected thereto, wherein the two cone surfaces 9, 10 are
+
+engageable for power transmission, and wherein an adjust
+able stopper mechanism 12 is provided, limiting a gap pro
+viding space for an axial movement of the second part 8.
+
+2, 1998 Chen ........................... 192,64
+
+2002/0179394 A1* 12/2002 Wu ............................. 192,64
+
+20 Claims, 4 Drawing Sheets
+
+1O
+
+W
+
+

@@ -1,0 +1,201 @@
+patent: US9469157B2
+source: https://patentimages.storage.googleapis.com/b4/6e/b7/a43cc69cceef2b/US9469157.pdf
+pages: 20
+per-page extracted text length: {1: 2813, 2: 65, 3: 58, 4: 70, 5: 112, 6: 65, 7: 78, 8: 87, 9: 28, 10: 69, 11: 40, 12: 94, 13: 7281, 14: 6903, 15: 7778, 16: 7701, 17: 7706, 18: 7292, 19: 7676, 20: 221}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US009469157B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 9,469,157 B2
+(45) Date of Patent:
+Oct. 18, 2016
+
+French
+(54) BICYCLE FREECOASTER HUB
+(71) Applicants: TEDDY FORMOSA CO.,LTD.,
+Taichung (TW): BEAR
+CORPORATION, Norwalk, CA (US)
+(72) Inventor: George French, S.Yorkshire (GB)
+(73) Assignees: TEDDY FORMOSA CO.,LTD.,
+Taichung (TW): BEAR
+CORPORATION, Norwalk, CA (US)
+
+(56)
+
+(*) Notice:
+
+2002/0179394 A1* 12/2002 Wu ......................... F16D 41.36
+192,64
+2003/0034220 A1
+2/2003 Chen ....................... F16D 41.36
+192,64
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+1,376,033 A * 4/1921 Page ......................... B62L 5/10
+192f12 B
+
+4,593,799 A *
+
+6/1986 Ozaki ..................... F16D 41.36
+
+5,718,315 A *
+
+2/1998 Chen ..................... B6OB 27 O23
+
+6,244405 B1*
+
+6/2001 Chen ................... B6OB 27.0005
+
+7,712,593 B2
+
+5/2010 Göring
+
+192/46
+192.45.1
+192,64
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 21 days.
+
+(21) Appl. No.: 14/729,184
+
+* cited by examiner
+
+(22) Filed:
+
+Primary Examiner — Richard Lorence
+(74) Attorney, Agent, or Firm — Browdy and Neimark,
+
+(65)
+
+Jun. 3, 2015
+
+Prior Publication Data
+US 2015/O352898 A1
+Dec. 10, 2015
+
+(30)
+
+PLLC
+
+(57)
+
+Foreign Application Priority Data
+
+Jun. 5, 2014
+Jun. 5, 2014
+Feb. 16, 2015
+
+A bicycle freecoaster hub includes a clutch to provide a
+clutching effect during riding. The clutch has a clutch
+
+(TW) ............................. 10320992OU
+(TW) ............................. 103209921 U.
+(TW) ............................. 1042O2613 U
+
+member, and first and second resistance members. The first
+resistance member is located inside the clutch member and
+
+includes a cylinder and flanges at each end. The second
+resistance member includes a ring sleeve part located inside
+the clutch member and mounted on the cylinder of the first
+resistance member and abutted against the first flange of the
+
+(51) Int. Cl.
+FI6D 4L/36
+B60B 27/04
+B60B 27/02
+
+ABSTRACT
+
+(2006.01)
+(2006.01)
+(2006.01)
+
+first resistance member. An elastic member is sleeved onto
+
+the cylinder of the first resistance member and abutted
+between the outer flange of the first resistance member and
+the second resistance member, so as to provide Sufficient
+resistance for the clutch member. The hub bearings are
+arranged in Such a way that the drive mechanism is isolated
+
+(52) U.S. Cl.
+CPC ........... B60B 27/047 (2013.01); B60B 27/023
+
+(2013.01); F 16D 4I/36 (2013.01)
+(58) Field of Classification Search
+CPC. B60B 27/023; B60B 27/047; F16D 41/24:
+F16D 41/36; F16D 13/24-13/30
+
+from axial loads.
+
+See application file for complete search history.
+
+20 Claims, 11 Drawing Sheets
+
+18
+29
+
+21
+
+37
+
+O
+
+19
+
+23 22
+
+35
+
+61. 15)
+
+36
+34
+
+39
+41
+
+31
+
+28
+
+30
+
+D.
+|
+
+13
+
+32
+
+11
+
+27
+
+62
+17
+
+16
+
+Ll
+
+47 42
+
+D1
+
+12 33
+AO
+
+A 43
+
+13
+
+
