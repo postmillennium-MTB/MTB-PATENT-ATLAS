@@ -173,6 +173,7 @@ take by default.
   who: ["Trek"],              // filter tags — every value MUST already exist in BRANDS or INVENTORS
   conf: "v",                  // v = verified | m = story confirmed, number unverified | l = draft
   hook: {en:"…", fr:"…"},     // OPTIONAL — one-line opener, EN ≤120 / FR ≤140 chars (verify_data.js hard-checks); written only from this card's own s/w, no new facts, no process narration, no investment/"moat" language. Shown on tiles, card tops, auto rabbit holes and the per-card link previews
+  clever: {en:"…", fr:"…"},   // OPTIONAL — "The clever bit": one sentence on how the mechanism works, EN ≤200 / FR ≤240 (verify_data.js hard-checks); written only from this card's own s/w/long, no new facts, no markup. Shown first in the open card. Not for lawsuits, design patents or company-history cards
   s: {en:"Factual summary...", fr:"Résumé factuel..."},   // 1–3 sentences: what the patent covers and its history
   w: {en:"Why it matters...", fr:"Pourquoi c'est important..."} // editorial payoff — what changed because of this patent
   // img: "pictures/US1234567A.png",   // OPTIONAL — only if a drawing was actually sourced and viewed — NOT translated
