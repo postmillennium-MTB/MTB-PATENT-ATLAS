@@ -1,0 +1,35 @@
+name: Correct a card
+description: Point out a wrong number, date, status, name or description on an existing Atlas card.
+title: "Correction: "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for checking. Corrections are compared against the patent record before a card changes, and nothing is published until the maintainer has reviewed it. This issue is public, so please don't include anything confidential.
+  - type: input
+    id: card
+    attributes:
+      label: Card
+      description: Filled in automatically when you use the link on a card. Otherwise, paste the card's title or patent number.
+    validations:
+      required: true
+  - type: input
+    id: card_link
+    attributes:
+      label: Link to the card
+    validations:
+      required: false
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong, and what should it say?
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: A link to the patent record, the maker's page, an article or a court filing that supports the correction.
+    validations:
+      required: false
