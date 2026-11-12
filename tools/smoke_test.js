@@ -50,14 +50,68 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
   // (see jumpToCard() in index.html), so this alone touches every entry
   // in D on a single click, making it a stronger whole-file check than
   // any individual search term below.
+  // A guided tour (.rh-tour) opens only its own stops, so the full-list
+  // check clicks the first automatic hole instead.
   errors.length = 0;
-  await page.click('.rh-card >> nth=0');
+  await page.click('.rh-card:not(.rh-tour) >> nth=0');
   await page.waitForTimeout(400);
   const rhCards = await page.locator('.card').count();
   console.log(`rabbit hole click: ${rhCards} cards rendered, errors: ${JSON.stringify(errors)}`);
-  if (errors.length || rhCards < 1) {
+  if (errors.length || rhCards < MIN_EXPECTED_CARDS) {
     failed = true;
-    console.error('::error::Rabbit Holes click crashed or rendered nothing.');
+    console.error('::error::Rabbit Holes click crashed or rendered too few cards.');
+  }
+
+  /* Guided tours: every tour opens its stops in order (count matches the
+     tour), its first card shows a "Next stop" sentence, Next steps to stop 2,
+     the URL carries #tour=, the last stop has the way back, and Back returns
+     to the rabbit-hole row. Then a #tour= link opens on its first stop. */
+  {
+    errors.length = 0;
+    const tours = await page.evaluate(() => RABBIT_HOLES.filter(h => h.tour).map(h => ({ key: h.tour, n: tourStops(h).length, first: cardRef(tourStops(h)[0].d) })));
+    const bad = [];
+    for (const tr of tours) {
+      await page.evaluate(() => { activeTab = DEFAULT_TAB; listTheme = null; renderTabs(); render(); });
+      await page.waitForTimeout(150);
+      const btn = page.locator(`.rh-card[data-tour="${tr.key}"]`);
+      if (!(await btn.count())) { bad.push(`${tr.key}: no rabbit-hole card`); continue; }
+      await btn.first().evaluate(b => b.click());
+      await page.waitForTimeout(450);
+      const r = await page.evaluate(() => {
+        const open = document.querySelector('.card.open');
+        return { cards: document.querySelectorAll('#timeline .card').length, open: open && open.id, note: !!(open && open.querySelector('.tour-note')),
+          pos: open && open.querySelector('.cn-pos') && open.querySelector('.cn-pos').textContent, hash: location.hash,
+          back: !document.getElementById('whereBack').hidden };
+      });
+      if (r.cards !== tr.n || r.open !== 'p-' + tr.first || !r.note || !/tour=/.test(r.hash) || !r.back) bad.push(`${tr.key}: ${JSON.stringify(r)}`);
+    }
+    // Walk one tour to its end and back out.
+    await page.evaluate(() => { activeTab = DEFAULT_TAB; listTheme = null; renderTabs(); render(); });
+    await page.waitForTimeout(150);
+    await page.locator('.rh-tour').first().evaluate(b => b.click());
+    await page.waitForTimeout(450);
+    let steps = 0;
+    while (steps < 15) {
+      const nx = page.locator('.card.open .cn-next');
+      if (!(await nx.count()) || await nx.isDisabled()) break;
+      await nx.click(); await page.waitForTimeout(250); steps++;
+    }
+    const endOk = await page.locator('.card.open .tour-end .tour-back').count();
+    await page.locator('.card.open .tour-back').click();
+    await page.waitForTimeout(500);
+    const home = await page.evaluate(() => ({ tab: activeTab, row: !!document.getElementById('rhRow'), theme: listTheme }));
+    await page.goto('about:blank');
+    await page.goto(filePath + '#tour=' + tours[0].key);
+    await page.waitForTimeout(1200);
+    const deep = await page.evaluate(() => ({ open: (document.querySelector('.card.open') || {}).id, cards: document.querySelectorAll('#timeline .card').length }));
+    console.log(`guided tours: ${tours.length} open their stops (${bad.length} bad), walked ${steps} steps, end note ${endOk}, back home ${JSON.stringify(home)}, #tour= link ${JSON.stringify(deep)}, errors: ${JSON.stringify(errors)}`);
+    if (bad.length || !tours.length || !endOk || home.tab !== 'stats' || !home.row || home.theme || deep.open !== 'p-' + tours[0].first || deep.cards !== tours[0].n || errors.length) {
+      failed = true;
+      console.error('::error::Guided tour check failed: ' + bad.join(' | '));
+    }
+    await page.goto('about:blank');
+    await page.goto(filePath);
+    await page.waitForTimeout(600);
   }
 
   for (const q of CATEGORY_SEARCH_TERMS) {

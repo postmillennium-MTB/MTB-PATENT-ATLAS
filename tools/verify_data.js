@@ -239,6 +239,60 @@ console.log('card cross-links:', xrefs.length, '(all targets resolve)');
   }
 }
 
+/* Card hooks (`hook`, the one-line opener on tiles, card tops and rabbit
+   holes): optional, but when present it needs both languages, EN at most
+   HOOK_MAX characters (FR gets HOOK_MAX_FR, since French runs longer), and
+   card-link markup is not allowed (it is shown as plain text). */
+{
+  const HOOK_MAX = 120, HOOK_MAX_FR = 140;
+  let n = 0;
+  D.forEach(d => {
+    if (d.hook == null) return;
+    n++;
+    const id = d.num || (typeof d.t === 'object' ? d.t.en : d.t);
+    if (typeof d.hook !== 'object' || !d.hook.en || !d.hook.fr) { hardFailures.push(`${id}: hook must be {en, fr}`); return; }
+    if (d.hook.en.length > HOOK_MAX) hardFailures.push(`${id}: hook.en is ${d.hook.en.length} chars (max ${HOOK_MAX})`);
+    if (d.hook.fr.length > HOOK_MAX_FR) hardFailures.push(`${id}: hook.fr is ${d.hook.fr.length} chars (max ${HOOK_MAX_FR})`);
+    if (/\[\[|</.test(d.hook.en + d.hook.fr)) hardFailures.push(`${id}: hook contains markup`);
+  });
+  console.log(`\ncard hooks: ${n} of ${D.length} entries`);
+}
+
+/* Guided tours (RABBIT_HOLES entries with `tour`): every stop must match
+   exactly one entry (a matcher that hits two would silently pick the first),
+   every stop but the last needs its `next` sentence in both languages, a tour
+   has 6-12 stops, and a tour key can't reuse a landing-theme key (both live in
+   the same #theme / #tour URL slot in index.html). */
+{
+  const holesSrc = html.match(/const RABBIT_HOLES = \[([\s\S]*?)\n\];/);
+  const themesSrc = html.match(/const LANDING_THEMES = \[([\s\S]*?)\n\];/);
+  if (!holesSrc) hardFailures.push('RABBIT_HOLES not found in index.html');
+  else {
+    const holes = eval('[' + holesSrc[1] + '\n]');
+    const themeKeys = new Set(themesSrc ? eval('[' + themesSrc[1] + '\n]').map(t => t.key) : []);
+    const en = f => (f && typeof f === 'object') ? f.en : f;
+    const cardMatches = c => D.filter(d => d.num === c || (d.nums || []).includes(c) || String(en(d.t)).includes(c));
+    const keys = new Set(), out = [];
+    holes.filter(h => h.tour).forEach(h => {
+      const k = h.tour;
+      if (keys.has(k)) hardFailures.push(`RABBIT_HOLES: duplicate tour key "${k}"`);
+      if (themeKeys.has(k)) hardFailures.push(`RABBIT_HOLES: tour key "${k}" is also a LANDING_THEMES key`);
+      keys.add(k);
+      if (!h.title || !h.title.en || !h.title.fr || !h.blurb || !h.blurb.en || !h.blurb.fr) hardFailures.push(`tour "${k}": title and blurb need en and fr`);
+      const stops = h.stops || [];
+      if (stops.length < 6 || stops.length > 12) hardFailures.push(`tour "${k}": ${stops.length} stops (want 6-12)`);
+      stops.forEach((s, i) => {
+        const hit = cardMatches(s.card);
+        if (hit.length !== 1) hardFailures.push(`tour "${k}" stop ${i + 1}: "${s.card}" matches ${hit.length} entries (needs exactly 1)`);
+        const last = i === stops.length - 1;
+        if (!last && !(s.next && s.next.en && s.next.fr)) hardFailures.push(`tour "${k}" stop ${i + 1}: next sentence missing (en and fr)`);
+      });
+      out.push(`${k} ${stops.length}`);
+    });
+    console.log('guided tours (stops):', out.join(', ') || 'none');
+  }
+}
+
 console.log('\nschema-integrity issues:', hardFailures.length ? hardFailures : 'none');
 
 // Bilingual completeness -- informational only, does not fail the run.
