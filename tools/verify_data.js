@@ -258,6 +258,24 @@ console.log('card cross-links:', xrefs.length, '(all targets resolve)');
   console.log(`\ncard hooks: ${n} of ${D.length} entries`);
 }
 
+/* "The clever bit" (`clever`): optional one-sentence mechanism line shown at
+   the top of an open card. Same rules as hooks, longer limits: both
+   languages, EN at most 200 characters, FR at most 240, no markup. */
+{
+  const CLEVER_MAX = 200, CLEVER_MAX_FR = 240;
+  let n = 0;
+  D.forEach(d => {
+    if (d.clever == null) return;
+    n++;
+    const id = d.num || (typeof d.t === 'object' ? d.t.en : d.t);
+    if (typeof d.clever !== 'object' || !d.clever.en || !d.clever.fr) { hardFailures.push(`${id}: clever must be {en, fr}`); return; }
+    if (d.clever.en.length > CLEVER_MAX) hardFailures.push(`${id}: clever.en is ${d.clever.en.length} chars (max ${CLEVER_MAX})`);
+    if (d.clever.fr.length > CLEVER_MAX_FR) hardFailures.push(`${id}: clever.fr is ${d.clever.fr.length} chars (max ${CLEVER_MAX_FR})`);
+    if (/\[\[|</.test(d.clever.en + d.clever.fr)) hardFailures.push(`${id}: clever contains markup`);
+  });
+  console.log(`clever bits: ${n} of ${D.length} entries`);
+}
+
 /* Guided tours (RABBIT_HOLES entries with `tour`): every stop must match
    exactly one entry (a matcher that hits two would silently pick the first),
    every stop but the last needs its `next` sentence in both languages, a tour
