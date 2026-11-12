@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 430 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 431 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,10 +14,10 @@ An interactive timeline of mountain bike intellectual property: 430 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 430 |
+| **Total entries** | 431 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 186 |
-| **Expired patents** | 168 |
+| **Expired patents** | 169 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 10 |
 | **Litigated entries** | 31 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 430 patents and 
 | **Brands** | 215 |
 | **Named inventors** | 78 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 347 |
+| **Verified entries** | 348 |
 | **Medium confidence** | 44 |
 | **Draft / in progress** | 39 |
 
@@ -845,6 +845,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Standard lines by card type (count unchanged; 430).** Every card except the ten confirmed no-patent cards now ends with a short, automatic reminder of what its kind of record means, built by `stdNotesHTML()` from fields the card already has (no new data): design patents (15) "covers how a product looks, not how it works"; pending applications (48) "not a granted patent, and not a product"; expired patents "can no longer block anyone from making or using what it claims, but later patents on improvements may still be in force" (never "free to copy"); granted utility patents still in force "what a patent covers is set by its claims, not its drawings"; and any non-US filing (except EU design registrations) adds "patent rights are territorial". Strings are `std*` keys in `T.en`/`T.fr`. Cards with status `unknown` get only the territorial line, if any.
 
 - **Three cards corrected from their Google Patents records (count unchanged; 430).** *VPP US 6,206,397:* `exp` 2019 → 2015. As a continuation-in-part of the January 25, 1995 Outland application, its anticipated expiration is January 25, 2015, and the record lists it as ceased; Jamie W. Calon added as co-inventor. *Fox Fiber Core US 12,570,369:* filed October 24, 2024 (application 18/925,180), granted March 10, 2026, inventor Fraser Andrew; `y` 2026 → 2024, `exp` 2046 → 2044 (anticipated expiration October 24, 2044); GB, TW and DE counterparts filed 2025. *BMX freecoaster clutch hub:* now carries GB 2,372,545 A, "Bicycle freecoaster hub," filed February 22, 2001 by Michael John Jory (individual), published August 28, 2002, withdrawn and never granted. Its abstract describes the cone-clutch freecoaster mechanism on the card. `num` set to `GB2372545`, `j:"GB"`, `g` 2002 → null, `exp` 2021 → null, `st` expired → unknown (a withdrawn application has no term, matching the abandoned Crank Brothers application card), `conf` l → v; a `clever` line and two drawings added (Fig. 1 perspective, Fig. 2 clutch section, `pictures/GB2372545A.png` and `.1.png`). Old link `#p=bmx-freecoaster-clutch-hub` forwards via `REF_ALIASES`. README "At a glance" synced to the current data (active 186, expired 168, pending 48, verified 347, draft 39; some rows had drifted before this change).
+- **Added the Jarvis Sofa Bicycle, US 690,733, in Frame & Standards (430 → 431).** Harold Jarvis of Buffalo, assignor of one-half to Richard H. Thompson; filed June 17, 1901, granted January 7, 1902, expired 1919 (grant + 17). Low seat with an upright backrest, crank hanger on the lower reach tube just behind the steering head, chain-belt steering and a smaller front wheel. `conf:"v"` against the patent text and its drawing sheets; the Sofa Bicycle name, the roughly 30 lb weight, the 1901 English promotion and the 1902 *The Cyclist* review come from Hadland and Lessing's recumbent history (MIT Press Reader), which names the design but gives no patent number. Two drawings (Fig. 1; Figs. 2 to 6) rotated upright, with the witness and signature text removed. It sits next to the Turner/Smith recumbent (US 4,333,664), which it links to. Counts synced: total 431, expired 169, verified 348; README table, intro and the six hardcoded `index.html` count strings updated.
 
 ## Recent updates (July 2026)
 
