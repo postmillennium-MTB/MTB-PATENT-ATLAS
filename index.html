@@ -933,6 +933,55 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 }
 @media(max-width:480px){.mg-h{font-size:25px}}
 .mg-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* Game-mode chip row (MATCH_MODES) and the three year-guessing modes:
+   Guess the decade (.mg-dq), Timeline (.mg-tl) and Daily drawing (.mg-day).
+   They reuse the Pairs tokens above (--mg-ok / --mg-bad) so every theme
+   colors them without a per-theme rule. A right or wrong answer always
+   carries a symbol and a word as well as the color. */
+.mg-modes{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px} /* wraps on phones rather than scrolling, so no game hides off-screen */
+.mg-modes .mg-chip{font-size:14px}
+.mg-pic-lg{display:block;position:relative;width:100%;aspect-ratio:4/3;background:#fff;border:1px solid var(--card-border);border-radius:var(--radius);overflow:hidden}
+.mg-pic-lg img,.mg-tl-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px;display:block}
+.mg-pic-miss{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;color:#555;padding:12px;text-align:center}
+.mg-play{max-width:560px}
+.mg-choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.mg-choice{border:2px solid var(--card-border);background:var(--surface);color:var(--ink);border-radius:var(--radius);padding:10px 12px;font:inherit;font-size:15px;font-weight:700;cursor:pointer;min-height:48px;text-align:center;line-height:1.25}
+.mg-choice:hover:not(:disabled){border-color:var(--primary)}
+.mg-choice:focus-visible,.mg-tl-tile:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.mg-choice:disabled{cursor:default}
+.mg-choice.ok{border-color:var(--mg-ok);background:var(--mg-ok-bg)}
+.mg-choice.bad{border-color:var(--mg-bad);background:var(--mg-bad-bg);text-decoration:line-through}
+.mg-choice.dim{opacity:.55}
+.mg-mark{font-weight:700;margin-right:4px}
+.mg-result{margin-top:12px;padding:12px 14px;border-radius:var(--radius);border:1px solid var(--card-border);background:var(--surface);font-size:14px;line-height:1.4}
+.mg-result.ok{border-color:var(--mg-ok);background:var(--mg-ok-bg)}
+.mg-result.bad{border-color:var(--mg-bad);background:var(--mg-bad-bg)}
+.mg-result b{font-variant-numeric:tabular-nums}
+.mg-result .mg-btn{margin-top:10px}
+.mg-tl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;counter-reset:none}
+.mg-tl-tile{position:relative;display:flex;flex-direction:column;border:2px solid var(--card-border);border-radius:var(--radius);background:var(--surface);color:inherit;font:inherit;padding:0;text-align:left;cursor:pointer;overflow:hidden;transition:border-color .15s,transform .1s}
+.mg-tl-tile:hover:not(:disabled){border-color:var(--primary)}
+.mg-tl-tile.selected{border-color:var(--primary);box-shadow:0 0 0 3px color-mix(in srgb,var(--primary) 22%,transparent);transform:translateY(-2px)}
+.mg-tl-tile.ok{border-color:var(--mg-ok);background:var(--mg-ok-bg);cursor:default}
+.mg-tl-tile.bad{border-color:var(--mg-bad);background:var(--mg-bad-bg);cursor:default}
+.mg-tl-pic{display:block;position:relative;aspect-ratio:1/1;background:#fff}
+.mg-tl-pos{position:absolute;top:6px;left:6px;z-index:2;min-width:24px;height:24px;padding:0 6px;border-radius:12px;background:#26382E;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.mg-tl-cap{font-size:11.5px;padding:6px 8px;border-top:1px solid var(--card-border);color:var(--ink-soft);line-height:1.3}
+.mg-tl-cap b{color:var(--ink);font-size:13px}
+.mg-tl-ends{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);margin:0 2px 6px}
+.mg-tl-wrap{display:block}
+.mg-clues{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.mg-clues li{font-size:14px;padding:8px 12px;border:1px dashed var(--card-border);border-radius:8px;color:var(--ink-soft)}
+.mg-clues li.on{border-style:solid;border-color:var(--primary);color:var(--ink)}
+.mg-clues li b{color:var(--ink)}
+.mg-opts{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.mg-opts .mg-choice{text-align:left;font-size:14px;font-weight:600}
+.mg-streak{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--ink-soft);margin-top:10px}
+.mg-streak b{color:var(--ink);font-variant-numeric:tabular-nums}
+@media(min-width:760px){
+  .mg-tl{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce){.mg-tl-tile{transition:none}.mg-tl-tile.selected{transform:none}}
 .jtag{font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:.08em;background:var(--ink);color:var(--surface);border-radius:4px;padding:2px 5px;flex:0 0 auto;margin-top:3px;opacity:.65;white-space:nowrap}
 .pill.design{background:transparent;color:var(--ink-soft);border:1px dashed var(--ink-soft)}
 .empty{text-align:center;color:var(--ink-soft);padding:40px 10px;font-size:14px}
@@ -2606,6 +2655,24 @@ const HOME_SEARCH_ROTATING = [
 const HOME_ROTATE_MS = 4000;
 const ROT_FADE_MS = 300; // matches .rot-inner's opacity transition
 
+/* Drawings kept OUT of the three year-guessing games on the Match tab (Guess
+   the decade, Timeline, Daily drawing), by file name without extension. Each
+   of these thumbnails still shows printed text that gives the answer away: a
+   "U.S. Patent <date>" or "Patented <date>" header the thumbnail maker did
+   not strip, a patent number printed sideways in the margin, a design
+   patent's front page, or a publication number that contains its year
+   (WO 2007/...). Checked by eye against every file in pictures/thumbs/ on
+   2026-11-13. They still appear everywhere else, including the original
+   Pairs game, where the year is not the question. If a thumbnail is
+   regenerated with its header cropped, take its name off this list. */
+const GAME_HIDDEN_DRAWINGS = [
+  "9102378", "D1140680", "DE202017003717U1", "EP2242939B1", "WO2007117884A2",
+  "US1129585A", "US2151533A", "US2160034A", "US2578886A", "US321932A",
+  "US323289A", "US3514091A", "US4271996A", "US439095-becker-page-1",
+  "US4513985A", "US4733881A", "US4939950A", "US547886A", "US5586652A",
+  "US5632362A", "US566201A", "USD204121S1", "USD236609",
+];
+
 /* ======== STATE ======== */
 const state = { cat:new Set(), st:new Set(), badge:new Set(), inv:new Set(), brand:new Set(), lang:"en" };
 /* The five Set-valued filter keys on state, as opposed to state.lang (a
@@ -2701,6 +2768,7 @@ function correctCardUrl(d,ref){
    is a cardRef the line links to. Dates are when the change went live. Only
    the first WHATS_NEW_SHOWN are shown. */
 const WHATS_NEW = [
+  {date:"2026-11-13", text:{en:"Three new games on the Match tab: Guess the decade, Timeline, and a Daily drawing with a streak.", fr:"Trois nouveaux jeux dans l'onglet Match : Devinez la décennie, Chronologie, et un Dessin du jour avec une série."}},
   {date:"2026-11-12", text:{en:"Every patent card now ends with a one-line reminder of what that kind of record means: pending, design, expired, granted or foreign.", fr:"Chaque fiche de brevet se termine désormais par un rappel d'une ligne sur ce que signifie ce type de document : demande en attente, dessin ou modèle, brevet expiré, délivré ou étranger."}},
   {date:"2026-11-12", text:{en:"108 suspension and drivetrain cards now open with \"The clever bit\": one sentence on how the mechanism works.", fr:"108 fiches de suspension et de transmission s'ouvrent désormais sur « L'astuce » : une phrase sur le fonctionnement du mécanisme."}, go:"5509679"},
   {date:"2026-11-12", text:{en:"Confidence labels on cards now say plainly whether a card has been checked against the patent record.", fr:"Les mentions de confiance des fiches indiquent désormais clairement si la fiche a été vérifiée sur le registre des brevets."}},
@@ -2999,6 +3067,33 @@ const T = {
     matchAnnounceOk:title=>`Matched: ${title}`, matchAnnounceBad:"Not a match, try again.",
     matchNote:"Every drawing, title and description comes straight from the atlas's own entries, so new entries join the game as soon as they are added.",
     matchCount:n=>`${n} drawings in the pool`,
+    mgModesAria:"Game", mgModePairs:"Pairs", mgModeDecade:"Guess the decade",
+    gamePoolNote:n=>`Drawn from ${n} drawings whose filing year is on record. Draft cards, products with no patent, and drawings that print their own date are left out.`,
+    mgPicAlt:"Patent drawing (title hidden until you answer)", mgPicMissing:"Drawing not available",
+    mgFiled:y=>`Filed ${y}`, mgRight:"✓ Right.", mgNext:"Next drawing", mgScore:s=>`Score ${s}`,
+    mgEmpty:"No drawings match these categories. Turn another category on.",
+    decIntro:"When was this filed? Look at the drawing and pick its decade.",
+    decadeLabel:dec=>`${dec}s`, decChoicesAria:"Pick a decade",
+    decWrong:dec=>`✗ Not quite: it's from the ${dec}.`, decProgress:(i,n)=>`Drawing ${i} of ${n}`, decSeeScore:"See your score",
+    decDoneH:(s,n)=>`You dated ${s} of ${n} drawings to the right decade`,
+    mgModeTimeline:"Timeline", tlIntro:"Put these drawings in the order they were filed, oldest first. Tap a drawing, then the one to swap it with.",
+    tlGapNote:g=>`Any two drawings in a set were filed at least ${g} years apart.`,
+    tlEnds:n=>`1 = oldest · ${n} = newest`, tlAria:"Drawings in your order, oldest first",
+    tlTileAria:(i,n)=>`Position ${i} of ${n}`, tlPicked:i=>`Drawing ${i} picked. Tap another to swap.`, tlSwapped:(a,b)=>`Swapped ${a} and ${b}.`,
+    tlCheck:"Check my order", tlNewSet:"New set", tlWrongSr:"Wrong place.",
+    tlScore:(s,n)=>s===n?`Perfect: all ${n} in the right place.`:`${s} of ${n} in the right place. The years are under each drawing.`,
+    mgModeDaily:"Daily drawing", dayIntro:"One drawing a day, the same for everyone. Which patent is it? Each wrong guess reveals a clue.",
+    dayNote:"A new drawing every day at midnight, your time. Your streak is kept on this device only.",
+    dayNumber:n=>`Daily drawing #${n}`, dayGuessesLeft:n=>`Guesses left ${n}`,
+    dayClueCat:"Category", dayClueDec:"Filed in", dayClueWho:"Inventor / assignee",
+    dayClueShown:(label,val)=>`${label}: ${val}`,
+    dayClueLocked:(i,label)=>`Clue ${i}: ${label.toLowerCase()} (after a wrong guess)`,
+    dayOptsAria:"Which patent is this?", dayWrongClue:"Not this one. A new clue is showing.",
+    dayWon:(g,max)=>`✓ Solved in ${g} of ${max} guesses.`, dayLost:"✗ Out of guesses. The answer:",
+    dayShare:"Copy my result", dayCopied:"Copied", dayTomorrow:"A new drawing tomorrow.",
+    dayShareText:(n,score)=>`Patent Atlas daily drawing #${n}: ${score}`,
+    dayStreak:n=>`Streak ${n}`, dayBest:n=>`Best ${n}`, dayPlayed:(p,w)=>`Played ${p} · Solved ${w}`,
+    decDoneNear:n=>n?`${n} more ${n===1?"was":"were"} only one decade off.`:"",
     whatItsAbout:"What it's about — ", howItEnded:"How it ended — ", patentsInFight:"Patents in this fight",
     vsWord:"v.",
     statsTitle:"Atlas by the numbers",
@@ -3153,6 +3248,33 @@ const T = {
     matchAnnounceOk:title=>`Association trouvée : ${title}`, matchAnnounceBad:"Ce n'est pas la bonne association, réessayez.",
     matchNote:"Chaque dessin, titre et description provient directement des entrées de l'atlas : les nouvelles entrées rejoignent le jeu dès leur ajout.",
     matchCount:n=>`${n} dessins dans la réserve`,
+    mgModesAria:"Jeu", mgModePairs:"Paires", mgModeDecade:"Devinez la décennie",
+    gamePoolNote:n=>`Tiré de ${n} dessins dont l'année de dépôt est connue. Les fiches en brouillon, les produits sans brevet et les dessins qui impriment leur propre date sont exclus.`,
+    mgPicAlt:"Dessin de brevet (titre masqué jusqu'à votre réponse)", mgPicMissing:"Dessin indisponible",
+    mgFiled:y=>`Déposé en ${y}`, mgRight:"✓ Exact.", mgNext:"Dessin suivant", mgScore:s=>`Score ${s}`,
+    mgEmpty:"Aucun dessin ne correspond à ces catégories. Activez-en une autre.",
+    decIntro:"Quand a-t-il été déposé ? Regardez le dessin et choisissez sa décennie.",
+    decadeLabel:dec=>`années ${dec}`, decChoicesAria:"Choisissez une décennie",
+    decWrong:dec=>`✗ Presque : il date des ${dec}.`, decProgress:(i,n)=>`Dessin ${i} sur ${n}`, decSeeScore:"Voir votre score",
+    decDoneH:(s,n)=>`Vous avez daté ${s} dessin${s>1?"s":""} sur ${n} à la bonne décennie`,
+    mgModeTimeline:"Chronologie", tlIntro:"Rangez ces dessins dans l'ordre de leur dépôt, du plus ancien au plus récent. Touchez un dessin, puis celui avec lequel l'échanger.",
+    tlGapNote:g=>`Deux dessins d'une même série ont été déposés à au moins ${g} ans d'écart.`,
+    tlEnds:n=>`1 = le plus ancien · ${n} = le plus récent`, tlAria:"Dessins dans votre ordre, du plus ancien au plus récent",
+    tlTileAria:(i,n)=>`Position ${i} sur ${n}`, tlPicked:i=>`Dessin ${i} choisi. Touchez-en un autre pour les échanger.`, tlSwapped:(a,b)=>`${a} et ${b} échangés.`,
+    tlCheck:"Vérifier mon ordre", tlNewSet:"Nouvelle série", tlWrongSr:"Mauvaise place.",
+    tlScore:(s,n)=>s===n?`Parfait : les ${n} sont à la bonne place.`:`${s} sur ${n} à la bonne place. L'année figure sous chaque dessin.`,
+    mgModeDaily:"Dessin du jour", dayIntro:"Un dessin par jour, le même pour tout le monde. De quel brevet s'agit-il ? Chaque mauvaise réponse révèle un indice.",
+    dayNote:"Un nouveau dessin chaque jour à minuit, heure locale. Votre série n'est conservée que sur cet appareil.",
+    dayNumber:n=>`Dessin du jour n° ${n}`, dayGuessesLeft:n=>`Essais restants ${n}`,
+    dayClueCat:"Catégorie", dayClueDec:"Décennie de dépôt", dayClueWho:"Inventeur / titulaire",
+    dayClueShown:(label,val)=>`${label} : ${val}`,
+    dayClueLocked:(i,label)=>`Indice ${i} : ${label.toLowerCase()} (après une mauvaise réponse)`,
+    dayOptsAria:"De quel brevet s'agit-il ?", dayWrongClue:"Ce n'est pas celui-ci. Un nouvel indice s'affiche.",
+    dayWon:(g,max)=>`✓ Trouvé en ${g} essai${g>1?"s":""} sur ${max}.`, dayLost:"✗ Plus d'essais. La réponse :",
+    dayShare:"Copier mon résultat", dayCopied:"Copié", dayTomorrow:"Un nouveau dessin demain.",
+    dayShareText:(n,score)=>`Patent Atlas, dessin du jour n° ${n} : ${score}`,
+    dayStreak:n=>`Série ${n}`, dayBest:n=>`Record ${n}`, dayPlayed:(p,w)=>`Joués ${p} · Trouvés ${w}`,
+    decDoneNear:n=>n?`${n} autre${n>1?"s":""} réponse${n>1?"s":""} ${n>1?"n'étaient":"n'était"} qu'à une décennie près.`:"",
     whatItsAbout:"De quoi il s'agit — ", howItEnded:"Comment ça s'est terminé — ", patentsInFight:"Brevets concernés",
     vsWord:"c.",
     statsTitle:"L'atlas en chiffres",
@@ -4779,7 +4901,11 @@ const MG = {
   selImg: null, selDesc: null,
   matched: new Set(), mistakes: 0,
   startedAt: null, timerOn: true, timerHandle: null,
-  clamped: false, ctrlOpen: null, busy: false
+  clamped: false, ctrlOpen: null, busy: false,
+  mode: "pairs",   // the MATCH_MODES key on screen
+  dec: null,       // Guess the decade round: {round:[{d, choices, pick}], i, over}
+  tl: null,        // Timeline set: {order:[entries as shown], sel, checked}
+  daily: null      // today's Daily drawing: {key, d, opts, rec} (rec = the saved record, see dailyRecord)
 };
 /* Entry text goes into HTML attributes and text here, so escape it (the alt
    text and titles carry quotes and ampersands). */
@@ -4800,10 +4926,9 @@ function startMatchRound(){
   const pool=matchPool().filter(d=>MG.cats.has(d.cat));
   const n=Math.min(MG.pairs,pool.length);
   MG.clamped=n<MG.pairs;
-  const shuffle=a=>{ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
-  MG.round=shuffle(pool).slice(0,n);
-  MG.imgOrder=shuffle(MG.round.map((_,i)=>i));
-  MG.descOrder=shuffle(MG.round.map((_,i)=>i));
+  MG.round=mgShuffle(pool).slice(0,n);
+  MG.imgOrder=mgShuffle(MG.round.map((_,i)=>i));
+  MG.descOrder=mgShuffle(MG.round.map((_,i)=>i));
   MG.selImg=null; MG.selDesc=null;
   MG.matched=new Set(); MG.mistakes=0;
   MG.startedAt=null; MG.doneAt=null; // the clock starts on the first tile tap, not on deal
@@ -4824,21 +4949,401 @@ function ensureMatchTimer(){
     el.textContent=matchElapsed();
   },1000);
 }
+/* ===== Match game modes =====
+   MATCH_MODES is the chip row at the top of the Match tab, in display order.
+   One entry per mode:
+     key     its #mode= value in a shared link (so renaming one breaks links)
+     tkey    its chip label in T;  lede: its one-line intro in T
+     render  draws the mode into #timeline (the whole <section>)
+     restart deals a fresh round; the category chips call it after a change
+   Adding a mode = one entry here, its render/restart functions, and its T
+   strings in both languages. "pairs" (the original Patent Match) stays first
+   and is the default, so plain #tab=match links and tools/smoke_test.js land
+   on it unchanged. The three year-based modes draw from gamePool(), not
+   matchPool(): see the comment on gamePool() for what it leaves out. */
+const MATCH_MODES = [
+  {key:"pairs",    tkey:"mgModePairs",    lede:"matchIntro",  render:renderPairsMode,    restart:startMatchRound},
+  {key:"decade",   tkey:"mgModeDecade",   lede:"decIntro",    render:renderDecadeMode,   restart:startDecadeRound},
+  {key:"timeline", tkey:"mgModeTimeline", lede:"tlIntro",     render:renderTimelineMode, restart:startTimelineRound},
+  {key:"daily",    tkey:"mgModeDaily",    lede:"dayIntro",    render:renderDailyMode,    restart:()=>{}}, // same drawing for everyone: no filters, no reshuffle
+];
+function matchMode(){ return MATCH_MODES.find(m=>m.key===MG.mode)||MATCH_MODES[0]; }
+/* Fisher-Yates; returns a shuffled copy and leaves the input alone. */
+function mgShuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function decadeOf(y){ return Math.floor(y/10)*10; }
+/* Title, mode chips and the current mode's intro: the top of every mode. */
+function matchHeadHTML(){
+  return `<h2 class="mg-h" id="mgH">${t("matchTitle")}</h2>
+    <div class="mg-modes" role="group" aria-label="${mgEsc(t("mgModesAria"))}">${MATCH_MODES.map(m=>`<button type="button" class="mg-chip" data-mg-mode="${m.key}" aria-pressed="${m.key===matchMode().key}">${t(m.tkey)}</button>`).join("")}</div>
+    <p class="mg-lede">${t(matchMode().lede)}</p>`;
+}
+/* The Category chip row, offering only categories that have something in
+   `pool`. Shared by Pairs (matchPool) and Decade/Timeline (gamePool). */
+function matchCatRowHTML(pool){
+  const cats=Object.keys(CATS).filter(k=>pool.some(d=>d.cat===k));
+  return `<div class="mg-row"><span class="mg-label" id="mgCatsL">${t("tabCategory")}</span>
+        <div class="mg-chips" role="group" aria-labelledby="mgCatsL">${cats.map(k=>`<button type="button" class="mg-chip" data-mg-cat="${k}" aria-pressed="${MG.cats.has(k)}">${mgEsc(catLabel(k))}</button>`).join("")}</div></div>`;
+}
+/* A Filters panel holding just the Category row and a New-round button,
+   for the modes that have no other options. */
+function matchCatPanelHTML(pool,newKey){
+  return `<details class="mg-controls" id="mgControls"${MG.ctrlOpen?" open":""}>
+      <summary>${t("matchOptions")}</summary>
+      ${matchCatRowHTML(pool)}
+      <div class="mg-row"><button type="button" class="mg-btn" id="mgNew">${t(newKey)}</button></div>
+    </details>`;
+}
+/* The Match tab: draw the current mode, then wire what every mode shares
+   (mode chips, category chips, the Filters panel, New round, "Open the card"
+   links) and the results-row chrome. */
 function renderMatch(){
-  if(!MG.round.length) startMatchRound();
   if(MG.ctrlOpen==null) MG.ctrlOpen=window.matchMedia("(min-width: 760px)").matches;
+  const mode=matchMode();
+  if(mode.key!=="pairs") stopMatchTimer();
+  mode.render();
   const tl=$("#timeline");
-  const cats=Object.keys(CATS).filter(k=>matchPool().some(d=>d.cat===k));
+  tl.querySelectorAll("[data-mg-mode]").forEach(b=>b.onclick=()=>{
+    if(b.dataset.mgMode===MG.mode) return;
+    MG.mode=b.dataset.mgMode; render(); // render() also writes #mode= into the URL
+    document.getElementById("mgH")?.scrollIntoView({block:"nearest"});
+  });
+  tl.querySelectorAll("[data-mg-cat]").forEach(b=>b.onclick=()=>{
+    const k=b.dataset.mgCat;
+    if(MG.cats.has(k) && MG.cats.size>1) MG.cats.delete(k); else MG.cats.add(k);
+    matchMode().restart(); renderMatch();
+  });
+  const ctrl=$("#mgControls"); if(ctrl) ctrl.addEventListener("toggle",e=>{ MG.ctrlOpen=e.target.open; });
+  const nw=$("#mgNew"); if(nw) nw.onclick=()=>{ matchMode().restart(); renderMatch(); };
+  tl.querySelectorAll(".mg-open").forEach(b=>b.onclick=e=>{ e.stopPropagation(); stopMatchTimer(); jumpToCard(b.dataset.ref); });
+  const pool=mode.key==="pairs"?matchPool():gamePool();
+  $("#resultCount").textContent=t("matchCount",pool.length);
+  $("#clearAll").hidden=true;
+  updateTabDots();
+  renderBars(pool);
+}
+/* Screen-reader announcement for the current mode (the #mgLive region). */
+function mgAnnounce(msg){ const live=$("#mgLive"); if(live) live.textContent=msg; }
+
+/* ===== Year-based modes: shared pool and pieces =====
+   gamePool() is every entry the year games may ask about: it has a drawing
+   and a filing year; it is not a draft (conf "l", whose dates are the least
+   settled); it is not a no-patent card (np: its year is a product launch,
+   not a filing); and its first drawing is not in GAME_HIDDEN_DRAWINGS (a
+   sheet that prints its own date or number). Only one entry per drawing, so
+   two cards that share a sheet can never land in the same timeline. D does
+   not change while the page is open, so the result is worked out once. */
+let _gamePool=null;
+function drawingStem(src){ return decodeURIComponent(src).split("/").pop().replace(/\.[^.]+$/,""); }
+function gamePool(){
+  if(_gamePool) return _gamePool;
+  const hidden=new Set(GAME_HIDDEN_DRAWINGS), seen=new Set();
+  _gamePool=D.filter(d=>{
+    const src=firstDrawing(d);
+    if(!src || d.conf==="l" || d.np || !Number.isFinite(d.y)) return false;
+    const k=drawingStem(src);
+    if(hidden.has(k) || seen.has(k)) return false;
+    seen.add(k); return true;
+  });
+  return _gamePool;
+}
+function gamePoolInCats(){ return gamePool().filter(d=>MG.cats.has(d.cat)); }
+/* A game drawing. Unlike the card views, a missing thumbnail must NOT fall
+   back to the full sheet (thumbFallback): the full sheet prints the date,
+   which is the answer. It shows a short note instead. */
+function gamePicHTML(d){
+  return `<img src="${thumbSrc(firstDrawing(d))}" onerror="gamePicMissing(this)" alt="${mgEsc(t("mgPicAlt"))}" loading="lazy" decoding="async">`;
+}
+function gamePicMissing(img){ img.onerror=null; const s=document.createElement("span"); s.className="mg-pic-miss"; s.textContent=t("mgPicMissing"); img.replaceWith(s); }
+/* "Filed 1994 · Title" plus the Open-the-card link: shown once a drawing's
+   year is no longer a secret. */
+function gameRevealHTML(d){
+  return `${t("mgFiled",`<b>${d.y}</b>`)} · ${mgEsc(tx(d.t))}<br><button type="button" class="mg-open" data-ref="${mgEsc(cardRef(d))}">${t("matchOpenCard")}</button>`;
+}
+
+/* ===== Guess the decade =====
+   One drawing at a time; the player picks its filing decade from
+   DECADE_CHOICES neighbouring decades. A round is DECADE_ROUND_LEN drawings.
+   The atlas is heavy in the 1990s-2010s (about two thirds of the pool), so
+   drawings are not picked uniformly: each pick first chooses a decade with a
+   weight of count^DECADE_WEIGHT_POW, then a drawing from it. At 1 the 2010s
+   would come up about a third of the time and "2010s" would be a good blind
+   guess; at 0 an 1880s drawing would be as common as a 2010s one and the
+   few old sheets would repeat every round. 0.5 sits between. */
+const DECADE_ROUND_LEN = 10;      // drawings per round
+const DECADE_CHOICES = 4;         // answer buttons per drawing (consecutive decades)
+const DECADE_WEIGHT_POW = 0.5;    // see above
+function startDecadeRound(){
+  const byDec=new Map();
+  gamePoolInCats().forEach(d=>{ const k=decadeOf(d.y); if(!byDec.has(k)) byDec.set(k,[]); byDec.get(k).push(d); });
+  const all=gamePool().map(d=>decadeOf(d.y)), lo=Math.min(...all), hi=Math.max(...all);
+  const round=[];
+  while(round.length<DECADE_ROUND_LEN && byDec.size){
+    const decs=[...byDec.keys()], w=decs.map(k=>Math.pow(byDec.get(k).length,DECADE_WEIGHT_POW));
+    let r=Math.random()*w.reduce((a,b)=>a+b,0), i=0;
+    while(r>w[i] && i<w.length-1){ r-=w[i]; i++; }
+    const list=byDec.get(decs[i]), d=list.splice(Math.floor(Math.random()*list.length),1)[0];
+    if(!list.length) byDec.delete(decs[i]);
+    /* The choices are DECADE_CHOICES consecutive decades that include the
+       answer at a random position, kept inside the atlas's own span (all
+       categories), so the answer is not always the second button. */
+    const ans=decadeOf(d.y), span=(DECADE_CHOICES-1)*10;
+    let start=ans-10*Math.floor(Math.random()*DECADE_CHOICES);
+    start=Math.max(lo,Math.min(start,hi-span));
+    round.push({d, choices:Array.from({length:DECADE_CHOICES},(_,k)=>start+10*k), pick:null});
+  }
+  MG.dec={round, i:0, over:false};
+}
+function renderDecadeMode(){
+  if(!MG.dec) startDecadeRound();
+  const R=MG.dec.round, q=R[MG.dec.i], score=R.filter(x=>x.pick===decadeOf(x.d.y)).length;
+  const done=!!MG.dec.over;
+  let body;
+  if(!R.length) body=`<p class="mg-clamp">${t("mgEmpty")}</p>`;
+  else if(done){
+    const near=R.filter(x=>Math.abs(x.pick-decadeOf(x.d.y))===10).length;
+    body=`<div class="mg-done" role="status"><h3>${t("decDoneH",score,R.length)}</h3><p>${t("decDoneNear",near)}</p><button type="button" class="mg-btn" id="mgAgain">${t("matchPlayAgain")}</button></div>`;
+  } else {
+    const ans=decadeOf(q.d.y), answered=q.pick!=null, right=q.pick===ans;
+    const btn=dec=>{
+      let cls="", mark="";
+      if(answered){ if(dec===ans){ cls=" ok"; mark=`<span class="mg-mark" aria-hidden="true">✓</span>`; } else if(dec===q.pick){ cls=" bad"; mark=`<span class="mg-mark" aria-hidden="true">✗</span>`; } else cls=" dim"; }
+      return `<button type="button" class="mg-choice${cls}" data-mg-dec="${dec}"${answered?" disabled":""}>${mark}${t("decadeLabel",dec)}</button>`;
+    };
+    body=`<div class="mg-play">
+      <span class="mg-pic-lg">${gamePicHTML(q.d)}</span>
+      <div class="mg-choices" role="group" aria-label="${mgEsc(t("decChoicesAria"))}">${q.choices.map(btn).join("")}</div>
+      ${answered?`<div class="mg-result ${right?"ok":"bad"}" role="status"><b>${right?t("mgRight"):t("decWrong",t("decadeLabel",ans))}</b> ${gameRevealHTML(q.d)}<br><button type="button" class="mg-btn" id="mgNext">${MG.dec.i<R.length-1?t("mgNext"):t("decSeeScore")}</button></div>`:""}
+    </div>`;
+  }
+  $("#timeline").innerHTML=`<section class="mg" aria-labelledby="mgH">
+    ${matchHeadHTML()}
+    <p class="mg-lede small">${t("gamePoolNote",gamePool().length)}</p>
+    ${matchCatPanelHTML(gamePool(),"matchNewRound")}
+    ${R.length&&!done?`<div class="mg-status"><span>${t("decProgress",`<b>${MG.dec.i+1}</b>`,`<b>${R.length}</b>`)}</span><span>${t("mgScore",`<b>${score}</b>`)}</span></div>`:""}
+    ${body}
+    <div class="mg-sr" aria-live="polite" id="mgLive"></div>
+  </section>`;
+  const tl=$("#timeline");
+  tl.querySelectorAll("[data-mg-dec]").forEach(b=>b.onclick=()=>{
+    if(q.pick!=null) return;
+    q.pick=Number(b.dataset.mgDec);
+    renderMatch();
+    mgAnnounce(q.pick===decadeOf(q.d.y)?t("mgRight"):t("decWrong",t("decadeLabel",decadeOf(q.d.y))));
+    $("#mgNext")?.focus({preventScroll:true});
+  });
+  const next=$("#mgNext"); if(next) next.onclick=()=>{
+    if(MG.dec.i<R.length-1) MG.dec.i++; else MG.dec.over=true; // the last Next opens the score
+    renderMatch(); (tl.querySelector(".mg-choice")||$("#mgAgain"))?.focus({preventScroll:true});
+  };
+  const again=$("#mgAgain"); if(again) again.onclick=()=>{ startDecadeRound(); renderMatch(); };
+}
+
+/* ===== Timeline =====
+   TIMELINE_SIZE drawings, shuffled; the player puts them in filing order,
+   oldest first, by tapping one drawing and then the drawing to swap it with
+   (works the same with a mouse, a finger or the keyboard, and needs no drag
+   library). Check scores how many sit in the right slot. Any two drawings in
+   a set were filed at least TIMELINE_MIN_GAP_YR years apart: two sheets from
+   the same year would be a coin toss, and neighbouring years nearly so. */
+const TIMELINE_SIZE = 6;          // drawings per set
+const TIMELINE_MIN_SIZE = 3;      // fewer than this (very narrow category pick) shows the "turn on another category" note
+const TIMELINE_MIN_GAP_YR = 3;    // minimum filing-year gap between any two drawings in a set
+function startTimelineRound(){
+  const set=[];
+  for(const d of mgShuffle(gamePoolInCats())){
+    if(set.every(x=>Math.abs(x.y-d.y)>=TIMELINE_MIN_GAP_YR)) set.push(d);
+    if(set.length===TIMELINE_SIZE) break;
+  }
+  let order=mgShuffle(set);
+  /* Never deal a set that is already in order (with 6 cards, 1 in 720). */
+  for(let k=0;k<5 && order.length>1 && order.every((d,i)=>i===0||order[i-1].y<d.y);k++) order=mgShuffle(set);
+  MG.tl={order, sel:null, checked:false};
+}
+function timelineScore(){
+  const sorted=MG.tl.order.slice().sort((a,b)=>a.y-b.y);
+  return MG.tl.order.filter((d,i)=>d===sorted[i]).length;
+}
+function renderTimelineMode(){
+  if(!MG.tl) startTimelineRound();
+  const {order, sel, checked}=MG.tl, n=order.length;
+  const sorted=order.slice().sort((a,b)=>a.y-b.y);
+  const tile=(d,i)=>{
+    const ok=checked && d===sorted[i];
+    const cls=checked?(ok?" ok":" bad"):(sel===i?" selected":"");
+    const cap=checked?`<span class="mg-tl-cap"><span class="mg-mark" aria-hidden="true">${ok?"✓":"✗"}</span>${ok?"":`<span class="mg-sr">${t("tlWrongSr")} </span>`}${gameRevealHTML(d)}</span>`:"";
+    const inner=`<span class="mg-tl-pic"><span class="mg-tl-pos">${i+1}</span>${gamePicHTML(d)}</span>${cap}`;
+    /* After Check a tile holds its own "Open the card" button, so it is a
+       <div>, not a <button> (no button inside a button, as in Pairs). */
+    return checked ? `<div class="mg-tl-tile${cls}">${inner}</div>`
+      : `<button type="button" class="mg-tl-tile${cls}" data-mg-tl="${i}" aria-pressed="${sel===i}" aria-label="${mgEsc(t("tlTileAria",i+1,n))}">${inner}</button>`;
+  };
+  const score=checked?timelineScore():0;
+  $("#timeline").innerHTML=`<section class="mg" aria-labelledby="mgH">
+    ${matchHeadHTML()}
+    <p class="mg-lede small">${t("gamePoolNote",gamePool().length)} ${t("tlGapNote",TIMELINE_MIN_GAP_YR)}</p>
+    ${matchCatPanelHTML(gamePool(),"tlNewSet")}
+    ${n<TIMELINE_MIN_SIZE?`<p class="mg-clamp">${t("mgEmpty")}</p>`:`
+    <div class="mg-tl-wrap">
+      <div class="mg-tl-ends">${t("tlEnds",n)}</div>
+      <div class="mg-tl" role="group" aria-label="${mgEsc(t("tlAria"))}">${order.map(tile).join("")}</div>
+    </div>
+    ${checked
+      ?`<div class="mg-result ${score===n?"ok":""}" role="status"><b>${t("tlScore",score,n)}</b><br><button type="button" class="mg-btn" id="mgTlAgain">${t("tlNewSet")}</button></div>`
+      :`<div class="mg-row"><button type="button" class="mg-btn" id="mgTlCheck">${t("tlCheck")}</button></div>`}`}
+    <div class="mg-sr" aria-live="polite" id="mgLive"></div>
+  </section>`;
+  const tl=$("#timeline");
+  tl.querySelectorAll("[data-mg-tl]").forEach(b=>b.onclick=()=>{
+    const i=Number(b.dataset.mgTl), set=MG.tl;
+    if(set.sel==null){ set.sel=i; renderMatch(); mgAnnounce(t("tlPicked",i+1)); }
+    else if(set.sel===i){ set.sel=null; renderMatch(); }
+    else { const a=set.sel; [set.order[a],set.order[i]]=[set.order[i],set.order[a]]; set.sel=null; renderMatch(); mgAnnounce(t("tlSwapped",a+1,i+1)); }
+    tl.querySelector(`[data-mg-tl="${i}"]`)?.focus({preventScroll:true});
+  });
+  const chk=$("#mgTlCheck"); if(chk) chk.onclick=()=>{ MG.tl.checked=true; MG.tl.sel=null; renderMatch(); mgAnnounce(t("tlScore",timelineScore(),n)); $("#mgTlAgain")?.focus({preventScroll:true}); };
+  const again=$("#mgTlAgain"); if(again) again.onclick=()=>{ startTimelineRound(); renderMatch(); };
+}
+
+/* ===== Daily drawing =====
+   One drawing per calendar day, the same for every reader, with no server:
+   like Patent of the day, each eligible entry gets a score from
+   dayHash(date + ref) and the lowest wins, so adding an entry changes the
+   pick only on the days the new entry happens to win. The date is the
+   reader's local date (it flips at their midnight, as Patent of the day
+   does). The day's Patent of the day is never the daily drawing, since the
+   Atlas tab shows that card with its title.
+   The player picks the patent from DAILY_OPTIONS titles (patent numbers
+   trimmed off, since a number dates a patent). Every wrong guess rules that
+   title out and reveals the next clue: category, then decade, then the
+   inventor/assignee line (the entry's own `a`, so a card shared by two
+   brands names both). DAILY_MAX_GUESSES wrong guesses end the day.
+   Progress and the streak are kept in localStorage under DAILY_STORAGE_KEY.
+   That is a convenience, not something the game needs: with storage blocked
+   (private window, locked-down iframe) the game plays the same, it just
+   forgets today's guesses on reload and shows no streak. */
+const DAILY_OPTIONS = 6;               // titles to choose from (the answer + decoys)
+const DAILY_SAME_CAT_DECOYS = 2;       // decoys from the answer's own category, so the category clue narrows but does not give it away
+const DAILY_MAX_GUESSES = 4;           // one guess with no clue, then one per clue (3 clues)
+const DAILY_STORAGE_KEY = "pmr-patent-atlas-daily";
+const DAILY_EPOCH = "2026-11-13";      // the day puzzle #1 went live; numbers count up from it
+/* The link a copied result carries. A function, not a constant: SHARE_BASE_URL
+   is declared further down (DEEP LINKS), and reading it here at load time
+   would throw. */
+function dailyShareUrl(){ return SHARE_BASE_URL+"#tab=match&mode=daily"; }
+function dailyHash(key,d,salt){ return dayHash(`daily|${salt}|${key}|${cardRef(d)}`); }
+/* A title as an answer option: the trailing "(US 5,509,679)" or "(2 patents)"
+   comes off, because a patent number dates the patent. */
+function trimTitleNumber(str){ return String(str||"").replace(/\s*\([^()]*\d[^()]*\)\s*$/,""); }
+function dailyOptionTitle(d){ return trimTitleNumber(tx(d.t)); }
+function dailyPuzzle(key){
+  const potd=patentOfTheDay(key);
+  const pool=gamePool().filter(d=>d!==potd);
+  if(!pool.length) return null;
+  const byHash=(list,salt)=>list.slice().sort((a,b)=>dailyHash(key,a,salt)-dailyHash(key,b,salt));
+  const d=byHash(pool,"pick")[0];
+  /* Decoys: the lowest-scoring entries for today, DAILY_SAME_CAT_DECOYS of
+     them from d's category and the rest from others, skipping any whose
+     trimmed title would read the same as one already chosen. Titles are
+     compared in English so the options stay the same after a language switch. */
+  const titleKey=x=>trimTitleNumber(txEN(x.t)).toLowerCase();
+  const seen=new Set([titleKey(d)]), decoys=[];
+  const take=(list,n)=>{ for(const x of list){ if(decoys.length>=n) break; const k=titleKey(x); if(seen.has(k)) continue; seen.add(k); decoys.push(x); } };
+  const rest=byHash(pool.filter(x=>x!==d),"decoy");
+  take(rest.filter(x=>x.cat===d.cat),DAILY_SAME_CAT_DECOYS);
+  take(rest.filter(x=>x.cat!==d.cat),DAILY_OPTIONS-1);
+  take(rest,DAILY_OPTIONS-1); // tops up if a category ran short
+  return {key, d, opts:byHash([d,...decoys],"order")};
+}
+function dailyNumber(key){
+  const day=k=>{ const [y,m,dd]=k.split("-").map(Number); return Date.UTC(y,m-1,dd)/86400000; };
+  return Math.max(1,day(key)-day(DAILY_EPOCH)+1);
+}
+function dailyLoad(){
+  try{ const v=JSON.parse(localStorage.getItem(DAILY_STORAGE_KEY)||"null"); if(v&&typeof v==="object") return v; }catch(e){ /* storage blocked or unreadable -- play without it */ }
+  return null;
+}
+function dailySave(rec){ try{ localStorage.setItem(DAILY_STORAGE_KEY,JSON.stringify(rec)); }catch(e){ /* storage blocked -- today's game still works, it just won't be remembered */ } }
+function yesterdayKey(){ const n=new Date(); return localDateKey(new Date(n.getFullYear(),n.getMonth(),n.getDate()-1)); }
+/* The saved record: {date, wrong:[refs], won, done} for today, plus streak,
+   best, played, wins and lastWin across days. A record from another day
+   keeps its totals and starts a fresh day. */
+function dailyRecord(key){
+  const r=Object.assign({streak:0,best:0,played:0,wins:0,lastWin:null}, MG.daily&&MG.daily.rec || dailyLoad() || {});
+  if(r.date!==key){ r.date=key; r.wrong=[]; r.won=false; r.done=false; }
+  if(r.lastWin!==key && r.lastWin!==yesterdayKey()) r.streak=0; // a missed day breaks the streak
+  return r;
+}
+function renderDailyMode(){
+  const key=localDateKey();
+  if(!MG.daily || MG.daily.key!==key){ MG.daily=dailyPuzzle(key); if(MG.daily) MG.daily.rec=dailyRecord(key); }
+  const puzzle=MG.daily;
+  let body;
+  if(!puzzle) body=`<p class="mg-clamp">${t("mgEmpty")}</p>`;
+  else {
+    const {d,rec}=puzzle, ans=cardRef(d), wrong=rec.wrong.length;
+    const clues=[[t("dayClueCat"),mgEsc(catLabel(d.cat))],[t("dayClueDec"),t("decadeLabel",decadeOf(d.y))],[t("dayClueWho"),mgEsc(d.a||"")]];
+    const shown=rec.done?clues.length:Math.min(wrong,clues.length);
+    const opt=x=>{
+      const r=cardRef(x), isWrong=rec.wrong.includes(r), isAns=r===ans;
+      let cls="", mark="";
+      if(isWrong){ cls=" bad"; mark=`<span class="mg-mark" aria-hidden="true">✗</span>`; }
+      else if(rec.done && isAns){ cls=" ok"; mark=`<span class="mg-mark" aria-hidden="true">✓</span>`; }
+      else if(rec.done) cls=" dim";
+      return `<button type="button" class="mg-choice${cls}" data-mg-day="${mgEsc(r)}"${rec.done||isWrong?" disabled":""}>${mark}${mgEsc(dailyOptionTitle(x))}</button>`;
+    };
+    const streakNow=rec.streak;
+    body=`<div class="mg-play">
+      <div class="mg-status"><span>${t("dayNumber",`<b>${dailyNumber(key)}</b>`)}</span><span>${shortDate(key)}</span>${rec.done?"":`<span>${t("dayGuessesLeft",`<b>${DAILY_MAX_GUESSES-wrong}</b>`)}</span>`}</div>
+      <span class="mg-pic-lg">${gamePicHTML(d)}</span>
+      <ol class="mg-clues">${clues.map((c,i)=>i<shown?`<li class="on">${t("dayClueShown",c[0],`<b>${c[1]}</b>`)}</li>`:`<li>${t("dayClueLocked",i+1,c[0])}</li>`).join("")}</ol>
+      <div class="mg-opts" role="group" aria-label="${mgEsc(t("dayOptsAria"))}">${puzzle.opts.map(opt).join("")}</div>
+      ${rec.done?`<div class="mg-result ${rec.won?"ok":"bad"}" role="status"><b>${rec.won?t("dayWon",wrong+1,DAILY_MAX_GUESSES):t("dayLost")}</b> ${gameRevealHTML(d)}
+        <br><button type="button" class="mg-btn" id="mgDayShare">${t("dayShare")}</button>
+        <p class="mg-lede small">${t("dayTomorrow")}</p></div>`:""}
+      <div class="mg-streak"><span>${t("dayStreak",`<b>${streakNow}</b>`)}</span><span>${t("dayBest",`<b>${rec.best}</b>`)}</span><span>${t("dayPlayed",`<b>${rec.played}</b>`,`<b>${rec.wins}</b>`)}</span></div>
+    </div>`;
+  }
+  $("#timeline").innerHTML=`<section class="mg" aria-labelledby="mgH">
+    ${matchHeadHTML()}
+    <p class="mg-lede small">${t("dayNote")}</p>
+    ${body}
+    <div class="mg-sr" aria-live="polite" id="mgLive"></div>
+  </section>`;
+  if(!puzzle) return;
+  const tl=$("#timeline");
+  tl.querySelectorAll("[data-mg-day]").forEach(b=>b.onclick=()=>{
+    const rec=puzzle.rec, r=b.dataset.mgDay;
+    if(rec.done || rec.wrong.includes(r)) return;
+    if(r===cardRef(puzzle.d)){
+      rec.done=true; rec.won=true; rec.played++; rec.wins++;
+      rec.streak=(rec.lastWin===yesterdayKey()?rec.streak:0)+1; rec.best=Math.max(rec.best,rec.streak); rec.lastWin=puzzle.key;
+    } else {
+      rec.wrong.push(r);
+      if(rec.wrong.length>=DAILY_MAX_GUESSES){ rec.done=true; rec.won=false; rec.played++; rec.streak=0; }
+    }
+    dailySave(rec); renderMatch();
+    mgAnnounce(rec.done ? (rec.won?t("dayWon",rec.wrong.length+1,DAILY_MAX_GUESSES):t("dayLost")) : t("dayWrongClue"));
+    (tl.querySelector(".mg-opts .mg-choice:not(:disabled)")||$("#mgDayShare"))?.focus({preventScroll:true});
+  });
+  const share=$("#mgDayShare"); if(share) share.onclick=async()=>{
+    const rec=puzzle.rec, squares="🟥".repeat(rec.wrong.length)+(rec.won?"🟩":"");
+    const text=t("dayShareText",dailyNumber(puzzle.key),rec.won?`${rec.wrong.length+1}/${DAILY_MAX_GUESSES}`:`X/${DAILY_MAX_GUESSES}`)+`\n${squares}\n${dailyShareUrl()}`;
+    const ok=await copyToClipboard(text);
+    share.textContent=ok?t("dayCopied"):t("dayShare");
+  };
+}
+
+function renderPairsMode(){
+  if(!MG.round.length) startMatchRound();
+  const tl=$("#timeline");
   tl.innerHTML=`<section class="mg" aria-labelledby="mgH">
-    <h2 class="mg-h" id="mgH">${t("matchTitle")}</h2>
-    <p class="mg-lede">${t("matchIntro")}</p>
+    ${matchHeadHTML()}
     <p class="mg-lede small">${t("matchPoolNote",matchPool().length)}</p>
     <details class="mg-controls" id="mgControls"${MG.ctrlOpen?" open":""}>
       <summary>${t("matchOptions")}</summary>
       <div class="mg-row"><span class="mg-label" id="mgPairsL">${t("matchPairs")}</span>
         <div class="mg-chips" role="group" aria-labelledby="mgPairsL">${MATCH_PAIR_OPTIONS.map(n=>`<button type="button" class="mg-chip" data-mg-pairs="${n}" aria-pressed="${n===MG.pairs}">${n}</button>`).join("")}</div></div>
-      <div class="mg-row"><span class="mg-label" id="mgCatsL">${t("tabCategory")}</span>
-        <div class="mg-chips" role="group" aria-labelledby="mgCatsL">${cats.map(k=>`<button type="button" class="mg-chip" data-mg-cat="${k}" aria-pressed="${MG.cats.has(k)}">${mgEsc(catLabel(k))}</button>`).join("")}</div></div>
+      ${matchCatRowHTML(matchPool())}
       <div class="mg-row"><label class="mg-toggle"><input type="checkbox" id="mgTimerToggle"${MG.timerOn?" checked":""}> ${t("matchShowTimer")}</label>
         <button type="button" class="mg-btn" id="mgNew">${t("matchNewRound")}</button></div>
       ${MG.clamped?`<p class="mg-clamp">${t("matchClamp",MG.round.length,MG.pairs)}</p>`:""}
@@ -4858,22 +5363,12 @@ function renderMatch(){
   </section>`;
   $("#mgControls").addEventListener("toggle",e=>{ MG.ctrlOpen=e.target.open; });
   tl.querySelectorAll("[data-mg-pairs]").forEach(b=>b.onclick=()=>{ MG.pairs=Number(b.dataset.mgPairs); startMatchRound(); renderMatch(); });
-  tl.querySelectorAll("[data-mg-cat]").forEach(b=>b.onclick=()=>{
-    const k=b.dataset.mgCat;
-    if(MG.cats.has(k) && MG.cats.size>1) MG.cats.delete(k); else MG.cats.add(k);
-    startMatchRound(); renderMatch();
-  });
   $("#mgTimerToggle").onchange=e=>{ MG.timerOn=e.target.checked; stopMatchTimer(); renderMatch(); };
   $("#mgNew").onclick=()=>{ startMatchRound(); renderMatch(); };
   const again=$("#mgAgain"); if(again) again.onclick=()=>{ startMatchRound(); renderMatch(); };
   tl.querySelectorAll(".mg-img:not(.matched)").forEach(b=>b.onclick=()=>pickMatch("img",Number(b.dataset.mg)));
   tl.querySelectorAll(".mg-desc:not(.matched)").forEach(b=>b.onclick=()=>pickMatch("desc",Number(b.dataset.mg)));
-  tl.querySelectorAll(".mg-open").forEach(b=>b.onclick=e=>{ e.stopPropagation(); stopMatchTimer(); jumpToCard(b.dataset.ref); });
   ensureMatchTimer();
-  $("#resultCount").textContent=t("matchCount",matchPool().length);
-  $("#clearAll").hidden=true;
-  updateTabDots();
-  renderBars(matchPool());
 }
 /* A matched drawing is a <div>, not a <button>, so its "Open the card" link
    is a real button that isn't nested inside another one. */
@@ -6060,6 +6555,7 @@ function syncHash(){
   const lt=activeTab===DEFAULT_TAB && landingChosen ? landingTheme() : null; // the wall's theme, once picked -- see LANDING THEMES
   if(lt) p.set("start",lt.key);
   if(openRef && activeTab!=="stats" && activeTab!=="fights" && activeTab!=="match") p.set("p",openRef);
+  if(activeTab==="match" && MG.mode!==MATCH_MODES[0].key) p.set("mode",MG.mode); // a Match game other than Pairs
   const s=p.toString();
   try{
     history.replaceState(history.state,"", s?("#"+s):location.pathname+location.search);
@@ -6083,6 +6579,8 @@ function initFromHash(){
   if(hashQuery){ searchQ=hashQuery; const si=document.getElementById("searchInput"); if(si) si.value=hashQuery; }
   const tab=p.get("tab");
   if(tab && document.querySelector(`.tab-btn[data-tab="${tab}"]`)) activeTab=tab;
+  const hashMode=p.get("mode"); // #tab=match&mode=daily opens that Match game
+  if(MATCH_MODES.some(m=>m.key===hashMode)) MG.mode=hashMode;
   /* Links shared before the Atlas tab became the default omitted tab= when
      they pointed at the Category tab -- open those there, not on the home view. */
   else if(!tab && (HASH_SETS.some(k=>p.get(k)) || hashQuery)) activeTab="cat";

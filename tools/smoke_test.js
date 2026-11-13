@@ -316,6 +316,52 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     console.error('::error::Match tab crashed, could not finish a round, showed a broken drawing, or its pool is not every drawn entry.');
   }
 
+  /* Match game modes (Guess the decade, Timeline, Daily drawing): each opens
+     from its #mode= link, plays to the end without errors, and never shows a
+     drawing from GAME_HIDDEN_DRAWINGS (those thumbnails print their own date,
+     which is the answer). The Daily drawing must not be the day's Patent of
+     the day, and must still play with localStorage blocked. */
+  errors.length = 0;
+  const modeUrl = m => filePath + '#tab=match&mode=' + m;
+  const openMode = async m => { await page.goto('about:blank'); await page.goto(modeUrl(m)); await page.waitForTimeout(500); }; // a full load: a hash-only goto would not re-read the link
+  await openMode('decade');
+  for (let k = 0; k < 10; k++) {
+    await page.locator('.mg-choice:not([disabled])').first().click();
+    await page.click('#mgNext');
+  }
+  const decDone = await page.locator('.mg-done').count();
+  await openMode('timeline');
+  const tlYears = await page.evaluate(() => MG.tl.order.map(d => d.y));
+  for (let i = 0; i < tlYears.length; i++) {       // selection sort through the tap-to-swap UI
+    const ys = await page.evaluate(() => MG.tl.order.map(d => d.y));
+    let m = i; for (let j = i + 1; j < ys.length; j++) if (ys[j] < ys[m]) m = j;
+    if (m !== i) { await page.click(`[data-mg-tl="${i}"]`); await page.click(`[data-mg-tl="${m}"]`); }
+  }
+  await page.click('#mgTlCheck');
+  const tlPerfect = await page.evaluate(() => timelineScore() === MG.tl.order.length);
+  const tlGapOk = await page.evaluate(() => { const y = MG.tl.order.map(d => d.y); return y.every((a, i) => y.every((b, j) => i === j || Math.abs(a - b) >= TIMELINE_MIN_GAP_YR)); });
+  await openMode('daily');
+  const daily = await page.evaluate(() => ({ notPotd: MG.daily.d !== patentOfTheDay(MG.daily.key), opts: MG.daily.opts.length, ans: cardRef(MG.daily.d) }));
+  await page.click(`[data-mg-day="${daily.ans}"]`);
+  const dayWon = await page.evaluate(() => MG.daily.rec.won);
+  await page.evaluate(() => { try { localStorage.removeItem('pmr-patent-atlas-daily'); } catch (e) {} });
+  const hiddenLeak = await page.evaluate(() => { const h = new Set(GAME_HIDDEN_DRAWINGS); return gamePool().filter(d => h.has(drawingStem(firstDrawing(d)))).length; });
+  const modeErrors = errors.slice();
+  const blocked = await browser.newPage();
+  const blockedErrors = [];
+  blocked.on('pageerror', e => blockedErrors.push(e.message));
+  await blocked.addInitScript(() => { Object.defineProperty(window, 'localStorage', { get() { throw new Error('blocked'); } }); });
+  await blocked.goto(modeUrl('daily')); await blocked.waitForTimeout(500);
+  const blockedAns = await blocked.evaluate(() => cardRef(MG.daily.d));
+  await blocked.click(`[data-mg-day="${blockedAns}"]`);
+  const blockedWon = await blocked.evaluate(() => MG.daily.rec.won);
+  await blocked.close();
+  console.log(`match modes: decade done ${decDone === 1}, timeline sorted ${tlPerfect} gap ok ${tlGapOk}, daily ${daily.opts} options not POTD ${daily.notPotd} won ${dayWon}, storage blocked won ${blockedWon}, hidden drawings in pool ${hiddenLeak}, errors: ${JSON.stringify(modeErrors.concat(blockedErrors))}`);
+  if (modeErrors.length || blockedErrors.length || decDone !== 1 || !tlPerfect || !tlGapOk || !daily.notPotd || daily.opts < 4 || !dayWon || !blockedWon || hiddenLeak) {
+    failed = true;
+    console.error('::error::A Match game mode (decade, timeline or daily) crashed, could not finish, or showed a drawing that prints its own date.');
+  }
+
   // "See it move" linkage viewers: every LINKAGE_MODELS card opens its
   // viewer, draws, and the slider moves the readout. A model whose pivots
   // can't reach its stated travel, or whose card ref is wrong, fails here.
