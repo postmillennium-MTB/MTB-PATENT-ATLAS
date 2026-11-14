@@ -1,8 +1,10 @@
 # Citation map tooling
 
-Rebuilds `citations/index.html`, the Patent Citation Map: Atlas cards joined
-by the citations listed on each patent's Google Patents page. Nothing here is
-loaded by `index.html`.
+Rebuilds the Patent Citation Map: Atlas cards joined by the citations listed on
+each patent's Google Patents page. The map lives in two places that share one
+snapshot: the Atlas's Citations tab (the `CITE_MAP` line in `index.html`, drawn
+by `renderCite()`) and the standalone page `citations/index.html`. Nothing in
+this folder is loaded by `index.html`.
 
 The page's data block is a snapshot. Rebuild it after a batch of new cards if
 the map should show them. Run every step from this folder; the steps write
@@ -17,6 +19,7 @@ python3 parse.py       # reads the "Patent citations" and "Cited by" tables -> p
 python3 graph.py       # card-to-card links + outside patents -> graph.json (prints the rankings)
 python3 build_data.py  # -> data.json, the block the page embeds
 python3 build.py       # fills src.html -> ../../citations/index.html
+python3 update_atlas_tab.py  # rewrites the one CITE_MAP line in ../../index.html (the Citations tab)
 ```
 
 Notes

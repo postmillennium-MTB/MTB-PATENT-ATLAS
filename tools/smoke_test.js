@@ -469,6 +469,41 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     await ctx.close();
   }
 
+  /* Citations tab (#tab=cite, renderCite()): the map draws, every CITE_MAP ref
+     names a live card, Fights and Citations are icon-only tabs that still
+     carry a name, and "Open the card" lands on that card. */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    const p = await ctx.newPage();
+    const errs = [];
+    p.on('pageerror', e => errs.push(e.message));
+    await p.goto(filePath + '#tab=cite');
+    await p.waitForTimeout(1500);
+    const a = await p.evaluate(() => {
+      const refs = new Set(D.map(cardRef));
+      const cv = document.getElementById('cmCanvas');
+      const ink = cv ? [...cv.getContext('2d').getImageData(0, 0, cv.width, cv.height).data].some((v, i) => i % 4 === 3 && v > 0) : false;
+      return {
+        dead: CITE_MAP.nodes.filter(r => !refs.has(r)),
+        nodes: CITE_MAP.nodes.length, ink,
+        named: ['fights', 'cite'].map(k => { const b = document.querySelector(`.tab-btn[data-tab="${k}"]`); return !!b && b.classList.contains('tab-icon-only') && !!b.querySelector('svg') && b.textContent.trim().length > 0 && !!b.title; }),
+        overflow: document.documentElement.scrollWidth - innerWidth
+      };
+    });
+    await p.click('.cm-tables button[data-cm-i]');
+    await p.waitForTimeout(300);
+    const want = await p.evaluate(() => document.querySelector('[data-cm-open]').dataset.cmOpen);
+    await p.click('[data-cm-open]');
+    await p.waitForTimeout(900);
+    const b = await p.evaluate(() => ({ tab: activeTab, open: [...document.querySelectorAll('.card.open')].map(c => c.id) }));
+    console.log(`citations tab: ${a.nodes} cards, dead refs ${JSON.stringify(a.dead)}, map drawn ${a.ink}, icon-only tabs named ${a.named}, overflow ${a.overflow}px; open card ${want} -> tab ${b.tab}, ${b.open.length} open, errors: ${JSON.stringify(errs)}`);
+    if (a.dead.length || !a.ink || a.named.includes(false) || a.overflow > 0 || b.tab !== 'all' || b.open.length !== 1 || errs.length) {
+      failed = true;
+      console.error('::error::The Citations tab is wrong (dead CITE_MAP ref, blank map, unnamed icon tab, or Open the card failed).');
+    }
+    await ctx.close();
+  }
+
   /* Category tab group: Status/Story/Inventors/Brands are sub-tabs under
      Category (TAB_GROUP_KEYS). The sub-row shows only inside the group, the
      Category tab lights for any member, it reopens the last sub-tab used, and
