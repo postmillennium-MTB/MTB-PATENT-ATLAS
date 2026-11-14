@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 433 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 437 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 433 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 433 |
+| **Total entries** | 437 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 188 |
-| **Expired patents** | 169 |
+| **Expired patents** | 173 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 10 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 216 |
+| **Brands** | 217 |
 | **Named inventors** | 78 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 350 |
+| **Verified entries** | 354 |
 | **Medium confidence** | 44 |
 | **Draft / in progress** | 39 |
 
@@ -850,6 +850,8 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Three new games on the Match tab: Guess the decade, Timeline, Daily drawing (count unchanged; 433).** A chip row at the top of the Match tab picks the game; Pairs stays the default, and `#tab=match&mode=decade|timeline|daily` opens the others. *Guess the decade:* 10 drawings a round, four neighbouring decades to choose from, decades weighted by the square root of their size so the crowded 1990s–2010s don't dominate. *Timeline:* 6 drawings filed at least 3 years apart, put in filing order by tapping two to swap them. *Daily drawing:* one drawing per local calendar day, the same for every reader (date-hashed like Patent of the day, and never the same card as it), 6 titles to choose from with patent numbers trimmed off, and each wrong guess reveals the next clue (category, decade, inventor/assignee); 4 guesses; streak and totals kept in `localStorage` only (the game works without it). The three year games draw from `gamePool()`: entries with a drawing and a filing year, not drafts (`conf:"l"`), not no-patent cards, one per drawing, and not the 23 drawings in `GAME_HIDDEN_DRAWINGS` whose thumbnails still print their own date or patent number (checked by eye against every thumbnail on 2026-11-13). Game drawings never fall back to the full sheet when a thumbnail is missing, since the full sheet prints the date.
 - **Patent Citation Map added as a standalone page (`citations/index.html`); not linked from the Atlas yet. Count unchanged, 433.** Each Atlas card with a citation link is a dot, coloured by category and sized by how many other Atlas cards cite it; a line joins two cards when a patent on one cites a patent on the other, per the "Patent citations" and "Cited by" tables on Google Patents (read 2026-11-13). 335 cards have a patent number; 216 are joined by 930 links (739 to the exact patent, 191 to a relative in the same family, drawn dashed). 585 of the 586 patent numbers could be read; DE 602015077 (the German part of the MRP Wave Ring) has no Google Patents page. 119 numbered cards link to no other card and are not drawn. Most cited inside the Atlas: Lawwill four-bar (38 cards), Horst Link US 5,509,679 (32), the Horst Link continuations (31), Ellsworth ICT (30). The page states its own limits: older patents have had longer to collect citations, 193 of the 739 exact links rest only on examiner-added citations, and a citation is not a licence or proof of copying. The data is a snapshot, rebuilt with `tools/citation_map/` (see its README); English only. **Seventeen leads from the ranking of uncarded patents are queued in `RESEARCH_QUEUE.md`** (14 possible new cards, 3 sets of numbers that probably belong on the Outland VPP and GT RTS/LTS cards), all unverified beyond Google Patents' own citation tables.
 - **Patent Citation Map is now a tab in the Atlas; Fights tab shows its icon only; search boxes use a binoculars icon. Count unchanged, 433.** The new tab (`#tab=cite`, last in the tab row, Lucide graph-star icon with no text) draws the same map as `citations/index.html` inside the Atlas, in all four themes and in French: 216 connected cards, 930 links, the Web and By-filing-year layouts, the category chips, the outside-the-Atlas toggle and the two ranked tables. Titles, categories and years come live from `D`; only the links are a snapshot (`CITE_MAP`, read from Google Patents 2026-11-13, rebuilt with `tools/citation_map/update_atlas_tab.py`). "Open the card" jumps to that card in the All tab. The Fights tab keeps its swords icon and drops the word; both icon-only tabs keep their name for screen readers and as a hover title. The magnifier in the home search box and the filter search box is now Lucide binoculars. `smoke_test.js` opens the tab and fails on a `CITE_MAP` ref with no card. The standalone page stays for existing links.
+- **Added four rear-suspension cards from the citation map: Cannondale US 5,791,674, Girvin US 5,217,241, Haro/Saiki US 7,100,930 and Schwinn/Buell US 5,205,572 + 5,226,674 (433 → 437).** All four `v` and expired. Each was read on Google Patents (front page, claims, description) and its drawing taken from the patent PDF (Fig. 1). *Cannondale:* four-bar with an instant center that moves down and forward; the patent does not say which bike it was for, and the Super V and Raven are single pivots, so the card makes no product link. *Girvin:* pivot above the big chainring plus an elastomer stack; the 1990 Offroad full-suspension bike is from the Mountain Bike Hall of Fame, and no source ties the patent to a model by name. *Haro/Saiki:* granted 2006 to an individual, assigned to Haro Bicycle Corp in 2009; the Sonix "Virtual Link" naming is from Haro and press coverage, and no source states the patent covers that bike. *Schwinn/Buell:* the Paramount Buell S.A.S.S. link rests on enthusiast accounts, and the card says so. New brand "Haro" registered. Unchecked: whether the patents lapsed for fees, beyond Google Patents' "Expired - Fee Related / Lifetime" status. Remaining citation-map leads (10 new cards, 3 number additions) are still in `RESEARCH_QUEUE.md`.
+- **Removed the "Suggest it on GitHub" footer line, the "Missing a patent?" link under What's new and the "Spot a mistake?" link on every card (count unchanged).** Jon will add a Google form later and these links will point there. The `.github/ISSUE_TEMPLATE/` forms stay in the repo.
 
 ## Recent updates (July 2026)
 
