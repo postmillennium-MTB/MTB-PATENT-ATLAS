@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 437 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 448 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 437 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 437 |
+| **Total entries** | 448 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 188 |
-| **Expired patents** | 173 |
+| **Active patents** | 190 |
+| **Expired patents** | 182 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 10 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 217 |
+| **Brands** | 218 |
 | **Named inventors** | 78 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 354 |
+| **Verified entries** | 365 |
 | **Medium confidence** | 44 |
 | **Draft / in progress** | 39 |
 
@@ -853,6 +853,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Added four rear-suspension cards from the citation map: Cannondale US 5,791,674, Girvin US 5,217,241, Haro/Saiki US 7,100,930 and Schwinn/Buell US 5,205,572 + 5,226,674 (433 → 437).** All four `v` and expired. Each was read on Google Patents (front page, claims, description) and its drawing taken from the patent PDF (Fig. 1). *Cannondale:* four-bar with an instant center that moves down and forward; the patent does not say which bike it was for, and the Super V and Raven are single pivots, so the card makes no product link. *Girvin:* pivot above the big chainring plus an elastomer stack; the 1990 Offroad full-suspension bike is from the Mountain Bike Hall of Fame, and no source ties the patent to a model by name. *Haro/Saiki:* granted 2006 to an individual, assigned to Haro Bicycle Corp in 2009; the Sonix "Virtual Link" naming is from Haro and press coverage, and no source states the patent covers that bike. *Schwinn/Buell:* the Paramount Buell S.A.S.S. link rests on enthusiast accounts, and the card says so. New brand "Haro" registered. Unchecked: whether the patents lapsed for fees, beyond Google Patents' "Expired - Fee Related / Lifetime" status. Remaining citation-map leads (10 new cards, 3 number additions) are still in `RESEARCH_QUEUE.md`.
 - **Removed the "Suggest it on GitHub" footer line, the "Missing a patent?" link under What's new and the "Spot a mistake?" link on every card (count unchanged).** Jon will add a Google form later and these links will point there. The `.github/ISSUE_TEMPLATE/` forms stay in the repo.
 - **The Citations tab map is now 3D (count unchanged, 437).** Cards are placed by a force layout in three dimensions and drawn with a hand-written rotation and perspective on the same canvas (no library). Drag to rotate, Shift-drag or right-drag to pan, scroll or pinch to zoom, arrow keys to rotate, tap a dot to select it; in the web layout an Auto-rotate button spins it until touched. The by-year layout keeps filing year left to right and rotates around it. Dragging a single dot is gone (drag now rotates). The standalone `citations/index.html` is still the 2D version.
+- **Eleven more cards from the citation-map leads (437 → 448), with drawings.** RockShox: US 5,186,481 (adjustable lockout and lower-leg brace), US 5,456,480 (variable hydraulic damping), US 5,580,075 (exchangeable spring unit and damper cartridge), US 6,105,988 (positive and negative springs) and US 5,996,746 (twin-tube rear shock). Marzocchi US 6,260,832 (adjustable compression). Gehl US 3,969,947 (tapered tooth sprocket, cross-linked with US 4,174,642; its drawing thumbnail still shows a printed date, so it is in `GAME_HIDDEN_DRAWINGS`). Paha Designs US 9,033,833 + 9,327,792 + 10,207,772 (derailleur on a shaft parallel to the cassette; the third is still active, to 2032; "Paha Designs" added to `BRANDS`). Despain US 5,526,971 (hitch rack, individual inventor). Yeti US 12,617,488 (configurable idler; the 895-day term adjustment was read off the front page of the patent, so `exp` is 2045; the drawing is the representative figure from that front page, because the USPTO sheets were the only copy reachable). Outland US 5,628,524 + RE 39,159, written as its own card (the CIP between US 5,553,881 and US 6,206,397) and not folded into the VPP card. The GT RTS / LTS card gained US 5,244,224, 5,409,249 and 5,441,292 (its `y` is now 1992 and its hook says seven patents). All `conf:"v"`, read from Google Patents pages (and the PDF front page for the Yeti, RockShox, Outland and Despain patents). Not tied to a product: the Marzocchi, RockShox and Paha cards do not name a product, and the Paha family's commercial use is unconfirmed. The citation map itself still lists these patents as outside the Atlas until `CITE_MAP` is rebuilt.
 
 ## Recent updates (July 2026)
 
