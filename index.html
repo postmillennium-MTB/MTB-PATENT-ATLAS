@@ -1205,7 +1205,9 @@ footer a{color:inherit;text-decoration:underline}
 .cm-main{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
 .cm-stage{position:relative;background:var(--surface);border:1px solid var(--card-edge);border-radius:var(--radius);overflow:hidden;height:min(70vh,540px);min-height:360px}
 .cm-stage canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
-.cm-hint{position:absolute;left:10px;right:58px;bottom:8px;font-size:12px;line-height:1.3;color:var(--ink-soft);pointer-events:none}
+.cm-tool{position:absolute;left:10px;bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.cm-tool button{min-height:44px;padding:8px 14px}
+.cm-hint{position:absolute;left:10px;right:58px;bottom:64px;font-size:12px;line-height:1.3;color:var(--ink-soft);pointer-events:none}
 .cm-btn[hidden]{display:none}
 .cm-zoom{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:6px}
 .cm-zoom button{width:38px;height:38px;border:1px solid var(--card-border);border-radius:8px;background:var(--surface);color:var(--ink);font:600 18px var(--font-body);cursor:pointer}
@@ -3173,8 +3175,8 @@ const T = {
     cmapZoomIn:"Zoom in", cmapZoomOut:"Zoom out", cmapZoomFit:"Fit", cmapZoomFitAria:"Reset the view and fit the whole map", cmapSpin:"Auto-rotate",
     cmapSelDetails:"Details below",
     cmapToolAria:"What dragging does", cmapToolRotate:"Rotate", cmapToolMove:"Move dots",
-    cmapHintMove:"Drag a dot to move it; the others push away. Drag empty space to rotate. Tap a dot to select it.",
-    cmapHint:"Drag to rotate. Tap a dot to select it. Scroll or pinch to zoom.",
+    cmapHintMove:"Drag a dot to move it; the others push away. Drag empty space to rotate. Tap a dot to select it. Pinch to zoom, two fingers to slide.",
+    cmapHint:"One finger rotates. Tap a dot to select it. Pinch to zoom, two fingers to slide. Switch to Move dots to drag a dot.",
     cmapPickTitle:"Pick a patent", cmapPickBody:"Tap any dot to see what it cites and what cites it. Arrows point from the newer patent to the older one it cites.",
     cmapFiled:y=>`Filed ${y}`, cmapPriority:y=>`Priority ${y}`, cmapOpenCard:"Open the card →",
     cmapCitedBy:n=>`Cited by ${n}`, cmapCites:n=>`Cites ${n}`,
@@ -3385,8 +3387,8 @@ const T = {
     cmapZoomIn:"Zoom avant", cmapZoomOut:"Zoom arrière", cmapZoomFit:"Tout", cmapZoomFitAria:"Rétablir la vue et afficher toute la carte", cmapSpin:"Rotation auto",
     cmapSelDetails:"Détails ci-dessous",
     cmapToolAria:"Effet du glissement", cmapToolRotate:"Pivoter", cmapToolMove:"Déplacer les points",
-    cmapHintMove:"Glissez un point pour le déplacer ; les autres s'écartent. Glissez dans le vide pour pivoter. Touchez un point pour le choisir.",
-    cmapHint:"Glissez pour pivoter. Touchez un point pour le choisir. Faites défiler ou pincez pour zoomer.",
+    cmapHintMove:"Glissez un point pour le déplacer ; les autres s'écartent. Glissez dans le vide pour pivoter. Touchez un point pour le choisir. Pincez pour zoomer, deux doigts pour glisser.",
+    cmapHint:"Un doigt pivote. Touchez un point pour le choisir. Pincez pour zoomer, deux doigts pour glisser. Passez à Déplacer les points pour tirer un point.",
     cmapPickTitle:"Choisissez un brevet", cmapPickBody:"Touchez un point pour voir ce qu'il cite et ce qui le cite. Les flèches vont du brevet le plus récent vers le brevet plus ancien qu'il cite.",
     cmapFiled:y=>`Déposé en ${y}`, cmapPriority:y=>`Priorité ${y}`, cmapOpenCard:"Ouvrir la fiche →",
     cmapCitedBy:n=>`Cité par ${n}`, cmapCites:n=>`Cite ${n}`,
@@ -5323,10 +5325,6 @@ function renderCite(){
         <button type="button" data-cm-mode="year" aria-pressed="${CITE.mode==="year"}">${t("cmapModeYear")}</button>
       </div>
       <button type="button" class="cm-btn" id="cmExt" aria-pressed="${CITE.showExt}">${t(CITE.showExt?"cmapExtHide":"cmapExtShow")}</button>
-      <div class="cm-seg" role="group" aria-label="${citeEsc(t("cmapToolAria"))}">
-        <button type="button" data-cm-tool="rotate" aria-pressed="${CITE.tool==="rotate"}">${t("cmapToolRotate")}</button>
-        <button type="button" data-cm-tool="move" aria-pressed="${CITE.tool==="move"}">${t("cmapToolMove")}</button>
-      </div>
       <button type="button" class="cm-btn" id="cmSpin" aria-pressed="${CITE.spin}"${CITE.mode==="web"?"":" hidden"}>${t("cmapSpin")}</button>
     </div>
     <div class="cm-legend" role="group" aria-label="${citeEsc(t("cmapLegendAria"))}">${legend}</div>
@@ -5335,6 +5333,10 @@ function renderCite(){
       <div class="cm-stage" id="cmStage">
         <canvas id="cmCanvas" role="img" aria-label="${citeEsc(t("cmapCanvasAria"))}"></canvas>
         <div class="cm-zoom"><button type="button" id="cmZin" aria-label="${citeEsc(t("cmapZoomIn"))}">+</button><button type="button" id="cmZout" aria-label="${citeEsc(t("cmapZoomOut"))}">−</button><button type="button" id="cmZfit" class="fit" aria-label="${citeEsc(t("cmapZoomFitAria"))}">${t("cmapZoomFit")}</button></div>
+        <div class="cm-seg cm-tool" role="group" aria-label="${citeEsc(t("cmapToolAria"))}">
+          <button type="button" data-cm-tool="rotate" aria-pressed="${CITE.tool==="rotate"}">${t("cmapToolRotate")}</button>
+          <button type="button" data-cm-tool="move" aria-pressed="${CITE.tool==="move"}">${t("cmapToolMove")}</button>
+        </div>
         <div class="cm-sel" id="cmSel" hidden></div>
         <div class="cm-hint" id="cmHint"${CITE.sel?" hidden":""}>${t(CITE.tool==="move"?"cmapHintMove":"cmapHint")}</div>
         <div class="cm-tip" id="cmTip" hidden></div>
@@ -5375,7 +5377,7 @@ function renderCite(){
   cv.onpointerdown=e=>{
     try{ cv.setPointerCapture(e.pointerId); }catch(_){}
     const [x,y]=pos(e); pts.set(e.pointerId,[x,y]); citeStopSpin(); drag.down=true;
-    if(pts.size===2){ const [a,b]=[...pts.values()]; CITE.pinch=Math.hypot(a[0]-b[0],a[1]-b[1]); drag.node=null; drag.pan=false; drag.moved=true; return; }
+    if(pts.size===2){ const [a,b]=[...pts.values()]; CITE.pinch=Math.hypot(a[0]-b[0],a[1]-b[1]); CITE.pmx=(a[0]+b[0])/2; CITE.pmy=(a[1]+b[1])/2; drag.node=null; drag.pan=false; drag.moved=true; return; }
     drag.node=hit(x,y); drag.pan=e.shiftKey||e.button===1||e.button===2; drag.moved=false; drag.px=x; drag.py=y; cv.style.cursor="grabbing";
     drag.pull=CITE.tool==="move" && !!drag.node && !drag.pan;           // Move mode: a drag that starts on a dot pulls that dot
     if(drag.pull) drag.depth=drag.node.sz;
@@ -5383,9 +5385,11 @@ function renderCite(){
   cv.onpointermove=e=>{
     const [x,y]=pos(e);
     if(pts.has(e.pointerId)) pts.set(e.pointerId,[x,y]);
-    if(pts.size===2){ const [a,b]=[...pts.values()], d=Math.hypot(a[0]-b[0],a[1]-b[1]); if(CITE.pinch) citeZoomAt((a[0]+b[0])/2,(a[1]+b[1])/2,d/CITE.pinch); CITE.pinch=d; return; }
+    if(pts.size===2){ const [a,b]=[...pts.values()], d=Math.hypot(a[0]-b[0],a[1]-b[1]), mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2;   // two fingers: pinch zooms, sliding both pans
+      if(CITE.pinch){ if(CITE.pmx!=null){ CITE.tx+=mx-CITE.pmx; CITE.ty+=my-CITE.pmy; } citeZoomAt(mx,my,d/CITE.pinch); }
+      CITE.pinch=d; CITE.pmx=mx; CITE.pmy=my; return; }
     if(pts.size===1){                                     // one pointer down: drag to turn the map (Shift, middle or right button: slide it)
-      const dx=x-drag.px, dy=y-drag.py; if(!drag.moved && Math.abs(dx)+Math.abs(dy)>4) drag.moved=true;
+      const dx=x-drag.px, dy=y-drag.py; if(!drag.moved && Math.abs(dx)+Math.abs(dy)>(e.pointerType==="touch"?10:4)) drag.moved=true;   // a finger wobbles more than a mouse: keep taps as taps
       if(drag.moved){
         if(drag.pan){ CITE.tx+=dx; CITE.ty+=dy; }
         else if(drag.pull){
@@ -5400,7 +5404,7 @@ function renderCite(){
     }
     const h=hit(x,y); if(h!==CITE.hover){ CITE.hover=h; cv.style.cursor=h?(CITE.tool==="move"?"grab":"pointer"):"grab"; showTip(h,x,y); citeDraw(); } else if(h) showTip(h,x,y);
   };
-  const end=e=>{ const had=pts.size; pts.delete(e.pointerId); CITE.pinch=0;
+  const end=e=>{ const had=pts.size; pts.delete(e.pointerId); CITE.pinch=0; CITE.pmx=null;
     if(had===1){ if(!drag.moved) citeSelect(drag.node); if(drag.node) drag.node.held=false; drag.node=null; drag.pan=false; drag.pull=false; cv.style.cursor="grab"; }
     else if(had===2){ const r=[...pts.values()][0]; if(r){ drag.px=r[0]; drag.py=r[1]; } }          // the finger left behind carries on turning from where it is
     if(!pts.size) drag.down=false; };
