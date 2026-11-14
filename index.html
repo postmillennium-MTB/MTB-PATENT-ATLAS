@@ -3175,7 +3175,7 @@ const T = {
     cmapZoomIn:"Zoom in", cmapZoomOut:"Zoom out", cmapZoomFit:"Fit", cmapZoomFitAria:"Reset the view and fit the whole map", cmapSpin:"Auto-rotate",
     cmapSelDetails:"Details below",
     cmapToolAria:"What dragging does", cmapToolRotate:"Rotate", cmapToolMove:"Move dots",
-    cmapHintMove:"Drag a dot to move it; the others push away. Drag empty space to rotate. Tap a dot to select it. Pinch to zoom, two fingers to slide.",
+    cmapHintMove:"Drag a dot: the dots it is linked to follow, the rest push away. Drag empty space to rotate. Tap a dot to select it. Pinch to zoom, two fingers to slide.",
     cmapHint:"One finger rotates. Tap a dot to select it. Pinch to zoom, two fingers to slide. Switch to Move dots to drag a dot.",
     cmapPickTitle:"Pick a patent", cmapPickBody:"Tap any dot to see what it cites and what cites it. Arrows point from the newer patent to the older one it cites.",
     cmapFiled:y=>`Filed ${y}`, cmapPriority:y=>`Priority ${y}`, cmapOpenCard:"Open the card →",
@@ -3387,7 +3387,7 @@ const T = {
     cmapZoomIn:"Zoom avant", cmapZoomOut:"Zoom arrière", cmapZoomFit:"Tout", cmapZoomFitAria:"Rétablir la vue et afficher toute la carte", cmapSpin:"Rotation auto",
     cmapSelDetails:"Détails ci-dessous",
     cmapToolAria:"Effet du glissement", cmapToolRotate:"Pivoter", cmapToolMove:"Déplacer les points",
-    cmapHintMove:"Glissez un point pour le déplacer ; les autres s'écartent. Glissez dans le vide pour pivoter. Touchez un point pour le choisir. Pincez pour zoomer, deux doigts pour glisser.",
+    cmapHintMove:"Glissez un point : ceux auxquels il est lié le suivent, les autres s'écartent. Glissez dans le vide pour pivoter. Touchez un point pour le choisir. Pincez pour zoomer, deux doigts pour glisser.",
     cmapHint:"Un doigt pivote. Touchez un point pour le choisir. Pincez pour zoomer, deux doigts pour glisser. Passez à Déplacer les points pour tirer un point.",
     cmapPickTitle:"Choisissez un brevet", cmapPickBody:"Touchez un point pour voir ce qu'il cite et ce qui le cite. Les flèches vont du brevet le plus récent vers le brevet plus ancien qu'il cite.",
     cmapFiled:y=>`Déposé en ${y}`, cmapPriority:y=>`Priorité ${y}`, cmapOpenCard:"Ouvrir la fiche →",
@@ -5026,7 +5026,8 @@ const CITE_YEAR_YAW = 0.45, CITE_YEAR_PITCH = 0.12;    // the by-year layout ope
 const CITE_DEPTH_FADE = 0.5;        // opacity of the farthest dots and lines (the nearest are 1)
 const CITE_FIT_QUANTILE = 0.95;     // the web layout fits a sphere holding this share of the dots; the rest may swing off screen as it turns
 const CITE_LABEL_MIN_NEAR = 0.25;   // dots farther back than this (0 = farthest, 1 = nearest) get no label
-const CITE_MOVE_REHEAT = 0.4;       // dragging a dot in Move mode warms the layout back up to this, so the other dots push away and settle
+const CITE_GRIP_LINK = 1.6;         // link strength on the dragged dot's own links (normal links are divided by the dot's degree), so its neighbours follow
+const CITE_MOVE_REHEAT = 0.6;       // dragging a dot in Move mode warms the layout back up to this, so the other dots push away and settle
 const CITE_GOOGLE_PATENT_URL = "https://patents.google.com/patent/";
 
 const CITE = { built:false, N:[], X:[], E:[], EX:[], top:[], mode:"web", tool:"rotate", showExt:false, cats:null, sel:null, hover:null, q:"",
@@ -5096,7 +5097,8 @@ function citeTick(){
   for(const l of ls){
     const s=l.s, t=l.d; let dx=t.x-s.x, dy=t.y_-s.y_, dz=t.z-s.z; const d=Math.sqrt(dx*dx+dy*dy+dz*dz)||1;
     const ds=(s.cin||0)+(s.cout||0)+1, dt=(t.cin||0)+(t.cout||0)+1;
-    const str=(l.ext?0.25:1)*(yearMode?CITE_YEAR_LINK_WEAKEN:1)/Math.min(ds,dt), f=(d-CITE_LINK_LEN)/d*a*str*0.9, b=ds/(ds+dt);
+    const gripped=s.held||t.held;                         // a dot being dragged takes its direct links with it
+    const str=gripped ? CITE_GRIP_LINK : (l.ext?0.25:1)*(yearMode?CITE_YEAR_LINK_WEAKEN:1)/Math.min(ds,dt), f=(d-CITE_LINK_LEN)/d*a*str*0.9, b=s.held?1:t.held?0:ds/(ds+dt);
     dx*=f; dy*=f; dz*=f; t.vx-=dx*b; t.vy-=dy*b; t.vz-=dz*b; s.vx+=dx*(1-b); s.vy+=dy*(1-b); s.vz+=dz*(1-b);
   }
   for(const n of ns){
