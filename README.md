@@ -858,6 +858,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **Citations tab: the Rotate / Move dots toggle now sits on the map (count unchanged, 448).** It moved from the controls row above the map, where it was easy to miss on a phone, to a large button pair at the bottom-left of the map. Touch: one finger rotates (Rotate) or pulls a dot (Move dots), two fingers pinch to zoom and slide to pan, a tap selects (touch needs 10 px of travel before a tap becomes a drag), and the hints say so. Checked with emulated touch on phone and tablet screens.
 - **Citations tab, Move dots: linked dots now follow the dragged one (count unchanged, 448).** The dragged dot's own citation links are stiffened while it is held and the layout stays warm, so its neighbours come along as on springs and the rest of the map settles around them. Touch behaviour is unchanged.
 - **The Citations tab and the standalone citation page are now called Patent Constellation (count unchanged, 448).** English "Patent Constellation", French "Constellation de brevets"; the tab stays icon-only with the name as its tooltip. The `#tab=cite` link, the `cite` key and the `citations/` path are unchanged so shared links still work.
+- **Match tab shows only its puzzle-piece icon (count unchanged, 448).** The word is still the button's tooltip and screen-reader label.
 
 ## Recent updates (July 2026)
 
