@@ -485,6 +485,12 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
       const ink = cv ? [...cv.getContext('2d').getImageData(0, 0, cv.width, cv.height).data].some((v, i) => i % 4 === 3 && v > 0) : false;
       return {
         dead: CITE_MAP.nodes.filter(r => !refs.has(r)),
+        /* An "outside the Atlas" patent whose number is now a card's own: the map data is older than the cards (rebuild with tools/citation_map). */
+        stale: (() => {
+          const norm = x => String(x).replace(/^US/, '').replace(/(A|B|E)\d?$/, '');
+          const have = new Set(); D.forEach(d => { if (d.num) have.add(norm(d.num)); (d.nums || []).forEach(n => have.add(norm(n))); });
+          return CITE_MAP.ext.filter(x => have.has(norm(x.pn))).map(x => x.pn);
+        })(),
         nodes: CITE_MAP.nodes.length, ink,
         named: ['fights', 'cite'].map(k => { const b = document.querySelector(`.tab-btn[data-tab="${k}"]`); return !!b && b.classList.contains('tab-icon-only') && !!b.querySelector('svg') && b.textContent.trim().length > 0 && !!b.title; }),
         overflow: document.documentElement.scrollWidth - innerWidth
@@ -496,10 +502,10 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     await p.click('[data-cm-open]');
     await p.waitForTimeout(900);
     const b = await p.evaluate(() => ({ tab: activeTab, open: [...document.querySelectorAll('.card.open')].map(c => c.id) }));
-    console.log(`citations tab: ${a.nodes} cards, dead refs ${JSON.stringify(a.dead)}, map drawn ${a.ink}, icon-only tabs named ${a.named}, overflow ${a.overflow}px; open card ${want} -> tab ${b.tab}, ${b.open.length} open, errors: ${JSON.stringify(errs)}`);
-    if (a.dead.length || !a.ink || a.named.includes(false) || a.overflow > 0 || b.tab !== 'all' || b.open.length !== 1 || errs.length) {
+    console.log(`citations tab: ${a.nodes} cards, dead refs ${JSON.stringify(a.dead)}, stale outside patents ${JSON.stringify(a.stale)}, map drawn ${a.ink}, icon-only tabs named ${a.named}, overflow ${a.overflow}px; open card ${want} -> tab ${b.tab}, ${b.open.length} open, errors: ${JSON.stringify(errs)}`);
+    if (a.dead.length || a.stale.length || !a.ink || a.named.includes(false) || a.overflow > 0 || b.tab !== 'all' || b.open.length !== 1 || errs.length) {
       failed = true;
-      console.error('::error::The Citations tab is wrong (dead CITE_MAP ref, blank map, unnamed icon tab, or Open the card failed).');
+      console.error('::error::The Citations tab is wrong (dead CITE_MAP ref, a stale outside-the-Atlas patent that now has a card, blank map, unnamed icon tab, or Open the card failed).');
     }
     await ctx.close();
   }
