@@ -396,6 +396,8 @@ Rear suspension, recent
 16. **US 5,409,249 + US 5,441,292** — "Bicycle rear suspension system", GT Bicycles, priority 1993-09-15. Cited by 25 cards. Likely belongs with "GT RTS / LTS suspension era" (US 5,259,637 + 5,306,036 + 6,056,307 + EP 0,825,098).
 17. **US 5,244,224** — "Rocker arm rear suspension bicycle", GT Bicycles, priority 1992-05-14. Cited by 21 cards. Same GT card as 16.
 
+**Update 2026-11-14:** items 1 to 14 now have cards (items 1 to 4 in the earlier rear-suspension batch; 5 to 14 in the second batch, 437 → 448). Items 15 to 17 were handled as follows: US 5,628,524 + RE 39,159 became its own card (a continuation-in-part between US 5,553,881 and US 6,206,397, not a duplicate of either); US 5,409,249, 5,441,292 and 5,244,224 were added to the GT RTS / LTS card. Item 14 (US 12,617,488) is a separate family from the Yeti six-bar idler card, not a duplicate. Item 12's Paha family is one card. Item 11's Gehl sprocket is a farm-equipment patent with no bicycle content.
+
 The full ranking (501 patents linked to four or more cards) was delivered to
 Jon as a spreadsheet, not committed; rebuild it from `graph.py`'s output if
 needed. The three Yeti patents already on hold (US 10,766,563, 12,077,241,
