@@ -398,6 +398,30 @@ Rear suspension, recent
 
 **Update 2026-11-14:** items 1 to 14 now have cards (items 1 to 4 in the earlier rear-suspension batch; 5 to 14 in the second batch, 437 → 448). Items 15 to 17 were handled as follows: US 5,628,524 + RE 39,159 became its own card (a continuation-in-part between US 5,553,881 and US 6,206,397, not a duplicate of either); US 5,409,249, 5,441,292 and 5,244,224 were added to the GT RTS / LTS card. Item 14 (US 12,617,488) is a separate family from the Yeti six-bar idler card, not a duplicate. Item 12's Paha family is one card. Item 11's Gehl sprocket is a farm-equipment patent with no bicycle content.
 
+### Second list: ranked from the citation network (queued 2026-11-14 at Jon's request; not started)
+
+Patents with no card that the most Atlas cards link to, after the first 17 leads were carded (482 candidates left, 346 of them rear suspension; full CSV in the project files at `citation-map/candidates-not-in-atlas.csv`). Numbers, titles, assignees and priority years are as Google Patents lists them; none has had its front page read. "Links" is how many Atlas cards the patent links to.
+
+Rear suspension
+- **US 5,335,929** "Bicycle frame", Miyata Industry, 1992. 19 links.
+- **US 5,332,246** "Single sided cycle rear suspension system with vertical wheel travel", Buell Motor Company, 1992 (17 links), with **US 4,058,181** "Motorcycle suspension systems", Erik F. Buell, 1976 (16 links). One story; the Schwinn card already points at Buell.
+- **US 4,679,811** "Bicycle rear suspension system", Jerry N. Shuler, 1986. 18 links.
+- **US 7,581,743** (published US 2007/0108725 A1) "Bicycle rear wheel suspension system with controlled variable shock rate", Santa Cruz Bicycles, 2005 (18 links), and the sibling application **US 2010/0102531 A1** (11 links).
+- **US 6,102,421** "Rear suspension for a bicycle", Schwinn Cycling & Fitness, 1996. 18 links.
+- **US 5,354,085** "Sprung bicycle", Otto Gally, 1990. 16 links.
+- Early frames (a cluster for the "before MTB" tour): **US 712,784** Ellis "Bicycle-frame" (1902, 12 links), **US 944,795** Leet "Frame for motor-cycles, bicycles, and the like" (1908, 11 links), **US 1,298,958** Johnston "Bicycle-frame" (1917, 10 links).
+- Further high-link rear-suspension patents, not shortlisted: US 6,969,081 (ATB Sales), US 6,543,799 / 6,698,780 (Shimano), US 6,244,610 (Kramer-Massow), US 7,216,883 (Rocky Mountain), US 5,409,248 (Williams), US 6,131,934 (Sinclair), US 4,582,343 (Waugh), US 5,611,557 (Farris, already queued above).
+
+Forks and damping
+- **US 6,095,541** "Adjustable gas spring suspension system", RockShox, 1997. 5 links. Pairs with the RockShox US 6,105,988 card.
+- **US 5,848,675** "Damping apparatus for bicycle forks", Answer Products, 1996. 5 links.
+- **US 5,332,068** "Self contained automatic terrain condition adjusting shock absorber", Richardson Technologies, 1990. 5 links.
+
+Components
+- **US 2006/0152045 A1** "Bicycle seat post", Shimano, 2005. 4 links.
+
+Pre-MTB motorcycle roots (same idea as the Simons fork card): US 4,322,088 (Honda, 1979, 14 links), US 3,917,313 (Bultaco, 1973, 13 links).
+
 The full ranking (501 patents linked to four or more cards) was delivered to
 Jon as a spreadsheet, not committed; rebuild it from `graph.py`'s output if
 needed. The three Yeti patents already on hold (US 10,766,563, 12,077,241,
