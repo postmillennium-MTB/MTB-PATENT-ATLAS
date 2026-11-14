@@ -1205,7 +1205,8 @@ footer a{color:inherit;text-decoration:underline}
 .cm-main{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
 .cm-stage{position:relative;background:var(--surface);border:1px solid var(--card-edge);border-radius:var(--radius);overflow:hidden;height:min(70vh,540px);min-height:360px}
 .cm-stage canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
-.cm-hint{position:absolute;left:10px;bottom:8px;font-size:12px;color:var(--ink-soft);pointer-events:none}
+.cm-hint{position:absolute;left:10px;right:58px;bottom:8px;font-size:12px;line-height:1.3;color:var(--ink-soft);pointer-events:none}
+.cm-btn[hidden]{display:none}
 .cm-zoom{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:6px}
 .cm-zoom button{width:38px;height:38px;border:1px solid var(--card-border);border-radius:8px;background:var(--surface);color:var(--ink);font:600 18px var(--font-body);cursor:pointer}
 .cm-zoom button.fit{font-size:11px}
@@ -3144,7 +3145,7 @@ const T = {
     fightsIntro:"The lawsuits are where the drama lives. These are the major disputes in the atlas — who fought, what over, and how it ended. Tap any patent to jump to its full card.",
     tabCite:"Citations",
     cmapTitle:"Patent Citation Map",
-    cmapIntro:"Every dot is a card in the atlas. A line joins two cards when a patent on one cites a patent on the other, as listed on Google Patents. Bigger dots are cited by more cards.",
+    cmapIntro:"Every dot is a card in the atlas. A line joins two cards when a patent on one cites a patent on the other, as listed on Google Patents. Bigger dots are cited by more cards. Drag to turn the map in 3D.",
     cmapStatCards:"connected cards", cmapStatLinks:"citation links", cmapStatRead:"patent numbers read", cmapStatReadN:(a,b)=>`${a} of ${b}`,
     cmapSearchPh:"Find a patent: Horst, Yeti, dropper…", cmapSearchAria:"Find a patent on the map",
     cmapLayoutAria:"Layout", cmapModeWeb:"Web", cmapModeYear:"By filing year",
@@ -3152,8 +3153,8 @@ const T = {
     cmapLegendAria:"Filter the map by category",
     cmapKeyExact:"cites that exact patent", cmapKeyFamily:"cites a relative in the same patent family", cmapNotInAtlas:"not in the atlas",
     cmapCanvasAria:"Network of atlas patents joined by citations. The same data is in the tables below.",
-    cmapZoomIn:"Zoom in", cmapZoomOut:"Zoom out", cmapZoomFit:"Fit", cmapZoomFitAria:"Fit the whole map",
-    cmapHint:"Tap a dot. Drag to move, pinch or scroll to zoom.",
+    cmapZoomIn:"Zoom in", cmapZoomOut:"Zoom out", cmapZoomFit:"Fit", cmapZoomFitAria:"Reset the view and fit the whole map", cmapSpin:"Auto-rotate",
+    cmapHint:"Drag to rotate. Tap a dot to select it. Scroll or pinch to zoom.",
     cmapPickTitle:"Pick a patent", cmapPickBody:"Tap any dot to see what it cites and what cites it. Arrows point from the newer patent to the older one it cites.",
     cmapFiled:y=>`Filed ${y}`, cmapPriority:y=>`Priority ${y}`, cmapOpenCard:"Open the card →",
     cmapCitedBy:n=>`Cited by ${n}`, cmapCites:n=>`Cites ${n}`,
@@ -3353,7 +3354,7 @@ const T = {
     fightsIntro:"Les procès sont là où se joue le vrai drame. Voici les principaux litiges de l'atlas — qui s'est affronté, à quel sujet, et comment ça s'est terminé. Touchez un brevet pour aller à sa fiche complète.",
     tabCite:"Citations",
     cmapTitle:"Carte des citations de brevets",
-    cmapIntro:"Chaque point est une fiche de l'atlas. Un trait relie deux fiches lorsqu'un brevet de l'une cite un brevet de l'autre, d'après Google Patents. Plus un point est gros, plus il est cité par d'autres fiches.",
+    cmapIntro:"Chaque point est une fiche de l'atlas. Un trait relie deux fiches lorsqu'un brevet de l'une cite un brevet de l'autre, d'après Google Patents. Plus un point est gros, plus il est cité par d'autres fiches. Glissez pour faire tourner la carte en 3D.",
     cmapStatCards:"fiches reliées", cmapStatLinks:"liens de citation", cmapStatRead:"numéros de brevet lus", cmapStatReadN:(a,b)=>`${a} sur ${b}`,
     cmapSearchPh:"Trouver un brevet : Horst, Yeti, tige télescopique…", cmapSearchAria:"Trouver un brevet sur la carte",
     cmapLayoutAria:"Disposition", cmapModeWeb:"Réseau", cmapModeYear:"Par année de dépôt",
@@ -3361,8 +3362,8 @@ const T = {
     cmapLegendAria:"Filtrer la carte par catégorie",
     cmapKeyExact:"cite ce brevet précis", cmapKeyFamily:"cite un brevet de la même famille", cmapNotInAtlas:"hors atlas",
     cmapCanvasAria:"Réseau des brevets de l'atlas reliés par leurs citations. Les mêmes données figurent dans les tableaux ci-dessous.",
-    cmapZoomIn:"Zoom avant", cmapZoomOut:"Zoom arrière", cmapZoomFit:"Tout", cmapZoomFitAria:"Afficher toute la carte",
-    cmapHint:"Touchez un point. Glissez pour déplacer, pincez ou faites défiler pour zoomer.",
+    cmapZoomIn:"Zoom avant", cmapZoomOut:"Zoom arrière", cmapZoomFit:"Tout", cmapZoomFitAria:"Rétablir la vue et afficher toute la carte", cmapSpin:"Rotation auto",
+    cmapHint:"Glissez pour pivoter. Touchez un point pour le choisir. Faites défiler ou pincez pour zoomer.",
     cmapPickTitle:"Choisissez un brevet", cmapPickBody:"Touchez un point pour voir ce qu'il cite et ce qui le cite. Les flèches vont du brevet le plus récent vers le brevet plus ancien qu'il cite.",
     cmapFiled:y=>`Déposé en ${y}`, cmapPriority:y=>`Priorité ${y}`, cmapOpenCard:"Ouvrir la fiche →",
     cmapCitedBy:n=>`Cité par ${n}`, cmapCites:n=>`Cite ${n}`,
@@ -4991,10 +4992,20 @@ const CITE_LABEL_NEIGHBOR_MAX = 24; // labels shown around a selected dot
 const CITE_TOP_ROWS = 15;           // rows in each table
 const CITE_SHORT_LABEL = 34;        // characters of a title drawn beside a dot
 const CITE_ZOOM_MIN = 0.25, CITE_ZOOM_MAX = 6;
+const CITE_SEED_R = 30;             // start radius scale of the 3D layout (sphere radius grows with the cube root of the dot count)
+const CITE_CAM_FACTOR = 3.2;        // camera distance as a multiple of the cloud's radius; lower = stronger perspective
+const CITE_ROT_SPEED = 0.0075;      // radians turned per pixel dragged
+const CITE_SPIN_RATE = 0.18;        // auto-rotate speed, radians per second (web layout only)
+const CITE_START_YAW = 0.7, CITE_START_PITCH = 0.35;   // the web layout opens turned a little, so depth shows at once
+const CITE_YEAR_YAW = 0.45, CITE_YEAR_PITCH = 0.12;    // the by-year layout opens nearly face-on, so the years read left to right
+const CITE_DEPTH_FADE = 0.5;        // opacity of the farthest dots and lines (the nearest are 1)
+const CITE_FIT_QUANTILE = 0.95;     // the web layout fits a sphere holding this share of the dots; the rest may swing off screen as it turns
+const CITE_LABEL_MIN_NEAR = 0.25;   // dots farther back than this (0 = farthest, 1 = nearest) get no label
 const CITE_GOOGLE_PATENT_URL = "https://patents.google.com/patent/";
 
 const CITE = { built:false, N:[], X:[], E:[], EX:[], top:[], mode:"web", showExt:false, cats:null, sel:null, hover:null, q:"",
-  k:1, tx:0, ty:0, alpha:0, laidOut:false, W:0, H:0, raf:0, C:{}, drag:{node:null,pan:false,moved:false,px:0,py:0}, pts:new Map(), pinch:0, ro:null };
+  k:1, tx:0, ty:0, alpha:0, laidOut:false, W:0, H:0, raf:0, t0:0, C:{}, drag:{node:null,pan:false,moved:false,down:false,px:0,py:0}, pts:new Map(), pinch:0, ro:null,
+  yaw:CITE_START_YAW, pitch:CITE_START_PITCH, cam:600, ox:0, zmin:0, zmax:1, spin:!window.matchMedia("(prefers-reduced-motion: reduce)").matches };
 
 function citeEsc(s){ return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
 function citeShort(title){
@@ -5008,11 +5019,11 @@ const citeLabel = n => citeShort(citeTitle(n));
 function citeBuild(){
   if(CITE.built) return;
   const byRef=new Map(D.map(d=>[cardRef(d),d]));
-  const slot=CITE_MAP.nodes.map(ref=>{ const d=byRef.get(REF_ALIASES[ref]||ref); return d ? {kind:"card",d,ref:cardRef(d),cat:d.cat,y:d.y,cin:0,cout:0,x:0,y_:0,vx:0,vy:0} : null; });
+  const slot=CITE_MAP.nodes.map(ref=>{ const d=byRef.get(REF_ALIASES[ref]||ref); return d ? {kind:"card",d,ref:cardRef(d),cat:d.cat,y:d.y,cin:0,cout:0,x:0,y_:0,z:0,vx:0,vy:0,vz:0} : null; });
   CITE.N=slot.filter(Boolean);
   CITE.E=CITE_MAP.edges.filter(e=>slot[e[0]]&&slot[e[1]]).map(e=>({s:slot[e[0]],d:slot[e[1]],fam:e[2]===1,exam:e[3]===1}));
   CITE.E.forEach(e=>{ e.s.cout++; e.d.cin++; });
-  CITE.X=CITE_MAP.ext.map(x=>({kind:"ext",pn:x.pn,t:x.t,a:x.a,y:x.y,k:x.k,c:x.c.map(i=>slot[i]).filter(Boolean),x:0,y_:0,vx:0,vy:0,r:CITE_EXT_R}));
+  CITE.X=CITE_MAP.ext.map(x=>({kind:"ext",pn:x.pn,t:x.t,a:x.a,y:x.y,k:x.k,c:x.c.map(i=>slot[i]).filter(Boolean),x:0,y_:0,z:0,vx:0,vy:0,vz:0,r:CITE_EXT_R}));
   CITE.X.forEach(x=>x.c.forEach(n=>CITE.EX.push(x.k==="cited"?{s:n,d:x,fam:false,ext:true}:{s:x,d:n,fam:false,ext:true})));
   CITE.N.forEach(n=>{ n.r=CITE_NODE_R_MIN+CITE_NODE_R_PER_SQRT*Math.sqrt(n.cin); });
   CITE.N.concat(CITE.X).forEach((n,i)=>{ n.i=i; });
@@ -5030,13 +5041,15 @@ function citeTheme(){
           font:getComputedStyle(document.body).fontFamily};
 }
 
-/* ---- Layout: a small force simulation (repel, links, gravity) ---- */
+/* ---- Layout: a small force simulation in 3D (repel, links, gravity) ---- */
 function citeYearX(y){ return y<CITE_YEAR_BREAK ? (y-CITE_YEAR_BREAK)*CITE_YEAR_OLD_PX : (y-CITE_YEAR_BREAK)*CITE_YEAR_PX; }
 function citeSeed(){
-  citeNodes().forEach((n,i)=>{
-    const a=i*2.399963, rad=14*Math.sqrt(i+1);            // sunflower spiral: the same start every time
-    n.x = CITE.mode==="year" ? citeYearX(n.y) : Math.cos(a)*rad;
-    n.y_ = Math.sin(a)*rad; n.vx=n.vy=0;
+  const ns=citeNodes(), N=ns.length||1;
+  if(CITE.mode==="year"){ let lo=1e9,hi=-1e9; ns.forEach(n=>{ const x=citeYearX(n.y); lo=Math.min(lo,x); hi=Math.max(hi,x); }); CITE.ox=(lo+hi)/2; }
+  ns.forEach((n,i)=>{
+    const th=i*2.399963, ph=Math.acos(1-2*(i+.5)/N), rad=CITE_SEED_R*Math.cbrt(i+1);   // fibonacci sphere: the same start every time
+    n.x = CITE.mode==="year" ? citeYearX(n.y)-CITE.ox : Math.sin(ph)*Math.cos(th)*rad;
+    n.y_ = Math.sin(ph)*Math.sin(th)*rad; n.z = Math.cos(ph)*rad; n.vx=n.vy=n.vz=0;
   });
 }
 function citeTick(){
@@ -5044,48 +5057,89 @@ function citeTick(){
   for(let i=0;i<ns.length;i++){
     const p=ns[i];
     for(let j=i+1;j<ns.length;j++){
-      const q=ns[j]; let dx=q.x-p.x, dy=q.y_-p.y_;
-      if(yearMode) dx*=0.35;                              // same-year dots must still push apart vertically
-      let d2=dx*dx+dy*dy; if(d2<1){ dx=(i-j)%2?1:-1; dy=0.5; d2=1.25; }
+      const q=ns[j]; let dx=q.x-p.x, dy=q.y_-p.y_, dz=q.z-p.z;
+      if(yearMode) dx*=0.35;                              // same-year dots must still push apart sideways
+      let d2=dx*dx+dy*dy+dz*dz; if(d2<1){ dx=(i-j)%2?1:-1; dy=0.5; dz=0.3; d2=1.34; }
       const min=p.r+q.r+CITE_COLLIDE_PAD, d=Math.sqrt(d2);
       let f=CITE_REPULSE*a*(p.r*q.r/30)/Math.max(d2,min*min*0.25);
       if(d<min) f+=(min-d)*0.35;                          // overlapping dots are pushed apart even after the layout cools
-      dx/=d; dy/=d;
-      p.vx-=dx*f; p.vy-=dy*f; q.vx+=dx*f; q.vy+=dy*f;
+      dx/=d; dy/=d; dz/=d;
+      p.vx-=dx*f; p.vy-=dy*f; p.vz-=dz*f; q.vx+=dx*f; q.vy+=dy*f; q.vz+=dz*f;
     }
   }
   for(const l of ls){
-    const s=l.s, t=l.d; let dx=t.x-s.x, dy=t.y_-s.y_; const d=Math.sqrt(dx*dx+dy*dy)||1;
+    const s=l.s, t=l.d; let dx=t.x-s.x, dy=t.y_-s.y_, dz=t.z-s.z; const d=Math.sqrt(dx*dx+dy*dy+dz*dz)||1;
     const ds=(s.cin||0)+(s.cout||0)+1, dt=(t.cin||0)+(t.cout||0)+1;
     const str=(l.ext?0.25:1)*(yearMode?CITE_YEAR_LINK_WEAKEN:1)/Math.min(ds,dt), f=(d-CITE_LINK_LEN)/d*a*str*0.9, b=ds/(ds+dt);
-    dx*=f; dy*=f; t.vx-=dx*b; t.vy-=dy*b; s.vx+=dx*(1-b); s.vy+=dy*(1-b);
+    dx*=f; dy*=f; dz*=f; t.vx-=dx*b; t.vy-=dy*b; t.vz-=dz*b; s.vx+=dx*(1-b); s.vy+=dy*(1-b); s.vz+=dz*(1-b);
   }
   for(const n of ns){
-    n.vx-=n.x*CITE_GRAVITY*a*(yearMode?0:1); n.vy-=n.y_*CITE_GRAVITY*a*(yearMode?CITE_YEAR_GRAVITY_Y:1);
-    n.vx*=0.6; n.vy*=0.6;
-    if(n===CITE.drag.node) continue;
-    if(yearMode) n.x=citeYearX(n.y); else n.x+=n.vx;
-    n.y_+=n.vy;
+    const gy=CITE_GRAVITY*a*(yearMode?CITE_YEAR_GRAVITY_Y:1);
+    n.vx-=n.x*CITE_GRAVITY*a*(yearMode?0:1); n.vy-=n.y_*gy; n.vz-=n.z*gy;
+    n.vx*=0.6; n.vy*=0.6; n.vz*=0.6;
+    if(yearMode) n.x=citeYearX(n.y)-CITE.ox; else n.x+=n.vx;
+    n.y_+=n.vy; n.z+=n.vz;
   }
   CITE.alpha*=0.985;
+}
+function citeCenter(){                                    // put the middle of the cloud's bounding box on the origin, so it turns about its own middle
+  const ns=citeNodes(); if(!ns.length) return;
+  const lo=[1e9,1e9,1e9], hi=[-1e9,-1e9,-1e9];
+  ns.forEach(n=>{ [n.x,n.y_,n.z].forEach((v,i)=>{ if(v<lo[i]) lo[i]=v; if(v>hi[i]) hi[i]=v; }); });
+  const cx=CITE.mode==="year"?0:(lo[0]+hi[0])/2, cy=(lo[1]+hi[1])/2, cz=(lo[2]+hi[2])/2;
+  ns.forEach(n=>{ n.x-=cx; n.y_-=cy; n.z-=cz; });
 }
 function citeLayout(){
   citeSeed(); CITE.alpha=1;
   for(let i=0;i<CITE_PRE_TICKS;i++) citeTick();
-  CITE.laidOut=true; citeFit(); citeRun();
+  citeCenter(); CITE.laidOut=true; citeFit(true); citeRun();
 }
 function citeRun(){
   if(CITE.raf) return;
+  CITE.t0=0;
   const still=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const step=()=>{ CITE.raf=0; if(activeTab!=="cite") return; if(CITE.alpha>0.02 && !still){ citeTick(); CITE.raf=requestAnimationFrame(step); } citeDraw(); };
+  const step=ts=>{
+    CITE.raf=0; if(activeTab!=="cite") return;
+    const dt=CITE.t0?Math.min(0.05,(ts-CITE.t0)/1000):0; CITE.t0=ts;
+    const spinning=CITE.spin && !still && CITE.mode==="web" && !CITE.drag.down;
+    if(spinning) CITE.yaw+=CITE_SPIN_RATE*dt;
+    if(CITE.alpha>0.02 && !still) citeTick();
+    citeDraw();
+    if((CITE.alpha>0.02 && !still) || spinning) CITE.raf=requestAnimationFrame(step);
+  };
   CITE.raf=requestAnimationFrame(step);
 }
 
-/* ---- View transform ---- */
-function citeFit(){
+/* ---- Camera: turn about the centre (yaw, then pitch), then a perspective squeeze ---- */
+function citeProj(x,y,z){
+  const cy=Math.cos(CITE.yaw), sy=Math.sin(CITE.yaw), cp=Math.cos(CITE.pitch), sp=Math.sin(CITE.pitch);
+  const x1=x*cy+z*sy, z1=-x*sy+z*cy, y2=y*cp-z1*sp, z2=y*sp+z1*cp, s=CITE.cam/(CITE.cam+z2);
+  return [CITE.tx+x1*CITE.k*s, CITE.ty+y2*CITE.k*s, z2, s];   // screen x, screen y, depth (bigger = farther), perspective scale
+}
+function citeProject(){
+  let zmin=1e9,zmax=-1e9;
+  for(const n of citeNodes()){
+    const p=citeProj(n.x,n.y_,n.z); n.sx=p[0]; n.sy=p[1]; n.sz=p[2]; n.ss=p[3];
+    if(p[2]<zmin) zmin=p[2]; if(p[2]>zmax) zmax=p[2];
+  }
+  CITE.zmin=zmin; CITE.zmax=zmax;
+}
+const citeNear = n => CITE.zmax>CITE.zmin ? (CITE.zmax-n.sz)/(CITE.zmax-CITE.zmin) : 1;   // 1 = nearest, 0 = farthest
+const citeRScale = () => Math.min(1.6,Math.max(.7,CITE.k));   // dots grow a little with zoom, not linearly
+const citeRad = n => n.r*citeRScale()*n.ss;
+
+function citeFit(reset){
   const ns=citeNodes(), W=CITE.W, H=CITE.H; if(!ns.length||!W) return;
+  if(reset){ CITE.yaw=CITE.mode==="year"?CITE_YEAR_YAW:CITE_START_YAW; CITE.pitch=CITE.mode==="year"?CITE_YEAR_PITCH:CITE_START_PITCH; }
+  const rad=ns.map(n=>Math.sqrt(n.x*n.x+n.y_*n.y_+n.z*n.z)+n.r).sort((a,b)=>a-b), R=rad[rad.length-1];
+  CITE.cam=Math.max(R*CITE_CAM_FACTOR,300);
+  if(CITE.mode==="web"){                                  // fit a sphere holding most dots, so the map stays on screen as it turns
+    const r95=rad[Math.floor(rad.length*CITE_FIT_QUANTILE)], near=CITE.cam/(CITE.cam-r95);
+    CITE.k=Math.min((Math.min(W,H)/2-28)/(r95*near),2.2); CITE.tx=W/2; CITE.ty=H/2; return;
+  }
+  CITE.k=1; CITE.tx=0; CITE.ty=0; citeProject();
   let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;
-  for(const n of ns){ x0=Math.min(x0,n.x-n.r); x1=Math.max(x1,n.x+n.r); y0=Math.min(y0,n.y_-n.r); y1=Math.max(y1,n.y_+n.r); }
+  for(const n of ns){ const r=n.r*n.ss; x0=Math.min(x0,n.sx-r); x1=Math.max(x1,n.sx+r); y0=Math.min(y0,n.sy-r); y1=Math.max(y1,n.sy+r); }
   const pad=28, yr=CITE.mode==="year", k=Math.min((W-2*pad)/(x1-x0||1),(H-2*pad-(yr?18:0))/(y1-y0||1),2.2);
   CITE.k=k; CITE.tx=W/2-k*(x0+x1)/2; CITE.ty=H/2-k*(y0+y1)/2-(yr?8:0);
 }
@@ -5093,8 +5147,7 @@ function citeZoomAt(px,py,f){
   const k=Math.max(CITE_ZOOM_MIN,Math.min(CITE_ZOOM_MAX,CITE.k*f)); f=k/CITE.k;
   CITE.tx=px-(px-CITE.tx)*f; CITE.ty=py-(py-CITE.ty)*f; CITE.k=k; citeDraw();
 }
-const citeSX = n => n.x*CITE.k+CITE.tx, citeSY = n => n.y_*CITE.k+CITE.ty;
-const citeRScale = () => Math.min(1.6,Math.max(.7,CITE.k));   // dots grow a little with zoom, not linearly
+function citeStopSpin(){ if(!CITE.spin) return; CITE.spin=false; const b=document.getElementById("cmSpin"); if(b) b.setAttribute("aria-pressed","false"); }
 
 function citeMatches(n){
   if(n.kind==="card" && !CITE.cats.has(n.cat)) return false;
@@ -5113,54 +5166,64 @@ function citeDraw(){
   const cv=document.getElementById("cmCanvas"); if(!cv||!CITE.W) return;
   const ctx=cv.getContext("2d"), W=CITE.W, H=CITE.H, C=CITE.C, dpr=window.devicePixelRatio||1;
   ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H); ctx.fillStyle=C.surface; ctx.fillRect(0,0,W,H);
-  const ns=citeNodes(), ls=citeLinks(), sel=CITE.sel, rs=citeRScale();
-  if(CITE.mode==="year"){
-    ctx.font=`12px ${C.font}`; ctx.textAlign="center"; ctx.textBaseline="bottom";
-    for(let y=1880;y<=2030;y+=10){
+  citeProject();
+  const ns=citeNodes(), ls=citeLinks(), sel=CITE.sel;
+  if(CITE.mode==="year"){                                // a year ruler along the bottom of the cloud, turning with it
+    let yb=-1e9; for(const n of ns) yb=Math.max(yb,n.y_+n.r); yb+=14;
+    ctx.font=`12px ${C.font}`; ctx.textAlign="center"; ctx.textBaseline="top"; ctx.lineWidth=1; ctx.strokeStyle=C.grid; ctx.fillStyle=C.soft;
+    const a=citeProj(citeYearX(1880)-CITE.ox,yb,0), b=citeProj(citeYearX(2030)-CITE.ox,yb,0);
+    ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(b[0],b[1]); ctx.stroke();
+    let lastX=-1e9;
+    for(let y=2030;y>=1880;y-=10){                       // newest first, so crowded old years are the ones dropped
       if(y<CITE_YEAR_BREAK && y%30!==10) continue;
-      const x=citeYearX(y)*CITE.k+CITE.tx; if(x<0||x>W) continue;
-      ctx.strokeStyle=C.grid; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H-18); ctx.stroke();
-      ctx.fillStyle=C.soft; ctx.fillText(String(y),x,H-3);
+      const p=citeProj(citeYearX(y)-CITE.ox,yb,0), q=citeProj(citeYearX(y)-CITE.ox,yb-6,0);
+      ctx.beginPath(); ctx.moveTo(p[0],p[1]); ctx.lineTo(q[0],q[1]); ctx.stroke();
+      if(p[0]>6&&p[0]<W-6&&p[1]<H-14&&Math.abs(p[0]-lastX)>34){ ctx.fillText(String(y),p[0],p[1]+3); lastX=p[0]; }
     }
   }
   const near=new Set(); if(sel){ near.add(sel); for(const l of ls){ if(l.s===sel) near.add(l.d); if(l.d===sel) near.add(l.s); } }
   const lit=n=>sel?near.has(n):citeMatches(n);
   const filtering=sel||CITE.q||CITE.cats.size<Object.keys(CATS).length;
+  const fade=n=>CITE_DEPTH_FADE+(1-CITE_DEPTH_FADE)*citeNear(n);   // far dots and lines are fainter
   ctx.lineWidth=1; ctx.strokeStyle=C.ink;
   for(const l of ls){                                    // resting links
     if(sel && (l.s===sel||l.d===sel)) continue;
     const on=!filtering||(!sel&&lit(l.s)&&lit(l.d));
-    ctx.globalAlpha=on?0.14:0.04; ctx.setLineDash(l.fam?[4,4]:[]);
-    ctx.beginPath(); ctx.moveTo(citeSX(l.s),citeSY(l.s)); ctx.lineTo(citeSX(l.d),citeSY(l.d)); ctx.stroke();
+    ctx.globalAlpha=(on?0.15:0.04)*(fade(l.s)+fade(l.d))/2; ctx.setLineDash(l.fam?[4,4]:[]);
+    ctx.beginPath(); ctx.moveTo(l.s.sx,l.s.sy); ctx.lineTo(l.d.sx,l.d.sy); ctx.stroke();
   }
   ctx.globalAlpha=1;
   if(sel) for(const l of ls){                            // the selected dot's links, arrowhead toward the cited patent
     if(l.s!==sel && l.d!==sel) continue;
-    const x1=citeSX(l.s), y1=citeSY(l.s), x2=citeSX(l.d), y2=citeSY(l.d), ang=Math.atan2(y2-y1,x2-x1), rr=l.d.r*rs+2;
+    const x1=l.s.sx, y1=l.s.sy, x2=l.d.sx, y2=l.d.sy, ang=Math.atan2(y2-y1,x2-x1), rr=citeRad(l.d)+2;
     const ex=x2-Math.cos(ang)*rr, ey=y2-Math.sin(ang)*rr;
     ctx.strokeStyle=C.ink; ctx.fillStyle=C.ink; ctx.lineWidth=1.4; ctx.setLineDash(l.fam?[5,4]:[]);
     ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(ex,ey); ctx.stroke(); ctx.setLineDash([]);
     ctx.beginPath(); ctx.moveTo(ex,ey); ctx.lineTo(ex-Math.cos(ang-.4)*8,ey-Math.sin(ang-.4)*8); ctx.lineTo(ex-Math.cos(ang+.4)*8,ey-Math.sin(ang+.4)*8); ctx.closePath(); ctx.fill();
   }
   ctx.setLineDash([]);
-  for(const n of ns){
-    ctx.globalAlpha=lit(n)?1:0.16;
-    ctx.beginPath(); ctx.arc(citeSX(n),citeSY(n),n.r*rs,0,6.2832);
+  const order=ns.slice().sort((a,b)=>b.sz-a.sz);         // far dots first, so near ones paint over them
+  for(const n of order){
+    const rr=citeRad(n);
+    ctx.globalAlpha=lit(n)?fade(n):0.16;
+    ctx.beginPath(); ctx.arc(n.sx,n.sy,rr,0,6.2832);
     if(n.kind==="ext"){ ctx.fillStyle=C.surface; ctx.fill(); ctx.lineWidth=2; ctx.strokeStyle=C.soft; ctx.stroke(); }
     else { ctx.fillStyle=CAT_COLORS[n.cat]||C.soft; ctx.fill(); ctx.lineWidth=1.5; ctx.strokeStyle=C.surface; ctx.stroke(); }
-    if(n===sel||n===CITE.hover){ ctx.globalAlpha=1; ctx.lineWidth=2.5; ctx.strokeStyle=C.ink; ctx.beginPath(); ctx.arc(citeSX(n),citeSY(n),n.r*rs+3,0,6.2832); ctx.stroke(); }
+    if(n===sel||n===CITE.hover){ ctx.globalAlpha=1; ctx.lineWidth=2.5; ctx.strokeStyle=C.ink; ctx.beginPath(); ctx.arc(n.sx,n.sy,rr+3,0,6.2832); ctx.stroke(); }
   }
   ctx.globalAlpha=1;
   let want;
   if(sel) want=[sel].concat([...near].filter(n=>n!==sel).sort((a,b)=>(b.cin||0)-(a.cin||0)).slice(0,CITE_LABEL_NEIGHBOR_MAX));
   else if(CITE.q) want=ns.filter(citeMatches).slice(0,CITE_LABEL_NEIGHBOR_MAX);
   else want=CITE.top.filter(citeMatches);
+  want=want.filter(n=>n===sel||n===CITE.hover||citeNear(n)>CITE_LABEL_MIN_NEAR);   // no labels on the far side of the cloud
   if(CITE.hover && !want.includes(CITE.hover)) want=[CITE.hover].concat(want);
+  want.sort((a,b)=>(a===sel?-1:b===sel?1:a.sz-b.sz));    // the selected dot first, then nearest first, so near labels win overlaps
   ctx.font=`600 12.5px ${C.font}`; ctx.textBaseline="middle"; ctx.textAlign="left";
   const boxes=[];
   for(const n of want){
-    const s=citeLabel(n), tw=ctx.measureText(s).width; let x=citeSX(n)+n.r*rs+5, y=citeSY(n);
-    if(x+tw>W-4) x=citeSX(n)-n.r*rs-5-tw;
+    const s=citeLabel(n), tw=ctx.measureText(s).width, rr=citeRad(n); let x=n.sx+rr+5, y=n.sy;
+    if(x+tw>W-4) x=n.sx-rr-5-tw;
     if(x<2||y<8||y>H-8) continue;
     const b=[x-2,y-8,x+tw+2,y+8];
     if(n!==sel && boxes.some(o=>b[0]<o[2]&&b[2]>o[0]&&b[1]<o[3]&&b[3]>o[1])) continue;   // skip a label that would cover one already drawn
@@ -5195,7 +5258,7 @@ function citePanelHTML(){
   return h;
 }
 function citeSelect(n){
-  CITE.sel=n||null;
+  CITE.sel=n||null; citeStopSpin();
   const hint=document.getElementById("cmHint"); if(hint) hint.hidden=true;
   const p=document.getElementById("cmPanel"); if(p) p.innerHTML=citePanelHTML();
   citeDraw();
@@ -5221,6 +5284,7 @@ function renderCite(){
         <button type="button" data-cm-mode="year" aria-pressed="${CITE.mode==="year"}">${t("cmapModeYear")}</button>
       </div>
       <button type="button" class="cm-btn" id="cmExt" aria-pressed="${CITE.showExt}">${t(CITE.showExt?"cmapExtHide":"cmapExtShow")}</button>
+      <button type="button" class="cm-btn" id="cmSpin" aria-pressed="${CITE.spin}"${CITE.mode==="web"?"":" hidden"}>${t("cmapSpin")}</button>
     </div>
     <div class="cm-legend" role="group" aria-label="${citeEsc(t("cmapLegendAria"))}">${legend}</div>
     <div class="cm-key"><span><i></i> ${t("cmapKeyExact")}</span><span><i class="dash"></i> ${t("cmapKeyFamily")}</span><span><span class="cm-dot ext"></span> ${t("cmapNotInAtlas")}</span></div>
@@ -5251,8 +5315,9 @@ function renderCite(){
   CITE.ro.observe(stage);
   size(); if(CITE.W){ if(!CITE.laidOut) citeLayout(); else { citeDraw(); citeRun(); } }
 
-  const hit=(px,py)=>{ let best=null,bd=1e9; const rs=citeRScale();
-    for(const n of citeNodes()){ const d=Math.hypot(citeSX(n)-px,citeSY(n)-py)-n.r*rs; if(d<10&&d<bd){ bd=d; best=n; } }   // 10px halo: the target is bigger than the dot
+  const hit=(px,py)=>{ citeProject(); let best=null,bs=1e9;
+    for(const n of citeNodes()){ const d=Math.hypot(n.sx-px,n.sy-py)-citeRad(n); if(d>=10) continue;   // 10px halo: the target is bigger than the dot
+      const sc=d+(1-citeNear(n))*4; if(sc<bs){ bs=sc; best=n; } }                                       // where dots overlap, the nearer one wins
     return best; };
   const pos=e=>{ const r=cv.getBoundingClientRect(); return [e.clientX-r.left,e.clientY-r.top]; };
   const showTip=(n,x,y)=>{
@@ -5260,33 +5325,48 @@ function renderCite(){
     tip.textContent = n.kind==="card" ? t("cmapTipCard",citeTitle(n),n.y,n.cin,n.cout) : t("cmapTipExt",n.pn,n.t,n.y);
     tip.hidden=false; tip.style.left=Math.max(4,Math.min(x+14,CITE.W-250))+"px"; tip.style.top=Math.max(4,y-44)+"px";
   };
-  const drag=CITE.drag, pts=CITE.pts; pts.clear();
+  const drag=CITE.drag, pts=CITE.pts; pts.clear(); drag.down=false;
+  cv.oncontextmenu=e=>e.preventDefault();
+  cv.tabIndex=0;
   cv.onpointerdown=e=>{
     try{ cv.setPointerCapture(e.pointerId); }catch(_){}
-    const [x,y]=pos(e); pts.set(e.pointerId,[x,y]);
-    if(pts.size===2){ const [a,b]=[...pts.values()]; CITE.pinch=Math.hypot(a[0]-b[0],a[1]-b[1]); drag.node=null; drag.pan=false; return; }
-    drag.node=hit(x,y); drag.pan=!drag.node; drag.moved=false; drag.px=x; drag.py=y; cv.style.cursor="grabbing";
+    const [x,y]=pos(e); pts.set(e.pointerId,[x,y]); citeStopSpin(); drag.down=true;
+    if(pts.size===2){ const [a,b]=[...pts.values()]; CITE.pinch=Math.hypot(a[0]-b[0],a[1]-b[1]); drag.node=null; drag.pan=false; drag.moved=true; return; }
+    drag.node=hit(x,y); drag.pan=e.shiftKey||e.button===1||e.button===2; drag.moved=false; drag.px=x; drag.py=y; cv.style.cursor="grabbing";
   };
   cv.onpointermove=e=>{
     const [x,y]=pos(e);
     if(pts.has(e.pointerId)) pts.set(e.pointerId,[x,y]);
     if(pts.size===2){ const [a,b]=[...pts.values()], d=Math.hypot(a[0]-b[0],a[1]-b[1]); if(CITE.pinch) citeZoomAt((a[0]+b[0])/2,(a[1]+b[1])/2,d/CITE.pinch); CITE.pinch=d; return; }
-    if(pts.size===1){
-      const dx=x-drag.px, dy=y-drag.py; if(Math.abs(dx)+Math.abs(dy)>4) drag.moved=true;
-      if(drag.node && drag.moved){ drag.node.x=(x-CITE.tx)/CITE.k; drag.node.y_=(y-CITE.ty)/CITE.k; CITE.alpha=Math.max(CITE.alpha,0.25); citeRun(); }
-      else if(drag.pan){ CITE.tx+=dx; CITE.ty+=dy; drag.px=x; drag.py=y; citeDraw(); }
+    if(pts.size===1){                                     // one pointer down: drag to turn the map (Shift, middle or right button: slide it)
+      const dx=x-drag.px, dy=y-drag.py; if(!drag.moved && Math.abs(dx)+Math.abs(dy)>4) drag.moved=true;
+      if(drag.moved){
+        if(drag.pan){ CITE.tx+=dx; CITE.ty+=dy; }
+        else { CITE.yaw+=dx*CITE_ROT_SPEED; CITE.pitch=Math.max(-1.5,Math.min(1.5,CITE.pitch+dy*CITE_ROT_SPEED)); }
+        drag.px=x; drag.py=y; CITE.hover=null; showTip(null); citeDraw();
+      }
       return;
     }
     const h=hit(x,y); if(h!==CITE.hover){ CITE.hover=h; cv.style.cursor=h?"pointer":"grab"; showTip(h,x,y); citeDraw(); } else if(h) showTip(h,x,y);
   };
   const end=e=>{ const had=pts.size; pts.delete(e.pointerId); CITE.pinch=0;
-    if(had===1){ if(!drag.moved) citeSelect(drag.node); drag.node=null; drag.pan=false; cv.style.cursor="grab"; } };
+    if(had===1){ if(!drag.moved) citeSelect(drag.node); drag.node=null; drag.pan=false; cv.style.cursor="grab"; }
+    else if(had===2){ const r=[...pts.values()][0]; if(r){ drag.px=r[0]; drag.py=r[1]; } }          // the finger left behind carries on turning from where it is
+    if(!pts.size) drag.down=false; };
   cv.onpointerup=end; cv.onpointercancel=end;
   cv.onpointerleave=()=>{ CITE.hover=null; showTip(null); citeDraw(); };
   cv.addEventListener("wheel",e=>{ e.preventDefault(); const [x,y]=pos(e); citeZoomAt(x,y,Math.exp(-e.deltaY*0.0015)); },{passive:false});
+  cv.onkeydown=e=>{                                       // keyboard: arrows turn, + and - zoom
+    const k=e.key; let ok=true;
+    if(k==="ArrowLeft") CITE.yaw-=0.12; else if(k==="ArrowRight") CITE.yaw+=0.12;
+    else if(k==="ArrowUp") CITE.pitch=Math.max(-1.5,CITE.pitch-0.12); else if(k==="ArrowDown") CITE.pitch=Math.min(1.5,CITE.pitch+0.12);
+    else if(k==="+"||k==="=") citeZoomAt(CITE.W/2,CITE.H/2,1.2); else if(k==="-") citeZoomAt(CITE.W/2,CITE.H/2,1/1.2);
+    else ok=false;
+    if(ok){ e.preventDefault(); citeStopSpin(); citeDraw(); } };
   $("#cmZin").onclick=()=>citeZoomAt(CITE.W/2,CITE.H/2,1.4);
   $("#cmZout").onclick=()=>citeZoomAt(CITE.W/2,CITE.H/2,1/1.4);
-  $("#cmZfit").onclick=()=>{ citeFit(); citeDraw(); };
+  $("#cmZfit").onclick=()=>{ citeFit(true); citeDraw(); };
+  $("#cmSpin").onclick=()=>{ CITE.spin=!CITE.spin; $("#cmSpin").setAttribute("aria-pressed",String(CITE.spin)); if(CITE.spin) citeRun(); };
   const q=$("#cmQ");
   q.oninput=()=>{ CITE.q=q.value.trim().toLowerCase(); if(CITE.sel) citeSelect(null); else citeDraw(); };
   q.onkeydown=e=>{ if(e.key==="Enter"&&CITE.q){ const m=citeNodes().filter(citeMatches).sort((a,b)=>(b.cin||0)-(a.cin||0))[0]; if(m) citeSelect(m); } };
