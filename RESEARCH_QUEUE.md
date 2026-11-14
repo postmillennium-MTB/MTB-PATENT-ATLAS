@@ -353,6 +353,54 @@ patents" entry (`conf:"l"`). One number held up; the rest did not.
 
 - The atlas's former "V-Brake" entry (US 5,636,716) turned out to describe a four-bar link driven by a cantilever brake; its text never uses the name V-Brake. The patent that actually covers the single-cable linear-pull V-Brake (introduced c. 1991) is not yet identified. Search Shimano filings of 1989–1991 by title ("Bicycle brake device", "Brake assembly") and confirm the claim language before adding an entry.
 
+## Citation-map leads (added 2026-11-13, picked by Jon)
+
+Found by counting which patents with no Atlas card are cited by, or cite, the
+most Atlas cards (`tools/citation_map/`, Google Patents citation tables read
+2026-11-13). Jon chose these 17 from that ranking. Numbers, titles, assignees
+and priority dates are as Google Patents' citation tables list them; none has
+had its own front page verified, a drawing chosen, or its bike relevance
+confirmed beyond the title. "Cards" is how many Atlas cards the patent links to.
+
+### New cards (14)
+
+Rear suspension
+1. **US 5,791,674** — "Bicycle suspension system", Cannondale Corporation, priority 1997-03-13. Cited by 27 cards.
+2. **US 5,226,674 + US 5,205,572** — "Cycle rear suspension system", Schwinn Bicycle Company, priority 1991-08-27. Cited by 21 cards. One card for the pair unless the two turn out to cover different designs.
+3. **US 7,100,930** (published as US 2005/0057018 A1) — "Bicycle rear suspension system", Neal Tate Saiki, priority 2003-09-15. Cited by 21 cards.
+4. **US 5,217,241** — "Bicycle suspension system", Ocean State International Inc., priority 1990-09-18. Cited by 19 cards.
+
+Forks & damping
+5. **US 5,186,481** — "Bicycle with improved front fork wheel suspension", RockShox, priority 1991-04-03. Cited by 8 cards.
+6. **US 5,456,480** — "Fork suspension with variable hydraulic damping", RockShox, priority 1994-06-06. Cited by 8 cards.
+7. **US 5,580,075** — "Bicycle fork suspension with exchangeable spring unit", RockShox, priority 1994-06-06. Cited by 8 cards.
+8. **US 6,105,988** — "Adjustable suspension system having positive and negative springs", RockShox, priority 1997-07-16. Cited by 7 cards.
+9. **US 5,996,746** — "Adjustable twin tube shock absorber", RockShox, priority 1997-07-03. Cited by 6 cards.
+10. **US 6,260,832** — "Shock absorber with adjustable compression and rebound", Marzocchi S.p.A., priority 1997-12-17. Cited by 6 cards.
+
+Check 5 to 10 against the existing RockShox and Marzocchi cards first (RS-1 fork US 4,971,344; "Marzocchi damping & hub portfolio"); some may belong on a card that already exists.
+
+Drivetrain
+11. **US 3,969,947** — "Tapered tooth sprocket", Gehl Company, priority 1975-05-22. Cited by 6 cards. Companion to the existing Gehl alternating-width sprocket card (US 4,174,642); cross-link the two.
+12. **US 9,033,833 + US 9,327,792 + US 10,207,772** — "Gear transmission and derailleur system", Paha Designs, LLC, priority 2011-01-28. The family cites 9 cards.
+
+Bike transport
+13. **US 5,526,971** — "Bicycle rack", Steven S. Despain, priority 1994-05-06. Cited by 5 cards.
+
+Rear suspension, recent
+14. **US 12,617,488** — "Two-wheeled vehicle with configurable idler", Yeti Cycling, LLC, priority 2021-09-09. Cites 28 cards. Check against the existing Yeti 6-bar idler card (US 2025/0376238) before adding: same 2021 family is possible.
+
+### Numbers that probably belong on existing cards (3)
+
+15. **US 5,628,524 + reissue US RE39,159** — "Bicycle wheel travel path for selectively applying chainstay lengthening effect and apparatus for providing same", Outland Design Technologies (the reissue is listed to Santa Cruz Bicycles), priority 1995-01-25. Cited by 25 cards. Likely belongs with the Outland Virtual Pivot Point card (US 5,553,881). Confirm the relationship before adding it to `nums[]`; the card's `exp` and text may need to follow.
+16. **US 5,409,249 + US 5,441,292** — "Bicycle rear suspension system", GT Bicycles, priority 1993-09-15. Cited by 25 cards. Likely belongs with "GT RTS / LTS suspension era" (US 5,259,637 + 5,306,036 + 6,056,307 + EP 0,825,098).
+17. **US 5,244,224** — "Rocker arm rear suspension bicycle", GT Bicycles, priority 1992-05-14. Cited by 21 cards. Same GT card as 16.
+
+The full ranking (501 patents linked to four or more cards) was delivered to
+Jon as a spreadsheet, not committed; rebuild it from `graph.py`'s output if
+needed. The three Yeti patents already on hold (US 10,766,563, 12,077,241,
+12,145,684) rank at the top of the "cites the most Atlas cards" side.
+
 ## Process reminder for whoever picks this up
 
 Follow CLAUDE.md's full workflow, not just this list — in particular:
