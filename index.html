@@ -3172,6 +3172,8 @@ const T = {
     cmapCanvasAria:"Network of atlas patents joined by citations. The same data is in the tables below.",
     cmapZoomIn:"Zoom in", cmapZoomOut:"Zoom out", cmapZoomFit:"Fit", cmapZoomFitAria:"Reset the view and fit the whole map", cmapSpin:"Auto-rotate",
     cmapSelDetails:"Details below",
+    cmapToolAria:"What dragging does", cmapToolRotate:"Rotate", cmapToolMove:"Move dots",
+    cmapHintMove:"Drag a dot to move it; the others push away. Drag empty space to rotate. Tap a dot to select it.",
     cmapHint:"Drag to rotate. Tap a dot to select it. Scroll or pinch to zoom.",
     cmapPickTitle:"Pick a patent", cmapPickBody:"Tap any dot to see what it cites and what cites it. Arrows point from the newer patent to the older one it cites.",
     cmapFiled:y=>`Filed ${y}`, cmapPriority:y=>`Priority ${y}`, cmapOpenCard:"Open the card →",
@@ -3382,6 +3384,8 @@ const T = {
     cmapCanvasAria:"Réseau des brevets de l'atlas reliés par leurs citations. Les mêmes données figurent dans les tableaux ci-dessous.",
     cmapZoomIn:"Zoom avant", cmapZoomOut:"Zoom arrière", cmapZoomFit:"Tout", cmapZoomFitAria:"Rétablir la vue et afficher toute la carte", cmapSpin:"Rotation auto",
     cmapSelDetails:"Détails ci-dessous",
+    cmapToolAria:"Effet du glissement", cmapToolRotate:"Pivoter", cmapToolMove:"Déplacer les points",
+    cmapHintMove:"Glissez un point pour le déplacer ; les autres s'écartent. Glissez dans le vide pour pivoter. Touchez un point pour le choisir.",
     cmapHint:"Glissez pour pivoter. Touchez un point pour le choisir. Faites défiler ou pincez pour zoomer.",
     cmapPickTitle:"Choisissez un brevet", cmapPickBody:"Touchez un point pour voir ce qu'il cite et ce qui le cite. Les flèches vont du brevet le plus récent vers le brevet plus ancien qu'il cite.",
     cmapFiled:y=>`Déposé en ${y}`, cmapPriority:y=>`Priorité ${y}`, cmapOpenCard:"Ouvrir la fiche →",
@@ -5020,10 +5024,11 @@ const CITE_YEAR_YAW = 0.45, CITE_YEAR_PITCH = 0.12;    // the by-year layout ope
 const CITE_DEPTH_FADE = 0.5;        // opacity of the farthest dots and lines (the nearest are 1)
 const CITE_FIT_QUANTILE = 0.95;     // the web layout fits a sphere holding this share of the dots; the rest may swing off screen as it turns
 const CITE_LABEL_MIN_NEAR = 0.25;   // dots farther back than this (0 = farthest, 1 = nearest) get no label
+const CITE_MOVE_REHEAT = 0.4;       // dragging a dot in Move mode warms the layout back up to this, so the other dots push away and settle
 const CITE_GOOGLE_PATENT_URL = "https://patents.google.com/patent/";
 
-const CITE = { built:false, N:[], X:[], E:[], EX:[], top:[], mode:"web", showExt:false, cats:null, sel:null, hover:null, q:"",
-  k:1, tx:0, ty:0, alpha:0, laidOut:false, W:0, H:0, raf:0, t0:0, C:{}, drag:{node:null,pan:false,moved:false,down:false,px:0,py:0}, pts:new Map(), pinch:0, ro:null,
+const CITE = { built:false, N:[], X:[], E:[], EX:[], top:[], mode:"web", tool:"rotate", showExt:false, cats:null, sel:null, hover:null, q:"",
+  k:1, tx:0, ty:0, alpha:0, laidOut:false, W:0, H:0, raf:0, t0:0, C:{}, drag:{node:null,pan:false,moved:false,down:false,px:0,py:0,depth:0,pull:false}, pts:new Map(), pinch:0, ro:null,
   yaw:CITE_START_YAW, pitch:CITE_START_PITCH, cam:600, ox:0, zmin:0, zmax:1, spin:!window.matchMedia("(prefers-reduced-motion: reduce)").matches };
 
 function citeEsc(s){ return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
@@ -5093,6 +5098,7 @@ function citeTick(){
     dx*=f; dy*=f; dz*=f; t.vx-=dx*b; t.vy-=dy*b; t.vz-=dz*b; s.vx+=dx*(1-b); s.vy+=dy*(1-b); s.vz+=dz*(1-b);
   }
   for(const n of ns){
+    if(n.held){ n.vx=n.vy=n.vz=0; continue; }              // the dot under the pointer in Move mode stays where it is dragged
     const gy=CITE_GRAVITY*a*(yearMode?CITE_YEAR_GRAVITY_Y:1);
     n.vx-=n.x*CITE_GRAVITY*a*(yearMode?0:1); n.vy-=n.y_*gy; n.vz-=n.z*gy;
     n.vx*=0.6; n.vy*=0.6; n.vz*=0.6;
@@ -5134,6 +5140,13 @@ function citeProj(x,y,z){
   const cy=Math.cos(CITE.yaw), sy=Math.sin(CITE.yaw), cp=Math.cos(CITE.pitch), sp=Math.sin(CITE.pitch);
   const x1=x*cy+z*sy, z1=-x*sy+z*cy, y2=y*cp-z1*sp, z2=y*sp+z1*cp, s=CITE.cam/(CITE.cam+z2);
   return [CITE.tx+x1*CITE.k*s, CITE.ty+y2*CITE.k*s, z2, s];   // screen x, screen y, depth (bigger = farther), perspective scale
+}
+/* The reverse of citeProj for a dot that keeps its depth: where in the cloud is this screen point? (Used to drag a dot in Move mode.) */
+function citeUnproj(sx,sy,z2){
+  const cy=Math.cos(CITE.yaw), sy_=Math.sin(CITE.yaw), cp=Math.cos(CITE.pitch), sp=Math.sin(CITE.pitch), s=CITE.cam/(CITE.cam+z2);
+  const x1=(sx-CITE.tx)/(CITE.k*s), y2=(sy-CITE.ty)/(CITE.k*s);
+  const y=y2*cp+z2*sp, z1=z2*cp-y2*sp;
+  return [x1*cy-z1*sy_, y, x1*sy_+z1*cy];
 }
 function citeProject(){
   let zmin=1e9,zmax=-1e9;
@@ -5310,6 +5323,10 @@ function renderCite(){
         <button type="button" data-cm-mode="year" aria-pressed="${CITE.mode==="year"}">${t("cmapModeYear")}</button>
       </div>
       <button type="button" class="cm-btn" id="cmExt" aria-pressed="${CITE.showExt}">${t(CITE.showExt?"cmapExtHide":"cmapExtShow")}</button>
+      <div class="cm-seg" role="group" aria-label="${citeEsc(t("cmapToolAria"))}">
+        <button type="button" data-cm-tool="rotate" aria-pressed="${CITE.tool==="rotate"}">${t("cmapToolRotate")}</button>
+        <button type="button" data-cm-tool="move" aria-pressed="${CITE.tool==="move"}">${t("cmapToolMove")}</button>
+      </div>
       <button type="button" class="cm-btn" id="cmSpin" aria-pressed="${CITE.spin}"${CITE.mode==="web"?"":" hidden"}>${t("cmapSpin")}</button>
     </div>
     <div class="cm-legend" role="group" aria-label="${citeEsc(t("cmapLegendAria"))}">${legend}</div>
@@ -5319,7 +5336,7 @@ function renderCite(){
         <canvas id="cmCanvas" role="img" aria-label="${citeEsc(t("cmapCanvasAria"))}"></canvas>
         <div class="cm-zoom"><button type="button" id="cmZin" aria-label="${citeEsc(t("cmapZoomIn"))}">+</button><button type="button" id="cmZout" aria-label="${citeEsc(t("cmapZoomOut"))}">−</button><button type="button" id="cmZfit" class="fit" aria-label="${citeEsc(t("cmapZoomFitAria"))}">${t("cmapZoomFit")}</button></div>
         <div class="cm-sel" id="cmSel" hidden></div>
-        <div class="cm-hint" id="cmHint"${CITE.sel?" hidden":""}>${t("cmapHint")}</div>
+        <div class="cm-hint" id="cmHint"${CITE.sel?" hidden":""}>${t(CITE.tool==="move"?"cmapHintMove":"cmapHint")}</div>
         <div class="cm-tip" id="cmTip" hidden></div>
       </div>
       <aside class="cm-panel" id="cmPanel" aria-live="polite">${citePanelHTML()}</aside>
@@ -5360,6 +5377,8 @@ function renderCite(){
     const [x,y]=pos(e); pts.set(e.pointerId,[x,y]); citeStopSpin(); drag.down=true;
     if(pts.size===2){ const [a,b]=[...pts.values()]; CITE.pinch=Math.hypot(a[0]-b[0],a[1]-b[1]); drag.node=null; drag.pan=false; drag.moved=true; return; }
     drag.node=hit(x,y); drag.pan=e.shiftKey||e.button===1||e.button===2; drag.moved=false; drag.px=x; drag.py=y; cv.style.cursor="grabbing";
+    drag.pull=CITE.tool==="move" && !!drag.node && !drag.pan;           // Move mode: a drag that starts on a dot pulls that dot
+    if(drag.pull) drag.depth=drag.node.sz;
   };
   cv.onpointermove=e=>{
     const [x,y]=pos(e);
@@ -5369,15 +5388,20 @@ function renderCite(){
       const dx=x-drag.px, dy=y-drag.py; if(!drag.moved && Math.abs(dx)+Math.abs(dy)>4) drag.moved=true;
       if(drag.moved){
         if(drag.pan){ CITE.tx+=dx; CITE.ty+=dy; }
+        else if(drag.pull){
+          const n=drag.node, w=citeUnproj(x,y,drag.depth);
+          if(CITE.mode!=="year") n.x=w[0]; n.y_=w[1]; n.z=w[2]; n.held=true;
+          if(CITE.alpha<CITE_MOVE_REHEAT) CITE.alpha=CITE_MOVE_REHEAT; citeRun();
+        }
         else { CITE.yaw+=dx*CITE_ROT_SPEED; CITE.pitch=Math.max(-1.5,Math.min(1.5,CITE.pitch+dy*CITE_ROT_SPEED)); }
         drag.px=x; drag.py=y; CITE.hover=null; showTip(null); citeDraw();
       }
       return;
     }
-    const h=hit(x,y); if(h!==CITE.hover){ CITE.hover=h; cv.style.cursor=h?"pointer":"grab"; showTip(h,x,y); citeDraw(); } else if(h) showTip(h,x,y);
+    const h=hit(x,y); if(h!==CITE.hover){ CITE.hover=h; cv.style.cursor=h?(CITE.tool==="move"?"grab":"pointer"):"grab"; showTip(h,x,y); citeDraw(); } else if(h) showTip(h,x,y);
   };
   const end=e=>{ const had=pts.size; pts.delete(e.pointerId); CITE.pinch=0;
-    if(had===1){ if(!drag.moved) citeSelect(drag.node); drag.node=null; drag.pan=false; cv.style.cursor="grab"; }
+    if(had===1){ if(!drag.moved) citeSelect(drag.node); if(drag.node) drag.node.held=false; drag.node=null; drag.pan=false; drag.pull=false; cv.style.cursor="grab"; }
     else if(had===2){ const r=[...pts.values()][0]; if(r){ drag.px=r[0]; drag.py=r[1]; } }          // the finger left behind carries on turning from where it is
     if(!pts.size) drag.down=false; };
   cv.onpointerup=end; cv.onpointercancel=end;
@@ -5398,6 +5422,12 @@ function renderCite(){
   q.oninput=()=>{ CITE.q=q.value.trim().toLowerCase(); if(CITE.sel) citeSelect(null); else citeDraw(); };
   q.onkeydown=e=>{ if(e.key==="Enter"&&CITE.q){ const m=citeNodes().filter(citeMatches).sort((a,b)=>(b.cin||0)-(a.cin||0))[0]; if(m) citeSelect(m); } };
   tl.querySelectorAll("[data-cm-mode]").forEach(b=>b.onclick=()=>{ if(CITE.mode===b.dataset.cmMode) return; CITE.mode=b.dataset.cmMode; CITE.laidOut=false; renderCite(); });
+  tl.querySelectorAll("[data-cm-tool]").forEach(b=>b.onclick=()=>{
+    CITE.tool=b.dataset.cmTool;
+    tl.querySelectorAll("[data-cm-tool]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+    const h=document.getElementById("cmHint"); if(h) h.textContent=t(CITE.tool==="move"?"cmapHintMove":"cmapHint");
+    if(CITE.tool==="move") citeStopSpin();
+  });
   $("#cmExt").onclick=()=>citeSetExt(!CITE.showExt);
   tl.querySelectorAll("[data-cm-cat]").forEach(b=>b.onclick=()=>{
     const k=b.dataset.cmCat, all=Object.keys(CATS);
