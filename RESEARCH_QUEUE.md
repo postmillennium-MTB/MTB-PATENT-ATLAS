@@ -422,6 +422,8 @@ Components
 
 Pre-MTB motorcycle roots (same idea as the Simons fork card): US 4,322,088 (Honda, 1979, 14 links), US 3,917,313 (Bultaco, 1973, 13 links).
 
+Drawings for the second list are already in `pictures/` (2026-11-14), cropped from the USPTO PDFs and not yet wired into any card: `US5335929A`, `US5332246A`, `US4058181A`, `US4679811A`, `US7581743B2` (also covers US 2010/0102531 A1, which prints the same figures), `US6102421A`, `US5354085A`, `US712784A`, `US944795A`, `US6095541A`, `US5848675A`, `US5332068A`, `US4322088A`, `US3917313A`, `US20060152045A1`. No drawing exists for Johnston US 1,298,958 (the printed patent is text only). When a card is written, wire `img` and write `imgAlt` from the sheet; the Shimano application PDF has no text layer, so its title and assignee still need a check against Google Patents.
+
 The full ranking (501 patents linked to four or more cards) was delivered to
 Jon as a spreadsheet, not committed; rebuild it from `graph.py`'s output if
 needed. The three Yeti patents already on hold (US 10,766,563, 12,077,241,
