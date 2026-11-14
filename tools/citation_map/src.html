@@ -1,0 +1,553 @@
+<title>Patent Citation Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   PATENT CITATION MAP — a companion view to the MTB Patent Atlas
+   FILE MAP
+     1. Tokens (light, dark)            4. Detail panel + ranked tables
+     2. Page layout + header            5. Notes + license footer
+     3. Controls, legend, graph stage
+   Layout: one column on a phone (controls, graph, detail, tables); at 900px
+   the detail panel sits beside the graph.
+   ========================================================================== */
+:root{
+  --bg:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --primary:#2D6A4F; --on-primary:#ffffff;
+  --edge:rgba(11,11,11,.13); --edge-hi:#0b0b0b;
+  /* Category colours: the Atlas's own CAT_COLORS (light) and the same hues
+     stepped for a dark surface. "tech" is a neutral grey on purpose. */
+  --c-susp:#2a78d6; --c-fork:#eb6834; --c-drive:#1baf7a; --c-wheel:#eda100;
+  --c-comp:#e87ba4; --c-emtb:#008300; --c-frame:#4a3aa7; --c-transport:#e34948; --c-tech:#898781;
+  --font-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --font-body:"Barlow",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --primary:#8AB17D; --on-primary:#0b0b0b;
+    --edge:rgba(240,239,236,.14); --edge-hi:#f0efec;
+    --c-susp:#3987e5; --c-fork:#d95926; --c-drive:#199e70; --c-wheel:#c98500;
+    --c-comp:#d55181; --c-emtb:#0ca30c; --c-frame:#9085e9; --c-transport:#e66767; --c-tech:#898781;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --primary:#8AB17D; --on-primary:#0b0b0b;
+  --edge:rgba(240,239,236,.14); --edge-hi:#f0efec;
+  --c-susp:#3987e5; --c-fork:#d95926; --c-drive:#199e70; --c-wheel:#c98500;
+  --c-comp:#d55181; --c-emtb:#0ca30c; --c-frame:#9085e9; --c-transport:#e66767; --c-tech:#898781;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding-block:20px 8px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;flex-direction:column;gap:16px}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.1;margin:0;text-wrap:balance}
+h1{font-size:34px;letter-spacing:.01em}
+h2{font-size:22px}
+.eyebrow{font-family:var(--font-display);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--primary)}
+.lede{max-width:68ch;color:var(--ink-2);margin:6px 0 0}
+.stats{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0;padding:0;list-style:none;color:var(--ink-2);font-size:14px}
+.stats b{font-family:var(--font-display);font-size:22px;color:var(--ink);font-variant-numeric:tabular-nums;margin-right:5px}
+
+/* ---- 3. Controls ---- */
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.controls input[type=search]{flex:1 1 200px;min-width:0;font:inherit;padding:9px 12px;border:1px solid var(--axis);border-radius:8px;background:var(--surface);color:var(--ink)}
+.seg{display:inline-flex;border:1px solid var(--axis);border-radius:8px;overflow:hidden}
+.seg button,.btn{font:600 14px var(--font-body);padding:9px 13px;border:0;background:var(--surface);color:var(--ink);cursor:pointer;min-height:40px}
+.seg button+button{border-left:1px solid var(--axis)}
+.seg button[aria-pressed=true]{background:var(--primary);color:var(--on-primary)}
+.btn{border:1px solid var(--axis);border-radius:8px}
+.btn[aria-pressed=true]{background:var(--primary);color:var(--on-primary);border-color:var(--primary)}
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.legend{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:500 13px var(--font-body);padding:6px 10px;border:1px solid var(--axis);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;min-height:34px}
+.chip[aria-pressed=false]{opacity:.45}
+.chip .n{color:var(--muted);font-variant-numeric:tabular-nums}
+.dot{width:11px;height:11px;border-radius:50%;flex:none;background:var(--muted)}
+.dot.ext{background:var(--surface);border:2px solid var(--muted)}
+.key{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--ink-2)}
+.key span{display:inline-flex;align-items:center;gap:6px}
+.key i{display:inline-block;width:26px;border-top:2px solid var(--ink-2)}
+.key i.dash{border-top-style:dashed}
+
+.main{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+.stage{position:relative;background:var(--surface);border:1px solid var(--grid);border-radius:10px;overflow:hidden;height:min(70vh,560px);min-height:380px}
+canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
+.stage .hint{position:absolute;left:10px;bottom:8px;font-size:12px;color:var(--muted);pointer-events:none}
+.stage .zoom{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:6px}
+.stage .zoom button{width:38px;height:38px;border:1px solid var(--axis);border-radius:8px;background:var(--surface);color:var(--ink);font:600 18px var(--font-body);cursor:pointer}
+.stage .zoom button.fit{font-size:11px}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--surface);font-size:12.5px;line-height:1.3;padding:6px 9px;border-radius:6px;max-width:240px;z-index:2}
+
+/* ---- 4. Detail panel ---- */
+.panel{background:var(--surface);border:1px solid var(--grid);border-radius:10px;padding:14px 16px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.panel h3{font-size:21px}
+.panel .meta{color:var(--ink-2);font-size:14px;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
+.panel .meta span{display:inline-flex;align-items:center;gap:6px}
+.panel .links{display:flex;flex-wrap:wrap;gap:8px}
+.panel a.go{font:600 14px var(--font-body);padding:8px 12px;border-radius:8px;text-decoration:none;background:var(--primary);color:var(--on-primary)}
+.panel a.go.alt{background:transparent;color:var(--ink);border:1px solid var(--axis)}
+.panel h4{font:600 13px var(--font-display);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin:6px 0 0}
+.nlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;max-height:230px;overflow:auto}
+.nlist button{width:100%;display:flex;align-items:center;gap:8px;text-align:left;font:inherit;font-size:14px;background:none;border:0;color:var(--ink);padding:6px 4px;border-radius:6px;cursor:pointer}
+.nlist button:hover{background:var(--bg)}
+.nlist .yr{margin-left:auto;color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px;flex:none}
+.nlist .tag{font-size:11px;color:var(--muted);border:1px solid var(--axis);border-radius:4px;padding:0 4px;flex:none}
+.nlist .nm{min-width:0;overflow-wrap:anywhere}
+.empty{color:var(--ink-2)}
+
+.tables{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+.tables section{min-width:0}
+.tables p{color:var(--ink-2);margin:4px 0 8px;max-width:60ch}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font:600 12px var(--font-display);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);text-align:left;padding:6px 8px;border-bottom:1px solid var(--axis)}
+td{padding:7px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td button{font:inherit;color:var(--ink);background:none;border:0;padding:0;text-align:left;cursor:pointer;text-decoration:underline;text-decoration-color:var(--axis);text-underline-offset:3px}
+td a{color:var(--ink)}
+td .sub{display:block;color:var(--muted);font-size:12.5px}
+.notes{background:var(--surface);border:1px solid var(--grid);border-radius:10px;padding:14px 18px}
+.notes ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2);max-width:78ch}
+.notes li{margin:4px 0}
+.pmr-license{box-sizing:border-box;clear:both;width:100%;margin:24px 0 0;padding:10px 16px 14px;border-top:1px solid rgba(128,128,128,.35);background:transparent;color:inherit;font-family:inherit;font-size:12px;line-height:20px;text-align:center;letter-spacing:normal;text-transform:none}
+.pmr-license p{margin:0 auto;padding:0;max-width:none;font:inherit;color:inherit}
+.pmr-license a{position:relative;display:inline;color:inherit;text-decoration:underline}
+
+@media (min-width:900px){
+  h1{font-size:42px}
+  .main{grid-template-columns:minmax(0,1fr) 340px}
+  .stage{height:640px}
+  .panel{max-height:640px;overflow:auto}
+  .nlist{max-height:none}
+  .tables{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
+</style>
+<!--BODY-->
+<div class="wrap">
+  <header>
+    <div class="eyebrow">MTB Patent Atlas · preview</div>
+    <h1>Patent Citation Map</h1>
+    <p class="lede">Every dot is a card in the Atlas. A line joins two cards when a patent on one cites a patent on the other, as listed on Google Patents. Bigger dots are cited by more Atlas cards.</p>
+  </header>
+  <ul class="stats" id="stats"></ul>
+
+  <div class="controls">
+    <input type="search" id="q" placeholder="Find a patent: Horst, Yeti, dropper…" aria-label="Find a patent on the map">
+    <div class="seg" role="group" aria-label="Layout">
+      <button type="button" id="modeWeb" aria-pressed="true">Web</button>
+      <button type="button" id="modeYear" aria-pressed="false">By filing year</button>
+    </div>
+    <button type="button" class="btn" id="extBtn" aria-pressed="false">Show patents outside the Atlas</button>
+  </div>
+  <div class="legend" id="legend" role="group" aria-label="Filter by category"></div>
+  <div class="key">
+    <span><i></i> cites that exact patent</span>
+    <span><i class="dash"></i> cites a relative in the same patent family</span>
+    <span><span class="dot ext"></span> not in the Atlas</span>
+  </div>
+
+  <div class="main">
+    <div class="stage" id="stage">
+      <canvas id="cv" role="img" aria-label="Network of Atlas patents joined by citations. The same data is in the tables below."></canvas>
+      <div class="zoom">
+        <button type="button" id="zin" aria-label="Zoom in">+</button>
+        <button type="button" id="zout" aria-label="Zoom out">−</button>
+        <button type="button" id="zfit" class="fit" aria-label="Fit the whole map">Fit</button>
+      </div>
+      <div class="hint" id="hint">Tap a dot. Drag to move, pinch or scroll to zoom.</div>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </div>
+
+  <div class="tables">
+    <section>
+      <h2>Most cited inside the Atlas</h2>
+      <p>Cards that the most other Atlas cards point back to.</p>
+      <div class="scroll"><table id="tblTop"></table></div>
+    </section>
+    <section>
+      <h2>Cited often, not in the Atlas</h2>
+      <p>Patents with no Atlas card that the most Atlas cards cite. Candidates to add.</p>
+      <div class="scroll"><table id="tblExt"></table></div>
+    </section>
+  </div>
+
+  <div class="notes">
+    <h2>How to read this</h2>
+    <ul id="notes"></ul>
+  </div>
+</div>
+<div class="pmr-license"><p>&copy; 2026 Post Millennium Renaissance &middot; <a href="https://www.postmillenniumrenaissance.com/" target="_top">postmillenniumrenaissance.com</a> &middot; Free for noncommercial use under <a href="https://polyformproject.org/licenses/noncommercial/1.0.0/" target="_blank" rel="noopener noreferrer">PolyForm Noncommercial 1.0.0</a>. Citation lists are from Google Patents and remain the property of their sources.</p></div>
+
+<script>
+/* ==========================================================================
+   DATA — everything the page shows. Generated from the Atlas's D array and
+   the "Patent citations" / "Cited by" tables on each patent's Google Patents
+   page. Do not hand-edit CM; regenerate it.
+     CM.nodes  one per Atlas card with at least one citation link
+               {ref: Atlas card ref, t: title, s: short label, cat, y: filing
+                year, st: status, gp: Google Patents id}
+     CM.edges  [citing node, cited node, 0 exact | 1 family-level, 1 if every
+                exact citation was examiner-added]
+     CM.ext    patents with no Atlas card that touch >= CM.meta.extMin cards
+               {pn, t, a: assignee, y: priority year, k: "cited"|"citing", c: [nodes]}
+   ========================================================================== */
+const CM = /*DATA*/;
+
+/* Category labels, in the Atlas's own order (CATS in the Atlas index.html). */
+const CATS = [
+  {key:"susp", label:"Rear Suspension"}, {key:"fork", label:"Forks & Damping"},
+  {key:"drive", label:"Drivetrain"}, {key:"wheel", label:"Wheels & Tires"},
+  {key:"comp", label:"Components"}, {key:"emtb", label:"E-MTB & Electronics"},
+  {key:"frame", label:"Frame & Standards"}, {key:"transport", label:"Bike Transport"},
+  {key:"tech", label:"Cameras & Wearables"}
+];
+const ATLAS_CARD_URL = "https://postmillenniumrenaissance.com/atlas/#p=";  // + card ref
+const GOOGLE_PATENT_URL = "https://patents.google.com/patent/";            // + publication id
+
+/* Reader-facing notes under the map. */
+const NOTES = [
+  "A dot is an Atlas card, and some cards hold several patents. A line means at least one patent on one card cites a patent on the other.",
+  "Older patents have had more years to collect citations, so a big dot is partly a matter of age.",
+  "Patent examiners add citations of their own. {EXAM} of the {DIRECT} exact links here come only from examiner-added citations, so a link does not mean the inventor knew of or built on the earlier patent.",
+  "A citation is not a licence, a lawsuit or proof of copying. It says only that one document was listed as background for another.",
+  "Source: Google Patents, read {DATE}. {FETCHED} of {NUMBERS} patent numbers in the Atlas could be read. {UNLINKED} numbered cards have no citation link to another Atlas card and are not drawn; {NOCIT} of them have no citation list on Google Patents at all. Cards without a patent number are left out.",
+  "Patents outside the Atlas are shown only when they touch {EXTMIN} or more Atlas cards."
+];
+/* ======================= END OF DATA ======================= */
+
+/* ---- Tuning constants ---- */
+const NODE_R_MIN = 4.5;        // px radius of a card nobody in the Atlas cites
+const NODE_R_PER_SQRT = 2.3;   // extra radius per sqrt(cited-by count); area tracks the count
+const EXT_R = 5;               // radius of an outside patent
+const LINK_LEN = 46;           // rest length of a link, world units
+const REPULSE = 1400;          // node-to-node push; raise to spread the map out
+const COLLIDE_PAD = 3;         // minimum gap between two dots, world units
+const YEAR_LINK_WEAKEN = 0.12; // by-year layout: links pull less, or every dot collapses onto one line
+const YEAR_GRAVITY_Y = 0.35;   // by-year layout: vertical pull toward the middle, relative to GRAVITY
+const GRAVITY = 0.035;         // pull toward the centre so loose groups stay on screen
+const YEAR_PX = 22;            // world units per year after YEAR_BREAK in the by-year layout
+const YEAR_BREAK = 1970;       // years before this are squeezed (few connected patents that old)
+const YEAR_OLD_PX = 3;         // world units per year before YEAR_BREAK
+const PRE_TICKS = 320;         // layout steps run before the first paint
+const LABEL_TOP_N = 12;        // always-labelled dots (the most cited)
+const LABEL_NEIGHBOR_MAX = 24; // labels shown around a selected dot
+const TOP_ROWS = 15;           // rows in each table
+const ZOOM_MIN = 0.25, ZOOM_MAX = 6;
+
+/* ---- Derived graph ---- */
+const N = CM.nodes.map((d,i)=>({...d, i, kind:"card", cin:0, cout:0, x:0, y_:0, vx:0, vy:0}));
+const X = CM.ext.map((d,i)=>({...d, i:N.length+i, kind:"ext", s:d.t.length>34?d.t.slice(0,32)+"…":d.t, x:0, y_:0, vx:0, vy:0}));
+const E = CM.edges.map(e=>({s:N[e[0]], d:N[e[1]], fam:e[2]===1, exam:e[3]===1}));
+E.forEach(e=>{ e.s.cout++; e.d.cin++; });
+const EX = [];   // links to outside patents
+X.forEach(x=>x.c.forEach(ci=> EX.push(x.k==="cited" ? {s:N[ci], d:x, fam:false, ext:true} : {s:x, d:N[ci], fam:false, ext:true})));
+N.forEach(n=> n.r = NODE_R_MIN + NODE_R_PER_SQRT*Math.sqrt(n.cin));
+X.forEach(x=> x.r = EXT_R);
+const catLabel = Object.fromEntries(CATS.map(c=>[c.key,c.label]));
+
+const state = { mode:"web", showExt:false, cats:new Set(CATS.map(c=>c.key)), sel:null, hover:null, q:"",
+                k:1, tx:0, ty:0, alpha:0 };
+const nodes = () => state.showExt ? N.concat(X) : N;
+const links = () => state.showExt ? E.concat(EX) : E;
+
+/* ---- Theme: canvas colours are read from the CSS tokens ---- */
+let C = {};
+function readTheme(){
+  const cs = getComputedStyle(document.documentElement), g = k => cs.getPropertyValue(k).trim();
+  C = {surface:g("--surface"), ink:g("--ink"), ink2:g("--ink-2"), muted:g("--muted"), grid:g("--grid"),
+       edge:g("--edge"), edgeHi:g("--edge-hi"), cat:Object.fromEntries(CATS.map(c=>[c.key,g("--c-"+c.key)]))};
+}
+
+/* ---- Layout: a small force simulation (repel, links, gravity) ---- */
+function yearX(y){ return y<YEAR_BREAK ? (y-YEAR_BREAK)*YEAR_OLD_PX : (y-YEAR_BREAK)*YEAR_PX; }
+function seed(){
+  nodes().forEach((n,i)=>{
+    const a = i*2.399963, rad = 14*Math.sqrt(i+1);          // sunflower spiral: deterministic start
+    n.x = state.mode==="year" ? yearX(n.y) : Math.cos(a)*rad;
+    n.y_ = Math.sin(a)*rad; n.vx = n.vy = 0;
+  });
+}
+function tick(){
+  const ns = nodes(), ls = links(), a = state.alpha, yearMode = state.mode==="year";
+  for(let i=0;i<ns.length;i++){
+    const p = ns[i];
+    for(let j=i+1;j<ns.length;j++){
+      const q = ns[j]; let dx = q.x-p.x, dy = q.y_-p.y_;
+      if(yearMode) dx *= 0.35;                              // same-year dots must still push apart vertically
+      let d2 = dx*dx+dy*dy; if(d2<1){ dx=(i-j)%2?1:-1; dy=0.5; d2=1.25; }
+      const min = p.r+q.r+COLLIDE_PAD, d = Math.sqrt(d2);
+      let f = REPULSE*a*(p.r*q.r/30)/Math.max(d2,min*min*0.25);
+      if(d<min) f += (min-d)*0.35;                          // overlapping dots are pushed apart even after the layout cools
+      dx/=d; dy/=d;
+      p.vx-=dx*f; p.vy-=dy*f; q.vx+=dx*f; q.vy+=dy*f;
+    }
+  }
+  for(const l of ls){
+    const s=l.s, t=l.d; let dx=t.x-s.x, dy=t.y_-s.y_; const d=Math.sqrt(dx*dx+dy*dy)||1;
+    const ds=(s.cin||0)+(s.cout||0)+1, dt=(t.cin||0)+(t.cout||0)+1;
+    const str = (l.ext?0.25:1)*(yearMode?YEAR_LINK_WEAKEN:1)/Math.min(ds,dt), f=(d-LINK_LEN)/d*a*str*0.9, b=ds/(ds+dt);
+    dx*=f; dy*=f; t.vx-=dx*b; t.vy-=dy*b; s.vx+=dx*(1-b); s.vy+=dy*(1-b);
+  }
+  for(const n of ns){
+    n.vx -= n.x*GRAVITY*a*(yearMode?0:1); n.vy -= n.y_*GRAVITY*a*(yearMode?YEAR_GRAVITY_Y:1);
+    n.vx*=0.6; n.vy*=0.6;
+    if(n===drag.node) continue;
+    if(yearMode) n.x = yearX(n.y); else n.x += n.vx;
+    n.y_ += n.vy;
+  }
+  state.alpha *= 0.985;
+}
+function layout(){
+  seed(); state.alpha = 1;
+  for(let i=0;i<PRE_TICKS;i++) tick();
+  fit(); run();
+}
+let raf = 0;
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function run(){
+  if(raf) return;
+  const step = () => { raf = 0; if(state.alpha>0.02 && !reduceMotion){ tick(); raf=requestAnimationFrame(step); } draw(); };
+  raf = requestAnimationFrame(step);
+}
+
+/* ---- View transform ---- */
+const cv = document.getElementById("cv"), ctx = cv.getContext("2d"), stage = document.getElementById("stage");
+let W=0, H=0, DPR=1;
+function resize(){
+  const r = stage.getBoundingClientRect(); W=r.width; H=r.height; DPR=window.devicePixelRatio||1;
+  cv.width=Math.round(W*DPR); cv.height=Math.round(H*DPR); draw();
+}
+function fit(){
+  const ns = nodes(); if(!ns.length||!W) return;
+  let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;
+  for(const n of ns){ x0=Math.min(x0,n.x-n.r); x1=Math.max(x1,n.x+n.r); y0=Math.min(y0,n.y_-n.r); y1=Math.max(y1,n.y_+n.r); }
+  const pad = 28, k = Math.min((W-2*pad)/(x1-x0||1), (H-2*pad-(state.mode==="year"?18:0))/(y1-y0||1), 2.2);
+  state.k=k; state.tx=W/2-k*(x0+x1)/2; state.ty=H/2-k*(y0+y1)/2-(state.mode==="year"?8:0);
+}
+function zoomAt(px,py,f){
+  const k = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, state.k*f)); f = k/state.k;
+  state.tx = px-(px-state.tx)*f; state.ty = py-(py-state.ty)*f; state.k=k; draw();
+}
+const sx = n => n.x*state.k+state.tx, sy = n => n.y_*state.k+state.ty;
+
+/* ---- Which dots are lit ---- */
+function matches(n){
+  if(n.kind==="card" && !state.cats.has(n.cat)) return false;
+  if(state.q){ const hay=(n.t+" "+(n.a||"")+" "+(n.pn||n.ref)).toLowerCase(); return state.q.split(/\s+/).every(w=>hay.includes(w)); }
+  return true;
+}
+function neighborsOf(n){
+  const out=[], inn=[];
+  for(const l of links()){ if(l.s===n) out.push({n:l.d,l}); else if(l.d===n) inn.push({n:l.s,l}); }
+  const by=(a,b)=>b.n.y-a.n.y; out.sort(by); inn.sort(by);
+  return {out, inn};
+}
+
+/* ---- Drawing ---- */
+function draw(){
+  if(!W) return;
+  ctx.setTransform(DPR,0,0,DPR,0,0); ctx.clearRect(0,0,W,H);
+  ctx.fillStyle=C.surface; ctx.fillRect(0,0,W,H);
+  const ns=nodes(), ls=links(), sel=state.sel, k=state.k;
+  if(state.mode==="year") drawYearAxis();
+  const near = new Set(); if(sel){ near.add(sel); for(const l of ls){ if(l.s===sel) near.add(l.d); if(l.d===sel) near.add(l.s); } }
+  const lit = n => sel ? near.has(n) : matches(n);
+  const filtering = sel || state.q || state.cats.size<CATS.length;
+
+  ctx.lineWidth=1;
+  for(const l of ls){                                   // resting links
+    if(sel && (l.s===sel||l.d===sel)) continue;
+    const on = !filtering || (!sel && lit(l.s) && lit(l.d));
+    ctx.globalAlpha = on ? 1 : 0.25; ctx.strokeStyle=C.edge;
+    ctx.setLineDash(l.fam?[4,4]:[]);
+    ctx.beginPath(); ctx.moveTo(sx(l.s),sy(l.s)); ctx.lineTo(sx(l.d),sy(l.d)); ctx.stroke();
+  }
+  ctx.globalAlpha=1;
+  if(sel) for(const l of ls){                           // selected dot's links, with arrowheads toward the cited patent
+    if(l.s!==sel && l.d!==sel) continue;
+    const x1=sx(l.s), y1=sy(l.s), x2=sx(l.d), y2=sy(l.d), ang=Math.atan2(y2-y1,x2-x1), rr=l.d.r*Math.min(1.6,Math.max(.7,k))+2;
+    const ex=x2-Math.cos(ang)*rr, ey=y2-Math.sin(ang)*rr;
+    ctx.strokeStyle=C.edgeHi; ctx.fillStyle=C.edgeHi; ctx.lineWidth=1.4; ctx.setLineDash(l.fam?[5,4]:[]);
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(ex,ey); ctx.stroke(); ctx.setLineDash([]);
+    ctx.beginPath(); ctx.moveTo(ex,ey); ctx.lineTo(ex-Math.cos(ang-.4)*8,ey-Math.sin(ang-.4)*8); ctx.lineTo(ex-Math.cos(ang+.4)*8,ey-Math.sin(ang+.4)*8); ctx.closePath(); ctx.fill();
+  }
+  ctx.setLineDash([]);
+  const rs = Math.min(1.6,Math.max(.7,k));              // dots grow a little with zoom, not linearly
+  for(const n of ns){
+    const on = lit(n); ctx.globalAlpha = on?1:0.16;
+    ctx.beginPath(); ctx.arc(sx(n),sy(n),n.r*rs,0,6.2832);
+    if(n.kind==="ext"){ ctx.fillStyle=C.surface; ctx.fill(); ctx.lineWidth=2; ctx.strokeStyle=C.muted; ctx.stroke(); }
+    else { ctx.fillStyle=C.cat[n.cat]; ctx.fill(); ctx.lineWidth=1.5; ctx.strokeStyle=C.surface; ctx.stroke(); }
+    if(n===sel||n===state.hover){ ctx.globalAlpha=1; ctx.lineWidth=2.5; ctx.strokeStyle=C.ink; ctx.beginPath(); ctx.arc(sx(n),sy(n),n.r*rs+3,0,6.2832); ctx.stroke(); }
+  }
+  ctx.globalAlpha=1;
+  drawLabels(ns, near, rs);
+}
+function drawYearAxis(){
+  ctx.font="12px Barlow, system-ui, sans-serif"; ctx.textAlign="center"; ctx.textBaseline="bottom";
+  for(let y=1880;y<=2030;y+=10){
+    if(y<YEAR_BREAK && y%30!==10) continue;
+    const x = yearX(y)*state.k+state.tx; if(x<0||x>W) continue;
+    ctx.strokeStyle=C.grid; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H-18); ctx.stroke();
+    ctx.fillStyle=C.muted; ctx.fillText(String(y),x,H-3);
+  }
+}
+let topLabeled = [];
+function drawLabels(ns, near, rs){
+  let want;
+  if(state.sel){ want=[state.sel].concat([...near].filter(n=>n!==state.sel).sort((a,b)=>(b.cin||0)-(a.cin||0)).slice(0,LABEL_NEIGHBOR_MAX)); }
+  else if(state.q){ want=ns.filter(matches).slice(0,LABEL_NEIGHBOR_MAX); }
+  else want=topLabeled.filter(matches);
+  if(state.hover && !want.includes(state.hover)) want=[state.hover].concat(want);
+  ctx.font="600 12.5px Barlow, system-ui, sans-serif"; ctx.textBaseline="middle"; ctx.textAlign="left";
+  const boxes=[];
+  for(const n of want){
+    const tw=ctx.measureText(n.s).width; let x=sx(n)+n.r*rs+5, y=sy(n);
+    if(x+tw>W-4) x=sx(n)-n.r*rs-5-tw;
+    if(x<2||y<8||y>H-8) continue;
+    const b=[x-2,y-8,x+tw+2,y+8];
+    if(n!==state.sel && boxes.some(o=>b[0]<o[2]&&b[2]>o[0]&&b[1]<o[3]&&b[3]>o[1])) continue;   // skip a label that would overlap one already drawn
+    boxes.push(b);
+    ctx.lineWidth=3.5; ctx.strokeStyle=C.surface; ctx.lineJoin="round"; ctx.strokeText(n.s,x,y);
+    ctx.fillStyle=C.ink; ctx.fillText(n.s,x,y);
+  }
+}
+
+/* ---- Pointer: tap, drag a dot, pan, pinch ---- */
+const drag = {node:null, pan:false, moved:false, px:0, py:0};
+const pts = new Map(); let pinch = 0;
+function hit(px,py){
+  let best=null, bd=1e9; const rs=Math.min(1.6,Math.max(.7,state.k));
+  for(const n of nodes()){ const d=Math.hypot(sx(n)-px,sy(n)-py)-n.r*rs; if(d<10&&d<bd){bd=d;best=n;} }   // 10px halo: a target bigger than the dot
+  return best;
+}
+const pos = e => { const r=cv.getBoundingClientRect(); return [e.clientX-r.left, e.clientY-r.top]; };
+cv.addEventListener("pointerdown", e=>{
+  cv.setPointerCapture(e.pointerId); const [x,y]=pos(e); pts.set(e.pointerId,[x,y]);
+  if(pts.size===2){ const [a,b]=[...pts.values()]; pinch=Math.hypot(a[0]-b[0],a[1]-b[1]); drag.node=null; drag.pan=false; return; }
+  drag.node=hit(x,y); drag.pan=!drag.node; drag.moved=false; drag.px=x; drag.py=y; cv.style.cursor="grabbing";
+});
+cv.addEventListener("pointermove", e=>{
+  const [x,y]=pos(e);
+  if(pts.has(e.pointerId)) pts.set(e.pointerId,[x,y]);
+  if(pts.size===2){ const [a,b]=[...pts.values()], d=Math.hypot(a[0]-b[0],a[1]-b[1]); if(pinch) zoomAt((a[0]+b[0])/2,(a[1]+b[1])/2,d/pinch); pinch=d; return; }
+  if(pts.size===1){
+    const dx=x-drag.px, dy=y-drag.py; if(Math.abs(dx)+Math.abs(dy)>4) drag.moved=true;
+    if(drag.node && drag.moved){ drag.node.x=(x-state.tx)/state.k; drag.node.y_=(y-state.ty)/state.k; state.alpha=Math.max(state.alpha,0.25); run(); }
+    else if(drag.pan){ state.tx+=dx; state.ty+=dy; drag.px=x; drag.py=y; draw(); }
+    return;
+  }
+  const h=hit(x,y); if(h!==state.hover){ state.hover=h; cv.style.cursor=h?"pointer":"grab"; showTip(h,x,y); draw(); } else if(h) showTip(h,x,y);
+});
+function endPointer(e){
+  const had=pts.size; pts.delete(e.pointerId); pinch=0;
+  if(had===1){ if(!drag.moved) select(drag.node); drag.node=null; drag.pan=false; cv.style.cursor="grab"; }
+}
+cv.addEventListener("pointerup", endPointer); cv.addEventListener("pointercancel", endPointer);
+cv.addEventListener("pointerleave", ()=>{ state.hover=null; showTip(null); draw(); });
+cv.addEventListener("wheel", e=>{ e.preventDefault(); const [x,y]=pos(e); zoomAt(x,y,Math.exp(-e.deltaY*0.0015)); }, {passive:false});
+document.getElementById("zin").onclick=()=>zoomAt(W/2,H/2,1.4);
+document.getElementById("zout").onclick=()=>zoomAt(W/2,H/2,1/1.4);
+document.getElementById("zfit").onclick=()=>{ fit(); draw(); };
+
+const tip = document.getElementById("tip");
+function showTip(n,x,y){
+  if(!n){ tip.hidden=true; return; }
+  tip.textContent = n.kind==="card" ? `${n.t} · filed ${n.y} · cited by ${n.cin}, cites ${n.cout}` : `${n.pn} · ${n.t} (${n.y}) · not in the Atlas`;
+  tip.hidden=false; tip.style.left=Math.min(x+14,W-250)+"px"; tip.style.top=Math.max(4,y-44)+"px";
+}
+
+/* ---- Detail panel ---- */
+const panel = document.getElementById("panel");
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dotHTML = n => n.kind==="ext" ? '<span class="dot ext"></span>' : `<span class="dot" style="background:var(--c-${n.cat})"></span>`;
+function listHTML(items){
+  return '<ul class="nlist">'+items.map(({n,l})=>`<li><button type="button" data-i="${n.i}">${dotHTML(n)}<span class="nm">${esc(n.kind==="ext"?n.pn+" · "+n.t:n.t)}</span>${l.fam?'<span class="tag">family</span>':''}${l.exam?'<span class="tag">examiner</span>':''}<span class="yr">${n.y}</span></button></li>`).join("")+'</ul>';
+}
+function select(n){
+  state.sel = n||null; document.getElementById("hint").hidden = true;
+  if(!n){
+    panel.innerHTML = `<h3>Pick a patent</h3><p class="empty">Tap any dot to see what it cites and what cites it. Arrows point from the newer patent to the older one it cites.</p>`;
+    draw(); return;
+  }
+  const {out,inn} = neighborsOf(n);
+  let h;
+  if(n.kind==="card"){
+    h = `<h3>${esc(n.t)}</h3>
+      <div class="meta"><span>${dotHTML(n)}${esc(catLabel[n.cat])}</span><span>Filed ${n.y}</span><span>${esc(n.st)}</span></div>
+      <div class="links"><a class="go" href="${ATLAS_CARD_URL+encodeURIComponent(n.ref)}" target="_blank" rel="noopener">Open Atlas card</a>
+      <a class="go alt" href="${GOOGLE_PATENT_URL+n.gp}" target="_blank" rel="noopener">Google Patents</a></div>`;
+  } else {
+    h = `<h3>${esc(n.t)}</h3>
+      <div class="meta"><span>${dotHTML(n)}Not in the Atlas</span><span>${esc(n.pn)}</span><span>Priority ${n.y}</span></div>
+      <div class="meta">${esc(n.a||"")}</div>
+      <div class="links"><a class="go alt" href="${GOOGLE_PATENT_URL+n.pn}" target="_blank" rel="noopener">Google Patents</a></div>`;
+  }
+  h += `<h4>Cited by ${inn.length}</h4>` + (inn.length?listHTML(inn):'<p class="empty">Nothing on the map cites it.</p>');
+  h += `<h4>Cites ${out.length}</h4>` + (out.length?listHTML(out):'<p class="empty">It cites nothing on the map.</p>');
+  panel.innerHTML = h; draw();
+}
+function selectIndex(i){ const n = i<N.length?N[i]:X[i-N.length]; if(n.kind==="ext"&&!state.showExt) setExt(true); select(n); }
+document.addEventListener("click", e=>{
+  const b = e.target.closest("[data-i]"); if(!b) return;
+  selectIndex(+b.dataset.i);
+  if(b.closest("table")) stage.scrollIntoView({behavior:reduceMotion?"auto":"smooth", block:"nearest"});
+});
+
+/* ---- Controls ---- */
+const legend = document.getElementById("legend");
+function renderLegend(){
+  legend.innerHTML = CATS.map(c=>{ const n=N.filter(d=>d.cat===c.key).length; return n?`<button type="button" class="chip" data-cat="${c.key}" aria-pressed="${state.cats.has(c.key)}"><span class="dot" style="background:var(--c-${c.key})"></span>${esc(c.label)} <span class="n">${n}</span></button>`:""; }).join("");
+}
+legend.addEventListener("click", e=>{
+  const b=e.target.closest("[data-cat]"); if(!b) return; const k=b.dataset.cat;
+  if(state.cats.size===CATS.length) state.cats=new Set([k]);            // first tap isolates one category
+  else { state.cats.has(k)?state.cats.delete(k):state.cats.add(k); if(!state.cats.size) state.cats=new Set(CATS.map(c=>c.key)); }
+  state.sel=null; select(null); renderLegend();
+});
+document.getElementById("q").addEventListener("input", e=>{ state.q=e.target.value.trim().toLowerCase(); if(state.sel) select(null); else draw(); });
+document.getElementById("q").addEventListener("keydown", e=>{ if(e.key==="Enter"&&state.q){ const m=nodes().filter(matches).sort((a,b)=>(b.cin||0)-(a.cin||0))[0]; if(m) select(m); } });
+function setMode(m){
+  state.mode=m; document.getElementById("modeWeb").setAttribute("aria-pressed",m==="web"); document.getElementById("modeYear").setAttribute("aria-pressed",m==="year"); layout();
+}
+document.getElementById("modeWeb").onclick=()=>setMode("web");
+document.getElementById("modeYear").onclick=()=>setMode("year");
+function setExt(on){
+  state.showExt=on; const b=document.getElementById("extBtn"); b.setAttribute("aria-pressed",on);
+  b.textContent = on ? "Hide patents outside the Atlas" : "Show patents outside the Atlas";
+  if(!on && state.sel && state.sel.kind==="ext") select(null);
+  layout();
+}
+document.getElementById("extBtn").onclick=()=>setExt(!state.showExt);
+
+/* ---- Tables, stats, notes ---- */
+function renderStatic(){
+  const m=CM.meta, exam=E.filter(e=>!e.fam&&e.exam).length;
+  document.getElementById("stats").innerHTML =
+    `<li><b>${N.length}</b>connected cards</li><li><b>${E.length}</b>citation links</li><li><b>${m.fetched} of ${m.numbers}</b>patent numbers read</li>`;
+  const top=[...N].sort((a,b)=>b.cin-a.cin||a.y-b.y).slice(0,TOP_ROWS);
+  document.getElementById("tblTop").innerHTML = `<thead><tr><th>Atlas card</th><th class="num">Filed</th><th class="num">Cited by</th><th class="num">Cites</th></tr></thead><tbody>`+
+    top.map(n=>`<tr><td><button type="button" data-i="${n.i}">${esc(n.t)}</button><span class="sub">${esc(catLabel[n.cat])}</span></td><td class="num">${n.y}</td><td class="num">${n.cin}</td><td class="num">${n.cout}</td></tr>`).join("")+`</tbody>`;
+  const ext=X.filter(x=>x.k==="cited").sort((a,b)=>b.c.length-a.c.length).slice(0,TOP_ROWS);
+  document.getElementById("tblExt").innerHTML = `<thead><tr><th>Patent</th><th class="num">Priority</th><th class="num">Atlas cards citing it</th></tr></thead><tbody>`+
+    ext.map(x=>`<tr><td><button type="button" data-i="${x.i}">${esc(x.t)}</button><span class="sub">${esc(x.pn)} · ${esc(x.a||"assignee not listed")}</span></td><td class="num">${x.y}</td><td class="num">${x.c.length}</td></tr>`).join("")+`</tbody>`;
+  const fill={EXAM:exam, DIRECT:E.filter(e=>!e.fam).length, DATE:m.date, FETCHED:m.fetched, NUMBERS:m.numbers, UNLINKED:m.numbered-m.connected, NOCIT:m.nocit, EXTMIN:m.extMin};
+  document.getElementById("notes").innerHTML = NOTES.map(s=>`<li>${esc(s.replace(/\{(\w+)\}/g,(_,k)=>fill[k]))}</li>`).join("");
+}
+
+/* ---- Boot ---- */
+topLabeled = [...N].sort((a,b)=>b.cin-a.cin).slice(0,LABEL_TOP_N);
+readTheme(); renderLegend(); renderStatic(); select(null); document.getElementById("hint").hidden=false;
+new ResizeObserver(()=>{ const first=!W; resize(); if(first) layout(); }).observe(stage);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ()=>{ readTheme(); draw(); });
+new MutationObserver(()=>{ readTheme(); draw(); }).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+</script>
