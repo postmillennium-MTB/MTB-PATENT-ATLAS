@@ -275,6 +275,8 @@ function seed(){
     n.y_ = Math.sin(a)*rad; n.vx = n.vy = 0;
   });
 }
+/* Links holding a dot, for sharing out link force. An outside patent has no citation counts, only the cards it touches (n.c); counting it as 1 let a dot with many links overshoot and fly off, blanking the map. */
+const deg = n => (n.cin||0)+(n.cout||0)+(n.kind==="ext"&&n.c?n.c.length:0)+1;
 function tick(){
   const ns = nodes(), ls = links(), a = state.alpha, yearMode = state.mode==="year";
   for(let i=0;i<ns.length;i++){
@@ -292,7 +294,7 @@ function tick(){
   }
   for(const l of ls){
     const s=l.s, t=l.d; let dx=t.x-s.x, dy=t.y_-s.y_; const d=Math.sqrt(dx*dx+dy*dy)||1;
-    const ds=(s.cin||0)+(s.cout||0)+1, dt=(t.cin||0)+(t.cout||0)+1;
+    const ds=deg(s), dt=deg(t);
     const str = (l.ext?0.25:1)*(yearMode?YEAR_LINK_WEAKEN:1)/Math.min(ds,dt), f=(d-LINK_LEN)/d*a*str*0.9, b=ds/(ds+dt);
     dx*=f; dy*=f; t.vx-=dx*b; t.vy-=dy*b; s.vx+=dx*(1-b); s.vy+=dy*(1-b);
   }

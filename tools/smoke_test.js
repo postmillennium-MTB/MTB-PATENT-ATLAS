@@ -499,6 +499,30 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     await ctx.close();
   }
 
+  /* Constellation: showing the outside-the-Atlas patents must leave a usable map
+     (finite zoom, every dot on a sane radius), in the tab and on the standalone page. */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 1300, height: 900 } });
+    const p = await ctx.newPage();
+    const errs = [];
+    p.on('pageerror', e => errs.push(e.message));
+    await p.goto(filePath + '#tab=cite');
+    await p.waitForTimeout(2000);
+    await p.click('#cmExt');
+    await p.waitForTimeout(2000);
+    const a = await p.evaluate(() => ({ k: CITE.k, max: Math.max(...citeNodes().map(n => Math.hypot(n.x, n.y_, n.z))) }));
+    const p2 = await ctx.newPage();
+    await p2.goto(filePath.replace(/index\.html$/, 'citations/index.html'));
+    await p2.waitForTimeout(1500);
+    await p2.click('#extBtn');
+    await p2.waitForTimeout(2000);
+    const b2 = await p2.evaluate(() => ({ k: state.k, max: Math.max(...nodes().map(n => Math.hypot(n.x, n.y_))) }));
+    console.log(`constellation outside patents: tab k ${a.k.toFixed(2)} max ${a.max.toFixed(0)}; page k ${b2.k.toFixed(2)} max ${b2.max.toFixed(0)}`);
+    const sane = o => isFinite(o.k) && o.k > 0.05 && o.max < 5000;
+    if (!sane(a) || !sane(b2) || errs.length) { console.error('::error::Showing outside patents blew up the constellation layout.'); process.exitCode = 1; }
+    await ctx.close();
+  }
+
   /* Citations tab (#tab=cite, renderCite()): the map draws, every CITE_MAP ref
      names a live card, Fights and Citations are icon-only tabs that still
      carry a name, and "Open the card" lands on that card. */
