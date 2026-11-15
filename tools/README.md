@@ -6,7 +6,7 @@ directory would not change what a reader sees.
 
 ## `verify_data.js` / `smoke_test.js` — verifying a change to `index.html`
 
-The two checks CLAUDE.md's "Verifying a change" section describes, as real
+The two checks docs/reference.md's "Verifying a change" section describes, as real
 files rather than copy-pasted snippets, so there's exactly one copy of the
 logic instead of two that can silently drift apart. Also run automatically
 by `.github/workflows/verify-data.yml` on every PR and every push to `main`.
@@ -38,8 +38,46 @@ correct in every check that existed before this, then crashed `cardHTML()`/
 Rabbit Holes navigation in what looked like two unrelated bugs before the
 shared root cause was found. `verify_data.js`'s schema-integrity check would
 have caught it as a data gap; `smoke_test.js` would have caught it as an
-actual crash. Neither existed at the time. See CLAUDE.md's incident note
+actual crash. Neither existed at the time. See docs/reference.md's incident note
 under "Verifying a change" for the full account.
+
+## Card helpers: `entry.js`, `sync_counts.js`, `patent_term.js`, `patent_details.py`
+
+Added 2026-11-15 so that adding a card doesn't mean reading the 2 MB
+`index.html`, hand-editing eleven count strings, or redoing the expiry
+arithmetic. All four rely on one rule: **every `D` entry is one line of strict
+JSON** (`atlas_data.js` loads it that way, and `verify_data.js` fails if it
+stops being true).
+
+```bash
+node tools/entry.js find 5509679 horst        # duplicate check
+node tools/entry.js show 5509679              # one card
+node tools/entry.js near 5509679              # neighbours, for placement
+node tools/entry.js pics 5509679              # its drawings in pictures/
+node tools/entry.js template                  # blank card
+node tools/entry.js add card.json --after 5509679
+node tools/entry.js replace 5509679 card.json
+node tools/sync_counts.js [--check]           # README table + intro, 3 meta tags, shareText x2, mtBannerText x2
+node tools/patent_term.js --filed 2014-07-28 --granted 2016-08-23 --pta 30 [--design]
+python3 tools/patent_details.py US9422993B2 --out figures-out   # needs patents.google.com
+```
+
+`entry.js add`/`replace` validate the card first (required fields, `{en,fr}`
+text, registered `who[]`, number format, image files exist) and refuse to
+write on a hard problem. `sync_counts.js --check` runs inside
+`verify_data.js`, so CI fails when a count drifts. `patent_details.py` runs in
+the **Fetch patent figure** workflow after the crops and writes
+`<number>.details.md`, `.details.json` and a draft `.card.json` beside them;
+it never fails the run.
+
+## `.github/workflows/citation-map.yml` — citation map rebuild
+
+After `index.html` changes on `main` (or on "Run workflow"), rebuilds the
+citation map with the steps in `citation_map/README.md` on GitHub's runner,
+where Google Patents is reachable, and opens an "Update citation map" PR.
+Downloaded pages are cached between runs. It opens nothing when only the date
+would change, and refuses to write when far fewer pages were read than last
+time (Google blocking the runner).
 
 ## `build_card_pages.js` — per-card link-preview pages
 

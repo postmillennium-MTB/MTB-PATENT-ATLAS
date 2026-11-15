@@ -1,4 +1,4 @@
-import json,collections,re
+import json,collections,re,os
 A=json.load(open('atlas.json'));G=json.load(open('graph.json'));P=json.load(open('pages.json'))
 T={o['i']:o for o in A}
 edges=G['edges']
@@ -52,6 +52,6 @@ for x in G['ef']:
     if x['n']>=MIN: addx(x,'citing')
 ext=[x for x in ext if len(x['c'])>=MIN and x['y']]
 print('ext',len(ext),collections.Counter(x['k'] for x in ext))
-meta=dict(cards=len(A),numbered=sum(1 for o in A if o['ids']),numbers=len(P),fetched=sum(1 for p in P.values() if p),connected=len(conn),edges=len(E2),direct=sum(1 for e in E2 if e[2]==0),nocit=len(nocit),extMin=MIN,date='2026-11-15')
+meta=dict(cards=len(A),numbered=sum(1 for o in A if o['ids']),numbers=len(P),fetched=sum(1 for p in P.values() if p),connected=len(conn),edges=len(E2),direct=sum(1 for e in E2 if e[2]==0),nocit=len(nocit),extMin=MIN,date=os.environ.get('CITE_DATE') or __import__('datetime').date.today().isoformat())
 json.dump(dict(nodes=nodes,edges=E2,ext=ext,meta=meta),open('data.json','w'),ensure_ascii=False,separators=(',',':'))
 print(meta, len(open('data.json').read()))

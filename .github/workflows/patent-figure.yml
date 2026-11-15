@@ -69,6 +69,15 @@ jobs:
           if [ "${{ inputs.keep_header }}" = "true" ]; then ARGS+=(--keep-header); fi
           python3 tools/fetch_patent_figure.py "${ARGS[@]}"
 
+      # Card facts from each patent's Google Patents page: dates, inventors,
+      # assignees, status, PTA (read from the report.txt just written), the
+      # Atlas expiry rule's answer, family, and which cited/citing patents
+      # are already cards. Never fails the run. See tools/patent_details.py.
+      - name: Collect patent details for the card
+        if: always()
+        continue-on-error: true
+        run: python3 tools/patent_details.py ${{ inputs.numbers }} --out figures-out
+
       - name: Fail if no candidates were produced
         run: |
           shopt -s nullglob
@@ -119,7 +128,11 @@ jobs:
                actually shows the mechanism. The first drawing sheet is often
                not the best one.
             2. Rename it to `US<number><kind>.png` and move it into `pictures/`.
-            3. Open the matching `*.report.txt`. It contains the PDF's own front
+            3. Open `*.details.md` (dates, inventors, status, PTA, the
+               expiry the Atlas rule gives, which cited patents are already
+               cards) and `*.card.json` (a draft card with the record's facts
+               filled in; add it with `node tools/entry.js add`). Then the
+               matching `*.report.txt`. It contains the PDF's own front
                page — title, inventor, assignee, filing and grant dates. Check
                the atlas entry against it, and set `conf` from what that page
                actually confirms.

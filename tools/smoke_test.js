@@ -2,7 +2,7 @@
 /* Browser smoke test for index.html -- exercises real page behavior, not
    just data shape. This is what catches a render-time crash that
    verify_data.js cannot, since that script only ever inspects the D array
-   and never runs the code that reads it. See CLAUDE.md's 2026-09-27
+   and never runs the code that reads it. See docs/reference.md's 2026-09-27
    incident note: a missing b[] field parsed fine and looked correct in
    every Node-side check, but crashed cardHTML()/passes() the moment a
    real page actually rendered an affected entry -- breaking search and
