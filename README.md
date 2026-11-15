@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 474 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 484 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 474 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 474 |
+| **Total entries** | 484 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 194 |
-| **Expired patents** | 204 |
+| **Expired patents** | 214 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 10 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 223 |
 | **Named inventors** | 79 |
-| **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 391 |
+| **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
+| **Verified entries** | 401 |
 | **Medium confidence** | 44 |
 | **Draft / in progress** | 39 |
 
@@ -961,3 +961,4 @@ Copyright (c) 2026 Post Millennium Renaissance (https://www.postmillenniumrenais
 Released under the [PolyForm Noncommercial License 1.0.0](LICENSE). In short: free to use, copy, modify and share for any noncommercial purpose, including personal use, research, education, and use by charities, environmental-protection organizations and government institutions. Commercial use needs a separate license; ask through postmillenniumrenaissance.com. Copies must keep the `Required Notice:` line in `LICENSE`. The license text controls over this summary.
 
 Facts, figures and quotations taken from third-party studies and sources remain the property of their authors. This license covers only this project's own code, selection and arrangement of material, and original text. Third-party components keep their own licenses.
+- **Ten more bike-rack cards from the constellation map (474 → 484), with drawings and thumbnails.** Rogers US 3,921,869; Berchman US 4,171,077; Red Rock US 5,647,521; Phillips US 6,406,051; Hilk/Yakima US 6,435,523; McLemore US 6,491,195; Softride US 7,815,083; Hammond US 9,862,439; Preston WO 2003/064214 (ceased, no grant); Walstrom US 2001/0035446 (abandoned). All `v`. Fee-lapsed patents carry `exp: null` as with the rotor-cover card; the three pre-1995 filings use the term rules.
