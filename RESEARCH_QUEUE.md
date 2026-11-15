@@ -426,6 +426,8 @@ Carded 2026-11-15, one card each except Buell (US 5,332,246 + 4,058,181) and San
 
 Carded 2026-11-15 (third batch, Atlas 474): ATB/Whyte US 6,969,081, Bridgestone US 5,370,411, Kramer-Massow US 6,244,610, Rocky Mountain US 7,216,883, Shimano US 6,543,799 + 6,698,780, Voss US 10,618,595 + 10,723,410, Trek US 7,703,785, Specialized US D958,702, Giant US 8,152,191, Lesage FR 2,774,966, Williams US 5,409,248.
 
+Carded 2026-11-15 (bike racks, Atlas 484): the ten rack patents linked from the most rack cards: Rogers US 3,921,869, Berchman US 4,171,077, Red Rock US 5,647,521, Phillips US 6,406,051, Hilk US 6,435,523, McLemore US 6,491,195, Softride US 7,815,083, Hammond US 9,862,439, Preston WO 2003/064214, Walstrom US 2001/0035446. Next in line (2-3 rack cards link them): Loken US 2014/0151421, Shaver US 5,996,870, Yakima US 10,300,865 and 10,857,949, Yakima US 12,420,719, Thule US 12,673,619, QuietKat US 2024/0075885.
+
 The full ranking (501 patents linked to four or more cards) was delivered to
 Jon as a spreadsheet, not committed; rebuild it from `graph.py`'s output if
 needed. The three Yeti patents already on hold (US 10,766,563, 12,077,241,
