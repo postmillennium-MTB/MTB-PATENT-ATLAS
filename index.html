@@ -5101,7 +5101,8 @@ const CITE_YEAR_YAW = 0.45, CITE_YEAR_PITCH = 0.12;    // the by-year layout ope
 const CITE_DEPTH_FADE = 0.5;        // opacity of the farthest dots and lines (the nearest are 1)
 const CITE_FIT_QUANTILE = 0.95;     // the web layout fits a sphere holding this share of the dots; the rest may swing off screen as it turns
 const CITE_LABEL_MIN_NEAR = 0.25;   // dots farther back than this (0 = farthest, 1 = nearest) get no label
-const CITE_GRIP_LINK = 0.08;       // link strength on the dragged dot's own links: low, so its neighbours trail behind it a little, as in the original 2D map (normal links are divided by the dot's degree)
+const CITE_GRIP_LINK = 0.03;       // link strength on the dragged dot's own links: low, so its neighbours trail behind it a little, as in the original 2D map (normal links are divided by the dot's degree)
+const CITE_HELD_SHOVE = 4;           // the dragged dot's push on the others is this many times the normal repulsion
 const CITE_MOVE_REHEAT = 0.35;      // dragging a dot in Move mode warms the layout back up to this, so the other dots push away and settle
 const CITE_GOOGLE_PATENT_URL = "https://patents.google.com/patent/";
 
@@ -5156,15 +5157,19 @@ function citeSeed(){
 }
 function citeTick(){
   const ns=citeNodes(), ls=citeLinks(), a=CITE.alpha, yearMode=CITE.mode==="year";
+  /* The viewing direction in cloud coordinates. A dot being dragged shoves the others sideways in the picture only: pushed along the view axis the neighbour would just slip behind it and nothing visibly moved, as it never does on the flat map. */
+  const cyw=Math.cos(CITE.yaw), syw=Math.sin(CITE.yaw), cpw=Math.cos(CITE.pitch), spw=Math.sin(CITE.pitch), vx=-cpw*syw, vy=spw, vz=cpw*cyw;
   for(let i=0;i<ns.length;i++){
     const p=ns[i];
     for(let j=i+1;j<ns.length;j++){
       const q=ns[j]; let dx=q.x-p.x, dy=q.y_-p.y_, dz=q.z-p.z;
+      if(p.held||q.held){ const dv=dx*vx+dy*vy+dz*vz; dx-=dv*vx; dy-=dv*vy; dz-=dv*vz; }   // the dragged dot: measure and push in the picture plane
       if(yearMode) dx*=0.35;                              // same-year dots must still push apart sideways
       let d2=dx*dx+dy*dy+dz*dz; if(d2<1){ dx=(i-j)%2?1:-1; dy=0.5; dz=0.3; d2=1.34; }
       const min=p.r+q.r+CITE_COLLIDE_PAD, d=Math.sqrt(d2);
       let f=CITE_REPULSE*a*(p.r*q.r/30)/Math.max(d2,min*min*0.25);
       if(d<min) f+=(min-d)*0.35;                          // overlapping dots are pushed apart even after the layout cools
+      if(p.held||q.held) f*=CITE_HELD_SHOVE;              // a dragged dot shoves what it meets, as on the flat map
       dx/=d; dy/=d; dz/=d;
       p.vx-=dx*f; p.vy-=dy*f; p.vz-=dz*f; q.vx+=dx*f; q.vy+=dy*f; q.vz+=dz*f;
     }
