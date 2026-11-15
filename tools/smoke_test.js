@@ -469,6 +469,36 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     await ctx.close();
   }
 
+  /* Constellation drag: pressing on a dot and moving pulls it, and the dots
+     it is linked to follow (the default, no mode switch needed). */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 1300, height: 900 } });
+    const p = await ctx.newPage();
+    const errs = [];
+    p.on('pageerror', e => errs.push(e.message));
+    await p.goto(filePath + '#tab=cite');
+    await p.waitForTimeout(2500);
+    await p.evaluate(() => { citeStopSpin(); document.getElementById('cmCanvas').scrollIntoView({ block: 'center' }); });   // the web layout auto-spins; hold it still so the dot stays under the pointer
+    await p.waitForTimeout(300);
+    const info = await p.evaluate(() => {
+      const ns = citeNodes(), ls = citeLinks(), deg = new Map();
+      ls.forEach(l => { deg.set(l.s, (deg.get(l.s) || 0) + 1); deg.set(l.d, (deg.get(l.d) || 0) + 1); });
+      const n = ns.find(m => deg.get(m) >= 4 && deg.get(m) <= 8 && !m.ext) || ns[0];
+      const pr = citeProj(n.x, n.y_, n.z), r = document.getElementById('cmCanvas').getBoundingClientRect();
+      const nb = ls.filter(l => l.s === n || l.d === n).map(l => (l.s === n ? l.d : l.s));
+      window.__drag = { n, nb };
+      return { sx: r.left + pr[0], sy: r.top + pr[1], pos: nb.map(m => [m.x, m.y_, m.z]) };
+    });
+    await p.mouse.move(info.sx, info.sy); await p.mouse.down();
+    for (let i = 1; i <= 30; i++) { await p.mouse.move(info.sx + i * 6, info.sy + i * 2); await p.waitForTimeout(30); }
+    const moved = await p.evaluate(pos => window.__drag.nb.map((m, i) => Math.hypot(m.x - pos[i][0], m.y_ - pos[i][1], m.z - pos[i][2])), info.pos);
+    await p.mouse.up();
+    const ok = moved.length > 0 && moved.some(d => d > 8);
+    console.log(`constellation drag: neighbours moved ${moved.map(d => d.toFixed(0)).join(',')}, errors: ${JSON.stringify(errs)}`);
+    if (!ok || errs.length) { console.error('::error::Dragging a constellation dot did not move its linked dots.'); process.exitCode = 1; }
+    await ctx.close();
+  }
+
   /* Citations tab (#tab=cite, renderCite()): the map draws, every CITE_MAP ref
      names a live card, Fights and Citations are icon-only tabs that still
      carry a name, and "Open the card" lands on that card. */
