@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 484 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 496 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 484 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 484 |
+| **Total entries** | 496 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 194 |
-| **Expired patents** | 214 |
+| **Active patents** | 200 |
+| **Expired patents** | 220 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 10 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 223 |
+| **Brands** | 225 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 401 |
+| **Verified entries** | 413 |
 | **Medium confidence** | 44 |
 | **Draft / in progress** | 39 |
 
@@ -962,3 +962,4 @@ Released under the [PolyForm Noncommercial License 1.0.0](LICENSE). In short: fr
 
 Facts, figures and quotations taken from third-party studies and sources remain the property of their authors. This license covers only this project's own code, selection and arrangement of material, and original text. Third-party components keep their own licenses.
 - **Ten more bike-rack cards from the constellation map (474 → 484), with drawings and thumbnails.** Rogers US 3,921,869; Berchman US 4,171,077; Red Rock US 5,647,521; Phillips US 6,406,051; Hilk/Yakima US 6,435,523; McLemore US 6,491,195; Softride US 7,815,083; Hammond US 9,862,439; Preston WO 2003/064214 (ceased, no grant); Walstrom US 2001/0035446 (abandoned). All `v`. Fee-lapsed patents carry `exp: null` as with the rotor-cover card; the three pre-1995 filings use the term rules.
+- **Twelve drivetrain and components cards from the constellation map (484 → 496), with drawings and thumbnails.** SRAM US 10,703,441; Hive Global cassette bundle (US 10,562,588 + 2) and crank bundle (US 11,142,280 + 12,030,586); Curley US 586,991; Mosley US 4,240,303; Shimano US 7,824,287 and US 10,577,050; Golec narrow-wide chainring US 11,718,368; SRAM US 9,394,030; Praxis US 2017/0066501 A1 (abandoned); Lotteau US 4,298,210 (components); Thomson US 5,664,829 (components). All `v`. Fee-lapsed Shimano US 7,824,287 and the abandoned Praxis application carry `exp: null`; Hive, SRAM and Shimano expiries use Google's adjusted dates; the SRAM US 9,394,030 and Shimano US 10,577,050 text follows their published applications. Registered `Hive Global` and `Thomson` in BRANDS.
