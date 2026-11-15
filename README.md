@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 496 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 505 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 496 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 496 |
+| **Total entries** | 505 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 200 |
-| **Expired patents** | 220 |
+| **Active patents** | 203 |
+| **Expired patents** | 226 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 10 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 225 |
+| **Brands** | 227 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 413 |
+| **Verified entries** | 422 |
 | **Medium confidence** | 44 |
 | **Draft / in progress** | 39 |
 
@@ -963,3 +963,4 @@ Released under the [PolyForm Noncommercial License 1.0.0](LICENSE). In short: fr
 Facts, figures and quotations taken from third-party studies and sources remain the property of their authors. This license covers only this project's own code, selection and arrangement of material, and original text. Third-party components keep their own licenses.
 - **Ten more bike-rack cards from the constellation map (474 → 484), with drawings and thumbnails.** Rogers US 3,921,869; Berchman US 4,171,077; Red Rock US 5,647,521; Phillips US 6,406,051; Hilk/Yakima US 6,435,523; McLemore US 6,491,195; Softride US 7,815,083; Hammond US 9,862,439; Preston WO 2003/064214 (ceased, no grant); Walstrom US 2001/0035446 (abandoned). All `v`. Fee-lapsed patents carry `exp: null` as with the rotor-cover card; the three pre-1995 filings use the term rules.
 - **Twelve drivetrain and components cards from the constellation map (484 → 496), with drawings and thumbnails.** SRAM US 10,703,441; Hive Global cassette bundle (US 10,562,588 + 2) and crank bundle (US 11,142,280 + 12,030,586); Curley US 586,991; Mosley US 4,240,303; Shimano US 7,824,287 and US 10,577,050; Golec narrow-wide chainring US 11,718,368; SRAM US 9,394,030; Praxis US 2017/0066501 A1 (abandoned); Lotteau US 4,298,210 (components); Thomson US 5,664,829 (components). All `v`. Fee-lapsed Shimano US 7,824,287 and the abandoned Praxis application carry `exp: null`; Hive, SRAM and Shimano expiries use Google's adjusted dates; the SRAM US 9,394,030 and Shimano US 10,577,050 text follows their published applications. Registered `Hive Global` and `Thomson` in BRANDS.
+- **Nine more rear-suspension cards from the constellation ranking (496 → 505), with drawings and thumbnails.** The next most-cited patents not yet carded, outside the Yeti patents Jon put on hold: Sinclair US 6,131,934; Waugh US 4,582,343; Merida US 6,439,593; Trek US 6,164,676; Kent US 5,000,470; Currie US 7,815,207 (with US 2009/0001686); Hudec US 9,216,791; Ribi US 4,671,525; Earle / A-Pro Tech US 7,909,347 (with US 2010/0059965). All `v`. The six fee-lapsed patents (Sinclair, Waugh, Merida, Trek, Kent, Ribi) carry `st: expired`, `exp: null` as with the rotor-cover card; Currie, Hudec and Earle are active and use Google's adjusted or anticipated expiry. Ribi's year is the 1984 parent filing (a 1985 division with 1983 Italian priority). Registered `Merida` and `Kent` in BRANDS.
