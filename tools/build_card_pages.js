@@ -78,7 +78,7 @@ if (process.argv.includes('--refs')) {
 // ---- text -------------------------------------------------------------
 const CARD_LINK_RE = /\[\[card:([^|\]]+)\|([^\]]+)\]\]/g;
 const EXT_LINK_RE = /\[\[link:(https:\/\/[^|\]]+)\|([^\]]+)\]\]/g;
-/* Research-process wording never goes into a preview (CLAUDE.md, "Prose
+/* Research-process wording never goes into a preview (docs/reference.md, "Prose
    style": no "this pass", no "was/were not read", no "verified against").
    A sentence that contains any of these is dropped from the description. */
 const NARRATION_RE = /\b(this pass|this session|front page|(?:was|were|is|are|not|never|un)\s*read\b|read directly|fetched|verified against|(?:independently|not yet) (?:located|verified|confirmed)|confirmed (?:from|against)|not seen|the user)\b/i;

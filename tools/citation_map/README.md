@@ -24,6 +24,12 @@ python3 update_atlas_tab.py  # rewrites the one CITE_MAP line in ../../index.htm
 
 Notes
 
+- `.github/workflows/citation-map.yml` runs all of these on GitHub after
+  `index.html` changes on `main` and opens an "Update citation map" PR, so a
+  session normally doesn't run them at all. `build_data.py` takes today's date
+  (or `CITE_DATE`); `update_atlas_tab.py` leaves the page alone when only the
+  date would change.
+
 - `fetch.py` needs `patents.google.com` to be reachable. It was from a cloud
   session on 2026-11-13; if it is blocked, run the steps on a machine where it
   is not. Never fill a gap by hand.
@@ -34,4 +40,4 @@ Notes
   numbers are stored as bare digits (`FIX`). Add to it if another card's
   number does not resolve on Google Patents.
 - Edit the page in `src.html`, not in `citations/index.html`, then run
-  `build.py`. `build_data.py` sets the "read on" date by hand (`date=`).
+  `build.py`. 

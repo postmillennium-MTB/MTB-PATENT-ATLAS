@@ -1,0 +1,96 @@
+# Rebuild the Patent Constellation (citation map) after cards change on main.
+#
+# The map's data is a snapshot read from each patent's Google Patents page.
+# GitHub's runners can reach patents.google.com; the cloud sandbox Claude
+# sessions run in can't, which is why this runs here. It opens (or updates)
+# one "Update citation map" pull request with the new CITE_MAP line in
+# index.html and the rebuilt citations/index.html. When nothing but the date
+# would change, it opens nothing, so merging its own PR doesn't loop.
+#
+# Downloaded pages are cached between runs, so a run after a small batch only
+# fetches the new cards' pages. Use "Run workflow" with refetch ticked to
+# re-read every page (citations pile up on older patents over time).
+
+name: Update citation map
+
+on:
+  workflow_dispatch:
+    inputs:
+      refetch:
+        description: "Re-download every Google Patents page (slow; picks up new 'cited by' entries)"
+        required: false
+        default: false
+        type: boolean
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+
+concurrency:
+  group: citation-map
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore downloaded pages
+        if: ${{ !inputs.refetch }}
+        uses: actions/cache/restore@v4
+        with:
+          path: tools/citation_map/raw
+          key: citation-raw-${{ github.run_id }}
+          restore-keys: citation-raw-
+
+      - name: Rebuild
+        working-directory: tools/citation_map
+        run: |
+          mkdir -p raw
+          node extract.js
+          python3 fetch.py
+          python3 parse.py
+          python3 graph.py > graph.log
+          tail -5 graph.log
+          python3 build_data.py
+          python3 update_atlas_tab.py
+          if [ -f .unchanged ]; then echo "CHANGED=no" >> "$GITHUB_ENV"; else python3 build.py; echo "CHANGED=yes" >> "$GITHUB_ENV"; fi
+
+      - name: Save downloaded pages
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: tools/citation_map/raw
+          key: citation-raw-${{ github.run_id }}
+
+      - name: Check the rebuilt page
+        if: env.CHANGED == 'yes'
+        run: node tools/verify_data.js > /dev/null
+
+      - name: Open a pull request with the new map
+        if: env.CHANGED == 'yes'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          add-paths: |
+            index.html
+            citations/index.html
+          branch: citation-map/auto
+          commit-message: "Update citation map"
+          title: "Update citation map"
+          body: |
+            Rebuilt by `.github/workflows/citation-map.yml` from each card's
+            Google Patents page (steps in `tools/citation_map/README.md`).
+            Changes only the `CITE_MAP` line in `index.html` and
+            `citations/index.html`. Safe to merge once the checks pass.

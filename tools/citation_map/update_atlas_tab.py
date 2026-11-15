@@ -17,6 +17,18 @@ line = 'const CITE_MAP = ' + json.dumps(cm, ensure_ascii=False, separators=(',',
 s = open(page, encoding='utf-8').read()
 found = re.findall(r'^const CITE_MAP = .*;$', s, flags=re.M)
 assert len(found) == 1, 'expected exactly one CITE_MAP line, found %d' % len(found)
+# Same map as before apart from the date? Leave the page alone and say so, so
+# the automatic rebuild (.github/workflows/citation-map.yml) opens no PR.
+old = json.loads(found[0][len('const CITE_MAP = '):-1])
+# A run where Google Patents refused many pages would quietly shrink the map.
+if cm['fetched'] < 0.9 * old.get('fetched', 0):
+    raise SystemExit('refusing to write: only %d pages read, last map had %d (Google Patents blocking?)' % (cm['fetched'], old['fetched']))
+if {k: v for k, v in old.items() if k != 'read'} == {k: v for k, v in cm.items() if k != 'read'}:
+    print('CITE_MAP unchanged (%d cards, %d links); index.html not touched' % (len(cm['nodes']), len(cm['edges'])))
+    open(os.path.join(here, '.unchanged'), 'w').write('1')
+    raise SystemExit(0)
+if os.path.exists(os.path.join(here, '.unchanged')):
+    os.remove(os.path.join(here, '.unchanged'))
 s = s.replace(found[0], line)
 open(page, 'w', encoding='utf-8').write(s)
 print('CITE_MAP: %d cards, %d links, %d outside patents, read %s' % (len(cm['nodes']), len(cm['edges']), len(cm['ext']), cm['read']))

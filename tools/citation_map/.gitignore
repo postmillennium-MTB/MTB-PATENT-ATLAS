@@ -5,3 +5,4 @@ data.json
 fetchlog.json
 raw/
 __pycache__/
+.unchanged

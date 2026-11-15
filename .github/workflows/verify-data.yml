@@ -1,4 +1,4 @@
-# Runs the same two checks CLAUDE.md's "Verifying a change" section
+# Runs the same two checks docs/reference.md's "Verifying a change" section
 # documents for a session to run locally -- parse/schema-integrity
 # (tools/verify_data.js) and a real-browser smoke test (tools/smoke_test.js)
 # -- automatically on every change to index.html, whether it comes from a
@@ -32,6 +32,9 @@ on:
     paths:
       - "index.html"
       - "tools/verify_data.js"
+      - "tools/sync_counts.js"
+      - "tools/atlas_data.js"
+      - "README.md"
       - "tools/smoke_test.js"
       - "tools/build_card_pages.js"
       - "tools/package.json"
@@ -40,6 +43,7 @@ on:
     branches: [main]
     paths:
       - "index.html"
+      - "README.md"
 
 permissions:
   contents: read
