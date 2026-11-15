@@ -444,3 +444,7 @@ skip images per the "pictures in each entry when possible" preference (two
 where a good second figure exists), write both `en`/`fr` from the start,
 and run the count-sync step (README + the six hardcoded `index.html`
 strings) once anything is actually added.
+
+## Next citation-ranking leads (2026-11-15, after the nine-card batch)
+
+Still uncarded, by number of Atlas cards that cite or are cited by them: Specialized US 11,945,539 and the Trvstper suspension family (US 10,196,106 and about 25 siblings, plus design patents), Specialized US 2009/0001685 and design USD 593,457, Pratt US 4,421,337, Lapierre US 2006/0061059, Chang US 2005/0253357, Christini US 2004/0061305, Felt US 7,066,481, Beyond Beryllium US 5,772,228, Farris US 5,611,557, Kulhawik US 5,356,165. Yeti US 10,766,563, 12,077,241 and 12,145,684 stay on hold at Jon's request.
