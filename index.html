@@ -5055,11 +5055,11 @@ const CITE_YEAR_YAW = 0.45, CITE_YEAR_PITCH = 0.12;    // the by-year layout ope
 const CITE_DEPTH_FADE = 0.5;        // opacity of the farthest dots and lines (the nearest are 1)
 const CITE_FIT_QUANTILE = 0.95;     // the web layout fits a sphere holding this share of the dots; the rest may swing off screen as it turns
 const CITE_LABEL_MIN_NEAR = 0.25;   // dots farther back than this (0 = farthest, 1 = nearest) get no label
-const CITE_GRIP_LINK = 1.6;         // link strength on the dragged dot's own links (normal links are divided by the dot's degree), so its neighbours follow
-const CITE_MOVE_REHEAT = 0.6;       // dragging a dot in Move mode warms the layout back up to this, so the other dots push away and settle
+const CITE_GRIP_LINK = 0.08;       // link strength on the dragged dot's own links: low, so its neighbours trail behind it a little, as in the original 2D map (normal links are divided by the dot's degree)
+const CITE_MOVE_REHEAT = 0.35;      // dragging a dot in Move mode warms the layout back up to this, so the other dots push away and settle
 const CITE_GOOGLE_PATENT_URL = "https://patents.google.com/patent/";
 
-const CITE = { built:false, N:[], X:[], E:[], EX:[], top:[], mode:"web", tool:"rotate", showExt:false, cats:null, sel:null, hover:null, q:"",
+const CITE = { built:false, N:[], X:[], E:[], EX:[], top:[], mode:"web", tool:"move", showExt:false, cats:null, sel:null, hover:null, q:"",
   k:1, tx:0, ty:0, alpha:0, laidOut:false, W:0, H:0, raf:0, t0:0, C:{}, drag:{node:null,pan:false,moved:false,down:false,px:0,py:0,depth:0,pull:false}, pts:new Map(), pinch:0, ro:null,
   yaw:CITE_START_YAW, pitch:CITE_START_PITCH, cam:600, ox:0, zmin:0, zmax:1, spin:!window.matchMedia("(prefers-reduced-motion: reduce)").matches };
 
