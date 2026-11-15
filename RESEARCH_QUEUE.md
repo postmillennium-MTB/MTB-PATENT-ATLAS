@@ -398,7 +398,7 @@ Rear suspension, recent
 
 **Update 2026-11-14:** items 1 to 14 now have cards (items 1 to 4 in the earlier rear-suspension batch; 5 to 14 in the second batch, 437 → 448). Items 15 to 17 were handled as follows: US 5,628,524 + RE 39,159 became its own card (a continuation-in-part between US 5,553,881 and US 6,206,397, not a duplicate of either); US 5,409,249, 5,441,292 and 5,244,224 were added to the GT RTS / LTS card. Item 14 (US 12,617,488) is a separate family from the Yeti six-bar idler card, not a duplicate. Item 12's Paha family is one card. Item 11's Gehl sprocket is a farm-equipment patent with no bicycle content.
 
-### Second list: ranked from the citation network (queued 2026-11-14 at Jon's request; not started)
+### Second list: ranked from the citation network (queued 2026-11-14 at Jon's request; DONE 2026-11-15: 15 cards, 448 → 463)
 
 Patents with no card that the most Atlas cards link to, after the first 17 leads were carded (482 candidates left, 346 of them rear suspension; full CSV in the project files at `citation-map/candidates-not-in-atlas.csv`). Numbers, titles, assignees and priority years are as Google Patents lists them; none has had its front page read. "Links" is how many Atlas cards the patent links to.
 
@@ -422,7 +422,7 @@ Components
 
 Pre-MTB motorcycle roots (same idea as the Simons fork card): US 4,322,088 (Honda, 1979, 14 links), US 3,917,313 (Bultaco, 1973, 13 links).
 
-Drawings for the second list are already in `pictures/` (2026-11-14), cropped from the USPTO PDFs and not yet wired into any card: `US5335929A`, `US5332246A`, `US4058181A`, `US4679811A`, `US7581743B2` (also covers US 2010/0102531 A1, which prints the same figures), `US6102421A`, `US5354085A`, `US712784A`, `US944795A`, `US6095541A`, `US5848675A`, `US5332068A`, `US4322088A`, `US3917313A`, `US20060152045A1`. No drawing exists for Johnston US 1,298,958 (the printed patent is text only). When a card is written, wire `img` and write `imgAlt` from the sheet; the Shimano application PDF has no text layer, so its title and assignee still need a check against Google Patents.
+Carded 2026-11-15, one card each except Buell (US 5,332,246 + 4,058,181) and Santa Cruz (US 7,581,743 + 8,272,657, the granted form of US 2010/0102531 A1); Google Patents titles replace the ones above where they differed (Buell: "…vertical wheel mounting means"). The Shimano application (US 2006/0152045 A1, "Bicycle seat post", Okajima & Yoshimatsu) is listed as abandoned. Drawings, all wired in: `US5335929A`, `US5332246A`, `US4058181A`, `US4679811A`, `US7581743B2` (also covers US 2010/0102531 A1, which prints the same figures), `US6102421A`, `US5354085A`, `US712784A`, `US944795A`, `US6095541A`, `US5848675A`, `US5332068A`, `US4322088A`, `US3917313A`, `US20060152045A1`. No drawing exists for Johnston US 1,298,958 (the printed patent is text only). When a card is written, wire `img` and write `imgAlt` from the sheet; the Shimano application PDF has no text layer, so its title and assignee still need a check against Google Patents.
 
 The full ranking (501 patents linked to four or more cards) was delivered to
 Jon as a spreadsheet, not committed; rebuild it from `graph.py`'s output if
