@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 463 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 474 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 463 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 463 |
+| **Total entries** | 474 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 190 |
-| **Expired patents** | 197 |
+| **Active patents** | 194 |
+| **Expired patents** | 204 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 10 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 221 |
+| **Brands** | 223 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 14 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW) |
-| **Verified entries** | 380 |
+| **Verified entries** | 391 |
 | **Medium confidence** | 44 |
 | **Draft / in progress** | 39 |
 
@@ -860,6 +860,7 @@ Counts synced: README At-a-glance (293→294 total, 95→96 expired, 177→183 v
 - **The Citations tab and the standalone citation page are now called Patent Constellation (count unchanged, 448).** English "Patent Constellation", French "Constellation de brevets"; the tab stays icon-only with the name as its tooltip. The `#tab=cite` link, the `cite` key and the `citations/` path are unchanged so shared links still work.
 - **Match tab shows only its puzzle-piece icon (count unchanged, 448).** The word is still the button's tooltip and screen-reader label.
 - **Fifteen more cards from the citation map's second list (448 → 463), with drawings and thumbnails.** Miyata US 5,335,929; Buell US 5,332,246 + 4,058,181; Shuler US 4,679,811; Santa Cruz US 7,581,743 + 8,272,657; Schwinn US 6,102,421 (a continuation-in-part of US 5,957,473, term from 1996); Gally US 5,354,085; early sprung frames Ellis US 712,784, Leet and Stoll US 944,795 and Johnston US 1,298,958 (no drawing exists); RockShox US 6,095,541; Answer US 5,848,675; Richardson US 5,332,068; Shimano seat post application US 2006/0152045 A1 (Google Patents lists it as abandoned); Honda US 4,322,088; Bultaco US 3,917,313. All `"v"`, read from the Google Patents record. New brands Miyata, Bultaco and Richardson Technologies; new inventor Erik Buell, also added to the existing Schwinn/Buell card. Santa Cruz US 7,581,743 is marked expired on Google Patents' adjusted dates (November 14, 2026; US 8,272,657, August 16, 2026), so both are year-level estimates. The Buell title follows Google Patents ("vertical wheel mounting means"). The Leet and Stoll sheet was re-cropped to remove the printed date and number from its thumbnail. The map data was rebuilt (251 connected cards, 1,490 links; 622 of 625 numbers fetched). Count strings, README table and What's new updated.
+- **Eleven more cards from the citation map (463 → 474), with drawings and thumbnails.** ATB/Whyte US 6,969,081; Bridgestone US 5,370,411; Kramer-Massow US 6,244,610; Rocky Mountain US 7,216,883; Shimano US 6,543,799 + 6,698,780; Voss US 10,618,595 + 10,723,410; Trek US 7,703,785; Specialized US D958,702; Giant US 8,152,191 / US 2006/0181053; Lesage FR 2,774,966; Williams US 5,409,248. All `v`. Giant's `exp` follows Google's adjusted date because the filing is a continuation-in-part; the Voss `exp` values use Google's adjusted 2037/2038 dates. New brands: Whyte, Bridgestone. Constellation map rebuilt.
 
 ## Recent updates (July 2026)
 
