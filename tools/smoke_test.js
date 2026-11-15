@@ -20,7 +20,7 @@
    pre-installed at /opt/pw-browsers/chromium, or Playwright's own
    bundled browser (`npx playwright install --with-deps chromium`), which
    is what CI installs since that fixed sandbox path won't exist there. */
-const { chromium } = require('playwright');
+const { chromium, devices } = require('playwright');
 const path = require('path');
 const fs = require('fs');
 
@@ -496,6 +496,34 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     const ok = moved.length > 0 && moved.some(d => d > 8);
     console.log(`constellation drag: neighbours moved ${moved.map(d => d.toFixed(0)).join(',')}, errors: ${JSON.stringify(errs)}`);
     if (!ok || errs.length) { console.error('::error::Dragging a constellation dot did not move its linked dots.'); process.exitCode = 1; }
+    await ctx.close();
+  }
+
+  /* Constellation on a phone: a fingertip a little off a dot still grabs and pulls it
+     (a mouse needs 10 px, a finger gets 24), and the dot keeps its place under the finger. */
+  {
+    const ctx = await browser.newContext({ ...devices['iPhone 13'] });
+    const p = await ctx.newPage();
+    const errs = [];
+    p.on('pageerror', e => errs.push(e.message));
+    await p.goto(filePath + '#tab=cite');
+    await p.waitForTimeout(2500);
+    await p.evaluate(() => { citeStopSpin(); document.getElementById('cmCanvas').scrollIntoView({ block: 'center' }); });
+    await p.waitForTimeout(400);
+    const cdp = await ctx.newCDPSession(p);
+    const tp = (type, pts) => cdp.send('Input.dispatchTouchEvent', { type, touchPoints: pts.map((q, i) => ({ x: q[0], y: q[1], id: i })) });
+    const s = await p.evaluate(() => {
+      const r = document.getElementById('cmCanvas').getBoundingClientRect();
+      const n = citeNodes().find(m => { const q = citeProj(m.x, m.y_, m.z); return !m.ext && q[0] > 50 && q[0] < r.width - 50 && q[1] > 50 && q[1] < r.height - 50; });
+      const q = citeProj(n.x, n.y_, n.z); window.__tn = n;
+      return { x: r.left + q[0], y: r.top + q[1] };
+    });
+    await tp('touchStart', [[s.x + 15, s.y]]);
+    for (let i = 1; i <= 12; i++) { await tp('touchMove', [[s.x + 15 + i * 4, s.y]]); await p.waitForTimeout(25); }
+    const got = await p.evaluate(() => ({ pull: CITE.drag.pull, held: !!window.__tn.held, yaw: CITE.yaw }));
+    await tp('touchEnd', []);
+    console.log(`constellation touch: finger 15px off a dot pulls=${got.pull}, errors: ${JSON.stringify(errs)}`);
+    if (!got.pull || errs.length) { console.error('::error::A fingertip near a constellation dot did not grab it.'); process.exitCode = 1; }
     await ctx.close();
   }
 

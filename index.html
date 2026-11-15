@@ -5103,6 +5103,7 @@ const CITE_FIT_QUANTILE = 0.95;     // the web layout fits a sphere holding this
 const CITE_LABEL_MIN_NEAR = 0.25;   // dots farther back than this (0 = farthest, 1 = nearest) get no label
 const CITE_GRIP_LINK = 0.03;       // link strength on the dragged dot's own links: low, so its neighbours trail behind it a little, as in the original 2D map (normal links are divided by the dot's degree)
 const CITE_HELD_SHOVE = 4;           // the dragged dot's push on the others is this many times the normal repulsion
+const CITE_TOUCH_HALO = 24;          // px around a dot that a finger still grabs (a mouse gets 10)
 const CITE_MOVE_REHEAT = 0.35;      // dragging a dot in Move mode warms the layout back up to this, so the other dots push away and settle
 const CITE_GOOGLE_PATENT_URL = "https://patents.google.com/patent/";
 
@@ -5445,8 +5446,8 @@ function renderCite(){
   CITE.ro.observe(stage);
   size(); if(CITE.W){ if(!CITE.laidOut) citeLayout(); else { citeDraw(); citeRun(); } }
 
-  const hit=(px,py)=>{ citeProject(); let best=null,bs=1e9;
-    for(const n of citeNodes()){ const d=Math.hypot(n.sx-px,n.sy-py)-citeRad(n); if(d>=10) continue;   // 10px halo: the target is bigger than the dot
+  const hit=(px,py,halo=10)=>{ citeProject(); let best=null,bs=1e9;
+    for(const n of citeNodes()){ const d=Math.hypot(n.sx-px,n.sy-py)-citeRad(n); if(d>=halo) continue;   // 10px halo for a mouse, 24px for a finger: the target is bigger than the dot
       const sc=d+(1-citeNear(n))*4; if(sc<bs){ bs=sc; best=n; } }                                       // where dots overlap, the nearer one wins
     return best; };
   const pos=e=>{ const r=cv.getBoundingClientRect(); return [e.clientX-r.left,e.clientY-r.top]; };
@@ -5461,8 +5462,9 @@ function renderCite(){
   cv.onpointerdown=e=>{
     try{ cv.setPointerCapture(e.pointerId); }catch(_){}
     const [x,y]=pos(e); pts.set(e.pointerId,[x,y]); citeStopSpin(); drag.down=true;
-    if(pts.size===2){ const [a,b]=[...pts.values()]; CITE.pinch=Math.hypot(a[0]-b[0],a[1]-b[1]); CITE.pmx=(a[0]+b[0])/2; CITE.pmy=(a[1]+b[1])/2; drag.node=null; drag.pan=false; drag.moved=true; return; }
-    drag.node=hit(x,y); drag.pan=e.shiftKey||e.button===1||e.button===2; drag.moved=false; drag.px=x; drag.py=y; cv.style.cursor="grabbing";
+    if(pts.size===2){ const [a,b]=[...pts.values()]; CITE.pinch=Math.hypot(a[0]-b[0],a[1]-b[1]); CITE.pmx=(a[0]+b[0])/2; CITE.pmy=(a[1]+b[1])/2; if(drag.node) drag.node.held=false; drag.node=null; drag.pan=false; drag.pull=false; drag.moved=true; return; }   // a second finger: let go of a dot being pulled
+    drag.node=hit(x,y,e.pointerType==="touch"?CITE_TOUCH_HALO:10);
+    drag.ox=drag.node&&e.pointerType==="touch"?drag.node.sx-x:0; drag.oy=drag.node&&e.pointerType==="touch"?drag.node.sy-y:0;   // a finger hides the dot: keep it where it was under the finger instead of snapping it to the fingertip drag.pan=e.shiftKey||e.button===1||e.button===2; drag.moved=false; drag.px=x; drag.py=y; cv.style.cursor="grabbing";
     drag.pull=CITE.tool==="move" && !!drag.node && !drag.pan;           // Move mode: a drag that starts on a dot pulls that dot
     if(drag.pull) drag.depth=drag.node.sz;
   };
@@ -5477,7 +5479,7 @@ function renderCite(){
       if(drag.moved){
         if(drag.pan){ CITE.tx+=dx; CITE.ty+=dy; }
         else if(drag.pull){
-          const n=drag.node, w=citeUnproj(x,y,drag.depth);
+          const n=drag.node, w=citeUnproj(x+(drag.ox||0),y+(drag.oy||0),drag.depth);
           if(CITE.mode!=="year") n.x=w[0]; n.y_=w[1]; n.z=w[2]; n.held=true;
           if(CITE.alpha<CITE_MOVE_REHEAT) CITE.alpha=CITE_MOVE_REHEAT; citeRun();
         }
