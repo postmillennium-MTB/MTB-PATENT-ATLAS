@@ -16,8 +16,8 @@ An interactive timeline of mountain bike intellectual property: 518 patents and 
 |---|---|
 | **Total entries** | 518 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 207 |
-| **Expired patents** | 236 |
+| **Active patents** | 206 |
+| **Expired patents** | 237 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 10 |
 | **Litigated entries** | 31 |
@@ -25,8 +25,8 @@ An interactive timeline of mountain bike intellectual property: 518 patents and 
 | **Brands** | 229 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 437 |
-| **Medium confidence** | 42 |
+| **Verified entries** | 436 |
+| **Medium confidence** | 43 |
 | **Draft / in progress** | 39 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -971,3 +971,5 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - **Horst Link family and Leitner cards corrected (516 entries, unchanged count).** "Leitner four-bar prototype era" (num null, dates 1985/1985) is now the card for Leitner's motorcycle patent US 4,299,582 "Chain drive for motorcycle rear wheels carried by swing arms" (filed 1979-03-02, granted 1981-11-10, AT priority 1978, expired 1999), with sheet 1 (Figs. 1-2), tier v; old link kept through `REF_ALIASES`; the ATK card now links to it; the Horst Link tour starts with it. WO 1993/013974 raised m → v from the record: filed 1993-01-21, priority 1992-01-21, published 1993-07-22, ceased; y 1992 → 1993, st unknown → expired; citations now say "not granted" instead of "pending" for a lapsed application. Horst Link card links all three US patents (5,509,679 / 5,678,837 / 5,899,480, all with the 1992-01-21 priority) and Pinkbike's "Now THAT Was a Bike: 1993 AMP B2" (also on the WO card). Continuations card exp 2016 → 2012: both were filed after 1995-06-08, so their term is 20 years from the 1992 parent filing (Google Patents shows 2012-01-21).
 - **K9 Industries "LA link" added (517 entries).** US 7,938,424 B2 "Bicycle suspension", Luis Arraiz (individual, no assignee): GB priority 2006-08-30, PCT filed 2007-08-21 (WO 2008/025950), US 12/439,194 published as US 2009/0322055 A1, granted 2011-05-10, Expired - Fee Related (nominal end 2027-08-21), tier v from the patent PDF. Three of Jon's drawings (Figs. 1, 2, 7). Placed after Trek's idler-cog card and added as stop 2 of the idler tour; links to Trek 6,045,470 / 6,203,042 and Yeti 12,617,488. K9 Industries registered in BRANDS. Gaps: the DH001-S facts (15CDV6 steel front, aluminium rear, "LA link", 20 mm chain growth) come from the two 2011 Pinkbike articles as supplied by Jon; Pinkbike blocks automated reading, so they were not checked directly. The lapse date is not on the card. Arraiz's later GT/Cannondale work cites Wide Open MTB (2018); Pon's Dorel Sports purchase closed 2022-01-04 per Dorel's release. No CSG assignment of this patent is on record.
 - **Shimano motor-locked rear shock added (518 entries).** US 6,863,291 B2 "Bicycle suspension", Hiroyuki Miyoshi / Shimano Inc.: divisional of 09/758,541 (filed 2001-01-12, now US 6,543,799; provisional 2000-01-13), filed 2003-02-27, published as US 2003/0132600 A1, granted 2005-03-08, 0 days PTA, Expired - Lifetime 2021-01-12. Tier v from the patent PDF and the Google Patents record. Claims a control unit, rear shock and a lock that holds the shock compressed (motor, cable, hook 92 and ratchet 91; engages a set time after the bike stops). Jon's three drawings: Fig. 17 (lead), Fig. 2 (rotated upright) and Fig. 9. Placed after the US 6,543,799 + 6,698,780 family card, which now links to it. No gaps.
+
+- **Drawings wired in, three numbers filled (518 entries, no new cards).** Jon's uploads of 2026-11-16 are now on their cards, files renamed to the `US<number><kind>` pattern: Johnston US 1,298,958; Yeti US 2025/0376238 A1 (2); Devinci D523,380 (2); Shimano US 11,608,139; SRAM Brake Mount US 12,187,377 (2); Continental US 12,397,590 (plus the chromatogram from US 7,968,635, captioned as the second patent); Yoshimura US 12,391,334 (2); Aenomaly US 12,448,072; Porsche US 12,491,966; Mavic US 12,434,786 (2); Meyer FR 86,705; Hayes US 5,390,771 (3); Schwalbe DE 10 2024 115 921 (captioned as Schwalbe's own black-and-white rendering, not a patent drawing); Fox US 12,491,961 on the wireless-dropper card; RampWerks US 12,129,918 (a 2022 continuation of the asserted family) on the litigation card. Numbers filled: SRAM UDH is now US 11,230,350 B2 (Braedt, SRAM Deutschland; filed 2019-04-19, granted 2022-01-25, exp 2040); the Eagle Transmission card now carries US 12,221,191 B2 "Rear derailleur" (Braedt & Mueller; filed 2021-12-02, granted 2025-02-11, 686 days PTA, exp 2043), tier m because the patent's link to the Transmission product is not confirmed; K.I.S. now carries WO 2023/222624 A1 (Klieber; filed 2023-05-15, ceased) with the 2002 clamp patent US 6,394,694 B1 as its second drawing. Old slugs kept in `REF_ALIASES`. Gaps: US 11,460,099 (RampWerks) has no card of its own; US 12,037,081 has no drawing yet.
