@@ -25,8 +25,8 @@ An interactive timeline of mountain bike intellectual property: 518 patents and 
 | **Brands** | 229 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 436 |
-| **Medium confidence** | 43 |
+| **Verified entries** | 437 |
+| **Medium confidence** | 42 |
 | **Draft / in progress** | 39 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
