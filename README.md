@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 516 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 517 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 516 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 516 |
+| **Total entries** | 517 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 207 |
-| **Expired patents** | 234 |
+| **Expired patents** | 235 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 10 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 228 |
+| **Brands** | 229 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 435 |
+| **Verified entries** | 436 |
 | **Medium confidence** | 42 |
 | **Draft / in progress** | 39 |
 
@@ -969,3 +969,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - **Constellation: "Show patents outside the Atlas" no longer breaks the map.** Outside patents carry no citation counts, so the layout counted each as a dot with one link; one with 15 links overshot and flew off to about 10^17 units, leaving zoom at 0 and nothing to grab. Link force is now shared using the number of cards an outside patent touches (`citeDeg` in the Atlas tab, `deg` on the standalone page). The smoke test now toggles the button on both pages and checks the layout stays on screen.
 - **Constellation touch handling.** A fingertip now grabs a dot within 24 px (`CITE_TOUCH_HALO`; a mouse keeps 10 px), so a thumb near a small dot pulls it instead of rotating the map. A dot pulled by a finger keeps its offset from the fingertip rather than snapping under it (the finger hides it), and putting a second finger down (pinch) lets go of a dot being pulled. Physics are the same for touch and mouse; measured with touch emulation on a phone-sized screen, linked dots followed by 22-38% of the pull and nearby dots shifted 17-41%, against 20-30% and 10-30% on a laptop. The smoke test now taps near a dot with a phone profile.
 - **Horst Link family and Leitner cards corrected (516 entries, unchanged count).** "Leitner four-bar prototype era" (num null, dates 1985/1985) is now the card for Leitner's motorcycle patent US 4,299,582 "Chain drive for motorcycle rear wheels carried by swing arms" (filed 1979-03-02, granted 1981-11-10, AT priority 1978, expired 1999), with sheet 1 (Figs. 1-2), tier v; old link kept through `REF_ALIASES`; the ATK card now links to it; the Horst Link tour starts with it. WO 1993/013974 raised m → v from the record: filed 1993-01-21, priority 1992-01-21, published 1993-07-22, ceased; y 1992 → 1993, st unknown → expired; citations now say "not granted" instead of "pending" for a lapsed application. Horst Link card links all three US patents (5,509,679 / 5,678,837 / 5,899,480, all with the 1992-01-21 priority) and Pinkbike's "Now THAT Was a Bike: 1993 AMP B2" (also on the WO card). Continuations card exp 2016 → 2012: both were filed after 1995-06-08, so their term is 20 years from the 1992 parent filing (Google Patents shows 2012-01-21).
+- **K9 Industries "LA link" added (517 entries).** US 7,938,424 B2 "Bicycle suspension", Luis Arraiz (individual, no assignee): GB priority 2006-08-30, PCT filed 2007-08-21 (WO 2008/025950), US 12/439,194 published as US 2009/0322055 A1, granted 2011-05-10, Expired - Fee Related (nominal end 2027-08-21), tier v from the patent PDF. Three of Jon's drawings (Figs. 1, 2, 7). Placed after Trek's idler-cog card and added as stop 2 of the idler tour; links to Trek 6,045,470 / 6,203,042 and Yeti 12,617,488. K9 Industries registered in BRANDS. Gaps: the DH001-S facts (15CDV6 steel front, aluminium rear, "LA link", 20 mm chain growth) come from the two 2011 Pinkbike articles as supplied by Jon; Pinkbike blocks automated reading, so they were not checked directly. The lapse date is not on the card. Arraiz's later GT/Cannondale work cites Wide Open MTB (2018); Pon's Dorel Sports purchase closed 2022-01-04 per Dorel's release. No CSG assignment of this patent is on record.
