@@ -25,9 +25,9 @@ An interactive timeline of mountain bike intellectual property: 518 patents and 
 | **Brands** | 229 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 438 |
+| **Verified entries** | 439 |
 | **Medium confidence** | 42 |
-| **Draft / in progress** | 38 |
+| **Draft / in progress** | 37 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -976,3 +976,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 
 - K9 Industries LA link (US 7,938,424): fourth image added, a frame line drawing captioned as not a patent drawing (link off). Tier unchanged.
 - **Mantis card marked no patent, picture added (518 entries).** "Mantis elevated chainstay geometry" is now a confirmed no-patent card (`np: true`, tier v on Jon's statement that the Mantis frame design was not patented), replacing "no patent located" and the "number not yet confirmed" flag. Jon's `mantis.jpg` is wired in (resized to 2000 px) with a caption saying it is an illustration created by the author with Nano Banana, not a patent drawing; `link: false`.
+- **Yeti rotary suspension number confirmed (518 entries, unchanged).** The "number not yet published" card is now US 2026/0285439 A1, "Two wheeled vehicle suspension including a rotary resistive mechanism" (Peter Zawistowski / Yeti Cycling, LLC; application 19/572,668 filed 2026-03-19 from provisionals of 2025-03-20 and 2025-11-06; published 2026-09-24; pending). Tier l -> v from the USPTO publication PDF. Text rewritten from claim 1 and the summary (rotary mechanism torquing about an IVC axis and overlapping the brake in side view; all joints inside the tire diameter). Figs 1 and 8 cropped from the publication. Google Patents does not index it yet, so the card's record link and figure links point to the USPTO PDF (`recordUrl`). Pinkbike source kept in `w`. Old link `#p=yeti-rotary-suspension-system` kept through `REF_ALIASES`; Zawistowski tour stop updated. Note: Pinkbike's "filed in September 2026" was the publication month.
