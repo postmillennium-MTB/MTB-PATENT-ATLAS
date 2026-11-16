@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 518 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 520 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,10 +14,10 @@ An interactive timeline of mountain bike intellectual property: 518 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 518 |
+| **Total entries** | 520 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 206 |
-| **Expired patents** | 237 |
+| **Active patents** | 207 |
+| **Expired patents** | 238 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 11 |
 | **Litigated entries** | 31 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 518 patents and 
 | **Brands** | 229 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 438 |
+| **Verified entries** | 440 |
 | **Medium confidence** | 42 |
 | **Draft / in progress** | 38 |
 
@@ -975,3 +975,5 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - **Drawings wired in, three numbers filled (518 entries, no new cards).** Jon's uploads of 2026-11-16 are now on their cards, files renamed to the `US<number><kind>` pattern: Johnston US 1,298,958; Yeti US 2025/0376238 A1 (2); Devinci D523,380 (2); Shimano US 11,608,139; SRAM Brake Mount US 12,187,377 (2); Continental US 12,397,590 (plus the chromatogram from US 7,968,635, captioned as the second patent); Yoshimura US 12,391,334 (2); Aenomaly US 12,448,072; Porsche US 12,491,966; Mavic US 12,434,786 (2); Meyer FR 86,705; Hayes US 5,390,771 (3); Schwalbe DE 10 2024 115 921 (captioned as Schwalbe's own black-and-white rendering, not a patent drawing); Fox US 12,491,961 on the wireless-dropper card; RampWerks US 12,129,918 (a 2022 continuation of the asserted family) on the litigation card. Numbers filled: SRAM UDH is now US 11,230,350 B2 (Braedt, SRAM Deutschland; filed 2019-04-19, granted 2022-01-25, exp 2040); the Eagle Transmission card now carries US 12,221,191 B2 "Rear derailleur" (Braedt & Mueller; filed 2021-12-02, granted 2025-02-11, 686 days PTA, exp 2043), tier m because the patent's link to the Transmission product is not confirmed; K.I.S. now carries WO 2023/222624 A1 (Klieber; filed 2023-05-15, ceased) with the 2002 clamp patent US 6,394,694 B1 as its second drawing. Old slugs kept in `REF_ALIASES`. Gaps: US 11,460,099 (RampWerks) has no card of its own; US 12,037,081 has no drawing yet.
 
 - **Mantis card marked no patent, picture added (518 entries).** "Mantis elevated chainstay geometry" is now a confirmed no-patent card (`np: true`, tier v on Jon's statement that the Mantis frame design was not patented), replacing "no patent located" and the "number not yet confirmed" flag. Jon's `mantis.jpg` is wired in (resized to 2000 px) with a caption saying it is an illustration created by the author with Nano Banana, not a patent drawing; `link: false`.
+
+- **Two Specialized Talavasek cards (520 entries).** New: "Specialized sit-and-bleed sag-setting air shock" US 2019/0093731 A1 (Jan Talavasek; filed 2018-11-26 as a continuation of the 2010 family granted as US 8,480,064, 9,328,793, 9,759,283 and 10,161,474; abandoned), tier v, Fig. 1. New: "Specialized top-tube monitoring unit with LED display" US 12,545,357 B2 (Sonderegger, Talavasek, Jakku, Patureau, Pallure, Reiter; family from 2018-06-28, granted 2026-02-10, 196 days PTA, exp 2039), tier v, Figs. 1B and 2A. Both cards link to each other and to the battery-mount card (US 11,345,437), which now links back. Gap: the cards do not name a product (AutoSag, Turbo Connect Unit) because no maker page tying either patent to a product was confirmed.
