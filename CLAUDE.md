@@ -124,7 +124,7 @@ Number formats, the two no-patent cases, `searchUrl`, `long`, card links and
 
 ## Sourcing and wording
 
-- Prefer primary records (Google Patents, USPTO, the maker's patent-marking
+- Prefer primary records (Google Patents (https://patents.google.com), USPTO (https://ppubs.uspto.gov/basic/), the maker's patent-marking
   page, a court filing). Cross-check secondhand claims against them.
 - Confirm any URL resolves before adding it.
 - Tier honestly. Name what isn't confirmed in the README changelog bullet.
@@ -162,7 +162,7 @@ Run both before every PR that touches `index.html`. A missing field
 
 ## Icons
 
-Lucide only (https://lucide.dev/icons/), inline SVG with its original
+Lucide icons are preferred (https://lucide.dev/icons/), inline SVG with its original
 attributes, `class="lucide lucide-<name>" aria-hidden="true" focusable="false"`,
 declared once as an `ICON_*` constant, never inside a `data-i18n` element,
 never hand-drawn. Details: "Icons" in `docs/reference.md`.
