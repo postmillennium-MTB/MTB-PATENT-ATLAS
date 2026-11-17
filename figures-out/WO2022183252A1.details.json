@@ -1,0 +1,111 @@
+{
+ "number": "WO2022183252A1",
+ "title": "Front freewheel arrangement for bicycle",
+ "inventors": [
+  "Michael John Williams",
+  "Ian Jeffery WILLIAMS"
+ ],
+ "assignee_original": [
+  "Williams Racing Products Pty Ltd",
+  "Miranda & Irmão Lda.",
+  "金盛元興業股份有限公司",
+  "Shimano Industrial Company, Ltd.",
+  "Koxx Sarl",
+  "Daniel Preining",
+  "Freeflow Technologies Limited",
+  "The Hive Global, Inc.",
+  "Freeflow Technologies Limited",
+  "Shimano Industrial Company, Ltd.",
+  "Koxx Sarl",
+  "Daniel Preining",
+  "Freeflow Technologies Limited",
+  "The Hive Global, Inc.",
+  "Freeflow Technologies Limited",
+  "金盛元興業股份有限公司",
+  "Miranda & Irmão Lda.",
+  "Miranda & Irmao, Lda."
+ ],
+ "assignee_current": [
+  "Williams Racing Products Pty Ltd"
+ ],
+ "application": "PCT/AU2022/050181",
+ "priority_date": "2021-03-05",
+ "filing_date": "2022-03-04",
+ "publication_date": "2022-09-09",
+ "grant_date": "",
+ "status": "Ceased",
+ "expiry_events": [
+  {
+   "date": "2023-09-05",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  }
+ ],
+ "abstract": "The disclosure relates to a front freewheel adapter for a bicycle drivetrain which includes a crankset releasably connected to a chainring. The adapter is configured for installation between the crankset and the chainring to adapt the drivetrain for a front-freewheel configuration. The adapter includes a chainring connector member configured for releasable connection to the chainring and a crankset connector member configured for releasable connection to the bicycle crankset. The adapter further includes a freewheel clutch connecting the chainring connector member and crankset connector member and permitting freewheeling of the chainring connector member relative to the crankset connector member, the chainring and crankset connector members each being releasably connected to the freewheel clutch and the chainring connector member being positionally adjustable relative to the freewheel clutch along a central axis of the adapter. The adapter further includes a first locking arrangement for securing the chainring connector member in a desired position relative to the freewheel clutch and a second locking arrangement for securing the clutch relative to the crankset connector member.",
+ "family": [
+  "WO2022183252A1"
+ ],
+ "cites": [
+  {
+   "pn": "US4150859A",
+   "title": "Chain wheel and crank for a bicycle"
+  },
+  {
+   "pn": "FR2921630B1",
+   "title": "PEDALIER MULTI TRAY WITH INTEGRATED FREE WHEEL"
+  },
+  {
+   "pn": "US20130150194A1",
+   "title": "Crankset for a motorized cycle"
+  },
+  {
+   "pn": "WO2018029453A1",
+   "title": "Improvements relating to bicycle transmissions"
+  },
+  {
+   "pn": "US20190054765A1",
+   "title": "Bicycle cassette with clamping connection"
+  },
+  {
+   "pn": "WO2019155208A1",
+   "title": "Freewheel and thrust bearings system and vehicle transmission systems including such a system"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "EP4477521A1",
+   "title": "Annular adapter connecting a drive shaft with a chainring"
+  },
+  {
+   "pn": "TWI890968B",
+   "title": "Through axle for a bicycle"
+  }
+ ],
+ "events": [
+  {
+   "date": "2021-03-05",
+   "type": "external-priority",
+   "title": "Priority claimed from AU2021900629A"
+  },
+  {
+   "date": "2022-03-04",
+   "type": "filed",
+   "title": "Application filed by Williams Racing Products Pty Ltd"
+  },
+  {
+   "date": "2022-09-09",
+   "type": "publication",
+   "title": "Publication of WO2022183252A1"
+  },
+  {
+   "date": "2023-09-05",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Ceased"
+  }
+ ]
+}
