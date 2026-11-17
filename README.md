@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 521 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 522 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 521 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 521 |
+| **Total entries** | 522 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 207 |
+| **Active patents** | 208 |
 | **Expired patents** | 238 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 12 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 521 patents and 
 | **Brands** | 229 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 442 |
+| **Verified entries** | 443 |
 | **Medium confidence** | 42 |
 | **Draft / in progress** | 37 |
 
@@ -1015,3 +1015,5 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - **Yeti Link Suspension System card, second drawing (2026-11-17):** added Fig. 4 of continuation US 9,561,834 (Jon's upload, `pictures/US9561834B2.png`), a top view with the pivot axes angled to the frame; the card moved from `img` to `imgs[]`, Fig. 18B of US 9,102,378 stays first, and the new figure links to US 9,561,834. No count change.
 
 - **New no-patent card: 150x12 and 157x12 rear hubs (521 entries, 2026-11-17).** np:"standard", cat wheel, y 2000 (150x12 on the 2001 GT DHi; 157x12 end caps from 2011), tier v (like the other np cards). Facts from Jon, with the GT 150x12 and Intense/Jeff Steber 135x12 firsts attributed to Suzanne at Hadley Hubs; Pinkbike 2011 Trek Session 99 quote as Jon gave it (the page returned 403 to the cloud session, so the quote was not re-read). No drawing yet. Placed after the fat-bike hub spacing card; related no-patent cards named in text (card links to num:null cards are not allowed).
+
+- **New card: Shimano rear hub with a freehub rotation sensor, US 12,145,402 B2 (522 entries, 2026-11-17).** cat wheel, y 2021, g 2024, active, exp 2043 (774 days PTA, matches Google's adjusted expiration 2043-05-16), tier v. Family is US only (application US 2022/0314692 A1). Bibliographic facts from the Fetch patent figure record; mechanism (magnet 36a on the freehub, magnetic sensor 38a in a housing in the shell, generator 24) from the granted patent's text and claims. Drawing is Jon's upload of Fig. 2 (`pictures/US12145402B2.png`). Cross-linked to the MICRO SPLINE (US 11,578,761) and dropper position sensor (US 11,136,083) cards. WHATS_NEW line added.
