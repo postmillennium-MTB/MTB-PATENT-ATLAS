@@ -1,0 +1,196 @@
+patent: US8590421B2
+source: https://patentimages.storage.googleapis.com/f9/b0/3f/f50699c3f836df/US8590421.pdf
+pages: 23
+per-page extracted text length: {1: 2762, 2: 4152, 3: 74, 4: 71, 5: 58, 6: 70, 7: 58, 8: 68, 9: 58, 10: 58, 11: 84, 12: 0, 13: 101, 14: 137, 15: 6223, 16: 7613, 17: 7542, 18: 7267, 19: 7580, 20: 7319, 21: 7031, 22: 6854, 23: 1036}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US008590421B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Meggiolan et al.
+(54) BICYCLE BOTTOM BRACKETASSEMBLY
+
+602,049 A
+
+AND ADAPTER DEVICE FOR SUCH AN
+
+33. A
+
+ASSEMBLY
+
+846,239 A
+951,137 A
+
+(75)
+
+Inventors:
+
+4, 1898 Beard
+
+3.
+
+tow
+
+gger
+
+3, 1907 Osborne
+3, 1910 L
+
+1,235,530 A *
+
+Pasqua, Camisano Vicentino (IT)
+
+1,449,235 A * 3/1923 Lewis ........................... 384,458
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 1205 days.
+
+CN
+DE
+
+1522929
+O1257 613
+
+8, 2004
+12/1967
+Continued
+
+(
+
+)
+
+OTHER PUBLICATIONS
+
+Mar. 2, 2007
+
+English translation of Oct. 27, 2010 Office Action issued in corre
+sponding Chinese Applin. No. 2007 10085427.6.
+(Continued)
+
+Prior Publication Data
+
+US 2007/O2O7631 A1
+
+stance . . . . . . . . . . . . . . . . . . . . . . 384,458
+
+FOREIGN PATENT DOCUMENTS
+
+(21) Appl. No.: 11/713,329
+(65)
+
+7/1917
+
+Continued
+(Continued)
+
+Subject to any disclaimer, the term of this
+
+(22) Filed:
+
+Nov. 26, 2013
+
+Mario Meggiolan, Creazzo (IT); Paolo
+
+(73) Assignee: Campagnolo S.r.l., Vicenza (IT)
+(*) Notice:
+
+US 8,590,421 B2
+
+(45) Date of Patent:
+
+Sep. 6, 2007
+
+(30)
+Foreign Application Priority Data
+Mar.
+3,
+2006
+(EP)) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . O6425.146
+ar. 4UUO
+
+Primary Examiner — Thomas Diaz
+(74) Attorney, Agent, or Firm — Volpe and Koenig, P.C.
+
+(51) Int. Cl
+B62M 3/00
+
+(57)
+ABSTRACT
+A bicycle bottom bracket assembly has a shaft having alon
+gitudinal axis X-X, a pair of bearings configured to Support
+
+(52) U.S. Cl.
+
+(2006.01)
+
+USPC ........................... 74/594.1 384/.458. 384/545
+
+the shaft in rotation with respect to a housing box of the
+
+(58) Field of Classification Search s
+s
+USPC
+74,594.1594.45942: 384,458,545
+
+bottom bracket assembly provided in a bicycle frame, and a
+pair of adapter devices configured to be cantilevered with
+
+- ------ --- -
+
+384/510,539,903
+
+See application file for complete search histo s
+pp
+p
+ry.
+(56)
+References Cited
+U.S. PATENT DOCUMENTS
+
+529, 110 A
+
+1 1/1894 Copeland
+
+535,706 A
+590,695 A
+593,562 A
+594,109 A
+596,846 A
+
+3, 1895 Luther
+9, 1897 Alcorn
+11, 1897 Brennan
+11, 1897 Weed et al.
+1, 1898 Brown
+
+opposite free ends of the box to Support the bearings outside
+
+of said box. At least one of the adapter devices has at least one
+first stop element and at least one second stop element
+arranged on opposite sides with respect to at least one bear
+
+ing, wherein the first and second stop elements cooperate with
+the at least one bearing to keep the at least one bearing inside
+a space having a predetermined axial extension. The bear
+ing's movement is thus limited in the axial direction, provid
+ing a fixed reference to determine the chain line of the bottom
+bracket assembly.
+45 Claims, 12 Drawing Sheets
+
+W
+
+2
+
+E;
+
+R
+
+z1%Nys
+
+iSS
+E.
+
+

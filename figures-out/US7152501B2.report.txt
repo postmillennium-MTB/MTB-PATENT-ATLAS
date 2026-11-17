@@ -1,0 +1,110 @@
+patent: US7152501B2
+source: https://patentimages.storage.googleapis.com/3b/17/52/91c1faa833f750/US7152501.pdf
+pages: 15
+per-page extracted text length: {1: 2301, 2: 57, 3: 0, 4: 57, 5: 72, 6: 71, 7: 70, 8: 67, 9: 7047, 10: 7158, 11: 7769, 12: 7791, 13: 7498, 14: 7050, 15: 5690}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US007 152501 B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 7,152.501 B2
+(45) Date of Patent:
+Dec. 26, 2006
+
+Yamanaka et al.
+(54) BICYCLE CRANK FIXING STRUCTURE
+
+(75) Inventors: Masahiro Yamanaka, Izumisano (JP);
+Fujihisa Tatsumi, Osaka (JP)
+(73) Assignee: Shimano Inc., Osaka (JP)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+(21) Appl. No.: 11/092,616
+(22) Filed:
+
+Mar. 30, 2005
+
+(65)
+
+Prior Publication Data
+
+US 2006/O117905 A1
+
+(2006.01)
+
+(52) U.S. Cl. ..................................................... 74/594.1
+(58) Field of Classification Search ............... 74/594.1,
+74/594.2,594.3, 551.1; 403/234-235,338,
+403/398
+
+See application file for complete search history.
+References Cited
+U.S. PATENT DOCUMENTS
+
+4,019,230 A *
+
+6/2003
+6/2003
+1/2005
+8/2004
+
+Marmonier ................ T3,432.1
+Chen ......................... 74,551.3
+Yamanaka ................. T4,594.1
+Yamanka et al.
+
+FOREIGN PATENT DOCUMENTS
+JP
+
+2004-24977O A
+
+9, 2004
+
+* cited by examiner
+Primary Examiner Richard Ridley
+Assistant Examiner James Pilkington
+(74) Attorney, Agent, or Firm—Global IP Counselors, LLP
+ABSTRACT
+
+Jun. 8, 2006
+
+(51) Int. Cl.
+
+(56)
+
+2004O162172 A1
+
+(57)
+
+(30)
+Foreign Application Priority Data
+Nov. 29, 2004 (JP) ............................. 2004-343936
+G05G L/4
+
+6,581,462 B1*
+6,581492 B1*
+6,845,687 B1 *
+
+4, 1977 Pollard ....................... 280/214
+
+A bicycle crank fixing structure is arranged to fix a left crank
+with a mounting bore and a slit extending radially from the
+mounting bore to a crank axle. The mounting bore is
+non-rotatably coupled to the crank axle. The slit is provided
+with two mounting bolts that perpendicularly intersect to
+adjust a width of the slit to fasten the crank to the crank axle.
+The crank axle has a retaining hole formed on the outer
+circumferential surface thereof which faces the slit of the
+
+crank. A retaining member with a retaining projection is
+disposed in the slit such that the retaining member rotates by
+rotation of the mounting bolt. The retaining projection of the
+retaining member is retained in the retaining hole formed on
+the crank axle to prevent the crank from detaching from the
+crank axle even when a fastening bolt is loosened.
+17 Claims, 7 Drawing Sheets
+
+

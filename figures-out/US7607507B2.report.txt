@@ -1,0 +1,183 @@
+patent: US7607507B2
+source: https://patentimages.storage.googleapis.com/24/7a/c2/f25af12953bc52/US7607507.pdf
+pages: 9
+per-page extracted text length: {1: 3016, 2: 656, 3: 65, 4: 108, 5: 65, 6: 6777, 7: 7963, 8: 7616, 9: 6149}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO7607507B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+(54)
+
+US 7,607,507 B2
+
+(45) Date of Patent:
+
+Lane et al.
+BICYCLE BOTTOM BRACKETASSEMBLY
+
+2002/0033586 A1
+
+Oct. 27, 2009
+
+3/2002 Vroomen et al.
+
+2003/0235356 A1* 12/2003 Jiang .......................... 384,458
+2007, 0104.405 A1*
+
+(75) Inventors: Timothy Saul Lane, Irvine, CA (US);
+Jeffrey A. Soucek, Aliso Viejo, CA (US)
+
+(21) Appl. No.: 11/650,776
+(65)
+(51)
+
+OTHER PUBLICATIONS
+
+Jan. 8, 2007
+
+Zinn, Lennard; 'Zinn and the Art of Mountain Bike Maintenance':
+
+Prior Publication Data
+
+US 2008/O164673 A1
+
+Excerpt entitled “Types of Bottom Brackets'; Copyright 2005; pp.
+191: 4th Edition; Published by VeloPress in the USA.
+
+Jul. 10, 2008
+
+(Continued)
+Primary Examiner Lesley D Morris
+
+Int. C.
+
+B6OK 17/30
+(2006.01)
+(52) U.S. Cl. ....................................... 180/260;384/545
+
+(58)
+
+Assistant Examiner Tashiana Adams
+
+(74) Attorney, Agent, or Firm—Stetina Brunda Garred &
+
+Field of Classification Search ................. 280/260,
+
+Brucker
+
+280/256, 259; 74/594.1
+
+See application file for complete search history.
+(56)
+
+... 384,545
+
+2007/0295154 A1* 12/2007 DAluisio et al. .......... T4,594.1
+2008.0035431 A1
+2/2008 Vroomen et al.
+2008.0036170 A1
+2/2008 Vroomen et al.
+2008.0036171 A1
+2/2008 Vroomen et al.
+2008.0054592 A1
+3/2008 Vroomen et al.
+2008.0054593 A1
+3/2008 Vroomen et al.
+2008.0056635 A1
+3/2008 Lee ............................ 384,545
+2008. O159678 A1* 7/2008 Lin ............................ 384,545
+
+(73) Assignee: Felt Racing, LLC, Irvine, CA (US)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 348 days.
+(22) Filed:
+
+5, 2007 Lin ...........
+
+2007/0151410 A1* 7/2007 Meggiolan ................. T4,594.1
+
+(57)
+
+ABSTRACT
+
+References Cited
+
+A bottom bracket assembly for a bicycle is provided. The
+bottom bracket assembly may comprise a left bearing, bottom
+bracket shell and a right bearing. The bottom bracket shell
+may be threadless and have beveled surfaces for mounting the
+left and right bearings onto the bottom bracket assembly. A
+spindle is inserted through the bottom bracket shell. There
+after, the left and right bearings are preloaded to align the
+central axis of the spindle to the crankarm rotating axis Such
+that the spindle or left and right crankarms do not wobble and
+yet do not bind when rotated.
+
+U.S. PATENT DOCUMENTS
+
+4,398.434
+4,577,531
+4,810,040
+5,095,770
+5,335,928
+6,276,234
+6,435,726
+6,889,992
+7,000,936
+7,104,562
+7,234,373
+
+8, 1983 Kimura ..................... T4,594.4
+3, 1986 Bergles ................... 192.217.4
+3, 1989 Chi ......................... 301,110.5
+3, 1992 Rader, III
+8, 1994 Pong et al. .................. 280/259
+8, 2001 Harrington ...
+... 74f 594.3
+8, 2002 Chi ............................ 384,545
+5/2005 Vroomen et al.
+2, 2006 Schmider
+9, 2006 Schmider et al.
+6, 2007 Yamanaka ................. T4,594.1
+
+s
+
+16 Claims, 3 Drawing Sheets
+
+y
+
+Y
+
+4.
+
+y
+
+He22 -
+
+Sel
+
+u-
+
+7 is
+
+60 6, is a 33
+
+23
+
+Josh 34 64
+46
+
+f
+
+16
+
+50
+
+fa
+
+

@@ -1,0 +1,170 @@
+patent: US10221887B2
+source: https://patentimages.storage.googleapis.com/e8/16/53/2657644567c057/US10221887.pdf
+pages: 15
+per-page extracted text length: {1: 2689, 2: 4931, 3: 2021, 4: 166, 5: 244, 6: 232, 7: 114, 8: 108, 9: 211, 10: 115, 11: 583, 12: 6876, 13: 7333, 14: 7748, 15: 3378}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010221887B2
+
+(12) United States Patent
+
+( 10 ) Patent No.: US 10 ,221,887 B2
+(45) Date of Patent:
+
+Dubois et al.
+
+(54 ) SELF LOCKING BEARING PRELOAD
+(71) Applicant: The Hive Global, Inc., Taichung ( TW )
+
+(72 ) Inventors: George Dubois, San Luis Obispo , CA
+(US ); Matt O 'Rourke, Portland , OR
+(US)
+
+547 ,639 A
+575,712 A
+576 ,548 A
+
+10 / 1895 Grubb
+1 / 1897 Hamilton
+
+579,479 A
+590 ,685 A
+595 ,388 A
+598 , 325 A
+
+3 / 1897 Gobbler
+9 / 1897 Matthews
+12 / 1897 Hanson
+2 / 1898 McIntyre
+11 / 1898 Seaver
+
+2/1897 Cassidy
+
+614 ,900 A
+
+616 , 167 A
+620 ,266 A
+666 ,679 A
+1, 070 , 971 A
+
+(73) Assignee: The Hive Global, Inc, Taichung ( TW )
+( * ) Notice :
+
+10 / 1894 Copeland
+
+527 ,520 A
+
+ADJUSTER
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U .S .C . 154 (b ) by 566 days.
+
+(21) Appl. No.: 14/099,641
+
+Mar. 5 , 2019
+
+12 / 1898 Walker
+
+2 / 1899 Woodiska
+
+1/ 1901 Kraus
+8/ 1913 Lowd
+
+(Continued )
+
+OTHER PUBLICATIONS
+International Search Report from PCT/US2017/023016 .
+
+( 22 ) Filed :
+
+Dec . 6 , 2013
+(65)
+Prior Publication Data
+US 2014 /0157951 A1 Jun . 12 , 2014
+
+Primary Examiner — Richard W Ridley
+
+Assistant Examiner — Brian J McGovern
+(74 ) Attorney, Agent, or Firm — Haverstock & Owens
+
+Related U .S. Application Data
+
+LLP
+
+(60 ) Provisional application No.61/734 ,065, filed on Dec .
+6 , 2012
+
+Int. Cl.
+
+F16C 25 / 06
+B62M 3 /00
+
+( 2006 .01)
+
+( 2006 .01)
+(52) U . S . CI.
+CPC ............. F16C 25 / 06 (2013 .01); B62M 3 /003
+
+(2013.01); F16C 2326 /28 (2013 .01 ); YIOT
+29 /49696 ( 2015 .01 ); Y1OT 74 /2165 (2015 .01)
+(58) Field of Classification Search
+CPC ..... F16C 25 /06 ; B62K 19 /34 ; Y10T 74 /2164 ;
+Y10T 74 /2165; B62B 3 /003
+See application file for complete search history .
+References Cited
+(56 )
+
+nal thread for rotatably coupling with the adjustment ring.
+
+The adjustment ring is rotated in order to cause the plunger
+to extend along an axis of the bottom bracket and apply
+pressure to a bottom bracket bearing inner race . The adjust
+
+ment ring is rotated until the clearance in the bearing
+assemblies and the play in the bottom bracket assembly has
+been eliminated . This allows the crank assembly to rotate
+freely , while preventing the crank assembly from sliding
+
+side to side inside the bearing bores and along the axis of the
+
+crank spindle .
+
+U .S. PATENT DOCUMENTS
+512 ,729 A
+527 , 384 A
+
+ABSTRACT
+(57 )
+A bearing preload adjuster for a bicycle crank set and bottom
+bracket comprises an adjustment ring for coupling with a
+bicycle crank arm , a movable plunger comprising an exter
+
+1/ 1894 Lucas
+10 / 1894 Davids
+
+5 Claims, 8 Drawing Sheets
+42
+40
+
+11
+
+26 36
+32
+/ /
+
+*
+
+TXIY XXZXXY
+
+AXA
+
+XXZyxXZyXXZyxxzy
+ZZZZZZZZ
+
+L
+
+58
+56
+
+

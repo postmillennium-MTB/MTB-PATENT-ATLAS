@@ -1,0 +1,749 @@
+{
+ "number": "US8590421B2",
+ "title": "Bicycle bottom bracket assembly and adapter device for such an assembly",
+ "inventors": [
+  "Mario Meggiolan",
+  "Paolo Pasqua"
+ ],
+ "assignee_original": [
+  "Campagnolo SRL",
+  "Jochen Klieber",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Yamaha Hatsudoki Kabushiki Kaisha",
+  "Ming Suey Precision Industrial Co., Ltd.",
+  "The Hive Global, Inc.",
+  "The Hive Global, Inc.",
+  "The Hive Global, Inc.",
+  "The Hive Global, Inc.",
+  "The Hive Global, Inc.",
+  "Cicli Pinarello S.R.L.",
+  "The Hive Global Inc.",
+  "The Hive Global Inc.",
+  "Campagnolo S.R.L.",
+  "Campagnolo Srl",
+  "CAMPAGNOLO S.r.l.",
+  "Campagnolo Spa",
+  "Campagnolo Srl",
+  "CAMPAGNOLO S.r.l.",
+  "Campagnolo Srl",
+  "Campagnolo Srl",
+  "Campagnolo Srl",
+  "Campagnolo Srl",
+  "Shimano Inc.",
+  "Campagnolo S.R.L.",
+  "Shimano Inc.",
+  "株式会社シマノ",
+  "Shimano Inc.",
+  "Praxis Works LLC",
+  "北京摩拜科技有限公司",
+  "八方电气(苏州)股份有限公司",
+  "厦门纬衡科技有限公司",
+  "Daniel R Taylor",
+  "Giuseppe Egger",
+  "Frank M Osborne",
+  "Miami Cycle And Mfg Co",
+  "Francis M Jones",
+  "Mead Cycle Company",
+  "Fahrradwerke Bismarck Schutte",
+  "Gen Motors Corp",
+  "Terrot Ets",
+  "Oscar C Holderer",
+  "Alfred Thun & Co Gmbh Fa",
+  "Raleigh Cycle Co Ltd",
+  "Matsushita Electric Industrial Co Ltd",
+  "Alfred Thun",
+  "Fernand S Lapeyre",
+  "Societe Nouvelle De Roulements",
+  "Vereinigte Baubeschlagfabriken Gretsch & Co. Gmbh",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company, Limited",
+  "Toshiba Corp",
+  "Gazelle Rijwielfabriek B.V.",
+  "Durham Roger O",
+  "Chi Yi Chen",
+  "Lemmens Joseph R",
+  "Shimano Inc.",
+  "Jitensha Sangyo Shinko Kyokai",
+  "Edwards; Craig H.",
+  "Shimano Inc.",
+  "Trek Bicycle, Corp.",
+  "Nsk Ltd",
+  "Schuldt, Erwin, 84419 Schwindegg",
+  "Shimano Inc.",
+  "Shimano Kk",
+  "Shimano Inc",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Scheffer Design & Engineering",
+  "Edwards; Craig H.",
+  "Sakae:Kk",
+  "Echowell Electronic Ltd.",
+  "Douglas Chiang",
+  "Cannondale Corporation",
+  "Bruno Mombrinie",
+  "Yi-Chen Chi",
+  "Smith Garrett Andrew",
+  "Timothy Eugene Brummer",
+  "Tadahiro Terada",
+  "Cheng-Xun Jiang",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Terry L. Sechler",
+  "Shimano Kk",
+  "Shimano Inc",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Shimano Inc",
+  "Campagnolo Spa",
+  "Douglas Chiang",
+  "Toshie Noma",
+  "Douglas Chiang",
+  "Shimano Inc",
+  "Smith Garrett A.",
+  "Zf Sachs Ag",
+  "Shimano Inc.",
+  "Jean Yves Delale",
+  "Raphael Schlanger",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Campagnolo Srl",
+  "Campagnolo Srl",
+  "Truvativ Int L Co Ltd",
+  "Campagnolo S.R.L.",
+  "CAMPAGNOLO S.r.l.",
+  "Campagnolo S.R.L.",
+  "Campagnolo Srl",
+  "Campagnolo S.R.I.",
+  "Bear Corporation",
+  "Campagnolo S.R.L.",
+  "Ab Skf",
+  "Shimano Inc.",
+  "Campagnolo S.R.L.",
+  "Campagnolo S.R.L.",
+  "Ab Skf",
+  "Saint-Gobain Performance Plastics Pampus Gmbh",
+  "Shimano Inc",
+  "Daniel R Taylor",
+  "Giuseppe Egger",
+  "Frank M Osborne",
+  "Miami Cycle And Mfg Co",
+  "Francis M Jones",
+  "Mead Cycle Company",
+  "Fahrradwerke Bismarck Schutte",
+  "Gen Motors Corp",
+  "Terrot Ets",
+  "Raleigh Cycle Co Ltd",
+  "Oscar C Holderer",
+  "Alfred Thun & Co Gmbh Fa",
+  "Matsushita Electric Industrial Co Ltd",
+  "Alfred Thun",
+  "Alfred Thun",
+  "Fernand S Lapeyre",
+  "Societe Nouvelle De Roulements",
+  "Vereinigte Baubeschlagfabriken Gretsch & Co. Gmbh",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company, Limited",
+  "Toshiba Corp",
+  "Gazelle Rijwielfabriek B.V.",
+  "Durham Roger O",
+  "Chi Yi Chen",
+  "Lemmens Joseph R",
+  "Shimano Inc.",
+  "Shimano Kk",
+  "Jitensha Sangyo Shinko Kyokai",
+  "Trek Bicycle, Corp.",
+  "Edwards; Craig H.",
+  "Edwards; Craig H.",
+  "Shimano, Inc.",
+  "Shimano Inc",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Shimano Inc",
+  "Nsk Ltd",
+  "Shimano, Inc.",
+  "Timothy Eugene Brummer",
+  "Echowell Electronic Ltd.",
+  "Shimano Kk",
+  "Shimano Inc.",
+  "Schuldt, Erwin, 84419 Schwindegg",
+  "Shimano Inc",
+  "Shimano Inc.",
+  "Shimano Inc",
+  "Yasuhiro Hitomi",
+  "Shimano Inc.",
+  "Shimano Kk",
+  "Sakae:Kk",
+  "Bruno Mombrinie",
+  "Shimano, Inc.",
+  "Douglas Chiang",
+  "Cannondale Corporation",
+  "Shimano, Inc.",
+  "Shimano Kk",
+  "Scheffer Design & Engineering",
+  "Terry L. Sechler",
+  "Bruno Mombrinie",
+  "Yi-Chen Chi",
+  "Truvativ Int'l Co., Ltd.",
+  "Smith Garrett Andrew",
+  "Tadahiro Terada",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc",
+  "Zf Sachs Ag",
+  "Cheng-Xun Jiang",
+  "Shimano Inc.",
+  "Shimano Inc",
+  "��ʽ���絺Ұ",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Campagnolo S.R.L.",
+  "Campagnolo Spa",
+  "Douglas Chiang",
+  "Toshie Noma",
+  "Shimano Inc",
+  "Douglas Chiang",
+  "Smith Garrett A.",
+  "Truvativ Int L Co Ltd",
+  "Shimano Inc.",
+  "Jean Yves Delale",
+  "Ab Skf",
+  "Ab Skf",
+  "SCHLANGER, Raphael",
+  "Raphael Schlanger",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Campagnolo Srl",
+  "Campagnolo S.R.I.",
+  "Campagnolo Srl",
+  "Bear Corporation",
+  "Campagnolo S.R.L.",
+  "Campagnolo S.R.L.",
+  "CAMPAGNOLO S.r.l.",
+  "Campagnolo S.R.L.",
+  "Campagnolo S.R.L.",
+  "Campagnolo Srl",
+  "Campagnolo S.R.I.",
+  "Campagnolo S.R.L.",
+  "Campagnolo S.R.L.",
+  "Campagnolo S.R.L.",
+  "Saint-Gobain Performance Plastics Pampus Gmbh",
+  "Jochen Klieber",
+  "Jochen Klieber",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "The Hive Global, Inc.",
+  "The Hive Global, Inc.",
+  "The Hive Global, Inc.",
+  "Shimano Inc.",
+  "Ming Suey Precision Industrial Co., Ltd.",
+  "Yamaha Hatsudoki Kabushiki Kaisha",
+  "Yamaha Hatsudoki Kabushiki Kaisha",
+  "The Hive Global, Inc.",
+  "The Hive Global Inc.",
+  "The Hive Global, Inc.",
+  "The Hive Global Inc.",
+  "Cicli Pinarello S.R.L."
+ ],
+ "assignee_current": [
+  "Campagnolo SRL"
+ ],
+ "application": "US11/713,329",
+ "priority_date": "2006-03-03",
+ "filing_date": "2007-03-02",
+ "publication_date": "2013-11-26",
+ "grant_date": "2013-11-26",
+ "status": "Expired - Fee Related",
+ "expiry_events": [
+  {
+   "date": "2030-06-19",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "A bicycle bottom bracket assembly has a shaft having a longitudinal axis X-X, a pair of bearings configured to support the shaft in rotation with respect to a housing box of the bottom bracket assembly provided in a bicycle frame, and a pair of adapter devices configured to be cantilevered with opposite free ends of the box to support the bearings outside of said box. At least one of the adapter devices has at least one first stop element and at least one second stop element arranged on opposite sides with respect to at least one bearing, wherein the first and second stop elements cooperate with the at least one bearing to keep the at least one bearing inside a space having a predetermined axial extension. The bearing's movement is thus limited in the axial direction, providing a fixed reference to determine the chain line of the bottom bracket assembly.",
+ "family": [
+  "ATE495090T1",
+  "CN101028850A",
+  "CN101028850B",
+  "DE602006019544D1",
+  "EP1829779A1",
+  "EP1829779B1",
+  "JP2007238083A",
+  "JP5124151B2",
+  "RU2007108019A",
+  "TW200815236A",
+  "TWI418487B",
+  "US20070207631A1",
+  "US8590421B2"
+ ],
+ "cites": [
+  {
+   "pn": "US529110A",
+   "title": "Crank-shaft and bearing for velocipedes"
+  },
+  {
+   "pn": "US535706A",
+   "title": "Crank-shaft for velocipedes"
+  },
+  {
+   "pn": "US590695A",
+   "title": "John s"
+  },
+  {
+   "pn": "US593562A",
+   "title": "Crank-shaft hanger"
+  },
+  {
+   "pn": "US594109A",
+   "title": "Crank for bicycles"
+  },
+  {
+   "pn": "US596846A",
+   "title": "Willis s"
+  },
+  {
+   "pn": "US602049A",
+   "title": "Bicycle crank-shaft"
+  },
+  {
+   "pn": "US648077A",
+   "title": "Crank-shaft."
+  },
+  {
+   "pn": "US658624A",
+   "title": "Bottom bracket."
+  },
+  {
+   "pn": "US846239A",
+   "title": "Crank-hanger."
+  },
+  {
+   "pn": "US951137A",
+   "title": "Crank-shaft and crank-shaft bearing for bicycles."
+  },
+  {
+   "pn": "US1235530A",
+   "title": "Bicycle-crank hanger."
+  },
+  {
+   "pn": "US1449235A",
+   "title": "Crank-hanger assembly"
+  },
+  {
+   "pn": "FR623094A",
+   "title": "Support device for wheel hubs and for bicycle crankshaft"
+  },
+  {
+   "pn": "US2136125A",
+   "title": "Locking device for bearings and the like"
+  },
+  {
+   "pn": "FR863610A",
+   "title": "Assembly of cranks for cycle and similar cranksets"
+  },
+  {
+   "pn": "FR934104A",
+   "title": "Improvements to bicycle pedals, or other cycles"
+  },
+  {
+   "pn": "US3306101A",
+   "title": "Composite force measuring assembly"
+  },
+  {
+   "pn": "US3347112A",
+   "title": "Low bicycle pedal"
+  },
+  {
+   "pn": "DE1257613B",
+   "title": "Crank assembly for bicycles"
+  },
+  {
+   "pn": "US3578829A",
+   "title": "Bottom bracket for bicycle"
+  },
+  {
+   "pn": "DE2359437A1",
+   "title": "BICYCLE PEDAL"
+  },
+  {
+   "pn": "US3888136A",
+   "title": "Adjustable pedal and crank system for foot propelled vehicles"
+  },
+  {
+   "pn": "US4093325A",
+   "title": "Tubular spindle mounting for bicycle bottom-bracket hub"
+  },
+  {
+   "pn": "US4208763A",
+   "title": "Pivot bearing arrangement for doors"
+  },
+  {
+   "pn": "US4300411A",
+   "title": "Gear crank for a bicycle"
+  },
+  {
+   "pn": "US4331043A",
+   "title": "Gear crank for a bicycle"
+  },
+  {
+   "pn": "JPS57128585A",
+   "title": "Life detecting system for ink ribbon"
+  },
+  {
+   "pn": "US4406504A",
+   "title": "Device for fastening an axle with rolling bearings in cylindrical tubing"
+  },
+  {
+   "pn": "US4704919A",
+   "title": "Two-piece crankshaft for bicycles"
+  },
+  {
+   "pn": "US4810040A",
+   "title": "Bracket bearing axle device for bicycle"
+  },
+  {
+   "pn": "US5067370A",
+   "title": "Variable crank pedal drive for bicycles and the like"
+  },
+  {
+   "pn": "US5243879A",
+   "title": "Crank axle unit for a bicycle"
+  },
+  {
+   "pn": "JPH05319349A",
+   "title": "Ballless hanger set for bicycle"
+  },
+  {
+   "pn": "US5493937A",
+   "title": "Light-weight bicycle crankshaft assembly utilizing two-piece axle integrally joined to crank arms"
+  },
+  {
+   "pn": "EP0756991A2",
+   "title": "Bicycle crank arm parts/assembly and assembly tools"
+  },
+  {
+   "pn": "US5624519A",
+   "title": "Method making a composite bicycle frame using composite lugs"
+  },
+  {
+   "pn": "GB2315776A",
+   "title": "A roller bearing"
+  },
+  {
+   "pn": "DE29715373U1",
+   "title": "Bottom bracket for bicycle cranks"
+  },
+  {
+   "pn": "EP0924318A1",
+   "title": "Mechanical assembly with incompatible metallic materials"
+  },
+  {
+   "pn": "TW363030B",
+   "title": "Bicycle suspension assembly"
+  },
+  {
+   "pn": "JPH11225633A",
+   "title": "Parts assembly"
+  },
+  {
+   "pn": "US5984528A",
+   "title": "Bearing assembly for bicycle parts"
+  },
+  {
+   "pn": "US6014913A",
+   "title": "Hollow crank spindle unit for bicycles"
+  },
+  {
+   "pn": "DE20003398U1",
+   "title": "Rolling joint"
+  },
+  {
+   "pn": "US6116114A",
+   "title": "Rotatable spindle assembly utilizing two-piece spindle"
+  },
+  {
+   "pn": "JP2000289677A",
+   "title": "Bicycle crank support structure"
+  },
+  {
+   "pn": "US6192300B1",
+   "title": "Bicycle computer"
+  },
+  {
+   "pn": "FR2801863A3",
+   "title": "Bicycle crank unit comprises spindle with ball race, sealing joint and positioning ring at ends and chamfered sleeve and threaded ring on outer side"
+  },
+  {
+   "pn": "EP1120336A2",
+   "title": "Integrated crank assembly and components therefor"
+  },
+  {
+   "pn": "WO2002032751A2",
+   "title": "Bicycle crank set"
+  },
+  {
+   "pn": "US20020081052A1",
+   "title": "Bottom bracket assembly for bicycles"
+  },
+  {
+   "pn": "US20020096015A1",
+   "title": "Bicycle crank axle bearing assembly"
+  },
+  {
+   "pn": "US6443033B1",
+   "title": "Two-piece bicycle crankset"
+  },
+  {
+   "pn": "US20030006113A1",
+   "title": "Pullet unit"
+  },
+  {
+   "pn": "US6564675B1",
+   "title": "Crank arm for bicycles"
+  },
+  {
+   "pn": "EP1314902A1",
+   "title": "Seal assembly for a bicycle bottom bracket"
+  },
+  {
+   "pn": "US20030097901A1",
+   "title": "Bicycle crank assembly and assembly tools"
+  },
+  {
+   "pn": "US6581494B2",
+   "title": "Bicycle riding trainer"
+  },
+  {
+   "pn": "TW567160B",
+   "title": "Bracket assembly for a motor controlled bicycle transmission"
+  },
+  {
+   "pn": "JP2004106838A",
+   "title": "Crank and crankshaft for bicycle"
+  },
+  {
+   "pn": "US20040162172A1",
+   "title": "Bicycle crank assembly"
+  },
+  {
+   "pn": "US6790535B2",
+   "title": "Reel having protective coating"
+  },
+  {
+   "pn": "JP2004275193A",
+   "title": "Parts assembly"
+  },
+  {
+   "pn": "JP2005001663A",
+   "title": "Bicycle component and manufacturing method thereof"
+  },
+  {
+   "pn": "US20050011304A1",
+   "title": "Crank structure of bicycle"
+  },
+  {
+   "pn": "WO2005009832A1",
+   "title": "Crank pedal device and vehicle provided with the same"
+  },
+  {
+   "pn": "US20050040699A1",
+   "title": "Combination of crank and axle in bottom bracket"
+  },
+  {
+   "pn": "JP2005053410A",
+   "title": "Sprocket for bicycle"
+  },
+  {
+   "pn": "US20050081678A1",
+   "title": "Bicycle crank assembly"
+  },
+  {
+   "pn": "US6886676B2",
+   "title": "Hub ring, cover plate and clutch disk"
+  },
+  {
+   "pn": "US20050217417A1",
+   "title": "Bicycle crank arm"
+  },
+  {
+   "pn": "FR2870508A1",
+   "title": "CRADLE MECHANISM AND ASSOCIATED DERAILLEUR FOR CYCLE OR BICYCLE"
+  },
+  {
+   "pn": "US20060103106A1",
+   "title": "Bicycle crank assembly"
+  },
+  {
+   "pn": "EP1661803A2",
+   "title": "Bicycle crank fixing structure"
+  },
+  {
+   "pn": "US20060112780A1",
+   "title": "Bicycle crank axle bearing assembly"
+  },
+  {
+   "pn": "EP1726517A1",
+   "title": "Asymmetrical coupling profile between a central axle of a bottom bracket of a bicycle transmission and a pedal crank"
+  },
+  {
+   "pn": "EP1726518A1",
+   "title": "Coupling profile between a central axle of a bottom bracket of a bicycle transmission and a pedal crank"
+  },
+  {
+   "pn": "WO2005058682A3",
+   "title": "Bicycle crank assembly"
+  },
+  {
+   "pn": "EP1792818A1",
+   "title": "Shaft element and pedal crank of a Bicycle bottom bracket, crank assembly comprising such a shaft element and pedal crank and method for assembling the crank assembly"
+  },
+  {
+   "pn": "EP1792821A1",
+   "title": "Bottom bracket assembly of a bicycle"
+  },
+  {
+   "pn": "US20070137426A1",
+   "title": "Crank assembly for a bicycle bottom bracket assembly, shaft and crank arm thereof"
+  },
+  {
+   "pn": "EP1820726A1",
+   "title": "Bicycle bottom bracket assembly"
+  },
+  {
+   "pn": "US20070207631A1",
+   "title": "Bicycle bottom bracket assembly and adapter device for such an assembly"
+  },
+  {
+   "pn": "US7267030B2",
+   "title": "Bicycle crank assembly"
+  },
+  {
+   "pn": "US20070283781A1",
+   "title": "Bicycle crank arm assembly"
+  },
+  {
+   "pn": "US20080124018A1",
+   "title": "Pedal Crank Bearing or Hub Bearing Arrangement"
+  },
+  {
+   "pn": "US7503239B2",
+   "title": "Bicycle crank arm assembly"
+  },
+  {
+   "pn": "US20090145262A1",
+   "title": "Bottom bracket assembly for a bicycle and shaft for such an assembly"
+  },
+  {
+   "pn": "US20090261553A1",
+   "title": "Assembly of bicycle components in mutual rotation and bicycle comprising such an assembly"
+  },
+  {
+   "pn": "US7798724B2",
+   "title": "Bearing with light weight metal and ceramic material"
+  },
+  {
+   "pn": "US20110049834A1",
+   "title": "Corrosion resistant bushing"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US20120032498A1",
+   "title": "Hub with star ratchet"
+  },
+  {
+   "pn": "US9517811B1",
+   "title": "Bicycle bottom bracket assembly"
+  },
+  {
+   "pn": "US10150533B1",
+   "title": "Bicycle crank assembly"
+  },
+  {
+   "pn": "US20210107592A1",
+   "title": "Drive unit and electrically assisted bicycle"
+  },
+  {
+   "pn": "US11124258B2",
+   "title": "Bicycle bottom bracket set"
+  },
+  {
+   "pn": "US11142280B2",
+   "title": "Bicycle crank with spindle attachment structure"
+  },
+  {
+   "pn": "US11351815B2",
+   "title": "Bicycle cassette with clamping connection"
+  },
+  {
+   "pn": "US11485449B2",
+   "title": "Bicycle cassette with locking connection"
+  },
+  {
+   "pn": "US11932351B2",
+   "title": "Conical bicycle cassette sprocket structure"
+  },
+  {
+   "pn": "US12030586B2",
+   "title": "Seal for bicycle crank with differential chainring motion"
+  },
+  {
+   "pn": "US20240336323A1",
+   "title": "Rear triangle of a tubular bicycle frame"
+  },
+  {
+   "pn": "US12233975B2",
+   "title": "Telescopic bicycle seatpost with adjustable height and fixed frame insertion"
+  },
+  {
+   "pn": "US12643343B2",
+   "title": "Hub system, method and device with adjustable deadband"
+  }
+ ],
+ "events": [
+  {
+   "date": "2007-03-02",
+   "type": "filed",
+   "title": "Application filed by Campagnolo SRL"
+  },
+  {
+   "date": "2007-05-10",
+   "type": "reassignment",
+   "title": "Assigned to CAMPAGNOLO S.R.L."
+  },
+  {
+   "date": "2007-09-06",
+   "type": "publication",
+   "title": "Publication of US20070207631A1"
+  },
+  {
+   "date": "2013-11-26",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2013-11-26",
+   "type": "publication",
+   "title": "Publication of US8590421B2"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Expired - Fee Related"
+  },
+  {
+   "date": "2030-06-19",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ]
+}

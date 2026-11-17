@@ -1,0 +1,148 @@
+patent: US9004771B2
+source: https://patentimages.storage.googleapis.com/73/ff/cb/dd4fb73916fedd/US9004771.pdf
+pages: 27
+per-page extracted text length: {1: 2674, 2: 350, 3: 58, 4: 58, 5: 58, 6: 58, 7: 58, 8: 58, 9: 58, 10: 623, 11: 69, 12: 59, 13: 75, 14: 28, 15: 59, 16: 170, 17: 7505, 18: 6843, 19: 7819, 20: 7720, 21: 7749, 22: 7846, 23: 7727, 24: 7675, 25: 7524, 26: 7181, 27: 3626}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US009004771B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 9,004,771 B2
+(45) Date of Patent:
+Apr. 14, 2015
+
+Earle et al.
+(54)
+
+BICYCLE BOTTOM BRACKET
+
+(58) Field of Classification Search
+
+CPC ............ B60B27/0005; B60B 27/0073; B60B
+
+27/023; B62K 19/34; B62M 3/003; F16C
+
+(71) Applicant: Praxis Works LLC, Aptos, CA (US)
+(72) Inventors: David M. Earle, Watsonville, CA (US);
+Chin T. Chuang, Dacun Township,
+Changhua County (TW)
+
+2326/28
+
+USPC .......................... 384/.458,544, 545; 74/594.1
+
+See application file for complete search history.
+(56)
+
+U.S. PATENT DOCUMENTS
+
+(73) Assignee: Praxis Works LLC, Aptos, CA (US)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 172 days.
+
+Sep. 5, 2013
+
+23, 2009, provisional application No. 61/156.209,
+
+filed on Feb. 27, 2009.
+Int. C.
+
+FI6C 9/00
+FI6C I3/00
+B60B 27/00
+B62M 3/00
+B62K 9/34
+
+(52)
+
+3/1910 Lowrance
+9, 1983 Coenen et al.
+
+(Continued)
+
+Related U.S. Application Data
+(63) Continuation-in-part of application No. 12/715,152,
+filed on Mar. 1, 2010, now abandoned.
+(60) Provisional application No. 61/244.910, filed on Sep.
+
+(51)
+
+951,137 A
+4406,504 A
+
+FOREIGN PATENT DOCUMENTS
+
+Prior Publication Data
+
+US 2013/O23O266A1
+
+6/1898 Gubelmann .................. 384,545
+
+622,868 A * 4, 1899 Simpson ....................... 384,545
+
+Apr. 23, 2013
+
+(65)
+
+605,870 A *
+
+4,651,590 A * 3/1987 Thun ............................ T4,594.1
+7,152,501 B2 12/2006 Yamanaka et al.
+2004/0045400 A1
+3/2004 Alley
+
+(21) Appl. No.: 13/868,585
+(22) Filed:
+
+References Cited
+
+(2006.01)
+(2006.01)
+(2006.01)
+(2006.01)
+(2006.01)
+
+U.S. C.
+
+CPC ......... B60B27/0005 (2013.01); B60B27/0078
+
+(2013.01); B62M 3/003 (2013.01); B62K 19/34
+(2013.01)
+
+DE
+
+3531030 A1
+
+3, 1987
+
+OTHER PUBLICATIONS
+
+Jun. 1, 2010, International Search Report of the International Search
+ing Authority from The U.S. Receiving Office, in
+PCTUS2010O25785, which shares the same priority as this U.S.
+application.
+Jun. 1, 2010, Written Opinion of the International Searching Author
+ity from The U.S. Receiving Office, in PCTUS2010.025785, which
+shares the same priority as this U.S. application.
+
+(Continued)
+Primary Examiner — Phillip A Johnson
+(74) Attorney, Agent, or Firm — Kolisch Hartwell, P.C.
+(57)
+
+ABSTRACT
+
+An improved bicycle bottom bracket system and methods of
+manufacturing and installing Such a system. The improved
+system may include bearings mounted within bearing cups on
+either side of the bottom bracket shell of a bicycle frame. The
+bearing cups may be threaded together, and one bearing cup
+may include a collet portion expandable by the other bearing
+Cup.
+
+25 Claims, 14 Drawing Sheets
+
+

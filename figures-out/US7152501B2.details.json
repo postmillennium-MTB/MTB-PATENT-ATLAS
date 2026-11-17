@@ -1,0 +1,161 @@
+{
+ "number": "US7152501B2",
+ "title": "Bicycle crank fixing structure",
+ "inventors": [
+  "Masahiro Yamanaka",
+  "Fujihisa Tatsumi"
+ ],
+ "assignee_original": [
+  "Shimano Inc",
+  "Praxis Works LLC",
+  "Praxis Works LLC",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Praxis Works LLC",
+  "Campagnolo S.R.L.",
+  "Campagnolo Srl",
+  "CAMPAGNOLO S.r.l.",
+  "Campagnolo Spa",
+  "Campagnolo Srl",
+  "CAMPAGNOLO S.r.l.",
+  "조정민",
+  "에스에스오토엔지니어링(주)",
+  "Shimano Inc.",
+  "The Hive Global, Inc.",
+  "The Hive Global, Inc.",
+  "Miranda & Irmão Lda.",
+  "The Hive Global Inc.",
+  "The Hive Global, Inc.",
+  "久鼎金屬實業股份有限公司",
+  "久鼎金属实业股份有限公司",
+  "劲锋铁马股份有限公司",
+  "Pollard Melville R",
+  "Alstom Holdings",
+  "Far Great Plastics Industrial Co., Ltd.",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Pollard Melville R",
+  "Alstom Holdings",
+  "Shimano, Inc.",
+  "Far Great Plastics Industrial Co., Ltd.",
+  "Shimano Inc.",
+  "Shimano Inc",
+  "Praxis Works LLC",
+  "Praxis Works LLC",
+  "Shimano Inc.",
+  "Praxis Works LLC",
+  "Shimano Inc."
+ ],
+ "assignee_current": [
+  "Shimano Inc"
+ ],
+ "application": "US11/092,616",
+ "priority_date": "2004-11-29",
+ "filing_date": "2005-03-30",
+ "publication_date": "2006-12-26",
+ "grant_date": "2006-12-26",
+ "status": "Expired - Fee Related",
+ "expiry_events": [
+  {
+   "date": "2025-03-30",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  }
+ ],
+ "abstract": "A bicycle crank fixing structure is arranged to fix a left crank with a mounting bore and a slit extending radially from the mounting bore to a crank axle. The mounting bore is non-rotatably coupled to the crank axle. The slit is provided with two mounting bolts that perpendicularly intersect to adjust a width of the slit to fasten the crank to the crank axle. The crank axle has a retaining hole formed on the outer circumferential surface thereof which faces the slit of the crank. A retaining member with a retaining projection is disposed in the slit such that the retaining member rotates by rotation of the mounting bolt. The retaining projection of the retaining member is retained in the retaining hole formed on the crank axle to prevent the crank from detaching from the crank axle even when a fastening bolt is loosened.",
+ "family": [
+  "CN100528680C",
+  "CN1781806A",
+  "DE202005021691U1",
+  "DE602005018732D1",
+  "EP1661803A2",
+  "EP1661803A3",
+  "EP1661803B1",
+  "JP2006151159A",
+  "TW200616832A",
+  "TWI277569B",
+  "US20060117905A1",
+  "US7152501B2"
+ ],
+ "cites": [
+  {
+   "pn": "US4019230A",
+   "title": "Reciprocating powered bicycle"
+  },
+  {
+   "pn": "US6581462B2",
+   "title": "Method and a device for detecting an internal arc in a metal-clad electrical link"
+  },
+  {
+   "pn": "US6581492B1",
+   "title": "Handle folding structure for a foldable bicycle"
+  },
+  {
+   "pn": "US20040162172A1",
+   "title": "Bicycle crank assembly"
+  },
+  {
+   "pn": "US6845687B2",
+   "title": "Bicycle crank arm"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US20100220947A1",
+   "title": "Bicycle bottom bracket"
+  },
+  {
+   "pn": "US9004771B2",
+   "title": "Bicycle bottom bracket"
+  },
+  {
+   "pn": "US9771128B2",
+   "title": "Bicycle crank assembly"
+  },
+  {
+   "pn": "US10000253B1",
+   "title": "Bicycle crank assembly"
+  },
+  {
+   "pn": "US10006483B2",
+   "title": "Bottom bracket having an expandable resilient ring"
+  }
+ ],
+ "events": [
+  {
+   "date": "2005-03-30",
+   "type": "filed",
+   "title": "Application filed by Shimano Inc"
+  },
+  {
+   "date": "2005-03-30",
+   "type": "reassignment",
+   "title": "Assigned to SHIMANO INC."
+  },
+  {
+   "date": "2006-06-08",
+   "type": "publication",
+   "title": "Publication of US20060117905A1"
+  },
+  {
+   "date": "2006-12-26",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2006-12-26",
+   "type": "publication",
+   "title": "Publication of US7152501B2"
+  },
+  {
+   "date": "2025-03-30",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Expired - Fee Related"
+  }
+ ]
+}

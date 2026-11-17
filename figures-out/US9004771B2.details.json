@@ -1,0 +1,162 @@
+{
+ "number": "US9004771B2",
+ "title": "Bicycle bottom bracket",
+ "inventors": [
+  "David M. Earle",
+  "Chin T. CHUANG"
+ ],
+ "assignee_original": [
+  "Praxis Works LLC",
+  "E-Ma International Corp.",
+  "Praxis Works LLC",
+  "Ming Suey Precision Industrial Co., Ltd.",
+  "Sew-Eurodrive Gmbh & Co Kg",
+  "Humanchine Company",
+  "Glarey Luigi",
+  "Chang Hui Lin",
+  "Miami Cycle And Mfg Co",
+  "Gazelle Rijwielfabriek B.V.",
+  "Thun Alfred Heinrich",
+  "Thun Alfred H",
+  "Profile Racing, Inc.",
+  "Shimano Inc.",
+  "Jtekt Corporation",
+  "Michel Garnier",
+  "Miami Cycle And Mfg Co",
+  "Gazelle Rijwielfabriek B.V.",
+  "Thun Alfred Heinrich",
+  "Thun Alfred H",
+  "Profile Racing, Inc.",
+  "Shimano Inc.",
+  "Michel Garnier",
+  "Jtekt Corporation",
+  "E-Ma International Corp.",
+  "E-Ma International Corp.",
+  "Praxis Works LLC",
+  "Ming Suey Precision Industrial Co., Ltd."
+ ],
+ "assignee_current": [
+  "Praxis Works LLC"
+ ],
+ "application": "US13/868,585",
+ "priority_date": "2009-02-27",
+ "filing_date": "2013-04-23",
+ "publication_date": "2015-04-14",
+ "grant_date": "2015-04-14",
+ "status": "Expired - Fee Related",
+ "expiry_events": [
+  {
+   "date": "2030-08-20",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "An improved bicycle bottom bracket system and methods of manufacturing and installing such a system. The improved system may include bearings mounted within bearing cups on either side of the bottom bracket shell of a bicycle frame. The bearing cups may be threaded together, and one bearing cup may include a collet portion expandable by the other bearing cup.",
+ "family": [
+  "US20130230266A1",
+  "US9004771B2"
+ ],
+ "cites": [
+  {
+   "pn": "US605870A",
+   "title": "Ball-bearing"
+  },
+  {
+   "pn": "US622868A",
+   "title": "simpson"
+  },
+  {
+   "pn": "US951137A",
+   "title": "Crank-shaft and crank-shaft bearing for bicycles."
+  },
+  {
+   "pn": "US4406504A",
+   "title": "Device for fastening an axle with rolling bearings in cylindrical tubing"
+  },
+  {
+   "pn": "DE3531030A1",
+   "title": "Bottom bracket ball bearing for bicycles"
+  },
+  {
+   "pn": "US4651590A",
+   "title": "Bicycle pedal bearing assembly"
+  },
+  {
+   "pn": "US20040045400A1",
+   "title": "Bicycle crank arm bearing bracket"
+  },
+  {
+   "pn": "US7152501B2",
+   "title": "Bicycle crank fixing structure"
+  },
+  {
+   "pn": "US20070269155A1",
+   "title": "Rolling bearing device for wheels"
+  },
+  {
+   "pn": "US20090045600A1",
+   "title": "Bicycle crankset"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US20160272268A1",
+   "title": "Interlocked bottom bracket bearing device"
+  },
+  {
+   "pn": "US10006483B2",
+   "title": "Bottom bracket having an expandable resilient ring"
+  },
+  {
+   "pn": "US11124258B2",
+   "title": "Bicycle bottom bracket set"
+  }
+ ],
+ "events": [
+  {
+   "date": "2010-03-01",
+   "type": "external-priority",
+   "title": "Priority claimed from US12/715,152"
+  },
+  {
+   "date": "2013-04-23",
+   "type": "filed",
+   "title": "Application filed by Praxis Works LLC"
+  },
+  {
+   "date": "2013-04-23",
+   "type": "priority",
+   "title": "Priority to US13/868,585"
+  },
+  {
+   "date": "2013-05-29",
+   "type": "reassignment",
+   "title": "Assigned to Praxis Works LLC"
+  },
+  {
+   "date": "2013-09-05",
+   "type": "publication",
+   "title": "Publication of US20130230266A1"
+  },
+  {
+   "date": "2015-04-14",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2015-04-14",
+   "type": "publication",
+   "title": "Publication of US9004771B2"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Expired - Fee Related"
+  },
+  {
+   "date": "2030-08-20",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ]
+}

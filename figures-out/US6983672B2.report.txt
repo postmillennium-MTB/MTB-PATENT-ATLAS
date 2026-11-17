@@ -1,0 +1,185 @@
+patent: US6983672B2
+source: https://patentimages.storage.googleapis.com/72/16/36/8b80d50c1d97fb/US6983672.pdf
+pages: 13
+per-page extracted text length: {1: 2956, 2: 57, 3: 71, 4: 73, 5: 57, 6: 245, 7: 0, 8: 101, 9: 0, 10: 7043, 11: 6561, 12: 6729, 13: 1096}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6983672B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Smith
+(54) BICYCLE CRANKAXLE BEARING
+Inventor:
+
+Jan. 10, 2006
+
+4.552,468 A * 11/1985 Hopper, Jr. ................. 384/458
+
+ASSEMBLY
+(75)
+
+US 6,983,672 B2
+
+(45) Date of Patent:
+
+4,606,658 A
+8/1986 Hofmann et al. ........... 384/510
+4,788.758 A * 12/1988 Gordon et al. ......... 29/898.062
+
+Garrett Andrew Smith, San Luis
+
+*R
+
+Obispo, CA (US)
+
+5,209,581. A
+
+(73) Assignee: Truvativ Int’l Co., Ltd., (TW)
+
+5,426,997 A
+
+6/1995 Brion ........................ 74/594.1
+
+(*) Notice: Subject
+to any disclaimer, the term of this
+patent is extended or adjusted under 35
+
+$36,657.
+A 55 Eds. 74/594.1
+5,597,242 A * 1/1997 Beeler ........................ 384/517
+
+5,474,387 A
+
+12/1995 Ki
+
+U.S.C. 154(b) by 0 days.
+
+5.975,768 A * 11/1999 Hoffman et al. ............ 384/545
+
+2
+
+A :
+
+2
+
+5,281,003 A
+
+6,116,114 A
+
+(21) Appl. No.: 10/052,686
+(22) Filed:
+
+9/2000 Edwards .................... 74/594.1
+
+EP
+
+O 792 796 A1
+
+3/1997
+
+FR
+
+2 780 698 A1
+
+7/2000
+
+Jul. 25, 2002
+
+Related U.S. Application Data
+(60) Provisional application No. 60/262,731, filed on Jan.
+19, 2001.
+(51) Int. Cl
+
+FI c s100
+
+1/1994. Herman
+
+FOREIGN PATENT DOCUMENTS
+
+Prior Publication Data
+
+US 2002/0096015 A1
+
+ges - - - - - - - - - - - - - - - - - - - - - - - - 193/37
+
+5/1993 Nagano
+
+6,276,234 B1* 8/2001 Harrington ................. 74/594.3
+
+Jan. 18, 2002
+
+(65)
+
+13.
+
+(2006.01)
+
+OTHER PUBLICATIONS
+
+“Nachi Ball & Roller Bearings”, Nachi-Fujikoshi Corp.,
+1991, p. T99 Fig. 8.21, Catalog No. B1100E, Japan.
+p
+9.
+9.
+p
+* cited by examiner
+Primary Examiner-Chong H. Kim
+
+(74) Attorney, Agent, or Firm-Milan Milosevic, Lisa
+
+(52) U.S. Cl. ...................................... 74,5941. 384,537
+
+Wunderlich
+
+(58) Field of Classification Search ................ 384/545,
+384/458,510,537; 74/594.1
+See application file for complete Search history.
+
+(57)
+ABSTRACT
+A bottom bracket assembly for a bicycle is comprised of a
+Spindle and at least two cartridge bearings. The inner races
+of the cartridge bearings are axially fixed on the Spindle by
+abutting Stop elements. Crank arms attached to the ends of
+
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+596,846 A
+1/1898 Brown ...................... 74/594.2
+627,597 A * 6/1899 Scott .......
+... 74/594.2
+648.077 A : 4/1900 Ludlow ....................... 403/24
+
+the Spindle axially abut the outer Stop elements, thus ensur
+ing the precise and consistent axial location of the crank
+arms. Since the inner bearing races are fixed axially, the
+outer race of at least one cartridge bearing may be allowed
+
+I
+A 5/ E. Hata et al. .................. 384/458
+S. A : 3.6 Mini
+82/147
+
+to float in an axial direction to ensure proper alignment of
+the inner and Outer races and the greatest possible bearing
+
+4.093325 A
+
+6/1978 Trocca,"
+
+life for the bottom bracket.
+
+4,191,488 A
+
+3/1980 Bickerton ................... 403/370
+
+4,545,691 A * 10/1985 Kastan et al. ............... 384/458
+
+10 Claims, 8 Drawing Sheets
+
+

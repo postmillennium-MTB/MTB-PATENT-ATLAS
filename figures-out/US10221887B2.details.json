@@ -1,0 +1,1430 @@
+{
+ "number": "US10221887B2",
+ "title": "Self locking bearing preload adjuster",
+ "inventors": [
+  "George Dubois",
+  "Matt O'Rourke"
+ ],
+ "assignee_original": [
+  "Hive Global Inc",
+  "Fox Factory, Inc.",
+  "The Hive Global, Inc.",
+  "Fox Factory, Inc.",
+  "The Hive Global, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Shimano Inc.",
+  "The Hive Global, Inc.",
+  "The Hive Global, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "The Hive Global Inc.",
+  "The Hive Global Inc.",
+  "The Hive Global, Inc",
+  "O'Reilly Enterprises, Inc",
+  "Bikone Bearings S L",
+  "Fox Factory, Inc.",
+  "Stearns Bicycle Agency",
+  "Robert Todd Lowd",
+  "Howard A Jones",
+  "James H Graham",
+  "Colson Company",
+  "Baron Johannes",
+  "Rieger Mfg Company",
+  "Gerner Willi",
+  "Darwin Products Inc",
+  "Carl A Swenson",
+  "Fujitsu Ltd",
+  "Motobecane Ateliers",
+  "Ashtabula Bow Socket Company",
+  "Case Co J I",
+  "Schwinn Bicycle Co",
+  "Raleigh Industries Ltd",
+  "Ashtabula Bow Socket Co",
+  "Union Sils Van De Loo & Co",
+  "Purolator Inc",
+  "Ashtabula Bow Socket Co",
+  "Union Sils Van De Loo & Co",
+  "Ford Motor Co",
+  "Lucien Charles Hippolyte Juy",
+  "Lauterbach James H",
+  "Shimano Industrial Company, Limited",
+  "Burroughs Corporation",
+  "Mcgregor Sr John C",
+  "Jacques Andre Huret",
+  "Claude Genzling",
+  "Societe Nouvelle De Roulements",
+  "Tullio Campagnolo",
+  "Shimano Industrial Company, Limited",
+  "Mosley Earnest D",
+  "Shimano Industrial Company, Limited",
+  "Jacques Lotteau",
+  "Shimano Industrial Company, Limited",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Sarragan S.A.",
+  "Senkichiro Kimura",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Patrick S.A.",
+  "Shimano Industrial Company Limited",
+  "Societe Italiana Catene Calibrate Regina S.P.A.",
+  "Sugino Cycle Industries, Ltd.",
+  "Ellis William L",
+  "Drugeon Jean Francois",
+  "General Electric Company",
+  "Adidas Fabrique De Chassures De Sport",
+  "Huffy Corporation",
+  "Kanji Tsujimura",
+  "Shimano Industrial Company Limited",
+  "Trindle James J",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Zelenetz Scott H",
+  "Schwinn Bicycle Company",
+  "Howell Richard J",
+  "Antonio Rapisarda",
+  "Les Matson",
+  "Jakob Lassche",
+  "Ste Look",
+  "Durham Roger O",
+  "John Winkie",
+  "Wald Manufacturing Co., Inc.",
+  "Collins Roy S",
+  "The Shelburne Corporation",
+  "Sampson Sports, Inc.",
+  "Feldstein Frank I",
+  "Wren Nicholas D",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Beyl Jean J",
+  "Lennon Dan C",
+  "Sampson Sports, Inc.",
+  "Huffy Corporation",
+  "Shimano Industrial Company Limited",
+  "Dennis Ramos",
+  "BG Innovations (Societe a Responsabilite Limitee de Droit Francais)",
+  "Greenlaw John W",
+  "Shimano Industrial Co., Ltd.",
+  "Geze Sport International Gmbh",
+  "Anglin Gregory V",
+  "Steinberg John D",
+  "Chen Chung I",
+  "Shimano Industrial Co., Ltd.",
+  "Robert Morales",
+  "Perry Paul L",
+  "Shimano Inc.",
+  "Mathieu Francis X",
+  "Shimano, Inc.",
+  "Chen Chung I",
+  "Lin Wen Hwa",
+  "Nec Corporation",
+  "Hallock Iii Orrin S",
+  "Shimano Inc.",
+  "Huffy Corporation",
+  "Campagnolo S.R.L.",
+  "Look S.A.",
+  "Barnett; Robert L.",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Calendrille, Jr.; John L.",
+  "Chiang; Douglas",
+  "Lin; Wen-Hwa",
+  "Shimano, Inc.",
+  "Daniels, Iii; Vernon James",
+  "Bryne; Richard M.",
+  "Joshua Paris",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Kruger; Andre L.",
+  "Shimano, Inc.",
+  "Evergreen Innovations, L.L.C.",
+  "Shimano, Inc.",
+  "Durham; Roger O.",
+  "Shimano, Inc.",
+  "Jackson; Emmitt K.",
+  "Shalom; Saeed Solomon",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Holtrop; Perryn H. J.",
+  "Moxee Innovations Corporation",
+  "Shimano, Inc.",
+  "Bramham; Benjamin",
+  "John L. Calendrille, Jr.",
+  "Shimano, Inc.",
+  "Melinda K. Bowman",
+  "Masahiro Yamanaka",
+  "Robert L. Barnett",
+  "Barnett Robert L.",
+  "Yang Ta Hsin",
+  "Shimano Inc.",
+  "Lowe Michael R.",
+  "Shuman Derek Barnet",
+  "Chung-I Chen",
+  "Shimano Inc.",
+  "Chung-I Chen",
+  "Feng-Yao Chou",
+  "Shimano, Inc.",
+  "Jon Heim",
+  "David Albert Bremer",
+  "Chung-I Chen",
+  "Bryne Richard M.",
+  "Frank Hermansen",
+  "Chamberlain Jason L.",
+  "Chung-I Chen",
+  "Chung-I Chen",
+  "Chung-I Chen",
+  "Hervig Dana P",
+  "Shimano, Inc.",
+  "Toshihiro Yamamoto",
+  "Todd Milanowski",
+  "Chin-He Hsiao",
+  "Shimano Inc.",
+  "Chung-I Chen",
+  "Rogers James K",
+  "Derosa Umberto",
+  "Pedalite Limited",
+  "Cannondale Bicycle Corporation",
+  "American Axle & Manufacturing, Inc.",
+  "Speedplay, Inc.",
+  "Shimano Inc.",
+  "Frank Hermansen",
+  "Campagnolo S.R.I.",
+  "Chung-I Chen",
+  "Time Sport International",
+  "Smith Robert M",
+  "Poyzer Michael J",
+  "Yoshio Watanabe",
+  "Shimano Inc.",
+  "George French",
+  "Bear Corporation",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Race Face Components Inc.",
+  "Campagnolo S.R.L.",
+  "Shimano Inc.",
+  "Eko Sport, Inc.",
+  "Shimano Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Stefan Spahr",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Int Motor Co",
+  "Letourneau Inc",
+  "Letourneau Inc",
+  "Eastman Kodak Company",
+  "Eaton Corporation",
+  "Impact Forge, Inc.",
+  "Sram De Gmbh",
+  "Lin Chang Hui",
+  "Campagnolo Srl",
+  "Leon Tseng",
+  "Campagnolo S.R.L.",
+  "The Hive Global, Inc.",
+  "Ab Skf",
+  "Campagnolo Srl",
+  "Campagnolo Srl",
+  "The Hive Global",
+  "Christopher L. Burdick",
+  "Atlas Copco Rock Drills Ab",
+  "The Hive Global Inc.",
+  "The Hive Global, Inc",
+  "ニッタ株式会社",
+  "Sram Deutschland Gmbh",
+  "Gates Corporation",
+  "Chosen Co., Ltd.",
+  "The Hive Global, Inc",
+  "Ford Global Technologies, Llc",
+  "The Hive Global",
+  "The Hive Global, Inc.",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Stearns Bicycle Agency",
+  "Robert Todd Lowd",
+  "Howard A Jones",
+  "James H Graham",
+  "Colson Company",
+  "Baron Johannes",
+  "Rieger Mfg Company",
+  "Gerner Willi",
+  "Darwin Products Inc",
+  "Fujitsu Ltd",
+  "Motobecane Ateliers",
+  "Carl A Swenson",
+  "Raleigh Industries Ltd",
+  "Ashtabula Bow Socket Company",
+  "Case Co J I",
+  "Schwinn Bicycle Co",
+  "Ashtabula Bow Socket Co",
+  "Ashtabula Bow Socket Co",
+  "Union Sils Van De Loo & Co",
+  "Purolator Inc",
+  "Union Sils Van De Loo & Co",
+  "Ford Motor Co",
+  "Lucien Charles Hippolyte Juy",
+  "Shimano Industrial Company, Limited",
+  "Claude Genzling",
+  "Lauterbach James H",
+  "Mcgregor Sr John C",
+  "Burroughs Corporation",
+  "Societe Nouvelle De Roulements",
+  "Jacques Andre Huret",
+  "Tullio Campagnolo",
+  "Shimano Industrial Company, Limited",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company, Limited",
+  "Shimano Industrial Company Limited",
+  "Mosley Earnest D",
+  "Shimano Industrial Company, Limited",
+  "Jacques Lotteau",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Sarragan S.A.",
+  "Societe Italiana Catene Calibrate Regina S.P.A.",
+  "Shimano Industrial Company Limited",
+  "Senkichiro Kimura",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Drugeon Jean Francois",
+  "Sugino Cycle Industries, Ltd.",
+  "Patrick S.A.",
+  "Adidas Fabrique De Chassures De Sport",
+  "Jakob Lassche",
+  "Huffy Corporation",
+  "General Electric Company",
+  "Ellis William L",
+  "Shimano Industrial Company Limited",
+  "Kanji Tsujimura",
+  "Trindle James J",
+  "John Winkie",
+  "Ste Look",
+  "Howell Richard J",
+  "The Shelburne Corporation",
+  "Beyl Jean J",
+  "Antonio Rapisarda",
+  "Durham Roger O",
+  "Schwinn Bicycle Company",
+  "Zelenetz Scott H",
+  "Les Matson",
+  "Shimano Industrial Company Limited",
+  "Wald Manufacturing Co., Inc.",
+  "Feldstein Frank I",
+  "Collins Roy S",
+  "Shimano Industrial Company Limited",
+  "Sampson Sports, Inc.",
+  "Sampson Sports, Inc.",
+  "Shimano Industrial Company Limited",
+  "Wren Nicholas D",
+  "Shimano Industrial Company Limited",
+  "Shimano Industrial Company Limited",
+  "Lennon Dan C",
+  "BG Innovations (Societe a Responsabilite Limitee de Droit Francais)",
+  "Shimano Industrial Co., Ltd.",
+  "Shimano Industrial Co",
+  "Shimano Industrial Co., Ltd.",
+  "Huffy Corporation",
+  "Geze Sport International Gmbh",
+  "Dennis Ramos",
+  "Shimano Inc.",
+  "Perry Paul L",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Greenlaw John W",
+  "Steinberg John D",
+  "Chen Chung I",
+  "Anglin Gregory V",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Robert Morales",
+  "Mathieu Francis X",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Nec Corporation",
+  "Look S.A.",
+  "Chen Chung I",
+  "Campagnolo S.R.L.",
+  "Lin Wen Hwa",
+  "Hallock Iii Orrin S",
+  "Barnett; Robert L.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Huffy Corporation",
+  "Bryne; Richard M.",
+  "Calendrille, Jr.; John L.",
+  "Shalom; Saeed Solomon",
+  "Kruger; Andre L.",
+  "Shimano, Inc.",
+  "Chiang; Douglas",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Daniels, Iii; Vernon James",
+  "Lin; Wen-Hwa",
+  "Joshua Paris",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Bramham; Benjamin",
+  "Durham; Roger O.",
+  "Shimano, Inc.",
+  "Jackson; Emmitt K.",
+  "Evergreen Innovations, L.L.C.",
+  "John L. Calendrille, Jr.",
+  "John L. Calendrille, Jr.",
+  "Shimano, Inc.",
+  "Holtrop; Perryn H. J.",
+  "Moxee Innovations Corporation",
+  "Shimano Inc.",
+  "Melinda K. Bowman",
+  "Shimano, Inc.",
+  "Robert L. Barnett",
+  "Masahiro Yamanaka",
+  "Campagnolo S.R.L.",
+  "Lowe Michael R.",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Chung-I Chen",
+  "Time Sport International",
+  "Robert L. Barnett",
+  "Barnett Robert L.",
+  "Yang Ta Hsin",
+  "Shuman Derek Barnet",
+  "Todd Milanowski",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "David Albert Bremer",
+  "Shimano Inc.",
+  "Jon Heim",
+  "Jon Heim",
+  "Chung-I Chen",
+  "Feng-Yao Chou",
+  "Rogers James K",
+  "Bryne Richard M.",
+  "Chin-He Hsiao",
+  "Frank Hermansen",
+  "Chung-I Chen",
+  "Chamberlain Jason L.",
+  "Chung-I Chen",
+  "Chung-I Chen",
+  "Derosa Umberto",
+  "Chung-I Chen",
+  "Hervig Dana P",
+  "Shimano Inc.",
+  "Toshihiro Yamamoto",
+  "Pedalite Limited",
+  "American Axle & Manufacturing, Inc.",
+  "Smith Robert M",
+  "Yoshio Watanabe",
+  "Cannondale Bicycle Corporation",
+  "Chung-I Chen",
+  "Speedplay, Inc.",
+  "Speedplay, Inc.",
+  "Shimano Inc.",
+  "Frank Hermansen",
+  "Campagnolo S.R.I.",
+  "Bear Corporation",
+  "Shimano Inc.",
+  "Chung-I Chen",
+  "Poyzer Michael J",
+  "Shimano Inc.",
+  "Eko Sport, Inc.",
+  "Eko Sport, Inc.",
+  "George French",
+  "Race Face Components Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Stefan Spahr",
+  "Shimano Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "The Hive Global, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "The Hive Global, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "The Hive Global, Inc.",
+  "The Hive Global Inc.",
+  "Fox Factory, Inc.",
+  "The Hive Global, Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "The Hive Global Inc."
+ ],
+ "assignee_current": [
+  "Hive Global Inc"
+ ],
+ "application": "US14/099,641",
+ "priority_date": "2012-12-06",
+ "filing_date": "2013-12-06",
+ "publication_date": "2019-03-05",
+ "grant_date": "2019-03-05",
+ "status": "Active",
+ "expiry_events": [
+  {
+   "date": "2035-06-25",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "A bearing preload adjuster for a bicycle crank set and bottom bracket comprises an adjustment ring for coupling with a bicycle crank arm, a movable plunger comprising an external thread for rotatably coupling with the adjustment ring. The adjustment ring is rotated in order to cause the plunger to extend along an axis of the bottom bracket and apply pressure to a bottom bracket bearing inner race. The adjustment ring is rotated until the clearance in the bearing assemblies and the play in the bottom bracket assembly has been eliminated. This allows the crank assembly to rotate freely, while preventing the crank assembly from sliding side to side inside the bearing bores and along the axis of the crank spindle.",
+ "family": [
+  "US10221887B2",
+  "US10480571B2",
+  "US20140157951A1",
+  "US20190154083A1"
+ ],
+ "cites": [
+  {
+   "pn": "US512729A",
+   "title": "Harry lucas and james archer"
+  },
+  {
+   "pn": "US527384A",
+   "title": "Bicycle-pedal"
+  },
+  {
+   "pn": "US527520A",
+   "title": "copeland"
+  },
+  {
+   "pn": "US547639A",
+   "title": "Bicycle-pedal"
+  },
+  {
+   "pn": "US575712A",
+   "title": "Richard f"
+  },
+  {
+   "pn": "US576548A",
+   "title": "Bicycle-pedal"
+  },
+  {
+   "pn": "US579479A",
+   "title": "E morris petehs co"
+  },
+  {
+   "pn": "US590685A",
+   "title": "Half to agnes jardine"
+  },
+  {
+   "pn": "US595388A",
+   "title": "Bicycle-pedal attachment"
+  },
+  {
+   "pn": "US598325A",
+   "title": "Gomeey mcintyre"
+  },
+  {
+   "pn": "US614900A",
+   "title": "Velocipede-pedal"
+  },
+  {
+   "pn": "US616167A",
+   "title": "James ernest a"
+  },
+  {
+   "pn": "US620266A",
+   "title": "Julius wodiska"
+  },
+  {
+   "pn": "US666679A",
+   "title": "Velocipede-pedal."
+  },
+  {
+   "pn": "US1070971A",
+   "title": "Pedal."
+  },
+  {
+   "pn": "US1325206A",
+   "title": "Driving-gear casing eor bicycles"
+  },
+  {
+   "pn": "US1400131A",
+   "title": "Sprocket-guard attachment for bicycles"
+  },
+  {
+   "pn": "US1535601A",
+   "title": "Pedal for bicycles"
+  },
+  {
+   "pn": "US1636327A",
+   "title": "Cycle"
+  },
+  {
+   "pn": "US2024499A",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US2567785A",
+   "title": "Pedal for bicycles or the like"
+  },
+  {
+   "pn": "US2568443A",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US2751797A",
+   "title": "Built-up pedal construction"
+  },
+  {
+   "pn": "US3184993A",
+   "title": "Derailleur guard"
+  },
+  {
+   "pn": "US3185439A",
+   "title": "Hydraulic motor control system"
+  },
+  {
+   "pn": "US3303720A",
+   "title": "Folding pedal for bicycles and the like"
+  },
+  {
+   "pn": "US3382734A",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US3416385A",
+   "title": "Sprocket assembly"
+  },
+  {
+   "pn": "US3477303A",
+   "title": "Double plateau sprocket assembly"
+  },
+  {
+   "pn": "US3485113A",
+   "title": "Pedals"
+  },
+  {
+   "pn": "US3592076A",
+   "title": "Plastic bicycle pedal with a foot strap means"
+  },
+  {
+   "pn": "US3760653A",
+   "title": "Pedal for bicycles"
+  },
+  {
+   "pn": "US3785129A",
+   "title": "Spin-on air filter"
+  },
+  {
+   "pn": "US3807255A",
+   "title": "Plastic bicycle pedal"
+  },
+  {
+   "pn": "US3811339A",
+   "title": "Pedal for bicycles and similar vehicles"
+  },
+  {
+   "pn": "US3869138A",
+   "title": "Steering device having a chain operated steering gear actuator"
+  },
+  {
+   "pn": "US3910136A",
+   "title": "Protection apparatus for a speed change mechanism of a bicycle or similar vehicle"
+  },
+  {
+   "pn": "US3964343A",
+   "title": "Combination means for rigidly attaching shoe to a pedal for a foot-driven crank-operated machine"
+  },
+  {
+   "pn": "US3973447A",
+   "title": "Derailleur for a bicycle"
+  },
+  {
+   "pn": "US4016357A",
+   "title": "Floor structure for the environment of a modular computer system"
+  },
+  {
+   "pn": "US4044621A",
+   "title": "Sprocket structure and chain guard"
+  },
+  {
+   "pn": "US4078444A",
+   "title": "Front derailleur chain guide"
+  },
+  {
+   "pn": "US4089236A",
+   "title": "Safety connection between bicycle pedal and shoe"
+  },
+  {
+   "pn": "US4093325A",
+   "title": "Tubular spindle mounting for bicycle bottom-bracket hub"
+  },
+  {
+   "pn": "US4135727A",
+   "title": "Mounting of the transmission chain of bicycles"
+  },
+  {
+   "pn": "US4237743A",
+   "title": "Front derailleur for a bicycle"
+  },
+  {
+   "pn": "US4240303A",
+   "title": "Chain sprocket with opposite frangible side guide plates"
+  },
+  {
+   "pn": "US4269084A",
+   "title": "Toe clip for a bicycle pedal"
+  },
+  {
+   "pn": "US4298210A",
+   "title": "Device allowing a safety connection between the pedal of a bicycle and the shoe worn by the cyclist"
+  },
+  {
+   "pn": "US4302987A",
+   "title": "Pedal for bicycle"
+  },
+  {
+   "pn": "US4330137A",
+   "title": "Front derailleur for a bicycle"
+  },
+  {
+   "pn": "US4337933A",
+   "title": "Jig for mounting a front derailleur in a bicycle"
+  },
+  {
+   "pn": "US4377952A",
+   "title": "Pedal block for a cycle shoe"
+  },
+  {
+   "pn": "US4398434A",
+   "title": "Force-saving high speed pedal"
+  },
+  {
+   "pn": "US4433963A",
+   "title": "Chain guide for a derailleur for a bicycle"
+  },
+  {
+   "pn": "US4439172A",
+   "title": "Chain gear and crank mounting assembly"
+  },
+  {
+   "pn": "US4441383A",
+   "title": "Gear crank for a bicycle"
+  },
+  {
+   "pn": "US4442732A",
+   "title": "Pedal for a bicycle"
+  },
+  {
+   "pn": "US4445289A",
+   "title": "Plastic spike for sports shoe"
+  },
+  {
+   "pn": "US4445397A",
+   "title": "Foot conforming pedal for a bicycle"
+  },
+  {
+   "pn": "US4472163A",
+   "title": "Multi-gear free wheel assembly for derailleurs for bicycles"
+  },
+  {
+   "pn": "US4475894A",
+   "title": "Front sprocket wheel having chain guard for bicycles"
+  },
+  {
+   "pn": "US4487424A",
+   "title": "Bicycle sprocket shield"
+  },
+  {
+   "pn": "US4488453A",
+   "title": "Bicycle pedal for coupling a shoe in preset position, and a cyclist's shoe fitted to said pedal"
+  },
+  {
+   "pn": "US4498890A",
+   "title": "Fixed track chain drive"
+  },
+  {
+   "pn": "US4506463A",
+   "title": "Pedal block for cycle shoes"
+  },
+  {
+   "pn": "US4507105A",
+   "title": "Bicycle chainguard"
+  },
+  {
+   "pn": "US4515386A",
+   "title": "Guard for chain wheel"
+  },
+  {
+   "pn": "US4523492A",
+   "title": "Pedal for a bicycle"
+  },
+  {
+   "pn": "US4538480A",
+   "title": "Bicycle pedal and shoe"
+  },
+  {
+   "pn": "US4573950A",
+   "title": "Chain guide in a front derailleur"
+  },
+  {
+   "pn": "US4608878A",
+   "title": "Reduced-weight gear crank"
+  },
+  {
+   "pn": "US4632416A",
+   "title": "Flexible protective cover for the drive train elements of a bicycle"
+  },
+  {
+   "pn": "US4639240A",
+   "title": "Chainguard"
+  },
+  {
+   "pn": "US4640151A",
+   "title": "Bicycle pedalling apparatus"
+  },
+  {
+   "pn": "US4646586A",
+   "title": "Device for connecting a bicycle pedal to a cycling shoe"
+  },
+  {
+   "pn": "US4662862A",
+   "title": "Tensioning device for flexible drive element"
+  },
+  {
+   "pn": "US4665767A",
+   "title": "Bicycle pedal with foot holder"
+  },
+  {
+   "pn": "US4686867A",
+   "title": "Bicycle pedal and shoe fastening combination"
+  },
+  {
+   "pn": "US4704919A",
+   "title": "Two-piece crankshaft for bicycles"
+  },
+  {
+   "pn": "US4735107A",
+   "title": "Pedal arrangement"
+  },
+  {
+   "pn": "USD298613S",
+   "title": "Bicycle chain guard"
+  },
+  {
+   "pn": "US4791692A",
+   "title": "Studs for articles of footwear"
+  },
+  {
+   "pn": "US4803894A",
+   "title": "Bicycle pedalling apparatus"
+  },
+  {
+   "pn": "US4815333A",
+   "title": "Integrated bicycle pedal with self centering and lateral release capabilities"
+  },
+  {
+   "pn": "US4827633A",
+   "title": "Retractable bicycle shoe cleat"
+  },
+  {
+   "pn": "US4832667A",
+   "title": "Front chain wheel chain guide"
+  },
+  {
+   "pn": "US4838115A",
+   "title": "Pedal for a bicycle"
+  },
+  {
+   "pn": "US4840085A",
+   "title": "Pedal for a bicycle"
+  },
+  {
+   "pn": "US4854924A",
+   "title": "Cover device for a driving chain for a bicycle"
+  },
+  {
+   "pn": "US4873890A",
+   "title": "Pedal for a bicycle"
+  },
+  {
+   "pn": "US4882946A",
+   "title": "Pedal for a bicycle or similar device"
+  },
+  {
+   "pn": "US4893523A",
+   "title": "Bicycle and pedal system"
+  },
+  {
+   "pn": "US4898063A",
+   "title": "Integrated bicycle pedal with self centering and lateral release capabilities"
+  },
+  {
+   "pn": "US4905541A",
+   "title": "Derailleur guard"
+  },
+  {
+   "pn": "US4928549A",
+   "title": "Pedal for a bicycle"
+  },
+  {
+   "pn": "US4932287A",
+   "title": "Combined shoe and pedal for sports bicycle"
+  },
+  {
+   "pn": "US4947708A",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US5002520A",
+   "title": "Bicycle drive chain guide"
+  },
+  {
+   "pn": "US5003841A",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US5014571A",
+   "title": "Bicycle pedal with a releasable binding"
+  },
+  {
+   "pn": "US5018564A",
+   "title": "Fabric protective cover for a drive mechanism of a bicycle"
+  },
+  {
+   "pn": "US5046382A",
+   "title": "Clipless bicycle pedal system"
+  },
+  {
+   "pn": "US5048369A",
+   "title": "Clipless pedal with fastening means"
+  },
+  {
+   "pn": "US5060537A",
+   "title": "Bicycle pedal and clamping device therefor"
+  },
+  {
+   "pn": "US5067930A",
+   "title": "Bicycle sprocket protector"
+  },
+  {
+   "pn": "USD323309S",
+   "title": "Bicycle freewheel gear cover"
+  },
+  {
+   "pn": "US5115692A",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US5121935A",
+   "title": "Readily removable and collapsible bicycle fender"
+  },
+  {
+   "pn": "US5195397A",
+   "title": "Bicycle pedal having two surfaces for fixing a cleat"
+  },
+  {
+   "pn": "US5203229A",
+   "title": "Quick-release clipless pedal with two cleat engaging sides"
+  },
+  {
+   "pn": "US5259270A",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US5320582A",
+   "title": "Chain driving unit"
+  },
+  {
+   "pn": "US5326331A",
+   "title": "Chain, hub, spoke and derailleur guard"
+  },
+  {
+   "pn": "US5379665A",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "USD355872S",
+   "title": "Bicycle chainguard"
+  },
+  {
+   "pn": "US5419218A",
+   "title": "Safety pedal for bicycles and the like"
+  },
+  {
+   "pn": "US5423233A",
+   "title": "Device for attaching a shoe on a bicycle"
+  },
+  {
+   "pn": "US5460576A",
+   "title": "Bicycle chain guide"
+  },
+  {
+   "pn": "US5496222A",
+   "title": "Front derailleur for a bicycle"
+  },
+  {
+   "pn": "US5497680A",
+   "title": "Apparatus for securing a shoe to a bicycle pedal"
+  },
+  {
+   "pn": "US5505111A",
+   "title": "Connecting structure between bicycle pedal and cleat, bicycle pedal and cleat"
+  },
+  {
+   "pn": "US5540118A",
+   "title": "Flexible bicycle derailleur cover for protection against contaminants such as mud"
+  },
+  {
+   "pn": "US5549396A",
+   "title": "Bicycle crank axle"
+  },
+  {
+   "pn": "US5626060A",
+   "title": "Bicycle bottom bracket and bearing axle arrangement"
+  },
+  {
+   "pn": "US5676616A",
+   "title": "Protective cover for a bicycle derailleur"
+  },
+  {
+   "pn": "US5679084A",
+   "title": "Motorcycle roller chain guide"
+  },
+  {
+   "pn": "US5687619A",
+   "title": "Clipless bicycle pedal"
+  },
+  {
+   "pn": "US5725450A",
+   "title": "Device for preventing derailment of a bicycle chain"
+  },
+  {
+   "pn": "US5727429A",
+   "title": "Low profile bicycle pedal and cleat assembly"
+  },
+  {
+   "pn": "US5728018A",
+   "title": "Method and apparatus for positioning a bicycle derailleur chain guide"
+  },
+  {
+   "pn": "US5765450A",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US5771757A",
+   "title": "Clipless bicycle pedal with large shoe-contacting area"
+  },
+  {
+   "pn": "US5782714A",
+   "title": "Bicycle chain guide"
+  },
+  {
+   "pn": "US5806379A",
+   "title": "Bicycle pedal system having variable tread surfaces"
+  },
+  {
+   "pn": "US5809844A",
+   "title": "Spacing ring for bicycle chainrings"
+  },
+  {
+   "pn": "US5846148A",
+   "title": "Bicycle front derailleur"
+  },
+  {
+   "pn": "US5927155A",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US6003889A",
+   "title": "Simple drive assembly for bicycles with a plain axle containing larger and more durable bearings"
+  },
+  {
+   "pn": "US6014914A",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US6039665A",
+   "title": "Multiple sprocket assembly for a bicycle"
+  },
+  {
+   "pn": "US6060982A",
+   "title": "Bicycle anti-theft alarm system"
+  },
+  {
+   "pn": "US6083132A",
+   "title": "Free floating belt idler"
+  },
+  {
+   "pn": "US6117032A",
+   "title": "Protective plate for bicycle chain"
+  },
+  {
+   "pn": "US6165092A",
+   "title": "Guide assembly for a bicycle"
+  },
+  {
+   "pn": "US6203459B1",
+   "title": "Bicycle derailleur system with integral flexible seal to protect moving parts from contaminants"
+  },
+  {
+   "pn": "US6264575B1",
+   "title": "Freewheel for a bicycle"
+  },
+  {
+   "pn": "US6332853B1",
+   "title": "Removable cover for bicycle chain and derailleurs"
+  },
+  {
+   "pn": "US20020028719A1",
+   "title": "Bicycle front chainwheel assembly"
+  },
+  {
+   "pn": "US6354973B1",
+   "title": "Chain guide apparatus for bicycle"
+  },
+  {
+   "pn": "US20020160869A1",
+   "title": "Chain guide apparatus for bicycle"
+  },
+  {
+   "pn": "US20020170382A1",
+   "title": "Safety cycle pedal"
+  },
+  {
+   "pn": "US6490948B2",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US20020194951A1",
+   "title": "Snap clip-in bicycle pedal system"
+  },
+  {
+   "pn": "US20030029271A1",
+   "title": "Convertible clipless binding/unbound bicycle pedal"
+  },
+  {
+   "pn": "US6520048B2",
+   "title": "Bicycle pedal assembly provided with front side stop elements for preventing lateral movement of a cleat"
+  },
+  {
+   "pn": "US20030051576A1",
+   "title": "Bicycle pedal assembly"
+  },
+  {
+   "pn": "US6612201B1",
+   "title": "Bicycle pedal assembly with adjustable anti-slip members"
+  },
+  {
+   "pn": "US20030183036A1",
+   "title": "Automatic tension device of a brake"
+  },
+  {
+   "pn": "US6647826B2",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US20040009835A1",
+   "title": "Multiple sprocket, multiple function chain guide"
+  },
+  {
+   "pn": "US6725742B2",
+   "title": "Use of studs in a bicycle shoe and pedal system"
+  },
+  {
+   "pn": "US6729204B1",
+   "title": "Bicycle pedal assembly with a cleat adapted to be connected fixedly to a shoe"
+  },
+  {
+   "pn": "US20040187635A1",
+   "title": "Pedal and related pedal/cleat assembly"
+  },
+  {
+   "pn": "US20040200314A1",
+   "title": "Bicycle crank arm"
+  },
+  {
+   "pn": "US20040254038A1",
+   "title": "Bicycle rear derailleur guard"
+  },
+  {
+   "pn": "US20050005729A1",
+   "title": "Bicycle pedal assembly having a pedal body that is formed with an integral front cleat-retaining member"
+  },
+  {
+   "pn": "US20050081679A1",
+   "title": "Bicycle pedal assembly with a cleat"
+  },
+  {
+   "pn": "US20050252337A1",
+   "title": "Bicycle pedal assembly with an adjustable cleat-pushing member"
+  },
+  {
+   "pn": "US20050284253A1",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US6988427B2",
+   "title": "Seal assembly for a bicycle bottom bracket"
+  },
+  {
+   "pn": "US20060029317A1",
+   "title": "Bearing structure"
+  },
+  {
+   "pn": "US7013754B2",
+   "title": "Bicycle pedal adapter"
+  },
+  {
+   "pn": "US7024961B2",
+   "title": "Pedal structure for a bicycle"
+  },
+  {
+   "pn": "US20060081088A1",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "USD522414S1",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US7066856B1",
+   "title": "Chain ring protector"
+  },
+  {
+   "pn": "US7066857B1",
+   "title": "Rear derailleur guard"
+  },
+  {
+   "pn": "USD524195S1",
+   "title": "Pedal"
+  },
+  {
+   "pn": "US20060199690A1",
+   "title": "Chain guide"
+  },
+  {
+   "pn": "US7108428B2",
+   "title": "Axle assembly with bearing adjustment mechanism"
+  },
+  {
+   "pn": "US20060236809A1",
+   "title": "Pedal/cleat assembly"
+  },
+  {
+   "pn": "US20060258499A1",
+   "title": "Rear sprocket for bicycle transmission"
+  },
+  {
+   "pn": "US20060266154A1",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US20060288819A1",
+   "title": "Coupling profile between a central axle of a bottom bracket of bicycle transmission and a pedal crank"
+  },
+  {
+   "pn": "US20070137432A1",
+   "title": "Foldable pedal assembly"
+  },
+  {
+   "pn": "US7240587B2",
+   "title": "Bicycle pedal and fastening shoe assembly and pedal and cleat for same"
+  },
+  {
+   "pn": "US20070182122A1",
+   "title": "Drive mechanisms for human-powered machines"
+  },
+  {
+   "pn": "US20070204720A1",
+   "title": "Bicycle Pedal"
+  },
+  {
+   "pn": "US20080152460A1",
+   "title": "Shape of Screw Thread and Threaded Fastener Having the Same Shape of Screw Thread"
+  },
+  {
+   "pn": "US20080289927A1",
+   "title": "Bicycle sprocket assembly with chain protector"
+  },
+  {
+   "pn": "US20090078081A1",
+   "title": "Bicycle pedal"
+  },
+  {
+   "pn": "US7523685B2",
+   "title": "Bicycle crank assembly"
+  },
+  {
+   "pn": "US7562604B2",
+   "title": "Bicycle chain wheel structure"
+  },
+  {
+   "pn": "US7650817B2",
+   "title": "Bicycle crank assembly"
+  },
+  {
+   "pn": "US20100275724A1",
+   "title": "Insert for bicycle crank arm"
+  },
+  {
+   "pn": "US7886947B2",
+   "title": "Electronic control containment unit for bicycles"
+  },
+  {
+   "pn": "US20110140390A1",
+   "title": "Bicycle crank assembly"
+  },
+  {
+   "pn": "US8235849B2",
+   "title": "Combined chain ring protector and chain guide"
+  },
+  {
+   "pn": "US20120225745A1",
+   "title": "Bicycle sprocket assembly"
+  },
+  {
+   "pn": "US20120260767A1",
+   "title": "Bicycle with bearing preload mechanism"
+  },
+  {
+   "pn": "US20130053196A1",
+   "title": "Chain guide assembly with movable member"
+  },
+  {
+   "pn": "US20130053195A1",
+   "title": "Chain guide assembly with deflectable contact member"
+  },
+  {
+   "pn": "US20130225343A1",
+   "title": "Drive hub"
+  },
+  {
+   "pn": "US8641151B2",
+   "title": "Sprocket support structure"
+  },
+  {
+   "pn": "US20150210353A1",
+   "title": "Rotatable annular bicycle component and bicycle rear sprocket"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US20210284282A1",
+   "title": "Cinch direct mount 2x ring system"
+  },
+  {
+   "pn": "US11351815B2",
+   "title": "Bicycle cassette with clamping connection"
+  },
+  {
+   "pn": "US11359709B2",
+   "title": "Chainring"
+  },
+  {
+   "pn": "US11485449B2",
+   "title": "Bicycle cassette with locking connection"
+  },
+  {
+   "pn": "US11680633B2",
+   "title": "Chainring"
+  },
+  {
+   "pn": "US11691692B2",
+   "title": "Bicycle crank arm and insert therefore"
+  },
+  {
+   "pn": "US11788615B2",
+   "title": "Bicycle front sprocket"
+  },
+  {
+   "pn": "US20230331340A1",
+   "title": "Crank assembly for human powered vehicle"
+  },
+  {
+   "pn": "US11932351B2",
+   "title": "Conical bicycle cassette sprocket structure"
+  },
+  {
+   "pn": "US12030586B2",
+   "title": "Seal for bicycle crank with differential chainring motion"
+  },
+  {
+   "pn": "US12145691B2",
+   "title": "Crank impact and wear protection article"
+  },
+  {
+   "pn": "US12227262B2",
+   "title": "Mid-sprocket assembly"
+  },
+  {
+   "pn": "US12233975B2",
+   "title": "Telescopic bicycle seatpost with adjustable height and fixed frame insertion"
+  },
+  {
+   "pn": "US12643343B2",
+   "title": "Hub system, method and device with adjustable deadband"
+  }
+ ],
+ "events": [
+  {
+   "date": "2013-12-06",
+   "type": "filed",
+   "title": "Application filed by Hive Global Inc"
+  },
+  {
+   "date": "2013-12-06",
+   "type": "priority",
+   "title": "Priority to US14/099,641"
+  },
+  {
+   "date": "2013-12-06",
+   "type": "reassignment",
+   "title": "Assigned to The Hive Global, Inc."
+  },
+  {
+   "date": "2014-06-12",
+   "type": "publication",
+   "title": "Publication of US20140157951A1"
+  },
+  {
+   "date": "2019-01-17",
+   "type": "priority",
+   "title": "Priority to US16/250,593"
+  },
+  {
+   "date": "2019-03-05",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2019-03-05",
+   "type": "publication",
+   "title": "Publication of US10221887B2"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2035-06-25",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ]
+}
