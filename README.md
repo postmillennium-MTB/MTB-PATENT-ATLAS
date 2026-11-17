@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 522 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 528 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 522 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 522 |
+| **Total entries** | 528 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 208 |
-| **Expired patents** | 238 |
+| **Active patents** | 209 |
+| **Expired patents** | 243 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 229 |
+| **Brands** | 231 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 443 |
+| **Verified entries** | 449 |
 | **Medium confidence** | 42 |
 | **Draft / in progress** | 37 |
 
@@ -1023,3 +1023,5 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - **150x12 and 157x12 rear hubs card: image + Hadley link (2026-11-17).** Added Jon's AI-made (Nano Banana) hub comparison pictures/hub-spacing-150-157x12.jpg (150x12, 157x12 DH, Boost 148, Super Boost Plus 157), captioned "not a patent drawing", link:false. "Hadley Racing 72-point hub card" in `w` now links to that card. Rule change per Jon: card links may target confirmed no-patent (np) cards by title slug; verify_data.js, card-checklist.md and reference.md updated.
 
 - **150x12 and 157x12 rear hubs card: "What changes in 2016?" (2026-11-17).** Jon's own commentary on Pivot's 2016 Super Boost Plus rebrand added to `w` (EN + FR), above the Pinkbike source link: not backward compatible with 150x12, less balanced spoke tension, the "Super Boost" reception. Typos and numbering fixed only. Pivot is not a registered brand, so not in who[].
+
+- **Six bottom bracket cards (528 entries, 2026-11-17).** All tier v from the Google Patents records and the granted texts; figures cropped from the patents' own drawing sheets. Shimano US 7,152,501 (Figs. 3 and 4, per Jon; family EP 1,661,803 B1, CN 100528680 C, TW I277569 B; fee-lapsed, nominal 2025): the claims cover the left-crank retaining plate, sold as the Hollowtech II safety plate. Truvativ US 6,983,672 (Garrett Andrew Smith; assigned to SRAM 2005; expired 2022): fixed inner races, floating outer races, bearings inside the shell. Campagnolo US 8,590,421 (EP priority 2006-03-03; 1,205 days PTA, fee-lapsed, nominal 2030; family EP/CN/JP/TW): threaded outboard cups with a shoulder and split pin trapping the bearing, matching the Ultra-Torque clip and wave washer. Felt US 7,607,507 (filed 2007-01-08; 348 days PTA, fee-lapsed, nominal 2027): beveled threadless shell. Praxis US 9,004,771 (CIP filed 2013 of abandoned 12/715,152 filed 2010-03-01 = US 2010/0220947; inventors Earle and Chin T. Chuang; 172 days PTA, fee-lapsed, nominal 2030): the Collet bottom bracket. Hive Global US 10,221,887 + divisional 10,480,571 (one family card, parent headline; exp 2035 with 566 days PTA). Praxis 9,004,771 and its publication 2013/0230266 moved out of the Sotto Group bundle (now 4 filings) to their own card. Felt and Campagnolo added to BRANDS. Gap: no maker source ties the Hive adjuster to a named e*thirteen product.
