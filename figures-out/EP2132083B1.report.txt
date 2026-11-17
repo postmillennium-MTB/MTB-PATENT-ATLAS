@@ -1,0 +1,86 @@
+patent: EP2132083B1
+source: https://patentimages.storage.googleapis.com/df/02/0b/9e6c134a638575/EP2132083B1.pdf
+pages: 10
+per-page extracted text length: {1: 1604, 2: 5277, 3: 4254, 4: 4353, 5: 1255, 6: 18, 7: 18, 8: 18, 9: 18, 10: 427}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+(19)
+
+&
+(11)
+
+
+
+ 
+
+EP 2 132 083 B1
+
+FASCICULE DE BREVET EUROPEEN
+
+(12)
+
+(45) Date de publication et mention
+
+(51) Int Cl.:
+
+B62M 11/06 (2006.01)
+
+de la délivrance du brevet:
+12.09.2012 Bulletin 2012/37
+
+B62M 11/14 (2006.01)
+
+(86) Numéro de dépôt international:
+PCT/FR2008/000309
+
+(21) Numéro de dépôt: 08775643.3
+
+(87) Numéro de publication internationale:
+
+(22) Date de dépôt: 10.03.2008
+
+WO 2008/142219 (27.11.2008 Gazette 2008/48)
+
+(54) BOITE DE VITESSES POUR VELOS, SYSTEME DE CHANGEMENT DES VITESSES
+GETRIEBE FÜR FAHRRÄDER UND GANGSCHALTUNGSSYSTEM
+GEARBOX FOR BICYCLES AND GEAR CHANGE SYSTEM
+(84) Etats contractants désignés:
+
+(72) Inventeur: Cavalerie, Guy
+
+AT BE BG CH CY CZ DE DK EE ES FI FR GB GR
+HR HU IE IS IT LI LT LU LV MC MT NL NO PL PT
+RO SE SI SK TR
+
+(30) Priorité: 16.03.2007 FR 0701897
+
+42410 Pelussin (FR)
+
+(74) Mandataire: Schmidt, Martin Peter et al
+IXAS Conseil
+15, rue Emile Zola
+69002 Lyon (FR)
+
+(43) Date de publication de la demande:
+16.12.2009 Bulletin 2009/51
+
+(73) Titulaire: Cavalerie, Guy
+
+(56) Documents cités:
+EP-A- 1 445 088
+US-A- 5 553 510
+
+FR-A- 2 776 613
+US-A- 5 611 556
+
+EP 2 132 083 B1
+
+42410 Pelussin (FR)
+
+Il est rappelé que: Dans un délai de neuf mois à compter de la publication de la mention de la délivrance du brevet
+européen au Bulletin européen des brevets, toute personne peut faire opposition à ce brevet auprès de l'Office européen
+des brevets, conformément au règlement d'exécution. L'opposition n'est réputée formée qu'après le paiement de la taxe
+d'opposition. (Art. 99(1) Convention sur le brevet européen).
+Printed by Jouve, 75001 PARIS (FR)
+
+
