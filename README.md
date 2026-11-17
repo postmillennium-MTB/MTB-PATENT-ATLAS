@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 530 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 531 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 530 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 530 |
+| **Total entries** | 531 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 211 |
+| **Active patents** | 212 |
 | **Expired patents** | 243 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 12 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 530 patents and 
 | **Brands** | 231 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 451 |
+| **Verified entries** | 452 |
 | **Medium confidence** | 42 |
 | **Draft / in progress** | 37 |
 
@@ -1027,3 +1027,5 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - **Six bottom bracket cards (528 entries, 2026-11-17).** All tier v from the Google Patents records and the granted texts; figures cropped from the patents' own drawing sheets. Shimano US 7,152,501 (Figs. 3 and 4, per Jon; family EP 1,661,803 B1, CN 100528680 C, TW I277569 B; fee-lapsed, nominal 2025): the claims cover the left-crank retaining plate, sold as the Hollowtech II safety plate. Truvativ US 6,983,672 (Garrett Andrew Smith; assigned to SRAM 2005; expired 2022): fixed inner races, floating outer races, bearings inside the shell. Campagnolo US 8,590,421 (EP priority 2006-03-03; 1,205 days PTA, fee-lapsed, nominal 2030; family EP/CN/JP/TW): threaded outboard cups with a shoulder and split pin trapping the bearing, matching the Ultra-Torque clip and wave washer. Felt US 7,607,507 (filed 2007-01-08; 348 days PTA, fee-lapsed, nominal 2027): beveled threadless shell. Praxis US 9,004,771 (CIP filed 2013 of abandoned 12/715,152 filed 2010-03-01 = US 2010/0220947; inventors Earle and Chin T. Chuang; 172 days PTA, fee-lapsed, nominal 2030): the Collet bottom bracket. Hive Global US 10,221,887 + divisional 10,480,571 (one family card, parent headline; exp 2035 with 566 days PTA). Praxis 9,004,771 and its publication 2013/0230266 moved out of the Sotto Group bundle (now 4 filings) to their own card. Felt and Campagnolo added to BRANDS. Gap: no maker source ties the Hive adjuster to a named e*thirteen product.
 
 - **Praxis cassette family, DT Swiss freewheel unit, belt-aligned derailleur drawings (530 entries, 2026-11-17).** Tier v from the Google Patents records and the granted texts. Praxis US 9,168,976 (filed 2015-03-17, granted 2015-10-27) with continuation US 10,160,030 (filed 2016-11-10 from abandoned 14/923,343, a CIP of the 2015 filing; published as US 2017/0056955; granted 2018-12-25) on one card, parent headline, exp 2035; the two Fig. 4 and Fig. 5 drawings were cropped from the patent's own sheets because no cassette sheets were in `pictures/`. Both moved out of the Sotto Group bundle (now 2 filings). DT Swiss US 11,220,133 (filed 2019-07-03, granted 2022-01-11, adjusted expiry 2040-01-06) with EP 3,590,815 B1 in `nums[]`; Jon's three sheets (named for US 2020/0009908 A1) wired as Figs. 5, 7 and 9. The existing Praxis belt-aligned derailleur card (US 2017/0066501 A1, abandoned) already existed, so only its two extra sheets (Figs. 3 and 12) and cross-links were added. Gap: the Star Ratchet cards US 5,676,227 and US 8,757,341 disagree about when the original ratchet protection ended (see PR description).
+
+- **DT Swiss sealed narrow hub bearing, US 11,485,173 (531 entries, 2026-11-17).** Tier v from the Google Patents record and the granted claims. Application 17/066,263 filed 2020-10-08, published as US 2021/0023878 A1, granted 2022-11-01; a continuation-in-part of 16/862,816, 16/255,231, 16/039,831 and (via 15/882,423) US 10,442,245 and 10,549,578, so `y` 2017 and exp 2037 (adjusted expiry 2037-10-02 on Google Patents) follow the earliest parent. Own card because the claims (seal washer plus ball guide units) differ from the dual-bearing rotor hub; linked both ways with US 10,442,245 and to the freewheel pre-assembly card. Jon's Fig. 20 sheet was rotated 90 degrees clockwise to read upright. Gap: no foreign counterpart is listed on Google Patents.
