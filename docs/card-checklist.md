@@ -27,7 +27,7 @@ broken, so you don't have to police them by eye.
 - [ ] **No patent?** Two cases. Not located: `num: null`, no `np`. Confirmed
       none (maker, inventor, open-standard text, trademark, stated trade
       secret): `np: true|"trademark"|"standard"|"secret"`, `g/exp: null`,
-      `st: "unknown"`, `y` = introduction year, title ends "(no patent)".
+      `st: "unknown"`, `y` = introduction year, no "(no patent)" in the title (the pill says it).
       "Our searches found nothing" is the first case. **(checked)**
 - [ ] New `who[]` names registered in `BRANDS` / `INVENTORS` first. **(checked)**
       Inventors only for recurring, notable people.

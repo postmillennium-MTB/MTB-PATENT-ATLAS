@@ -206,8 +206,9 @@ Two different situations both have `num: null`, and the card must not blur them:
 `np` values: `true` (plain no patent), `"trademark"`, `"standard"` (open
 standard) or `"secret"` (trade secret). An `np` entry must have `num: null`,
 no `nums`, `g: null`, `exp: null`, `st: "unknown"`; `y` is the product's
-introduction year, not a filing year. Title ends "(no patent)" / "(sans
-brevet)" or says what it is instead ("— the trademark, not the patent").
+introduction year, not a filing year. Do not add "(no patent)" / "(sans
+brevet)" to the title: the "no patent" pill carries that (ISIS precedent). A
+title may still say what it is instead ("— the trademark, not the patent").
 Images are the maker's own drawings or marketing art with a visible source
 caption and no patent link. The card then shows
 "Introduced" / "Patent: none (…)" instead of "Filed" / "Granted", a "no patent"
