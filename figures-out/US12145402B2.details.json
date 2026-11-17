@@ -1,0 +1,221 @@
+{
+ "number": "US12145402B2",
+ "title": "Hub for human-powered vehicle",
+ "inventors": [
+  "Azusa Yamazaki",
+  "Kazutaka NIKI",
+  "Takeshi Ueda"
+ ],
+ "assignee_original": [
+  "Shimano Inc",
+  "Shimano Inc.",
+  "株式会社シマノ",
+  "广东洛梵狄智能科技有限公司",
+  "Christianson Systems, Inc.",
+  "Shimano Industrial Company Limited",
+  "Look, S.A.",
+  "Michael Kutter",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Maxon Motor Ag",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Zhejiang Chaoji Electrical Technology Co., Ltd.",
+  "Fazua Gmbh",
+  "Shimano Industrial Company Limited",
+  "Look, S.A.",
+  "Michael Kutter",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Maxon Motor Ag",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Zhejiang Chaoji Electrical Technology Co., Ltd.",
+  "Fazua Gmbh",
+  "Shimano Inc."
+ ],
+ "assignee_current": [
+  "Shimano Inc"
+ ],
+ "application": "US17/221,224",
+ "priority_date": "2021-04-02",
+ "filing_date": "2021-04-02",
+ "publication_date": "2024-11-19",
+ "grant_date": "2024-11-19",
+ "status": "Active",
+ "expiry_events": [
+  {
+   "date": "2043-05-16",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "A hub is provided for a human-powered vehicle. The hub comprises a hub axle, a hub body, a sprocket support structure, a detected part and a rotation detection sensor. The hub axle has a center axis. The hub body is rotatably disposed around the center axis. The sprocket support structure is rotatably disposed around the center axis to transmit a driving force to the hub body while rotating in a driving rotational direction around the center axis. The detected part is provided to the sprocket support structure. The rotation detection sensor is configured to detect the detected part to detect rotation of the sprocket support structure around the center axis and being disposed in the hub body.",
+ "family": [
+  "US12145402B2",
+  "US20220314692A1"
+ ],
+ "cites": [
+  {
+   "pn": "US4580670A",
+   "title": "Hub for a bicycle"
+  },
+  {
+   "pn": "US5065633A",
+   "title": "Apparatus for the measurement of drive torques"
+  },
+  {
+   "pn": "US6286616B1",
+   "title": "Hybrid drive mechanism for a vehicle driven by muscle power, with an auxiliary electric motor"
+  },
+  {
+   "pn": "US20050285461A1",
+   "title": "Bicycle electrical generator hub"
+  },
+  {
+   "pn": "US20060191764A1",
+   "title": "Bicycle hub"
+  },
+  {
+   "pn": "US20140074348A1",
+   "title": "Bicycle power sensing apparatus"
+  },
+  {
+   "pn": "US8882122B2",
+   "title": "Bicycle gear changing apparatus"
+  },
+  {
+   "pn": "US9221517B2",
+   "title": "Bicycle rear hub"
+  },
+  {
+   "pn": "US20160137259A1",
+   "title": "Sensor arrangement for controlling an auxiliary motor and a wheel hub unit with such a sensor arrangement"
+  },
+  {
+   "pn": "US20180170099A1",
+   "title": "Bicycle hub"
+  },
+  {
+   "pn": "DE102019112510A1",
+   "title": "TELESCOPIC APPARATUS FOR A VEHICLE POWERED VEHICLE, A HEIGHT ADJUSTABLE SADDLE SUPPORT AND A BICYCLE COMPONENT CONTROL SYSTEM"
+  },
+  {
+   "pn": "US20210009232A1",
+   "title": "Intelligent electric wheel hub"
+  },
+  {
+   "pn": "US20220258531A1",
+   "title": "Wheel Hub, Auxiliary Driven Vehicle with the Wheel Hub and Clip Arrangement"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US12649542B2",
+   "title": "Control device for human-powered vehicle and transmission system for human-powered vehicle"
+  }
+ ],
+ "events": [
+  {
+   "date": "2021-04-02",
+   "type": "filed",
+   "title": "Application filed by Shimano Inc"
+  },
+  {
+   "date": "2021-04-02",
+   "type": "reassignment",
+   "title": "Assigned to SHIMANO INC."
+  },
+  {
+   "date": "2021-04-02",
+   "type": "priority",
+   "title": "Priority to US17/221,224"
+  },
+  {
+   "date": "2021-11-12",
+   "type": "priority",
+   "title": "Priority to DE102021212748.7A"
+  },
+  {
+   "date": "2021-11-24",
+   "type": "priority",
+   "title": "Priority to TW110143645A"
+  },
+  {
+   "date": "2021-11-24",
+   "type": "priority",
+   "title": "Priority to TW114145303A"
+  },
+  {
+   "date": "2021-12-02",
+   "type": "priority",
+   "title": "Priority to TW110145038A"
+  },
+  {
+   "date": "2021-12-07",
+   "type": "priority",
+   "title": "Priority to CN202111482008.2A"
+  },
+  {
+   "date": "2021-12-08",
+   "type": "priority",
+   "title": "Priority to CN202410930221.2A"
+  },
+  {
+   "date": "2021-12-08",
+   "type": "priority",
+   "title": "Priority to CN202111490280.5A"
+  },
+  {
+   "date": "2021-12-10",
+   "type": "priority",
+   "title": "Priority to DE102021132614.1A"
+  },
+  {
+   "date": "2021-12-10",
+   "type": "priority",
+   "title": "Priority to DE102021132617.6A"
+  },
+  {
+   "date": "2021-12-10",
+   "type": "priority",
+   "title": "Priority to DE102021132616.8A"
+  },
+  {
+   "date": "2021-12-10",
+   "type": "priority",
+   "title": "Priority to DE102021132618.4A"
+  },
+  {
+   "date": "2022-10-06",
+   "type": "publication",
+   "title": "Publication of US20220314692A1"
+  },
+  {
+   "date": "2024-11-19",
+   "type": "publication",
+   "title": "Publication of US12145402B2"
+  },
+  {
+   "date": "2024-11-19",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2043-05-16",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ]
+}
