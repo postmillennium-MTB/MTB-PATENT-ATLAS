@@ -133,8 +133,12 @@ switch (cmd) {
     const files = fs.readdirSync(path.join(ROOT, 'pictures'));
     args.forEach(num => {
       const key = norm(num.replace(/^US/i, ''));
-      const m = files.filter(f => norm(f).includes(key));
-      console.log(`${num}: ${m.length ? '' : 'none'}`);
+      /* A family card answers for all its numbers: drawings Jon uploads under
+         any member's number belong to the same card. */
+      const fam = A.D.find(d => norm(String(d.num || '')) === key || (d.nums || []).some(n => norm(n) === key));
+      const keys = [...new Set([key, ...(fam ? [fam.num, ...(fam.nums || [])].filter(Boolean).map(n => norm(String(n).replace(/^US/i, ''))) : [])])];
+      const m = files.filter(f => keys.some(k => norm(f).includes(k)));
+      console.log(`${num}: ${m.length ? '' : 'none'}${fam && keys.length > 1 ? `  (family card: ${keys.join(', ')})` : ''}`);
       m.forEach(f => {
         const thumb = fs.existsSync(path.join(ROOT, 'pictures', 'thumbs', f.replace(/\.[^.]+$/, '.webp')));
         const used = A.D.some(d => d.img === `pictures/${f}` || (d.imgs || []).some(x => x.src === `pictures/${f}`));

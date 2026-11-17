@@ -426,7 +426,17 @@ if (fs.existsSync(picDir)) {
 }
 console.log('\nunreferenced drawings in pictures/ (informational, not blocking):',
   (orphanNone.length || orphanExtra.length) ? '' : 'none');
-if (orphanNone.length) console.log('  no sheet wired in (' + orphanNone.length + '):', orphanNone.join(', '));
+/* A drawing named after a family member listed in some card's nums[] belongs
+   to that card (README "Patent families and continuations"), so say which
+   card: it is either a figure to add there or a duplicate of one it has. */
+const famKey = f => patentKey(f).toUpperCase().replace(/^US/, '').replace(/^(\d{11})[A-Z]\d?$/, '$1').replace(/^(D?\d{5,8})[A-Z]\d?$/, '$1').replace(/^(?!\d)([A-Z]{2,3}\d+)[A-Z]\d?$/, '$1');
+const famOwner = new Map();
+D.forEach(d => (d.nums || []).forEach(n => {
+  const k = String(n).toUpperCase().replace(/^US/, '').replace(/^(?!\d)([A-Z]{2,3}\d+)[A-Z]\d?$/, '$1');
+  if (!famOwner.has(k)) famOwner.set(k, d.num || (d.t && d.t.en) || d.t);
+}));
+const famNote = f => { const o = famOwner.get(famKey(f)); return o && String(o) !== famKey(f) ? `${f} (family card ${o})` : f; };
+if (orphanNone.length) console.log('  no sheet wired in (' + orphanNone.length + '):', orphanNone.map(famNote).join(', '));
 if (orphanExtra.length) console.log('  extra sheet(s) of a patent that has a drawing (' + orphanExtra.length + '):', orphanExtra.join(', '));
 
 /* Card thumbnails (pictures/thumbs/) -- informational, never blocking.
