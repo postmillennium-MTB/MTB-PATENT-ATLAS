@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 518 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 520 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,10 +14,10 @@ An interactive timeline of mountain bike intellectual property: 518 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 518 |
+| **Total entries** | 520 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 206 |
-| **Expired patents** | 237 |
+| **Active patents** | 207 |
+| **Expired patents** | 238 |
 | **Pending applications** | 48 |
 | **Confirmed no patent** | 11 |
 | **Litigated entries** | 31 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 518 patents and 
 | **Brands** | 229 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 439 |
+| **Verified entries** | 441 |
 | **Medium confidence** | 42 |
 | **Draft / in progress** | 37 |
 
@@ -980,3 +980,5 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 
 - **Lesage FR 2,774,966 + Lapierre FPS (2026-11-17):** Lesage card gains the Lapierre FPS (Full Power System) history from a 2001 Mtb Zone enthusiast article (archived copy linked): Lesage + Emmanuel Antonot, X-Control link + carbon flex blade, anti-pumping case, Chiotti French title, FPS bikes; notes the patent is in Lesage's name alone and that Lapierre's 2004 FR 2,872,776 cites its family. Lapierre FPS / OST+ card (num null, tier m): "Frequency Performance System" corrected to "Full Power System", unsourced "first national title on full suspension" claim dropped, now links to the Lesage card. Tier unchanged (v / m).
 - **Lapierre FPS / OST+ card follow-up (2026-11-17):** per Jon, FPS = Lesage FR 2,774,966 B1; card now y 1998 / g 2000 / exp 2018 (was 2001/2001/2021), text names the patent; OST+ numbers still unverified (num stays null, tier m).
+
+- **Two Specialized Talavasek cards (520 entries).** New: "Specialized sit-and-bleed sag-setting air shock" US 2019/0093731 A1 (Jan Talavasek; filed 2018-11-26 as a continuation of the 2010 family granted as US 8,480,064, 9,328,793, 9,759,283 and 10,161,474; abandoned), tier v, Fig. 1. New: "Specialized top-tube monitoring unit with LED display" US 12,545,357 B2 (Sonderegger, Talavasek, Jakku, Patureau, Pallure, Reiter; family from 2018-06-28, granted 2026-02-10, 196 days PTA, exp 2039), tier v, Figs. 1B and 2A. Both cards link to each other and to the battery-mount card (US 11,345,437), which now links back. Gap: the cards do not name a product (AutoSag, Turbo Connect Unit) because no maker page tying either patent to a product was confirmed.
