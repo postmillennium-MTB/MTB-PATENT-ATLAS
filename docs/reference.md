@@ -296,7 +296,8 @@ or `long` (both languages). `<ref>` is the target's `cardRef()` — its `num`, o
 card renders an in-page link (`a.card-xref`, handled by one delegated click
 listener that calls `jumpToCard`); search, the Rabbit Holes blurb and Patent
 Match see only the link text (`stripCardLinks`). Do not link to `num:null`
-entries (slug refs are fragile), and don't hand-write `<a href="#p=…">` — it
+entries (slug refs are fragile), except confirmed no-patent (`np`) cards,
+which never gain a number: link those by their title slug (Jon, 2026-11-17), and don't hand-write `<a href="#p=…">` — it
 bypasses both the dead-link check and the click handler. `verify_data.js`
 hard-fails on any token whose target doesn't exist and on any pair in its
 `REQUIRED_CROSSLINKS` list missing a direction or a language; `smoke_test.js`
