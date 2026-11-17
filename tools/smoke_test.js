@@ -127,6 +127,30 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     }
   }
 
+  /* Patent numbers pasted in the shapes Google Patents, the USPTO and PDF
+     front pages print must find their card first: publication numbers that
+     only appear in prose and drawing names, kind codes, commas, slashes,
+     EP/DE/design/reissue numbers, a whole Google Patents link. */
+  const NUMBER_SEARCHES = [
+    ['US20200009908', '11220133'], ['US 2020/0009908 A1', '11220133'], ['US11220133B2', '11220133'],
+    ['11,220,133', '11220133'], ['EP 3 590 815 B1', '11220133'],
+    ['https://patents.google.com/patent/US20200009908A1/en', '11220133'],
+    ['DE 10 2008 011 364 A1', 'DE102008011364A1'], ['US D860,061 S', '10549813'], ['RE39159', '5628524'],
+    ['US20060197306', '7216883'],
+  ];
+  for (const [q, want] of NUMBER_SEARCHES) {
+    errors.length = 0;
+    await page.fill('#searchInput', '');
+    await page.fill('#searchInput', q);
+    await page.waitForTimeout(300);
+    const first = await page.evaluate(() => shownRefs[0]);
+    if (first !== want || errors.length) {
+      failed = true;
+      console.error(`::error::number search "${q}" showed ${first} first, expected ${want}; errors: ${JSON.stringify(errors)}`);
+    }
+  }
+  console.log(`number search: ${NUMBER_SEARCHES.length} pasted formats checked`);
+
   /* Every Brands / Inventors chip must return at least one card. A registered
      name that no entry's who[] uses renders a chip that filters to nothing
      (BMC and SCOR did, 2026-10-07). verify_data.js catches it from the data;
