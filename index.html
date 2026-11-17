@@ -4237,6 +4237,72 @@ document.querySelectorAll(".frow").forEach(row=>{
    next 2 years? Drives the "Going free soon" chip and Stats-tab list. */
 function goingFreeSoon(d){ return d.st==="active" && d.exp && d.exp>=NOW && d.exp<=NOW+2; }
 
+/* ======== PATENT-NUMBER SEARCH ========
+   People paste numbers straight from Google Patents, the USPTO or a PDF
+   front page, in whatever shape that source prints: "US20200009908A1",
+   "US 2020/0009908 A1", "US11220133B2", "11,220,133", "EP 3 590 815 B1",
+   "DE 10 2018 116 465", "D863,199", even a whole patents.google.com link.
+   The word search above can't see through that punctuation (the card says
+   "US 2020/0009908", the query says "US20200009908"), so a query that is
+   one patent number is matched here instead, on a canonical key: office +
+   design/reissue prefix + digits, kind code dropped, US and no office the
+   same thing. Keys come from num, nums[], the drawing file names (which are
+   named after the document they came from, often the pre-grant publication)
+   and every patent number written anywhere on the card. The first three are
+   the card's own numbers; the rest are numbers the card mentions. */
+const NUM_OFFICES="US|EP|WO|DE|FR|GB|CA|AU|CN|JP|TWI|TW|NZ|IT|AT|CH|ES|SE|PL|KR|NL|BE|DK|FI|NO|CZ";
+const NUM_QUERY_RE=new RegExp(`^(${NUM_OFFICES})?(D|RE|PP)?(\\d{5,})(?:[A-Z]\\d?)?$`);
+/* A patent number as printed in card prose: optional office, optional
+   design/reissue prefix, then the digits in one of the layouts the cards
+   use (DE application groups, US/WO publication with a slash, thousands
+   groups with commas or EN/FR spaces, or a plain run of 5+ digits). */
+const NUM_TEXT_RE=new RegExp(`(?:\\b(${NUM_OFFICES})[\\s\\u00a0\\u202f]*(?:(?:Pat\\.|Patent)[\\s\\u00a0\\u202f]*)?(?:No\\.[\\s\\u00a0\\u202f]*)?)?(?:\\b(D|RE|PP)[\\s\\u00a0\\u202f]?)?\\b(\\d{2}[\\s\\u00a0\\u202f]\\d{4}[\\s\\u00a0\\u202f]\\d{3}[\\s\\u00a0\\u202f]\\d{3}(?!\\d)|\\d{4}\\/\\d{6,7}(?!\\d)|\\d{1,3}(?:[,.\\s\\u00a0\\u202f]\\d{3}(?!\\d))+|\\d{5,})`,"g");
+function numOffice(cc){ return !cc||cc==="US" ? "" : (cc==="TWI" ? "TW" : cc); }
+/* The canonical key of a query, or null when the query isn't one number.
+   anyOffice: no office was typed, so "3590815" finds EP 3,590,815 too. */
+function parseNumQuery(q){
+  if(!q) return null;
+  let s=String(q).trim().toUpperCase();
+  const url=s.match(/PATENT\/([A-Z]{2,3}[A-Z0-9]+)/); // a pasted Google Patents link
+  if(url) s=url[1];
+  s=s.replace(/^(?:U\.S\.|PATENT|PAT\.?)\s*/,"").replace(/^NO(?:\.|\s)\s*/,"")
+     .replace(/[\s,.\/\-  ]/g,"");
+  const m=s.match(NUM_QUERY_RE);
+  if(!m) return null;
+  return {anyOffice:!m[1], cc:numOffice(m[1]), id:(m[2]||"")+m[3]};
+}
+function numKey(cc,pre,digits){ return numOffice(cc)+"|"+(pre||"")+digits.replace(/\D/g,""); }
+const _numKeys=new WeakMap();
+function cardNumKeys(d){
+  let k=_numKeys.get(d);
+  if(k) return k;
+  const own=new Set(), all=new Set();
+  const addId=raw=>{ const p=parseNumQuery(raw); if(p){ const key=p.cc+"|"+p.id; own.add(key); all.add(key); } };
+  [d.num,...(d.nums||[])].forEach(n=>n&&addId(n));
+  [d.img,...(d.imgs||[]).map(i=>i&&i.src)].forEach(src=>{
+    if(!src) return;
+    const base=String(src).split("/").pop().replace(/\.[^.]*$/,"").replace(/\.\d+$/,""); // US…A1.2.png → US…A1
+    addId(base);
+  });
+  const texts=[];
+  const push=f=>{ if(f==null) return; if(typeof f==="object") texts.push(f.en,f.fr); else texts.push(f); };
+  [d.t,d.s,d.w,d.hook,d.clever,d.long,d.imgAlt].forEach(push);
+  (d.imgs||[]).forEach(i=>{ if(i){ push(i.alt); push(i.caption); } });
+  texts.filter(Boolean).join("\n").replace(NUM_TEXT_RE,(m0,cc,pre,digits)=>{
+    const key=numKey(cc,pre,digits);
+    if(key.split("|")[1].replace(/\D/g,"").length>=5) all.add(key);
+    return m0;
+  });
+  k={own:[...own], all:[...all]};
+  _numKeys.set(d,k);
+  return k;
+}
+/* Does one of these keys answer query q? A prefix counts, so the card
+   appears while the number is still being typed. */
+function numKeysHit(keys,q){
+  return keys.some(key=>{ const i=key.indexOf("|"); return (q.anyOffice||key.slice(0,i)===q.cc) && key.slice(i+1).startsWith(q.id); });
+}
+
 /* Whether entry d matches the current search box text and every active
    filter chip — the single predicate render() (and the resize-driven bars
    re-render) filters the full D array through. */
@@ -4305,7 +4371,8 @@ function passes(d){
       return candidates.some(c=>hay.includes(c)||hayCompact.includes(c.replace(/\s+/g,'')));
     };
     const allWordsFound=words.every(wordMatches);
-    if(words.length && !allWordsFound) return false;
+    const numQ=parseNumQuery(searchQ);
+    if(words.length && !allWordsFound && !(numQ && numKeysHit(cardNumKeys(d).all,numQ))) return false;
   }
   if(state.cat.size && !state.cat.has(d.cat)) return false;
   if(state.st.size){
@@ -4327,6 +4394,10 @@ function searchRank(d){
   const fold=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const words=fold(searchQ||"").split(/\s+/).filter(Boolean);
   if(!words.length) return 2;
+  /* A patent-number query ranks the cards that own the number (headline,
+     family member or drawing) above cards that only mention it. */
+  const numQ=parseNumQuery(searchQ);
+  if(numQ) return numKeysHit(cardNumKeys(d).own,numQ) ? 0 : 2;
   const holds=txt=>{ const h=fold(txt), hc=h.replace(/\s+/g,''); return words.every(w=>h.includes(w)||hc.includes(w)); };
   const title=typeof d.t==="object" ? [d.t.en,d.t.fr].filter(Boolean).join(' ') : (d.t||"");
   if(holds(stripCardLinks(title))) return 0;
