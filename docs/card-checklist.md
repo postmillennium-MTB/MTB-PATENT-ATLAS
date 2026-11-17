@@ -70,7 +70,7 @@ broken, so you don't have to police them by eye.
 - [ ] No hedge-stacking ("likely may plausibly"), no restating a caveat in
       both `s` and `w`, no comments about the Atlas itself.
 - [ ] Links: `[[card:<ref>|text]]` to another card (never to a `num: null`
-      card), `[[link:https://…|text]]` outside. **(checked)**
+      card, except a confirmed no-patent `np` card by its title slug), `[[link:https://…|text]]` outside. **(checked)**
 
 ## Drawings
 

@@ -125,8 +125,9 @@ INVENTORS.forEach(i => {
 /* Card cross-links: [[card:<ref>|text]] inside s/w/long (see CARD_LINK_RE in
    index.html). <ref> must be a real card's #p= deep-link ref, computed here the
    same way index.html's _REF map does (the patent number, or number-N when a
-   number is shared; num:null entries use a title slug and are not linkable).
-   Hard failure on any dead target, so a renumbered or deleted card can't leave
+   number is shared). num:null entries use a title slug; only confirmed
+   no-patent (np) cards may be linked that way, since they will never gain a
+   number (Jon, 2026-11-17). Hard failure on any dead target, so a renumbered or deleted card can't leave
    a link that opens nothing. */
 const refOf = new Map();
 (() => {
@@ -139,6 +140,8 @@ const refOf = new Map();
   });
 })();
 const validRefs = new Set(refOf.values());
+D.filter(d => !d.num && d.np).forEach(d => validRefs.add(d.t.en.toLowerCase()
+  .replace(/\(.*?\)/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40)));
 const xrefs = [];   // {from: ref|title, to: ref}
 D.forEach(d => ['s', 'w', 'long'].forEach(f => {
   const langs = d[f] && typeof d[f] === 'object' ? Object.entries(d[f]) : [];
@@ -175,7 +178,7 @@ if (!aliasBlock) hardFailures.push('REF_ALIASES not found in index.html');
 else {
   const aliases = eval('(' + aliasBlock[1] + ')');
   // A num:null card's live ref is its title slug (same formula as index.html's
-  // _REF). Cross-links may not point at those, but an alias may: renaming a
+  // _REF). Cross-links may point only at np ones, but an alias may point at any: renaming a
   // num:null entry changes its slug, and the old shared link has to land on it.
   const slugRefs = new Set(D.filter(d => !d.num).map(d => d.t.en.toLowerCase()
     .replace(/\(.*?\)/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40)));
