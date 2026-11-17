@@ -29,6 +29,15 @@ broken, so you don't have to police them by eye.
       secret): `np: true|"trademark"|"standard"|"secret"`, `g/exp: null`,
       `st: "unknown"`, `y` = introduction year, title ends "(no patent)".
       "Our searches found nothing" is the first case. **(checked)**
+- [ ] **Family** (README "Patent families and continuations"): every member
+      looked up and run through `find`. One card per family unless a member
+      is a CIP, claims a different product, was litigated/licensed/sold on its
+      own, or has its own story. `num` = parent or best-matching granted
+      member (not simply the newest). `nums[]` = headline first, granted and
+      pending US members, one granted foreign counterpart per office; no
+      pre-grant publication of a granted application, no abandoned
+      applications (name those in `s`). `exp` = latest expiry of a granted
+      member in force; `s` says which member ends when if they differ.
 - [ ] New `who[]` names registered in `BRANDS` / `INVENTORS` first. **(checked)**
       Inventors only for recurring, notable people.
 
@@ -66,7 +75,11 @@ broken, so you don't have to police them by eye.
 ## Drawings
 
 - [ ] `node tools/entry.js pics <number>` for **every** number on the card, after
-      syncing with `main`: Jon often uploads extra sheets (`.1.png`, `.2.png`).
+      syncing with `main`: Jon often uploads extra sheets (`.1.png`, `.2.png`),
+      and may name them after any family member.
+- [ ] Family drawings: continuations share the parent's drawings, so each
+      figure goes on once. Keep the file named for the document it came from
+      and caption it "Fig. N from US x,xxx,xxx".
 - [ ] `imgs[]` order: the most recognisable figure first (it becomes the
       thumbnail everywhere). Each has `alt` (what is drawn, with its reference
       numerals) and `caption`, both languages.

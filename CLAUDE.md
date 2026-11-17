@@ -62,6 +62,11 @@ batch* in `docs/reference.md`: present up to 10 candidates first, wait for his p
    `pictures/` through the web UI without saying so.
 1. **Duplicates:** `node tools/entry.js find <number> <brand>`. A `num: null`
    placeholder for the same invention gets filled, not duplicated.
+   **Families:** from one number, look up the whole family (`details.md`
+   "Family" line; Google Patents *Worldwide applications* and *Parent/Child
+   applications*) and run `find` on every member. One card per family,
+   headline = parent or best-matching granted member, others in `nums[]`.
+   Full rules: README "Patent families and continuations".
 2. **Facts and drawings in one go:** run the **Fetch patent figure** workflow
    with all the numbers (space-separated). From a session: GitHub MCP
    `actions_run_trigger` on `patent-figure.yml`, inputs `numbers`

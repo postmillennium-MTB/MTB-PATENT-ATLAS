@@ -229,6 +229,35 @@ Several entries (WRP, EXT, Forbidden, Lauf's original Grit fork, Antidote, OPEN 
 
 A handful of entries represent a *category* of patents rather than a single filing — currently GoPro's action-camera portfolio (image processing/FOV, stabilization, hardware/acoustics, telemetry), grouped into four cards instead of one per patent. Use this pattern when a company's IP position matters to the story but individually cataloguing a 1,000+ patent portfolio would swamp the rest of the dataset. Bundled entries cite one representative patent number where a specific filing is genuinely the best example, and are tagged `conf: "l"` since no single number fully verifies the bundle.
 
+### Patent families and continuations
+
+One invention often ends up as several patent documents: the first US application (the **parent**), later US **continuations** that claim other parts of the same disclosure, a **divisional** split off when the examiner said the parent claimed two inventions, and foreign **counterparts** (EP, WO, CN…) that claim the same priority date. Together they are one **family**. Yeti's Link Suspension System is a typical one: US 9,102,378 (filed 2011, granted 2015), continuations US 9,561,834 (filed 2015) and US 10,343,742 (filed 2017), a 2019 continuation application US 2020/0079464 A1 that was abandoned, plus EP 2,605,953 and WO 2012/024697. All of them share the August 20, 2010 priority date.
+
+The Atlas rules for families:
+
+1. **One card per family.** Members get their own card only under rule 7.
+2. **Always look up the rest of the family.** When a card is added from one number, Claude checks the record's family before writing it: the "Family" line in the figure workflow's `details.md`, and on Google Patents the *Worldwide applications* list plus the *Parent/Child applications* tables (continuation, divisional, continuation-in-part). Jon only ever needs to give one link.
+3. **The headline number (`num`) is the parent, or the granted member that best matches the product.** Not simply the newest. The newest member is often a pending or abandoned application, and the parent sets the priority date and usually the expiry, so headlining the newest can mislead on both. When the parent never granted, use the first granted member; when nothing in the family granted, use the most recent live application. The headline number goes in the title and is the card's link address (`#p=<num>` and `p/<num>/`).
+4. **Other members go in `nums[]`, headline first, and show as one collapsed line** on the card. What goes in:
+   - every granted US member and any pending US application;
+   - at most one foreign counterpart per office, the granted version (EP B1 over EP A1; WO only when nothing else outside the US exists);
+   - **not** the pre-grant publication of an application that later granted (US 2017/0151996 A1 *is* US 10,689,062, the same filing, so listing both counts one patent twice);
+   - **not** abandoned applications, which are named in `s` instead (they say something about the family's history, but nothing a reader can use).
+   A card whose only document is an application keeps that application as `num`.
+5. **Dates and status describe the family, with differences spelled out.**
+   - `y` = filing year of the earliest non-provisional US application in the chain (the existing continuation rule). The priority date, if earlier (a provisional or foreign filing), goes in `s`.
+   - `g` = grant year of the headline number.
+   - `exp` = the latest expiry of any granted member still in force, from `tools/patent_term.js`. Continuations share the parent's 20-year clock, so they usually differ only by patent term adjustment, a terminal disclaimer or an unpaid fee. When members end in different years, `s` says which ends when (the Yeti Rear Suspension System card is the model: three members expired together in 2025, one did not).
+   - `st` = `active` if any granted member is in force; `pending` if none granted but an application is live; `expired` once every granted member has ended (or every application was abandoned).
+6. **Drawings.** Continuations reuse the parent's specification, so their drawings are usually identical: put each figure on the card once, taken from the headline patent. Use a later member's figure only when it is new (a continuation-in-part or a divisional with new drawings), or when it is the only clear copy. Name the file after the document it came from (`US9561834B2.png`, never renamed to the headline number) and say so in the caption ("Fig. 3 from US 9,561,834"). Drawings Jon uploads under any family member's number belong to that family's card; `node tools/entry.js pics <any member>` lists the drawings for all of the card's numbers, and `verify_data.js` names the card when an unused drawing's number is one of its family members, so a duplicate sheet is easy to spot and leave out.
+7. **When a family member earns its own card.** Any one of these:
+   - it is a **continuation-in-part** that adds new matter (Yeti's Switch Infinity, US 9,821,879, grew out of the Link Suspension family as a CIP and is its own card);
+   - its claims cover a **different mechanism or product** from the headline patent;
+   - it was **asserted in a lawsuit, licensed or sold** on its own (the two WickWerks/RampWerks continuation cards);
+   - it has its **own story** worth a card: a different inventor list, a different owner, a famous product.
+   A family member with its own card is left out of the parent card's `nums[]`, and the two cards link to each other with `[[card:…]]`.
+8. **Search, links and the citation map** already treat every number in `nums[]` as the card: search finds the card by any member's number, `entry.js find`/`show` accept any member, `patent_details.py` reports a member as "already in the Atlas", and the citation map counts a citation to any member as a citation to the card. Count totals count cards, not documents, so adding family members to a card never changes them.
+
 ### Adding a new brand or inventor
 
 Every value used in an entry's `who[]` array must already exist in `BRANDS` (companies) or `INVENTORS` (named individuals, `{label, key}` pairs) near the top of the script. If a chip doesn't appear in the filter row, the missing registration here is the first place to check.

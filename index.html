@@ -7371,6 +7371,9 @@ function scrollToCard(card){
 }
 function jumpToCard(ref,opts){
   ref=REF_ALIASES[ref]||ref;
+  /* A link may name any family member listed in a card's nums[] (README,
+     "Patent families and continuations"): send it to that family's card. */
+  if(!document.getElementById("p-"+ref)&&!D.some(d=>cardRef(d)===ref)){ const fam=D.find(d=>(d.nums||[]).includes(ref)); if(fam) ref=cardRef(fam); }
   if(!(opts&&opts.noHistory)) pushCardEntry();
   if(activeTab==="fights"||activeTab==="stats"||activeTab==="match"||activeTab==="cite"){ activeTab="all"; renderTabs(); render(); }
   requestAnimationFrame(()=>{
