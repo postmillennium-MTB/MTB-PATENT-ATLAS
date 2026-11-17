@@ -17,17 +17,17 @@ An interactive timeline of mountain bike intellectual property: 531 patents and 
 | **Total entries** | 531 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 212 |
-| **Expired patents** | 243 |
-| **Pending applications** | 48 |
+| **Expired patents** | 244 |
+| **Pending applications** | 47 |
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 231 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 453 |
+| **Verified entries** | 454 |
 | **Medium confidence** | 41 |
-| **Draft / in progress** | 37 |
+| **Draft / in progress** | 36 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -1035,3 +1035,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - 2026-11-17: Effigear (EP 2,132,083 B1) keeps the `licensor` badge on Jon's call: Google Patents lists the current assignee as "Individual", so the inventor, Guy Cavalerie, still holds the patent. The badge tooltip (all 48 `licensor` cards) now reads "kept ownership of the patent and brought the technology to manufacturers through licences or supply deals", so it no longer implies a licence agreement where only supply is documented.
 
 - 2026-11-17: Search accepts patent numbers in the shapes people paste. A query that is one number (US20200009908, US 2020/0009908 A1, US11220133B2, 11,220,133, EP 3 590 815 B1, DE 10 2018 116 465, D860,061, RE39159, TWI640440, a whole patents.google.com link) is matched on office + digits with kind codes and punctuation dropped, against `num`, `nums[]`, drawing file names and every patent number written on the card (titles, text, alt text, captions). Pre-grant publication numbers, which family rule 4 keeps out of `nums[]`, are now found through the drawings and prose that name them. Cards that own the number come first under "Best matches"; cards that only mention it follow. A partial number still finds cards while it is being typed. Smoke test checks 10 pasted formats.
+- **WRP CentreHub card now cites its record, WO 2022/183252 A1 "Front freewheel arrangement for bicycle", and no longer says pending.** Inventors Michael John Williams and Ian Jeffery Williams, applicant Williams Racing Products Pty Ltd; PCT/AU2022/050181 filed 2022-03-04 with AU 2021900629 priority (2021-03-05), published 2022-09-09. Google Patents lists it as ceased: non-entry into the European and German national phase, no national member in the family, and IP Australia shows the 2021 provisional lapsed. An earlier provisional, AU 2018902174 (2018-06-19), is abandoned. Card moves `y` 2017 → 2022, `st` pending → expired (the Klieber/Preston precedent for a lapsed PCT), `exp` null, `j:"WO"`, `conf` l → v, thesis year 2017 → 2016 per WRP's own 2021 Pinkbike release. Drawings: Fig. 26 (Jon's upload, the cut-away with the CentreHub name drawn on it) first, then Figs 2 and 5 from the WO. Ref changes to `WO2022183252`; old slugs aliased.
