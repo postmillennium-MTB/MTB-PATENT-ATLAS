@@ -3004,7 +3004,7 @@ function recentlyExpired(d){ return d.st==="expired" && !d.np && !!d.exp && d.ex
 /* Patent of the day: everyone who opens the atlas on the same calendar date
    gets the same card. Each eligible card gets a score from hash(date + ref)
    and the lowest wins, so adding an entry changes the pick only on the days
-   the new entry happens to win. Eligible = has a drawing and isn't a draft
+   the new entry happens to win. Eligible = has a drawing, isn't a no-patent card and isn't a draft
    (falls back to any card with a drawing). The date is the reader's own
    local date. */
 function localDateKey(dt=new Date()){ const p=n=>String(n).padStart(2,"0"); return `${dt.getFullYear()}-${p(dt.getMonth()+1)}-${p(dt.getDate())}`; }
@@ -3015,7 +3015,7 @@ function dayHash(str){
   return h>>>0;
 }
 function patentOfTheDay(key=localDateKey()){
-  const drawn=D.filter(d=>firstImg(d));
+  const drawn=D.filter(d=>firstImg(d) && !d.np); // no-patent cards are not a "patent" of the day
   const pool=drawn.filter(d=>d.conf!=="l");
   let best=null, bestH=Infinity;
   (pool.length?pool:drawn).forEach(d=>{ const h=dayHash(`${key}|${cardRef(d)}`); if(h<bestH){ bestH=h; best=d; } });
