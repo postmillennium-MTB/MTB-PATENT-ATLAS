@@ -1,0 +1,2446 @@
+{
+ "number": "US10196106",
+ "title": "Suspension assembly for a cycle",
+ "inventors": [
+  "David Weagle"
+ ],
+ "assignee_original": [
+  "Trvstper Inc",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Sram, Llc",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Thomas Getchell Kelly",
+  "E R Thomas Motor Company",
+  "Thomas Ashburn",
+  "Alberic De La Celle",
+  "Friedrich Sprung",
+  "Paul Joseph Jorat",
+  "James H Sager",
+  "Albert Keller Dorian",
+  "Aurora Automatic Machinery Co",
+  "Excelsior Supply Company",
+  "John W Gates",
+  "Aurora Automatic Machinery Co",
+  "Daniel Pierce Haven",
+  "Charles A Redmond",
+  "R K Holmes",
+  "Fred H Pommer",
+  "Henry E Pilgrim",
+  "Louis M Schmidt",
+  "Charles R Kittle",
+  "Samuel Robinson Ridgway",
+  "Archibald H Stewart",
+  "Walther Schmied",
+  "Martin Ekstrom",
+  "Hendee Mfg Company",
+  "Wilfred Bramham",
+  "Mary Elizabeth Johnson",
+  "Davis Sewing Machine Company",
+  "George Featherstone Shimmin",
+  "Norbert H Schickel",
+  "Giuseppe Stagni",
+  "Aurora Automatic Machinery Co",
+  "William Holder Osborne",
+  "Andrew S Grant",
+  "William Holder Osborne",
+  "Harley Davidson Motor Co Inc",
+  "Orin F Perry",
+  "William Johnston",
+  "Russell Henry Horton",
+  "Paul C Mellantine",
+  "Armes De Guerre Fab Nat",
+  "Brampton Brothers Ltd",
+  "Wolff Louis",
+  "Pullin Cyril George",
+  "Cyclette",
+  "Harry Markham",
+  "Ottis G Bloom",
+  "Harley Davidson Motor Co Inc",
+  "John Percy Maclean",
+  "Koeln Lindenthaler Metallwerke",
+  "Narazo Shimazu",
+  "G R S Products Company Inc",
+  "Bowden Wire Ltd",
+  "Frederick Henry Grubb",
+  "William Holder Osborne",
+  "Zundapp Ges Fuer Den Dau Von S",
+  "Harley Davidson Motor Co Inc",
+  "Kanai Kunzo",
+  "Fisker & Nielsen As",
+  "Spiegler Earl Charles",
+  "Westfield Mfg Company",
+  "Alexis R Pribil",
+  "Reginald Roberts",
+  "Frank W Schwinn",
+  "Briggs Mfg Co",
+  "Kenneth M Hazelroth",
+  "George K Mulholland",
+  "Ohio Rubber Co",
+  "Latscher-Latka Eric",
+  "Sydney William Hardy",
+  "Frank Talbot Robson",
+  "Enfield Cycle Co Ltd",
+  "Willard W Barnett",
+  "Henry J Kaiser Company",
+  "Robert A Macgregor",
+  "Benson Ben",
+  "Cullen H Dean",
+  "John W Moore",
+  "Ryder Elmer",
+  "Rostan Theodore",
+  "Ralph E Franks",
+  "Murray Ohio Mfg Co",
+  "Cleveland Welding Co",
+  "Whizzer Motor Company",
+  "William G Spencer",
+  "Frederic Halliday George",
+  "Lars O Thorkildsen",
+  "Adrienne M Sherwood",
+  "Eugene H Jordan",
+  "Landrum Porter",
+  "Invacar Ltd",
+  "Benjamin J Miller",
+  "Murray Ohio Mfg Co",
+  "Innocenti",
+  "Norton Motors Ltd",
+  "Mecanique Et Pieces Detachees",
+  "P Besset Ets",
+  "Dunlop Rubber Co",
+  "Torre Pier Luigi",
+  "Monark Silver King Inc",
+  "App De Controle Et D Equipment",
+  "Torre Pier Luigi",
+  "Adrienne M Sherwood",
+  "N S U Werke A G",
+  "Edward P Lewandoski",
+  "Josef Mindrup",
+  "Armstrong Patents Co Ltd",
+  "Triumph Engineering Company Lt",
+  "Murray Ohio Mfg Co",
+  "John D Henry",
+  "Nuernberger Hercules Werke G M",
+  "Moulton Consultants Ltd",
+  "John E Gunnerson",
+  "Theodore A Packard",
+  "Aloysius F Siebers",
+  "Frank M Stankovich",
+  "J Harman",
+  "Gen Motors Corp",
+  "Rolf Bock",
+  "Takao Inui",
+  "Phillips Ronald F",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Kensei Suzuki",
+  "Bothwell P",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Supalla Steven A",
+  "Univ Manchester",
+  "Petty Preston L",
+  "Mcbride Thomas W",
+  "Guichard Michel",
+  "Lauren Strutman",
+  "John Slater",
+  "Piaggio & C. S.P.A.",
+  "Michel Houze",
+  "Courtney Orley R",
+  "Diafil International S.A.",
+  "Lew Ways Ltd",
+  "Brown G",
+  "Cortanze Andre",
+  "Bell Theodore F",
+  "Kayaba Kogyo Kabushiki Kaisha",
+  "Brown G C",
+  "B Schultz",
+  "Jillet Didier",
+  "Battelle Memorial Institute",
+  "Yamaha Motor Nv",
+  "Hubertus 4500 Osnabrück Fischer",
+  "Claude Fior",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Pratt Thomas A",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Ekkehard 7566 Weisenbach Au Alschweig",
+  "Terence Anthony Haynes",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Showa Manufacturing Co., Ltd.",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Parker James G",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Alex Moulton Limited",
+  "Yamaha Hatsudoki Kabushiki Kaisha",
+  "Simons Stephen W",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Diafil International S.A.",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Alex Moulton Limited",
+  "Richard Rose",
+  "Richardson Wayne U",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Elf France",
+  "Terence Anthony Haynes",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Elf France",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Bayerische Motoren Werke, Ag",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Zen Pietro",
+  "Harley-Davidson, Inc.",
+  "Industrial Technology Research Institute",
+  "Mert Lawwill",
+  "Mitsubishi Electric Corp",
+  "Huntly Robert B",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Hartmann Dirck T",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Elf France",
+  "Kawasaki Heavy Ind Ltd",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Hartmann Dirck T",
+  "Beinhauer, Uwe, 6380 Bad Homburg",
+  "Elf France",
+  "Peter Mickenbecker",
+  "Rockshox, Inc.",
+  "Marinus Johannes Meijers",
+  "Elf France",
+  "Shultz G Merle",
+  "Kabushiki Kaisha Showa Seisakusho",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Franck Savard",
+  "Jae Shin Yun",
+  "De Bei Claudio",
+  "Fuller Robert B",
+  "Heinrich Griesel",
+  "Dan Ken Industrial Co., Ltd.",
+  "Bimota S.P.A.",
+  "Elf France",
+  "Rockshox, Inc.",
+  "Robert Reisinger",
+  "Wilson Stephen R",
+  "Bridgestone Cycle Co",
+  "Boge Ag",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Mazoue Gerard",
+  "Moore James D",
+  "Yamaha Hatsudoki Kabushiki Kaisha",
+  "Wilson Stephen R",
+  "Chen Tsai L",
+  "Mert Lawwill",
+  "Browning Michael R S",
+  "Chen Tsai L",
+  "Scheffer, Lutz, 79211 Denzlingen",
+  "Cannondale Corporation",
+  "Düwel, Norbert, 32683 Barntrup",
+  "Showa Manufacturing Co., Ltd.",
+  "Russell Robinson",
+  "Otto Gally",
+  "Bettis Corporation",
+  "Yamaha Hatsudoki Kabushiki Kaisha",
+  "Pertsch, René, 33615 Bielefeld",
+  "Trimble; Richard H.",
+  "Klein Bicycle Corporation",
+  "Williams; Richard L.",
+  "Cannondale Corporation",
+  "Halson Designs, Inc.",
+  "Sr Suntour Inc.",
+  "Hirotetsu Motobu",
+  "Lawwill; Mert",
+  "Ijams; Dav",
+  "Girvin, Inc.",
+  "Cannondale Corporation",
+  "Rockshox, Inc.",
+  "Leitner; Horst",
+  "Hwang; Chiuon T.",
+  "Kabushiki Kaisha Daikin Seisakusho",
+  "Gnieser Gmbh Auto Technik",
+  "Peugeot Motocycles",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Brigden; Paul H.",
+  "Klaus Kramer",
+  "Bayerische Motoren Werke Aktiengesellschaft, Patentabteilung AJ-3",
+  "Cato Hals",
+  "Michael Schaefer",
+  "Voss; Darrell W.",
+  "Roerig; Scott",
+  "Yamaha Hatsudoki Kabushiki Kaisha",
+  "Bayersiche Motoren Werke Aktiengesellschaft",
+  "Tenneco Automotive Inc.",
+  "Bastin-Logan Water Services, Inc.",
+  "Honda Motor Co Ltd",
+  "Woodside; Terence D.",
+  "Answer Products, Inc.",
+  "General Motors Corporation",
+  "Eric Offenstadt",
+  "Hoose; Howard",
+  "Nohr; Mark W.",
+  "Ultimate Sports Engineering Ltd.",
+  "Giant Manufacturing Co., Ltd.",
+  "Leonardo Enrique Maximo Aparicio",
+  "Honda Motor Co Ltd",
+  "Honda Motor Co Ltd",
+  "Honda Motor Co Ltd",
+  "Honda Motor Co Ltd",
+  "Honda Motor Co Ltd",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Bynoe; Wayne",
+  "Engineered Progression Inc.",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "K2 Bike Inc.",
+  "Pickering; Gregory Lee",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Jeff Wilson",
+  "Jeeng-Neng Fan",
+  "Excelsior-Henderson Motorcyle Co.",
+  "Frederick G. Eitel",
+  "Shinji Ito",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Howard Hoose",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Carl W. Schonfeld",
+  "öHLINS RACING AB",
+  "Odom Harold Paul",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Giant Manufacturing Co., Ltd.",
+  "Lansac Hervi",
+  "Randall G. Falk",
+  "Kenji Kofuji",
+  "Bill Huang",
+  "Russell W. Strong",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Cato Hals",
+  "Showa Corporation",
+  "HS Products Engineering GmbH",
+  "Kinzler Frederick W",
+  "Wimmer Martin F",
+  "Delphi Technologies, Inc.",
+  "Adrian Michael Griffiths",
+  "Wimmer Martin F",
+  "Voss Darrell W",
+  "David Frank Pokrywka",
+  "Showa Corporation",
+  "Edwin Robinson",
+  "John Paul",
+  "Costa Vincenzo F",
+  "Hsueh-Yi Chen",
+  "Hsueh-Yi Chen",
+  "Hsueh-Yi Chen",
+  "Fox Factory, Inc.",
+  "Hsueh-Yi Chen",
+  "Hsueh-Yi Chen",
+  "Jean-Michel Thiers",
+  "Honda Motor Company, Ltd.",
+  "Fox Factory, Inc.",
+  "Douglas L. Vardon",
+  "Martin Trebichavsky",
+  "Matthieu Carmel Alfano",
+  "American Design and Master-Craft Initiative, LLC",
+  "Specialized Bicycle Components, Inc.",
+  "Answer Products, Inc.",
+  "Thomas; James Gregory",
+  "Rockshox, Inc.",
+  "Shen Shye Metal Mfg Co Ltd",
+  "Bayerische Motoren Werke Ag",
+  "Trek Bicycle Corporation",
+  "Rocky Mountain Bicycles - A Division Of Procycle Group Inc.",
+  "Zf Friedrichshafen Ag",
+  "Shen Shye Metal Mfg Co Ltd",
+  "Wootten Dennis K",
+  "Hl Corp Shenzhen Co Ltd",
+  "菲力工業股份有限公司",
+  "Firestone Industrial Products Company, Llc",
+  "Softwheel Ltd.",
+  "カヤバ工業株式会社",
+  "Firestone Industrial Products Company, Llc",
+  "ヤマハ発動機株式会社",
+  "Firestone Industrial Products Company, Llc",
+  "Arnott T&P Holding, Llc",
+  "Hendrickson Usa, L.L.C.",
+  "Firestone Industrial Products Company, Llc",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Excelsior Supply Company",
+  "Frederic Halliday George",
+  "Thomas Getchell Kelly",
+  "E R Thomas Motor Company",
+  "Thomas Ashburn",
+  "Paul Joseph Jorat",
+  "Alberic De La Celle",
+  "Friedrich Sprung",
+  "James H Sager",
+  "Albert Keller Dorian",
+  "Aurora Automatic Machinery Co",
+  "Aurora Automatic Machinery Co",
+  "John W Gates",
+  "Charles A Redmond",
+  "Daniel Pierce Haven",
+  "Henry E Pilgrim",
+  "R K Holmes",
+  "Louis M Schmidt",
+  "Fred H Pommer",
+  "Samuel Robinson Ridgway",
+  "Walther Schmied",
+  "Charles R Kittle",
+  "Archibald H Stewart",
+  "Norbert H Schickel",
+  "Mary Elizabeth Johnson",
+  "Wilfred Bramham",
+  "Martin Ekstrom",
+  "George Featherstone Shimmin",
+  "Hendee Mfg Company",
+  "Giuseppe Stagni",
+  "Davis Sewing Machine Company",
+  "William Holder Osborne",
+  "Andrew S Grant",
+  "Aurora Automatic Machinery Co",
+  "William Holder Osborne",
+  "Orin F Perry",
+  "Russell Henry Horton",
+  "Harley Davidson Motor Co Inc",
+  "William Johnston",
+  "Paul C Mellantine",
+  "Pullin Cyril George",
+  "Armes De Guerre Fab Nat",
+  "Brampton Brothers Ltd",
+  "Harley Davidson Motor Co Inc",
+  "Wolff Louis",
+  "Cyclette",
+  "Harry Markham",
+  "Ottis G Bloom",
+  "John Percy Maclean",
+  "Koeln Lindenthaler Metallwerke",
+  "G R S Products Company Inc",
+  "Bowden Wire Ltd",
+  "Narazo Shimazu",
+  "Frederick Henry Grubb",
+  "William Holder Osborne",
+  "Zundapp Ges Fuer Den Dau Von S",
+  "Harley Davidson Motor Co Inc",
+  "Kanai Kunzo",
+  "Fisker & Nielsen As",
+  "Spiegler Earl Charles",
+  "Alexis R Pribil",
+  "Westfield Mfg Company",
+  "Reginald Roberts",
+  "Briggs Mfg Co",
+  "Frank W Schwinn",
+  "Kenneth M Hazelroth",
+  "George K Mulholland",
+  "Latscher-Latka Eric",
+  "Ohio Rubber Co",
+  "Henry J Kaiser Company",
+  "Enfield Cycle Co Ltd",
+  "Frank Talbot Robson",
+  "Sydney William Hardy",
+  "Ryder Elmer",
+  "Rostan Theodore",
+  "Lars O Thorkildsen",
+  "Cullen H Dean",
+  "Willard W Barnett",
+  "John W Moore",
+  "Robert A Macgregor",
+  "Murray Ohio Mfg Co",
+  "Eugene H Jordan",
+  "Benson Ben",
+  "Cleveland Welding Co",
+  "Whizzer Motor Company",
+  "William G Spencer",
+  "Adrienne M Sherwood",
+  "Ralph E Franks",
+  "Landrum Porter",
+  "Torre Pier Luigi",
+  "Mecanique Et Pieces Detachees",
+  "Adrienne M Sherwood",
+  "Invacar Ltd",
+  "Benjamin J Miller",
+  "Murray Ohio Mfg Co",
+  "Dunlop Rubber Co",
+  "Torre Pier Luigi",
+  "Innocenti",
+  "Norton Motors Ltd",
+  "App De Controle Et D Equipment",
+  "Monark Silver King Inc",
+  "P Besset Ets",
+  "Josef Mindrup",
+  "Armstrong Patents Co Ltd",
+  "N S U Werke A G",
+  "Triumph Engineering Company Lt",
+  "John D Henry",
+  "Nuernberger Hercules Werke G M",
+  "Edward P Lewandoski",
+  "Murray Ohio Mfg Co",
+  "Moulton Consultants Ltd",
+  "John E Gunnerson",
+  "Theodore A Packard",
+  "Frank M Stankovich",
+  "Aloysius F Siebers",
+  "J Harman",
+  "Gen Motors Corp",
+  "Rolf Bock",
+  "Bothwell P",
+  "Takao Inui",
+  "Phillips Ronald F",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Kensei Suzuki",
+  "Bell Theodore F",
+  "Michel Houze",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Supalla Steven A",
+  "Piaggio & C. S.P.A.",
+  "Jillet Didier",
+  "Victoria University Of Manchester",
+  "Univ Manchester",
+  "Petty Preston L",
+  "Diafil International S.A.",
+  "Mcbride Thomas W",
+  "John Slater",
+  "Lauren Strutman",
+  "Cortanze Andre",
+  "Guichard Michel",
+  "Kayaba Kogyo Kabushiki Kaisha",
+  "Courtney Orley R",
+  "Lew Ways Ltd",
+  "Brown G",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Diafil International S.A.",
+  "Diafil International S.A.",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Brown G C",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Battelle Memorial Institute",
+  "Schultz Barry J",
+  "B Schultz",
+  "Showa Manufacturing Co., Ltd.",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Claude Fior",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Yamaha Motor Nv",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Hubertus 4500 Osnabrück Fischer",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Pratt Thomas A",
+  "Yamaha Hatsudoki Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Ekkehard 7566 Weisenbach Au Alschweig",
+  "HAYNES, Terence Anthony",
+  "Terence Anthony Haynes",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Alex Moulton Limited",
+  "Alex Moulton Limited",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Simons Stephen W",
+  "Parker James G",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Elf France",
+  "Richard Rose",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Richardson Wayne U",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Bayerische Motoren Werke, Ag",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Elf France",
+  "Zen Pietro",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Terence Anthony Haynes",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Elf France",
+  "Elf France",
+  "Mert Lawwill",
+  "Huntly Robert B",
+  "Mitsubishi Electric Corp",
+  "Industrial Technology Research Institute",
+  "Harley-Davidson, Inc.",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Kawasaki Heavy Ind Ltd",
+  "Elf France",
+  "Hartmann Dirck T",
+  "Franck Savard",
+  "Kabushiki Kaisha Showa Seisakusho",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Peter Mickenbecker",
+  "Elf France",
+  "Rockshox, Inc.",
+  "Rockshox Inc",
+  "Hartmann Dirck T",
+  "Shultz G Merle",
+  "Beinhauer, Uwe, 6380 Bad Homburg",
+  "De Bei Claudio",
+  "Marinus Johannes Meijers",
+  "Fuller Robert B",
+  "Cannondale Corporation",
+  "Browning Michael R S",
+  "Cannondale Corporation",
+  "Bimota S.P.A.",
+  "Robinson; Russell",
+  "Russell Robinson",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Boge Ag",
+  "Robert Reisinger",
+  "Yamaha Hatsudoki Kabushiki Kaisha",
+  "Yamaha Hatsudoki Kabushiki Kaisha",
+  "Otto Gally",
+  "Jae Shin Yun",
+  "Showa Manufacturing Co., Ltd.",
+  "Rockshox, Inc.",
+  "Dan Ken Industrial Co., Ltd.",
+  "Cannondale Corporation",
+  "Heinrich Griesel",
+  "Williams; Richard L.",
+  "Bridgestone Cycle Co",
+  "Mert Lawwill",
+  "Wilson Stephen R",
+  "Lawwill; Mert",
+  "Wilson Stephen R",
+  "Leitner; Horst",
+  "Yamaha Hatsudoki Kabushiki Kaisha",
+  "Moore James D",
+  "Mazoue Gerard",
+  "Mazoue Gerard",
+  "Hirotetsu Motobu",
+  "Klein Bicycle Corporation",
+  "Chen Tsai L",
+  "Chen Tsai L",
+  "Sr Suntour Inc.",
+  "Trimble; Richard H.",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Cannondale Corporation",
+  "Ijams; Dav",
+  "Cannondale Corporation",
+  "Girvin, Inc.",
+  "HS Products Engineering GmbH",
+  "Bettis Corporation",
+  "Kabushiki Kaisha Daikin Seisakusho",
+  "Brigden; Paul H.",
+  "Düwel, Norbert, 32683 Barntrup",
+  "Koppelberg Guenter",
+  "Koppelberg; Guenter",
+  "Scheffer, Lutz, 79211 Denzlingen",
+  "Voss; Darrell W.",
+  "Rockshox, Inc.",
+  "Halson Designs, Inc.",
+  "Pertsch, René, 33615 Bielefeld",
+  "Hwang; Chiuon T.",
+  "Gnieser Gmbh Auto Technik",
+  "Peugeot Motocycles",
+  "Bayersiche Motoren Werke Aktiengesellschaft",
+  "Bayerische Motoren Werke Aktiengesellschaft, Patentabteilung AJ-3",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Roerig; Scott",
+  "Answer Products, Inc.",
+  "Klaus Kramer",
+  "Bastin-Logan Water Services, Inc.",
+  "Tenneco Automotive Inc.",
+  "Nohr; Mark W.",
+  "Cato Hals",
+  "Michael Schaefer",
+  "Engineered Progression Inc.",
+  "Woodside; Terence D.",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Pickering; Gregory Lee",
+  "Howard Hoose",
+  "Hoose; Howard",
+  "K2 Bike Inc.",
+  "General Motors Corporation",
+  "Excelsior-Henderson Motorcyle Co.",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Motor Co Ltd",
+  "Frederick G. Eitel",
+  "Lansac, Hervé",
+  "Lansac Hervi",
+  "Giant Manufacturing Co., Ltd.",
+  "Eric Offenstadt",
+  "Carl W. Schonfeld",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Jeff Wilson",
+  "Ultimate Sports Engineering Ltd.",
+  "Ultimate Sports Engineering Limited",
+  "Leonardo Enrique Maximo Aparicio",
+  "Bynoe; Wayne",
+  "Honda Motor Co Ltd",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Motor Co Ltd",
+  "Honda Motor Co Ltd",
+  "Honda Motor Co Ltd",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Motor Co Ltd",
+  "Cato Hals",
+  "öHLINS RACING AB",
+  "Jeeng-Neng Fan",
+  "Shinji Ito",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Odom Harold Paul",
+  "Randall G. Falk",
+  "Giant Manufacturing Co., Ltd.",
+  "Voss Darrell W",
+  "Russell W. Strong",
+  "Fox Factory, Inc.",
+  "Edwin Robinson",
+  "Wimmer Martin F",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Kenji Kofuji",
+  "Adrian Michael Griffiths",
+  "Kinzler Frederick W",
+  "Showa Corporation",
+  "Wimmer Martin F",
+  "Wimmer Martin F",
+  "Bill Huang",
+  "Delphi Technologies, Inc.",
+  "Showa Corporation",
+  "Costa Vincenzo F",
+  "David Frank Pokrywka",
+  "Jean-Michel Thiers",
+  "John Paul",
+  "Hsueh-Yi Chen",
+  "Hsueh-Yi Chen",
+  "Hsueh-Yi Chen",
+  "Hsueh-Yi Chen",
+  "Honda Motor Company, Ltd.",
+  "Hsueh-Yi Chen",
+  "Martin Trebichavsky",
+  "Martin Trebichavsky",
+  "Fox Factory, Inc.",
+  "Douglas L. Vardon",
+  "Specialized Bicycle Components, Inc.",
+  "Matthieu Carmel Alfano",
+  "American Design and Master-Craft Initiative, LLC",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Trvstper, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Sram, Llc"
+ ],
+ "assignee_current": [
+  "Specialized Bicycle Components Holding Co Inc"
+ ],
+ "application": "US15/661,821",
+ "priority_date": "2017-07-27",
+ "filing_date": "2017-07-27",
+ "publication_date": "2019-02-05",
+ "grant_date": "2019-02-05",
+ "status": "Active",
+ "expiry_events": [
+  {
+   "date": "2037-07-27",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  }
+ ],
+ "abstract": "A trailing link multi-bar suspension assembly for a cycle having improved stability includes a first arm having a first arm fixed pivot and a first arm shock pivot. A shock link has a shock link fixed pivot and a shock link floating pivot. A shock absorber has a first shock mount and a second shock mount. A wheel carrier has a wheel carrier first pivot and a wheel carrier second pivot spaced apart from one another, and a wheel mount that is adapted to be connected to a wheel. A control link has a control link floating pivot and a control link fixed pivot, the control link floating pivot being pivotably connected to the wheel carrier second pivot, and the control link fixed pivot being pivotably connected to the first arm control pivot.",
+ "family": [
+  "CN109305274A",
+  "CN209159906U",
+  "EP3658450A1",
+  "TW201910184A",
+  "TWI697432B",
+  "US10196106B1",
+  "US10689061B2",
+  "US20190031275A1",
+  "US20190168838A1",
+  "WO2019023187A1"
+ ],
+ "cites": [
+  {
+   "pn": "US389200A",
+   "title": "cleg-a"
+  },
+  {
+   "pn": "US393387A",
+   "title": "Velocipede"
+  },
+  {
+   "pn": "US400727A",
+   "title": "Spring-fork for bicycles"
+  },
+  {
+   "pn": "US412322A",
+   "title": "Velocipede"
+  },
+  {
+   "pn": "US414048A",
+   "title": "Velociped"
+  },
+  {
+   "pn": "US423471A",
+   "title": "Petehg"
+  },
+  {
+   "pn": "US426402A",
+   "title": "Bicycle"
+  },
+  {
+   "pn": "US435477A",
+   "title": "Half to henry t"
+  },
+  {
+   "pn": "US441649A",
+   "title": "John boyd dunlop"
+  },
+  {
+   "pn": "US443266A",
+   "title": "Velocipede-fork"
+  },
+  {
+   "pn": "US444639A",
+   "title": "Bicycle"
+  },
+  {
+   "pn": "US447234A",
+   "title": "Bicycle"
+  },
+  {
+   "pn": "US467794A",
+   "title": "Bicycle"
+  },
+  {
+   "pn": "US468643A",
+   "title": "clement"
+  },
+  {
+   "pn": "US524389A",
+   "title": "Bicycle"
+  },
+  {
+   "pn": "US602354A",
+   "title": "Bicycle"
+  },
+  {
+   "pn": "US638723A",
+   "title": "Bicycle."
+  },
+  {
+   "pn": "US739476A",
+   "title": "Cushion-truss for cycles."
+  },
+  {
+   "pn": "US783236A",
+   "title": "Bicycle or tricycle."
+  },
+  {
+   "pn": "FR347724A",
+   "title": "Anti-vibration fork for motorcycles and bicycles"
+  },
+  {
+   "pn": "FR353990A",
+   "title": "Shock-resistant elastic suspension for bicycles and other vehicles"
+  },
+  {
+   "pn": "FR350269A",
+   "title": "Suspension for bicycles, tricycles, motorcycles, instantly adapting"
+  },
+  {
+   "pn": "US848324A",
+   "title": "Bicycle attachment."
+  },
+  {
+   "pn": "FR376759A",
+   "title": "Elastic fork for bicycles and motorcycles"
+  },
+  {
+   "pn": "US913961A",
+   "title": "Bicycle-frame."
+  },
+  {
+   "pn": "US927989A",
+   "title": "Bicycle."
+  },
+  {
+   "pn": "US940245A",
+   "title": "Spring-fork for wheeled vehicles."
+  },
+  {
+   "pn": "US946143A",
+   "title": "Bicycle-frame."
+  },
+  {
+   "pn": "US953697A",
+   "title": "Wheeled vehicle."
+  },
+  {
+   "pn": "US973071A",
+   "title": "Shock-absorbing attachment for bicycles."
+  },
+  {
+   "pn": "US979674A",
+   "title": "Spring-fork for wheeled vehicles."
+  },
+  {
+   "pn": "US980999A",
+   "title": "Spring-cushion fork structure for motor-cycles."
+  },
+  {
+   "pn": "US989638A",
+   "title": "Cushion-fork."
+  },
+  {
+   "pn": "US1000115A",
+   "title": "Bicycle shock-absorber."
+  },
+  {
+   "pn": "US1036263A",
+   "title": "Spring-fork for wheeled vehicles."
+  },
+  {
+   "pn": "US1042480A",
+   "title": "Spring-fork for cycles and motor-cycles."
+  },
+  {
+   "pn": "US1077105A",
+   "title": "Bicycle wheel suspension."
+  },
+  {
+   "pn": "CH63758A",
+   "title": "Spring suspension device on vehicles"
+  },
+  {
+   "pn": "US1096417A",
+   "title": "Spring-fork."
+  },
+  {
+   "pn": "FR467213A",
+   "title": "Improvements to motorcycles"
+  },
+  {
+   "pn": "US1101614A",
+   "title": "Shock-absorber."
+  },
+  {
+   "pn": "US1132829A",
+   "title": "Cycle-frame."
+  },
+  {
+   "pn": "US1144753A",
+   "title": "Fork for bicycles and the like."
+  },
+  {
+   "pn": "US1166156A",
+   "title": "Spring-fork for cycles, motor-cycles, and the like."
+  },
+  {
+   "pn": "US1189874A",
+   "title": "Mounting for vehicle-wheels."
+  },
+  {
+   "pn": "US1203927A",
+   "title": "Motor fore-carriage for bicycles and similar vehicles."
+  },
+  {
+   "pn": "US1213995A",
+   "title": "Spring-fork for motor-cycles."
+  },
+  {
+   "pn": "US1223572A",
+   "title": "Spring-fork for cycles, motor-cycles, and the like."
+  },
+  {
+   "pn": "US1227634A",
+   "title": "Vehicle."
+  },
+  {
+   "pn": "US1251992A",
+   "title": "Spring-fork for cycles, motor-cycles, and the like."
+  },
+  {
+   "pn": "US1254798A",
+   "title": "Spring motor-cycle fork."
+  },
+  {
+   "pn": "US1273179A",
+   "title": "Mounting for maching-guns and the like."
+  },
+  {
+   "pn": "US1298958A",
+   "title": "Bicycle-frame."
+  },
+  {
+   "pn": "US1333449A",
+   "title": "Shock-absorber"
+  },
+  {
+   "pn": "US1365524A",
+   "title": "Motorcycle fork extension"
+  },
+  {
+   "pn": "GB166065A",
+   "title": "Improvements in spring forks for cycles and the like"
+  },
+  {
+   "pn": "US1397850A",
+   "title": "Spring-fork for motorcycles"
+  },
+  {
+   "pn": "US1432376A",
+   "title": "Resilient attachment for bicycles"
+  },
+  {
+   "pn": "FR547006A",
+   "title": "Front elastic fork for bicycles"
+  },
+  {
+   "pn": "US1452436A",
+   "title": "Front fork for velocipedes"
+  },
+  {
+   "pn": "FR559088A",
+   "title": "Elastic fork for motor bicycles and motorcycles"
+  },
+  {
+   "pn": "US1475044A",
+   "title": "Shock absobbeb"
+  },
+  {
+   "pn": "GB223638A",
+   "title": "Improved spring fork for motor cycles, cycles & the like"
+  },
+  {
+   "pn": "US1517146A",
+   "title": "Bicycle shock absorber"
+  },
+  {
+   "pn": "FR28240E",
+   "title": "Elastic fork"
+  },
+  {
+   "pn": "US1527133A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "GB238069A",
+   "title": "Improvements in spring forks for motor cycles and other cycles"
+  },
+  {
+   "pn": "GB239848A",
+   "title": "Shock absorber for vehicles"
+  },
+  {
+   "pn": "GB258141A",
+   "title": "Improvements in or relating to the heads and spring forks of cycles, motor cycles and the like"
+  },
+  {
+   "pn": "US1605680A",
+   "title": "Frame for motor cycles"
+  },
+  {
+   "pn": "GB264003A",
+   "title": "Improvements in or connected with shock absorbers or vibration dampers for use with vehicles, machinery, shafting, or other apparatus having a part movable relatively to another part"
+  },
+  {
+   "pn": "GB279630A",
+   "title": "Improvements in and relating to forks for the front or steering wheels of cycles, motor cycles, tricycles and the like"
+  },
+  {
+   "pn": "FR636211A",
+   "title": ""
+  },
+  {
+   "pn": "GB302026A",
+   "title": "An improved shock or rebound absorbing means for the forks of motor cycles and the like"
+  },
+  {
+   "pn": "GB322370A",
+   "title": "Improvements in or relating to motor cycle frames"
+  },
+  {
+   "pn": "US1834308A",
+   "title": "Motor cycle front fork and front fork assembly"
+  },
+  {
+   "pn": "US1924363A",
+   "title": "Front wheel drive motorcycle"
+  },
+  {
+   "pn": "DK49600C",
+   "title": "Front fork device for Bicycles, in particular Motorcycles."
+  },
+  {
+   "pn": "US2038011A",
+   "title": "Mounting for vehicle wheels"
+  },
+  {
+   "pn": "US2073736A",
+   "title": "Resilient mounting for bicycle wheels"
+  },
+  {
+   "pn": "US2087299A",
+   "title": "Trailer"
+  },
+  {
+   "pn": "GB469697A",
+   "title": "Improvements relating to spring forks for cycles and like vehicles"
+  },
+  {
+   "pn": "US2160034A",
+   "title": "Bicycle spring fork mechanism"
+  },
+  {
+   "pn": "US2203342A",
+   "title": "Spring device"
+  },
+  {
+   "pn": "US2233313A",
+   "title": "Bicycle shock absorber"
+  },
+  {
+   "pn": "US2271304A",
+   "title": "Trailer unit"
+  },
+  {
+   "pn": "US2303568A",
+   "title": "Resilient wheel mounting"
+  },
+  {
+   "pn": "US2376788A",
+   "title": "Motorcycle springing"
+  },
+  {
+   "pn": "FR902973A",
+   "title": "Elastic cycle fork"
+  },
+  {
+   "pn": "GB585122A",
+   "title": "Improvements in shock absorbing means for motorbicycle and tricycle wheels"
+  },
+  {
+   "pn": "GB585904A",
+   "title": "Improvements in cycle forks"
+  },
+  {
+   "pn": "GB586372A",
+   "title": "Improvements in or relating to telescopic spring forks for motor-cycles"
+  },
+  {
+   "pn": "US2462711A",
+   "title": "Front wheel bicycle knee action"
+  },
+  {
+   "pn": "US2463310A",
+   "title": "Independently suspended motor vehicle characterized by a low center of gravity"
+  },
+  {
+   "pn": "US2464326A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2475774A",
+   "title": "Fork for motorcycles"
+  },
+  {
+   "pn": "US2485484A",
+   "title": "Bicycle shock absorber"
+  },
+  {
+   "pn": "US2486430A",
+   "title": "Motor bike frame"
+  },
+  {
+   "pn": "US2489821A",
+   "title": "Bicycle attachment"
+  },
+  {
+   "pn": "US2504452A",
+   "title": "Motor bicycle construction"
+  },
+  {
+   "pn": "US2525171A",
+   "title": "Front wheel suspension"
+  },
+  {
+   "pn": "US2537679A",
+   "title": "Front wheel suspension for bicycles"
+  },
+  {
+   "pn": "FR972653A",
+   "title": "Elastic fork for cycles"
+  },
+  {
+   "pn": "US2540585A",
+   "title": "Fork assemblage for bicycles"
+  },
+  {
+   "pn": "US2543991A",
+   "title": "Spring fork mechanism"
+  },
+  {
+   "pn": "US2550876A",
+   "title": "Bicycle fork mechanism"
+  },
+  {
+   "pn": "CA474575A",
+   "title": "Forked wheel mountings for cycles"
+  },
+  {
+   "pn": "US2561156A",
+   "title": "Bicycle fork"
+  },
+  {
+   "pn": "BE507753A",
+   "title": ""
+  },
+  {
+   "pn": "US2588889A",
+   "title": "Motor wheel and mounting strut"
+  },
+  {
+   "pn": "US2596411A",
+   "title": "Motorcycle and its front steering fork"
+  },
+  {
+   "pn": "US2636567A",
+   "title": "Motorcycle frame, spring suspension, and shock absorbing mechanism therefor"
+  },
+  {
+   "pn": "GB691551A",
+   "title": "Improvements in or relating to spring mountings for vehicle wheels"
+  },
+  {
+   "pn": "FR1030006A",
+   "title": "Improvements to the suspension of bicycles"
+  },
+  {
+   "pn": "FR1032268A",
+   "title": "Telescopic suspension fork, adaptable, for motorcycles and mopeds"
+  },
+  {
+   "pn": "US2649312A",
+   "title": "Fork attachment for springing bicycle wheels"
+  },
+  {
+   "pn": "US2660455A",
+   "title": "Guided suspension means for bicycle steering wheels"
+  },
+  {
+   "pn": "FR1059922A",
+   "title": "Elastic suspension and steering device for cycles, motorcycles and other similar vehicles"
+  },
+  {
+   "pn": "FR1064265A",
+   "title": "Improvement in suspensions"
+  },
+  {
+   "pn": "FR1067221A",
+   "title": "Improvements to suspension devices for the wheels of motorcycles and other similar vehicles"
+  },
+  {
+   "pn": "GB717259A",
+   "title": "Improvements in or relating to forked wheel suspension systems for motor cycles"
+  },
+  {
+   "pn": "GB720093A",
+   "title": "Improvements relating to shock absorbers for the forks of cycles or like vehicles"
+  },
+  {
+   "pn": "FR1082316A",
+   "title": "Elastic fork for bicycles with auxiliary motor, mopeds, motorcycles or the like"
+  },
+  {
+   "pn": "US2708112A",
+   "title": "Shock absorbers"
+  },
+  {
+   "pn": "US2729465A",
+   "title": "Springing system for a motorcycle wheel"
+  },
+  {
+   "pn": "US2752167A",
+   "title": "Spring fork structure for bicycles"
+  },
+  {
+   "pn": "US2751991A",
+   "title": "Mounting of bicycle front wheel and auxiliary drive engine therefor"
+  },
+  {
+   "pn": "US2756070A",
+   "title": "Spring suspension system for motorcycle front wheels"
+  },
+  {
+   "pn": "US2756832A",
+   "title": "Steerable strut with mountings for drive motor and wheel"
+  },
+  {
+   "pn": "GB824866A",
+   "title": "A swinging-lever, sprung-fork suspension, in particular but not exclusively for the front wheel of motor-cycles or motor-scooters"
+  },
+  {
+   "pn": "US2918306A",
+   "title": "Hydraulic vehicle suspension system"
+  },
+  {
+   "pn": "DE1084599B",
+   "title": "Spring-loaded front fork for bicycles, mopeds, motorcycles or the like."
+  },
+  {
+   "pn": "GB841523A",
+   "title": "Improvements in or relating to spring forks for motorcycles or the like"
+  },
+  {
+   "pn": "US2953395A",
+   "title": "Motorcycle front wheel suspension"
+  },
+  {
+   "pn": "US2969992A",
+   "title": "Spring suspension for bicycle wheel"
+  },
+  {
+   "pn": "US2976056A",
+   "title": "Bicycle suspension system"
+  },
+  {
+   "pn": "DE1122392B",
+   "title": "One-armed swing arm to cushion a wheel on a two-wheeled vehicle"
+  },
+  {
+   "pn": "US3083038A",
+   "title": "Telescopic spring suspension systems for the front wheels of bicycles, mopeds, motor scooters and motor cycles"
+  },
+  {
+   "pn": "US3133748A",
+   "title": "Resilient mounting for bicycle rear wheel"
+  },
+  {
+   "pn": "US3433318A",
+   "title": "Powered steerable wheel and suspension means for vehicles"
+  },
+  {
+   "pn": "US3694004A",
+   "title": "Front wheel mounting for bicycles"
+  },
+  {
+   "pn": "US3701544A",
+   "title": "Motorcycle front end assembly"
+  },
+  {
+   "pn": "US3730553A",
+   "title": "Front fork assembly for two wheel vehicles"
+  },
+  {
+   "pn": "US3774935A",
+   "title": "Pitch suppressing system"
+  },
+  {
+   "pn": "US3942821A",
+   "title": "Bicycle suspension"
+  },
+  {
+   "pn": "US3944254A",
+   "title": "Shock-absorbing device"
+  },
+  {
+   "pn": "US3954284A",
+   "title": "Bicycle wheel suspension means"
+  },
+  {
+   "pn": "US3989261A",
+   "title": "Motorcycle front-wheel suspension with means for restraint of compression of a telescopic front upon braking"
+  },
+  {
+   "pn": "US4057264A",
+   "title": "Front fork for suspending a front wheel of a motorcycle"
+  },
+  {
+   "pn": "GB1540824A",
+   "title": "Two-wheeled vehicles"
+  },
+  {
+   "pn": "US4147371A",
+   "title": "Telescopic front fork construction for motorcycle"
+  },
+  {
+   "pn": "US4153237A",
+   "title": "Hydrapneumatic suspension unit and valving structure"
+  },
+  {
+   "pn": "GB1545403A",
+   "title": "Motorcycle front fork assembly"
+  },
+  {
+   "pn": "US4159123A",
+   "title": "Motorcycle braking mechanism including means for controlling telescoping action of the front fork means"
+  },
+  {
+   "pn": "US4162797A",
+   "title": "Exercise tricycle"
+  },
+  {
+   "pn": "FR2418742A1",
+   "title": "Motorcycle front suspension - has pivoted cranks and ball joints forming deformable quadrilateral linkage which resists change of shape"
+  },
+  {
+   "pn": "US4170369A",
+   "title": "Bicycle wheel suspension, driving and braking assembly"
+  },
+  {
+   "pn": "US4179135A",
+   "title": "Motorcycle front wheel suspension system"
+  },
+  {
+   "pn": "US4180280A",
+   "title": "Front-wheel suspension for two- or three-wheeled vehicles"
+  },
+  {
+   "pn": "US4186936A",
+   "title": "Front suspension, in particular for a vehicle having two wheels and vehicle provided with said suspension"
+  },
+  {
+   "pn": "US4189168A",
+   "title": "Wheel suspension system for a vehicle"
+  },
+  {
+   "pn": "US4212481A",
+   "title": "Suspension system for vehicle wheels"
+  },
+  {
+   "pn": "GB2038736A",
+   "title": "Resilient suspension of cycle wheels"
+  },
+  {
+   "pn": "GB2052407A",
+   "title": "Vehicle anti-drive braking arrangement"
+  },
+  {
+   "pn": "US4265329A",
+   "title": "Frameless motorcycle"
+  },
+  {
+   "pn": "US4268055A",
+   "title": "Bicycle fork assembly"
+  },
+  {
+   "pn": "US4295658A",
+   "title": "Front end shock absorbing apparatus for wheeled vehicle"
+  },
+  {
+   "pn": "GB2073680A",
+   "title": "Vehicle anti-dive braking arrangement"
+  },
+  {
+   "pn": "WO1982000445A1",
+   "title": "Vehicular suspension"
+  },
+  {
+   "pn": "FR2494208A2",
+   "title": "Motor cycle front suspension - has leading link suspension with steering via sliding rods from handlebars"
+  },
+  {
+   "pn": "US4367882A",
+   "title": "Suspension apparatus"
+  },
+  {
+   "pn": "GB2106843A",
+   "title": "Motor cycle suspension"
+  },
+  {
+   "pn": "DE3133576A1",
+   "title": "Anti-dive control for telescopic forks in single-track vehicles"
+  },
+  {
+   "pn": "US4388978A",
+   "title": "Suspension system for cycles and in particular for motorcycles"
+  },
+  {
+   "pn": "US4401316A",
+   "title": "Front suspension for motocycle"
+  },
+  {
+   "pn": "US4406475A",
+   "title": "Front wheel suspension system for motorcycles"
+  },
+  {
+   "pn": "US4410196A",
+   "title": "Suspension system for a motorvehicle wheel, particularly for a motorcycle wheel"
+  },
+  {
+   "pn": "US4421337A",
+   "title": "Bicycle with resiliently yieldable wheel supports"
+  },
+  {
+   "pn": "US4422662A",
+   "title": "Front fork construction for motorcycle"
+  },
+  {
+   "pn": "DE3223728A1",
+   "title": "Device for extending the front wheel fork of single-track motor vehicles"
+  },
+  {
+   "pn": "WO1984000526A1",
+   "title": "A motorcycle front fork assembly"
+  },
+  {
+   "pn": "US4433850A",
+   "title": "Front wheel suspension system for motorcycles"
+  },
+  {
+   "pn": "US4433851A",
+   "title": "Front suspension system for motorcycles"
+  },
+  {
+   "pn": "US4438909A",
+   "title": "Vehicle front fork"
+  },
+  {
+   "pn": "US4444406A",
+   "title": "Front wheel suspension for motorcycles"
+  },
+  {
+   "pn": "US4455032A",
+   "title": "Front wheel suspension for a motor tricycle and associated method"
+  },
+  {
+   "pn": "US4480711A",
+   "title": "Front suspension of light vehicle"
+  },
+  {
+   "pn": "US4520892A",
+   "title": "Two-wheeled vehicle with offset wheel"
+  },
+  {
+   "pn": "US4526249A",
+   "title": "Front suspension system for a motorcycle"
+  },
+  {
+   "pn": "US4531755A",
+   "title": "Suspension system for a front road wheel of a motorcycle"
+  },
+  {
+   "pn": "US4533153A",
+   "title": "Front brake system for motorcycles"
+  },
+  {
+   "pn": "US4540190A",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US4542910A",
+   "title": "Motorcycle suspension system"
+  },
+  {
+   "pn": "US4561669A",
+   "title": "Motorcycle fork"
+  },
+  {
+   "pn": "US4570963A",
+   "title": "Front wheel shock absorbing system for motorcycles"
+  },
+  {
+   "pn": "EP0032170B1",
+   "title": "A front suspension system for a motorcycle"
+  },
+  {
+   "pn": "US4572534A",
+   "title": "Front wheel suspension for motorcycles"
+  },
+  {
+   "pn": "US4576393A",
+   "title": "Bicycle suspension"
+  },
+  {
+   "pn": "US4585245A",
+   "title": "Front fork shock slider for motorcycles and the like"
+  },
+  {
+   "pn": "US4616810A",
+   "title": "Liquid cooled shock absorber"
+  },
+  {
+   "pn": "US4625985A",
+   "title": "Anti dive devices for motorcycles"
+  },
+  {
+   "pn": "US4650027A",
+   "title": "Coupling device between a front suspension and a rear suspension of a vehicle"
+  },
+  {
+   "pn": "WO1987001670A1",
+   "title": "Improvements to motorcycle front suspension"
+  },
+  {
+   "pn": "US4660683A",
+   "title": "Brake device for vehicles"
+  },
+  {
+   "pn": "US4685694A",
+   "title": "Steering apparatus of vehicles"
+  },
+  {
+   "pn": "US4702338A",
+   "title": "Suspension device for a vehicle wheel support arm and front-rear coupling system for said suspension"
+  },
+  {
+   "pn": "US4703839A",
+   "title": "Brake device for motor vehicles"
+  },
+  {
+   "pn": "US4723621A",
+   "title": "Motorcycle"
+  },
+  {
+   "pn": "US4732241A",
+   "title": "Disc brake apparatus"
+  },
+  {
+   "pn": "US4738468A",
+   "title": "Front wheel suspension for a motorcycle"
+  },
+  {
+   "pn": "US4741545A",
+   "title": "Front wheel steering device for motor vehicles"
+  },
+  {
+   "pn": "US4742884A",
+   "title": "Brake device for a motorcycle"
+  },
+  {
+   "pn": "US4744434A",
+   "title": "Wheel suspension system for motorcycles"
+  },
+  {
+   "pn": "JPS63112191U",
+   "title": ""
+  },
+  {
+   "pn": "US4770434A",
+   "title": "Vehicle consisting of two distinct and detachable sections"
+  },
+  {
+   "pn": "US4775163A",
+   "title": "Motorcycle"
+  },
+  {
+   "pn": "US4776609A",
+   "title": "Linkage type of anti-dive suspension system"
+  },
+  {
+   "pn": "US4789174A",
+   "title": "Suspension bicycle"
+  },
+  {
+   "pn": "JPS649887A",
+   "title": "Apparatus for molecular beam source"
+  },
+  {
+   "pn": "JPS649887U",
+   "title": ""
+  },
+  {
+   "pn": "US4807898A",
+   "title": "Motorcycle front suspension and steering system"
+  },
+  {
+   "pn": "US4809802A",
+   "title": "Structure for two-wheeled vehicle"
+  },
+  {
+   "pn": "US4815763A",
+   "title": "Shock absorber for mountain bicycles"
+  },
+  {
+   "pn": "US4828069A",
+   "title": "Motorcycle"
+  },
+  {
+   "pn": "US4834412A",
+   "title": "Motorcycle front wheel suspension device"
+  },
+  {
+   "pn": "JPH01204884A",
+   "title": "Front-wheel steering gear for two wheeler"
+  },
+  {
+   "pn": "US4878558A",
+   "title": "Front fork of a motorcycle"
+  },
+  {
+   "pn": "US4881750A",
+   "title": "ATB shock absorber"
+  },
+  {
+   "pn": "DE8906328U1",
+   "title": "Motorcycle front fork"
+  },
+  {
+   "pn": "US4890857A",
+   "title": "Steerable wheels of land vehicles"
+  },
+  {
+   "pn": "DE3833880A1",
+   "title": "System for preventing or reducing brake-diving of front-wheel suspension systems (anti-dive system)"
+  },
+  {
+   "pn": "US4971344A",
+   "title": "Bicycle with a front fork wheel suspension"
+  },
+  {
+   "pn": "EP0399615A2",
+   "title": "Improved bicycle"
+  },
+  {
+   "pn": "US4993734A",
+   "title": "Coupling device between a steerable wheel and a steering control member"
+  },
+  {
+   "pn": "US4997197A",
+   "title": "Soft suspension bicycle"
+  },
+  {
+   "pn": "US5009451A",
+   "title": "Shock absorber for use in a vehicle"
+  },
+  {
+   "pn": "US5042608A",
+   "title": "Front-wheel-drive motorcycle"
+  },
+  {
+   "pn": "US5050699A",
+   "title": "Transmission for a vehicle having at least one driving wheel"
+  },
+  {
+   "pn": "US5064212A",
+   "title": "Bicycle utilizing the vector system"
+  },
+  {
+   "pn": "US5069467A",
+   "title": "Front shock absorbing unit for motorcycles"
+  },
+  {
+   "pn": "US5069303A",
+   "title": "High performance motorcycle steering mechanism"
+  },
+  {
+   "pn": "DE4119339A1",
+   "title": "Spring mechanism for bicycle - fits in or partly outside slot of fork arm"
+  },
+  {
+   "pn": "US5088705A",
+   "title": "Bicycle shock-absorbing apparatus"
+  },
+  {
+   "pn": "US5133223A",
+   "title": "Device for steering the front wheel of a motor vehicle"
+  },
+  {
+   "pn": "US5156231A",
+   "title": "Suspension-corrective device designed especially for a motorcycle"
+  },
+  {
+   "pn": "US5186481A",
+   "title": "Bicycle with improved front fork wheel suspension"
+  },
+  {
+   "pn": "US5193833A",
+   "title": "Bicycle front suspension, steering & braking system"
+  },
+  {
+   "pn": "US5193832A",
+   "title": "Suspension for bicyles"
+  },
+  {
+   "pn": "JPH0569875A",
+   "title": "Front wheel shock absorber for bicycle"
+  },
+  {
+   "pn": "US5195766A",
+   "title": "Bicycle with front fork suspension"
+  },
+  {
+   "pn": "US5219211A",
+   "title": "Braking system for motorcycle having apportioning control"
+  },
+  {
+   "pn": "FR2687976A1",
+   "title": "Vehicle, particularly bicycle, including trailing-arm suspensions"
+  },
+  {
+   "pn": "US5248159A",
+   "title": "Lightweight self-adjusting semihydraulic suspension system"
+  },
+  {
+   "pn": "US5249650A",
+   "title": "Motorcycle front wheel disc brake arrangement"
+  },
+  {
+   "pn": "US5269549A",
+   "title": "Suspension for bicycles"
+  },
+  {
+   "pn": "US5284352A",
+   "title": "Compression-adjustable bicycle shock-absorbing apparatus"
+  },
+  {
+   "pn": "US5299820A",
+   "title": "Bicycle front suspension"
+  },
+  {
+   "pn": "US5308099A",
+   "title": "Bicycle suspension system"
+  },
+  {
+   "pn": "US5310203A",
+   "title": "Bicycle shock-absorbing apparatus"
+  },
+  {
+   "pn": "DE9404873U1",
+   "title": "Vehicle, especially bicycle or motorcycle"
+  },
+  {
+   "pn": "US5320374A",
+   "title": "Suspension fork"
+  },
+  {
+   "pn": "DE9403640U1",
+   "title": "Wheel guidance on one or both sides for vehicles with brake pitch compensation"
+  },
+  {
+   "pn": "US5328196A",
+   "title": "Wheel suspension system for bicycle"
+  },
+  {
+   "pn": "US5350185A",
+   "title": "Bicycle shock absorber"
+  },
+  {
+   "pn": "US5354085A",
+   "title": "Sprung bicycle"
+  },
+  {
+   "pn": "US5359910A",
+   "title": "Bicycle front fork shock absorbing mechanism"
+  },
+  {
+   "pn": "US5361864A",
+   "title": "Front wheel suspension for motorcycle"
+  },
+  {
+   "pn": "DE9414705U1",
+   "title": "Front swing arm for motorcycles"
+  },
+  {
+   "pn": "US5403028A",
+   "title": "Drive wheel suspension system for human powered vehicle"
+  },
+  {
+   "pn": "US5405159A",
+   "title": "High efficiency bicycle suspension"
+  },
+  {
+   "pn": "US5409248A",
+   "title": "Bicycle suspension"
+  },
+  {
+   "pn": "US5413368A",
+   "title": "Bicycle with trailing arm wheel suspensions"
+  },
+  {
+   "pn": "US5417446A",
+   "title": "Air damping for bicycle shock absorbing fork"
+  },
+  {
+   "pn": "US5427397A",
+   "title": "Wheel suspension type front fork"
+  },
+  {
+   "pn": "US5427208A",
+   "title": "Bicycle front wheel control mechanism"
+  },
+  {
+   "pn": "US5429380A",
+   "title": "Bicycle front suspension"
+  },
+  {
+   "pn": "US5431426A",
+   "title": "Anti-dive apparatus for bicycles"
+  },
+  {
+   "pn": "US5441291A",
+   "title": "Bicycle front fork suspension"
+  },
+  {
+   "pn": "US5449155A",
+   "title": "Suspension skock absorber for bicycles"
+  },
+  {
+   "pn": "US5456480A",
+   "title": "Fork suspension with variable hydraulic damping"
+  },
+  {
+   "pn": "US5462302A",
+   "title": "Double swingarm front suspension for bicycles and motorcycles"
+  },
+  {
+   "pn": "US5498013A",
+   "title": "Bicycle frame having shock absorbing device"
+  },
+  {
+   "pn": "US5509676A",
+   "title": "Shock absorber for a bicycle front fork"
+  },
+  {
+   "pn": "DE19503047A1",
+   "title": "Front wheel suspension for motorcycles"
+  },
+  {
+   "pn": "EP0726198A2",
+   "title": "Suspension for a vehicle with steered front wheel and vehicle comprising this suspension"
+  },
+  {
+   "pn": "US5564534A",
+   "title": "Link between a motorcycle brake caliper and a master cylinder"
+  },
+  {
+   "pn": "US5599034A",
+   "title": "Single arm bicycle suspension fork"
+  },
+  {
+   "pn": "DE19635939A1",
+   "title": "Suspension for front wheel of bicycle"
+  },
+  {
+   "pn": "EP0731017B1",
+   "title": "Telescopic front suspension for a motorcycle"
+  },
+  {
+   "pn": "WO1997046443A1",
+   "title": "A springy fork assembly for a two-wheeled vehicle"
+  },
+  {
+   "pn": "DE19633692A1",
+   "title": "Front wheel suspension for motorcycle"
+  },
+  {
+   "pn": "US5743547A",
+   "title": "High efficiency, high performance leading link fork design for bicycle front wheel suspensions"
+  },
+  {
+   "pn": "US5749590A",
+   "title": "Suspension fork assembly"
+  },
+  {
+   "pn": "US5782313A",
+   "title": "Double swing arm motorcycle front suspension"
+  },
+  {
+   "pn": "US5813684A",
+   "title": "Front wheel suspension for a motorcycle"
+  },
+  {
+   "pn": "US5829773A",
+   "title": "Modular telescopic front fork assembly"
+  },
+  {
+   "pn": "US5855388A",
+   "title": "Floating gauge mount for motorcycle"
+  },
+  {
+   "pn": "JPH1191671A",
+   "title": "Link type front suspension support structure"
+  },
+  {
+   "pn": "US5899478A",
+   "title": "Stability maintaining shock absorbing bicycle front fork and trailing arm assembly"
+  },
+  {
+   "pn": "US5908200A",
+   "title": "Two wheeled vehicle fork with reinforced leg"
+  },
+  {
+   "pn": "US5931489A",
+   "title": "Air bag module with extruded housing"
+  },
+  {
+   "pn": "EP0941916A1",
+   "title": "Telescopic fork suspension"
+  },
+  {
+   "pn": "US6017047A",
+   "title": "Vehicle suspension"
+  },
+  {
+   "pn": "US6036211A",
+   "title": "Bicycle front suspension"
+  },
+  {
+   "pn": "WO2000013961A1",
+   "title": "Anti-dive front suspension"
+  },
+  {
+   "pn": "US6047981A",
+   "title": "Supporting device for a bicycle wheel"
+  },
+  {
+   "pn": "EP0992374A1",
+   "title": "Dual input suspension system using a common spring/shock-absorber device"
+  },
+  {
+   "pn": "JP2000159170A",
+   "title": "Front fender mounting structure for motorcycles"
+  },
+  {
+   "pn": "JP2000159171A",
+   "title": "Front structure of motorcycle"
+  },
+  {
+   "pn": "JP2000159178A",
+   "title": "Front wheel suspension for motorcycles"
+  },
+  {
+   "pn": "JP2000159177A",
+   "title": "Bottom link type front wheel suspension for motorcycles"
+  },
+  {
+   "pn": "JP2000168666A",
+   "title": "Front wheel suspension for motorcycles"
+  },
+  {
+   "pn": "US6089585A",
+   "title": "Telescopically compressible wheel suspension"
+  },
+  {
+   "pn": "US6149173A",
+   "title": "Bicycle having jumping capability"
+  },
+  {
+   "pn": "US6152472A",
+   "title": "Stability maintaining and shock absorbing front fork assembly for bicycles"
+  },
+  {
+   "pn": "US6155370A",
+   "title": "Front suspension device"
+  },
+  {
+   "pn": "US6164424A",
+   "title": "Shock absorber with bypass damping"
+  },
+  {
+   "pn": "US6164675A",
+   "title": "Front suspension for a motorized trike"
+  },
+  {
+   "pn": "US6199885B1",
+   "title": "Suspension system for the front wheel of a motorcycle"
+  },
+  {
+   "pn": "US6244609B1",
+   "title": "Front wheel suspension fork for two wheeled vehicles and method"
+  },
+  {
+   "pn": "US6260870B1",
+   "title": "Structure telescopic-type front fork cushion for bicycles"
+  },
+  {
+   "pn": "US6260869B1",
+   "title": "Motorcycle front suspension system"
+  },
+  {
+   "pn": "US6263994B1",
+   "title": "Advanced motorcycle chassis steering and suspension system"
+  },
+  {
+   "pn": "US20010019197A1",
+   "title": "Front suspension structure"
+  },
+  {
+   "pn": "US6357775B1",
+   "title": "Bottom link type front wheel suspension for motorcycle"
+  },
+  {
+   "pn": "US6371263B1",
+   "title": "Vehicle and vehicle suspension"
+  },
+  {
+   "pn": "US6382374B1",
+   "title": "Brake system for a motorcycle"
+  },
+  {
+   "pn": "US6386567B1",
+   "title": "Bicycle with shock absorber"
+  },
+  {
+   "pn": "US6402175B1",
+   "title": "Front wheel suspension for preferably a motorcycle"
+  },
+  {
+   "pn": "US20020084619A1",
+   "title": "Vehicle front suspension system"
+  },
+  {
+   "pn": "US6485043B2",
+   "title": "Front suspension structure for motorcycle"
+  },
+  {
+   "pn": "US6488300B2",
+   "title": "Link type front suspension structure"
+  },
+  {
+   "pn": "US6517096B2",
+   "title": "Shock absorbing device used in a bicycle to reduce shock transmitted to a handlebar"
+  },
+  {
+   "pn": "US6517095B1",
+   "title": "Suspended front fork for mountain bike and motorcycle"
+  },
+  {
+   "pn": "US6533305B1",
+   "title": "Motorcycle front wheel suspension system having pneumatic springs and a dedicated pressure air source"
+  },
+  {
+   "pn": "US20040036250A1",
+   "title": "Link-type front suspension device in motorcycle"
+  },
+  {
+   "pn": "US6783140B1",
+   "title": "Bicycle front fork vibration-proof structure"
+  },
+  {
+   "pn": "US6789810B2",
+   "title": "Integrated wheel suspension system"
+  },
+  {
+   "pn": "US6908092B2",
+   "title": "Link type suspension for vehicle such as motorcycle"
+  },
+  {
+   "pn": "US6910702B1",
+   "title": "All-suspension bicycle frame with isolated drive gear"
+  },
+  {
+   "pn": "US6918605B2",
+   "title": "Inverted type front fork in two-wheeled vehicle or the like"
+  },
+  {
+   "pn": "EP0728093B2",
+   "title": "Device for spring-loaded wheel control in the frame of a bicycle"
+  },
+  {
+   "pn": "US7011325B2",
+   "title": "Adjustable length suspension fork for a bicycle"
+  },
+  {
+   "pn": "US7140627B2",
+   "title": "Front wheel suspension system for vehicles having a single front wheel"
+  },
+  {
+   "pn": "US7159883B2",
+   "title": "Front suspension for vehicles with front steerable wheel"
+  },
+  {
+   "pn": "US7210695B2",
+   "title": "Suspension systems"
+  },
+  {
+   "pn": "US7331594B2",
+   "title": "Front wheel suspension system for vehicles having a single front wheel"
+  },
+  {
+   "pn": "US7350787B2",
+   "title": "Vehicles and methods using center of gravity and mass shift control system"
+  },
+  {
+   "pn": "US7425008B2",
+   "title": "Steerable leveraged suspension system suitable for use on a bicycle"
+  },
+  {
+   "pn": "US7425009B2",
+   "title": "Front fork apparatus in two-wheeled vehicle or the like"
+  },
+  {
+   "pn": "US7434823B2",
+   "title": "Suspension system for vehicles"
+  },
+  {
+   "pn": "US20080258424A1",
+   "title": "Unitary vehicular front end and method of use thereof"
+  },
+  {
+   "pn": "US7441622B2",
+   "title": "Springer type suspension"
+  },
+  {
+   "pn": "EP2096024A1",
+   "title": "Shock-absorbing suspension device for wheeled vehicle"
+  },
+  {
+   "pn": "EP2100807A1",
+   "title": "Shock-absorbing suspension device for a wheeled vehicle"
+  },
+  {
+   "pn": "US7699330B2",
+   "title": "Four-bar linkage suspension device for a wheeled vehicle"
+  },
+  {
+   "pn": "US7708296B2",
+   "title": "Bicycle fork having lock-out, blow-off, and adjustable blow-off threshold"
+  },
+  {
+   "pn": "US7744107B2",
+   "title": "Four-bar linkage suspension device for a wheeled vehicle"
+  },
+  {
+   "pn": "US20110012321A1",
+   "title": "Shock-absorbing suspension device for a wheeled vehicle"
+  },
+  {
+   "pn": "US7887077B2",
+   "title": "Motorcycle steering"
+  },
+  {
+   "pn": "US7896379B2",
+   "title": "Motorcycles having upper and lower arms coupled with fork and frame"
+  },
+  {
+   "pn": "EP2357098A2",
+   "title": "Method and apparatus for suspension adjustment"
+  },
+  {
+   "pn": "US8448970B1",
+   "title": "Suspension system for steerable front wheel of vehicle"
+  },
+  {
+   "pn": "US8534692B2",
+   "title": "Front wheel suspension for a single-track vehicle"
+  },
+  {
+   "pn": "FR3004415A1",
+   "title": "CYCLE DEFORMABLE QUADRILATERE FRONT SUSPENSION, THE PRINCIPLE OF WHICH ENABLES ANTI-DIVING BEHAVIOR AND THE INTEGRATION OF AN INDEPENDENT SHOCK ABSORBER"
+  },
+  {
+   "pn": "US8939458B2",
+   "title": "Suspension system"
+  },
+  {
+   "pn": "US9248883B2",
+   "title": "Bicycle fork with compliant tip"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "USD860062S1",
+   "title": "Cycle suspension assembly"
+  },
+  {
+   "pn": "USD860061S1",
+   "title": "Cycle suspension assembly"
+  },
+  {
+   "pn": "USD861542S1",
+   "title": "Cycle suspension assembly"
+  },
+  {
+   "pn": "US10518839B2",
+   "title": "Inline shock absorber with coil spring for a cycle wheel suspension assembly"
+  },
+  {
+   "pn": "US10518836B2",
+   "title": "Suspension assembly for a cycle"
+  },
+  {
+   "pn": "US10526039B2",
+   "title": "Suspension assembly for a cycle"
+  },
+  {
+   "pn": "US10526040B2",
+   "title": "Inline shock absorber with gas spring for a cycle wheel suspension assembly"
+  },
+  {
+   "pn": "US10549812B2",
+   "title": "Inline shock absorber with gas spring for a cycle wheel suspension assembly"
+  },
+  {
+   "pn": "US10549813B2",
+   "title": "Inline shock absorber with coil spring for a cycle wheel suspension assembly"
+  },
+  {
+   "pn": "US10549815B2",
+   "title": "Suspension assembly for a bicycle"
+  },
+  {
+   "pn": "US11084552B2",
+   "title": "Simplified gas spring setup for a trailing link cycle wheel suspension"
+  },
+  {
+   "pn": "US11208172B2",
+   "title": "Suspension pivot assemblies having a retention feature"
+  },
+  {
+   "pn": "US11230346B2",
+   "title": "Cycle wheel suspension assembly having gas pistons with unequal gas piston areas"
+  },
+  {
+   "pn": "US11230347B2",
+   "title": "Cycle wheel suspension assembly having gas pistons with unequal gas piston areas"
+  },
+  {
+   "pn": "US11230348B2",
+   "title": "Trailing link cycle wheel suspension assembly having gas pistons with unequal gas piston areas"
+  },
+  {
+   "pn": "US11273887B2",
+   "title": "Cycle suspension with travel indicator"
+  },
+  {
+   "pn": "US11345432B2",
+   "title": "Suspension assembly for a cycle having a fork arm with dual opposing tapers"
+  },
+  {
+   "pn": "US11524744B2",
+   "title": "Cycle suspension with rotation sensor"
+  },
+  {
+   "pn": "US11654998B2",
+   "title": "Front forks for bicycles"
+  },
+  {
+   "pn": "US11945539B2",
+   "title": "Dual sided suspension assembly for a cycle wheel"
+  },
+  {
+   "pn": "US12319381B2",
+   "title": "Trailing link cycle wheel suspension assembly having gas pistons with unequal gas piston areas"
+  }
+ ],
+ "events": [
+  {
+   "date": "2017-07-27",
+   "type": "filed",
+   "title": "Application filed by Trvstper Inc"
+  },
+  {
+   "date": "2017-07-27",
+   "type": "priority",
+   "title": "Priority to US15/661,821"
+  },
+  {
+   "date": "2018-06-29",
+   "type": "reassignment",
+   "title": "Assigned to TRVSTPER, INC."
+  },
+  {
+   "date": "2018-07-06",
+   "type": "priority",
+   "title": "Priority to TW107123478A"
+  },
+  {
+   "date": "2018-07-24",
+   "type": "priority",
+   "title": "Priority to PCT/US2018/043412"
+  },
+  {
+   "date": "2018-07-24",
+   "type": "priority",
+   "title": "Priority to EP18752931.8A"
+  },
+  {
+   "date": "2018-07-26",
+   "type": "priority",
+   "title": "Priority to CN201821195022.8U"
+  },
+  {
+   "date": "2018-07-26",
+   "type": "priority",
+   "title": "Priority to CN201810835158.9A"
+  },
+  {
+   "date": "2018-10-12",
+   "type": "priority",
+   "title": "Priority to US16/158,858"
+  },
+  {
+   "date": "2019-01-31",
+   "type": "publication",
+   "title": "Publication of US20190031275A1"
+  },
+  {
+   "date": "2019-02-04",
+   "type": "priority",
+   "title": "Priority to US16/267,083"
+  },
+  {
+   "date": "2019-02-05",
+   "type": "publication",
+   "title": "Publication of US10196106B1"
+  },
+  {
+   "date": "2019-02-05",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2021-08-26",
+   "type": "reassignment",
+   "title": "Assigned to SPECIALIZED BICYCLE COMPONENTS, INC."
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2037-07-27",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  }
+ ]
+}

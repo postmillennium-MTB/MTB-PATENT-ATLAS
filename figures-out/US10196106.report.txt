@@ -1,0 +1,165 @@
+patent: US10196106
+source: https://patentimages.storage.googleapis.com/9f/03/ea/66957992dd9f51/US10196106.pdf
+pages: 19
+per-page extracted text length: {1: 2557, 2: 5103, 3: 4902, 4: 1706, 5: 264, 6: 281, 7: 215, 8: 126, 9: 66, 10: 157, 11: 189, 12: 256, 13: 7297, 14: 7481, 15: 7879, 16: 7901, 17: 7590, 18: 7019, 19: 2226}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010196106B1
+
+(12) Weagle
+United States Patent
+
+(10 ) Patent No.: US 10 ,196 , 106 B1
+(45) Date of Patent:
+* Feb . 5 , 2019
+
+(54) SUSPENSION ASSEMBLY FOR A CYCLE
+
+426 ,402 A
+435 ,477 A
+441,649 A
+443, 266 A
+
+( 71) Applicant: TRVSTPER , INC ., Salt Lake City, UT
+(US )
+(72 ) Inventor: David Weagle , Edgartown, MA (US)
+(73 ) Assignee: TRVSTPER , INC ., Salt Lake City , UT
+
+444 ,639 A
+447, 234 A
+467, 794 A
+
+468,643 A
+524 ,389 A
+
+4 / 1890 Torkelson
+9 / 1890 Blackledge
+12/ 1890 Dunlop
+12 /1890 Bell
+
+1/ 1891 O 'Neill
+
+2 / 1891 Donnelly
+1 / 1892 Ellis
+
+2 / 1892 Clement
+
+8 / 1894 La Casse
+(Continued )
+
+(US )
+
+( * ) Notice :
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U .S . C . 154 (b ) by 0 days.
+This patent is subject to a terminal dis
+
+FOREIGN PATENT DOCUMENTS
+507753 A
+
+BE
+
+474575 A
+
+CA
+
+OTHER PUBLICATIONS
+
+(21) Appl. No.: 15/661,821
+
+International Search Report and Written Opinion for Application
+No. PCT/US2018/043412 , dated Oct. 8 , 2018 .
+
+Jul. 27 , 2017
+
+(51 ) Int . Ci.
+
+B62K 25 /24
+B62K 25 /08
+
+( 2006 .01)
+
+B62K 25 /04
+
+(2006 .01)
+
+Primary Examiner — Tony H Winner
+(74 ) Attorney, Agent, or Firm — Marshall , Gerstein &
+
+(2006 .01 )
+
+Borun LLP
+
+(52 ) U .S. CI.
+
+CPC ....... 362K 25/ 08 (2013 .01 ); B62K 2025/044
+(2013 .01 )
+(58 ) Field of Classification Search
+CPC . B62K 25/08; B60G 2200 /18 ; B60G 2300 / 12
+. .. ............ 280 /276
+USPC ......
+See application file for complete search history .
+References Cited
+(56 )
+U .S . PATENT DOCUMENTS
+389 , 200 A
+393 ,387 A
+400 ,727 A
+
+412 , 322 A
+
+414 ,048 A
+
+423 ,471 A
+
+6 / 1951
+
+(Continued )
+
+claimer .
+
+( 22 ) Filed :
+
+12 / 1951
+
+9 / 1888 Clegg
+11 / 1888 Norton
+4 / 1889 Baudreau
+10 / 1889 Copeland
+
+ABSTRACT
+(57 )
+A trailing link multi-bar suspension assembly for a cycle
+having improved stability includes a first arm having a first
+
+arm fixed pivot and a first arm shock pivot. A shock link has
+a shock link fixed pivot and a shock link floating pivot. A
+
+shock absorber has a first shock mount and a second shock
+
+mount. A wheel carrier has a wheel carrier first pivot and a
+wheel carrier second pivot spaced apart from one another,
+and a wheel mount that is adapted to be connected to a
+wheel. A control link has a control link floating pivot and a
+
+control link fixed pivot, the control link floating pivot being
+
+pivotably connected to the wheel carrier second pivot, and
+the control link fixed pivot being pivotably connected to the
+first arm control pivot.
+
+10 / 1889 Hunter
+
+19 Claims, 8 Drawing Sheets
+
+3 / 1890 Easthope
+
+9036
+46
+A 58
+
+F
+
+

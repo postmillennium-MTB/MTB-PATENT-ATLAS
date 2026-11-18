@@ -1,0 +1,172 @@
+patent: US10549813
+source: https://patentimages.storage.googleapis.com/60/16/3f/c159b645aac064/US10549813.pdf
+pages: 31
+per-page extracted text length: {1: 2571, 2: 4470, 3: 4735, 4: 3993, 5: 88, 6: 88, 7: 180, 8: 142, 9: 144, 10: 145, 11: 116, 12: 133, 13: 127, 14: 127, 15: 169, 16: 164, 17: 177, 18: 197, 19: 163, 20: 197, 21: 181, 22: 7312, 23: 6817, 24: 7858, 25: 7693, 26: 7829, 27: 7551, 28: 7567, 29: 7661, 30: 7120, 31: 835}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010549813B2
+
+United States Patent
+
+(10 ) Patent No.: US 10,549,813 B2
+(45 ) Date of Patent:
+* Feb . 4 , 2020
+
+Weagle
+
+(56 )
+
+(54 ) INLINE SHOCK ABSORBER WITH COIL
+
+References Cited
+
+SPRING FOR A CYCLE WHEEL
+SUSPENSION ASSEMBLY
+
+U.S. PATENT DOCUMENTS
+
+(US)
+
+400,727 A
+
+(US)
+Subject to any disclaimer , the term of this
+
+patent is extended or adjusted under 35
+U.S.C. 154(b ) by 0 days.
+This patent is subject to a terminal dis
+claimer .
+
+Oct. 12 , 2018
+
+12/1951
+6/1951
+
+(Continued )
+OTHER PUBLICATIONS
+
+Color photograph of Armstrong motor cycle , Applicant Admitted
+
+Borun LLP
+
+ABSTRACT
+
+(57)
+
+Related U.S. Application Data
+
+(63 ) Continuation - in -part of application No. 15 /689,347 ,
+filed on Aug. 29, 2017 .
+
+Int. Cl.
+B62K 25/02
+U.S. CI.
+
+507753 A
+474575 A
+
+(Continued )
+Primary Examiner Tony H Winner
+(74 ) Attorney, Agent, or Firm — Marshall , Gerstein &
+
+Prior Publication Data
+US 2019/0061866 A1 Feb. 28 , 2019
+
+(51)
+
+BE
+CA
+
+Prior Art, Applicant's internal files .
+
+(21) Appl. No.: 16 /159,033
+(22 ) Filed :
+(65)
+
+11/1888 Norton
+4/1889 Baudreau
+
+(Continued )
+FOREIGN PATENT DOCUMENTS
+
+(72 ) Inventor: David Weagle, Edgartown, MA (US)
+(73 ) Assignee : TRVSTPER , INC ., Salt lake City , UT
+( * ) Notice:
+
+9/1888 Clegg
+
+389,200 A
+393,387 A
+
+( 71) Applicant: TRVSTPER , INC ., Salt Lake City , UT
+
+A trailing link , multi- link suspension assembly for a cycle
+having improved stability includes a first arm having a first
+arm fixed pivot and a first arm shock pivot. A shock link has
+a shock link fixed pivot and a shock link floating pivot. A
+shock absorber has an inline configuration , a coil spring, a
+first shock mount and a second shock mount. A wheel carrier
+
+has a wheel carrier first pivot and a wheel carrier second
+pivot spaced apart from one another, and a wheel mount that
+
+(58 ) Field of Classification Search
+CPC ........ B62K 25/02 ; B62K 25/06 ; B62K 25/08 ;
+
+is adapted to be connected to a wheel. A control link has a
+control link floating pivot and a control link fixed pivot, the
+control link floating pivot being pivotably connected to the
+wheel carrier second pivot, and the control link fixed pivot
+being pivotably connected to the first arm control pivot. A
+mechanical trail distance increases as the suspension assem
+bly compresses relative to a fully extended state.
+
+See application file for complete search history .
+
+13 Claims, 17 Drawing Sheets
+
+(52)
+
+CPC
+
+(2006.01 )
+B62K 25/02 (2013.01 ); B62K 2025/025
+(2013.01 ); B62K 2201/04 ( 2013.01)
+B62K 2025/025
+
+-34
+38
+30
+
+32
+
+56
+86
+
+76
+
+WA
+D 40
+
+66
+
+30
+
+-60
+
+62
+
+68
+
+84
+
+36
+-52
+
+50
+
+58
+
+A
+
+

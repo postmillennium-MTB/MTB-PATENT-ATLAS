@@ -1,0 +1,32 @@
+{
+  "y": 2018,
+  "g": 2022,
+  "t": {
+    "en": "TODO Brand-first title (US11345432)",
+    "fr": "TODO"
+  },
+  "a": "David Weagle / Specialized Bicycle Components Holding Co Inc",
+  "num": "11345432",
+  "cat": "TODO",
+  "st": "active",
+  "exp": 2038,
+  "b": [],
+  "who": [],
+  "conf": "v",
+  "hook": {
+    "en": "TODO",
+    "fr": "TODO"
+  },
+  "clever": {
+    "en": "TODO",
+    "fr": "TODO"
+  },
+  "s": {
+    "en": "TODO",
+    "fr": "TODO"
+  },
+  "w": {
+    "en": "TODO",
+    "fr": "TODO"
+  }
+}
