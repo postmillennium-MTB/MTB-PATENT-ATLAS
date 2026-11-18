@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 531 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 533 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 531 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 531 |
+| **Total entries** | 533 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 212 |
+| **Active patents** | 214 |
 | **Expired patents** | 244 |
 | **Pending applications** | 47 |
 | **Confirmed no patent** | 12 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 531 patents and 
 | **Brands** | 231 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 454 |
+| **Verified entries** | 456 |
 | **Medium confidence** | 41 |
 | **Draft / in progress** | 36 |
 
@@ -1039,3 +1039,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - 2026-11-18: Landing: Patent of the day moved to the top of the Atlas tab, above the drawing wall. "What's new" now shows only lines from the last 90 days (reader's local date) and hides itself when none are left (`WHATS_NEW_MAX_AGE_DAYS`, `whatsNewRecent()`). No data or counts changed.
 - 2026-11-18: Patent of the day no longer picks no-patent (np) cards; they stay everywhere else. Eligible pool 446 → 437.
 - 2026-11-18: Header: removed the subtitle ("The patents behind the modern mountain bike, 1869 to today") and the "Tap a bar to jump" hint, EN and FR. The title now sits lower and dips into the top-left of the year bars (it ignores taps, so bars under it still open their year). All four themes use the WMBC typewriter face (Special Elite) for the title. Header height: desktop 273 → 180 px, phone 169 → 121 px. No data or counts changed.
+- 2026-11-18: Two Classified Cycling cards (531 → 533), both `conf:"v"`, read from the Google Patents records and the US12163561 PDF. New: "Classified Cycling parallel-path transmission with load-shifting clutch" (EP 4,048,581; US 2022/0402574 A1 is listed as abandoned and CN 115,867,482 and EP are pending; priority 2019-10-25, so `st` pending, `exp` null), with Jon's Fig. 30. New: "Classified Cycling clutch or brake system with planetary gear" (US 12,163,561 B2, filed 2021-06-07, granted 2024-12-10, `exp` 2041; EP 4,162,170 pending), Fig. 11 rotated upright and Fig. 1. The existing Classified Powershift card (WO 2023/012,188) gained its granted US member US 12,497,133 B2 (granted 2025-12-16; `st` active, `exp` 2042). The other roughly 60 Van Druten / Classified documents are not yet cards.
