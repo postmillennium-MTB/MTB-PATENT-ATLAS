@@ -443,8 +443,8 @@ button.stats-seg:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
 .soon-yr{font-family:var(--font-mono);font-weight:700;color:var(--st-pending);flex:0 0 auto}
 /* ---------- Return-visit blocks: Recently expired, Patent of the day, What's new ---------- */
 .went-list .soon-yr{color:var(--st-expired)}
-.home-duo{display:grid;grid-template-columns:minmax(0,1fr);gap:0 18px}
-@media(min-width:760px){.home-duo{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.stats-wrap>.potd{margin-bottom:18px}
+@media(min-width:760px){.stats-wrap>.potd .potd-card{max-width:760px}}
 .potd-date{font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--ink-soft);text-transform:none;letter-spacing:0;margin-left:6px}
 .potd-card{display:flex;gap:12px;width:100%;text-align:left;background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:10px;cursor:pointer;color:inherit;font:inherit;transition:border-color .15s}
 .potd-card:hover,.potd-card:focus-visible{border-color:var(--primary);outline:none}
@@ -2985,6 +2985,17 @@ const WHATS_NEW = [
   {date:"2026-10-31", text:{en:"Open cards get Previous and Next buttons, and the landing chips sit in Category, Era and Status rows.", fr:"Les fiches ouvertes ont des boutons Précédente et Suivante, et les puces d'accueil sont rangées en lignes Catégorie, Époque et Statut."}},
 ];
 const WHATS_NEW_SHOWN = 5;
+/* Lines older than this many days (counted from the reader's own date) drop
+   off, and the whole section is hidden when none are left, so a quiet spell
+   never shows a stale "What's new". */
+const WHATS_NEW_MAX_AGE_DAYS = 90;
+function whatsNewRecent(today=new Date()){
+  const t0=new Date(today.getFullYear(),today.getMonth(),today.getDate()).getTime();
+  return WHATS_NEW.filter(w=>{
+    const [y,m,dd]=w.date.split("-").map(Number);
+    return (t0-new Date(y,m-1,dd).getTime())/864e5 <= WHATS_NEW_MAX_AGE_DAYS;
+  });
+}
 /* "Recently expired": entries marked expired whose estimated expiry year is
    this year or last. Wording stays factual ("expired", "estimated expiry"):
    an estimate is not a legal opinion on whether anything may be copied. */
@@ -3024,7 +3035,7 @@ function patentOfTheDayHTML(){
   return `<section class="home-sec potd">
       <h3 class="home-sec-h">${t("potdH")}<span class="potd-date">${longDate}</span></h3>
       <button type="button" class="potd-card" data-jumpref="${ref}">
-        <span class="potd-img"><img src="${thumbSrc(f.src)}" data-full="${f.src}" onerror="thumbFallback(this)" alt="${tx(f.alt)||""}" loading="lazy" decoding="async"></span>
+        <span class="potd-img"><img src="${thumbSrc(f.src)}" data-full="${f.src}" onerror="thumbFallback(this)" alt="${tx(f.alt)||""}" loading="eager" decoding="async"></span>
         <span class="potd-body">
           <span class="yr">${d.y}</span>
           <span class="potd-title">${tx(d.t)}</span>
@@ -3035,7 +3046,8 @@ function patentOfTheDayHTML(){
     </section>`;
 }
 function whatsNewHTML(){
-  const items=WHATS_NEW.slice(0,WHATS_NEW_SHOWN).map(w=>
+  const recent=whatsNewRecent(); if(!recent.length) return "";
+  const items=recent.slice(0,WHATS_NEW_SHOWN).map(w=>
     `<li><time datetime="${w.date}">${shortDate(w.date)}</time><span>${tx(w.text)}${w.go?` <button type="button" class="wn-go" data-jumpref="${w.go}">${t("wnGo")}</button>`:""}</span></li>`).join("");
   return `<section class="home-sec whatsnew">
       <h3 class="home-sec-h">${t("wnH")}</h3>
@@ -6816,6 +6828,7 @@ function renderStats(){
       <button type="button" class="rh-arrow" id="rhNext" aria-label="${t('scrollRight')}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>
     </div>` : "";
   tl.innerHTML=`<div class="stats-wrap">
+    ${patentOfTheDayHTML()}
     ${landingWallHTML()}
     <section class="home-sec">
       <div class="rh-head">
@@ -6836,10 +6849,7 @@ function renderStats(){
       <p class="home-match" id="homeMatch" aria-live="polite"></p>
       <div class="home-chips"><span class="home-lbl">${t("homePopular")}</span>${rotChip}${suggestChips}</div>
     </section>
-    <div class="home-duo">
-      ${patentOfTheDayHTML()}
-      ${whatsNewHTML()}
-    </div>
+    ${whatsNewHTML()}
     <div class="stats-sec">
       <div class="stats-sec-head">
         <h3>${t("catTimelineTitle")}<span class="tap-note">${t("catTapNote")}</span></h3>
