@@ -481,9 +481,14 @@ button.stats-seg:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
   .stats-timeline-labels.dense-labels{gap:1px}
   .stats-timeline-labels.dense-labels span{font-size:7.5px;letter-spacing:-.03em}}
 h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clamp(30px,6vw,46px);line-height:1.02;letter-spacing:var(--head-spacing);text-transform:var(--head-transform);margin-top:14px}
-/* Green (WMBC) theme only: typewriter face for the title, like a patent filing. Special Elite has one weight, so no faux bold; slightly tighter size since it runs wider than Nunito. */
-[data-theme="wmbc"] h1{font-family:'Special Elite','Courier New',monospace;font-weight:400;letter-spacing:.01em;font-size:clamp(28px,5.6vw,42px)}
-.sub{font-size:14px;opacity:.85;max-width:560px;margin-top:4px}
+/* Every theme uses the typewriter face for the title (first the WMBC look,
+   now all four at Jon's request), like a patent filing. Special Elite has one
+   weight, so no faux bold; slightly tighter size since it runs wider.
+   The title sits low and dips into the top-left of the year bars (the
+   scrubber's negative margin below pulls them up under it). It ignores
+   pointer events so every bar under it stays tappable; the soft shadow keeps
+   the letters readable over a bar. */
+h1{font-family:'Special Elite','Courier New',monospace;font-weight:400;letter-spacing:.01em;font-size:clamp(28px,5.6vw,42px);position:relative;z-index:2;pointer-events:none;text-shadow:0 1px 3px rgba(0,0,0,.35)}
 .themes{display:flex;gap:8px;margin-top:12px;align-items:center}
 /* Theme row now sits directly under the PMR link, above the title.
    flex-wrap keeps the swatches on-screen on very narrow phones. */
@@ -520,11 +525,15 @@ h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clam
 .mt-banner-close{flex:0 0 auto;background:none;border:none;color:inherit;font-size:14px;cursor:pointer;padding:2px 6px;opacity:.75}
 .mt-banner-close:hover{opacity:1}
 /* ---------- Scrubber ---------- */
-.scrubber{margin-top:14px}
+.scrubber{margin-top:var(--title-dip,-54px)}
+/* Phone: smaller title, so a shallower dip keeps the MTB/1yr toggles clear of
+   the EN/FR buttons above. At 360px and under, the title and toggles shrink a
+   little so they still sit side by side when the bars show (non-home tabs). */
+@media(max-width:480px){.scrubber{--title-dip:-34px}}
+@media(max-width:360px){h1{font-size:22px!important}.scrub-toggles .step-btn{padding:3px 7px;letter-spacing:.08em}}
 /* Holds the scrubber's label and the year-bracket step toggle side by side */
-.scrub-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.scrub-label-row{display:flex;align-items:center;justify-content:flex-end;margin-bottom:4px}
 .scrub-toggles{display:flex;align-items:center;gap:6px;flex:0 0 auto}
-.scrub-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
 /* Toggles how many years each timeline bar covers (1/2/5yr brackets) */
 .step-btn{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.42);color:#fff;border-radius:6px;padding:3px 10px;cursor:pointer;transition:background .15s,border-color .15s;white-space:nowrap}
 .step-btn:hover{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.7)}
@@ -998,7 +1007,6 @@ footer .hwrap p{opacity:.8;max-width:640px}
   .chead .ct{order:0;flex:1 1 auto}
   .chead .caret{margin-left:0}
   .cbody{padding:0 18px 16px}
-  h1{letter-spacing:.02em}
 }
 html,body{overflow-x:hidden;max-width:100%}
 .chip{min-height:44px;min-width:44px}
@@ -1289,10 +1297,8 @@ footer a{color:inherit;text-decoration:underline}
       </div>
     </div>
     <h1>MTB Patent Atlas</h1>
-    <p class="sub" data-i18n="subtitle">The patents behind the modern mountain bike, 1869 to today</p>
     <div class="scrubber">
       <div class="scrub-label-row">
-        <div class="scrub-label" data-i18n="scrubLabel">Tap a bar to jump</div>
         <div class="scrub-toggles">
           <button class="step-btn" id="eraScopeToggle" data-i18n-title="eraScopeTip" title="Toggle timeline range: MTB era (1980–present) vs full dataset history">MTB</button>
           <button class="step-btn" id="stepToggle" data-i18n-title="stepTip" title="Toggle bar bracket: 1yr → 2yr → 5yr">1yr</button>
@@ -3207,8 +3213,6 @@ const ICON_HEART_FILLED = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\
 const T = {
   en:{
     themeLabel:"Theme", langLabel:"Language", colorScheme:"Color scheme", langGroup:"Language",
-    subtitle:"The patents behind the modern mountain bike, 1869 to today",
-    scrubLabel:"Tap a bar to jump",
     eraScopeTip:"Toggle timeline range: MTB era (1980–present) vs full dataset history",
     eraScopeLabel:scope=>scope==="mtb"?"MTB":"ALL",
     stepTip:"Toggle bar bracket: 1yr → 2yr → 5yr",
@@ -3420,8 +3424,6 @@ const T = {
   },
   fr:{
     themeLabel:"Thème", langLabel:"Langue", colorScheme:"Palette de couleurs", langGroup:"Langue",
-    subtitle:"Les brevets derrière le VTT moderne, de 1869 à nos jours",
-    scrubLabel:"Touchez une barre pour y aller",
     eraScopeTip:"Basculer la plage de la chronologie : ère VTT (1980–aujourd'hui) ou tout l'historique du jeu de données",
     eraScopeLabel:scope=>scope==="mtb"?"VTT":"TOUT",
     stepTip:"Basculer le regroupement : 1 an → 2 ans → 5 ans",
