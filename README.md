@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 533 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 531 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 533 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 533 |
+| **Total entries** | 531 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 214 |
+| **Active patents** | 212 |
 | **Expired patents** | 244 |
 | **Pending applications** | 47 |
 | **Confirmed no patent** | 12 |
@@ -25,8 +25,8 @@ An interactive timeline of mountain bike intellectual property: 533 patents and 
 | **Brands** | 231 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 456 |
-| **Medium confidence** | 41 |
+| **Verified entries** | 455 |
+| **Medium confidence** | 40 |
 | **Draft / in progress** | 36 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
@@ -1041,3 +1041,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - 2026-11-18: Header: removed the subtitle ("The patents behind the modern mountain bike, 1869 to today") and the "Tap a bar to jump" hint, EN and FR. The title now sits lower and dips into the top-left of the year bars (it ignores taps, so bars under it still open their year). All four themes use the WMBC typewriter face (Special Elite) for the title. Header height: desktop 273 → 180 px, phone 169 → 121 px. No data or counts changed.
 - 2026-11-18: Two Classified Cycling cards (531 → 533), both `conf:"v"`, read from the Google Patents records and the US12163561 PDF. New: "Classified Cycling parallel-path transmission with load-shifting clutch" (EP 4,048,581; US 2022/0402574 A1 is listed as abandoned and CN 115,867,482 and EP are pending; priority 2019-10-25, so `st` pending, `exp` null), with Jon's Fig. 30. New: "Classified Cycling clutch or brake system with planetary gear" (US 12,163,561 B2, filed 2021-06-07, granted 2024-12-10, `exp` 2041; EP 4,162,170 pending), Fig. 11 rotated upright and Fig. 1. The existing Classified Powershift card (WO 2023/012,188) gained its granted US member US 12,497,133 B2 (granted 2025-12-16; `st` active, `exp` 2042). The other roughly 60 Van Druten / Classified documents are not yet cards.
 - Rotated Fig. 1A on the Trvstper trailing-link fork card (US 10,196,106 + 6) 90° clockwise and added one sentence naming Trvstper, Inc. as the company behind the Trust Performance Message and Shout forks.
+- Folded the three Trust/Trvstper fork cards (US 10,196,106 + 6, US 10,549,813 + 2, US 11,084,552 + 8) into one card, "Trust Performance Message (Trvstper) trailing-link fork suspension patents (US 10,196,106 + 18 more)", per direct request (533 → 531 entries). Corrected US 10,549,813 from its record: inline shock with coil spring, priority 2017-08-29, filed 2018-10-12, granted 2020-02-04 (the old text called it the core trail-increasing patent, filed 2017). Old refs 10549813 and 11084552 alias to 10196106; the Citations map snapshot was remapped by hand until its workflow rebuilds it. Open: Google shows US 10,549,813 expiring 2037-08-29 while filed + 20 years gives 2038; the card keeps the headline 2037. US D860,061 dates and the D880,371/D880,372 siblings were not re-read from the records.
