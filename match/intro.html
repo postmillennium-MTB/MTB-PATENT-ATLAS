@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Bicycle Patent Atlas: Match Mode — 8-Bit Intro</title>
+
+  <!-- Retro 8-Bit Arcade Font ('Press Start 2P') with Crisp Monospace Fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS for Responsive Layout & Spacing Utilities -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* =========================================================================
+       8-BIT NES PALETTE, PIXEL RENDERING & CRT VISUAL EFFECTS
+       ========================================================================= */
+    :root {
+      --nes-bg: #0b1021;
+      --nes-bg-dark: #060914;
+      --nes-panel: #0e162e;
+      --nes-cyan: #00e5ff;
+      --nes-cyan-dim: #007a8a;
+      --nes-gold: #ffcc00;
+      --nes-gold-dark: #b38600;
+      --nes-red: #e52521;
+      --nes-red-dark: #8f110e;
+      --nes-white: #fcfcfc;
+      --nes-gray: #8b9bb4;
+    }
+
+    * {
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: var(--nes-bg-dark);
+      color: var(--nes-white);
+      font-family: 'Press Start 2P', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+
+    /* Crisp pixelated canvas rendering */
+    canvas {
+      display: block;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -webkit-crisp-edges;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+
+    /* Authentic NES Pixel Box Border with Stepped Corner Cutouts & Hard Drop Shadow */
+    .nes-box {
+      background-color: rgba(11, 16, 33, 0.92);
+      border: 4px solid var(--nes-white);
+      box-shadow:
+        0 0 0 4px var(--nes-bg-dark),
+        8px 8px 0 4px rgba(0, 0, 0, 0.75),
+        inset 0 0 0 4px var(--nes-cyan-dim);
+      position: relative;
+    }
+
+    .nes-box-gold {
+      background-color: rgba(11, 16, 33, 0.95);
+      border: 4px solid var(--nes-gold);
+      box-shadow:
+        0 0 0 4px var(--nes-bg-dark),
+        8px 8px 0 4px rgba(0, 0, 0, 0.8),
+        inset 0 0 0 4px var(--nes-red-dark);
+    }
+
+    /* Corner Pixel Rivets for Blueprint Title Plaque */
+    .nes-rivet::before,
+    .nes-rivet::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: var(--nes-gold);
+      top: 6px;
+    }
+    .nes-rivet::before { left: 6px; }
+    .nes-rivet::after { right: 6px; }
+
+    /* Extruded 8-Bit Title Text Shadows */
+    .title-shadow-main {
+      text-shadow:
+        3px 3px 0px var(--nes-red),
+        6px 6px 0px var(--nes-bg-dark);
+    }
+
+    .title-shadow-cyan {
+      text-shadow:
+        2px 2px 0px #005566,
+        4px 4px 0px var(--nes-bg-dark);
+    }
+
+    .title-shadow-gold {
+      text-shadow:
+        2px 2px 0px #7a4900,
+        4px 4px 0px var(--nes-bg-dark);
+    }
+
+    /* Classic NES Square-Wave Step Blink (No Smooth Fade) */
+    @keyframes nesBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    @keyframes nesRapidBlink {
+      0%, 49% { opacity: 1; color: var(--nes-gold); }
+      50%, 100% { opacity: 0.15; color: var(--nes-white); }
+    }
+
+    .blink-standard {
+      animation: nesBlink 1s steps(1, end) infinite;
+    }
+
+    .blink-rapid {
+      animation: nesRapidBlink 0.11s steps(1, end) infinite !important;
+    }
+
+    /* Subtle Pixel Float for Mode Badge */
+    @keyframes pixelHover {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-3px); }
+    }
+
+    .pixel-bob {
+      animation: pixelHover 1.4s steps(2, end) infinite;
+    }
+
+    /* 8-Bit Arcade Buttons */
+    .nes-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--nes-white);
+      background-color: var(--nes-bg);
+      color: var(--nes-white);
+      box-shadow: 4px 4px 0px var(--nes-bg-dark);
+      transition: transform 0.05s steps(1);
+      cursor: pointer;
+    }
+
+    .nes-btn:hover {
+      border-color: var(--nes-gold);
+      color: var(--nes-gold);
+    }
+
+    .nes-btn:active {
+      transform: translate(3px, 3px);
+      box-shadow: 1px 1px 0px var(--nes-bg-dark);
+    }
+
+    .nes-btn-primary {
+      background-color: var(--nes-red);
+      border-color: var(--nes-gold);
+      color: var(--nes-white);
+      box-shadow:
+        0 0 0 3px var(--nes-bg-dark),
+        6px 6px 0 3px rgba(0, 0, 0, 0.85);
+    }
+
+    .nes-btn-primary:hover {
+      background-color: #ff332e;
+      color: var(--nes-gold);
+    }
+
+    /* =========================================================================
+       TOGGLEABLE CRT SCANLINE, PHOSPHOR & VIGNETTE OVERLAY
+       ========================================================================= */
+    .crt-overlay {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background:
+        /* Horizontal CRT scanlines */
+        linear-gradient(
+          rgba(18, 16, 16, 0) 50%,
+          rgba(0, 0, 0, 0.34) 50%
+        ),
+        /* Subtle RGB aperture grille tint */
+        linear-gradient(
+          90deg,
+          rgba(255, 0, 0, 0.03),
+          rgba(0, 255, 0, 0.015),
+          rgba(0, 0, 255, 0.03)
+        );
+      background-size: 100% 4px, 6px 100%;
+      box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.68);
+      transition: opacity 0.15s steps(2);
+    }
+
+    .crt-off .crt-overlay {
+      opacity: 0;
+    }
+
+    /* CRT Phosphor Text Bloom when CRT is active */
+    body:not(.crt-off) .crt-glow {
+      text-shadow: 0 0 8px rgba(0, 229, 255, 0.45);
+    }
+
+    /* Custom tiny equalizer bars for Chiptune indicator */
+    @keyframes eqBar1 { 0%, 100% { height: 4px; } 50% { height: 12px; } }
+    @keyframes eqBar2 { 0%, 100% { height: 11px; } 50% { height: 3px; } }
+    @keyframes eqBar3 { 0%, 100% { height: 6px; } 50% { height: 13px; } }
+
+    .eq-active .bar-1 { animation: eqBar1 0.35s steps(2) infinite; }
+    .eq-active .bar-2 { animation: eqBar2 0.28s steps(2) infinite; }
+    .eq-active .bar-3 { animation: eqBar3 0.42s steps(2) infinite; }
+  </style>
+</head>
+
+<body class="crt-on">
+  <!-- =========================================================================
+       DROP-IN INTEGRATION NOTE FOR POSTMILLENNIUMRENAISSANCE.COM/ATLAS/#TAB=MATCH:
+       To use this as an intro overlay on the live Atlas page, wrap #arcade-cabinet
+       inside a fixed full-screen container (z-index: 9999) and on Launch, fade/wipe
+       out #arcade-cabinet while setting window.location.hash = '#tab=match'.
+       ========================================================================= -->
+
+  <!-- CRT Scanlines & Tube Vignette Layer -->
+  <div id="crt-overlay" class="crt-overlay" aria-hidden="true"></div>
+
+  <!-- Main Arcade Screen Container -->
+  <main id="arcade-cabinet" class="relative w-full h-full flex flex-col justify-between overflow-hidden bg-[#0b1021]">
+
+    <!-- Full-Bleed Procedural 8-Bit Pixel-Art Canvas Background -->
+    <canvas id="pixel-scene" class="absolute inset-0 w-full h-full z-0" aria-label="Animated 8-bit cyclist and patent cards"></canvas>
+
+    <!-- =====================================================================
+         1. TOP NES ARCADE HUD BAR
+         ===================================================================== -->
+    <header class="relative z-20 w-full px-3 sm:px-6 pt-3 pb-2 bg-gradient-to-b from-[#060914]/95 via-[#060914]/80 to-transparent">
+      <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-y-2 gap-x-3 text-[10px] sm:text-xs md:text-sm tracking-wider">
+
+        <!-- 1UP Score Counter (Increments dynamically as demo cards match!) -->
+        <div class="flex flex-col items-start">
+          <span class="text-[#e52521]">1UP</span>
+          <span id="hud-score" class="text-[#fcfcfc] mt-0.5">000000</span>
+        </div>
+
+        <!-- HI-SCORE (Nod to 1885 Starley Rover Safety Bicycle) -->
+        <div class="flex flex-col items-center">
+          <span class="text-[#ffcc00]">HI-SCORE</span>
+          <span class="text-[#fcfcfc] mt-0.5">188500</span>
+        </div>
+
+        <!-- Patent Era Span -->
+        <div class="hidden sm:flex flex-col items-center">
+          <span class="text-[#00e5ff]">PATENTS</span>
+          <span class="text-[#fcfcfc] mt-0.5">1817-2026</span>
+        </div>
+
+        <!-- CRT Scanline Toggle Button -->
+        <button
+          id="btn-crt-toggle"
+          type="button"
+          class="nes-btn px-2.5 py-1.5 text-[9px] sm:text-[11px] text-[#00e5ff]"
+          aria-pressed="true"
+          title="Toggle CRT Scanlines & Vignette"
+        >
+          CRT: ON
+        </button>
+      </div>
+
+      <!-- Mobile-only subtle era sub-bar -->
+      <div class="sm:hidden text-center text-[9px] text-[#00e5ff] mt-1.5 tracking-widest">
+        PATENTS: 1817-2026
+      </div>
+    </header>
+
+    <!-- =====================================================================
+         2. CENTER TITLE LOGO & INTERACTIVE NES MENU
+         ===================================================================== -->
+    <section id="title-ui-layer" class="relative z-20 flex-1 flex flex-col items-center justify-between px-4 pt-1 pb-4 sm:py-4 pointer-events-none">
+
+      <!-- Upper Title Banner Plaque -->
+      <div class="w-full max-w-2xl flex flex-col items-center text-center mt-1 sm:mt-2 pointer-events-auto">
+        <!-- Studio / Project Header -->
+        <div class="inline-block bg-[#060914]/90 border-2 border-[#00e5ff] px-3 py-1.5 mb-2.5 shadow-[4px_4px_0_#060914]">
+          <p class="text-[9px] sm:text-xs text-[#00e5ff] tracking-widest crt-glow">
+            POST-MILLENNIUM RENAISSANCE
+          </p>
+        </div>
+
+        <!-- Main Title Frame -->
+        <div class="nes-box nes-rivet w-full px-4 py-4 sm:px-8 sm:py-6">
+          <h1 class="text-xl sm:text-3xl md:text-4xl leading-snug sm:leading-tight text-[#fcfcfc] title-shadow-main tracking-wide">
+            BICYCLE<br />
+            <span class="text-[#00e5ff] title-shadow-cyan">PATENT ATLAS</span>
+          </h1>
+
+          <!-- Mode Badge -->
+          <div class="mt-3 sm:mt-4 inline-flex items-center justify-center bg-[#060914] border-2 border-[#ffcc00] px-3 sm:px-5 py-1.5 pixel-bob">
+            <span class="text-xs sm:text-base md:text-lg text-[#ffcc00] title-shadow-gold tracking-widest">
+              ★ MATCH MODE ★
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spacer allowing floating pixel patent cards & cyclist to shine in middle canvas -->
+      <div class="flex-1 min-h-[115px] sm:min-h-[145px] w-full"></div>
+
+      <!-- Lower Interactive Start Prompt & NES Menu -->
+      <div class="w-full max-w-md flex flex-col items-center pointer-events-auto mb-1 sm:mb-2">
+
+        <!-- Blinking PRESS START Action Trigger -->
+        <button
+          id="btn-press-start"
+          type="button"
+          class="mb-3 px-4 py-2 text-sm sm:text-lg md:text-xl text-[#ffcc00] title-shadow-gold tracking-widest blink-standard cursor-pointer focus:outline-none"
+        >
+          PRESS START
+        </button>
+
+        <!-- Classic NES Selectable Menu Box -->
+        <nav
+          id="nes-menu"
+          aria-label="Main Menu"
+          class="nes-box w-full max-w-xs sm:max-w-sm px-4 py-3 sm:px-6 sm:py-4 flex flex-col gap-2.5 text-xs sm:text-sm"
+        >
+          <!-- Option 0: START MATCH -->
+          <button
+            type="button"
+            data-menu-index="0"
+            class="menu-item flex items-center text-left py-1.5 px-2 text-[#fcfcfc] hover:text-[#ffcc00] focus:outline-none transition-none"
+          >
+            <span class="menu-cursor inline-block w-6 text-[#ffcc00]">▶</span>
+            <span>START MATCH</span>
+          </button>
+
+          <!-- Option 1: HOW TO PLAY -->
+          <button
+            type="button"
+            data-menu-index="1"
+            class="menu-item flex items-center text-left py-1.5 px-2 text-[#8b9bb4] hover:text-[#ffcc00] focus:outline-none transition-none"
+          >
+            <span class="menu-cursor inline-block w-6 text-transparent">▶</span>
+            <span>HOW TO PLAY</span>
+          </button>
+
+          <!-- Option 2: CHIPTUNE TOGGLE -->
+          <button
+            type="button"
+            data-menu-index="2"
+            class="menu-item flex items-center justify-between text-left py-1.5 px-2 text-[#8b9bb4] hover:text-[#ffcc00] focus:outline-none transition-none"
+          >
+            <span class="flex items-center">
+              <span class="menu-cursor inline-block w-6 text-transparent">▶</span>
+              <span id="chiptune-label">CHIPTUNE: OFF</span>
+            </span>
+            <!-- Tiny 8-bit Equalizer Bars -->
+            <span id="eq-bars" class="inline-flex items-end gap-0.5 h-3.5 ml-2 opacity-40" aria-hidden="true">
+              <span class="bar-1 w-1 h-1 bg-[#00e5ff]"></span>
+              <span class="bar-2 w-1 h-2 bg-[#ffcc00]"></span>
+              <span class="bar-3 w-1 h-1.5 bg-[#e52521]"></span>
+            </span>
+          </button>
+        </nav>
+
+        <!-- Control Legend Footer -->
+        <p class="mt-2.5 text-[8px] sm:text-[10px] text-[#00e5ff]/90 bg-[#060914]/85 px-3 py-1 border border-[#00e5ff]/30 text-center">
+          [↑↓] MOVE &nbsp; [ENTER/SPACE] SELECT &nbsp; [M] AUDIO
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. 'HOW TO PLAY' 8-BIT PIXEL MODAL
+         ===================================================================== -->
+    <div
+      id="how-to-play-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      class="hidden fixed inset-0 z-40 bg-[#060914]/88 flex items-center justify-center p-4"
+    >
+      <div class="nes-box-gold w-full max-w-lg p-5 sm:p-7 flex flex-col gap-4 text-left">
+        <div class="flex items-center justify-between border-b-2 border-[#00e5ff]/40 pb-3">
+          <h2 id="modal-title" class="text-sm sm:text-lg text-[#ffcc00] title-shadow-gold">
+            ★ HOW TO PLAY ★
+          </h2>
+          <span class="text-[10px] text-[#00e5ff]">MANUAL P.01</span>
+        </div>
+
+        <div class="space-y-3 text-[10px] sm:text-xs leading-relaxed text-[#fcfcfc]">
+          <p class="text-[#00e5ff]">
+            WELCOME TO THE PATENT ARCHIVES!
+          </p>
+          <p>
+            1. FLIP BLUEPRINT CARDS TO REVEAL HISTORIC BICYCLE INVENTIONS (1817–2026).
+          </p>
+          <p>
+            2. MATCH IDENTICAL PATENT DRAWINGS, GEARS &amp; FRAME GEOMETRIES TO CLEAR THE BOARD.
+          </p>
+          <p>
+            3. CONSECUTIVE MATCHES BUILD YOUR COMBO MULTIPLIER!
+          </p>
+        </div>
+
+        <!-- Mini Pixel-Art Patent Specimen Legend -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 bg-[#060914] border-2 border-[#00e5ff]/50 p-3 text-center">
+          <div class="flex flex-col items-center gap-1.5">
+            <canvas class="legend-icon w-10 h-10" data-icon="wheel"></canvas>
+            <span class="text-[8px] text-[#ffcc00]">SPOKED WHEEL</span>
+            <span class="text-[7px] text-[#8b9bb4]">EST. 1885</span>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <canvas class="legend-icon w-10 h-10" data-icon="gear"></canvas>
+            <span class="text-[8px] text-[#ffcc00]">CHAINRING</span>
+            <span class="text-[7px] text-[#8b9bb4]">EST. 1890</span>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <canvas class="legend-icon w-10 h-10" data-icon="fork"></canvas>
+            <span class="text-[8px] text-[#ffcc00]">SUSP. FORK</span>
+            <span class="text-[7px] text-[#8b9bb4]">EST. 1974</span>
+          </div>
+          <div class="flex flex-col items-center gap-1.5">
+            <canvas class="legend-icon w-10 h-10" data-icon="frame"></canvas>
+            <span class="text-[8px] text-[#ffcc00]">DIAMOND FRAME</span>
+            <span class="text-[7px] text-[#8b9bb4]">EST. 1885</span>
+          </div>
+        </div>
+
+        <div class="flex justify-center pt-1">
+          <button
+            id="btn-close-modal"
+            type="button"
+            class="nes-btn-primary px-5 py-3 text-xs sm:text-sm tracking-wider"
+          >
+            ◀ BACK TO TITLE
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         4. ANIMATED PIXEL CURTAIN WIPE CANVAS
+         ===================================================================== -->
+    <canvas
+      id="wipe-canvas"
+      class="hidden fixed inset-0 w-full h-full z-45 pointer-events-none"
+      aria-hidden="true"
+    ></canvas>
+
+    <!-- =====================================================================
+         5. STAGE 1 READY & ATLAS MATCH MODE LAUNCH SCREEN
+         ===================================================================== -->
+    <div
+      id="stage-launch-overlay"
+      class="hidden fixed inset-0 z-50 bg-[#0b1021] flex flex-col items-center justify-center p-4 text-center"
+    >
+      <div class="nes-box-gold w-full max-w-lg p-6 sm:p-8 flex flex-col items-center gap-5">
+        <!-- Top Cartridge Status -->
+        <div class="text-[10px] sm:text-xs text-[#00e5ff] tracking-widest">
+          CARTRIDGE LOADED • 1817–2026
+        </div>
+
+        <!-- Animated Pixel Wheel Emblem -->
+        <canvas id="launch-emblem" class="w-20 h-20 sm:w-24 sm:h-24"></canvas>
+
+        <!-- Stage Announcement -->
+        <div class="space-y-2">
+          <h2 class="text-base sm:text-xl md:text-2xl text-[#ffcc00] title-shadow-gold leading-snug">
+            STAGE 1: PATENT MATCH
+          </h2>
+          <p class="text-sm sm:text-lg text-[#fcfcfc] blink-standard tracking-widest">
+            — READY! —
+          </p>
+        </div>
+
+        <!-- Patent Briefing -->
+        <p class="text-[10px] sm:text-xs text-[#8b9bb4] leading-relaxed max-w-md">
+          ENTER THE POST-MILLENNIUM RENAISSANCE BICYCLE PATENT ATLAS TO MATCH HISTORIC INVENTIONS.
+        </p>
+
+        <!-- Primary Launch Link to Live Match Mode -->
+        <div class="w-full flex flex-col items-center gap-3 pt-1">
+          <a
+            id="btn-launch-external"
+            href="https://www.postmillenniumrenaissance.com/atlas/#tab=match"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nes-btn-primary w-full sm:w-auto px-6 py-4 text-xs sm:text-sm md:text-base tracking-wider text-center"
+          >
+            ▶ PLAY MATCH MODE
+          </a>
+
+          <!-- Same-tab direct link option -->
+          <a
+            href="https://www.postmillenniumrenaissance.com/atlas/#tab=match"
+            class="text-[9px] sm:text-[10px] text-[#00e5ff] hover:text-[#ffcc00] underline underline-offset-4 pt-1"
+          >
+            OR OPEN IN THIS WINDOW →
+          </a>
+        </div>
+
+        <!-- Replay Intro Button for Testing & Preview -->
+        <div class="w-full border-t-2 border-[#00e5ff]/25 pt-4 mt-1 flex justify-center">
+          <button
+            id="btn-replay-intro"
+            type="button"
+            class="nes-btn px-4 py-2 text-[10px] sm:text-xs text-[#fcfcfc]"
+          >
+            ↺ REPLAY INTRO
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       APPLICATION LOGIC:
+       1. Web Audio API 8-Bit Chiptune Synthesizer & SFX Engine
+       2. Procedural Pixel-Art Sprite Renderer (Bicycle Components, Cyclist, Cards)
+       3. Parallax Blueprint Scene & Attract-Mode Card Matching Choreography
+       4. NES Menu Navigation, Keyboard/Touch Handlers & Pixel Wipe Transition
+       ========================================================================= -->
+  <script>
+    (() => {
+      'use strict';
+
+      /* =======================================================================
+         1. WEB AUDIO API 8-BIT CHIPTUNE SYNTHESIZER
+         Zero external audio files — authentic NES square, triangle & noise channels
+         ======================================================================= */
+      class ChiptuneEngine {
+        constructor() {
+          this.ctx = null;
+          this.masterGain = null;
+          this.isPlaying = false;
+          this.stepIndex = 0;
+          this.timerId = null;
+          this.tempoBPM = 138;
+          this.stepDurationMs = (60 / this.tempoBPM / 2) * 1000; // Eighth notes
+          this.noiseBuffer = null;
+
+          // Upbeat 8-bit cycling adventure melody (MIDI note numbers, 0 = rest)
+          this.leadPattern = [
+            72, 0, 76, 79, 84, 0, 79, 76,
+            77, 0, 81, 84, 81, 79, 77, 76,
+            74, 0, 77, 81, 79, 0, 76, 72,
+            74, 76, 74, 71, 67, 0, 0, 0,
+
+            72, 0, 76, 79, 84, 0, 86, 84,
+            81, 0, 84, 88, 86, 84, 81, 79,
+            77, 79, 81, 77, 76, 79, 84, 76,
+            74, 0, 71, 0, 72, 0, 0, 0
+          ];
+
+          // Arpeggio / counter-melody pulse channel
+          this.harmonyPattern = [
+            60, 64, 67, 64, 60, 64, 67, 64,
+            65, 69, 72, 69, 65, 69, 72, 69,
+            62, 65, 69, 65, 60, 64, 67, 64,
+            59, 62, 67, 62, 55, 59, 62, 0,
+
+            60, 64, 67, 64, 60, 64, 67, 64,
+            65, 69, 72, 69, 65, 69, 72, 69,
+            62, 65, 69, 65, 60, 64, 67, 64,
+            59, 62, 67, 62, 60, 64, 67, 0
+          ];
+
+          // Triangle wave bouncy bassline
+          this.bassPattern = [
+            48, 0, 55, 0, 48, 0, 55, 0,
+            53, 0, 60, 0, 53, 0, 60, 0,
+            50, 0, 57, 0, 48, 0, 55, 0,
+            43, 0, 50, 0, 43, 50, 55, 0,
+
+            48, 0, 55, 0, 48, 0, 55, 0,
+            53, 0, 60, 0, 53, 0, 60, 0,
+            50, 0, 57, 0, 48, 0, 55, 0,
+            43, 0, 55, 0, 48, 0, 48, 0
+          ];
+        }
+
+        initContext() {
+          if (!this.ctx) {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            this.ctx = new AudioCtx();
+
+            // Gentle lowpass filter to give warm CRT TV speaker character
+            const filter = this.ctx.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.value = 4400;
+
+            this.masterGain = this.ctx.createGain();
+            this.masterGain.gain.value = 0.2;
+
+            filter.connect(this.masterGain);
+            this.masterGain.connect(this.ctx.destination);
+            this.outputNode = filter;
+
+            // Pre-generate 1 second white noise buffer for NES percussion
+            const sampleRate = this.ctx.sampleRate;
+            this.noiseBuffer = this.ctx.createBuffer(1, sampleRate, sampleRate);
+            const data = this.noiseBuffer.getChannelData(0);
+            for (let i = 0; i < sampleRate; i++) {
+              data[i] = Math.random() * 2 - 1;
+            }
+          }
+          if (this.ctx.state === 'suspended') {
+            this.ctx.resume();
+          }
+        }
+
+        midiToFreq(midi) {
+          return 440 * Math.pow(2, (midi - 69) / 12);
+        }
+
+        playTone(freq, type, duration, volume, startTimeOffset = 0, slideToFreq = null) {
+          if (!this.ctx) return;
+          const now = this.ctx.currentTime + startTimeOffset;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, now);
+          if (slideToFreq) {
+            osc.frequency.exponentialRampToValueAtTime(slideToFreq, now + duration);
+          }
+
+          gain.gain.setValueAtTime(volume, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+          osc.connect(gain);
+          gain.connect(this.outputNode);
+
+          osc.start(now);
+          osc.stop(now + duration + 0.01);
+        }
+
+        playNoise(duration, volume, highpassFreq = 1200) {
+          if (!this.ctx || !this.noiseBuffer) return;
+          const now = this.ctx.currentTime;
+          const src = this.ctx.createBufferSource();
+          src.buffer = this.noiseBuffer;
+
+          const hp = this.ctx.createBiquadFilter();
+          hp.type = 'highpass';
+          hp.frequency.value = highpassFreq;
+
+          const gain = this.ctx.createGain();
+          gain.gain.setValueAtTime(volume, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+          src.connect(hp);
+          hp.connect(gain);
+          gain.connect(this.outputNode);
+
+          src.start(now);
+          src.stop(now + duration);
+        }
+
+        startMusic() {
+          this.initContext();
+          if (this.isPlaying) return;
+          this.isPlaying = true;
+          this.stepIndex = 0;
+          this.tick();
+          this.timerId = setInterval(() => this.tick(), this.stepDurationMs);
+        }
+
+        stopMusic() {
+          this.isPlaying = false;
+          if (this.timerId) {
+            clearInterval(this.timerId);
+            this.timerId = null;
+          }
+        }
+
+        toggleMusic() {
+          if (this.isPlaying) {
+            this.stopMusic();
+            return false;
+          } else {
+            this.startMusic();
+            return true;
+          }
+        }
+
+        tick() {
+          if (!this.isPlaying || !this.ctx) return;
+          const idx = this.stepIndex % this.leadPattern.length;
+          const durSec = (this.stepDurationMs / 1000) * 0.85;
+
+          const leadNote = this.leadPattern[idx];
+          if (leadNote > 0) {
+            this.playTone(this.midiToFreq(leadNote), 'square', durSec * 1.15, 0.16);
+          }
+
+          const harmNote = this.harmonyPattern[idx];
+          if (harmNote > 0) {
+            this.playTone(this.midiToFreq(harmNote), 'square', durSec * 0.65, 0.065);
+          }
+
+          const bassNote = this.bassPattern[idx];
+          if (bassNote > 0) {
+            this.playTone(this.midiToFreq(bassNote), 'triangle', durSec * 1.2, 0.24);
+          }
+
+          // Crisp 8-bit drum groove: snare on 2 & 4, hi-hat on offbeats
+          if (idx % 4 === 2) {
+            this.playNoise(0.075, 0.09, 900);
+          } else if (idx % 2 === 1) {
+            this.playNoise(0.025, 0.035, 3500);
+          }
+
+          this.stepIndex++;
+        }
+
+        // Authentic NES Menu Cursor Blip
+        playCursor() {
+          this.initContext();
+          this.playTone(587.33, 'square', 0.045, 0.16, 0, 880);
+        }
+
+        // Toggle / Modal Chime
+        playChirp(high = true) {
+          this.initContext();
+          if (high) {
+            this.playTone(659.25, 'square', 0.06, 0.15, 0);
+            this.playTone(987.77, 'square', 0.09, 0.15, 0.055);
+          } else {
+            this.playTone(987.77, 'square', 0.06, 0.15, 0);
+            this.playTone(659.25, 'square', 0.09, 0.15, 0.055);
+          }
+        }
+
+        // Subtle Card Match Sparkle Arpeggio (only when audio is enabled)
+        playMatchSparkle() {
+          if (!this.isPlaying || !this.ctx) return;
+          this.playTone(1046.5, 'square', 0.06, 0.08, 0);
+          this.playTone(1318.5, 'square', 0.06, 0.08, 0.05);
+          this.playTone(1567.98, 'square', 0.1, 0.08, 0.1);
+        }
+
+        // Triumphant 8-Bit 'PRESS START' Stage Fanfare
+        playStartFanfare() {
+          this.initContext();
+          const wasPlaying = this.isPlaying;
+          if (wasPlaying) this.stopMusic();
+
+          const notes = [
+            { f: 523.25, t: 0.00, d: 0.10 }, // C5
+            { f: 659.25, t: 0.10, d: 0.10 }, // E5
+            { f: 783.99, t: 0.20, d: 0.10 }, // G5
+            { f: 1046.5, t: 0.30, d: 0.18 }, // C6
+            { f: 783.99, t: 0.50, d: 0.12 }, // G5
+            { f: 1046.5, t: 0.64, d: 0.42 }  // C6!
+          ];
+
+          notes.forEach(n => {
+            this.playTone(n.f, 'square', n.d, 0.22, n.t);
+            this.playTone(n.f * 0.5, 'triangle', n.d, 0.22, n.t);
+          });
+        }
+      }
+
+      const audio = new ChiptuneEngine();
+
+      /* =======================================================================
+         2. PIXEL-ART SPRITE MATRICES (16x16 BICYCLE PATENT DRAWINGS)
+         Characters: '.' = transparent, 'C' = cyan, 'G' = gold, 'W' = white, 'R' = red
+         ======================================================================= */
+      const PATENT_ICONS = {
+        wheel: {
+          label: 'SPOKED WHEEL',
+          year: '1885',
+          grid: [
+            '.....WWWWWW.....',
+            '...WWCCCCCCWW...',
+            '..WCC......CCW..',
+            '.WC...W..W...CW.',
+            '.WC..W.CC.W..CW.',
+            'WC..W..CC..W..CW',
+            'WC.W...GG...W.CW',
+            'WCCCCCCGGCCCCCCW',
+            'WCCCCCCGGCCCCCCW',
+            'WC.W...GG...W.CW',
+            'WC..W..CC..W..CW',
+            '.WC..W.CC.W..CW.',
+            '.WC...W..W...CW.',
+            '..WCC......CCW..',
+            '...WWCCCCCCWW...',
+            '.....WWWWWW.....'
+          ]
+        },
+        gear: {
+          label: 'CHAINRING',
+          year: '1890',
+          grid: [
+            '......GGGG......',
+            '...GG.GGGG.GG...',
+            '..GGGGGGGGGGGG..',
+            '.GGGGCCCCCCGGGG.',
+            '.GGGCCC..CCCGGG.',
+            'GGGGCC.WW.CCGGGG',
+            'GGGCC.W..W.CCGGG',
+            'GGGGCC.WW.CCGGGG',
+            'GGGGCC.WW.CCGGGG',
+            'GGGCC.W..W.CCGGG',
+            'GGGGCC.WW.CCGGGG',
+            '.GGGCCC..CCCGGG.',
+            '.GGGGCCCCCCGGGG.',
+            '..GGGGGGGGGGGG..',
+            '...GG.GGGG.GG...',
+            '......GGGG......'
+          ]
+        },
+        fork: {
+          label: 'SUSP. FORK',
+          year: '1974',
+          grid: [
+            '.....WWWWWW.....',
+            '.....WCCCCW.....',
+            '.....WCCCCW.....',
+            '....GGGGGGGG....',
+            '...GGRRRRRRGG...',
+            '...GG......GG...',
+            '...CC......CC...',
+            '...GG......GG...',
+            '...CC......CC...',
+            '...GG......GG...',
+            '..RRR......RRR..',
+            '..RRR......RRR..',
+            '..RRR......RRR..',
+            '..WWW......WWW..',
+            '.WGGW......WGGW.',
+            '.WWWW......WWWW.'
+          ]
+        },
+        frame: {
+          label: 'DIAMOND FRAME',
+          year: '1885',
+          grid: [
+            '................',
+            '................',
+            '..GGG......WWW..',
+            '...RR.....WW....',
+            '...RRRRRRRRR....',
+            '....RR....RR....',
+            '....RR...RR.....',
+            '...RR...RR......',
+            '..RR...RR.......',
+            '.RRRRRRRR.......',
+            'W..RR..GG..W....',
+            '...RR..GG.......',
+            '................',
+            '................',
+            '................',
+            '................'
+          ]
+        }
+      };
+
+      const PALETTE_MAP = {
+        C: '#00e5ff',
+        G: '#ffcc00',
+        W: '#fcfcfc',
+        R: '#e52521'
+      };
+
+      // Helper to render any 16x16 sprite matrix onto a 2D context at integer coordinates
+      function drawPixelSprite(ctx, grid, x, y, scale = 1) {
+        for (let row = 0; row < grid.length; row++) {
+          const line = grid[row];
+          for (let col = 0; col < line.length; col++) {
+            const ch = line[col];
+            if (ch !== '.' && PALETTE_MAP[ch]) {
+              ctx.fillStyle = PALETTE_MAP[ch];
+              ctx.fillRect(
+                Math.round(x + col * scale),
+                Math.round(y + row * scale),
+                scale,
+                scale
+              );
+            }
+          }
+        }
+      }
+
+      // Render static legend icons inside the 'How To Play' modal
+      function populateLegendIcons() {
+        document.querySelectorAll('.legend-icon').forEach(canvas => {
+          const iconKey = canvas.dataset.icon;
+          const sprite = PATENT_ICONS[iconKey];
+          if (!sprite) return;
+          canvas.width = 16;
+          canvas.height = 16;
+          const c = canvas.getContext('2d');
+          c.imageSmoothingEnabled = false;
+          c.clearRect(0, 0, 16, 16);
+          drawPixelSprite(c, sprite.grid, 0, 0, 1);
+        });
+      }
+
+      /* =======================================================================
+         3. PROCEDURAL 8-BIT CANVAS SCENE (PARALLAX SKY, CARDS, CYCLIST)
+         ======================================================================= */
+      const sceneCanvas = document.getElementById('pixel-scene');
+      const sctx = sceneCanvas.getContext('2d');
+
+      // Logical pixel resolution (tall 224px NES vertical resolution, dynamic width)
+      const LOGICAL_H = 224;
+      let logicalW = 384;
+
+      function resizeSceneCanvas() {
+        const aspect = window.innerWidth / Math.max(window.innerHeight, 1);
+        logicalW = Math.max(240, Math.min(512, Math.round(LOGICAL_H * aspect)));
+        sceneCanvas.width = logicalW;
+        sceneCanvas.height = LOGICAL_H;
+        sctx.imageSmoothingEnabled = false;
+      }
+      window.addEventListener('resize', resizeSceneCanvas);
+      resizeSceneCanvas();
+
+      // Twinkling Pixel Stars
+      const stars = Array.from({ length: 34 }, (_, i) => ({
+        x: (i * 73) % 512,
+        y: 12 + ((i * 37) % 115),
+        phase: i * 0.7,
+        color: i % 5 === 0 ? '#ffcc00' : (i % 3 === 0 ? '#00e5ff' : '#fcfcfc'),
+        cross: i % 4 === 0
+      }));
+
+      // Floating Patent Blueprint Cards Choreography
+      const ICON_KEYS = ['wheel', 'gear', 'fork', 'frame'];
+      const cardDemo = {
+        timer: 0,
+        pairIndex: 0,
+        activePair: 0, // 0 = outer pair (cards 0 & 3), 1 = inner pair (cards 1 & 2)
+        state: 'CLOSED', // CLOSED -> FLIP_OPEN -> MATCHED -> FLIP_CLOSE
+        flipProgress: 0, // 0 = back, 1 = front
+        cards: [
+          { icon: 'wheel', flip: 0, matched: false },
+          { icon: 'gear',  flip: 0, matched: false },
+          { icon: 'gear',  flip: 0, matched: false },
+          { icon: 'wheel', flip: 0, matched: false }
+        ],
+        sparkles: [],
+        popups: []
+      };
+
+      let demoScore = 0;
+      const hudScoreEl = document.getElementById('hud-score');
+
+      function addDemoScore(pts) {
+        demoScore = (demoScore + pts) % 1000000;
+        hudScoreEl.textContent = String(demoScore).padStart(6, '0');
+      }
+
+      function spawnSparkleBurst(cx, cy) {
+        const colors = ['#ffcc00', '#00e5ff', '#fcfcfc', '#e52521'];
+        for (let i = 0; i < 14; i++) {
+          const angle = (Math.PI * 2 * i) / 14;
+          const speed = 18 + (i % 3) * 12;
+          cardDemo.sparkles.push({
+            x: cx,
+            y: cy,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed - 8,
+            life: 0.75,
+            maxLife: 0.75,
+            color: colors[i % colors.length]
+          });
+        }
+        cardDemo.popups.push({
+          x: cx,
+          y: cy - 10,
+          text: '+500',
+          life: 0.95
+        });
+      }
+
+      function updateCardDemo(dt, groundY) {
+        cardDemo.timer += dt;
+
+        // Card positions in mid-sky above cyclist
+        const isCompact = logicalW < 300;
+        const cardW = isCompact ? 24 : 28;
+        const cardH = isCompact ? 30 : 34;
+        const spacing = isCompact ? 8 : 16;
+        const totalW = cardW * 4 + spacing * 3;
+        const startX = Math.floor((logicalW - totalW) / 2);
+        const baseY = Math.max(88, groundY - 58);
+
+        const targetIndices = cardDemo.activePair === 0 ? [0, 3] : [1, 2];
+
+        if (cardDemo.state === 'CLOSED') {
+          if (cardDemo.timer > 1.1) {
+            cardDemo.timer = 0;
+            cardDemo.state = 'FLIP_OPEN';
+          }
+        } else if (cardDemo.state === 'FLIP_OPEN') {
+          const p = Math.min(1, cardDemo.timer / 0.35);
+          targetIndices.forEach(idx => {
+            cardDemo.cards[idx].flip = p;
+          });
+          if (p >= 1) {
+            cardDemo.timer = 0;
+            cardDemo.state = 'MATCHED';
+            targetIndices.forEach(idx => {
+              cardDemo.cards[idx].matched = true;
+              const cx = startX + idx * (cardW + spacing) + cardW / 2;
+              const cy = baseY + cardH / 2;
+              spawnSparkleBurst(cx, cy);
+            });
+            addDemoScore(500);
+            audio.playMatchSparkle();
+          }
+        } else if (cardDemo.state === 'MATCHED') {
+          if (cardDemo.timer > 1.35) {
+            cardDemo.timer = 0;
+            cardDemo.state = 'FLIP_CLOSE';
+          }
+        } else if (cardDemo.state === 'FLIP_CLOSE') {
+          const p = Math.max(0, 1 - cardDemo.timer / 0.3);
+          targetIndices.forEach(idx => {
+            cardDemo.cards[idx].flip = p;
+            cardDemo.cards[idx].matched = false;
+          });
+          if (p <= 0) {
+            cardDemo.timer = 0;
+            cardDemo.state = 'CLOSED';
+            // Cycle to next pair and assign fresh matching icons
+            cardDemo.activePair = cardDemo.activePair === 0 ? 1 : 0;
+            cardDemo.pairIndex = (cardDemo.pairIndex + 1) % ICON_KEYS.length;
+            const nextIcon = ICON_KEYS[cardDemo.pairIndex];
+            const nextIndices = cardDemo.activePair === 0 ? [0, 3] : [1, 2];
+            nextIndices.forEach(idx => {
+              cardDemo.cards[idx].icon = nextIcon;
+            });
+          }
+        }
+
+        // Update sparkles
+        for (let i = cardDemo.sparkles.length - 1; i >= 0; i--) {
+          const sp = cardDemo.sparkles[i];
+          sp.x += sp.vx * dt;
+          sp.y += sp.vy * dt;
+          sp.vy += 32 * dt; // subtle pixel gravity
+          sp.life -= dt;
+          if (sp.life <= 0) cardDemo.sparkles.splice(i, 1);
+        }
+
+        // Update +500 popups
+        for (let i = cardDemo.popups.length - 1; i >= 0; i--) {
+          const pop = cardDemo.popups[i];
+          pop.y -= 14 * dt;
+          pop.life -= dt;
+          if (pop.life <= 0) cardDemo.popups.splice(i, 1);
+        }
+
+        return { cardW, cardH, spacing, startX, baseY };
+      }
+
+      function drawCardDemo(ctx, layout, time) {
+        const { cardW, cardH, spacing, startX, baseY } = layout;
+
+        cardDemo.cards.forEach((card, idx) => {
+          const bob = Math.round(Math.sin(time * 3.2 + idx * 1.1) * 2);
+          const x = startX + idx * (cardW + spacing);
+          const y = baseY + bob;
+
+          // 8-bit horizontal card-flip squash math
+          const angle = card.flip * Math.PI;
+          const scaleX = Math.max(0.14, Math.abs(Math.cos(angle)));
+          const showingFront = card.flip >= 0.5;
+          const drawW = Math.max(4, Math.round(cardW * scaleX));
+          const drawX = Math.round(x + (cardW - drawW) / 2);
+
+          // Drop shadow
+          ctx.fillStyle = '#060914';
+          ctx.fillRect(drawX + 2, y + 2, drawW, cardH);
+
+          if (!showingFront) {
+            // Card Back: Classic Navy Blueprint Card with Gold Rivets
+            ctx.fillStyle = '#111b3a';
+            ctx.fillRect(drawX, y, drawW, cardH);
+            ctx.strokeStyle = '#00e5ff';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(drawX + 0.5, y + 0.5, drawW - 1, cardH - 1);
+
+            if (drawW >= 12) {
+              ctx.fillStyle = '#ffcc00';
+              ctx.fillRect(drawX + 2, y + 2, 2, 2);
+              ctx.fillRect(drawX + drawW - 4, y + 2, 2, 2);
+              ctx.fillRect(drawX + 2, y + cardH - 4, 2, 2);
+              ctx.fillRect(drawX + drawW - 4, y + cardH - 4, 2, 2);
+
+              // Center miniature gear dot
+              ctx.fillStyle = '#00e5ff';
+              ctx.fillRect(Math.round(drawX + drawW / 2 - 2), Math.round(y + cardH / 2 - 2), 4, 4);
+            }
+          } else {
+            // Card Front: Revealed Patent Component Drawing
+            const flashGold = card.matched && Math.floor(time * 14) % 2 === 0;
+            ctx.fillStyle = flashGold ? '#2a2208' : '#0b1021';
+            ctx.fillRect(drawX, y, drawW, cardH);
+
+            ctx.strokeStyle = card.matched ? '#ffcc00' : '#fcfcfc';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(drawX + 0.5, y + 0.5, drawW - 1, cardH - 1);
+
+            if (drawW >= 18) {
+              const sprite = PATENT_ICONS[card.icon];
+              const iconX = Math.round(drawX + (drawW - 16) / 2);
+              const iconY = Math.round(y + 4);
+              drawPixelSprite(ctx, sprite.grid, iconX, iconY, 1);
+
+              // Patent Year Tag at bottom of card
+              ctx.fillStyle = '#ffcc00';
+              ctx.font = '5px "Press Start 2P", monospace';
+              ctx.textAlign = 'center';
+              ctx.fillText(sprite.year, Math.round(drawX + drawW / 2), y + cardH - 3);
+            }
+          }
+        });
+
+        // Draw Pixel Sparkles
+        cardDemo.sparkles.forEach(sp => {
+          ctx.fillStyle = sp.color;
+          const sz = sp.life > 0.35 ? 2 : 1;
+          ctx.fillRect(Math.round(sp.x), Math.round(sp.y), sz, sz);
+        });
+
+        // Draw '+500' Score Popups
+        cardDemo.popups.forEach(pop => {
+          ctx.fillStyle = '#060914';
+          ctx.font = '6px "Press Start 2P", monospace';
+          ctx.textAlign = 'center';
+          ctx.fillText(pop.text, Math.round(pop.x) + 1, Math.round(pop.y) + 1);
+          ctx.fillStyle = '#ffcc00';
+          ctx.fillText(pop.text, Math.round(pop.x), Math.round(pop.y));
+        });
+      }
+
+      // Draw a crisp Bresenham-style integer pixel line
+      function drawPixelLine(ctx, x0, y0, x1, y1, color, thickness = 1) {
+        x0 = Math.round(x0);
+        y0 = Math.round(y0);
+        x1 = Math.round(x1);
+        y1 = Math.round(y1);
+        ctx.fillStyle = color;
+
+        const dx = Math.abs(x1 - x0);
+        const dy = Math.abs(y1 - y0);
+        const sx = x0 < x1 ? 1 : -1;
+        const sy = y0 < y1 ? 1 : -1;
+        let err = dx - dy;
+
+        while (true) {
+          ctx.fillRect(x0, y0, thickness, thickness);
+          if (x0 === x1 && y0 === y1) break;
+          const e2 = 2 * err;
+          if (e2 > -dy) { err -= dy; x0 += sx; }
+          if (e2 < dx)  { err += dx; y0 += sy; }
+        }
+      }
+
+      // Draw an 8-bit Spoked Bicycle Wheel
+      function drawPixelWheel(ctx, cx, cy, radius, rotation) {
+        cx = Math.round(cx);
+        cy = Math.round(cy);
+
+        // Tire & Rim pixels around perimeter
+        const steps = 32;
+        for (let i = 0; i < steps; i++) {
+          const a = (Math.PI * 2 * i) / steps;
+          const tx = Math.round(cx + Math.cos(a) * radius);
+          const ty = Math.round(cy + Math.sin(a) * radius);
+          ctx.fillStyle = '#fcfcfc';
+          ctx.fillRect(tx, ty, 2, 2);
+
+          const rx = Math.round(cx + Math.cos(a) * (radius - 1.5));
+          const ry = Math.round(cy + Math.sin(a) * (radius - 1.5));
+          ctx.fillStyle = '#00e5ff';
+          ctx.fillRect(rx, ry, 1, 1);
+        }
+
+        // 4 Rotating Spokes
+        for (let s = 0; s < 4; s++) {
+          const sa = rotation + (Math.PI * s) / 2;
+          const sx = cx + Math.cos(sa) * (radius - 2);
+          const sy = cy + Math.sin(sa) * (radius - 2);
+          drawPixelLine(ctx, cx, cy, sx, sy, '#8b9bb4', 1);
+        }
+
+        // Gold Hub
+        ctx.fillStyle = '#ffcc00';
+        ctx.fillRect(cx - 1, cy - 1, 3, 3);
+      }
+
+      // Draw the Animated 8-Bit Cyclist Riding Along the Foreground Blueprint Road
+      function drawCyclist(ctx, time, groundY) {
+        const bikeX = Math.round(logicalW * 0.24);
+        const wheelR = 11;
+        const bounce = Math.round(Math.sin(time * 16) * 0.6);
+        const rearHubX = bikeX;
+        const rearHubY = groundY - wheelR - 1 + bounce;
+        const frontHubX = bikeX + 34;
+        const frontHubY = rearHubY;
+        const wheelAngle = time * 8.5;
+
+        // Road shadow underneath bicycle
+        ctx.fillStyle = 'rgba(0, 229, 255, 0.25)';
+        ctx.fillRect(rearHubX - 8, groundY - 1, 50, 2);
+
+        // Rear & Front Wheels
+        drawPixelWheel(ctx, rearHubX, rearHubY, wheelR, wheelAngle);
+        drawPixelWheel(ctx, frontHubX, frontHubY, wheelR, wheelAngle);
+
+        // Key Frame Coordinates
+        const bbX = rearHubX + 14;   // Bottom bracket
+        const bbY = rearHubY + 1;
+        const seatX = rearHubX + 9;  // Seat cluster
+        const seatY = rearHubY - 13;
+        const headX = frontHubX - 6; // Head tube top
+        const headY = rearHubY - 14;
+        const forkCrownX = frontHubX - 4;
+        const forkCrownY = rearHubY - 8;
+
+        // Back Leg (Far side — darker red/cyan for depth)
+        const crankR = 4;
+        const backPedalX = bbX + Math.cos(wheelAngle + Math.PI) * crankR;
+        const backPedalY = bbY + Math.sin(wheelAngle + Math.PI) * crankR;
+        const backKneeX = (seatX + backPedalX) / 2 + 3;
+        const backKneeY = (seatY - 3 + backPedalY) / 2 - 1;
+        drawPixelLine(ctx, seatX + 1, seatY - 3, backKneeX, backKneeY, '#007a8a', 2);
+        drawPixelLine(ctx, backKneeX, backKneeY, backPedalX, backPedalY, '#8b9bb4', 2);
+
+        // Diamond Bicycle Frame (NES Red + Gold Fork)
+        drawPixelLine(ctx, rearHubX, rearHubY, bbX, bbY, '#e52521', 2);       // Chainstay
+        drawPixelLine(ctx, rearHubX, rearHubY, seatX, seatY, '#e52521', 2);   // Seatstay
+        drawPixelLine(ctx, bbX, bbY, seatX, seatY, '#e52521', 2);             // Seat tube
+        drawPixelLine(ctx, bbX, bbY, forkCrownX, forkCrownY, '#e52521', 2);   // Down tube
+        drawPixelLine(ctx, seatX, seatY, headX, headY, '#e52521', 2);         // Top tube
+        drawPixelLine(ctx, headX, headY, frontHubX, frontHubY, '#ffcc00', 2); // Gold Fork
+
+        // Saddle & Handlebars
+        ctx.fillStyle = '#fcfcfc';
+        ctx.fillRect(seatX - 3, seatY - 3, 6, 2); // Saddle
+        drawPixelLine(ctx, headX, headY, headX + 3, headY - 4, '#fcfcfc', 2); // Stem
+        ctx.fillStyle = '#00e5ff';
+        ctx.fillRect(headX + 2, headY - 4, 4, 2); // Drop bars
+
+        // Chainring
+        ctx.fillStyle = '#ffcc00';
+        ctx.fillRect(bbX - 2, bbY - 2, 5, 5);
+
+        // Cyclist Torso, Head, Cap & Flowing Scarf
+        const hipX = seatX;
+        const hipY = seatY - 4;
+        const shoulderX = hipX + 8;
+        const shoulderY = hipY - 9;
+
+        // Torso (Crisp Cyan Racing Jersey with White Stripe)
+        drawPixelLine(ctx, hipX, hipY, shoulderX, shoulderY, '#00e5ff', 4);
+        ctx.fillStyle = '#fcfcfc';
+        ctx.fillRect(hipX + 3, hipY - 5, 3, 2);
+
+        // Arm reaching to handlebars
+        drawPixelLine(ctx, shoulderX, shoulderY + 1, headX + 3, headY - 3, '#fcfcfc', 2);
+
+        // Head & Retro Cycling Cap
+        const headCenterX = shoulderX + 2;
+        const headCenterY = shoulderY - 5;
+        ctx.fillStyle = '#ffccaa';
+        ctx.fillRect(headCenterX, headCenterY, 5, 5); // Face
+        ctx.fillStyle = '#00e5ff';
+        ctx.fillRect(headCenterX + 3, headCenterY + 1, 2, 2); // Goggles
+        ctx.fillStyle = '#e52521';
+        ctx.fillRect(headCenterX - 1, headCenterY - 2, 6, 2); // Cap crown
+        ctx.fillStyle = '#ffcc00';
+        ctx.fillRect(headCenterX + 4, headCenterY - 1, 3, 1); // Cap visor
+
+        // Animated Flowing Pixel Scarf (5 undulating segments behind neck)
+        for (let s = 0; s < 6; s++) {
+          const sx = shoulderX - 2 - s * 3;
+          const sy = shoulderY - 1 + Math.round(Math.sin(time * 12 - s * 0.9) * 2);
+          ctx.fillStyle = s % 2 === 0 ? '#ffcc00' : '#e52521';
+          ctx.fillRect(sx, sy, 3, 2);
+        }
+
+        // Front Leg (Near side — bright white/cyan with red shoe)
+        const frontPedalX = bbX + Math.cos(wheelAngle) * crankR;
+        const frontPedalY = bbY + Math.sin(wheelAngle) * crankR;
+        const frontKneeX = (hipX + frontPedalX) / 2 + 4;
+        const frontKneeY = (hipY + frontPedalY) / 2 - 1;
+        drawPixelLine(ctx, hipX, hipY, frontKneeX, frontKneeY, '#00e5ff', 2);
+        drawPixelLine(ctx, frontKneeX, frontKneeY, frontPedalX, frontPedalY, '#fcfcfc', 2);
+        ctx.fillStyle = '#e52521';
+        ctx.fillRect(Math.round(frontPedalX) - 1, Math.round(frontPedalY), 4, 2); // Shoe
+
+        // Speed Wind Streaks
+        const streakOffset = Math.floor((time * 90) % 40);
+        ctx.fillStyle = 'rgba(0, 229, 255, 0.45)';
+        ctx.fillRect(rearHubX - 18 - streakOffset, rearHubY - 14, 8, 1);
+        ctx.fillRect(rearHubX - 26 - ((streakOffset + 18) % 40), rearHubY - 4, 11, 1);
+      }
+
+      // Milestones scrolling along the foreground blueprint road
+      const MILESTONES = [
+        '1817 DRAISINE',
+        '1869 VELOCIPEDE',
+        '1885 SAFETY BIKE',
+        '1974 MTB FORK',
+        '2026 ATLAS'
+      ];
+
+      // Main Canvas Render Loop
+      let lastFrameTime = performance.now();
+      let elapsedSceneTime = 0;
+
+      function renderScene(now) {
+        const dt = Math.min(0.05, (now - lastFrameTime) / 1000);
+        lastFrameTime = now;
+        elapsedSceneTime += dt;
+
+        const w = logicalW;
+        const h = LOGICAL_H;
+        const groundY = h - 18;
+
+        // 1. Deep Blueprint Midnight Sky
+        sctx.fillStyle = '#0b1021';
+        sctx.fillRect(0, 0, w, h);
+
+        // 2. Parallax Blueprint Drafting Grid
+        const gridScroll = Math.floor(elapsedSceneTime * 10) % 16;
+        sctx.fillStyle = 'rgba(0, 229, 255, 0.08)';
+        for (let gx = -gridScroll; gx < w; gx += 16) {
+          sctx.fillRect(gx, 0, 1, groundY);
+        }
+        for (let gy = 16; gy < groundY; gy += 16) {
+          sctx.fillRect(0, gy, w, 1);
+        }
+
+        // Major 64px Blueprint Grid Lines + Registration Crosshairs
+        const majorScroll = Math.floor(elapsedSceneTime * 10) % 64;
+        sctx.fillStyle = 'rgba(0, 229, 255, 0.16)';
+        for (let gx = -majorScroll; gx < w; gx += 64) {
+          sctx.fillRect(gx, 0, 1, groundY);
+          for (let gy = 32; gy < groundY; gy += 64) {
+            sctx.fillRect(gx - 2, gy, 5, 1);
+            sctx.fillRect(gx, gy - 2, 1, 5);
+          }
+        }
+
+        // 3. Twinkling Pixel Stars
+        stars.forEach(st => {
+          const sx = (st.x % w);
+          const blink = Math.sin(elapsedSceneTime * 4 + st.phase);
+          if (blink > -0.3) {
+            sctx.fillStyle = st.color;
+            sctx.fillRect(sx, st.y, 1, 1);
+            if (st.cross && blink > 0.45) {
+              sctx.fillRect(sx - 1, st.y, 3, 1);
+              sctx.fillRect(sx, st.y - 1, 1, 3);
+            }
+          }
+        });
+
+        // 4. Parallax Distant Pixelated Mountain Peaks
+        const farScroll = Math.floor(elapsedSceneTime * 6);
+        sctx.fillStyle = '#111a38';
+        for (let x = 0; x < w; x += 2) {
+          const wx = x + farScroll;
+          const peak = Math.abs(((wx % 120) - 60)) * 0.45 + Math.abs(((wx % 74) - 37)) * 0.25;
+          const mTop = Math.round(groundY - 44 + peak);
+          sctx.fillRect(x, mTop, 2, groundY - mTop);
+        }
+
+        // Nearer Mountain Ridge with Cyan Drafting Edge
+        const nearScroll = Math.floor(elapsedSceneTime * 14);
+        for (let x = 0; x < w; x += 2) {
+          const wx = x + nearScroll;
+          const peak = Math.abs(((wx % 96) - 48)) * 0.42;
+          const mTop = Math.round(groundY - 26 + peak);
+          sctx.fillStyle = '#162347';
+          sctx.fillRect(x, mTop, 2, groundY - mTop);
+          sctx.fillStyle = 'rgba(0, 229, 255, 0.35)';
+          sctx.fillRect(x, mTop, 2, 1);
+        }
+
+        // 5. Floating Patent Blueprint Cards & Matching Sparkles
+        const cardLayout = updateCardDemo(dt, groundY);
+        drawCardDemo(sctx, cardLayout, elapsedSceneTime);
+
+        // 6. Foreground Blueprint Road & Scrolling Patent Milestones
+        sctx.fillStyle = '#060914';
+        sctx.fillRect(0, groundY, w, h - groundY);
+
+        // Double Cyan Drafting Baseline
+        sctx.fillStyle = '#00e5ff';
+        sctx.fillRect(0, groundY, w, 1);
+        sctx.fillStyle = '#007a8a';
+        sctx.fillRect(0, groundY + 3, w, 1);
+
+        // Scrolling Ruler Ticks & Historic Patent Year Signposts
+        const roadSpeed = 52;
+        const tickOffset = Math.floor(elapsedSceneTime * roadSpeed) % 12;
+        sctx.fillStyle = '#00e5ff';
+        for (let tx = -tickOffset; tx < w; tx += 12) {
+          sctx.fillRect(tx, groundY + 1, 1, 2);
+        }
+
+        const milestoneSpacing = 150;
+        const totalTrack = milestoneSpacing * MILESTONES.length;
+        const scrollPx = Math.floor(elapsedSceneTime * roadSpeed);
+        sctx.font = '5px "Press Start 2P", monospace';
+        sctx.textAlign = 'left';
+
+        MILESTONES.forEach((label, idx) => {
+          let mx = ((idx * milestoneSpacing - scrollPx) % totalTrack + totalTrack) % totalTrack - 60;
+          if (mx < w + 20) {
+            sctx.fillStyle = '#ffcc00';
+            sctx.fillRect(mx, groundY + 5, 2, 4);
+            sctx.fillStyle = '#8b9bb4';
+            sctx.fillText(label, mx + 5, groundY + 11);
+          }
+        });
+
+        // 7. Animated 8-Bit Cyclist
+        drawCyclist(sctx, elapsedSceneTime, groundY);
+
+        requestAnimationFrame(renderScene);
+      }
+
+      /* =======================================================================
+         4. INTERACTIVE NES MENU, KEYBOARD / TOUCH CONTROLS & START TRANSITION
+         ======================================================================= */
+      const menuItems = Array.from(document.querySelectorAll('.menu-item'));
+      const btnPressStart = document.getElementById('btn-press-start');
+      const btnCrtToggle = document.getElementById('btn-crt-toggle');
+      const chiptuneLabel = document.getElementById('chiptune-label');
+      const eqBars = document.getElementById('eq-bars');
+      const modal = document.getElementById('how-to-play-modal');
+      const btnCloseModal = document.getElementById('btn-close-modal');
+      const wipeCanvas = document.getElementById('wipe-canvas');
+      const stageLaunchOverlay = document.getElementById('stage-launch-overlay');
+      const btnReplayIntro = document.getElementById('btn-replay-intro');
+      const launchEmblem = document.getElementById('launch-emblem');
+
+      let selectedIndex = 0;
+      let isModalOpen = false;
+      let isStarting = false;
+      let crtEnabled = true;
+
+      function updateMenuVisuals() {
+        menuItems.forEach((btn, idx) => {
+          const cursor = btn.querySelector('.menu-cursor');
+          if (idx === selectedIndex) {
+            btn.classList.remove('text-[#8b9bb4]');
+            btn.classList.add('text-[#fcfcfc]');
+            cursor.classList.remove('text-transparent');
+            cursor.classList.add('text-[#ffcc00]');
+          } else {
+            btn.classList.remove('text-[#fcfcfc]');
+            btn.classList.add('text-[#8b9bb4]');
+            cursor.classList.remove('text-[#ffcc00]');
+            cursor.classList.add('text-transparent');
+          }
+        });
+      }
+
+      function updateChiptuneUI(active) {
+        chiptuneLabel.textContent = active ? 'CHIPTUNE: ON' : 'CHIPTUNE: OFF';
+        if (active) {
+          eqBars.classList.remove('opacity-40');
+          eqBars.classList.add('eq-active');
+        } else {
+          eqBars.classList.add('opacity-40');
+          eqBars.classList.remove('eq-active');
+        }
+      }
+
+      // Toggle CRT Scanlines
+      btnCrtToggle.addEventListener('click', () => {
+        crtEnabled = !crtEnabled;
+        document.body.classList.toggle('crt-off', !crtEnabled);
+        btnCrtToggle.textContent = crtEnabled ? 'CRT: ON' : 'CRT: OFF';
+        btnCrtToggle.setAttribute('aria-pressed', String(crtEnabled));
+        audio.playCursor();
+      });
+
+      // Open / Close How To Play Modal
+      function openHowToPlay() {
+        if (isStarting) return;
+        isModalOpen = true;
+        modal.classList.remove('hidden');
+        audio.playChirp(true);
+        btnCloseModal.focus();
+      }
+
+      function closeHowToPlay() {
+        isModalOpen = false;
+        modal.classList.add('hidden');
+        audio.playChirp(false);
+      }
+
+      btnCloseModal.addEventListener('click', closeHowToPlay);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeHowToPlay();
+      });
+
+      // Draw spinning pixel wheel emblem on Stage 1 Launch screen
+      let launchAnimId = null;
+      function startLaunchEmblemAnimation() {
+        launchEmblem.width = 32;
+        launchEmblem.height = 32;
+        const lctx = launchEmblem.getContext('2d');
+        lctx.imageSmoothingEnabled = false;
+        let angle = 0;
+
+        function loop() {
+          lctx.clearRect(0, 0, 32, 32);
+          angle += 0.08;
+          drawPixelWheel(lctx, 16, 16, 13, angle);
+          launchAnimId = requestAnimationFrame(loop);
+        }
+        if (launchAnimId) cancelAnimationFrame(launchAnimId);
+        loop();
+      }
+
+      // Pixel Curtain Wipe Transition into Stage 1 Launch Screen
+      function runPixelWipeTransition(onComplete) {
+        wipeCanvas.classList.remove('hidden');
+        const cols = 16;
+        const rows = 12;
+        wipeCanvas.width = cols * 16;
+        wipeCanvas.height = rows * 16;
+        const wctx = wipeCanvas.getContext('2d');
+        wctx.imageSmoothingEnabled = false;
+
+        const blockW = wipeCanvas.width / cols;
+        const blockH = wipeCanvas.height / rows;
+        let progress = 0;
+
+        function stepWipe() {
+          progress += 1.25;
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              // Diagonal checkerboard wave pattern
+              const threshold = (c + r) * 0.65;
+              if (progress >= threshold) {
+                wctx.fillStyle = (c + r) % 2 === 0 ? '#0b1021' : '#060914';
+                wctx.fillRect(c * blockW, r * blockH, blockW, blockH);
+
+                // Leading cyan edge highlight
+                if (progress - threshold < 1.3) {
+                  wctx.fillStyle = '#00e5ff';
+                  wctx.fillRect(c * blockW + 2, r * blockH + 2, blockW - 4, blockH - 4);
+                }
+              }
+            }
+          }
+
+          if (progress < cols + rows + 4) {
+            requestAnimationFrame(stepWipe);
+          } else {
+            onComplete();
+            wipeCanvas.classList.add('hidden');
+          }
+        }
+        requestAnimationFrame(stepWipe);
+      }
+
+      // Trigger Start Sequence
+      function triggerStartSequence() {
+        if (isStarting || isModalOpen) return;
+        isStarting = true;
+        selectedIndex = 0;
+        updateMenuVisuals();
+
+        // Rapid NES confirmation blink + triumphant start fanfare
+        btnPressStart.classList.remove('blink-standard');
+        btnPressStart.classList.add('blink-rapid');
+        menuItems[0].classList.add('blink-rapid');
+        audio.playStartFanfare();
+
+        setTimeout(() => {
+          runPixelWipeTransition(() => {
+            stageLaunchOverlay.classList.remove('hidden');
+            startLaunchEmblemAnimation();
+          });
+        }, 780);
+      }
+
+      // Replay Intro Handler
+      btnReplayIntro.addEventListener('click', () => {
+        audio.playChirp(true);
+        isStarting = false;
+        if (launchAnimId) {
+          cancelAnimationFrame(launchAnimId);
+          launchAnimId = null;
+        }
+        stageLaunchOverlay.classList.add('hidden');
+        btnPressStart.classList.remove('blink-rapid');
+        btnPressStart.classList.add('blink-standard');
+        menuItems[0].classList.remove('blink-rapid');
+      });
+
+      // Execute Selected Menu Option
+      function executeMenuAction(index) {
+        if (index === 0) {
+          triggerStartSequence();
+        } else if (index === 1) {
+          openHowToPlay();
+        } else if (index === 2) {
+          const nowPlaying = audio.toggleMusic();
+          updateChiptuneUI(nowPlaying);
+          if (!nowPlaying) {
+            audio.playChirp(false);
+          }
+        }
+      }
+
+      // Click / Hover Listeners on Menu Items
+      menuItems.forEach((btn, idx) => {
+        btn.addEventListener('mouseenter', () => {
+          if (isStarting || isModalOpen) return;
+          if (selectedIndex !== idx) {
+            selectedIndex = idx;
+            updateMenuVisuals();
+            audio.playCursor();
+          }
+        });
+
+        btn.addEventListener('click', () => {
+          if (isStarting || isModalOpen) return;
+          selectedIndex = idx;
+          updateMenuVisuals();
+          executeMenuAction(idx);
+        });
+      });
+
+      // Clicking 'PRESS START' directly starts the game immediately
+      btnPressStart.addEventListener('click', () => {
+        triggerStartSequence();
+      });
+
+      // Global Keyboard Controls (Arrow Up/Down, Enter, Space, M, Escape)
+      window.addEventListener('keydown', (e) => {
+        if (isStarting) return;
+
+        if (isModalOpen) {
+          if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            closeHowToPlay();
+          }
+          return;
+        }
+
+        switch (e.key) {
+          case 'ArrowUp':
+          case 'w':
+          case 'W':
+            e.preventDefault();
+            selectedIndex = (selectedIndex - 1 + menuItems.length) % menuItems.length;
+            updateMenuVisuals();
+            audio.playCursor();
+            break;
+
+          case 'ArrowDown':
+          case 's':
+          case 'S':
+            e.preventDefault();
+            selectedIndex = (selectedIndex + 1) % menuItems.length;
+            updateMenuVisuals();
+            audio.playCursor();
+            break;
+
+          case 'Enter':
+          case ' ':
+            e.preventDefault();
+            executeMenuAction(selectedIndex);
+            break;
+
+          case 'm':
+          case 'M': {
+            e.preventDefault();
+            const playing = audio.toggleMusic();
+            updateChiptuneUI(playing);
+            break;
+          }
+        }
+      });
+
+      // Interactive Touch/Click Sparkle Burst on Background Canvas
+      sceneCanvas.addEventListener('pointerdown', (e) => {
+        const rect = sceneCanvas.getBoundingClientRect();
+        const lx = ((e.clientX - rect.left) / rect.width) * logicalW;
+        const ly = ((e.clientY - rect.top) / rect.height) * LOGICAL_H;
+        spawnSparkleBurst(lx, ly);
+        audio.playCursor();
+      });
+
+      // Initialize UI & Start Animation Loop on Load
+      window.onload = function () {
+        populateLegendIcons();
+        updateMenuVisuals();
+        requestAnimationFrame(renderScene);
+      };
+    })();
+  </script>
+</body>
+</html>
