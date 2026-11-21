@@ -1,0 +1,140 @@
+patent: US11428279B2
+source: https://patentimages.storage.googleapis.com/f3/26/f5/3b5cc7183080fd/US11428279.pdf
+pages: 25
+per-page extracted text length: {1: 2465, 2: 1738, 3: 116, 4: 117, 5: 163, 6: 175, 7: 134, 8: 219, 9: 153, 10: 176, 11: 172, 12: 138, 13: 119, 14: 130, 15: 184, 16: 5976, 17: 7112, 18: 7610, 19: 7812, 20: 7687, 21: 7327, 22: 7440, 23: 6779, 24: 6244, 25: 459}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011428279B2
+
+( 12 ) United States Patent
+
+( 10) Patent No.: US 11,428,279 B2
+Aug. 30, 2022
+(45 ) Date of Patent :
+
+Choltco - Devlin et al .
+
+( 54 ) SUSPENSION ENHANCING HUB AND REAR
+DERAILLEUR ASSEMBLY
+
+( 71 ) Applicant: Fox Factory, Inc. , Braselton , GA (US )
+( 72 ) Inventors: Evan Michael Choltco - Devlin , North
+
+( 58 ) Field of Classification Search
+None
+See application file for complete search history .
+( 56 )
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+Vancouver (CA) ; Mark Stephen
+Fitzsimmons, Gilroy, CA (US ) ; Wesley
+E. Allinger , Santa Cruz, CA (US )
+
+4,773,671 A
+
+4,984,819 A
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 0 days.
+( 21 ) Appl. No .: 16 /694,732
+Nov. 25 , 2019
+(22) Filed :
+Prior Publication Data
+( 65 )
+US 2020/0166089 A1
+May 28 , 2020
+
+Related U.S. Application Data
+( 60 ) Provisional application No. 62/ 805,885 , filed on Feb.
+
+14 , 2019 , provisional application No. 62 /772,504 ,
+(Continued )
+
+(51 ) Int. Ci.
+F16D 48/06
+F16D 27/09
+
+(52) U.S. CI.
+CPC
+
+1/1991 Kakizaki et al .
+
+( Continued )
+
+( 73 ) Assignee : Fox Factory, Inc. , Duluth , GA (US )
+( * ) Notice :
+
+9/1988 Inagaki
+
+FOREIGN PATENT DOCUMENTS
+DE
+
+202010016798 U1
+
+3/2012
+
+DE
+
+202015005747 U1
+
+11/2016
+
+(Continued )
+OTHER PUBLICATIONS
+
+European Search Report for European Application No. 19211677.0 ,
+7 pages , dated Apr. 20 , 2020 ( Apr. 20 , 2020 ) .
+
+(Continued )
+
+Primary Examiner Timothy Hannon
+ABSTRACT
+
+( 57 )
+
+An electronic automatically decoupling hub assembly is
+disclosed herein . The decoupling hub assembly has an axle
+and a hub shell rotationally positioned about the axle . A
+controller provides automatic activation /deactivation signals
+to an inductor. The decoupling hub assembly has a bearing
+
+rotationally positioned about the axle and a cassette body
+assembly, having a plurality of teeth , rotationally positioned
+about the bearing. One or more pawls are provided to engage
+
+( 2006.01 )
+(2006.01 )
+(Continued )
+
+F16D 48/064 (2013.01 ) ; F16D 27/09
+
+(2013.01 ) ; F16D 41/16 ( 2013.01 ) ; F16D
+41/30 ( 2013.01 ) ;
+
+with at least some of the teeth of the cassette body assembly
+and a seal is used to contain the pawls within the decoupling
+hub assembly. A cassette body assembly is coupled with the
+ratchet ring and an end cap is used to prevent a contaminant
+from entering into the decoupling hub assembly.
+16 Claims , 13 Drawing Sheets
+
+( Continued )
+
+30
+
+38 26
+415
+15
+
+12
+305
+13
+
+55
+
+45
+
+
