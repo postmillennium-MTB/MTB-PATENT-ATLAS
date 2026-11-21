@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 532 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 536 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,10 +14,10 @@ An interactive timeline of mountain bike intellectual property: 532 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 532 |
+| **Total entries** | 536 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 213 |
-| **Expired patents** | 244 |
+| **Active patents** | 215 |
+| **Expired patents** | 246 |
 | **Pending applications** | 47 |
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 532 patents and 
 | **Brands** | 231 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 456 |
+| **Verified entries** | 460 |
 | **Medium confidence** | 40 |
 | **Draft / in progress** | 36 |
 
@@ -1043,4 +1043,6 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - Rotated Fig. 1A on the Trvstper trailing-link fork card (US 10,196,106 + 6) 90° clockwise and added one sentence naming Trvstper, Inc. as the company behind the Trust Performance Message and Shout forks.
 - Folded the three Trust/Trvstper fork cards (US 10,196,106 + 6, US 10,549,813 + 2, US 11,084,552 + 8) into one card, "Trust Performance Message (Trvstper) trailing-link fork suspension patents (US 10,196,106 + 18 more)", per direct request (533 → 531 entries). Corrected US 10,549,813 from its record: inline shock with coil spring, priority 2017-08-29, filed 2018-10-12, granted 2020-02-04 (the old text called it the core trail-increasing patent, filed 2017). Old refs 10549813 and 11084552 alias to 10196106; the Citations map snapshot was remapped by hand until its workflow rebuilds it. Open: Google shows US 10,549,813 expiring 2037-08-29 while filed + 20 years gives 2038; the card keeps the headline 2037. US D860,061 dates and the D880,371/D880,372 siblings were not re-read from the records.
 - Trust fork card: US 10,549,813 expiry worded "late 2037 or 2038" (EN/FR) instead of a single date, per Jon.
-- Added Fox electronic decoupling hub and disengageable derailleur family (US 11,428,279 + continuations US 12,071,988 and US 12,292,090, EP 3,657,037 B1), hubs & wheels, tier v, 531 → 532 entries. Dates from the front pages of US 11,428,279 and US 12,292,090 and the Google Patents records of US 12,071,988 and EP 3,657,037. The three US patents run from the 2019 filing (expiry November 25, 2039), not the 2024 filing of US 12,292,090. EP 3,657,037 is listed as active on Google Patents, but its legal-event list shows lapse entries for several designated states that were not itemised. The other queue items (Fox EP 3,150,470, both Shimano dropper cards, Shimano US 11,203,388 and US 9,422,993, the O-Chain US 12,151,777 grant) were already cards from PR 174; the O-Chain card already follows the US grant dates (filed 2020, granted 2024).
+- Added Fox electronic decoupling hub and disengageable derailleur family (US 11,428,279 + continuations US 12,071,988 and US 12,292,090, EP 3,657,037 B1), hubs & wheels, tier v, 535 → 536 entries. Dates from the front pages of US 11,428,279 and US 12,292,090 and the Google Patents records of US 12,071,988 and EP 3,657,037. The three US patents run from the 2019 filing (expiry November 25, 2039), not the 2024 filing of US 12,292,090. EP 3,657,037 is listed as active on Google Patents, but its legal-event list shows lapse entries for several designated states that were not itemised. The other queue items (Fox EP 3,150,470, both Shimano dropper cards, Shimano US 11,203,388 and US 9,422,993, the O-Chain US 12,151,777 grant) were already cards from PR 174; the O-Chain card already follows the US grant dates (filed 2020, granted 2024).
+- Added four Time cards (531 → 535 entries), all `conf` v, from the records and the USPTO front pages: Time Sport blade-spring clip-in pedal (US 9,174,701; PCT filed 2008-02-08, FR priority 2007-02-13, granted 2015-11-03, PTA 1,027 days, `exp` 2030, assigned to Felt Bicycles Europe 2021-04-21 then SRAM 2021-10-18), fork leg with removable vibration damper (US 11,034,406; filed 2018-12-20, FR priority 2017-12-20, granted 2021-06-15, PTA 306 days, `exp` 2039, Cardinal Cycling Group), two-piece molded carbon frame (US 5,857,690; filed 1995-05-16, granted 1999-01-12, lapsed 2011-01-12 for maintenance fees), and fork pivot headset (US 7,237,787; filed 2003-12-05, granted 2007-07-03, lapsed 2019-07-03). Gaps: no patent was found for Time's braided-sock RTM process, the Quickset system (the headset card says the record does not name it) or the three patents Time says protect the Aktiv fork (US 11,034,406 is the only fork-damping filing found; it does not name Aktiv). The pedal's EP/FR counterparts, WO 2000/030,923 (stem on fork pivot, ceased) and US 6,431,574 (composite fork pivot) were not added as cards.
+- Checked the queued Foes US 8,733,776, Yeti US 2025/0376238, Vasttech US 10,689,062, Klein US 6,109,636 and Voss US 11,548,587 / 10,029,514 cards (all already in the Atlas, filing and grant dates re-confirmed on Google Patents except Klein, which returned 503). Added the Foes Racing history link to the Foes card and card links between the Klein and Voss cards. Yeti rotary is already carded as US 2026/0285439 A1.

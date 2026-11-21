@@ -450,3 +450,13 @@ strings) once anything is actually added.
 Still uncarded, by number of Atlas cards that cite or are cited by them: Specialized US 11,945,539 and the Trvstper suspension family (US 10,196,106 and about 25 siblings, plus design patents), Specialized US 2009/0001685 and design USD 593,457, Pratt US 4,421,337, Lapierre US 2006/0061059, Chang US 2005/0253357, Christini US 2004/0061305, Felt US 7,066,481, Beyond Beryllium US 5,772,228, Farris US 5,611,557, Kulhawik US 5,356,165. Yeti US 10,766,563, 12,077,241 and 12,145,684 stay on hold at Jon's request.
 
 Update (2026-11-15, after the eleven-card batch): carded now are the Trvstper and Specialized trailing-link fork bundles, Specialized US 2009/0001685, Pratt US 4,421,337, Christini US 2004/0061305, Farris US 5,611,557, Kulhawik US 5,356,165, Toyota vibration isolation (US 12,679,493 + 12,565,274), Voss "Vehicle component" (US 10,457,349 + 10,870,461), Ashton US 1,283,030 and the abandoned Yeti continuation US 2020/0039603. Still open: Specialized design USD 593,457, Lapierre US 2006/0061059, Chang US 2005/0253357, Felt US 7,066,481, Beyond Beryllium US 5,772,228.
+
+## Time Bicycles leads (2026-11-21)
+
+Added as cards: US 9,174,701 (pedal), US 11,034,406 (fork leg damper), US 5,857,690 (two-piece molded frame), US 7,237,787 (fork pivot headset).
+
+Still open, no number found:
+- Braided carbon sock + resin transfer molding (Time's BCS process, "patented high tech processes" on its site). US 5,857,690 shows braided carbon on foam cores in an injection mold but claims the two-piece layout only.
+- TIME Quickset (site: "another TIME patent that integrates the steering cups into the structure during the molding process"). US 7,237,787 is the nearest filing; it does not name Quickset.
+- Aktiv fork: Time says it applied for three patents. Only US 11,034,406 found.
+- Not carded, Time-assigned: WO 2000/030,923 (stem fixed on fork pivot, ceased), US 6,431,574 / WO 1999/015,395 (composite fork pivot, lapsed 2018 term end), WO 2003/051,708 (headset spacer unit, unread).
