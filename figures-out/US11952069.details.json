@@ -1,0 +1,169 @@
+{
+ "number": "US11952069",
+ "title": "Cycling computer",
+ "inventors": [
+  "Harold M. Hawkins, III",
+  "Jose R. Mendez",
+  "Stacy C. Perlis",
+  "Shane A. Byler",
+  "William C. Phelps, III",
+  "Dimitris Katsanis"
+ ],
+ "assignee_original": [
+  "Wahoo Fitness LLC",
+  "Wahoo Fitness Llc",
+  "Bosch Gmbh Robert",
+  "Bosch Gmbh Robert",
+  "Bosch Gmbh Robert",
+  "彥豪金屬工業股份有限公司",
+  "Robert Bosch Gmbh",
+  "Robert Bosch Gmbh",
+  "Sram, Llc",
+  "Hammerhead Navigation Inc.",
+  "Sram, Llc",
+  "ヤマハ発動機株式会社",
+  "Wahoo Fitness Llc",
+  "Wahoo Fitness Llc",
+  "Robert Bosch Gmbh",
+  "Chongqing Huiye IOT Technology Co., Ltd.",
+  "Crank Brothers, Inc.",
+  "Ping Qin",
+  "广东高驰运动科技有限公司",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Shimano (Singapore) Pte., Ltd.",
+  "Hsu Shih-Hung",
+  "Acumen, Inc.",
+  "Shimano Inc.",
+  "Cerevellum Design, Llc",
+  "Pao-Kung Wu",
+  "Tate Labs, Inc.",
+  "Miguel Alejandro Hidalgo",
+  "Shimano, Inc.",
+  "Shimano Inc",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Shimano (Singapore) Pte., Ltd.",
+  "Hsu Shih-Hung",
+  "Cerevellum Design, Llc",
+  "Acumen, Inc.",
+  "Shimano Inc.",
+  "Tate Labs, Inc.",
+  "Miguel Alejandro Hidalgo",
+  "Pao-Kung Wu"
+ ],
+ "assignee_current": [
+  "Wahoo Fitness LLC"
+ ],
+ "application": "US17/338,341",
+ "priority_date": "2017-01-13",
+ "filing_date": "2021-06-03",
+ "publication_date": "2024-04-09",
+ "grant_date": "2024-04-09",
+ "status": "Active",
+ "expiry_events": [
+  {
+   "date": "2038-04-15",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "A cycling computer includes a housing for enclosing an electronics package and a mount for removably securing the housing to the front of a bicycle. The housing has a wedge-shaped profile defined by a leading edge and a lower front surface extending rearward and downward to a bottom surface. The computer mount includes a cradle for removably receiving the housing. A bracket arm extends between the cradle and a mounting adapter which is used to connect to a handlebar or otherwise. The cradle further includes a curved underside surface extending rearward from a forward edge that is sized and shaped to align with the lower front surface of the computer housing to form a substantially smooth and continuous aerodynamic surface from the leading edge of the computer housing to a rear edge of the cradle.",
+ "family": [
+  "US11029734B2",
+  "US11952069B2",
+  "US20180203488A1",
+  "US20220011825A1"
+ ],
+ "cites": [
+  {
+   "pn": "US6227068B1",
+   "title": "Bicycle control device having a rotatable dial"
+  },
+  {
+   "pn": "US6584872B1",
+   "title": "Bicycle handle mounting member"
+  },
+  {
+   "pn": "US6774771B2",
+   "title": "Method and apparatus for informing a bicycle rider of an upcoming shifting operation"
+  },
+  {
+   "pn": "US20060053954A1",
+   "title": "Mountable bicycle structure"
+  },
+  {
+   "pn": "US20080197254A1",
+   "title": "Angle Adjustable Stopwatch Supporter"
+  },
+  {
+   "pn": "US20100246199A1",
+   "title": "Cycling Computer with Detachable Lighting Apparatus for Bicycle or Other Vehicle"
+  },
+  {
+   "pn": "US20130098959A1",
+   "title": "Accessory mounting structure"
+  },
+  {
+   "pn": "US8643722B2",
+   "title": "Rear-view display system for a bicycle"
+  },
+  {
+   "pn": "US8998048B1",
+   "title": "Electronic device holder on bicycle"
+  },
+  {
+   "pn": "US20150183478A1",
+   "title": "Bicycle accessory mount"
+  },
+  {
+   "pn": "US9402016B1",
+   "title": "Electronic device mount"
+  }
+ ],
+ "cited_by": [],
+ "events": [
+  {
+   "date": "2021-06-03",
+   "type": "filed",
+   "title": "Application filed by Wahoo Fitness LLC"
+  },
+  {
+   "date": "2021-06-03",
+   "type": "priority",
+   "title": "Priority to US17/338,341"
+  },
+  {
+   "date": "2022-01-13",
+   "type": "publication",
+   "title": "Publication of US20220011825A1"
+  },
+  {
+   "date": "2023-02-08",
+   "type": "reassignment",
+   "title": "Assigned to WAHOO FITNESS LLC"
+  },
+  {
+   "date": "2024-04-09",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2024-04-09",
+   "type": "publication",
+   "title": "Publication of US11952069B2"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2038-04-15",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ]
+}

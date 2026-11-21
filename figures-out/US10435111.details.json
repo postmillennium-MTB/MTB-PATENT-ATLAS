@@ -1,0 +1,484 @@
+{
+ "number": "US10435111",
+ "title": "Fluid damper for a bicycle component",
+ "inventors": [
+  "Chris Shipman",
+  "Brian Jordan"
+ ],
+ "assignee_original": [
+  "SRAM LLC",
+  "The Cycle Group",
+  "Brandon Rodgers",
+  "The Cycle Group",
+  "Brandon Rodgers",
+  "The Cycle Group",
+  "The Cycle Group",
+  "Sram, Llc",
+  "Shimano Inc.",
+  "天心工業股份有限公司",
+  "Tien Hsin Industries Co., Ltd.",
+  "株式会社ソミックマネージメントホールディングス",
+  "Shimano Inc.",
+  "Sram Deutschland Gmbh",
+  "天心工業股份有限公司",
+  "Ad-Ii Engineering Inc.",
+  "Shimano Industrial Company Limited",
+  "Dayco Corporation",
+  "Volkswagen Ag",
+  "Shimano Ind Co Ltd",
+  "Trw Inc",
+  "Matsushita Electric Works Ltd",
+  "Browning Automatic Transmission",
+  "Kayaba Ind Co Ltd",
+  "Tsubakimoto Chain Co",
+  "Hitachi Powdered Metals Co Ltd",
+  "Kayaba Ind Co Ltd",
+  "Ford Global Technologies, Inc.",
+  "Guthrie; Ryan G.",
+  "Litens Automotive Partnership",
+  "Richard A. Patterson",
+  "Meckstroth Richard J.",
+  "Linnig Antriebstechnik Gmbh",
+  "Maverick American Llc",
+  "Denso Corp",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc., Sakai",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Chang Hui Lin",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Sram, Llc",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "株式会社岛野",
+  "Shimano Inc.",
+  "Shimano Kk",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Sram Deutschland Gmbh",
+  "Shimano Inc.",
+  "Sram, Llc",
+  "Lee Chi Enterprises Company Ltd.",
+  "Shimano Industrial Company Limited",
+  "Dayco Corporation",
+  "Volkswagen Ag",
+  "Shimano Ind Co Ltd",
+  "Trw Inc",
+  "Matsushita Electric Works Ltd",
+  "Browning Automatic Transmission",
+  "Kayaba Ind Co Ltd",
+  "Tsubakimoto Chain Co",
+  "Hitachi Powdered Metals Co Ltd",
+  "Ford Global Technologies, Inc.",
+  "Kayaba Ind Co Ltd",
+  "Litens Automotive Partnership",
+  "Richard A. Patterson",
+  "Guthrie; Ryan G.",
+  "Meckstroth Richard J.",
+  "Linnig Antriebstechnik Gmbh",
+  "Maverick American Llc",
+  "Maverick American Llc",
+  "Denso Corp",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc., Sakai",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Chang Hui Lin",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Sram, Llc",
+  "Brian Jordan",
+  "Sram, Llc",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "株式会社岛野",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Kk",
+  "Shimano Kk",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Sram Deutschland Gmbh",
+  "Shimano Kk",
+  "Sram, Llc",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Lee Chi Enterprises Company Ltd.",
+  "The Cycle Group",
+  "The Cycle Group",
+  "The Cycle Group",
+  "Brandon Rodgers",
+  "Brandon Rodgers",
+  "Sram, Llc",
+  "Sram, Llc",
+  "The Cycle Group",
+  "The Cycle Group",
+  "The Cycle Group",
+  "Shimano Inc.",
+  "天心工業股份有限公司",
+  "Tien Hsin Industries Co., Ltd."
+ ],
+ "assignee_current": [
+  "SRAM LLC"
+ ],
+ "application": "US15/470,357",
+ "priority_date": "2017-03-27",
+ "filing_date": "2017-03-27",
+ "publication_date": "2019-10-08",
+ "grant_date": "2019-10-08",
+ "status": "Active",
+ "expiry_events": [
+  {
+   "date": "2037-12-22",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "A bicycle rear derailleur has a base member mountable to a bicycle frame, a movable member movably coupled to the base member, a chain guide assembly rotatably connected to the movable member for rotation about a rotational axis, a biasing element configured and arranged to bias the chain guide assembly for rotation in a first rotational direction with respect to the movable member, and a fluid damper having a fluid cavity containing a volume of fluid. The fluid damper is operatively disposed between the chain guide assembly and the movable member to apply a damping force to the chain guide assembly when the chain guide assembly rotates in a second rotational direction opposite to the first rotational direction. The fluid damper has a compensation device in fluid communication with the fluid cavity and is configured to accommodate a change in the volume of fluid in the fluid cavity.",
+ "family": [
+  "US10435111B2",
+  "US20180273139A1"
+ ],
+ "cites": [
+  {
+   "pn": "US4406643A",
+   "title": "Derailleur for a bicycle"
+  },
+  {
+   "pn": "US4563167A",
+   "title": "Belt tensioner and method of making the same"
+  },
+  {
+   "pn": "DE3829479A1",
+   "title": "CLAMPING DEVICE"
+  },
+  {
+   "pn": "JPH02169383A",
+   "title": "Rear derailleur for bicycle"
+  },
+  {
+   "pn": "JPH02296024A",
+   "title": "Rotary shock absorber"
+  },
+  {
+   "pn": "JPH03267027A",
+   "title": "Setting up device of toilet seat and cover"
+  },
+  {
+   "pn": "US5152720A",
+   "title": "Bicycle transmission"
+  },
+  {
+   "pn": "JPH0544761A",
+   "title": "Rotary damper"
+  },
+  {
+   "pn": "JPH06159458A",
+   "title": "Rotary check valve type tensioner"
+  },
+  {
+   "pn": "JPH07301272A",
+   "title": "Fluid pressure damper"
+  },
+  {
+   "pn": "JPH1182593A",
+   "title": "Rotary damper"
+  },
+  {
+   "pn": "US5924947A",
+   "title": "Asymmetrically hydraulically damped drivebelt tensioner for automotive engine"
+  },
+  {
+   "pn": "US6135904A",
+   "title": "Bicycle derailleur chain damper"
+  },
+  {
+   "pn": "US6165091A",
+   "title": "Rotary hydraulic automatic tensioner"
+  },
+  {
+   "pn": "US6638190B2",
+   "title": "Compact hydraulically-operated derailleur shifting system for bicycles"
+  },
+  {
+   "pn": "US20030216205A1",
+   "title": "Hydraulic asymmetric damped belt tensioner"
+  },
+  {
+   "pn": "DE102004055329A1",
+   "title": "Device for tensioning traction means for driving aggregates"
+  },
+  {
+   "pn": "US20070219029A1",
+   "title": "Fluid dampening chain tensioning device"
+  },
+  {
+   "pn": "JP2008008418A",
+   "title": "Rotary variable damper, check link mechanism and opening degree holding device"
+  },
+  {
+   "pn": "US20080026891A1",
+   "title": "Bicycle rear derailleur"
+  },
+  {
+   "pn": "US20080026890A1",
+   "title": "Bicycle rear derailleur"
+  },
+  {
+   "pn": "DE102007040156A1",
+   "title": "Fahrradheckumwerfer"
+  },
+  {
+   "pn": "US20090291789A1",
+   "title": "Motion resisting apparatus for a bicycle derailleur"
+  },
+  {
+   "pn": "DE102011114699A1",
+   "title": "Bicycle derailleur with rotational resistance"
+  },
+  {
+   "pn": "US20120083371A1",
+   "title": "Bicycle derailleur with rotation resistance"
+  },
+  {
+   "pn": "US20120142466A1",
+   "title": "Multiple sprocket assembly for bicycle"
+  },
+  {
+   "pn": "DE202007019470U1",
+   "title": "Fahrradheckumwerfer"
+  },
+  {
+   "pn": "US20130090195A1",
+   "title": "Apparatus for controlling multiple bicycle operating characteristics"
+  },
+  {
+   "pn": "US20130090196A1",
+   "title": "Bicycle derailleur"
+  },
+  {
+   "pn": "DE102013001952A1",
+   "title": "Derailleur with damper assembly"
+  },
+  {
+   "pn": "US20130288834A1",
+   "title": "Bicycle derailleur with rotation resistance and resistance control"
+  },
+  {
+   "pn": "US20130310204A1",
+   "title": "Bicycle derailleur with rotation resistance and tactile feedback"
+  },
+  {
+   "pn": "CN103707994A",
+   "title": "Apparatus for controlling multiple bicycle operating characteristics"
+  },
+  {
+   "pn": "US20140162817A1",
+   "title": "Bicycle derailleur"
+  },
+  {
+   "pn": "TWM481882U",
+   "title": "Derailleur for bicycle"
+  },
+  {
+   "pn": "US20140296009A1",
+   "title": "Rear derailleur"
+  },
+  {
+   "pn": "US8882618B2",
+   "title": "Rear derailleur"
+  },
+  {
+   "pn": "US20140371013A1",
+   "title": "Bicycle derailleur"
+  },
+  {
+   "pn": "US20150072817A1",
+   "title": "Chain tensioning device"
+  },
+  {
+   "pn": "US20150072816A1",
+   "title": "Chain tensioning device"
+  },
+  {
+   "pn": "US9463846B2",
+   "title": "Bicycle rear derailleur with a damper assembly"
+  },
+  {
+   "pn": "US20160304161A1",
+   "title": "Chain tensioning device"
+  },
+  {
+   "pn": "US9751590B2",
+   "title": "Bicycle rear derailleur with a damper assembly"
+  },
+  {
+   "pn": "US10189542B2",
+   "title": "Bicycle rear derailleur"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US11098787B2",
+   "title": "Rear derailleur dampening assembly"
+  },
+  {
+   "pn": "US11110993B2",
+   "title": "Damping device adapted for integration within a gearshifting system"
+  },
+  {
+   "pn": "US20210362805A1",
+   "title": "Rear derailleur dampening assembly"
+  },
+  {
+   "pn": "US11560199B2",
+   "title": "Gearshifting system comprising a linear actuator"
+  },
+  {
+   "pn": "USD1009722S1",
+   "title": "One-piece chain cage for a rear derailleur"
+  },
+  {
+   "pn": "US11884364B2",
+   "title": "Rear derailleur with one-piece chain cage"
+  },
+  {
+   "pn": "US20240253736A1",
+   "title": "Damper for a bicycle component"
+  },
+  {
+   "pn": "US12304593B2",
+   "title": "Derailleur for human-powered vehicle"
+  },
+  {
+   "pn": "TWI900387B",
+   "title": "Rear derailleur with damping function"
+  },
+  {
+   "pn": "US12617493B1",
+   "title": "Rear derailleur with damping function"
+  }
+ ],
+ "events": [
+  {
+   "date": "2017-03-27",
+   "type": "filed",
+   "title": "Application filed by SRAM LLC"
+  },
+  {
+   "date": "2017-03-27",
+   "type": "priority",
+   "title": "Priority to US15/470,357"
+  },
+  {
+   "date": "2017-09-12",
+   "type": "priority",
+   "title": "Priority to US15/702,161"
+  },
+  {
+   "date": "2018-02-01",
+   "type": "reassignment",
+   "title": "Assigned to SRAM, LLC"
+  },
+  {
+   "date": "2018-02-22",
+   "type": "priority",
+   "title": "Priority to TW110122076A"
+  },
+  {
+   "date": "2018-02-22",
+   "type": "priority",
+   "title": "Priority to TW107105970A"
+  },
+  {
+   "date": "2018-02-22",
+   "type": "priority",
+   "title": "Priority to TW112127575A"
+  },
+  {
+   "date": "2018-02-22",
+   "type": "priority",
+   "title": "Priority to TW109100035A"
+  },
+  {
+   "date": "2018-03-21",
+   "type": "priority",
+   "title": "Priority to EP20160317.2A"
+  },
+  {
+   "date": "2018-03-21",
+   "type": "priority",
+   "title": "Priority to DE102018002336.3A"
+  },
+  {
+   "date": "2018-03-21",
+   "type": "priority",
+   "title": "Priority to EP18163088.0A"
+  },
+  {
+   "date": "2018-03-26",
+   "type": "priority",
+   "title": "Priority to CN202011000349.7A"
+  },
+  {
+   "date": "2018-03-26",
+   "type": "priority",
+   "title": "Priority to CN201810251271.2A"
+  },
+  {
+   "date": "2018-09-27",
+   "type": "publication",
+   "title": "Publication of US20180273139A1"
+  },
+  {
+   "date": "2019-10-08",
+   "type": "publication",
+   "title": "Publication of US10435111B2"
+  },
+  {
+   "date": "2019-10-08",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2021-07-01",
+   "type": "priority",
+   "title": "Priority to US17/365,764"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2037-12-22",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ]
+}

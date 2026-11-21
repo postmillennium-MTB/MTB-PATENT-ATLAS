@@ -1,0 +1,217 @@
+{
+ "number": "US11029734",
+ "title": "Cycling computer",
+ "inventors": [
+  "Harold M. Hawkins, III",
+  "Jose R. Mendez",
+  "Stacy C. Perlis",
+  "Shane A. Byler",
+  "William C. Phelps, III",
+  "Dimitris Katsanis"
+ ],
+ "assignee_original": [
+  "Wahoo Fitness LLC",
+  "Tektro Technology Corporation",
+  "Hammerhead Navigation Inc.",
+  "Wahoo Fitness Llc",
+  "Sram, Llc",
+  "Crank Brothers, Inc.",
+  "Wahoo Fitness Llc",
+  "Guangdong Coros Sports Technology Co., Ltd",
+  "Sram, Llc",
+  "Wahoo Fitness Llc",
+  "Bosch Gmbh Robert",
+  "Bosch Gmbh Robert",
+  "Bosch Gmbh Robert",
+  "Robert Bosch Gmbh",
+  "Robert Bosch Gmbh",
+  "ヤマハ発動機株式会社",
+  "Robert Bosch Gmbh",
+  "Chongqing Huiye IOT Technology Co., Ltd.",
+  "Ping Qin",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Acumen, Inc.",
+  "Shimano Inc.",
+  "Tate Labs, Inc.",
+  "Miguel Alejandro Hidalgo",
+  "Shimano (Singapore) Pte., Ltd",
+  "Hsu Shih-Hung",
+  "Cerevellum Design, Llc",
+  "Pao-Kung Wu",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Acumen, Inc.",
+  "Shimano Inc.",
+  "Tate Labs, Inc.",
+  "Miguel Alejandro Hidalgo",
+  "Tektro Technology Corporation",
+  "Hammerhead Navigation Inc.",
+  "Sram, Llc",
+  "Sram, Llc",
+  "Sram, Llc",
+  "Sram, Llc",
+  "Wahoo Fitness Llc",
+  "Wahoo Fitness Llc",
+  "Crank Brothers, Inc.",
+  "Guangdong Coros Sports Technology Co., Ltd"
+ ],
+ "assignee_current": [
+  "Wahoo Fitness LLC"
+ ],
+ "application": "US15/868,762",
+ "priority_date": "2017-01-13",
+ "filing_date": "2018-01-11",
+ "publication_date": "2021-06-08",
+ "grant_date": "2021-06-08",
+ "status": "Active",
+ "expiry_events": [
+  {
+   "date": "2038-02-25",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "A cycling computer includes a housing for enclosing an electronics package and a mount for removably securing the housing to the front of a bicycle. The housing has a wedge-shaped profile defined by a leading edge and a lower front surface extending rearward and downward to a bottom surface. The computer mount includes a cradle for removably receiving the housing. A bracket arm extends between the cradle and a mounting adapter which is used to connect to a handlebar or otherwise. The cradle further includes a curved underside surface extending rearward from a forward edge that is sized and shaped to align with the lower front surface of the computer housing to form a substantially smooth and continuous aerodynamic surface from the leading edge of the computer housing to a rear edge of the cradle.",
+ "family": [
+  "US11029734B2",
+  "US11952069B2",
+  "US20180203488A1",
+  "US20220011825A1"
+ ],
+ "cites": [
+  {
+   "pn": "US6227068B1",
+   "title": "Bicycle control device having a rotatable dial"
+  },
+  {
+   "pn": "US6305241B1",
+   "title": "Handlebar adapter for mounting a bicycle display"
+  },
+  {
+   "pn": "US6584872B1",
+   "title": "Bicycle handle mounting member"
+  },
+  {
+   "pn": "US6774771B2",
+   "title": "Method and apparatus for informing a bicycle rider of an upcoming shifting operation"
+  },
+  {
+   "pn": "US20050180150A1",
+   "title": "Bicycle lighting apparatus with mountable display"
+  },
+  {
+   "pn": "US20100246199A1",
+   "title": "Cycling Computer with Detachable Lighting Apparatus for Bicycle or Other Vehicle"
+  },
+  {
+   "pn": "US20130098959A1",
+   "title": "Accessory mounting structure"
+  },
+  {
+   "pn": "US20150183478A1",
+   "title": "Bicycle accessory mount"
+  },
+  {
+   "pn": "US9402016B1",
+   "title": "Electronic device mount"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US11332210B2",
+   "title": "Bicycle head"
+  },
+  {
+   "pn": "US11554827B2",
+   "title": "Mounting interfaces, brackets therewith, and methods of manufacturing and usage thereof"
+  },
+  {
+   "pn": "USD979433S1",
+   "title": "Cycling computer"
+  },
+  {
+   "pn": "US11897567B2",
+   "title": "Mounting interfaces, devices therewith, accessories therefor, and methods of manufacture and use thereof"
+  },
+  {
+   "pn": "US20250026431A1",
+   "title": "Kit for mounting an accessory on handgrips of a bicycle or motorcycle"
+  },
+  {
+   "pn": "US12429921B2",
+   "title": "Cover system for computing device ports"
+  },
+  {
+   "pn": "EP4631835A1",
+   "title": "Cyclocomputer"
+  },
+  {
+   "pn": "USD1127792S1",
+   "title": "Mounting interface for an electronic device"
+  }
+ ],
+ "events": [
+  {
+   "date": "2018-01-11",
+   "type": "filed",
+   "title": "Application filed by Wahoo Fitness LLC"
+  },
+  {
+   "date": "2018-01-11",
+   "type": "priority",
+   "title": "Priority to US15/868,762"
+  },
+  {
+   "date": "2018-01-11",
+   "type": "reassignment",
+   "title": "Assigned to WAHOO FITNESS LLC"
+  },
+  {
+   "date": "2018-07-19",
+   "type": "publication",
+   "title": "Publication of US20180203488A1"
+  },
+  {
+   "date": "2021-06-03",
+   "type": "priority",
+   "title": "Priority to US17/338,341"
+  },
+  {
+   "date": "2021-06-08",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2021-06-08",
+   "type": "publication",
+   "title": "Publication of US11029734B2"
+  },
+  {
+   "date": "2021-08-17",
+   "type": "reassignment",
+   "title": "Assigned to ROYAL BANK OF CANADA"
+  },
+  {
+   "date": "2023-05-25",
+   "type": "reassignment",
+   "title": "Assigned to SPEEDPLAY, LLC, WAHOO FITNESS INTERMEDIATE HOLDINGS I L.L.C., WAHOO FITNESS INTERMEDIATE HOLDINGS II L.L.C., WAHOO FITNESS ACQUISITION L.L.C., WAHOO FITNESS L.L.C., WAHOO FITNESS HOLDINGS LLC"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2038-02-25",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ]
+}

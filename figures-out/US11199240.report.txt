@@ -1,0 +1,216 @@
+patent: US11199240
+source: https://patentimages.storage.googleapis.com/f4/22/7f/b99bdb891b2fc5/US11199240.pdf
+pages: 45
+per-page extracted text length: {1: 2723, 2: 2700, 3: 158, 4: 207, 5: 225, 6: 204, 7: 139, 8: 248, 9: 110, 10: 292, 11: 140, 12: 313, 13: 183, 14: 227, 15: 189, 16: 172, 17: 155, 18: 165, 19: 195, 20: 146, 21: 155, 22: 145, 23: 146, 24: 154, 25: 136, 26: 103, 27: 155, 28: 175, 29: 162, 30: 177, 31: 216, 32: 7165, 33: 6831, 34: 7630, 35: 7948, 36: 7780, 37: 7692, 38: 7714, 39: 7827, 40: 7822, 41: 7881, 42: 7888, 43: 7609, 44: 7795, 45: 6611}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011199240B2
+
+( 12) United States Patent
+
+( 10 ) Patent No.: US 11,199,240 B2
+(45 ) Date of Patent :
+Dec. 14 , 2021
+
+Brown et al .
+
+( 58 ) Field of Classification Search
+
+( 54 ) FLUID DAMPER FOR A BICYCLE
+COMPONENT
+
+CPC
+
+( 71 ) Applicant: SRAM , LLC , Chicago, IL ( US )
+( 72 ) Inventors: Joshua Brown , Chicago , IL (US);
+
+B62M 9/16 ; B62M 9/126 ; B62M 9/1248 ;
+B62M 9/122 ; F16H 2007/081
+
+474/80 , 82
+
+USPC
+
+See application file for complete search history.
+
+Brian Jordan , Highland Park , IL (US ) ;
+Christopher Shipman , Chicago , IL
+
+( 56 )
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+( US )
+
+( 73 ) Assignee: SRAM , LLC , Chicago, IL ( US )
+
+4,406,643 A * 9/1983 Shimano
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 352 days.
+( 21 ) Appl. No .: 15 /702,161
+Sep. 12 , 2017
+( 22 ) Filed :
+Prior Publication Data
+( 65 )
+
+4,563,167 A *
+
+( * ) Notice :
+
+( Continued )
+FOREIGN PATENT DOCUMENTS
+
+( Continued )
+ABSTRACT
+( 57 )
+A bicycle rear derailleur has aa base member mountable to a
+
+( 63 ) Continuation - in -part of application No. 15 / 470,357,
+
+bicycle frame, a movable member movably coupled to the
+base member, a chain guide assembly rotatably connected to
+
+filed on Mar. 27 , 2017 , now Pat . No. 10,435,111 .
+
+( 51 ) Int . Cl .
+
+B62M 9/122
+B62M 9/126
+B62M 9/16
+
+B62M 9/128
+
+( 52 )
+
+11/2013
+4/2014
+
+Primary Examiner Henry Y Liu
+
+Sep. 27, 2018
+Related U.S. Application Data
+
+F16F 9/10
+F16F 9/34
+
+103387035
+103707994 A
+
+CN
+CN
+
+US 2018/0274623 A1
+
+F16F 9/50
+
+1/1986 Foster
+
+B62M 9/126
+474/80
+F16H 7/1236
+474/115
+
+the movable member for rotation about aa rotational axis, a
+biasing element configured and arranged to bias the chain
+
+( 2006.01 )
+( 2006.01 )
+( 2006.01 )
+
+guide assembly for rotation in aa first rotational direction with
+respect to the movable member, and aa fluid damper having
+a fluid cavity containing a volume of fluid . The fluid damper
+is operatively disposed between the chain guide assembly
+and the movable member to apply a damping force to the
+chain guide assembly when the chain guide assembly rotates
+in aa second rotational direction opposite to the first rotational
+direction . The fluid damper has a guide wheel configured to
+
+( 2010.01 )
+(2010.01)
+
+( 2006.01 )
+
+( 2010.01 )
+
+U.S. CI .
+CPC
+
+F16F 9/50 ( 2013.01 ) ; B62M 9/122
+(2013.01 ) ; B62M 9/126 ( 2013.01 ) ; B62M
+9/128 ( 2013.01 ) ; B62M 9/16 ( 2013.01 ) ; F16F
+9/10 ( 2013.01 ) ; F16F 9/34 (2013.01 )
+
+route a chain and rotatable about the rotational axis .
+
+18 Claims , 29 Drawing Sheets
+214
+
+202
+
+136
+
+160
+162
+
+134
+
+90
+
+164
+154
+
+152
+
+158
+
+216
+
+200
+
+230
+
+-188
+-186
+-132
+
+150
+
+146
+180
+
+222
+- 126
+
+195
+
+144
+
+196
+
+192
+
+198
+240
+
+124
+206
+
+190
+
+-148
+
+1942
+128
+
+168
+
+166
+122
+
+120
+
+

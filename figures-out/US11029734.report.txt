@@ -1,0 +1,163 @@
+patent: US11029734
+source: https://patentimages.storage.googleapis.com/bf/3e/7a/b48c49be5791a8/US11029734.pdf
+pages: 17
+per-page extracted text length: {1: 2789, 2: 449, 3: 330, 4: 256, 5: 268, 6: 210, 7: 236, 8: 212, 9: 119, 10: 113, 11: 6501, 12: 7514, 13: 7730, 14: 7733, 15: 6994, 16: 6572, 17: 1385}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US011029734B2
+
+( 12) United States Patent
+
+( 10) Patent No .: US 11,029,734 B2
+Jun . 8. 2021
+(45 ) Date of Patent :
+
+Hawkins , III et al .
+( 54 ) CYCLING COMPUTER
+( 71 ) Applicant: Wahoo Fitness LLC , Atlanta , GA (US )
+( 72 ) Inventors: Harold M. Hawkins, III , Atlanta , GA
+(US ) ; Jose R. Mendez , Columbus, OH
+(US ) ; Stacy C. Perlis , Atlanta , GA
+(US ) ; Shane A. Byler , Mableton , GA
+(US ) ; William C. Phelps , III ,
+Lawrenceville , GA (US ); Dimitris
+Katsanis , Nottingham (GB )
+
+H05K 5/0204 ( 2013.01 ) ; B62J 45/20
+(2020.02 ) ; G06F 1/1637 (2013.01 )
+( 58 ) Field of Classification Search
+CPC ..... GO6F 1/163 ; G06F 1/1656 ; G06F 1/1637 ;
+GO6F 1/1626 ; G06F 1/1632 ; HO5K
+5/0204 ; HO5K 7700 ; B62J 11/00 ; B62J
+2099/0013 ; B62J 99/00 ; B62J 45/20
+
+See application file for complete search history.
+( 56 )
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+( 73 ) Assignee : Wahoo Fitness LLC , Atlanta , GA (US )
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 45 days.
+(21 ) Appl. No .: 15 /868,762
+
+( * ) Notice :
+
+(22 ) Filed :
+
+5/2001 Masui
+
+6,305,241 B1 *
+
+10/2001 Masui
+
+B62K 23/02
+200 /61.85
+B62 ) 11/00
+
+224/420
+
+(Continued )
+
+Primary Examiner Rockshana D Chowdhury
+(74 ) Attorney, Agent, or Firm — Polsinelli PC
+
+Jan. 11 , 2018
+
+( 65 )
+
+6,227,068 B1 *
+
+Prior Publication Data
+
+US 2018/0203488 A1
+
+Jul . 19 , 2018
+
+Related U.S. Application Data
+( 60 ) Provisional application No. 62/ 446,098 , filed on Jan.
+13 , 2017 , provisional application No. 62 / 507,020 ,
+filed on May 16 , 2017 .
+
+housing to the front of a bicycle . The housing has a wedge
+shaped profile defined by a leading edge and a lower front
+
+surface extending rearward and downward to a bottom
+
+surface . The computer mount includes a cradle for remov
+
+ably receiving the housing . A bracket arm extends between
+
+( 51 ) Int . Ci .
+G06F 1/16
+H05K 5/02
+B62 ) 11/00
+B62 ) 99/00
+B62J 45/20
+
+the cradle and a mounting adapter which is used to connect
+
+( 2006.01 )
+( 2006.01 )
+
+to a handlebar or otherwise . The cradle further includes a
+
+curved underside surface extending rearward from a forward
+edge that is sized and shaped to align with the lower front
+surface of the computer housing to form a substantially
+
+( 2020.01 )
+
+(2020.01 )
+(2020.01 )
+
+smooth and continuous aerodynamic surface from the lead
+
+( 52 ) U.S. Ci .
+CPC
+
+ABSTRACT
+( 57 )
+A cycling computer includes a housing for enclosing an
+electronics package and a mount for removably securing the
+
+G06F 1/1656 ( 2013.01 ) ; B62 ) 11/00
+(2013.01 ) ; B62 ) 99/00 ( 2013.01 ) ; G06F
+1/1626 ( 2013.01 ) ; G06F 1/1632 ( 2013.01 ) ;
+
+ing edge of the computer housing to a rear edge of the cradle.
+
+24 Claims, 8 Drawing Sheets
+
+20
+
+30
+
+24
+
+10
+
+213
+27245
+10:16
+01:32:12
+
+60
+
+Zen
+170
+
+64
+
+77
+
+50
+-54
+52
+
+32
+
+

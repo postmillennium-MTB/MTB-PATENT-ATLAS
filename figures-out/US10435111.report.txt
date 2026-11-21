@@ -1,0 +1,201 @@
+patent: US10435111
+source: https://patentimages.storage.googleapis.com/69/ff/ea/937c2b0ed196e4/US10435111.pdf
+pages: 39
+per-page extracted text length: {1: 2920, 2: 2264, 3: 158, 4: 148, 5: 122, 6: 121, 7: 276, 8: 91, 9: 265, 10: 136, 11: 275, 12: 193, 13: 120, 14: 189, 15: 197, 16: 141, 17: 135, 18: 138, 19: 149, 20: 138, 21: 132, 22: 98, 23: 131, 24: 196, 25: 156, 26: 7032, 27: 7226, 28: 6912, 29: 7599, 30: 7957, 31: 7923, 32: 7933, 33: 7725, 34: 7943, 35: 7860, 36: 7929, 37: 7798, 38: 7444, 39: 3532}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010435111B2
+
+(12) United
+States Patent
+Shipman et al.
+
+( 10 ) Patent No.: US 10 ,435 ,111 B2
+
+(54 ) FLUID DAMPER FOR A BICYCLE
+
+(71) Applicant: SRAM , LLC, Chicago, IL (US)
+
+5 , 152 ,720 A 10 /1992 Browning et al.
+5, 924 ,947 A * 7 / 1999 Williams .............. F16H 7 / 1236
+474 / 133
+6 , 135 ,904 A * 10 /2000 Guthrie .................. B62M 9 /122
+
+(72 ) Inventors: Chris Shipman, Chicago , IL (US) ;
+
+6 ,165 ,091 A * 12/2000 Dinca
+
+(45 ) Date of Patent:
+
+COMPONENT
+
+Brian Jordan , Highland Park , IL (US )
+
+( 2010 .01)
+(2010 .01)
+
+B62M 9 / 16
+F16F 9 /14
+
+( 2006 .01)
+(2006 .01)
+
+474 / 101
+
+474 / 78
+
+8 , 202 , 182 B26 / 2012 Ishikawa et al.
+
+8 , 744 ,699 B2
+8 ,852 ,041 B2
+
+6 /2014 Yamaguchi et al.
+10 /2014 Yamaguchi et al.
+
+(Continued )
+
+FOREIGN PATENT DOCUMENTS
+103707994 A
+4 / 2014
+38294793 / 1989
+
+CN
+DE
+
+(Continued )
+
+Primary Examiner — Henry Y Liu
+
+(51) Int. CI.
+B62M 9 / 128
+
+474 / 82
+F16F 9 / 145
+
+6 ,638 , 190 B2 * 10 /2003 Patterson ............... B62M 9 / 122
+
+(73 ) Assignee : SRAM , LLC , Chicago , IL (US)
+( * ) Notice : Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U . S .C . 154 (b ) by 270 days .
+(21) Appl. No.: 15 /470,357
+(22 ) Filed : Mar. 27 , 2017
+(65 )
+Prior Publication Data
+US 2018 /0273139 A1 Sep . 27 , 2018
+B62M 9 /126
+
+Oct. 8 , 2019
+
+(57 )
+
+ABSTRACT
+A bicycle rear derailleur has a base member mountable to a
+bicycle frame, a movable member movably coupled to the
+base member, a chain guide assembly rotatably connected to
+
+(52 ) U .S . CI.
+CPC .......... .. B62M 9 / 128 (2013 .01); B62M 9 / 126
+(2013.01); B62M 9/ 16 (2013.01); F16F 9/ 14
+
+the movable member for rotation about a rotational axis, a
+
+biasing element configured and arranged to bias the chain
+
+guide assembly for rotation in a first rotational direction with
+
+( 2013 .01)
+
+respect to the movable member, and a fluid damper having
+
+CPC ........ B62M 9/ 16 ; B62M 9/126 ; B62M 9/ 122 ;
+
+a fluid cavity containing a volumeof fluid . The fluid damper
+is operatively disposed between the chain guide assembly
+
+(58) Field of Classification Search
+
+F16H 2007 /081
+
+USPC ..........
+
+and the movable member to apply a damping force to the
+
+.......... ..... 474 /80 , 82
+
+References Cited
+
+chain guide assembly when the chain guide assembly rotates
+in a second rotational direction opposite to the first rotational
+direction . The fluid damper has a compensation device in
+
+U .S . PATENT DOCUMENTS
+
+to accommodate a change in the volume of fluid in the fluid
+cavity .
+
+See application file for complete search history.
+
+( 56 )
+4 ,406 ,643 A
+
+fluid communication with the fluid cavity and is configured
+
+9 / 1983 Shimano
+
+4 ,563, 167 A * 1/ 1986 Foster ................. F16H 7 / 1236
+
+22 Claims, 23 Drawing Sheets
+
+474/ 115
+
+214
+
+R
+
+202
+
+- 160
+162
+
+134
+
+164
+152
+
+130 /
+
+216
+150
+146
+
+K OL
+148
+
+1802
+
+188
+186
+132
+190
+
+1945T?T
+i 128
+
+198 - 5
+
+240
+124 - -
+
+206 –
+
+Y
+
+! 168
+
+N
+
+166- 122
+120
+
+
