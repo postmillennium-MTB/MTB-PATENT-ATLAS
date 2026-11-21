@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 531 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 533 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,20 +14,20 @@ An interactive timeline of mountain bike intellectual property: 531 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 531 |
+| **Total entries** | 533 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 212 |
-| **Expired patents** | 244 |
-| **Pending applications** | 47 |
+| **Active patents** | 214 |
+| **Expired patents** | 245 |
+| **Pending applications** | 46 |
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
 | **Brands** | 231 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 455 |
-| **Medium confidence** | 40 |
-| **Draft / in progress** | 36 |
+| **Verified entries** | 459 |
+| **Medium confidence** | 39 |
+| **Draft / in progress** | 35 |
 
 This table is a snapshot. For live, always-current numbers — plus a category breakdown and a most-patented-names leaderboard — see the **📊 Stats** tab in the tool itself, which recomputes from the data on every load.
 
@@ -1043,3 +1043,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - Rotated Fig. 1A on the Trvstper trailing-link fork card (US 10,196,106 + 6) 90° clockwise and added one sentence naming Trvstper, Inc. as the company behind the Trust Performance Message and Shout forks.
 - Folded the three Trust/Trvstper fork cards (US 10,196,106 + 6, US 10,549,813 + 2, US 11,084,552 + 8) into one card, "Trust Performance Message (Trvstper) trailing-link fork suspension patents (US 10,196,106 + 18 more)", per direct request (533 → 531 entries). Corrected US 10,549,813 from its record: inline shock with coil spring, priority 2017-08-29, filed 2018-10-12, granted 2020-02-04 (the old text called it the core trail-increasing patent, filed 2017). Old refs 10549813 and 11084552 alias to 10196106; the Citations map snapshot was remapped by hand until its workflow rebuilds it. Open: Google shows US 10,549,813 expiring 2037-08-29 while filed + 20 years gives 2038; the card keeps the headline 2037. US D860,061 dates and the D880,371/D880,372 siblings were not re-read from the records.
 - Trust fork card: US 10,549,813 expiry worded "late 2037 or 2038" (EN/FR) instead of a single date, per Jon.
+- Added the Wahoo Fitness aero cycling computer and mount card (US 11,029,734 parent + US 11,952,069 continuation; tier v; Figs. 20 and 10 from Jon's uploads; headline is the parent, which claims the aero profile) and the SRAM rear derailleur fluid damper card (US 10,435,111, CIP US 11,199,240, continuation US 11,649,875, EP 3,381,788; tier v; Fig. 2). Filled the Allite Super Magnesium card from US 11,414,730 B2 (tier l to v): the record gives filed 2019-05-17 (priority 2018-05-18) and granted 2022-08-16, not 2018 and 2020 as the old card had; claim 1 names a yttrium-rich rare-earth mixture while the abstract says lanthanum-rich. Moved the Guerrilla Gravity Revved Carbon card from application US 2018/0264756 A1 to granted US 10,967,585 (filed 2018-03-14, not 2018-03-19) plus continuation US 11,745,443; the granted claims cover a two-sheet thermoplastic composite structure, not the heated-fluid process, which stays in the specification. Corrected the Matheson/Heim two-axis card (US 9,908,583): Google Patents shows it expired for non-payment of maintenance fees (lapse recorded 2022-04-11), so `st` expired, `exp` 2022 (was active, 2034). Checked and not added, already cards: Lauf US 9,375,989 (in the Lauf card), DT Swiss Star Ratchet US 8,757,341 (own card, Syntace to DT Swiss). Atlas 531 to 533 entries.
