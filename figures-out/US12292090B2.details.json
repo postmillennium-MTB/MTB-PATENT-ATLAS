@@ -1,0 +1,318 @@
+{
+ "number": "US12292090B2",
+ "title": "Suspension enhancing hub and rear derailleur assembly",
+ "inventors": [
+  "Evan Michael Choltco-Devlin",
+  "Mark Stephen Fitzsimmons",
+  "Wesley E. Allinger"
+ ],
+ "assignee_original": [
+  "Fox Factory Inc",
+  "Tien Hsin Industries Co., Ltd.",
+  "Tektro Technology Corporation",
+  "Motion Instruments Inc.",
+  "Sram, Llc",
+  "Sram, Llc",
+  "Sram, Llc",
+  "天心工業股份有限公司",
+  "天心工業股份有限公司",
+  "Marcin GOLEC",
+  "Fox Factory, Inc.",
+  "Marcin GOLEC",
+  "Sram, Llc",
+  "Sram, Llc",
+  "Campagnolo Srl",
+  "The Cycle Group",
+  "Ad-Ii Engineering Inc.",
+  "Tien Hsin Industries Co., Ltd.",
+  "Classified Cycling Bv",
+  "Zf Friedrichshafen Ag",
+  "Tien Hsin Industries Co., Ltd.",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Atsugi Motor Parts Company, Limited",
+  "Witte Don C",
+  "Nippondenso Co., Ltd.",
+  "Fichtel & Sachs Ag",
+  "The University Of Toledo",
+  "Kirk; Friedrich",
+  "K2 Bike Inc.",
+  "Active Control Experts, Inc.",
+  "Shimano Inc.",
+  "Larry D. Miller",
+  "Kun Teng Industry Co., Ltd.",
+  "George French",
+  "Foster Assets Corporation",
+  "Canyon Bicycles Gmbh",
+  "GM Global Technology Operations LLC",
+  "Magna Powertrain Inc.",
+  "Max Daniel Lauret",
+  "Means Industries, Inc.",
+  "Karsten Bettin",
+  "Brian Jordan",
+  "Canyon Bicycles Gmbh",
+  "Magna Powertrain, Inc.",
+  "Magna Powertrain Inc.",
+  "Means Industries, Inc.",
+  "Destiny Racing (Huaian) International Co., Ltd.",
+  "Magna Powertrain, Inc.",
+  "株式会社シマノ",
+  "Shimano (Singapore ) Pte., Ltd.",
+  "Salomon Sa",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Shimano, Inc.",
+  "Shimano Inc.",
+  "Sram Deutschland Gmbh",
+  "Shimano, Inc.",
+  "Magna Powertrain Of America, Inc.",
+  "Shimano Inc.",
+  "Sram, Llc",
+  "Means Industries, Inc.",
+  "Sram, Llc",
+  "Shimano Inc.",
+  "Sram Deutschland Gmbh",
+  "The Cycle Group",
+  "Tektro Technology Corporation",
+  "彥豪金屬工業股份有限公司",
+  "Shimano (Singapore) Pte. Ltd.",
+  "Sram Deutschland Gmbh",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "SRAM Deutschland GmbH",
+  "Sram, Llc",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Atsugi Motor Parts Company, Limited",
+  "Witte Don C",
+  "Nippondenso Co., Ltd.",
+  "The University Of Toledo",
+  "Fichtel & Sachs Ag",
+  "K2 Bike Inc.",
+  "Active Control Experts, Inc.",
+  "Kirk; Friedrich",
+  "Shimano Inc.",
+  "Shimano, Inc.",
+  "Larry D. Miller",
+  "Kun Teng Industry Co., Ltd.",
+  "George French",
+  "Foster Assets Corporation",
+  "GM Global Technology Operations LLC",
+  "Means Industries, Inc.",
+  "Canyon Bicycles Gmbh",
+  "Karsten Bettin",
+  "Brian Jordan",
+  "Magna Powertrain Inc.",
+  "Magna Powertrain Inc.",
+  "Max Daniel Lauret",
+  "Magna Powertrain, Inc.",
+  "Canyon Bicycles Gmbh",
+  "Canyon Bicycles Gmbh",
+  "Magna Powertrain Inc.",
+  "Means Industries, Inc.",
+  "Destiny Racing (Huaian) International Co., Ltd.",
+  "Magna Powertrain, Inc.",
+  "Tien Hsin Industries Co., Ltd."
+ ],
+ "assignee_current": [
+  "Fox Factory Inc"
+ ],
+ "application": "US18/777,043",
+ "priority_date": "2018-11-26",
+ "filing_date": "2024-07-18",
+ "publication_date": "2025-05-06",
+ "grant_date": "2025-05-06",
+ "status": "Active",
+ "expiry_events": [
+  {
+   "date": "2039-11-25",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  }
+ ],
+ "abstract": "An electronic automatically decoupling hub assembly. The decoupling hub assembly has an axle and a hub shell rotationally positioned about the axle. A controller provides automatic activation/deactivation signals to an inductor. The decoupling hub assembly has a bearing rotationally positioned about the axle and a cassette body assembly, having a plurality of teeth, rotationally positioned about the bearing. One or more pawls are provided to engage with at least some of the teeth of the cassette body assembly and a seal is used to contain the pawls within the decoupling hub assembly. A cassette body assembly is coupled with the ratchet ring and an end cap is used to prevent a contaminant from entering into the decoupling hub assembly.",
+ "family": [
+  "EP3657037A1",
+  "EP3657037B1",
+  "EP4075006A1",
+  "EP4350162A1",
+  "US11428279B2",
+  "US12071988B2",
+  "US12292090B2",
+  "US20200166089A1",
+  "US20220389979A1",
+  "US20240369112A1",
+  "US20250257769A1",
+  "US20250377027A1"
+ ],
+ "cites": [
+  {
+   "pn": "US4773671A",
+   "title": "Method of controlling damping force of damper"
+  },
+  {
+   "pn": "US4984819A",
+   "title": "Automotive suspension system and shock absorber therefor"
+  },
+  {
+   "pn": "US5027303A",
+   "title": "Measuring apparatus for pedal-crank assembly"
+  },
+  {
+   "pn": "US5105918A",
+   "title": "Detection of damping force for shock absorber control"
+  },
+  {
+   "pn": "DE4340471C1",
+   "title": "Derailleur for bicycles"
+  },
+  {
+   "pn": "US5390949A",
+   "title": "Active suspension systems and components using piezoelectric sensing and actuation devices"
+  },
+  {
+   "pn": "US6065580A",
+   "title": "Heavy duty freewheel hub for bicycles"
+  },
+  {
+   "pn": "US6244398B1",
+   "title": "Shock absorber with variable bypass damping"
+  },
+  {
+   "pn": "US6427812B2",
+   "title": "Damper and valve"
+  },
+  {
+   "pn": "US20030132600A1",
+   "title": "Bicycle suspension"
+  },
+  {
+   "pn": "US6935157B2",
+   "title": "Anti-bob system for cycles"
+  },
+  {
+   "pn": "US20100044180A1",
+   "title": "Hub assembly for a bicycle"
+  },
+  {
+   "pn": "US20100252389A1",
+   "title": "High Efficiency Bicycle Hub"
+  },
+  {
+   "pn": "US20110183805A1",
+   "title": "Motor having an integrated torque sensor"
+  },
+  {
+   "pn": "DE202010016798U1",
+   "title": "Bicycle hub gearbox"
+  },
+  {
+   "pn": "US20120138411A1",
+   "title": "Method of operation of a selectable one way clutch selection mechanism"
+  },
+  {
+   "pn": "WO2015013802A1",
+   "title": "Selectable one-way clutch having strut with separate armature"
+  },
+  {
+   "pn": "FR3012108A1",
+   "title": "COMBINED ON AXIS STATOR OF TRANSMISSION AND SUSPENSION FOR ELECTRIC BIKE"
+  },
+  {
+   "pn": "US20150204390A1",
+   "title": "Electronic vehicular transmission and coupling and control assembly for use therein"
+  },
+  {
+   "pn": "US9132883B2",
+   "title": "Rear-wheel drive"
+  },
+  {
+   "pn": "US9475547B2",
+   "title": "Derailleur with damping assembly"
+  },
+  {
+   "pn": "DE202015005747U1",
+   "title": "Rear hub and bike axle"
+  },
+  {
+   "pn": "US20170248174A1",
+   "title": "An electro-mechanical clutch apparatus"
+  },
+  {
+   "pn": "US20180022201A1",
+   "title": "Coil module assembly with thermally decoupled solenoid and circuit"
+  },
+  {
+   "pn": "WO2018144185A1",
+   "title": "Overrunning, non-friction coupling and control assemblies and switchable linear actuator device and reciprocating electromechanical apparatus for use therein"
+  },
+  {
+   "pn": "US20190233053A1",
+   "title": "Driving Device for a Hub Assembly"
+  },
+  {
+   "pn": "US20190323568A1",
+   "title": "Selectable one-way coupling with debris containment"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US12617493B1",
+   "title": "Rear derailleur with damping function"
+  }
+ ],
+ "events": [
+  {
+   "date": "2024-07-18",
+   "type": "filed",
+   "title": "Application filed by Fox Factory Inc"
+  },
+  {
+   "date": "2024-07-18",
+   "type": "priority",
+   "title": "Priority to US18/777,043"
+  },
+  {
+   "date": "2024-07-18",
+   "type": "reassignment",
+   "title": "Assigned to FOX FACTORY, INC."
+  },
+  {
+   "date": "2024-11-07",
+   "type": "publication",
+   "title": "Publication of US20240369112A1"
+  },
+  {
+   "date": "2025-04-28",
+   "type": "priority",
+   "title": "Priority to US19/192,178"
+  },
+  {
+   "date": "2025-05-01",
+   "type": "priority",
+   "title": "Priority to US19/196,623"
+  },
+  {
+   "date": "2025-05-06",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2025-05-06",
+   "type": "publication",
+   "title": "Publication of US12292090B2"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2039-11-25",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  }
+ ]
+}
