@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 531 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 536 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 531 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 531 |
+| **Total entries** | 536 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 212 |
+| **Active patents** | 217 |
 | **Expired patents** | 244 |
 | **Pending applications** | 47 |
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 231 |
+| **Brands** | 232 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 455 |
+| **Verified entries** | 460 |
 | **Medium confidence** | 40 |
 | **Draft / in progress** | 36 |
 
@@ -1043,3 +1043,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - Rotated Fig. 1A on the Trvstper trailing-link fork card (US 10,196,106 + 6) 90° clockwise and added one sentence naming Trvstper, Inc. as the company behind the Trust Performance Message and Shout forks.
 - Folded the three Trust/Trvstper fork cards (US 10,196,106 + 6, US 10,549,813 + 2, US 11,084,552 + 8) into one card, "Trust Performance Message (Trvstper) trailing-link fork suspension patents (US 10,196,106 + 18 more)", per direct request (533 → 531 entries). Corrected US 10,549,813 from its record: inline shock with coil spring, priority 2017-08-29, filed 2018-10-12, granted 2020-02-04 (the old text called it the core trail-increasing patent, filed 2017). Old refs 10549813 and 11084552 alias to 10196106; the Citations map snapshot was remapped by hand until its workflow rebuilds it. Open: Google shows US 10,549,813 expiring 2037-08-29 while filed + 20 years gives 2038; the card keeps the headline 2037. US D860,061 dates and the D880,371/D880,372 siblings were not re-read from the records.
 - Trust fork card: US 10,549,813 expiry worded "late 2037 or 2038" (EN/FR) instead of a single date, per Jon.
+- Added five CeramicSpeed Sport A/S cards (531 → 536 entries), all verified against Google Patents: chainless driveshaft drive system US 10,894,577 B2 (family: EP 3,546,334 B1 not in force, DK 179,953 B1, CN 110,304,191 B expired; `exp` 2039; priority US provisional 2018-03-27 and DK 2018-04-16, where the queue note listed only DK); gear shifting system US 11,267,531 B2 (`exp` 2040 with 106 days PTA); rocker joint roller chain US 11,608,874 B2 (`exp` 2041 with PTA; EP 4,047,238 A1 withdrawn); sprocket dust cover with impeller US 12,473,949 B2 + US 12,523,256 B2 + DK 181,643 B1 (`exp` 2044); rear derailleur cage design US D866,407 (`exp` 2034). New brand CeramicSpeed. Drawings: the three EP 3,546,334 A1 sheets Jon uploaded (Fig. 9 rotated upright) plus US 10,894,577 Fig. 1; sprocket drawings come from DK 181,643 B1 because the US drawing files could not be downloaded. Greg Vanderbeek's Western Colorado University role (lecturer in mechanical engineering) is from Western's September 2024 news item; the patent lists no affiliation. Not carded: EP 3,546,334 and the other counterparts, which sit inside the family cards.
