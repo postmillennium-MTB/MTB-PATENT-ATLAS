@@ -1,0 +1,141 @@
+patent: US9145185B1
+source: https://patentimages.storage.googleapis.com/5c/60/ca/c8bf20adfc3590/US9145185.pdf
+pages: 9
+per-page extracted text length: {1: 1891, 2: 64, 3: 57, 4: 57, 5: 57, 6: 57, 7: 5802, 8: 7470, 9: 783}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US009145185B1
+
+(12) United States Patent
+Claro
+
+(10) Patent No.:
+
+US 9,145,185 B1
+
+(45) Date of Patent:
+
+(54) BICYCLE REAR SUSPENSION
+
+6,161,858. A
+
+6,712.374 B2
+
+12/2000 Tseng
+
+3/2004 Assier
+
+6,969,081 B2 * 1 1/2005 Whyte .......................... 280/284
+
+(71) Applicant: Yaphen Serioza Claro, Fullerton, CA
+(US)
+
+(72) Inventor: Warphen Serioza Claro, Fullerton, CA
+
+7,048,292 B2
+
+5/2006 Weagle
+
+7,128,329 B2
+
+10/2006 Weagle
+
+7,717,212 B2
+
+5/2010 Weagle
+
+8,033,558 B2
+
+10/2011 Earle
+
+7,934,739 B2
+
+(US)
+
+(*) Notice:
+
+Sep. 29, 2015
+
+5/2011 Domahidy
+
+8,348,295 B2
+
+1, 2013 Beaulieu
+
+Subject to any disclaimer, the term of this
+
+58,838 A. ck
+
+3. Christini
+
+patent is extended or adjusted under 35
+
+2009.0102158 A1* 4, 2009 Antonot .....
+
+U.S.C. 154(b) by 0 days.
+
+2010/0102531 A1* 4/2010 Graney et al. .......... ... 280/284
+2015/0069735 A1* 3/2015 Hoogendoornet al. ...... 280/284
+
+280/284
+... 280/284
+
+21) Appl. No.: 14/259,155
+(21)
+Appl. No
+9
+
+* cited by examiner
+
+(22) Filed:
+Apr. 23, 2014
+(51) Int. Cl.
+B62K 25/10
+(2006.01)
+
+Primary Examiner — Kevin Hurley
+(74) Attorney, Agent, or Firm — Vaheh Golestanian
+
+B62K 25/28
+B62K 3/02
+
+(2006.01)
+(2006.01)
+
+(52) U.S. Cl.
+
+CPC ................. B62K 25/286 (2013.01); B62K 3/02
+
+(2013.01)
+(58) Field of Classification Search
+CPC ...... B62K 25/286; B62K 25/04; B62K 25/28
+See application file for complete search history.
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+5,452,910 A
+
+9, 1995 Harris
+
+5,509,679 A
+
+4, 1996 Leitner
+
+Nemagrdi
+
+(7)
+
+ABSTRACT
+
+A bicycle frame includes front and rear parts, which are
+pivotally connected to each other by upper and bottom links,
+and a shock absorber. The bicycle frame is designed so that
+compression in the shock absorber isolates the bicycle rider
+from track noise. Additionally, energy loss caused by the
+shock absorber compression during positive acceleration is
+reduced.
+
+5 Claims, 5 Drawing Sheets
+
+

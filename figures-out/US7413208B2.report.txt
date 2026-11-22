@@ -1,0 +1,118 @@
+patent: US7413208B2
+source: https://patentimages.storage.googleapis.com/f6/8b/0f/c82280e0562471/US7413208.pdf
+pages: 11
+per-page extracted text length: {1: 1925, 2: 56, 3: 56, 4: 56, 5: 56, 6: 56, 7: 69, 8: 6555, 9: 7422, 10: 5468, 11: 3910}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO741.3208B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 7413,208 B2
+(45) Date of Patent:
+Aug. 19, 2008
+
+Weng
+(54) BICYCLE FRAME
+75
+
+6,845,998 B2 * 1/2005 Probst ........................ 280/284
+2005/0253357 A1* 1 1/2005 Chang et al. ................ 280/283
+
+(75) Inventor: My Chien Weng, Changhua City
+
+2006/01 19070 A1* 6/2006 Weagle ....................... 280/284
+
+(
+
+)
+
+2006/019730.6 A1*
+
+9, 2006 O'Connor ................... 280/284
+
+(73) Assignee: Astro Engineering Co., Ltd., Changhua
+County (TW)
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+
+* cited by examiner
+
+past 5Slisted under 35
+
+Primary Examiner Kevin Hurley
+
+M
+
+YW-
+
+y
+
+ayS.
+
+57
+
+ABSTRACT
+
+(21) Appl. No.: 11/409,363
+
+(57)
+
+(22) Filed:
+(65)
+
+A bicycle frame has a front frame, a lower bracket assembly,
+an upper bracket assembly, a rear frame and a shock absorber.
+The front frame has a head tube, a down tube, a bottom
+bracket shell and seat tube. The lower bracket assembly is
+
+Apr. 20, 2006
+Prior Publication Data
+
+US 2007/O246909 A1
+
+(51) Int. Cl.
+B62K 25/28
+(52)
+
+U.S. C.
+
+Oct. 25, 2007
+
+connected pivotally to the bottom bracket shell and has a
+lower connecting bracket. The upper bracket assembly is
+connected pivotally to the seat tube and has two upper con
+
+(2006.01)
+
+- ------ ----- --------- ----- ------ --- ----------- --------
+
+280/284
+
+(58) Field of Classification Search ................. 280/283,
+280/284
+See application file for complete search history.
+(56)
+References Cited
+
+necting brackets. The
+
+Ca
+
+frame is connected pivotally tO the
+
+upper connecting brackets and the lower connecting bracket
+of the upper and lower bracket assemblies and has an upper
+fork, a lower fork and two dropouts. The shock absorber is
+mounted pivotally between the upper connecting brackets
+and the lower connecting bracket.
+
+U.S. PATENT DOCUMENTS
+
+944,795 A * 12, 1909 Leet et al. ................... 280/284
+
+9 Claims, 6 Drawing Sheets
+
+

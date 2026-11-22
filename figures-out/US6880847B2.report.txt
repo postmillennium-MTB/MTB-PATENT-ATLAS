@@ -1,0 +1,139 @@
+patent: US6880847B2
+source: https://patentimages.storage.googleapis.com/dd/11/8b/bcdd5f670c4f4a/US6880847.pdf
+pages: 11
+per-page extracted text length: {1: 2297, 2: 60, 3: 57, 4: 57, 5: 7123, 6: 7069, 7: 7547, 8: 7742, 9: 7231, 10: 6810, 11: 3141}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO688.0847B2
+
+(12) United States Patent
+Chamberlain et al.
+
+(10) Patent No.:
+
+(54) BICYCLE REAR SUSPENSION
+
+5,226,674. A
+6,203,042 B1
+
+(75) Inventors: Jason L. Chamberlain, Morgan Hill,
+CA (US); Brandon Dale Sloan,
+
+6,595,538 B1
+
+s
+
+2003/0038450 A1
+
+(73) Assignee: Specialized Bicycle Components, Inc.,
+
+2004/OO94933 A1
+
+O
+
+O
+
+Morgan Hill, CA (US)
+Subject to any disclaimer, the term of this
+
+(*) Notice:
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+(21) Appl. No.: 10/656,922
+(22) Filed:
+Sep. 4, 2003
+O
+
+(65)
+
+O
+
+Prior Publication Data
+
+US 2004/0239071 A1
+
+Dec. 2, 2004
+
+Related U.S. Application Data
+
+(60) Provisional application No. 60/473,500, filed on May
+(51)
+(52)
+(58)
+(56)
+
+27, 2003.
+Int. Cl. ............................................... B62K 25/28
+U.S. Cl
+280/284
+-rr
+Field of Search ............................. 280/281. 1, 283,
+280/284, 288,275
+References Cited
+U.S. PATENT DOCUMENTS
+4,789,174 A
+
+12/1988 Law will
+
+5,121,937 A
+
+6/1992 Law will
+
+Apr. 19, 2005
+
+7/1993 Buell et al.
+3/2001 Wilcox
+
+6,206,397 B1 * 3/2001 Klassen et al. ............. 280/284
+6,286,642 B1 9/2001 Yi .............................. 280/284
+
+Morgan Hill, CA (US)
+rr. A
+
+US 6,880,847 B2
+
+(45) Date of Patent:
+
+2004/0046355 A1 *
+
+7/2003 Ellsworth et al.
+2/2003 Lam ........................... 280/284
+3/2004 Carroll ...
+
+... 280/284
+
+5/2004 Probst ........................ 280/284
+
+OTHER PUBLICATIONS
+
+Cannondale GeminiTM Bicycle Owner's Manual Supple
+ment, IOMc/JCH 122601 #113646, 2001.
+Cannondale JekyllTM Owner's Manual Supplement, Publi
+cation No. 115808.PDF, Aug. 2003.
+* cited by examiner
+Primary Examiner-Lesley D. Morris
+
+Assistant Examiner-Matthew Luby
+
+(74) Attorney, Agent, or Firm-Knobbe Martens Olson &
+Bear LLP
+
+57
+
+ABSTRACT
+
+(57)
+A bicycle frame assembly having a main frame and an
+articulating frame Supported for movement relative to the
+main frame. The articulating frame is configured to carry a
+rear wheel for rotation about a hub axis. A shock absorber is
+operably connected between the main frame and the articu
+lating frame to provide resistance to articulating motion of
+the articulating frame. The articulating frame includes a
+chain stay member and a shock Support member fixed for
+angular displacement with the chain stay member.
+44 Claims, 3 Drawing Sheets
+
+

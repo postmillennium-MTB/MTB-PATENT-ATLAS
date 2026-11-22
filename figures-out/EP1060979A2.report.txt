@@ -1,0 +1,76 @@
+patent: EP1060979A2
+source: https://patentimages.storage.googleapis.com/c3/09/ec/8bd7a265d0ab38/EP1060979A2.pdf
+pages: 10
+per-page extracted text length: {1: 1633, 2: 5544, 3: 6092, 4: 4885, 5: 4529, 6: 229, 7: 18, 8: 18, 9: 18, 10: 19}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+Europäisches Patentamt
+
+(19)
+
+European Patent Ofﬁce
+
+(11)
+
+Ofﬁce européen des brevets
+
+EP 1 060 979 A2
+
+EUROPEAN PATENT APPLICATION
+
+(12)
+
+(51) Int. Cl.7: B62K 25/30
+
+(43) Date of publication:
+20.12.2000 Bulletin 2000/51
+
+(21) Application number: 00112371.0
+(22) Date of ﬁling: 09.06.2000
+(84) Designated Contracting States:
+
+(72) Inventor: Rolle, Adriano
+
+AT BE CH CY DE DK ES FI FR GB GR IE IT LI LU
+MC NL PT SE
+Designated Extension States:
+AL LT LV MK RO SI
+
+10080 Rivara Canavese (Torino) (IT)
+
+(74) Representative:
+
+(30) Priority: 16.06.1999 IT TO990512
+(71) Applicant: Rolle, Adriano
+
+Fioravanti, Corrado et al
+Jacobacci & Perani S.p.A.
+Corso Regio Parco 27
+I-10152 Torino (IT)
+
+10080 Rivara Canavese (Torino) (IT)
+
+(54)
+
+A bicycle frame with rear wheel suspension
+from the seat area to the handlebars area. The suspension also includes a thrust rod (27) with a rear end pivoted horizontally (33) onto the rear framework (11) and
+a front end (30) guided inside the top tube (18) and
+bearing against a surface (29a) which is movable inside
+the top tube (18) for transmitting longitudinal compression stress to the shock absorber.
+
+EP 1 060 979 A2
+
+(57)
+A bicycle frame which includes a main frame
+(10) and a rear wheel suspension; the suspension
+including a rear framework (11) on which to mount the
+rear wheel, pivoted horizontally (12) on the main frame
+(10) near the region of the pedals, and a shock absorber
+(23, 31) interposed between the main frame and the
+rear framework. The shock absorber is housed inside
+the top tube (18) of the main frame (10) which extends
+
+Printed by Xerox (UK) Business Services
+2.16.7 (HRS)/3.6
+
+

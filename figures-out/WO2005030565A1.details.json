@@ -1,0 +1,213 @@
+{
+ "number": "WO2005030565A1",
+ "title": "Bicycle rear suspension",
+ "inventors": [
+  "Xabier NARBAIZA GÓMEZ"
+ ],
+ "assignee_original": [
+  "Orbea SCL",
+  "Paul Simon Mackie",
+  "Decathlon",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cyclying, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Uwhk Limited",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Sotto Group LLC",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Canyon Bicycles Gmbh",
+  "Canyon Bicycles Gmbh",
+  "Harry Topham Short",
+  "Pous Quilez Alberto",
+  "Hs Products Ag Systemtechnik U",
+  "Dr. Ing. H.C.F. Porsche Ag",
+  "Merida Industry Co., Ltd.",
+  "Merida Industry Co., Ltd.",
+  "Harry Topham Short",
+  "Pous Quilez Alberto",
+  "Dr. Ing. H.C.F. Porsche Ag",
+  "Hs Products Ag Systemtechnik U",
+  "Merida Industry Co., Ltd.",
+  "Merida Industry Co., Ltd.",
+  "Yeti Cycling, Llc",
+  "Decathlon",
+  "Paul Simon Mackie",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cyclying, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Uwhk Limited",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc"
+ ],
+ "assignee_current": [
+  "Orbea SCL"
+ ],
+ "application": "PCT/ES2003/000520",
+ "priority_date": "2003-10-01",
+ "filing_date": "2003-10-14",
+ "publication_date": "2005-04-07",
+ "grant_date": "",
+ "status": "Ceased",
+ "expiry_events": [
+  {
+   "date": "2006-04-01",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  }
+ ],
+ "abstract": "The invention relates to a bicycle rear suspension comprising a four-bar linkage which is articulated to the bicycle frame and which consists of a pivoting arm (5) and a small 40 mm-long crank (7). According to the invention, one end of the aforementioned crank is pivot connected (A) to the pivoting arm (5), while the other end thereof is connected (B) to a large 108 mm-long crank (8) which is in turn pivot connected (C) to the frame. The invention also comprises a shock absorber (9) having a first end which is connected to the connection (B') between the small crank (7) and the large crank (8) and a second end which is connected (B) to the frame. The invention is suitable for bicycles.",
+ "family": [
+  "ATE370880T1",
+  "AU2003274136A1",
+  "DE60315903D1",
+  "DE60315903T2",
+  "EP1669282A1",
+  "EP1669282B1",
+  "ES2237305A1",
+  "ES2237305B2",
+  "ES2291678T3",
+  "PT1669282E",
+  "WO2005030565A1"
+ ],
+ "cites": [
+  {
+   "pn": "GB220760A",
+   "title": "Improvements in or relating to the rear spring suspension of motor cycles, cycles and the like"
+  },
+  {
+   "pn": "FR2464875A1",
+   "title": "Heavy duty bicycle frame - has front and rear forks sprung with telescopic dampers"
+  },
+  {
+   "pn": "DE19644105A1",
+   "title": "Bicycle with steered sprung front wheel"
+  },
+  {
+   "pn": "US6086080A",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US6161858A",
+   "title": "Mountain bike frame"
+  },
+  {
+   "pn": "US6170845B1",
+   "title": "Bicycle frame"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "GB2476120A",
+   "title": "Bicycle rear suspension with selectable rising or falling rate."
+  },
+  {
+   "pn": "US8348295B2",
+   "title": "Two-wheeled vehicle with rear suspension"
+  },
+  {
+   "pn": "US10293881B2",
+   "title": "Rear suspension system for a bicycle"
+  },
+  {
+   "pn": "US10343742B2",
+   "title": "Link suspension system"
+  },
+  {
+   "pn": "US10766563B2",
+   "title": "Rail suspension with integral shock and dampening mechanism"
+  },
+  {
+   "pn": "US10822048B2",
+   "title": "Reciprocating rail movement suspension system"
+  },
+  {
+   "pn": "US10926830B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US11091219B2",
+   "title": "Suspension bicycle frame"
+  },
+  {
+   "pn": "US11173983B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US12077241B2",
+   "title": "Multi-body vehicle suspension linkage"
+  },
+  {
+   "pn": "US12145684B2",
+   "title": "Constrained multiple instantaneous velocity center linkage assembly for vehicle suspension"
+  },
+  {
+   "pn": "US12384484B2",
+   "title": "Integrated motor mount and suspension pivot"
+  },
+  {
+   "pn": "US12522316B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US12617488B2",
+   "title": "Two-wheeled vehicle with configurable idler"
+  }
+ ],
+ "events": [
+  {
+   "date": "2003-10-14",
+   "type": "filed",
+   "title": "Application filed by Orbea SCL"
+  },
+  {
+   "date": "2003-10-14",
+   "type": "priority",
+   "title": "Priority to DE60315903T"
+  },
+  {
+   "date": "2003-10-14",
+   "type": "priority",
+   "title": "Priority to EP03758118A"
+  },
+  {
+   "date": "2003-10-14",
+   "type": "priority",
+   "title": "Priority to AU2003274136A"
+  },
+  {
+   "date": "2005-04-07",
+   "type": "publication",
+   "title": "Publication of WO2005030565A1"
+  },
+  {
+   "date": "2006-04-01",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Ceased"
+  }
+ ]
+}

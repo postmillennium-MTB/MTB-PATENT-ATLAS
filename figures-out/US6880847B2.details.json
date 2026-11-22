@@ -1,0 +1,373 @@
+{
+ "number": "US6880847B2",
+ "title": "Bicycle rear suspension",
+ "inventors": [
+  "Jason L. Chamberlain",
+  "Brandon Dale Sloan"
+ ],
+ "assignee_original": [
+  "Specialized Bicycle Components Inc",
+  "Chung-Yung Huang",
+  "Chamberlain Jason L.",
+  "Wen-Pin Chang",
+  "Puzey Michael R.",
+  "Owen Chang",
+  "Rocky Mountain Bicycles - A Division Of Procycle Group Inc.",
+  "Chamberlain Jason L",
+  "Mcandrews Mike",
+  "Specialized Bicycle Components, Inc.",
+  "James Colegrove",
+  "Currie Christopher S",
+  "Specialized Bicycle Components, Inc.",
+  "Niner, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Sotto Llc",
+  "Trek Bicycle Corporation",
+  "Chris Cocalis",
+  "Niner, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Samuel Hu",
+  "Christopher Canfield",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Clark A. Wallace",
+  "Specialized Bicycle Components, Inc.",
+  "株式会社シマノ",
+  "Smith Jeffrey C",
+  "Yeti Cycling LLC",
+  "K9 Ind Ltd",
+  "Kona Usa, Inc.",
+  "Wickwerks Llc",
+  "Dual Lever Suspension, LLC",
+  "Eric R. Twers",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Christopher Hudec",
+  "Robert M Deily",
+  "Specialized Bicycle Components, Inc.",
+  "Yeti Cyclying, Llc",
+  "Amaranti, Llc",
+  "Litecycle, Inc.",
+  "本田技研工業株式会社",
+  "Southall Timothy James",
+  "Yeti Cycling, LLC",
+  "Yeti Cycling, Llc",
+  "Damon Madsen",
+  "Damon Madsen",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Litecycle, Inc.",
+  "Yeti Cycling, Llc",
+  "Mert Lawwill",
+  "Mert Lawwill",
+  "Schwinn Bicycle Company",
+  "Trek Bicycle Corporation",
+  "James B. Klassen",
+  "Giant Mfg. Co., Ltd",
+  "Duhane Lam",
+  "Anthony S. Ellsworth",
+  "Carroll Ryan Michael",
+  "Fusion Bikes Gmbh",
+  "Mulfingen Elektrobau Ebm",
+  "Roadmaster Corporation",
+  "Porsche Ag",
+  "Merida Industry Co., Ltd., Tatsun Hsiang, Changhua",
+  "Maverick American Llc",
+  "Centurion Renner Kg",
+  "Specialized Bicycle Componets, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Mert Lawwill",
+  "Mert Lawwill",
+  "Schwinn Bicycle Company",
+  "James B. Klassen",
+  "Trek Bicycle Corporation",
+  "Anthony S. Ellsworth",
+  "Giant Mfg. Co., Ltd",
+  "Duhane Lam",
+  "Carroll Ryan Michael",
+  "Fusion Bikes Gmbh",
+  "Chamberlain Jason L.",
+  "Specialized Bicycle Components, Inc.",
+  "Chamberlain Jason L",
+  "Specialized Bicycle Components, Inc.",
+  "Chung-Yung Huang",
+  "Wen-Pin Chang",
+  "Wen-Pin Chang",
+  "Puzey Michael R.",
+  "Specialized Bicycle Components, Inc.",
+  "Rocky Mountain Bicycles - A Division Of Procycle Group Inc.",
+  "Rocky Mountain Bicycles-A Division Of Procycle Group Inc.",
+  "Owen Chang",
+  "Mcandrews Mike",
+  "Specialized Bicycle Components, Inc.",
+  "Trek Bicycle Corporation",
+  "James Colegrove",
+  "Trek Bicycle Corporation",
+  "Trek Bicycle Corporation",
+  "Trek Bicycle Corporation",
+  "Trek Bicycle Corporation",
+  "Currie Christopher S",
+  "Currie Christopher S",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Niner, Inc.",
+  "Niner, Inc.",
+  "Niner, Inc.",
+  "Niner, Inc.",
+  "Trek Bicycle Corporation",
+  "Sotto Group LLC",
+  "Sotto Llc",
+  "Chris Cocalis",
+  "Chris Cocalis",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Christopher Canfield",
+  "Samuel Hu",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Clark A. Wallace",
+  "Specialized Bicycle Components, Inc."
+ ],
+ "assignee_current": [
+  "Specialized Bicycle Components Holding Co Inc"
+ ],
+ "application": "US10/656,922",
+ "priority_date": "2003-05-27",
+ "filing_date": "2003-09-04",
+ "publication_date": "2005-04-19",
+ "grant_date": "2005-04-19",
+ "status": "Expired - Fee Related",
+ "expiry_events": [
+  {
+   "date": "2023-09-04",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  }
+ ],
+ "abstract": "A bicycle frame assembly having a main frame and an articulating frame supported for movement relative to the main frame. The articulating frame is configured to carry a rear wheel for rotation about a hub axis. A shock absorber is operably connected between the main frame and the articulating frame to provide resistance to articulating motion of the articulating frame. The articulating frame includes a chain stay member and a shock support member fixed for angular displacement with the chain stay member.",
+ "family": [
+  "DE602004022892D1",
+  "EP1481884A2",
+  "EP1481884A3",
+  "EP1481884B1",
+  "US20040239071A1",
+  "US20050046144A1",
+  "US6880847B2",
+  "US7059620B2"
+ ],
+ "cites": [
+  {
+   "pn": "US4789174A",
+   "title": "Suspension bicycle"
+  },
+  {
+   "pn": "US5121937A",
+   "title": "Suspension bicycle"
+  },
+  {
+   "pn": "US5226674A",
+   "title": "Cycle rear suspension system"
+  },
+  {
+   "pn": "US6203042B1",
+   "title": "Bicycle rear suspension system providing relative rearward motion of rear axle"
+  },
+  {
+   "pn": "US6206397B1",
+   "title": "Bicycle wheel travel path for selectively applying chainstay lengthening effect and apparatus for providing same"
+  },
+  {
+   "pn": "US6286642B1",
+   "title": "Fluid regulating device for use with a shock-absorbing cylinder to obtain a variable shock absorbing effect"
+  },
+  {
+   "pn": "US20030038450A1",
+   "title": "Rear suspension system for two-wheeled vehicles, particularly bicycles"
+  },
+  {
+   "pn": "US6595538B2",
+   "title": "Bicycle suspension apparatus and related method"
+  },
+  {
+   "pn": "US20040046355A1",
+   "title": "Rear bicycle suspension"
+  },
+  {
+   "pn": "US20040094933A1",
+   "title": "Bicycle frame"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US20050043147A1",
+   "title": "Structure for extendable bicycles"
+  },
+  {
+   "pn": "US20050046144A1",
+   "title": "Frame assembly for a bicycle"
+  },
+  {
+   "pn": "US20050156400A1",
+   "title": "Shock-absorbing frame for bicycle"
+  },
+  {
+   "pn": "US20050167168A1",
+   "title": "Vehicle and vehicle suspension system"
+  },
+  {
+   "pn": "US20050253357A1",
+   "title": "Bicycle with suspension"
+  },
+  {
+   "pn": "US20060197306A1",
+   "title": "Bicycle with rear suspension"
+  },
+  {
+   "pn": "US20060273542A1",
+   "title": "Head tube for bicycle frame"
+  },
+  {
+   "pn": "US20070096426A1",
+   "title": "Integrated bicycle shifting and suspension system"
+  },
+  {
+   "pn": "US7377535B2",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US20080252040A1",
+   "title": "Bicycle rear wheel suspension system"
+  },
+  {
+   "pn": "US20090001686A1",
+   "title": "Rear wheel suspension system for a two-wheeled vehicle"
+  },
+  {
+   "pn": "US20090001685A1",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US20090026728A1",
+   "title": "Bicycle rear suspension"
+  },
+  {
+   "pn": "USD593457S1",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US20090261556A1",
+   "title": "Bicycle Rear Suspension System Linkage"
+  },
+  {
+   "pn": "US7703785B2",
+   "title": "Bicycle derailleur system"
+  },
+  {
+   "pn": "US20100127473A1",
+   "title": "Suspension bicycle derailleur link"
+  },
+  {
+   "pn": "US20110233892A1",
+   "title": "Bicycle Rear Suspension"
+  },
+  {
+   "pn": "US8167327B2",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "USD662011S1",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US9056647B2",
+   "title": "One-piece connector for a shock-absorbing frame of a bicycle"
+  },
+  {
+   "pn": "US9061729B2",
+   "title": "Suspension system for wheeled vehicles"
+  },
+  {
+   "pn": "US10850798B2",
+   "title": "Bicycle rear suspension"
+  },
+  {
+   "pn": "US10850796B2",
+   "title": "Bicycle rear suspension"
+  },
+  {
+   "pn": "US11052964B2",
+   "title": "Bicycle frame assembly"
+  },
+  {
+   "pn": "USD958702S1",
+   "title": "Bicycle frame"
+  }
+ ],
+ "events": [
+  {
+   "date": "2003-09-04",
+   "type": "filed",
+   "title": "Application filed by Specialized Bicycle Components Inc"
+  },
+  {
+   "date": "2003-09-04",
+   "type": "priority",
+   "title": "Priority to US10/656,922"
+  },
+  {
+   "date": "2004-01-26",
+   "type": "reassignment",
+   "title": "Assigned to SPECIALIZED BICYCLE COMPONENTS, INC."
+  },
+  {
+   "date": "2004-05-24",
+   "type": "priority",
+   "title": "Priority to DE602004022892T"
+  },
+  {
+   "date": "2004-05-24",
+   "type": "priority",
+   "title": "Priority to EP04012219A"
+  },
+  {
+   "date": "2004-11-10",
+   "type": "priority",
+   "title": "Priority to US10/985,356"
+  },
+  {
+   "date": "2004-12-02",
+   "type": "publication",
+   "title": "Publication of US20040239071A1"
+  },
+  {
+   "date": "2005-04-19",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2005-04-19",
+   "type": "publication",
+   "title": "Publication of US6880847B2"
+  },
+  {
+   "date": "2006-05-03",
+   "type": "priority",
+   "title": "Priority to US11/417,624"
+  },
+  {
+   "date": "2023-09-04",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Expired - Fee Related"
+  }
+ ]
+}

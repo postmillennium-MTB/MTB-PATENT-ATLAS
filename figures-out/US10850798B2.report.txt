@@ -1,0 +1,189 @@
+patent: US10850798B2
+source: https://patentimages.storage.googleapis.com/dc/20/f9/89e890b4872307/US10850798.pdf
+pages: 23
+per-page extracted text length: {1: 3008, 2: 767, 3: 105, 4: 167, 5: 115, 6: 103, 7: 104, 8: 107, 9: 104, 10: 115, 11: 91, 12: 113, 13: 7085, 14: 7922, 15: 7509, 16: 7534, 17: 7603, 18: 7850, 19: 7883, 20: 7835, 21: 7904, 22: 6626, 23: 1174}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US010850798B2
+
+( 12) United States Patent
+
+( 10) Patent No .:
+
+Chamberlain et al .
+
+US 10,850,798 B2
+Dec. 1 , 2020
+
+(45 ) Date of Patent :
+( 56 )
+
+( 54 ) BICYCLE REAR SUSPENSION
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+( 71 ) Applicant : SPECIALIZED BICYCLE
+COMPONENTS , INC . , Morgan Hill ,
+CA (US )
+
+5,611,557 A
+6,161,858 A
+
+3/1997 Farris et al .
+
+12/2000 Tseng
+
+(Continued )
+
+( 72 ) Inventors : Jason Loy Chamberlain , Morgan Hill ,
+
+FOREIGN PATENT DOCUMENTS
+
+CA (US ); Brian Daniel Robinson ,
+Morgan Hill , CA (US ) ; Jeffrey Keith
+Bowers , Bellingham , WA (US )
+
+CN
+DE
+
+2934048 Y
+102010009649
+
+( 73 ) Assignee: Specialized Bicycle Components, Inc. ,
+
+OTHER PUBLICATIONS
+
+Morgan Hill , CA ( US )
+
+( * ) Notice:
+
+Photographs of SENDER bicycle by Canyon Bicycles USA , Inc. A
+
+printout of a webpage in which the SENDER bicycle was reviewed
+is also included . The printout indicates that the webpage was first
+published on Apr. 5 , 2016 ; however, Applicant makes no represen
+tations as to the accuracy of this date or if the product has changed
+since that date . The printout was retrieved from bikeradar.com on
+Jun. 4 , 2018. Applicant requests that the Examiner review the
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154 ( b ) by 0 days.
+
+( 21 ) Appl. No .: 16 /368,542
+( 22 ) Filed :
+
+reference as prior art. Applicant reserves the right to disqualify the
+
+reference as prior art if needed .
+Primary Examiner Ruth Ilan
+Assistant Examiner Harold Eric Pahlck , III
+
+Mar. 28 , 2019
+
+(65 )
+
+Prior Publication Data
+
+US 2019/0300097 A1
+
+(74 ) Attorney, Agent, or Firm — Knobbe , Martens, Olson
+
+Oct. 3 , 2019
+
+& Bear, LLP
+
+ABSTRACT
+
+( 57 )
+
+Related U.S. Application Data
+
+A bicycle includes a front wheel; a rear wheel ; a frame
+including a main frame portion and an articulating frame
+portion , the articulating frame portion including an upper
+
+( 63 ) Continuation - in -part of application No. 15 / 941,686 ,
+filed on Mar. 30 , 2018 .
+
+frame link pivotally supported at a first axis by the main
+frame portion ; and a lower shock link pivotally coupled to
+
+( 51 ) Int. Ci .
+B62K 25/26
+
+( 2006.01 )
+
+B62K 3/02
+( 52) U.S. CI .
+
+( 2006.01 )
+
+CPC
+
+8/2007
+9/2011
+
+the main frame portion at a second axis; and a shock
+absorber having a first end pivotally supported by the main
+frame portion, and a second end pivotally supported by one
+
+or both of an upper shock link and the lower shock link ,
+wherein , when the bicycle is positioned on a horizontal
+
+B62K 25/26 ( 2013.01 ) ; B62K 3702
+( 2013.01 ) ; B62K 2201/08 (2013.01 )
+
+surface with the articulating frame portion in a relaxed
+
+(58 ) Field of Classification Search
+
+configuration, the second axis is positioned forward of the
+
+CPC .... B62K 25/10 ; B62K 3/02 ; B62K 2025/045 ;
+B62K 19/18 ; B62K 25/30 ; B62K 25/286
+See application file for complete search history .
+
+first axis.
+
+20 Claims , 10 Drawing Sheets
+
+12
+
+14
+
+52
+60
+62
+
+76a
+
+72c
+
+74a
+726
+
+263
+
+82a
+766
+
+82
+
+260
+
+75a
+
+80
+72a
+
+720 705
+
+58
+
+70a
+
+" As
+
+

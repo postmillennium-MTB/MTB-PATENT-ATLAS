@@ -1,0 +1,151 @@
+patent: US7210695B2
+source: https://patentimages.storage.googleapis.com/f8/f1/35/a3d51ce18d7f27/US7210695.pdf
+pages: 26
+per-page extracted text length: {1: 2791, 2: 103, 3: 56, 4: 56, 5: 56, 6: 56, 7: 63, 8: 56, 9: 56, 10: 64, 11: 65, 12: 65, 13: 114, 14: 65, 15: 65, 16: 57, 17: 65, 18: 57, 19: 6844, 20: 7120, 21: 7503, 22: 7316, 23: 7490, 24: 7430, 25: 7205, 26: 3885}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US007210695B2
+
+(12) United States Patent
+Griffiths
+
+(10) Patent No.:
+
+US 7,210,695 B2
+
+(45) Date of Patent:
+
+May 1, 2007
+
+(54) SUSPENSION SYSTEMS
+
+4,789,174. A * 12/1988 Law will ..................... 280/284
+
+(76) Inventor: Adrian Michael Griffiths, Water Side,
+
+5,354,085 A * 10/1994 Gally ......................... 280/285
+
+5,299,820 A * 4/1994 Law will ..................... 280/277
+
+Preston Bagot, Henley-in-Arden,
+Warwickshire B955ED (GB)
+
+(*) Notice:
+
+5.431.426 A *
+5,498,013 A
+5,772,228 A *
+6,086,080 A *
+6,896.276 B1*
+6,910,702 B1*
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+(21) Appl. No.:
+
+10/535,580
+
+(22) PCT Filed:
+
+Nov. 21, 2003
+
+(86). PCT No.:
+
+PCT/GB03/05078
+
+S 371 (c)(1),
+(2), (4) Date: May 19, 2005
+
+7/1995 Ijams et al. ................. 280/276
+3/1996 Hwang
+6/1998 Owyang ..................... 280/284
+7/2000 Scheffer ....
+... 280/283
+5/2005 Sparrow ..................... 280/276
+6/2005 Hals ........................... 280/286
+
+FOREIGN PATENT DOCUMENTS
+DE
+DE
+DE
+EP
+WO
+
+461 731 C
+197 26 067 A
+2O2 O2 656 U.
+1 241 087 A
+WOOO,05128 A
+
+6, 1928
+12/1998
+5, 2002
+9, 2002
+2, 2000
+
+(87) PCT Pub. No.: WO2004/045940
+PCT Pub. Date: Jun. 3, 2004
+(65)
+
+Prior Publication Data
+
+US 2006/007 1444 A1 Apr. 6, 2006
+(30)
+Foreign Application Priority Data
+Nov. 21, 2002 (GB) ................................. O2271914
+Nov. 21, 2002
+Sep. 9, 2003
+Sep. 20, 2003
+
+(GB) ................................. O227 1930
+(GB) ...
+... O32O995.4
+(GB) ................................. O322096.9
+
+(51) Int. Cl.
+B62K 2L/00
+B62K 9/00
+
+(2006.01)
+(2006.01)
+
+(52) U.S. Cl. ....................................... 280/283; 280/275
+(58) Field of Classification Search ................ 180/227;
+280/288, 284, 283, 275,276
+See application file for complete search history.
+(56)
+
+References Cited
+
+* cited by examiner
+Primary Examiner Tony Winner
+(74) Attorney, Agent, or Firm—Davis Bujold & Daniels,
+P.L.L.C.
+
+(57)
+
+ABSTRACT
+
+A Suspension system for a vehicle with a chain driven rear
+wheel includes: a rear Suspension assembly and chain driven
+transmission arrangement that offers very high levels of
+anti-brake lift and anti-squat and does so consistently
+through a large range of rear Suspension movement; a front
+Suspension assembly/steering system with a steering axis
+inclined in the side view at an angle of castor which
+intersects the ground in front of the center of the contact
+patch, the front Suspension assembly having a high degree of
+anti-brake dive; the front and rear Suspension assemblies
+being interconnected in Such a way as to offer low resistance
+to anti-phase motion and higher resistance to in-phase
+motion.
+
+U.S. PATENT DOCUMENTS
+
+3,983,770 A * 10/1976 Skrentner et al. .............. 82/19
+
+22 Claims, 17 Drawing Sheets
+
+
