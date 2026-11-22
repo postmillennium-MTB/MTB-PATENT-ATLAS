@@ -1,0 +1,112 @@
+patent: US5295702A
+source: https://patentimages.storage.googleapis.com/e5/a9/02/a5753402b3d5a2/US5295702.pdf
+pages: 18
+per-page extracted text length: {1: 2733, 2: 55, 3: 52, 4: 52, 5: 52, 6: 52, 7: 52, 8: 52, 9: 84, 10: 52, 11: 53, 12: 53, 13: 53, 14: 6394, 15: 7000, 16: 6914, 17: 6348, 18: 3017}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+|||||||||||||||
+USOO5295702A
+
+United States Patent (19)
+
+(11) Patent Number:
+(45) Date of Patent:
+
+Buell
+
+54 SINGLESIDED CYCLE REAR SUSPENSION
+SYSTEM
+
+75) Inventor: Erik F. Buell, Mukwonago, Wis.
+73 Assignee: Buell Motor Company, Inc.,
+Mukwonago, Wis,
+
+21) Appl. No.: 860,313
+
+5,295,702
+Mar. 22, 1994
+
+Primary Examiner-Margaret A. Focarino
+Assistant Examiner-Victor E. Johnson
+
+Attorney, Agent, or Firm-Ryan, Kees & Hohenfeldt
+57
+
+ABSTRACT
+
+A rear suspension system for a two wheel cycle such as
+a bicycle or motorcycle having a vertically pivotable
+rear frame assembly to which the rear wheel is
+
+22 Filed:
+Mar. 30, 1992
+mounted. The rear frame assembly includes a primary
+swingarm
+which extends downwardly and rearwardly
+Isil Int. Cl............................................... B62K 25/28 .
+52 U.S. C. .................................... 280/284; 280/285; from a pivotable connection on the main frame. A rear
+wheel fitment is attached at the rear of this primary
+180/227
+58 Field of Search ..................... 280/275,281.1, 283, swingarm. A secondary swingarm is also fixed to the
+280/284, 285; 180/227 rear wheel fitment, and extends forwardly from the
+56)
+
+fitment at an angle below to the primary swingarm. The
+secondary swingarm mounts to the main frame via an
+attachment which has capability of permitting a change
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+488,393 9/1918 Douglas .............................. 280/284
+
+in vertical and horizontal location of the attachment
+
+2,618,494 l1/1952 Guzzi ......
+4,058,81 11/1977 Buell ...
+
+... 280/283
+... 280/284
+
+point of the secondary swingarm, necessitated for rota
+
+4,440,414 4/1984 Wang ......
+
+280/278 X
+
+arm pivotable connection, while still providing lateral
+rigidity. Both swingarms pass along one side of the
+
+4,789,174 2/1988 Law will .....
+... 280/284
+4,809,802 3/1989 Seino et al. .
+... 80/227
+FOREIGN PATENT DOCUMENTS
+2609958 7/1988 France ................................ 280/284
+
+0429917 2/1948 Italy.
+
+... 280/284
+
+0432075 5/1948 Italy .................................... 280/284
+OTHER PUBLICATIONS
+
+Mechanical Engineering, May 1990, pp. 54-55.
+"Pedal Power", Design News, Jan. 21, 1991.
+Trek Advertisement published at least by Aug. 28, 1991.
+
+tion of the rear frame assembly about the main swing
+
+cycle only, with the rear wheel being mounted in a
+cantilever fashion from the rear wheel fitment which is
+
+also on the same one side. The system provides conve
+nience in wheel and tire access, and also provides very
+
+high lateral and torsional rigidity in passing lateral loads
+from the rear tire contact patch to the main frame, due
+to the vertical spacing between the frame connections
+of the primary and secondary swingarms.
+21 Claims, 12 Drawing Sheets
+
+
