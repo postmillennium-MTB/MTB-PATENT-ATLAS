@@ -1,0 +1,1555 @@
+{
+ "number": "US7766135",
+ "title": "Front bicycle suspension assembly with inertia valve",
+ "inventors": [
+  "Robert C. Fox"
+ ],
+ "assignee_original": [
+  "Fox Factory Inc",
+  "Martin Achenbach",
+  "Fox Factory, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Fox Factory, Inc.",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cyclying, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Fox Factory, Inc.",
+  "Pratt & Miller Engineering And Fabrication, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Power Technologies Investment Ltd.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Dt Swiss, Inc.",
+  "Imra America, Inc.",
+  "Nissan Technical Center North America, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Mcandrews Michael",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Mcandrews Michael",
+  "Specialized Bicycle Components, Inc.",
+  "John Arnce",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Penske Racing Shocks",
+  "Thyssenkrupp Bilstein Suspension Gmbh",
+  "Fox Factory, Inc.",
+  "Fox Factory, Incorporated",
+  "Wootten Dennis K",
+  "Fox Factory, Inc.",
+  "Jose Gonzalez",
+  "日立オートモティブシステムズ株式会社",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "John Marking",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Univ Sheffield",
+  "Fox Factory, Inc.",
+  "Gerardo Acocella",
+  "David M Haugen",
+  "Furrer Fredrick J",
+  "Dt Swiss Ag",
+  "Dt Swiss Ag",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "日立オートモティブシステムズ株式会社",
+  "Trek Bicycle Corporation",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Incorporated",
+  "Fox Factory, Inc.",
+  "Thomas Ripa",
+  "Thomas Ripa",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Trek Bicycle Corp.",
+  "Specialized Bicycle Components, Inc.",
+  "Dt Swiss Ag",
+  "南京农业大学",
+  "北京理工大学",
+  "Fox Factory, Inc.",
+  "Christopher Hudec",
+  "LORD Corporation",
+  "Bret E. Cahill",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fundacion Tekniker",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Duprat Accessoire Remorquage",
+  "Anthony Diaz",
+  "Oshkosh Defense, Llc",
+  "Arb Corporation Limited",
+  "Eko Sport Inc.",
+  "Eko Sport, Inc.",
+  "Eko Sport, Inc.",
+  "Ｋｙｂ株式会社",
+  "Giant Manufacturing Co. Ltd",
+  "Dt Swiss Ag",
+  "Fox Factory, Inc.",
+  "Ｋｙｂ株式会社",
+  "Oshkosh Corporation",
+  "Fox Factory, Inc.",
+  "Otis Elevator Company",
+  "Elka Suspension Inc.",
+  "顾承杰",
+  "Sram, Llc",
+  "Taiwan Hodaka Industrial Co., Ltd.",
+  "Reyco Granning, Llc",
+  "Qa1 Precision Products, Inc.",
+  "重庆中铃兆虎机车制造有限公司",
+  "Zf Friedrichshafen Ag",
+  "Sram, Llc",
+  "Fox Factory, Inc.",
+  "Decathlon Sa",
+  "Deere & Company",
+  "Sram, Llc",
+  "Vince Costa",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "福建省华达智纺集团有限公司",
+  "Watson E Goodyear",
+  "Willard T Sears",
+  "James S Lang",
+  "James S Lang",
+  "James S Lang",
+  "Edmund M Wise",
+  "James S Lang",
+  "Melchior Alexander",
+  "James S Lang",
+  "James S Lang",
+  "James S Lang",
+  "William J Pavek",
+  "Macdonald Ranald Macintosh",
+  "Company Old Colony Trust",
+  "Company Old Colony Trust",
+  "Delco Prod Corp",
+  "Delcoproducts Corp",
+  "Chrysler Corp",
+  "Delco Prod Corp",
+  "Delco Prod Corp",
+  "Delco Prod Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Houde Eng Corp",
+  "Gen Motors Corp",
+  "Packard Motor Car Co",
+  "Gen Motors Corp",
+  "Thomas A Killman",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Westinghouse Electric & Mfg Co",
+  "Westinghouse Electric & Mfg Co",
+  "Gen Motors Corp",
+  "Packard Motor Car Co",
+  "Rolls Royce",
+  "Firestone Tire & Rubber Co",
+  "Monroe Auto Equipment Co",
+  "C. V. Chemische Fahner Rids",
+  "Petrie James Alexander",
+  "Gen Motors Corp",
+  "Ezbelent Georges Eugene",
+  "American Steel Foundries",
+  "Westinghouse Electric Int Co",
+  "Campeau Georges",
+  "Clifford T Hultin",
+  "Howard S Ross",
+  "Gen Motors Corp",
+  "Krizan Roy",
+  "Chicago Railway Equipment Co",
+  "British Messier Ltd",
+  "Schnitzer Emanuel",
+  "Howard S Ross",
+  "Arthur R Parilla",
+  "Dawson Vogel Engineering Compa",
+  "Gen Motors Corp",
+  "Ford Motor Co",
+  "Fichtel & Sachs Ag",
+  "Girling Ltd",
+  "Girling Ltd",
+  "Katz Maurice",
+  "Frank H. Speckhart",
+  "Automotive Prod Co Ltd",
+  "Hydraulik Gmbh",
+  "Us Navy",
+  "Tropic Industries, Inc.",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Bowles Romald E",
+  "Curnutt Charles R",
+  "Arces S.R.L.",
+  "Charles Curnutt",
+  "Stabilus Gmbh",
+  "Kayaba Kogyo Kabushiki Kaisha",
+  "Tokico Ltd.",
+  "Feinmechanische Werke Mainz Gmbh",
+  "Maremont Corporation",
+  "Hartmann & Laemmle",
+  "Honda Giken Kogyo K.K.",
+  "The United States Of America As Represented By The Secretary Of The Air Force",
+  "General Motors Corporation",
+  "Bendix Espana",
+  "Kabushiki Kaisha Showa Seisakusho",
+  "Rockshox, Inc.",
+  "Toyota Jidosha Kabushiki Kaisha",
+  "Anton Ing.(Grad.) 8492 Furth De Pfeifer",
+  "Peter Kleinbreuer",
+  "Milliken Douglas L",
+  "Tokico Ltd",
+  "General Motors Company",
+  "Rockshox, Inc.",
+  "Ohlins Racing Ab",
+  "Atsugi Unisia Corporation",
+  "Nissan Research & Development, Inc.",
+  "Rich Truchinski",
+  "Browning Michael R S",
+  "Richardson Technologies, Ltd.",
+  "Saab-Scanig Aktiebolag",
+  "Koni, B.V.",
+  "Manitou Mountain Bikes, Inc.",
+  "Chen; Tsai-Lie",
+  "Rockshox, Inc.",
+  "Richardson Technologies, Ltd.",
+  "Aimrite Systems International, Inc.",
+  "Messier-Bugatti",
+  "Rockshox, Inc.",
+  "Ricor Racing & Development, L.P.",
+  "Tsai; Chin-Sung",
+  "Answer Products, Inc.",
+  "Donerre Amortisseur Soc",
+  "Ricor Racing & Development, L.P.",
+  "Answer Products, Inc.",
+  "Ricor Racing & Development, L.P.",
+  "Berthold; Brian D.",
+  "Tenneco Automotive Inc.",
+  "Rockshox, Inc.",
+  "Rockshox, Inc.",
+  "K2 Bike Inc.",
+  "Rockshox, Inc.",
+  "Tokico Ltd",
+  "Rockshox, Inc.",
+  "Gabriel Ride Control Products, Inc.",
+  "Tenneco Automotive Inc.",
+  "Rockshox, Inc.",
+  "Rockshox, Inc.",
+  "Answer Products, Inc.",
+  "Fox Factory, Inc.",
+  "Rockshox, Inc.",
+  "Ricor Racing And Development, Lp",
+  "Marzocchi S.P.A.",
+  "Specialized Bicycle Components, Inc.",
+  "Vincent Alan Henry",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Edelbrock",
+  "Philip W. Tremblay",
+  "Fox Factory, Inc.",
+  "K2 Bike, Inc.",
+  "Tenneco Automotive Inc",
+  "K Service Srl",
+  "Answer Products, Inc.",
+  "Fox Robert C.",
+  "Fox Robert C.",
+  "Karl Kazmirski",
+  "Fox Factory, Inc.",
+  "Maverick American Llc",
+  "Fox Factory, Inc.",
+  "Fox Robert C.",
+  "Meritor Heavy Vehicle Technology, Llc",
+  "Fox Robert C.",
+  "Univ Sheffield",
+  "Perry Richard",
+  "Fox Robert C.",
+  "Sram Corporation",
+  "Cmr Fuel Cells Ltd",
+  "Ulf Johansson",
+  "Specialized Bicycle Components, Inc.",
+  "Mcandrews Mike",
+  "Sagentia Ltd",
+  "Fox Factory, Inc.",
+  "Jacob Grossmann",
+  "Teletype Corp",
+  "Shaw Perkins Mfg Company",
+  "Delco Prod Corp",
+  "Kurt H Feige",
+  "Safety Cushion Bumper And Mfg",
+  "Kronprinz Ag",
+  "George Herbert Shepherd",
+  "Willy Gatter",
+  "Bird Machine Co",
+  "Boge Gmbh",
+  "Fichtel & Sachs Ag",
+  "Automotive Prod Co Ltd",
+  "Sirven Jacques",
+  "Fichtel & Sachs Ag, 8720 Schweinfurt",
+  "Furrer Helion",
+  "Us Air Force",
+  "Nat Res Dev",
+  "Devacht Andre",
+  "Nissan Motor Co Ltd",
+  "Interpart Corporation",
+  "Atsugi Motor Parts Co., Ltd.",
+  "Atsugi Motor Parts Co., Ltd.",
+  "Messier Hispano Sa",
+  "三菱重工業株式会社",
+  "Kayaba Ind Co Ltd",
+  "Kayaba Ind Co Ltd",
+  "いすゞ自動車株式会社",
+  "Simons Stephen W",
+  "市光工業株式会社",
+  "市光工業株式会社",
+  "Nissan Motor Co Ltd",
+  "Nissan Motor Co Ltd",
+  "トキコ株式会社",
+  "Boge Gmbh, 5208 Eitorf",
+  "Nissan Motor Co Ltd",
+  "Nissan Motor Co Ltd",
+  "General Motors Corporation",
+  "General Motors Corporation",
+  "General Motors Corporation",
+  "Boge Gmbh, 5208 Eitorf",
+  "Mazda Motor Corporation",
+  "Robert Bosch Gmbh, 7000 Stuttgart",
+  "日産自動車株式会社",
+  "Franz Dr. Tuczek",
+  "日産自動車株式会社",
+  "Walter Hunger",
+  "Robert Bosch Gmbh",
+  "Lord Corporation",
+  "Nippondenso Co Ltd",
+  "Aisin Seiki Co Ltd",
+  "株式会社ユニシアジェックス",
+  "Aisin Seiki Co Ltd",
+  "General Motors Corporation",
+  "General Motors Corporation",
+  "Teves Gmbh Alfred",
+  "Franz Dr.-Ing. 7530 Pforzheim De Tuczek",
+  "Otto Gally",
+  "Original Botsukusu:Kk",
+  "Cannondale Corporation",
+  "Ricor, Inc.",
+  "Teves Gmbh Alfred",
+  "General Motors Corporation",
+  "Lord Corporation",
+  "General Motors Corporation",
+  "89908, Inc.",
+  "トキコ株式会社",
+  "Proteor Sa",
+  "General Motors Corporation",
+  "Richardson Technologies Ltd. Dba Ricor",
+  "株式会社ユニシアジェックス",
+  "International Business Machines Corporation",
+  "Air Log Ltd",
+  "Monroe Auto Equipment Co",
+  "Bell Helicopter Textron Inc.",
+  "United Technologies Corporation",
+  "Tuczek Franz",
+  "Franz Tuczek",
+  "Peugeot",
+  "전성원",
+  "Answer Products, Inc.",
+  "Tenneco Automotive Inc.",
+  "Koni Bv",
+  "Tuczek Franz",
+  "Tuczek Franz",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Ricor Racing And Development, L.P.",
+  "Bohn; David D.",
+  "Cannondale Corporation",
+  "カヤバ工業株式会社",
+  "Advanced Micro Devices, Inc.",
+  "Outback Bicycles, Inc.",
+  "Mannesmann Sachs Ag",
+  "George Authur Spencer",
+  "Ryobi Ltd.",
+  "Lillbacka Jetair Oy",
+  "Di Maria, Philip",
+  "Tenneco Automotive Operating Company, Inc.",
+  "Lars Dernebo",
+  "Ld Design Electronics Ab",
+  "Shimano Inc.",
+  "Albrecht, Stephan, 83627 Warngau",
+  "Shimano Inc.",
+  "Watt Fluid Applications, Llc",
+  "Lund International, Inc.",
+  "Trw Inc.",
+  "Multimatic Inc",
+  "Advanced Micro Devices, Inc.",
+  "Dt Swiss Ag",
+  "Andreas Felsl",
+  "Chen-Shing Yi",
+  "Specialized Bicycle Components, Inc.",
+  "Progressive Suspension, Inc.",
+  "Kimberly-Clark Worldwide, Inc.",
+  "Fludicon Gmbh",
+  "Arvin Technologies, Inc.",
+  "Giant Manufacturing Co., Ltd.",
+  "ThyssenKrupp Bilstein Suspension GmbH",
+  "Gebema Beheer B V",
+  "Thyssenkrupp Bilstein Of America, Inc.",
+  "Thyssenkrupp Bilstein Of America, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "三菱レイヨン株式会社",
+  "大都販売株式会社",
+  "Watson E Goodyear",
+  "Willard T Sears",
+  "James S Lang",
+  "James S Lang",
+  "Edmund M Wise",
+  "James S Lang",
+  "James S Lang",
+  "Melchior Alexander",
+  "James S Lang",
+  "James S Lang",
+  "Packard Motor Car Co",
+  "James S Lang",
+  "William J Pavek",
+  "Macdonald Ranald Macintosh",
+  "Company Old Colony Trust",
+  "Company Old Colony Trust",
+  "Chrysler Corp",
+  "Delcoproducts Corp",
+  "Delco Prod Corp",
+  "Westinghouse Electric & Mfg Co",
+  "Delco Prod Corp",
+  "Delco Prod Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Houde Eng Corp",
+  "Delco Prod Corp",
+  "Gen Motors Corp",
+  "Thomas A Killman",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Gen Motors Corp",
+  "Westinghouse Electric & Mfg Co",
+  "Rolls Royce",
+  "Gen Motors Corp",
+  "Packard Motor Car Co",
+  "Firestone Tire & Rubber Co",
+  "Monroe Auto Equipment Co",
+  "Petrie James Alexander",
+  "American Steel Foundries",
+  "Ezbelent Georges Eugene",
+  "Westinghouse Electric Int Co",
+  "C. V. Chemische Fahner Rids",
+  "Gen Motors Corp",
+  "Campeau Georges",
+  "Clifford T Hultin",
+  "Gen Motors Corp",
+  "Howard S Ross",
+  "British Messier Ltd",
+  "Dawson Vogel Engineering Compa",
+  "Howard S Ross",
+  "Arthur R Parilla",
+  "Chicago Railway Equipment Co",
+  "Krizan Roy",
+  "Schnitzer Emanuel",
+  "Ford Motor Co",
+  "Gen Motors Corp",
+  "Girling Ltd",
+  "Katz Maurice",
+  "Fichtel & Sachs Ag",
+  "Girling Ltd",
+  "Frank H. Speckhart",
+  "Automotive Prod Co Ltd",
+  "Hydraulik Gmbh",
+  "Us Navy",
+  "Tropic Ind Inc",
+  "Tropic Industries, Inc.",
+  "Arces S.R.L.",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Bowles Romald E",
+  "Stabilus Gmbh",
+  "Curnutt Charles R",
+  "Kayaba Kogyo Kabushiki Kaisha",
+  "Feinmechanische Werke Mainz Gmbh",
+  "Tokico Ltd.",
+  "Charles Curnutt",
+  "Hartmann & Laemmle",
+  "Honda Giken Kogyo K.K.",
+  "Maremont Corporation",
+  "The United States Of America As Represented By The Secretary Of The Air Force",
+  "Anton Ing.(Grad.) 8492 Furth De Pfeifer",
+  "General Motors Corporation",
+  "Kabushiki Kaisha Showa Seisakusho",
+  "Bendix Espana",
+  "Koni, B.V.",
+  "Koni, B.V.",
+  "Ohlins Racing Ab",
+  "Atsugi Unisia Corporation",
+  "Rockshox, Inc.",
+  "Rockshox Inc",
+  "Toyota Jidosha Kabushiki Kaisha",
+  "Browning Michael R S",
+  "Cannondale Corporation",
+  "Richardson Technologies, Ltd.",
+  "Saab-Scanig Aktiebolag",
+  "Milliken Douglas L",
+  "Peter Kleinbreuer",
+  "Nissan Research & Development, Inc.",
+  "Tokico Ltd",
+  "Rockshox, Inc.",
+  "General Motors Company",
+  "Ricor Racing & Development, L.P.",
+  "Richardson Technologies, Ltd.",
+  "Rich Truchinski",
+  "Ricor Racing & Development, Lp",
+  "Ricor Racing & Development, L.P.",
+  "Manitou Mountain Bikes, Inc.",
+  "Manitou Mountain Bikes, Inc.",
+  "Messier-Bugatti",
+  "Rockshox, Inc.",
+  "Rockshox, Inc.",
+  "Aimrite Systems International, Inc.",
+  "Chen; Tsai-Lie",
+  "Ricor Racing & Development, L.P.",
+  "Tsai; Chin-Sung",
+  "Answer Products, Inc.",
+  "Donerre Amortisseur Soc",
+  "Berthold; Brian D.",
+  "Answer Products, Inc.",
+  "Ricor Racing And Development, Lp",
+  "K2 Bike Inc.",
+  "Rockshox, Inc.",
+  "Rockshox, Inc.",
+  "Rockshox, Inc.",
+  "Rockshox, Inc.",
+  "Rockshox, Inc.",
+  "Rockshox, Inc.",
+  "Marzocchi S.P.A.",
+  "Rockshox, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Tenneco Automotive Inc.",
+  "Tenneco Automotive Inc.",
+  "Tenneco Automotive Inc.",
+  "Tenneco Automotive Inc.",
+  "Tenneco Automotive Inc",
+  "Answer Products, Inc.",
+  "Tokico Ltd",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Answer Products, Inc.",
+  "Gabriel Ride Control Products, Inc.",
+  "Fox Factory, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Mcandrews Michael",
+  "Specialized Bicycle Components, Inc.",
+  "Mcandrews Michael",
+  "Specialized Bicycle Components, Inc.",
+  "K2 Bike, Inc.",
+  "Maverick American Llc",
+  "Vincent Alan Henry",
+  "Edelbrock",
+  "Philip W. Tremblay",
+  "K Service Srl",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Meritor Heavy Vehicle Technology, Llc",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Robert C.",
+  "Fox Robert C.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Robert C.",
+  "Fox Robert C.",
+  "Karl Kazmirski",
+  "Karl Kazmirski",
+  "Fox Robert C.",
+  "Fox Factory, Inc.",
+  "Sram Corporation",
+  "Univ Sheffield",
+  "Perry Richard",
+  "Ulf Johansson",
+  "Specialized Bicycle Components, Inc.",
+  "Mcandrews Mike",
+  "Cmr Fuel Cells Ltd",
+  "Sagentia Ltd",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Yeti Cycling, Llc",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Dt Swiss Inc.",
+  "Martin Achenbach",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cyclying, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Pratt & Miller Engineering And Fabrication, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc"
+ ],
+ "assignee_current": [
+  "Fox Factory Inc"
+ ],
+ "application": "US11/750,901",
+ "priority_date": "2001-08-30",
+ "filing_date": "2007-05-18",
+ "publication_date": "2010-08-03",
+ "grant_date": "2010-08-03",
+ "status": "Expired - Fee Related",
+ "expiry_events": [
+  {
+   "date": "2022-12-04",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "A front bicycle suspension assembly having an inertia valve is described. The front bicycle suspension assembly may include at least upper and lower telescoping tubes and include a damping tube containing an inertia valve. The inertia valve may include an inertia mass movable along the outer surface of a valve shaft as the inertia valve moves between first and second positions.",
+ "family": [
+  "US10316924B2",
+  "US20060065496A1",
+  "US20070068751A1",
+  "US20070119670A1",
+  "US20070158927A1",
+  "US20070227844A1",
+  "US20070227845A1",
+  "US20070228690A1",
+  "US20070228691A1",
+  "US20070262555A1",
+  "US20070296163A1",
+  "US20080007017A1",
+  "US20080035439A1",
+  "US20080053767A1",
+  "US20080053768A1",
+  "US20110031076A1",
+  "US20130048450A1",
+  "US20140262647A1",
+  "US20170261063A1",
+  "US7261194B2",
+  "US7273137B2",
+  "US7448638B2",
+  "US7490705B2",
+  "US7506884B2",
+  "US7520372B2",
+  "US7766135B2",
+  "US8297417B2",
+  "US8770360B2",
+  "US9657804B2"
+ ],
+ "cites": [
+  {
+   "pn": "US1268452A",
+   "title": "Shock-absorber."
+  },
+  {
+   "pn": "US1281079A",
+   "title": "Shock-absorber."
+  },
+  {
+   "pn": "FR546236A",
+   "title": "Improvements made to the means for braking, one relative to the other, two oscillating bodies elastically linked to one another, in particular to those used in combination with the suspension of cars"
+  },
+  {
+   "pn": "US1448131A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1492328A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1492332A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1498599A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1499379A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1526169A",
+   "title": "Spring damper for vehicles"
+  },
+  {
+   "pn": "US1544888A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1576573A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1659330A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1694949A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1726272A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1818140A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1818141A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1873208A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1873133A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1918034A",
+   "title": "Hydraulic shock absorber"
+  },
+  {
+   "pn": "US1928228A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1945046A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1953178A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1962665A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1992525A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US1995901A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2004910A",
+   "title": "Inertia controlled hydraulic shock absorber"
+  },
+  {
+   "pn": "US2015453A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2017963A",
+   "title": "Vibration damper"
+  },
+  {
+   "pn": "US2032124A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2042664A",
+   "title": "Hydraulic shock absorber"
+  },
+  {
+   "pn": "US2046690A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2046689A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2050953A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2055365A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2083272A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2095569A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2140358A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2140359A",
+   "title": "Valve arrangement of inertia shock absorbers"
+  },
+  {
+   "pn": "US2145736A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2152661A",
+   "title": "Motor vehicle"
+  },
+  {
+   "pn": "US2154906A",
+   "title": "Hydraulic shock damper"
+  },
+  {
+   "pn": "US2208537A",
+   "title": "Art of vehicle suspension"
+  },
+  {
+   "pn": "US2329803A",
+   "title": "Inertia controlled shock absorber"
+  },
+  {
+   "pn": "AU294846A",
+   "title": "Improvements relating tothe manufacture of briquettes, discs tablets and similar articles from loose or pulverulent materials"
+  },
+  {
+   "pn": "US2412533A",
+   "title": "Damping arrangement for vehicle suspension systems"
+  },
+  {
+   "pn": "US2431966A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US2512269A",
+   "title": "Hydraulic shock absorber"
+  },
+  {
+   "pn": "US2516667A",
+   "title": "Shock strut"
+  },
+  {
+   "pn": "GB646061A",
+   "title": "Improvements in or relating to fluid operated motion stabilising apparatus"
+  },
+  {
+   "pn": "US2678704A",
+   "title": "Inertia responsive shock absorber"
+  },
+  {
+   "pn": "FR1125267A",
+   "title": "Advanced hydraulic telescopic shock absorber for vehicles"
+  },
+  {
+   "pn": "US2774448A",
+   "title": "Inertia responsive shock absorber"
+  },
+  {
+   "pn": "US2802675A",
+   "title": "Shock absorber for vehicles"
+  },
+  {
+   "pn": "US2869685A",
+   "title": "Inertia controlled shock absorber system"
+  },
+  {
+   "pn": "US2877872A",
+   "title": "Damping means for vehicle dip and sway"
+  },
+  {
+   "pn": "US2886142A",
+   "title": "Vibration damping apparatus"
+  },
+  {
+   "pn": "US2930609A",
+   "title": "Shock absorbers for aircraft"
+  },
+  {
+   "pn": "US2933310A",
+   "title": "Floating piston band pass shock absorber"
+  },
+  {
+   "pn": "US2957703A",
+   "title": "Inertia responsive shock absorber arrangement for vehicle"
+  },
+  {
+   "pn": "US2993691A",
+   "title": "Vehicular fluid springs"
+  },
+  {
+   "pn": "US3036844A",
+   "title": "Apparatus for controlling vehicle suspension"
+  },
+  {
+   "pn": "US3114705A",
+   "title": "Means for controlling the dampening of an elastically suspended rotating drum duringcentrifuging"
+  },
+  {
+   "pn": "US3127958A",
+   "title": "Shock absorber with improved relief valve structure"
+  },
+  {
+   "pn": "US3319741A",
+   "title": "Hydraulic vibration damper"
+  },
+  {
+   "pn": "US3338347A",
+   "title": "Hydraulic dampers for vehicle suspensions"
+  },
+  {
+   "pn": "GB1092341A",
+   "title": "Improvements in or relating to dampers"
+  },
+  {
+   "pn": "US3380560A",
+   "title": "Flow regulator for fluid working devices"
+  },
+  {
+   "pn": "US3414092A",
+   "title": "Shock absorbing device"
+  },
+  {
+   "pn": "US3612570A",
+   "title": "Suspension systems for vehicles"
+  },
+  {
+   "pn": "US3635071A",
+   "title": "Drain valve for a hydraulic shock absorber"
+  },
+  {
+   "pn": "US3696894A",
+   "title": "Acceleration sensitive shock absorber valve"
+  },
+  {
+   "pn": "US3936039A",
+   "title": "Load-levelling shock absorber"
+  },
+  {
+   "pn": "US3989261A",
+   "title": "Motorcycle front-wheel suspension with means for restraint of compression of a telescopic front upon braking"
+  },
+  {
+   "pn": "US4082169A",
+   "title": "Acceleration controlled fluidic shock absorber"
+  },
+  {
+   "pn": "US4126302A",
+   "title": "Horizontal inertia-responsive shock absorber"
+  },
+  {
+   "pn": "US4145067A",
+   "title": "Suspension system for a motor vehicle"
+  },
+  {
+   "pn": "US4210344A",
+   "title": "Controlled shock absorber"
+  },
+  {
+   "pn": "US4254849A",
+   "title": "Damping arrangement"
+  },
+  {
+   "pn": "US4295658A",
+   "title": "Front end shock absorbing apparatus for wheeled vehicle"
+  },
+  {
+   "pn": "US4313529A",
+   "title": "Hydraulic damper"
+  },
+  {
+   "pn": "US4454800A",
+   "title": "Active mechanical hydraulic control apparatus"
+  },
+  {
+   "pn": "US4492290A",
+   "title": "Acceleration sensitive compression head"
+  },
+  {
+   "pn": "GB2096270B",
+   "title": "Shock absorber with automatically variable flow restrictor"
+  },
+  {
+   "pn": "US4572317A",
+   "title": "Position control system for the body of a vehicle"
+  },
+  {
+   "pn": "US4588053A",
+   "title": "Multiple rate shock isolator damping valve"
+  },
+  {
+   "pn": "US4789051A",
+   "title": "Damper with internally powered selective ride valving"
+  },
+  {
+   "pn": "US4917222A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US4964625A",
+   "title": "Hydraulic damper with oil lock mechanism"
+  },
+  {
+   "pn": "US4971344A",
+   "title": "Bicycle with a front fork wheel suspension"
+  },
+  {
+   "pn": "US5072813A",
+   "title": "Damper"
+  },
+  {
+   "pn": "DE3544474C2",
+   "title": ""
+  },
+  {
+   "pn": "DE4123643A1",
+   "title": "Bicycle with sprung wheels - has each damper connected to its pressure accumulator via manually-operated valve"
+  },
+  {
+   "pn": "US5154442A",
+   "title": "Self-contained acceleration-responsive adaptive damper"
+  },
+  {
+   "pn": "JPH04296234A",
+   "title": "Hydraulic shock absorber"
+  },
+  {
+   "pn": "US5163538A",
+   "title": "Low level damping valve and method for a semi-active hydraulic damper"
+  },
+  {
+   "pn": "US5186481A",
+   "title": "Bicycle with improved front fork wheel suspension"
+  },
+  {
+   "pn": "US5201388A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US5277283A",
+   "title": "Variable damping-characteristics shock absorber with adjustable orifice construction variable of fluid flow restriction depending upon fluid pressure difference"
+  },
+  {
+   "pn": "US5285875A",
+   "title": "Impact sensitive shock absorber"
+  },
+  {
+   "pn": "US5301973A",
+   "title": "Exterior adjustable suspension precompression fork cap mechanism for two wheeled vehicles"
+  },
+  {
+   "pn": "US5308099A",
+   "title": "Bicycle suspension system"
+  },
+  {
+   "pn": "US5332068A",
+   "title": "Self contained automatic terrain condition adjusting shock absorber"
+  },
+  {
+   "pn": "US5337864A",
+   "title": "Suspension system with improved resonance damping and a method for regulating the suspension system"
+  },
+  {
+   "pn": "US5423402A",
+   "title": "Twin-pipe shock absorber"
+  },
+  {
+   "pn": "US5445401A",
+   "title": "Suspension fork for bicycles"
+  },
+  {
+   "pn": "US5449189A",
+   "title": "Delayed-return suspension fork for a bicycle"
+  },
+  {
+   "pn": "US5456480A",
+   "title": "Fork suspension with variable hydraulic damping"
+  },
+  {
+   "pn": "US5462140A",
+   "title": "Acceleration sensitive shock absorber"
+  },
+  {
+   "pn": "US5529152A",
+   "title": "Variable constant force hydraulic components and systems"
+  },
+  {
+   "pn": "US5538117A",
+   "title": "Safety device for a system transported on board a vehicle, in particular an aircraft"
+  },
+  {
+   "pn": "US5580075A",
+   "title": "Bicycle fork suspension with exchangeable spring unit"
+  },
+  {
+   "pn": "US5598903A",
+   "title": "Acceleration sensitive flow sensitive mcpherson strut"
+  },
+  {
+   "pn": "US5634652A",
+   "title": "Bicycle suspension"
+  },
+  {
+   "pn": "US5653007A",
+   "title": "Method for producing a bicycle fork brake arch and legs assembly"
+  },
+  {
+   "pn": "FR2739667B1",
+   "title": "IMPROVEMENT OF THE SHOCK ABSORBER VALVE"
+  },
+  {
+   "pn": "US5823305A",
+   "title": "Flow sensitive, acceleration sensitive shock absorber"
+  },
+  {
+   "pn": "US5848675A",
+   "title": "Damping apparatus for bicycle forks"
+  },
+  {
+   "pn": "US5954167A",
+   "title": "Flow sensitive acceleration sensitive shock absorber with added flow control"
+  },
+  {
+   "pn": "US5957252A",
+   "title": "Hydraulic suspension unit"
+  },
+  {
+   "pn": "US5992585A",
+   "title": "Acceleration sensitive damping for automotive dampers"
+  },
+  {
+   "pn": "US5996746A",
+   "title": "Adjustable twin tube shock absorber"
+  },
+  {
+   "pn": "US6024370A",
+   "title": "Damping cartridge for high performance suspension systems"
+  },
+  {
+   "pn": "US6026939A",
+   "title": "Shock absorber with stanchion mounted bypass damping"
+  },
+  {
+   "pn": "US6036212A",
+   "title": "Damping system having separately adjustable damping circuits"
+  },
+  {
+   "pn": "JP2000097277A",
+   "title": "Variable damping force damper"
+  },
+  {
+   "pn": "US6095541A",
+   "title": "Adjustable gas spring suspension system"
+  },
+  {
+   "pn": "CA2298291A1",
+   "title": "Improved shock with acceleration sensitive damping"
+  },
+  {
+   "pn": "US6102170A",
+   "title": "Passive anti-roll system"
+  },
+  {
+   "pn": "US6105987A",
+   "title": "Valve mechanism for damping system"
+  },
+  {
+   "pn": "US6105988A",
+   "title": "Adjustable suspension system having positive and negative springs"
+  },
+  {
+   "pn": "US6120049A",
+   "title": "Bicycle shock absorber including lockout means"
+  },
+  {
+   "pn": "US6135434A",
+   "title": "Shock absorber with positive and negative gas spring chambers"
+  },
+  {
+   "pn": "US6217049B1",
+   "title": "Bicycle suspension system with spring preload adjuster and hydraulic lockout device"
+  },
+  {
+   "pn": "US6253889B1",
+   "title": "Acceleration sensitive shock absorber"
+  },
+  {
+   "pn": "US6260832B1",
+   "title": "Shock absorber with adjustable compression and rebound"
+  },
+  {
+   "pn": "US6267400B1",
+   "title": "Bicycle damping enhancement system"
+  },
+  {
+   "pn": "US20010017334A1",
+   "title": "Vibration damping apparatus"
+  },
+  {
+   "pn": "US6296092B1",
+   "title": "Position-sensitive shock absorber"
+  },
+  {
+   "pn": "US6311962B1",
+   "title": "Shock absorber with external air cylinder spring"
+  },
+  {
+   "pn": "US6334516B1",
+   "title": "Acceleration sensitive twin tube shock absorber"
+  },
+  {
+   "pn": "US6345705B1",
+   "title": "Self-corrective vehicle shock absorber"
+  },
+  {
+   "pn": "US6360857B1",
+   "title": "Damping adjuster for shock absorber"
+  },
+  {
+   "pn": "US6382370B1",
+   "title": "Shock absorber with an adjustable lock-out value and two-stage flow restriction"
+  },
+  {
+   "pn": "GB2374653B",
+   "title": "Passive anti-roll system"
+  },
+  {
+   "pn": "WO2002095260A1",
+   "title": "Gas shock absorber for vehicles"
+  },
+  {
+   "pn": "US6505719B2",
+   "title": "Damping apparatus for bicycle forks"
+  },
+  {
+   "pn": "US20030042087A1",
+   "title": "Inertia valve shock absorber"
+  },
+  {
+   "pn": "US20030075402A1",
+   "title": "Inertia valve shock absorber"
+  },
+  {
+   "pn": "US20030094339A1",
+   "title": "Acceleration sensitive damping for automotive dampers"
+  },
+  {
+   "pn": "US6592136B2",
+   "title": "Bicycle fork cartridge assembly"
+  },
+  {
+   "pn": "US6615960B1",
+   "title": "Fluid damped shock absorber and method"
+  },
+  {
+   "pn": "US6640943B1",
+   "title": "Shock absorber with sealing ice scraper"
+  },
+  {
+   "pn": "US20030213662A1",
+   "title": "Inertia valve shock absorber"
+  },
+  {
+   "pn": "US6659241B2",
+   "title": "Shock absorber compression damping adjustment"
+  },
+  {
+   "pn": "US20030234144A1",
+   "title": "On-the-fly adjustable air spring"
+  },
+  {
+   "pn": "GB0402337D0",
+   "title": "Apoptosis screen"
+  },
+  {
+   "pn": "GB0403284D0",
+   "title": "Stud plate connector"
+  },
+  {
+   "pn": "US20040222056A1",
+   "title": "Inertia valve shock absorber"
+  },
+  {
+   "pn": "US20050104320A1",
+   "title": "Lockout mechanism for a suspension system"
+  },
+  {
+   "pn": "GB0520222D0",
+   "title": "Methods of creating porous mea's"
+  },
+  {
+   "pn": "WO2005113324A1",
+   "title": "A damper device for a spring suspension device for a bicycle wheel"
+  },
+  {
+   "pn": "EP1754909A1",
+   "title": "Position sensitive shock absorber"
+  },
+  {
+   "pn": "US20070096426A1",
+   "title": "Integrated bicycle shifting and suspension system"
+  },
+  {
+   "pn": "GB0714180D0",
+   "title": "Compact diffuser"
+  },
+  {
+   "pn": "US7273137B2",
+   "title": "Inertia valve shock absorber"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US20100117322A1",
+   "title": "Suspension fork for a bicycle"
+  },
+  {
+   "pn": "US8297417B2",
+   "title": "Front bicycle suspension assembly with inertia valve"
+  },
+  {
+   "pn": "US8453808B2",
+   "title": "Bicycle damping enhancement system"
+  },
+  {
+   "pn": "US8607942B2",
+   "title": "Suspension damper having inertia valve and user adjustable pressure-relief"
+  },
+  {
+   "pn": "US10293881B2",
+   "title": "Rear suspension system for a bicycle"
+  },
+  {
+   "pn": "US10343742B2",
+   "title": "Link suspension system"
+  },
+  {
+   "pn": "US10766563B2",
+   "title": "Rail suspension with integral shock and dampening mechanism"
+  },
+  {
+   "pn": "US10822048B2",
+   "title": "Reciprocating rail movement suspension system"
+  },
+  {
+   "pn": "US10926830B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US11173983B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US11346422B2",
+   "title": "Front bicycle suspension assembly with inertia valve"
+  },
+  {
+   "pn": "US11598388B2",
+   "title": "Adaptive energy absorber for structural isolation and injury mitigation"
+  },
+  {
+   "pn": "US12077241B2",
+   "title": "Multi-body vehicle suspension linkage"
+  },
+  {
+   "pn": "US12145684B2",
+   "title": "Constrained multiple instantaneous velocity center linkage assembly for vehicle suspension"
+  },
+  {
+   "pn": "US12384484B2",
+   "title": "Integrated motor mount and suspension pivot"
+  },
+  {
+   "pn": "US12522316B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US12617488B2",
+   "title": "Two-wheeled vehicle with configurable idler"
+  }
+ ],
+ "events": [
+  {
+   "date": "2002-01-09",
+   "type": "external-priority",
+   "title": "Priority claimed from US10/043,079"
+  },
+  {
+   "date": "2002-01-09",
+   "type": "external-priority",
+   "title": "Priority claimed from US10/042,767"
+  },
+  {
+   "date": "2003-02-28",
+   "type": "external-priority",
+   "title": "Priority claimed from US10/378,091"
+  },
+  {
+   "date": "2004-02-13",
+   "type": "external-priority",
+   "title": "Priority claimed from US10/778,882"
+  },
+  {
+   "date": "2007-05-18",
+   "type": "priority",
+   "title": "Priority to US11/750,901"
+  },
+  {
+   "date": "2007-05-18",
+   "type": "filed",
+   "title": "Application filed by Fox Factory Inc"
+  },
+  {
+   "date": "2007-06-27",
+   "type": "reassignment",
+   "title": "Assigned to FOX FACTORY, INC."
+  },
+  {
+   "date": "2007-10-04",
+   "type": "publication",
+   "title": "Publication of US20070228691A1"
+  },
+  {
+   "date": "2008-02-12",
+   "type": "reassignment",
+   "title": "Assigned to COMPASS GROUP DIVERSIFIED HOLDINGS LLC"
+  },
+  {
+   "date": "2010-08-02",
+   "type": "priority",
+   "title": "Priority to US12/848,736"
+  },
+  {
+   "date": "2010-08-03",
+   "type": "publication",
+   "title": "Publication of US7766135B2"
+  },
+  {
+   "date": "2010-08-03",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2012-10-29",
+   "type": "priority",
+   "title": "Priority to US13/663,019"
+  },
+  {
+   "date": "2013-08-14",
+   "type": "reassignment",
+   "title": "Assigned to FOX FACTORY, INC."
+  },
+  {
+   "date": "2013-08-15",
+   "type": "reassignment",
+   "title": "Assigned to SUNTRUST BANK, AS ADMINISTRATIVE AGENT"
+  },
+  {
+   "date": "2013-08-22",
+   "type": "reassignment",
+   "title": "Assigned to FOX FACTORY, INC."
+  },
+  {
+   "date": "2014-06-02",
+   "type": "priority",
+   "title": "Priority to US14/294,113"
+  },
+  {
+   "date": "2017-05-21",
+   "type": "priority",
+   "title": "Priority to US15/600,755"
+  },
+  {
+   "date": "2019-05-21",
+   "type": "priority",
+   "title": "Priority to US16/418,400"
+  },
+  {
+   "date": "2019-06-04",
+   "type": "reassignment",
+   "title": "Assigned to FOX FACTORY, INC."
+  },
+  {
+   "date": "2019-06-05",
+   "type": "reassignment",
+   "title": "Assigned to BANK OF AMERICA, N.A., AS ADMINISTRATIVE AGENT"
+  },
+  {
+   "date": "2022-04-05",
+   "type": "reassignment",
+   "title": "Assigned to WELLS FARGO BANK, NATIONAL ASSOCIATION"
+  },
+  {
+   "date": "2022-04-13",
+   "type": "reassignment",
+   "title": "Assigned to FOX FACTORY, INC."
+  },
+  {
+   "date": "2022-12-04",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  },
+  {
+   "date": "2025-10-27",
+   "type": "reassignment",
+   "title": "Assigned to WELLS FARGO BANK, NATIONAL ASSOCIATION"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Expired - Fee Related"
+  }
+ ]
+}

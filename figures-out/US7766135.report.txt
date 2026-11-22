@@ -1,0 +1,163 @@
+patent: US7766135
+source: https://patentimages.storage.googleapis.com/86/f0/c4/460a1b2e85afaf/US7766135.pdf
+pages: 56
+per-page extracted text length: {1: 2616, 2: 4300, 3: 1757, 4: 57, 5: 129, 6: 66, 7: 155, 8: 106, 9: 96, 10: 93, 11: 119, 12: 57, 13: 84, 14: 167, 15: 137, 16: 76, 17: 84, 18: 108, 19: 209, 20: 179, 21: 76, 22: 90, 23: 98, 24: 58, 25: 183, 26: 71, 27: 64, 28: 69, 29: 58, 30: 35, 31: 126, 32: 70, 33: 81, 34: 7522, 35: 8060, 36: 6805, 37: 7808, 38: 7552, 39: 7854, 40: 7835, 41: 7978, 42: 7933, 43: 8091, 44: 6040, 45: 7115, 46: 7622, 47: 7754, 48: 7956, 49: 7873, 50: 7650, 51: 6589, 52: 6445, 53: 7907, 54: 7246, 55: 6337, 56: 873}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO7766135B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+FOX
+
+US 7,766,135 B2
+
+(45) Date of Patent:
+
+(54) FRONT BICYCLE SUSPENSIONASSEMBLY
+
+*Aug. 3, 2010
+
+(51) Int. Cl.
+
+WITH INERTIA VALVE
+
+FI6F 9/504
+
+(2006.01)
+
+(52) U.S. Cl. ....................... 188/275; 188/297; 188/315;
+
+(75) Inventor: Robert C. Fox, Los Gatos, CA (US)
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 329 days.
+
+This patent is Subject to a terminal dis-
+
+(56)
+
+(73) Assignee: Fox Factory, Inc., Watsonville, CA (US)
+
+(*) Notice:
+
+188/318
+
+(58) Field of Classification Search ................. 188/275,
+188/297, 313, 314, 315, 316, 317,318; 267/64.15,
+267/64.25, 64.26; 280/275,276, 279, 280,
+280/124.157, 124.158, 124.159, 124.16,
+28Of 124,161, 124.162
+See application file for complete search history.
+56
+
+claimer.
+
+U.S. PATENT DOCUMENTS
+
+21) Appl. No.: 11/750,901
+
+(21) Appl. No.:
+
+(22) Filed:
+
+1,268.452 A
+
+9
+
+May 18, 2007
+
+(65)
+
+References Cited
+
+(Continued)
+
+FOREIGN PATENT DOCUMENTS
+
+Prior Publication Data
+
+US 2007/0228691 A1
+
+6/1918 Goodyear
+
+AU
+
+294846
+
+Oct. 4, 2007
+
+9, 1966
+Continued
+
+(
+
+)
+
+OTHER PUBLICATIONS
+
+Related U.S. Application Data
+
+U.S. Appl. No. 1 1/532,516 (Sep. 16, 2006).
+
+(63) Continuation of application No. 1 1/259,629, filed on
+Oct. 26, 2005, now Pat. No. 7,273,137, which is a
+
+(Continued)
+-- - -
+
+continuation of application No. 10/778,882, filed on
+----Feb. 13, 2004, now Pat. No. 7,128,192, which is a
+continuation of application No. 10/378,091, filed on
+
+Primary Examiner Thomas J Williams
+(74) Attorney, Agent, or Firm—Patterson & Sheridan, L.L.P.:
+
+David M. Haugen
+
+Feb. 28, 2003, now abandoned, which is a continua-
+
+(57)
+
+ABSTRACT
+
+tion-in-part of application No. 10/043,079, filed on
+Jan. 9, 2002, now Pat. No. 6,581,948, and a continuation-in-part of application No. 10/042,767, filed on
+
+A front bicycle Suspension assembly having an inertia Valve is
+described. The front bicycle suspension assembly may
+
+Jan. 9, 2002, now Pat. No. 6,604,751 s Y s
+
+include at least upper and lower telescoping tubes and include
+
+•-s
+
+s
+
+vs.
+
+w w is -- . .
+
+a damping tube containing an inertia valve. The inertia valve
+
+(60) Provisional application No. 60/329,042, filed on Oct.
+12, 2001, provisional application No. 60/316,442,
+filed on Aug. 30, 2001, provisional application No.
+60/451,303, filed on Feb. 28, 2003, provisional appli
+
+may include an inertia mass movable along the outer Surface
+
+cation No. 60/451,318, filed on Feb. 28, 2003.
+
+18 Claims, 30 Drawing Sheets
+
+220
+
+of a valve shaft as the inertia valve moves between first and
+
+second positions.
+
+

@@ -1,0 +1,135 @@
+patent: US7131511
+source: https://patentimages.storage.googleapis.com/b0/a5/c8/032f553205a22e/US7131511.pdf
+pages: 10
+per-page extracted text length: {1: 2183, 2: 39, 3: 56, 4: 56, 5: 56, 6: 56, 7: 6310, 8: 7439, 9: 7333, 10: 5710}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US007131511 B2
+
+(12) United States Patent
+Arnold
+
+(10) Patent No.:
+
+(54) MOTORCYCLE WITH A REAR SUSPENSION
+(75)
+
+4,653,604. A
+4,724,920 A
+
+Inventor:
+
+5,495,913 A *
+
+David W. Arnold, Glendale, CA (US)
+
+(73) Assignee: Honda Motor Co., Ltd., Tokyo (JP)
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 209 days.
+
+Nov. 7, 2006
+
+4,596,302 A * 6/1986 Suzuki et al. ............... 180,227
+
+HAVING A PULL SHOCK TRACK SYSTEM
+
+(*) Notice:
+
+US 7,131,511 B2
+
+(45) Date of Patent:
+
+3, 1987 de Cortanze
+2f1988 TSuchida et al.
+3/1996
+
+Salisbury - - - - - - - - - - - - - - - - - - - - 180,227
+
+5,816.357 A
+
+10, 1998 Camlin
+
+6,527,289 B1
+
+3/2003 Parigian
+
+6,581,711 B1
+
+6/2003 Tuluie ........................ 180,227
+
+* cited by examiner
+Primary Examiner Tony Winner
+
+(21) Appl. No.: 10/875,430
+
+74) Attorney,V, Ag
+Agent, or Firm—Rankin, Hill, Porter & Clark
+LLP; Christen Millard
+
+(22) Filed:
+
+(57)
+
+Jun. 24, 2004
+
+(65)
+
+Prior Publication Data
+US 2005/028468O A1
+
+(51) Int. Cl
+B 2M 7/00
+
+Dec. 29, 2005
+
+(2006.01)
+
+52) U.S. C
+180/227: 280/284
+(52)
+irr irrir.
+s
+
+(58) Field of Classification Search ................ 280/284,
+280/285,288,275, 283; 180/227, 219
+See application file for complete search history.
+(56)
+References Cited
+U.S. PATENT DOCUMENTS
+463,710 A
+3,948,543 A
+
+11, 1891 Mathews
+4, 1976 Macdonald et al.
+
+4,556,119 A
+
+12/1985 ShiratSuchi
+
+ABSTRACT
+
+A motorcycle including a main frame, a rear Swing frame,
+
+and a pull shock assembly operatively disposed between the
+
+main frame and the rear Swing9. frame. The Swing9. frame is
+
+pivotally mounted to the main frame. The main frame
+includes a pair of slide tracks that receive a slide member of
+the pull shock assembly. A link arm extends between a
+forward portion of the swing frame and the slide member,
+
+and translates pivotal movement of the Swing frame into
+sliding longitudinal movement of the slide member. A
+damper associated with the slide member restricts sliding
+movement of the slide member and, thus, pivotal movement
+of the swing frame. The link has a forward end secured to the
+Swing frame and a rearward end secured to the slide mem
+
+ber.
+
+20 Claims, 5 Drawing Sheets
+
+
