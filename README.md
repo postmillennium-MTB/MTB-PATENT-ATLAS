@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 546 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 554 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 546 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 546 |
+| **Total entries** | 554 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 224 |
-| **Expired patents** | 247 |
+| **Expired patents** | 255 |
 | **Pending applications** | 47 |
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 232 |
+| **Brands** | 233 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 472 |
+| **Verified entries** | 480 |
 | **Medium confidence** | 39 |
 | **Draft / in progress** | 35 |
 
@@ -1054,6 +1054,7 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - Added Norco HVP6 downhill suspension card (US 2024/0017790 layout + US 2024/0059369 progression flip chips; both pending applications, Atlas now 546 entries; tier v). Dates, application numbers, provisionals and inventor from the Google Patents records; Figs. 2, 3-4, 7 and 6-7, 11 from the patents' own sheets. `exp` left null (not granted). Progression and anti-squat percentages from Norco's marketing copy are not on the card. i-Track licence confirmed on Norco's HVP6 page and linked to the existing i-Track card.
 - Added Norco HVP6 downhill suspension card (US 2024/0017790 layout + US 2024/0059369 progression flip chips; both pending applications, 543 → 544 entries; tier v). Dates, application numbers, provisionals and inventor from the Google Patents records; Figs. 2, 3-4, 7 and 6-7, 11 from the patents' own sheets. `exp` left null (not granted). Progression and anti-squat percentages from Norco's marketing copy are not on the card. i-Track licence confirmed on Norco's HVP6 page and linked to the existing i-Track card.
 - Added Nicolai crown-gear shift-under-load gearbox DE 10 2014 016 395 B4 (544 → 545 entries), tier v, `exp` 2034: filed 2014-11-05 by Karlheinz Nicolai (patentee and inventor), A1 published 2016-05-12, granted 2024-11-21, one card for the family. Drawings: Figs. 5/6 (Jon's sheet, matches B4 sheet 15), Figs. 3/4 and Figs. 1/2. Gap: no record ties the patent to a product or to a Eurobike 2026 launch, and the card names none.
+- Added eight suspension and frame cards (546 → 554 entries), all tier v, drawings fitted and rotated upright where the sheet was sideways: Tolson hinged spring frame (US 591,306, filed 1896, granted 1897), Babis motorcycle rear-fork shock absorber (US 1,168,702, 1916), Pease sprung-stay frame (US 2,132,317, 1938), Riva hinged two-part frame (US 2,756,071, 1956), Jones pivotless titanium flexing frame (US 5,098,114, 1992), Roadmaster one-piece wishbone stay (US 5,129,665, 1992; Roadmaster registered in `BRANDS`), Cannondale trailing-arm suspension (US 5,413,368, 1995) and Hals all-suspension frame with isolated drive gear (US 6,910,702, 2005). Dates, status and citations from Google Patents; Google lists no filing date for the 1897 and 1916 patents, so those dates are the ones printed on the patents. Jones, Roadmaster and Hals lapsed for unpaid maintenance fees (1996, 2004, 2009). `exp` for the four pre-1995 patents is grant + 17. Google lists the Pong patent's EP counterpart, EP 0 645 300 A1, which is named in the card text only.
 
 - Patent Constellation made prominent. A live, slowly drifting constellation band opens the Atlas landing (headline, "Explore the map" button, tap anywhere to open); every card that has a dot gets a "See it in the constellation" pill that opens the map turned and zoomed on that card (`#tab=cite&sel=<ref>` does the same from a link). Hero draws only while on screen, ~30 fps, one still frame under reduced motion. EN and FR; no card data touched.
 - Added `tools/rotate_picture.py` (rotates a drawing 90° clockwise by default and rebuilds its thumbnail) and a "look at every new drawing" line in `docs/card-checklist.md`, so sideways sheets are caught before a card ships. No data or counts changed.
