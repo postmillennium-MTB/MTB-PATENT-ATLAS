@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 544 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 545 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,9 +14,9 @@ An interactive timeline of mountain bike intellectual property: 544 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 544 |
+| **Total entries** | 545 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 222 |
+| **Active patents** | 223 |
 | **Expired patents** | 247 |
 | **Pending applications** | 47 |
 | **Confirmed no patent** | 12 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 544 patents and 
 | **Brands** | 232 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 470 |
+| **Verified entries** | 471 |
 | **Medium confidence** | 39 |
 | **Draft / in progress** | 35 |
 
@@ -1049,3 +1049,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - Checked the queued Foes US 8,733,776, Yeti US 2025/0376238, Vasttech US 10,689,062, Klein US 6,109,636 and Voss US 11,548,587 / 10,029,514 cards (all already in the Atlas, filing and grant dates re-confirmed on Google Patents except Klein, which returned 503). Added the Foes Racing history link to the Foes card and card links between the Klein and Voss cards. Yeti rotary is already carded as US 2026/0285439 A1.
 - Added five CeramicSpeed Sport A/S cards (538 → 543 entries), all verified against Google Patents: chainless driveshaft drive system US 10,894,577 B2 (family: EP 3,546,334 B1 not in force, DK 179,953 B1, CN 110,304,191 B expired; `exp` 2039; priority US provisional 2018-03-27 and DK 2018-04-16, where the queue note listed only DK); gear shifting system US 11,267,531 B2 (`exp` 2040 with 106 days PTA); rocker joint roller chain US 11,608,874 B2 (`exp` 2041 with PTA; EP 4,047,238 A1 withdrawn); sprocket dust cover with impeller US 12,473,949 B2 + US 12,523,256 B2 + DK 181,643 B1 (`exp` 2044); rear derailleur cage design US D866,407 (`exp` 2034). New brand CeramicSpeed. Drawings: the three EP 3,546,334 A1 sheets Jon uploaded (Fig. 9 rotated upright) plus US 10,894,577 Fig. 1; sprocket drawings come from DK 181,643 B1 because the US drawing files could not be downloaded. Greg Vanderbeek's Western Colorado University role (lecturer in mechanical engineering) is from Western's September 2024 news item; Jon confirmed it is the same person as the inventor. Not carded: EP 3,546,334 and the other counterparts, which sit inside the family cards.
 - Added Norco HVP6 downhill suspension card (US 2024/0017790 layout + US 2024/0059369 progression flip chips; both pending applications, 543 → 544 entries; tier v). Dates, application numbers, provisionals and inventor from the Google Patents records; Figs. 2, 3-4, 7 and 6-7, 11 from the patents' own sheets. `exp` left null (not granted). Progression and anti-squat percentages from Norco's marketing copy are not on the card. i-Track licence confirmed on Norco's HVP6 page and linked to the existing i-Track card.
+- Added Nicolai crown-gear shift-under-load gearbox DE 10 2014 016 395 B4 (544 → 545 entries), tier v, `exp` 2034: filed 2014-11-05 by Karlheinz Nicolai (patentee and inventor), A1 published 2016-05-12, granted 2024-11-21, one card for the family. Drawings: Figs. 5/6 (Jon's sheet, matches B4 sheet 15), Figs. 3/4 and Figs. 1/2. Gap: no record ties the patent to a product or to a Eurobike 2026 launch, and the card names none.
