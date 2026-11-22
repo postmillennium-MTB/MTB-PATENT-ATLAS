@@ -1,0 +1,660 @@
+{
+ "number": "US8439383B2",
+ "title": "Bicycle shock with extension arms",
+ "inventors": [
+  "Jan Talavasek"
+ ],
+ "assignee_original": [
+  "Specialized Bicycle Components Inc",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Bicycle Fabrications Llc",
+  "Samuel Hu",
+  "Specialized Bicycle Components, Inc.",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cyclying, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Honda Motor Co., Ltd.",
+  "Yeti Cycling, Llc",
+  "Christopher James Killer",
+  "Ji Young Park",
+  "Vitamin I Factory Co., Ltd.",
+  "Sram, Llc",
+  "Specialized Bicycle Components, Inc.",
+  "Ltp Sports Group Inc.",
+  "Vitamin I Factory Co., Ltd.",
+  "Toyota Motor Engineering & Manufacturing North America, Inc.",
+  "Yeti Cycling, Llc",
+  "Specialized Bicycle Components, Inc.",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Toyota Motor Engineering & Manufacturing North America, Inc.",
+  "Yeti Cycling, Llc",
+  "Santa Cruz Bicycles, Inc.",
+  "Christopher Hudec",
+  "Canyon Bicycles Gmbh",
+  "Level One Engineering LLC",
+  "Specialized Bicycle Components, Inc.",
+  "Cycles Devinci Inc",
+  "Industries Rad Inc.",
+  "Southall Timothy James",
+  "王德宝",
+  "Orbea S Coop",
+  "Timothy Saul Lane",
+  "Pole Bicycle Company Oy",
+  "惠州市美源吉体育用品有限公司",
+  "Ktm Ag",
+  "Haimiwei Intelligent Technology (Shanghai) Co., Ltd.",
+  "Feifei Li",
+  "Walker Reginald Eric",
+  "Peters James Arthur",
+  "Conklin Fred",
+  "James H Thomas",
+  "Yamaha, Hatsudoki Kabushiki Kaisha",
+  "Fabre Brian K",
+  "James Michael Morrison Taylor",
+  "Erland Andersson",
+  "Zimmerman Tony J",
+  "Mert Lawwill",
+  "Gt Bicycles, Inc.",
+  "Bridgestone Cycle Co",
+  "Showa:Kk",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Turner; David Roy",
+  "Schwinn Cycling & Fitness Inc.",
+  "Cannondale Corporation",
+  "Chih-Yung Yu",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Dr. Ing.H.C.F. Porsche Ag",
+  "Specialized Bicycle Components, Inc.",
+  "Schless; Ely",
+  "Klein Bicycle Corporation",
+  "Dr. Ing. H.C.F. Porsche Ag",
+  "Bennett Ross",
+  "Klaus Kramer-Massow",
+  "Dr. Ing. H.C. F. Porsche Aktiengesellschaft",
+  "A-Pro Cycles, Inc.",
+  "Bridgestone/Firestone, Inc.",
+  "Duhane Lam",
+  "Mannesmann Sachs Ag",
+  "Derby Cycle Werke GmbH",
+  "Christini Steven J.",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Jeffrey Ernest Amos",
+  "Yung-Feng Hso",
+  "Carl W. Schonfeld",
+  "Noel Buckley",
+  "Atb Sales Limited",
+  "Pro-Glory Enterprise Co., Ltd.",
+  "Orbea, S. Coop. Ltda.",
+  "Cycles Devinci Inc.",
+  "Giant Manufacturing Co., Ltd.",
+  "Cannondale Corporation",
+  "Andreas Felsl",
+  "Fox Factory, Inc.",
+  "Ming-Chien Weng",
+  "Zf Friedrichshafen Ag",
+  "David Weagle",
+  "Merida Industry Co., Ltd.",
+  "Rocky Mountain Bicycles - A Division Of Procycle Group Inc.",
+  "O'connor D Arcy",
+  "Niner, Inc.",
+  "David Earle",
+  "David Earle",
+  "Tanouye Ted K",
+  "David Weagle",
+  "Sotto Llc",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Walker Reginald Eric",
+  "Peters James Arthur",
+  "Conklin Fred",
+  "James H Thomas",
+  "Yamaha, Hatsudoki Kabushiki Kaisha",
+  "Fabre Brian K",
+  "James Michael Morrison Taylor",
+  "Erland Andersson",
+  "Zimmerman Tony J",
+  "Mert Lawwill",
+  "Specialized Bicycle Components, Inc.",
+  "Gt Bicycles, Inc.",
+  "Bridgestone Cycle Co",
+  "Showa:Kk",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Schwinn Cycling & Fitness Inc.",
+  "Turner; David Roy",
+  "Klein Bicycle Corporation",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Klaus Kramer-Massow",
+  "Cannondale Corporation",
+  "Dr. Ing.H.C.F. Porsche Ag",
+  "Chih-Yung Yu",
+  "Schless; Ely",
+  "Carl W. Schonfeld",
+  "Dr. Ing. H.C.F. Porsche Ag",
+  "Bridgestone/Firestone, Inc.",
+  "Dr. Ing. H.C. F. Porsche Aktiengesellschaft",
+  "Bennett Ross",
+  "A-Pro Cycles, Inc.",
+  "Cannondale Corporation",
+  "Jeffrey Ernest Amos",
+  "Duhane Lam",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Atb Sales Limited",
+  "Honda Giken Kogyo Kabushiki Kaisha",
+  "Mannesmann Sachs Ag",
+  "Derby Cycle Werke GmbH",
+  "Christini Steven J.",
+  "Orbea, S. Coop. Ltda.",
+  "Pro-Glory Enterprise Co., Ltd.",
+  "Zf Friedrichshafen Ag",
+  "Yung-Feng Hso",
+  "Noel Buckley",
+  "Noel Buckley",
+  "Noel Buckley",
+  "Cycles Devinci Inc.",
+  "Giant Manufacturing Co., Ltd.",
+  "Rocky Mountain Bicycles - A Division Of Procycle Group Inc.",
+  "Andreas Felsl",
+  "Ming-Chien Weng",
+  "David Weagle",
+  "Merida Industry Co., Ltd.",
+  "O'connor D Arcy",
+  "Niner, Inc.",
+  "David Earle",
+  "Tanouye Ted K",
+  "David Earle",
+  "David Weagle",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Sotto Llc",
+  "Yeti Cycling, Llc",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Bicycle Fabrications Llc",
+  "W. Hank MATHESON",
+  "Yeti Cyclying, Llc",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Samuel Hu",
+  "Specialized Bicycle Components, Inc.",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Ji Young Park",
+  "Honda Motor Co., Ltd.",
+  "Honda Motor Co., Ltd.",
+  "Sram, Llc",
+  "Vitamin I Factory Co., Ltd.",
+  "Vitamin I Factory Co., Ltd.",
+  "Yeti Cycling, Llc",
+  "Christopher James Killer",
+  "Christopher James Killer",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Yeti Cycling, Llc",
+  "Ltp Sports Group Inc.",
+  "Vitamin I Factory Co., Ltd.",
+  "Toyota Motor Engineering & Manufacturing North America, Inc.",
+  "Toyota Motor Engineering & Manufacturing North America, Inc.",
+  "Toyota Motor Engineering & Manufacturing North America, Inc."
+ ],
+ "assignee_current": [
+  "Specialized Bicycle Components Holding Co Inc"
+ ],
+ "application": "US12/495,516",
+ "priority_date": "2009-06-30",
+ "filing_date": "2009-06-30",
+ "publication_date": "2013-05-14",
+ "grant_date": "2013-05-14",
+ "status": "Active",
+ "expiry_events": [
+  {
+   "date": "2031-02-13",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "A bicycle frame can have a main frame, a sub-frame and a shock. The sub-frame can move in relation to the main frame and the shock can be used to regulate that relationship. A linkage can also be used to regulate the relationships and control the rotation. The shock can further have a pair of extension arms to span a seat tube which is part of the main frame.",
+ "family": [
+  "DE102010025698A1",
+  "US20100327553A1",
+  "US20110285106A1",
+  "US20140015220A1",
+  "US8439383B2"
+ ],
+ "cites": [
+  {
+   "pn": "US1340508A",
+   "title": "Spring-frame for motorcycles"
+  },
+  {
+   "pn": "US1413352A",
+   "title": "Spring fork for motor cycles"
+  },
+  {
+   "pn": "US2238411A",
+   "title": "Combination shock absorber and extension leg"
+  },
+  {
+   "pn": "US3679029A",
+   "title": "Shock absorber extension"
+  },
+  {
+   "pn": "US3982770A",
+   "title": "Bicycle suspension"
+  },
+  {
+   "pn": "US4013149A",
+   "title": "Extender for increasing the travel of motorcycle shock absorbers"
+  },
+  {
+   "pn": "US4046396A",
+   "title": "Heavy duty dirt bicycle and frame therefor"
+  },
+  {
+   "pn": "US4378857A",
+   "title": "Motor-cycle frame"
+  },
+  {
+   "pn": "US4697659A",
+   "title": "Vehicle fraction attachment"
+  },
+  {
+   "pn": "US4789174A",
+   "title": "Suspension bicycle"
+  },
+  {
+   "pn": "US5244224A",
+   "title": "Rocker arm rear suspension bicycle"
+  },
+  {
+   "pn": "JPH07223577A",
+   "title": "Bicycle frame with shock absorber"
+  },
+  {
+   "pn": "JPH07233839A",
+   "title": "Shock absorber"
+  },
+  {
+   "pn": "US5592999A",
+   "title": "Actuated shock absorber link mechanism with variable link ratio and link form"
+  },
+  {
+   "pn": "US5671936A",
+   "title": "Shock absorbing bicycle frame apparatus"
+  },
+  {
+   "pn": "US5725227A",
+   "title": "Suspension system for a bicycle"
+  },
+  {
+   "pn": "US5791674A",
+   "title": "Bicycle suspension system"
+  },
+  {
+   "pn": "USD398267S",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "USD401187S",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "USD402926S",
+   "title": "Bicycle frame assembly"
+  },
+  {
+   "pn": "US5899480A",
+   "title": "Rear suspension for bicycles"
+  },
+  {
+   "pn": "US6039137A",
+   "title": "Multi-terrain electric motor driven cycle"
+  },
+  {
+   "pn": "US6109636A",
+   "title": "High efficiency bicycle frame suspension"
+  },
+  {
+   "pn": "USD430070S",
+   "title": "Bicycle frame unit"
+  },
+  {
+   "pn": "US6224080B1",
+   "title": "Spokeless bicycle system"
+  },
+  {
+   "pn": "US6244610B1",
+   "title": "Two wheeled vehicle, especially a bicycle"
+  },
+  {
+   "pn": "US6273407B1",
+   "title": "Spring strut for a motor vehicle having a bearing for a coil spring"
+  },
+  {
+   "pn": "US6279703B1",
+   "title": "Shock absorbing adjusting structure"
+  },
+  {
+   "pn": "US6318521B1",
+   "title": "Externally guided ER damper"
+  },
+  {
+   "pn": "US20030038450A1",
+   "title": "Rear suspension system for two-wheeled vehicles, particularly bicycles"
+  },
+  {
+   "pn": "US20030160372A1",
+   "title": "Fixing element with multifunctional fixing component"
+  },
+  {
+   "pn": "EP1352823A2",
+   "title": "Two-wheel frame, in particular for a bicycle"
+  },
+  {
+   "pn": "US20040061305A1",
+   "title": "Rear wheel suspension system for a bicycle"
+  },
+  {
+   "pn": "USD491111S1",
+   "title": "Bicycle"
+  },
+  {
+   "pn": "US6837506B2",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US6877591B1",
+   "title": "Crank of a shock absorber for a bicycle"
+  },
+  {
+   "pn": "US6880846B2",
+   "title": "Bicycle with shock absorber"
+  },
+  {
+   "pn": "US20050184483A1",
+   "title": "Rear suspension system for bicycles"
+  },
+  {
+   "pn": "US6969081B2",
+   "title": "Bicycle rear suspension"
+  },
+  {
+   "pn": "US6978985B2",
+   "title": "Mechanism type non-sectional locking buffer device"
+  },
+  {
+   "pn": "EP1669282A1",
+   "title": "Bicycle rear suspension"
+  },
+  {
+   "pn": "USD523380S1",
+   "title": "Double suspension bicycle frame"
+  },
+  {
+   "pn": "US20060181053A1",
+   "title": "Bicycle suspension system"
+  },
+  {
+   "pn": "US7140628B2",
+   "title": "Living hinge member and suspension"
+  },
+  {
+   "pn": "WO2007036225A2",
+   "title": "Two-wheeled frame, swing arm rear suspension and fork arrangement"
+  },
+  {
+   "pn": "US7261194B2",
+   "title": "Bicycle suspension assembly with isolated inertia mass"
+  },
+  {
+   "pn": "US20070246909A1",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US7318505B2",
+   "title": "Vibration damper"
+  },
+  {
+   "pn": "US20080067772A1",
+   "title": "Vehicle suspension systems for seperated acceleration responses"
+  },
+  {
+   "pn": "US7374191B1",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US7392999B2",
+   "title": "Bicycle with rear suspension"
+  },
+  {
+   "pn": "US20080303242A1",
+   "title": "Bicycle rear suspension system"
+  },
+  {
+   "pn": "US20090026728A1",
+   "title": "Bicycle rear suspension"
+  },
+  {
+   "pn": "US20090072512A1",
+   "title": "Bicycle rear suspension system"
+  },
+  {
+   "pn": "US20100059965A1",
+   "title": "Bicycle suspension system employing highly predictable pedalling characteristics"
+  },
+  {
+   "pn": "US7703788B2",
+   "title": "Force channeling mountain bike rear suspension"
+  },
+  {
+   "pn": "US20100109282A1",
+   "title": "Bicycle suspension systems"
+  },
+  {
+   "pn": "US20110018228A1",
+   "title": "Bicycle Rear Suspension Linkage"
+  },
+  {
+   "pn": "US7938425B2",
+   "title": "Bicycle assembly with rear shock"
+  },
+  {
+   "pn": "US7954837B2",
+   "title": "Bicycle assembly with gusset"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US8801023B2",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "USD719488S1",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "USD719880S1",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US20150115569A1",
+   "title": "Bicycle rear suspension with a two axis wheel path"
+  },
+  {
+   "pn": "US9056647B2",
+   "title": "One-piece connector for a shock-absorbing frame of a bicycle"
+  },
+  {
+   "pn": "USD774970S1",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US10293881B2",
+   "title": "Rear suspension system for a bicycle"
+  },
+  {
+   "pn": "US10343742B2",
+   "title": "Link suspension system"
+  },
+  {
+   "pn": "US10766563B2",
+   "title": "Rail suspension with integral shock and dampening mechanism"
+  },
+  {
+   "pn": "US10822048B2",
+   "title": "Reciprocating rail movement suspension system"
+  },
+  {
+   "pn": "US10926830B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US20210291931A1",
+   "title": "Saddle-riding type vehicle"
+  },
+  {
+   "pn": "US11173983B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US20220355879A1",
+   "title": "Positionally optimized saddle dropper post"
+  },
+  {
+   "pn": "US20230076224A1",
+   "title": "Vehicle body for two-wheeled vehicle, two-wheeled vehicle, and shock absorber for same"
+  },
+  {
+   "pn": "US20230271666A1",
+   "title": "Training bicycle and bicycle frame"
+  },
+  {
+   "pn": "US11780530B2",
+   "title": "Flexible hardware spacer"
+  },
+  {
+   "pn": "USD1009715S1",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US20240059369A1",
+   "title": "Two-wheeled vehicle having rear suspension with adjustable leverage curve progression"
+  },
+  {
+   "pn": "US20240083535A1",
+   "title": "Bicycle for ride practice and bike frame therefor"
+  },
+  {
+   "pn": "US20240227969A1",
+   "title": "Bicycle frame with vibration isolation"
+  },
+  {
+   "pn": "US12077241B2",
+   "title": "Multi-body vehicle suspension linkage"
+  },
+  {
+   "pn": "US12122477B2",
+   "title": "Bicycle frame with angled strut"
+  },
+  {
+   "pn": "US12145684B2",
+   "title": "Constrained multiple instantaneous velocity center linkage assembly for vehicle suspension"
+  },
+  {
+   "pn": "US12384484B2",
+   "title": "Integrated motor mount and suspension pivot"
+  },
+  {
+   "pn": "US12522316B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US12565274B2",
+   "title": "Bicycle seat with vibration isolation"
+  },
+  {
+   "pn": "US12617488B2",
+   "title": "Two-wheeled vehicle with configurable idler"
+  }
+ ],
+ "events": [
+  {
+   "date": "2009-06-30",
+   "type": "filed",
+   "title": "Application filed by Specialized Bicycle Components Inc"
+  },
+  {
+   "date": "2009-06-30",
+   "type": "priority",
+   "title": "Priority to US12/495,516"
+  },
+  {
+   "date": "2009-06-30",
+   "type": "reassignment",
+   "title": "Assigned to SPECIALIZED BICYCLE COMPONENTS, INC."
+  },
+  {
+   "date": "2010-06-30",
+   "type": "priority",
+   "title": "Priority to DE201010025698"
+  },
+  {
+   "date": "2010-12-30",
+   "type": "publication",
+   "title": "Publication of US20100327553A1"
+  },
+  {
+   "date": "2011-07-26",
+   "type": "priority",
+   "title": "Priority to US13/191,199"
+  },
+  {
+   "date": "2012-08-03",
+   "type": "priority",
+   "title": "Priority to US13/566,932"
+  },
+  {
+   "date": "2013-05-09",
+   "type": "priority",
+   "title": "Priority to US13/891,077"
+  },
+  {
+   "date": "2013-05-14",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2013-05-14",
+   "type": "publication",
+   "title": "Publication of US8439383B2"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2031-02-13",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ]
+}

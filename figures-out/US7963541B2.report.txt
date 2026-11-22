@@ -1,0 +1,151 @@
+patent: US7963541B2
+source: https://patentimages.storage.googleapis.com/72/ed/ce/625b881da8fb31/US7963541.pdf
+pages: 20
+per-page extracted text length: {1: 2307, 2: 1205, 3: 58, 4: 58, 5: 58, 6: 58, 7: 58, 8: 58, 9: 58, 10: 58, 11: 58, 12: 68, 13: 59, 14: 71, 15: 59, 16: 7092, 17: 7090, 18: 7855, 19: 7802, 20: 6233}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US007963541B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Chamberlain
+(54) BICYCLE ASSEMBLY WITH REAR SHOCK
+(75) Inventor: Jason L. Chamberlain, Morgan Hill,
+CA (US)
+(73) Assignee: Specialized Bicycle Components, Inc.,
+Morgan Hill, CA (US)
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+(21) Appl. No.: 12/816,175
+(22) Filed:
+
+4, 1941 Conklin
+7, 1972 Thomas
+3, 1977 Fabre et al.
+10, 1987 Zimmerman
+12/1988 Law will
+
+5.244.224 A
+
+9/1993 Busby
+
+5,592,999 A
+5,671,936 A
+
+1/1997 Matsuura et al.
+9, 1997 Turner
+
+5,725,227 A
+
+3/1998 Mayer
+
+5,791.674. A
+D398,267 S
+D401,187 S
+D402.926 S
+5,899,480 A
+D430,070 S
+
+8, 1998 DAluisio et al.
+9, 1998 Yu et al.
+11/1998 Ninic et al.
+12/1998 Kciuk
+5/1999 Leitner
+8, 2000 Kciuk
+
+(Continued)
+FOREIGN PATENT DOCUMENTS
+
+Prior Publication Data
+
+US 2010/0327.556A1
+
+Jun. 21, 2011
+
+2,238,411 A
+3,679,029 A
+4,013,149 A
+4,697.659 A
+4,789,174 A
+
+Jun. 15, 2010
+
+(65)
+
+US 7.963,541 B2
+
+(45) Date of Patent:
+
+EP
+
+Jun. 30, 2009.
+
+6, 2006
+
+OTHER PUBLICATIONS
+
+Dec. 30, 2010
+
+Related U.S. Application Data
+(63) Continuation of application No. 12/495,577, filed on
+
+1669,282
+
+Diamondback DBR-X2 1999.
+
+(Continued)
+Primary Examiner — Kevin Hurley
+Assistant Examiner — Tashiana Adams
+
+(51) Int. Cl.
+B62K 9/00
+
+(2006.01)
+
+(52) U.S. Cl. ..................................... 280/284; 280/281.1
+(58) Field of Classification Search .................. 280/284,
+280/281. 1, 283, 288, 274, 275; 267/195
+See application file for complete search history.
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+D34,257 S
+
+3/1901 Sangster
+
+D43,083 S
+D44,950 S
+1,340,508 A
+1413,352 A
+
+10, 1912 Lonn
+10, 1913 Lonn
+5, 1920 Walker
+4, 1922 Peters
+
+(74) Attorney, Agent, or Firm — Knobbe, Martens, Olson &
+Bear, LLP
+(57)
+
+ABSTRACT
+
+A bicycle assembly can have a main frame, a Sub-frame, a
+main shock section, an extension section, and a fastener. The
+Sub-frame can move in relation to the main frame and the
+
+main shock section can be used to regulate that relationship.
+The extension section can have a receiving portion, wherein
+an end of the main shock section can fit into the receiving
+portion. The fastener can be used to secure the main shock
+section within the receiving portion of the extension section.
+15 Claims, 13 Drawing Sheets
+
+

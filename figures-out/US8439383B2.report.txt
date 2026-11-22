@@ -1,0 +1,203 @@
+patent: US8439383B2
+source: https://patentimages.storage.googleapis.com/c8/b0/43/db68ea8469024b/US8439383.pdf
+pages: 20
+per-page extracted text length: {1: 2273, 2: 1745, 3: 57, 4: 57, 5: 57, 6: 57, 7: 57, 8: 57, 9: 57, 10: 57, 11: 57, 12: 58, 13: 58, 14: 70, 15: 58, 16: 7020, 17: 7273, 18: 7785, 19: 7845, 20: 5498}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO8439383B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Talavasek
+(54) BICYCLE SHOCKWITH EXTENSION ARMS
+
+4,789,174. A
+5.244.224 A
+
+5,592.999 A
+
+(75) Inventor: Jan Talavasek, Morgan Hill, CA (US)
+O O
+
+(73) Assignee: Specialized Bicycle Components, Inc.,
+Morgan Hill, CA (US)
+
+(*) Notice:
+
+9/1993 Busby
+1, 1997 Mat
+
+tal.
+
+9, 1997 Naturae al
+
+5,725,227 A
+
+3/1998 Mayer
+
+D401,187 S
+
+Subject to any disclaimer, the term of this
+
+E.
+
+12 3.
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 593 days.
+
+6,039. 137 A
+D430,070 S
+
+3, 2000 SE
+8/2000 Kciuk
+
+6,109,636 A
+
+8, 2000 Klein et al.
+
+6,224,080 B1
+
+5/2001 Ross
+
+6,244,610 B1*
+6,273.407 B1
+
+Jun. 30, 2009
+
+US 2010/0327553 A1
+(51) Int. Cl
+
+B62K 25/28
+(52) U.S. Cl.
+
+Dec. 30, 2010
+
+EP
+EP
+
+(2006.01)
+
+- - - - - - - - - - - grgrrr. 280/285; 280/275
+
+(58) Field of Classification Search .................. 280/284,
+280/285, 283, 275,288: 180/227
+See application file for complete search history.
+References Cited
+
+t
+
+6/2001 Kramer-Massow .......... 280/283
+8/2001 Germano
+
+(Continued)
+
+Prior Publication Data
+
+(56)
+
+12/1988 Law.will
+
+8, 1998 DAluisio et al.
+9, 1998 Yu et al.
+11, 1998 Ninic et al.
+
+(65)
+
+USPC
+
+May 14, 2013
+
+5671936 A
+
+5,791.674. A
+D398,267 S
+
+(21) Appl. No.: 12/495,516
+(22) Filed:
+
+US 8.439,383 B2
+
+(45) Date of Patent:
+
+FOREIGN PATENT DOCUMENTS
+1352,823
+10, 2003
+
+1669,282
+
+6, 2006
+
+(Continued)
+OTHER PUBLICATIONS
+Diamondback DBR-X2 1999.
+
+(Continued)
+
+Primary Examiner — Anne Marie M Boehler
+(74) Attorney, Agent, or Firm — Knobbe Martens Olson &
+Bear LLP
+
+U.S. PATENT DOCUMENTS
+
+D34,257 S
+
+3/1901 Sangster
+
+(57)
+
+D43,083 S
+
+10, 1913 Lonn
+
+10, 1912 Lonn
+
+A bicycle frame can have a main frame, a Sub-frame and a
+
+D44,950 S
+
+ABSTRACT
+
+1340,508 A
+
+5, 1920 Walker
+
+shock. The Sub-frame can move in relation to the main frame
+
+43.3 52 A
+2,238,411 A
+3,679,029 A
+
+4, 1922 Peters
+4, 1941 Conklin
+7, 1972 Thomas
+
+and the shock can be used to regulate that relationship. A
+linkage can also be used to regulate the relationships and
+control the rotation. The shock can further have a pair of
+
+SAS A
+
+1875 Sash al
+
+extension arms to span a seat tube which is part of the main
+
+4,046,396 A
+
+9/1977 Taylor et al.
+
+frame.
+
+4,378,857 A
+
+4, 1983 Andersson
+
+4,697.659 A
+
+10/1987 Zimmerman
+
+20 Claims, 13 Drawing Sheets
+
+

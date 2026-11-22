@@ -1,0 +1,200 @@
+patent: US7938425B2
+source: https://patentimages.storage.googleapis.com/b6/3c/90/94cea9bda8134f/US7938425.pdf
+pages: 20
+per-page extracted text length: {1: 2357, 2: 1212, 3: 57, 4: 95, 5: 57, 6: 57, 7: 66, 8: 57, 9: 57, 10: 57, 11: 57, 12: 66, 13: 121, 14: 70, 15: 0, 16: 7138, 17: 7273, 18: 7785, 19: 7845, 20: 5807}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US00793.8425B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Chamberlain
+
+US 7,938,425 B2
+
+(45) Date of Patent:
+
+(54) BICYCLE ASSEMBLY WITH REAR SHOCK
+
+May 10, 2011
+
+5,671,936 A
+5,725,227 A
+5,791.674. A
+D398,267 S
+
+9, 1998 Yu et al.
+
+(73) Assignee: Specialized Bicycle Components, Inc.,
+
+D401,187 S
+D402.926 S
+
+5,899,480 A
+
+11/1998 Ninic et al.
+12/1998 Kciuk
+
+Morgan Hill, CA (US)
+
+D430,070 S
+
+8, 2000 Kciuk
+
+6,109,636 A
+6,224,080 B1
+
+8, 2000 Klein et al.
+5, 2001 ROSS
+
+6,318.521 B1
+D491,111 S
+
+11/2001 Niaura et al.
+6/2004 Mizuta et al.
+
+(75) Inventor:
+
+y
+
+Chamberlain, Morgan Hill,
+
+(US)
+
+(*) Notice:
+
+Subject to any disclaimer, the term of this
+
+6,273.407 B1
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 15 days.
+
+(21) Appl. No.: 12/495,577
+
+(22) Filed:
+(65)
+
+1/2005 Amos
+
+FOREIGN PATENT DOCUMENTS
+1669,282
+6, 2006
+OTHER PUBLICATIONS
+
+Diamondback DBR-X2 1999.
+
+(52) U.S. Cl. ..................................... 280/284; 280/281.1
+(58) Field of Classification Search .................. 280/284,
+280/281. 1, 283, 288, 274, 275
+See application file for complete search history.
+
+(56)
+
+8/2001 Germano
+
+4/2005 Schonfeld
+12/2005 Lung et al.
+(Continued)
+
+EP
+
+(2006.01)
+
+5/1999 Leitner
+
+6,837,506 B2
+
+(51) Int. Cl.
+B62K 9/00
+
+8, 1998 DAluisio et al.
+
+6,880,846 B2
+6,978,985 B2
+
+Jun. 30, 2009
+
+Prior Publication Data
+US 2010/0327555 A1
+Dec. 30, 2010
+
+9, 1997 Turner
+3/1998 Mayer
+
+References Cited
+
+(Continued)
+Pri
+— Joanne
+J
+Silbpermann
+rimary Examiner
+Examiner —
+S11
+Assistant Examiner — Tashiana Adams
+
+(74) Attorney, Agent, or Firm — Knobbe, Martens, Olson &
+Bear, LLP
+
+U.S. PATENT DOCUMENTS
+
+D34,257 S
+
+3/1901 Sangster
+
+(57)
+
+E. s
+
+88:
+
+A bicycle frame can have a main frame, a Sub-frame and a
+
+1340,508 A
+
+5, 1920 Walker
+
+A.
+
+ABSTRACT
+
+shock. The Sub-frame can move in relation to the main frame
+
+43.3 52 A
+4, 1922 Peters
+2,238,411 A * 4, 1941 Conklin ............................ T4/82
+
+and the shock can be used to regulate that relationship. A
+linkage can also be used to regulate the relationships and
+
+36792. A
+
+control the rotation. The shock can further have a pair of
+
+3.
+
+(1972 Thomas
+
+188/321.11
+
+A ck 1887 SNA. O.'s
+
+4,789,174. A
+5.244.224 A
+
+5,592,999 A *
+
+12/1988 Law.will
+9/1993 Busby
+
+1/1997 Matsuura et al. ............. 180,227
+
+extension arms to span a seat tube which is part of the main
+frame.
+
+20 Claims, 13 Drawing Sheets
+
+
