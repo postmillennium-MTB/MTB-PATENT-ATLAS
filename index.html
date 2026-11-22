@@ -345,9 +345,10 @@ header::before{
 .cm-hero canvas{position:relative;display:block;order:2;width:100%;height:230px;opacity:0;transition:opacity .9s ease}
 .cm-hero.ready canvas{opacity:1}
 .cm-hero-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:4px 0 0;max-width:430px}
+.cm-hero-h svg{width:.7em;height:.7em;color:var(--primary);flex:0 0 auto}
 .cm-hero-k{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:6px}
 .cm-hero-k svg{width:15px;height:15px;color:var(--primary)}
-.cm-hero-h{font-family:var(--font-display);font-weight:800;font-size:clamp(28px,7vw,44px);line-height:1.02;margin:0;color:var(--ink)}
+.cm-hero-h{display:flex;align-items:center;gap:.35em;font-family:var(--font-display);font-weight:800;font-size:clamp(28px,7vw,44px);line-height:1.02;margin:0;color:var(--ink)}
 .cm-hero-sub{margin:0;font-size:15px;line-height:1.4;color:var(--ink-soft);max-width:380px}
 .cm-hero-btn{margin-top:6px;border:0;background:var(--primary);color:#fff;font-weight:700;font-size:15px;font-family:var(--font-display);border-radius:10px;padding:0 16px;min-height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
 .cm-hero-btn:hover{filter:brightness(1.1)}
@@ -5515,8 +5516,17 @@ function citeDraw(){
   ctx.font=`600 12.5px ${C.font}`; ctx.textBaseline="middle"; ctx.textAlign="left";
   const boxes=[];
   for(const n of want){
-    const s=citeLabel(n), tw=ctx.measureText(s).width, rr=citeRad(n); let x=n.sx+rr+5, y=n.sy;
-    if(x+tw>W-4) x=n.sx-rr-5-tw;
+    let s=citeLabel(n), tw=ctx.measureText(s).width; const rr=citeRad(n); let x=n.sx+rr+5, y=n.sy;
+    const fit=room=>{ while(tw>room&&s.length>6){ s=s.slice(0,-2); tw=ctx.measureText(s+"…").width; if(tw<=room) s+="…"; } };   // shorten a name to the room there is
+    const right=W-4-x, left=n.sx-rr-5-4;                  // room beside the dot on each side
+    if(tw>right){
+      if(left>=right){ if(tw>left) fit(left); x=n.sx-rr-5-tw; } else fit(right);
+    }
+    if(n===sel && x<4){                                   // the chosen dot always shows its name, even on a narrow phone: set above (or below) the dot, kept on screen
+      s=citeLabel(n); tw=ctx.measureText(s).width; fit(W-12);
+      x=Math.max(4,Math.min(W-4-tw,n.sx-tw/2)); y=n.sy-rr-12; if(y<10) y=n.sy+rr+12;
+    }
+    if(n===sel) y=Math.max(10,Math.min(H-10,y));
     if(x<2||y<8||y>H-8) continue;
     const b=[x-2,y-8,x+tw+2,y+8];
     if(n!==sel && boxes.some(o=>b[0]<o[2]&&b[2]>o[0]&&b[1]<o[3]&&b[3]>o[1])) continue;   // skip a label that would cover one already drawn
@@ -5783,9 +5793,7 @@ function constellationHeroHTML(){
   return `<section class="cm-hero" id="cmHero" role="group" aria-label="${citeEsc(t("cmapHeroAria"))}">
     <canvas id="cmHeroCv" aria-hidden="true"></canvas>
     <div class="cm-hero-in">
-      <div class="cm-hero-k">${ICON_GRAPH_STAR}${t("cmapHeroKicker")}</div>
-      <h2 class="cm-hero-h">${t("cmapHeroTitle")}</h2>
-      <p class="cm-hero-sub">${t("cmapHeroSub",CITE.N.length,CITE.E.length)}</p>
+      <h2 class="cm-hero-h">${ICON_GRAPH_STAR}${t("cmapHeroKicker")}</h2>
       <button type="button" class="cm-hero-btn" id="cmHeroBtn">${t("cmapHeroBtn")} →</button>
     </div>
   </section>`;
