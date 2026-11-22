@@ -546,6 +546,18 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     for (let i = 1; i <= 12; i++) { await tp('touchMove', [[s.x + 15 + i * 4, s.y]]); await p.waitForTimeout(25); }
     const got = await p.evaluate(() => ({ pull: CITE.drag.pull, held: !!window.__tn.held, yaw: CITE.yaw }));
     await tp('touchEnd', []);
+    /* A tap after a drag must still select a dot (the drag flag once stuck on, so taps did nothing until a reload). */
+    await p.waitForTimeout(150);
+    const t2 = await p.evaluate(() => {
+      CITE.sel = null; citeProject();
+      const r = document.getElementById('cmCanvas').getBoundingClientRect();
+      const n = citeNodes().find(m => !m.ext && m.sx > 50 && m.sx < r.width - 50 && m.sy > 50 && m.sy < r.height - 50);
+      return { x: r.left + n.sx, y: r.top + n.sy };
+    });
+    await tp('touchStart', [[t2.x, t2.y]]); await p.waitForTimeout(50); await tp('touchEnd', []); await p.waitForTimeout(200);
+    const tapSel = await p.evaluate(() => !!CITE.sel);
+    console.log(`constellation tap after a drag selects a dot: ${tapSel}`);
+    if (!tapSel) { console.error('::error::A tap on a constellation dot after a drag did not select it.'); process.exitCode = 1; }
     console.log(`constellation touch: finger 15px off a dot pulls=${got.pull}, errors: ${JSON.stringify(errs)}`);
     if (!got.pull || errs.length) { console.error('::error::A fingertip near a constellation dot did not grab it.'); process.exitCode = 1; }
     await ctx.close();
