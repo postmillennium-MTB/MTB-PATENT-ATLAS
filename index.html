@@ -350,9 +350,7 @@ header::before{
 .cm-hero-k svg{width:15px;height:15px;color:var(--primary)}
 .cm-hero-h{display:flex;align-items:center;gap:.35em;font-family:var(--font-display);font-weight:800;font-size:clamp(28px,7vw,44px);line-height:1.02;margin:0;color:var(--ink)}
 .cm-hero-sub{margin:0;font-size:15px;line-height:1.4;color:var(--ink-soft);max-width:380px}
-.cm-hero-btn{margin-top:6px;border:0;background:var(--primary);color:#fff;font-weight:700;font-size:15px;font-family:var(--font-display);border-radius:10px;padding:0 16px;min-height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
-.cm-hero-btn:hover{filter:brightness(1.1)}
-.cm-hero-btn:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+.cm-hero:focus-visible{outline:2px solid var(--primary);outline-offset:4px;border-radius:var(--radius)}
 @media(min-width:640px){.cm-hero-h{white-space:nowrap}.cm-hero{min-height:280px;justify-content:center}.cm-hero canvas{position:absolute;inset:0;height:100%;order:0;z-index:0}.cm-hero-in{padding:8px 0}}
 @media(prefers-reduced-motion:reduce){.cm-hero canvas{transition:none}}
 /* "See it in the constellation": the pill at the foot of a card's text that has a dot on the map. */
@@ -1220,11 +1218,12 @@ footer a{color:inherit;text-decoration:underline}
 .cm-seg button+button{border-left:1px solid var(--card-border)}
 .cm-btn{border:1px solid var(--card-border);border-radius:8px}
 .cm-seg button[aria-pressed=true],.cm-btn[aria-pressed=true]{background:var(--primary);color:#fff;border-color:var(--primary)}
-.cm-legend{display:flex;flex-wrap:wrap;gap:6px}
-.cm-chip{display:inline-flex;align-items:center;gap:6px;font:500 13px var(--font-body);padding:5px 10px;border:1px solid var(--card-border);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;min-height:34px}
+.cm-legend{display:flex;flex-wrap:wrap;gap:4px}
+/* Low profile: small pills, so the nine categories take two short rows on a phone, not five. */
+.cm-chip{display:inline-flex;align-items:center;gap:5px;font:500 11.5px/1.1 var(--font-body);padding:3px 8px;border:1px solid var(--card-border);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;min-height:24px}
 .cm-chip[aria-pressed=false]{opacity:.45}
 .cm-chip .n{color:var(--ink-soft);font-variant-numeric:tabular-nums}
-.cm-dot{width:11px;height:11px;border-radius:50%;flex:none;background:var(--ink-soft)}
+.cm-dot{width:8px;height:8px;border-radius:50%;flex:none;background:var(--ink-soft)}
 .cm-dot.ext{background:var(--surface);border:2px solid var(--ink-soft)}
 .cm-key{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--ink-soft)}
 .cm-key span{display:inline-flex;align-items:center;gap:6px}
@@ -3334,7 +3333,7 @@ const T = {
     tabCite:"Patent Constellation",
     cmapHeroKicker:"Patent Constellation", cmapHeroTitle:"Who built on whom",
     cmapHeroSub:(n,m)=>`${n} cards joined by ${m} citations. Every dot is a patent; every line is one patent pointing back at another.`,
-    cmapHeroBtn:"Explore the map", cmapHeroAria:"Open the Patent Constellation",
+    cmapHeroAria:"Open the Patent Constellation",
     cmapSeeIt:"See it in the constellation", cmapSeeItAria:"Open the Patent Constellation, centred on this patent",
     cmapTitle:"Patent Constellation",
     cmapIntro:"Every dot is a card in the atlas. A line joins two cards when a patent on one cites a patent on the other, as listed on Google Patents. Bigger dots are cited by more cards. Drag to turn the map in 3D.",
@@ -3549,7 +3548,7 @@ const T = {
     tabCite:"Constellation de brevets",
     cmapHeroKicker:"Constellation de brevets", cmapHeroTitle:"Qui s'est appuyé sur qui",
     cmapHeroSub:(n,m)=>`${n} fiches reliées par ${m} citations. Chaque point est un brevet ; chaque trait est un brevet qui en cite un autre.`,
-    cmapHeroBtn:"Explorer la carte", cmapHeroAria:"Ouvrir la Constellation de brevets",
+    cmapHeroAria:"Ouvrir la Constellation de brevets",
     cmapSeeIt:"Voir dans la constellation", cmapSeeItAria:"Ouvrir la Constellation de brevets, centrée sur ce brevet",
     cmapTitle:"Constellation de brevets",
     cmapIntro:"Chaque point est une fiche de l'atlas. Un trait relie deux fiches lorsqu'un brevet de l'une cite un brevet de l'autre, d'après Google Patents. Plus un point est gros, plus il est cité par d'autres fiches. Glissez pour faire tourner la carte en 3D.",
@@ -5806,11 +5805,10 @@ const CMH = { sec:0, ink:"#445", raf:0, timer:0, cv:null, io:null, visible:true,
 function cmhStop(){ if(CMH.raf) cancelAnimationFrame(CMH.raf); if(CMH.timer) clearTimeout(CMH.timer); if(CMH.io) CMH.io.disconnect(); CMH.raf=CMH.timer=0; CMH.io=null; CMH.run++; }
 function constellationHeroHTML(){
   citeBuild();
-  return `<section class="cm-hero" id="cmHero" role="group" aria-label="${citeEsc(t("cmapHeroAria"))}">
+  return `<section class="cm-hero" id="cmHero" role="button" tabindex="0" aria-label="${citeEsc(t("cmapHeroAria"))}">
     <canvas id="cmHeroCv" aria-hidden="true"></canvas>
     <div class="cm-hero-in">
       <h2 class="cm-hero-h">${ICON_GRAPH_STAR}${t("cmapHeroKicker")}</h2>
-      <button type="button" class="cm-hero-btn" id="cmHeroBtn">${t("cmapHeroBtn")} →</button>
     </div>
   </section>`;
 }
@@ -5819,6 +5817,7 @@ function constellationHeroStart(){
   cmhStop();
   const hero=document.getElementById("cmHero"), cv=document.getElementById("cmHeroCv"); if(!hero||!cv) return;
   hero.onclick=()=>openConstellation(null);
+  hero.onkeydown=e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); openConstellation(null); } };
   CMH.cv=cv; const run=CMH.run;
   const alive=()=>CMH.run===run && cv.isConnected;
   const finish=()=>{
