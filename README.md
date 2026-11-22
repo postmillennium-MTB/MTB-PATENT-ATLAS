@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 554 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 555 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 554 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 554 |
+| **Total entries** | 555 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 224 |
+| **Active patents** | 225 |
 | **Expired patents** | 255 |
 | **Pending applications** | 47 |
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 233 |
+| **Brands** | 234 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 480 |
+| **Verified entries** | 481 |
 | **Medium confidence** | 39 |
 | **Draft / in progress** | 35 |
 
@@ -1059,3 +1059,6 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - Patent Constellation made prominent. A live, slowly drifting constellation band opens the Atlas landing (headline, "Explore the map" button, tap anywhere to open); every card that has a dot gets a "See it in the constellation" pill that opens the map turned and zoomed on that card (`#tab=cite&sel=<ref>` does the same from a link). Hero draws only while on screen, ~30 fps, one still frame under reduced motion. EN and FR; no card data touched.
 - Added `tools/rotate_picture.py` (rotates a drawing 90° clockwise by default and rebuilds its thumbnail) and a "look at every new drawing" line in `docs/card-checklist.md`, so sideways sheets are caught before a card ships. No data or counts changed.
 - Constellation hero reduced to the title "Patent Constellation" plus the button; on the map, the chosen dot's name now always shows on the canvas (shortened to fit, kept on screen, placed above the dot on a narrow phone) and every label shortens instead of being cut off or dropped at the edge.
+
+- **Fuji MLink rear suspension, US 8,998,235 + US 9,302,732 + EP 2,828,144 (one family card, 2026-11-21).** Tier v from the Google Patents records and claims. US 8,998,235 (13/849,755 filed 2013-03-25, provisional 2012-03-23, granted 2015-04-07, adjusted expiry 2033-05-08) is the headline; continuation US 9,302,732 (granted 2016-04-05, exp 2033-03-25) adds the flexing lower-link segment; EP 2,828,144 B1 granted 2019-08-21; PCT/US2013/033670 (WO 2013/142855 A2) ceased, named in text only. Assigned to Sotto Group April 2013, to Level One Engineering May 2014. Fuji added to BRANDS; Figs. 1 and 2 cropped from the patent sheets and rotated upright. Gap: the Fuji licence rests on Beale's own statement, not on a patent record; no fujibikes.com or Bikerumor link was added because those pages did not load from here.
+  The citation map was rebuilt in the same change (341 cards, 2,663 links, read 2026-11-22) because US 8,998,235 had been an outside-the-Atlas patent in the map; four listed numbers could not be fetched from Google Patents.
