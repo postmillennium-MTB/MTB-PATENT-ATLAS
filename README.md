@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 555 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 564 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,10 +14,10 @@ An interactive timeline of mountain bike intellectual property: 555 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 555 |
+| **Total entries** | 564 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 225 |
-| **Expired patents** | 255 |
+| **Active patents** | 229 |
+| **Expired patents** | 260 |
 | **Pending applications** | 47 |
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 555 patents and 
 | **Brands** | 234 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 481 |
+| **Verified entries** | 490 |
 | **Medium confidence** | 39 |
 | **Draft / in progress** | 35 |
 
@@ -1068,3 +1068,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - Removed the "Explore the map" button from the landing Constellation hero; the whole hero still opens the map (tap or Enter/Space, focus ring for keyboards).
 - Micro Spline card (US 11,578,761): removed the claim that the patent describes Micro Spline fitting two hub standards. Claims 1 and 21 and the description support only a cassette spline that engages two different, unnamed hub splines; the patent never names Micro Spline or HG. Hook, summary and "why it matters" rewritten in EN and FR.
 - Micro Spline card (US 11,578,761) rebuilt as one Shimano Micro Spline portfolio card (conf v, 9 members in nums[]: 11,578,761 lead; 11,642,913; 11,059,541 with continuations 11,097,807 and 12,286,194; 11,179,967; 11,332,213; 11,220,309; 11,845,513). Each number, title, date and claim read on Google Patents; none of the patent texts uses the brand name; no claim recites 23 splines. y = 2017 (earliest filing), exp 2040 (lead, PTA). Added Fig. 3 (the hub). The retail "does not fit HG or XD" line is market fact, not from a patent. Members seen on Google Patents but not added: US 11,772,741, 10,946,931, 12,286,195 (granted-looking, not opened); US 10,293,639 (divisional of Ser. No. 14/873,141, filed Oct. 1, 2015; the description Jon pasted covers a ratchet and sliding member, not the spline count; not added).
+- Cited-often batch 2 (9 cards, conf v, facts read on Google Patents or the EP front pages): Specialized US 7,377,535; Specialized rear shock with extension arms US 7,938,425 + 7,963,541; Specialized/Talavasek US 8,439,383; O'Connor US 9,845,132; Canyon US 9,469,369 + EP 2,603,418 B1; Renault Sport/Tribotte US 7,837,214 + EP 1,883,574 B1; Lapierre/Plantet US 8,286,982 + EP 2,271,544 B1; Cocalis derailleur link US 8,075,009; Felt EP 1,819,583 B1. Gaps: the Fox inertia-valve family (US 7,766,135 and its 2001-priority continuations) is a large family held for a separate batch; abandoned application US 2006/0231360 and Specialized WO 2008/130336 (ceased, no US counterpart found) not carded.
