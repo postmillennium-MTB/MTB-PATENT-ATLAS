@@ -5658,7 +5658,8 @@ function renderCite(){
     const [x,y]=pos(e); pts.set(e.pointerId,[x,y]); citeStopSpin(); drag.down=true;
     if(pts.size===2){ const [a,b]=[...pts.values()]; CITE.pinch=Math.hypot(a[0]-b[0],a[1]-b[1]); CITE.pmx=(a[0]+b[0])/2; CITE.pmy=(a[1]+b[1])/2; if(drag.node) drag.node.held=false; drag.node=null; drag.pan=false; drag.pull=false; drag.moved=true; return; }   // a second finger: let go of a dot being pulled
     drag.node=hit(x,y,e.pointerType==="touch"?CITE_TOUCH_HALO:10);
-    drag.ox=drag.node&&e.pointerType==="touch"?drag.node.sx-x:0; drag.oy=drag.node&&e.pointerType==="touch"?drag.node.sy-y:0;   // a finger hides the dot: keep it where it was under the finger instead of snapping it to the fingertip drag.pan=e.shiftKey||e.button===1||e.button===2; drag.moved=false; drag.px=x; drag.py=y; cv.style.cursor="grabbing";
+    drag.ox=drag.node&&e.pointerType==="touch"?drag.node.sx-x:0; drag.oy=drag.node&&e.pointerType==="touch"?drag.node.sy-y:0;   // a finger hides the dot: keep it where it was under the finger instead of snapping it to the fingertip
+    drag.pan=e.shiftKey||e.button===1||e.button===2; drag.moved=false; drag.px=x; drag.py=y; cv.style.cursor="grabbing";
     drag.pull=CITE.tool==="move" && !!drag.node && !drag.pan;           // Move mode: a drag that starts on a dot pulls that dot
     if(drag.pull) drag.depth=drag.node.sz;
   };
