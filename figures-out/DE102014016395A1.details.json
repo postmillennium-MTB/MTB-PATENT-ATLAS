@@ -1,0 +1,140 @@
+{
+ "number": "DE102014016395A1",
+ "title": "Under load switchable transmission for vehicles",
+ "inventors": [
+  "Anmelder Gleich"
+ ],
+ "assignee_original": [
+  "Individual",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Alfred Förg",
+  "Corimag S.R.L.",
+  "Balhorn; Alan C.",
+  "Bernhard Rohloff",
+  "Nicolai, Karlheinz, Dipl.-Ing. (TU)",
+  "Nicolai, Karlheinz, Dipl.-Ing. (TU)",
+  "Karlheinz Nicolai",
+  "Fineschnitt Gmbh",
+  "Pinion Gmbh",
+  "Edward P Cowles",
+  "Elmar 8601 Untermerzbach Baetz",
+  "Ivor Barens",
+  "Patrick Barthelemy",
+  "王国斌",
+  "Peter Scranton",
+  "Radical Coordinate Unipessoal Lda",
+  "Balhorn; Alan C.",
+  "Bernhard Rohloff",
+  "Nicolai, Karlheinz, Dipl.-Ing. (TU)",
+  "Nicolai, Karlheinz, Dipl.-Ing. (TU)",
+  "Karlheinz Nicolai",
+  "Fineschnitt Gmbh",
+  "Pinion Gmbh",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Corimag S.R.L.",
+  "Corimag S.R.L.",
+  "Alfred Förg",
+  "Alfred Förg"
+ ],
+ "assignee_current": [
+  "Individual"
+ ],
+ "application": "DE102014016395.4A",
+ "priority_date": "2014-11-05",
+ "filing_date": "2014-11-05",
+ "publication_date": "2016-05-12",
+ "grant_date": "2024-11-21",
+ "status": "Granted",
+ "expiry_events": [
+  {
+   "date": "2034-11-06",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  }
+ ],
+ "abstract": "A shiftable under load manual transmission, with a in a transmission housing (7) mounted input shaft (11) and output shaft (12), characterized by the following features: a) In the transmission housing (7) is at least one crown wheel (25), which at least one Crown sprocket (23) is constantly in meshing engagement. b) at least one crown wheel (25) and at least one crown wheel pinion (23) is indirectly connected to the output shaft (12) and input shaft (11) in connection. c) During one revolution of a crown wheel (25) the crown pinion (23) is not engaged with each tooth of the crown wheel (25). d) During more than one revolution of a crown wheel (25), the crown pinion (23) can engage with each tooth of the crown wheel (25). e) At least one crown wheel pinion (23) can be moved relative to the crown wheel (25) over a distance which is greater than twice the tooth width of the crown pinion (23).",
+ "family": [
+  "DE102014016395B4"
+ ],
+ "cites": [
+  {
+   "pn": "US5553510A",
+   "title": "Multi-speed transmission"
+  },
+  {
+   "pn": "DE19720796A1",
+   "title": "Multi-speed gear hub for bicycles"
+  },
+  {
+   "pn": "DE10339207A1",
+   "title": "Bicycle frame with integrated gear housing and gear housing for a bicycle frame"
+  },
+  {
+   "pn": "DE102004045364A1",
+   "title": "Multiple transmission for a bicycle"
+  },
+  {
+   "pn": "DE102007013444A1",
+   "title": "Multiple gearbox with magnetic control"
+  },
+  {
+   "pn": "DE102008064514A1",
+   "title": "gear unit"
+  },
+  {
+   "pn": "DE102011106107A1",
+   "title": "Switching device and gear unit"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "DE102021102300A1",
+   "title": "Drive arrangement for a motorcycle and motorcycle"
+  },
+  {
+   "pn": "DE102023123440A1",
+   "title": "Continuously variable transmission"
+  },
+  {
+   "pn": "US20250102047A1",
+   "title": "Gearbox with gears with conical coaxial front toothed wheels"
+  }
+ ],
+ "events": [
+  {
+   "date": "2014-11-05",
+   "type": "filed",
+   "title": "Application filed by Individual"
+  },
+  {
+   "date": "2014-11-05",
+   "type": "priority",
+   "title": "Priority to DE102014016395.4A"
+  },
+  {
+   "date": "2016-05-12",
+   "type": "publication",
+   "title": "Publication of DE102014016395A1"
+  },
+  {
+   "date": "2024-11-21",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2024-11-21",
+   "type": "publication",
+   "title": "Publication of DE102014016395B4"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2034-11-06",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  }
+ ]
+}

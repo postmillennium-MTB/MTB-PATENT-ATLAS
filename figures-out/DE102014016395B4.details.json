@@ -1,0 +1,158 @@
+{
+ "number": "DE102014016395B4",
+ "title": "Transmission for vehicles that can be switched under load",
+ "inventors": [
+  "gleich Patentinhaber Erfinder"
+ ],
+ "assignee_original": [
+  "Individual",
+  "Bayerische Motoren Werke Aktiengesellschaft",
+  "Corimag S R L",
+  "Alfred Förg",
+  "Edward P Cowles",
+  "Elmar 8601 Untermerzbach Baetz",
+  "Ivor Barens",
+  "Balhorn; Alan C.",
+  "Bernhard Rohloff",
+  "Nicolai, Karlheinz, Dipl.-Ing. (TU)",
+  "Patrick Barthelemy",
+  "Nicolai, Karlheinz, Dipl.-Ing. (TU)",
+  "Guobin Wang",
+  "Karlheinz Nicolai",
+  "Peter Scranton",
+  "Fineschnitt Gmbh",
+  "Pinion Gmbh",
+  "Radical Coordinate, Unipessoal, Lda",
+  "Edward P Cowles",
+  "Elmar 8601 Untermerzbach Baetz",
+  "Ivor Barens",
+  "Balhorn; Alan C.",
+  "Bernhard Rohloff",
+  "Nicolai, Karlheinz, Dipl.-Ing. (TU)",
+  "Patrick Barthelemy",
+  "Nicolai, Karlheinz, Dipl.-Ing. (TU)",
+  "Guobin Wang",
+  "Peter Scranton",
+  "Karlheinz Nicolai",
+  "Fineschnitt Gmbh",
+  "Pinion Gmbh",
+  "Radical Coordinate, Unipessoal, Lda"
+ ],
+ "assignee_current": [
+  "Individual"
+ ],
+ "application": "DE102014016395.4A",
+ "priority_date": "2014-11-05",
+ "filing_date": "2014-11-05",
+ "publication_date": "2024-11-21",
+ "grant_date": "2024-11-21",
+ "status": "Active",
+ "expiry_events": [
+  {
+   "date": "2034-11-06",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  }
+ ],
+ "abstract": "Manual transmission, with an input shaft (11) and output shaft (12) mounted in a transmission housing (7), with the following features: (a) In the gear housing (7) there is a primary crown gear (25) which is in constant meshing with a first crown gear pinion (23) and a secondary crown gear (26) which is in constant meshing with a second crown gear pinion (24). (b) The primary crown gear (25), the secondary crown gear (26), the first crown gear pinion (23) and the second crown gear pinion (24) are indirectly connected to the output shaft (12) and input shaft (11). (c) During one revolution of the primary crown wheel (25) or the secondary crown wheel (26), the first crown wheel pinion (23) or the second crown wheel pinion (24) is not in engagement with every tooth of the primary crown wheel (25) or the secondary crown wheel (26). (d) During more than one revolution of the primary crown wheel (25) or the secondary crown wheel (26), the first or second crown wheel pinion (23, 24) can engage with each tooth of the primary crown wheel (25) or the secondary crown wheel (27), (e) At least one intermediate shaft (21) is arranged between the primary crown wheel (25) and the secondary crown w",
+ "family": [
+  "DE102014016395A1",
+  "DE102014016395B4"
+ ],
+ "cites": [
+  {
+   "pn": "US870715A",
+   "title": "Variable-speed gearing."
+  },
+  {
+   "pn": "DE3241676A1",
+   "title": "Infinitely variable transmission gear unit and method for the production of the same"
+  },
+  {
+   "pn": "US5065638A",
+   "title": "Variable ratio transmission"
+  },
+  {
+   "pn": "US5553510A",
+   "title": "Multi-speed transmission"
+  },
+  {
+   "pn": "DE19720796A1",
+   "title": "Multi-speed gear hub for bicycles"
+  },
+  {
+   "pn": "DE10339207A1",
+   "title": "Bicycle frame with integrated gear housing and gear housing for a bicycle frame"
+  },
+  {
+   "pn": "WO2005080824A1",
+   "title": "Multi-gear transmission system"
+  },
+  {
+   "pn": "DE102004045364A1",
+   "title": "Multiple transmission for a bicycle"
+  },
+  {
+   "pn": "US20070200208A1",
+   "title": "Variable-tooth gear with sliding-sheet deforming teeth"
+  },
+  {
+   "pn": "DE102007013444A1",
+   "title": "Multiple gearbox with magnetic control"
+  },
+  {
+   "pn": "US7434489B1",
+   "title": "Bicycle drive system"
+  },
+  {
+   "pn": "DE102008064514A1",
+   "title": "gear unit"
+  },
+  {
+   "pn": "DE102011106107A1",
+   "title": "Switching device and gear unit"
+  },
+  {
+   "pn": "WO2014120031A1",
+   "title": "Variable ratio transmission element and system comprising the variable ratio transmission element"
+  }
+ ],
+ "cited_by": [],
+ "events": [
+  {
+   "date": "2014-11-05",
+   "type": "filed",
+   "title": "Application filed by Individual"
+  },
+  {
+   "date": "2014-11-05",
+   "type": "priority",
+   "title": "Priority to DE102014016395.4A"
+  },
+  {
+   "date": "2016-05-12",
+   "type": "publication",
+   "title": "Publication of DE102014016395A1"
+  },
+  {
+   "date": "2024-11-21",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2024-11-21",
+   "type": "publication",
+   "title": "Publication of DE102014016395B4"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2034-11-06",
+   "type": "legal-status",
+   "title": "Anticipated expiration"
+  }
+ ]
+}

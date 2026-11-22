@@ -1,0 +1,51 @@
+patent: DE102014016395A1
+source: https://patentimages.storage.googleapis.com/e0/9d/22/c5961b9230da0f/DE102014016395A1.pdf
+pages: 17
+per-page extracted text length: {1: 1454, 2: 5405, 3: 5508, 4: 5215, 5: 4963, 6: 4813, 7: 5429, 8: 5814, 9: 4134, 10: 707, 11: 4399, 12: 147, 13: 64, 14: 40, 15: 40, 16: 40, 17: 40}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+(19)
+
+*DE102014016395A120160512*
+(10)
+
+DE 10 2014 016 395 A1 2016.05.12
+
+Offenlegungsschrift
+
+(12)
+
+F16H 3/42 (2006.01)
+
+(21) Aktenzeichen: 10 2014 016 395.4
+(22) Anmeldetag: 05.11.2014
+(43) Offenlegungstag: 12.05.2016
+
+(51) Int Cl.:
+
+(71) Anmelder:
+Nicolai, Karlheinz, 31093 Hoyershausen, DE
+
+(72) Erfinder:
+gleich Anmelder
+
+B62M 11/04 (2006.01)
+
+Die folgenden Angaben sind den vom Anmelder eingereichten Unterlagen entnommen
+(54) Bezeichnung: Unter Last schaltbares Getriebe für Fahrzeuge
+
+(57) Zusammenfassung: Ein unter Last schaltbares Schaltgetriebe, mit einer in einem Getriebegehäuse (7) gelagerter
+Eingangswelle (11) und Abtriebswelle (12), gekennzeichnet
+durch folgende Merkmale:
+a) Im Getriebegehäuse (7) befindet sich mindestens ein Kronenrad (25), welches mit mindestens einem Kronenradritzel
+(23) ständig im Zahneingriff steht.
+b) Mindestens ein Kronenrad (25) und mindestens ein Kronenradritzel (23) steht mittelbar mit der Abtriebswelle (12)
+und Eingangswelle (11) in Verbindung.
+c) Während einer Umdrehung eines Kronenrades (25) ist das
+Kronenradritzel (23) nicht mit jedem Zahn des Kronenrades
+(25) im Eingriff.
+d) Während mehr als einer Umdrehung eines Kronenrades
+(25) kann das Kronenradritzel (23) mit jedem Zahn des Kronenrades (25) in Eingriff gelangen.
+e) Mindestens ein Kronenradritzel (23) kann relativ zum Kronenrad (25) über eine Strecke verschoben werden, die größer ist als die doppelte Zahnbreite des Kronenradritzels (23).
+
+

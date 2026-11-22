@@ -1,0 +1,93 @@
+patent: DE102014016395B4
+source: https://patentimages.storage.googleapis.com/52/f5/61/22f729ef847acd/DE102014016395B4.pdf
+pages: 16
+per-page extracted text length: {1: 3190, 2: 349, 3: 5326, 4: 5411, 5: 5077, 6: 5058, 7: 4619, 8: 5537, 9: 5307, 10: 4552, 11: 3754, 12: 2039, 13: 64, 14: 40, 15: 40, 16: 98}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+(19)
+
+*DE102014016395B420241121*
+(10)
+
+(12)
+
+DE 10 2014 016 395 B4 2024.11.21
+
+Patentschrift
+
+(21) Aktenzeichen: 10 2014 016 395.4
+(22) Anmeldetag: 05.11.2014
+(43) Offenlegungstag: 12.05.2016
+(45) Veröffentlichungstag
+der Patenterteilung: 21.11.2024
+
+(51) Int Cl.:
+
+F16H 3/42 (2006.01)
+B62M 11/04 (2006.01)
+
+Innerhalb von neun Monaten nach Veröffentlichung der Patenterteilung kann nach § 59 Patentgesetz gegen das Patent
+Einspruch erhoben werden. Der Einspruch ist schriftlich zu erklären und zu begründen. Innerhalb der Einspruchsfrist ist
+eine Einspruchsgebühr in Höhe von 200 Euro zu entrichten (§ 6 Patentkostengesetz in Verbindung mit der Anlage zu § 2
+Abs. 1 Patentkostengesetz).
+(73) Patentinhaber:
+Nicolai, Karlheinz, 31093 Hoyershausen, DE
+
+(72) Erfinder:
+Erfinder gleich Patentinhaber
+
+(74) Vertreter:
+Gramm, Lins & Partner Patent- und Rechtsanwälte
+PartGmbB, 38122 Braunschweig, DE
+
+(56) Ermittelter Stand der Technik:
+siehe Folgeseiten
+
+(54) Bezeichnung: Unter Last schaltbares Getriebe für Fahrzeuge
+(57) Hauptanspruch: Schaltgetriebe, mit einer in einem
+Getriebegehäuse (7) gelagerter Eingangswelle (11) und
+Ausgangswelle (12), mit den folgenden Merkmalen:
+(a) Im Getriebegehäuse (7) befindet sich ein Primärkro­
+nenrad (25), welches mit einem ersten Kronenradritzel
+(23) ständig im Zahneingriff steht, und ein Sekundärkro­
+nenrad (26), welches mit einem zweiten Kronenradritzel
+(24) ständig im Zahneingriff steht.
+(b) Das Primärkronenrad (25), das Sekundärkronenrad
+(26), das erste Kronenradritzel (23) und das zweite Kro­
+nenradritzel (24) stehen mittelbar mit der Abtriebswelle
+(12) und Eingangswelle (11) in Verbindung.
+(c) Während einer Umdrehung des Primärkronenrades
+(25) bzw. des Sekundärkronenrads (26) ist das erste Kro­
+nenradritzel (23) bzw. das zweite Kronenradritzel (24) nicht
+mit jedem Zahn des Primärkronenrades (25) bzw. Sekun­
+därkronenrades (26) im Eingriff.
+(d) Während mehr als einer Umdrehung des Primärkro­
+nenrades (25) bzw. des Sekundärkronenrads (26) kann
+das erste bzw. zweite Kronenradritzel (23, 24) mit jedem
+Zahn des Primärkronenrades (25) bzw. des Sekundärkro­
+nenrads (27) in Eingriff gelangen,
+(e) Mindestens eine Zwischenwelle (21) ist zwischen dem
+Primärkronenrad (25) und dem Sekundärkronenrad (26)
+im Gehäuse (7) angeordnet.
+(f) Das erste Kronenradritzel (23) kämmt nicht mit dem
+Sekundärkronenrad (26) und das zweite Kronenradritzel
+(24) kämmt nicht mit dem Primärkronenrad (25).
+(g) Auf der Zwischenwelle (21) sind das erste Kronenrad­
+ritzel (23) und das zweite Kronenradritzel (24) so axial ver­
+schieblich angeordnet sind, dass sie Drehmomente auf die
+Zwischenwelle übertragen.
+(h) Die Drehachse der Zwischenwelle (21) liegt nicht in der
+Ebene, in welcher die Drehachse der Eingangswelle (11)
+liegt.
+
+(i) Das erste Kronenradritzel (23) und das zweite Kronen­
+radritzel (24) können relativ zum Primärkronenrad (25)
+über eine Strecke verschoben werden, die größer ist als
+die doppelte Zahnbreite des ersten bzw. zweiten Kronen­
+radritzels (23, 24).
+(j) Durch axiale Bewegung des ersten Kronenradritzels
+(23) bzw. des zweiten Kronenradritzels (24) auf der Zwi­
+schenwelle (21) sind unterschiedliche Getriebeüberset­
+zungen erreichbar.
+
+
