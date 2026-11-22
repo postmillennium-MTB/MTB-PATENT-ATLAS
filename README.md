@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 555 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 565 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,18 +14,18 @@ An interactive timeline of mountain bike intellectual property: 555 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 555 |
+| **Total entries** | 565 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 225 |
-| **Expired patents** | 255 |
+| **Active patents** | 228 |
+| **Expired patents** | 262 |
 | **Pending applications** | 47 |
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 234 |
+| **Brands** | 237 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 481 |
+| **Verified entries** | 491 |
 | **Medium confidence** | 39 |
 | **Draft / in progress** | 35 |
 
@@ -1068,3 +1068,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - Removed the "Explore the map" button from the landing Constellation hero; the whole hero still opens the map (tap or Enter/Space, focus ring for keyboards).
 - Micro Spline card (US 11,578,761): removed the claim that the patent describes Micro Spline fitting two hub standards. Claims 1 and 21 and the description support only a cassette spline that engages two different, unnamed hub splines; the patent never names Micro Spline or HG. Hook, summary and "why it matters" rewritten in EN and FR.
 - Micro Spline card (US 11,578,761) rebuilt as one Shimano Micro Spline portfolio card (conf v, 9 members in nums[]: 11,578,761 lead; 11,642,913; 11,059,541 with continuations 11,097,807 and 12,286,194; 11,179,967; 11,332,213; 11,220,309; 11,845,513). Each number, title, date and claim read on Google Patents; none of the patent texts uses the brand name; no claim recites 23 splines. y = 2017 (earliest filing), exp 2040 (lead, PTA). Added Fig. 3 (the hub). The retail "does not fit HG or XD" line is market fact, not from a patent. Members seen on Google Patents but not added: US 11,772,741, 10,946,931, 12,286,195 (granted-looking, not opened); US 10,293,639 (divisional of Ser. No. 14/873,141, filed Oct. 1, 2015; the description Jon pasted covers a ratchet and sliding member, not the spline count; not added).
+- Cited-often batch 1 (10 cards, conf v, all facts read on Google Patents or the EP front page): Specialized US 6,880,847; Specialized US 10,850,796 family (4 grants); Specialized head tube US 7,052,028 + 7,506,528; Griffiths US 7,210,695 (+ EP 1,572,524 B1); Decathlon US 6,712,374 + EP 1,425,210 B1; Claro US 9,145,185; Astro Engineering US 7,413,208 (exp 2027 from Google's adjusted date); Orbea EP 1,669,282 B1; Lapierre EP 1,781,530 B1; Rolle EP 1,060,979 A2 (withdrawn; Italian IT 1,308,730 B1 status not shown, term ended by 2019). New brand chips: Orbea, Decathlon, Astro Engineering. Gaps: US 7,059,620 and US 7,052,029 (Specialized continuations with different claims) have no card of their own; the ceased WO 2003/010042, WO 2005/030565 and WO 2006/005687 are covered by their granted EP/US counterparts.
