@@ -1220,11 +1220,12 @@ footer a{color:inherit;text-decoration:underline}
 .cm-seg button+button{border-left:1px solid var(--card-border)}
 .cm-btn{border:1px solid var(--card-border);border-radius:8px}
 .cm-seg button[aria-pressed=true],.cm-btn[aria-pressed=true]{background:var(--primary);color:#fff;border-color:var(--primary)}
-.cm-legend{display:flex;flex-wrap:wrap;gap:6px}
-.cm-chip{display:inline-flex;align-items:center;gap:6px;font:500 13px var(--font-body);padding:5px 10px;border:1px solid var(--card-border);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;min-height:34px}
+.cm-legend{display:flex;flex-wrap:wrap;gap:4px}
+/* Low profile: small pills, so the nine categories take two short rows on a phone, not five. */
+.cm-chip{display:inline-flex;align-items:center;gap:5px;font:500 11.5px/1.1 var(--font-body);padding:3px 8px;border:1px solid var(--card-border);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;min-height:24px}
 .cm-chip[aria-pressed=false]{opacity:.45}
 .cm-chip .n{color:var(--ink-soft);font-variant-numeric:tabular-nums}
-.cm-dot{width:11px;height:11px;border-radius:50%;flex:none;background:var(--ink-soft)}
+.cm-dot{width:8px;height:8px;border-radius:50%;flex:none;background:var(--ink-soft)}
 .cm-dot.ext{background:var(--surface);border:2px solid var(--ink-soft)}
 .cm-key{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--ink-soft)}
 .cm-key span{display:inline-flex;align-items:center;gap:6px}
