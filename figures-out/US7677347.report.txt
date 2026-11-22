@@ -1,0 +1,133 @@
+patent: US7677347
+source: https://patentimages.storage.googleapis.com/d3/04/ba/78d3b97690c879/US7677347.pdf
+pages: 13
+per-page extracted text length: {1: 2581, 2: 57, 3: 75, 4: 93, 5: 142, 6: 66, 7: 151, 8: 6896, 9: 7868, 10: 8041, 11: 7394, 12: 7322, 13: 772}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US007677347B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Brawn
+
+US 7,677,347 B2
+
+(45) Date of Patent:
+
+Mar. 16, 2010
+
+(54) ADJUSTABLE SHOCK
+
+5.975,230 A * 1 1/1999 Bourget ...................... 180,225
+
+(75) Inventor: J. D. Brawn, Costa Mesa, CA (US)
+
+6,003,628 A * 12/1999 Jurrens et al. ...
+... 180,227
+6, 193,005 B1
+2/2001 Jurrens ....................... 180,227
+6,352,143 B1* 3/2002 Niaura et al. ..... ... 188.267.1
+
+(73) Assignee: Sophie Braun, Costa Mesa, CA (US)
+c
+
+-r
+
+(*) Notice:
+
+Sibi tO E. site th still
+
+6,357,546 B1* 3/2002 Crosby, Jr. .....
+7/2003 Parigian ....
+
+... 180,227
+
+6,871,867 B2 *
+
+3/2005 Parigian ....
+
+... 280/284
+
+7,086,658
+B2 * 8/2006 Parigian ....
+7,559,396 B2 * 7/2009 Schwindt ...
+
+patent 1s extended or adjusted under
+
+U.S.C. 154(b) by 512 days.
+
+6,598,893 B2 *
+
+* cited by examiner
+Primary Examiner Paul N Dickson
+Assistant Examiner—Daniel Yeagley
+
+(65)
+
+(74) Attorney, Agent, or Firm—Clement Cheng
+
+Prior Publication Data
+Oct. 2, 2008
+
+(57)
+
+(51) Int. Cl.
+B62K II/00
+(2006.01)
+(52) U.S. Cl. ....................................... 180/227; 280/284
+(58) Field of Classification Search ................. 280/284;
+180/227; 137/102, 106, 115.01, 115.07;
+188/267.1
+
+See application file for complete search history.
+(56)
+References Cited
+U.S. PATENT DOCUMENTS
+
+2,869,892 A *
+
+...... 280/284
+180,227
+
+2008/0231033 A1* 9, 2008 Brawn ........................ 280/781
+
+(21) Appl. No.: 11/728,439
+(22) Filed:
+Mar. 26, 2007
+US 2008/O238O73 A1
+
+... 280/284
+
+1/1959 Sahagian .................... 280/55
+
+3,467,127 A * 9, 1969 Schneider .............. 137,115.07
+3,628,556 A
+12, 1971 Bachman ..................... 137,86
+5,011,205 A
+4, 1991 Liu ............................... 2.93/5
+5,222,873 A * 6/1993 Whitehead et al. .......... 417.344
+
+ABSTRACT
+
+A motorcycle shock system has a shock body formed at least
+partially of aluminum and an air compressor that provides
+pressurized air to the shock body when necessary. A piston
+held within the shock body defines a rear air chamber and a
+forward air chamber on the opposite side of the piston. Four
+electricallyy controlled air valves include a first air valve that
+
+when actuated opens a passage to allow air to flow into the
+forward chamber, a second air valve that when actuated opens
+a passage to allow air to flow out of the forward chamber to the
+atmosphere, a third air valve that when actuated opens a
+passage to allow air to flow out of the rear air chamber, and a
+fourth air valve that when actuated opens a passage to allow
+air to flow into the rear air chamber.
+
+20 Claims, 6 Drawing Sheets
+
+12
+
+

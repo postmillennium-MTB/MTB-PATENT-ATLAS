@@ -1,0 +1,249 @@
+{
+ "number": "US9376156",
+ "title": "Bicycle frame with assymetric seat support",
+ "inventors": [
+  "Jason L. Chamberlain"
+ ],
+ "assignee_original": [
+  "Specialized Bicycle Components Inc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Specialized Bicycle Componenets, Inc.",
+  "Yeti Cyclying, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Christopher Hudec",
+  "Biketec Ag",
+  "Zhejiang Right Digital Tech Co Ltd",
+  "Zhejiang Right Digital Tech Co Ltd",
+  "Dabrowski Jerzy",
+  "Loop Spolka Z Ograniczona Odpowiedzialnoscia",
+  "Kinesis Industry Co., Ltd.",
+  "Decathlon Sa",
+  "杭州新永迪车业有限公司",
+  "Orbea, S. Coop.",
+  "Mert Lawwill",
+  "89908, Inc.",
+  "Blanchard; Pierre",
+  "Schwinn Cycling & Fitness Inc.",
+  "Chamberlain Jason L.",
+  "Specialized Bicycle Components, Inc.",
+  "Ryan Michael Carroll",
+  "Ryan Michael Carroll",
+  "Honda Motor Co., Ltd.",
+  "James Trimble",
+  "Bryne Richard M",
+  "Mert Lawwill",
+  "89908, Inc.",
+  "Blanchard; Pierre",
+  "Schwinn Cycling & Fitness Inc.",
+  "Chamberlain Jason L.",
+  "Ryan Michael Carroll",
+  "Ryan Michael Carroll",
+  "Honda Motor Co., Ltd.",
+  "Specialized Bicycle Components, Inc.",
+  "James Trimble",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cyclying, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Specialized Bicycle Componenets, Inc.",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc"
+ ],
+ "assignee_current": [
+  "Specialized Bicycle Components Holding Co Inc"
+ ],
+ "application": "US14/082,782",
+ "priority_date": "2013-11-18",
+ "filing_date": "2013-11-18",
+ "publication_date": "2016-06-28",
+ "grant_date": "2016-06-28",
+ "status": "Active",
+ "expiry_events": [
+  {
+   "date": "2033-12-22",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "A bicycle including front and rear wheels and a frame supported by the front and rear wheels. The rear wheel defines a central plane of the bicycle. The frame includes a main frame and a rear frame that is movable relative to the main frame. The main frame has a seat support with an offset portion that is offset from the central plane. The bicycle also includes a seat supported by the seat support, and a suspension unit coupled between the rear frame and the main frame to inhibit relative movement between the rear frame and the main frame. The suspension unit is positioned with the offset portion of the seat support laterally aligned with a first side of the suspension unit, and a second side of the suspension unit opposite the first side is not laterally aligned with the seat support.",
+ "family": [
+  "DE102014016377A1",
+  "FR3013309A1",
+  "FR3013309B1",
+  "TW201529399A",
+  "TWI574872B",
+  "US20150137477A1",
+  "US9376156B2"
+ ],
+ "cites": [
+  {
+   "pn": "US494803A",
+   "title": "cable"
+  },
+  {
+   "pn": "US5121937A",
+   "title": "Suspension bicycle"
+  },
+  {
+   "pn": "US5509679A",
+   "title": "Rear suspension for bicycles"
+  },
+  {
+   "pn": "US5658001A",
+   "title": "Bicycle with a long stroke suspension"
+  },
+  {
+   "pn": "US5957473A",
+   "title": "Rear suspension bicycle"
+  },
+  {
+   "pn": "US20030193163A1",
+   "title": "Bicycle rear suspension"
+  },
+  {
+   "pn": "US20050046142A1",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US6886846B2",
+   "title": "Rear bicycle suspension"
+  },
+  {
+   "pn": "US7350797B2",
+   "title": "Rear bicycle suspension"
+  },
+  {
+   "pn": "US7438149B2",
+   "title": "Motorcycle"
+  },
+  {
+   "pn": "US20120235379A1",
+   "title": "Bicycle frame with adjustable suspension components"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US10293881B2",
+   "title": "Rear suspension system for a bicycle"
+  },
+  {
+   "pn": "US10343742B2",
+   "title": "Link suspension system"
+  },
+  {
+   "pn": "US10661855B2",
+   "title": "Bicycle suspension with shock strut"
+  },
+  {
+   "pn": "US10766563B2",
+   "title": "Rail suspension with integral shock and dampening mechanism"
+  },
+  {
+   "pn": "US10822048B2",
+   "title": "Reciprocating rail movement suspension system"
+  },
+  {
+   "pn": "US10926830B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US11173983B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US12077241B2",
+   "title": "Multi-body vehicle suspension linkage"
+  },
+  {
+   "pn": "US12145684B2",
+   "title": "Constrained multiple instantaneous velocity center linkage assembly for vehicle suspension"
+  },
+  {
+   "pn": "US12384484B2",
+   "title": "Integrated motor mount and suspension pivot"
+  },
+  {
+   "pn": "US12522316B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US12617488B2",
+   "title": "Two-wheeled vehicle with configurable idler"
+  }
+ ],
+ "events": [
+  {
+   "date": "2013-11-18",
+   "type": "filed",
+   "title": "Application filed by Specialized Bicycle Components Inc"
+  },
+  {
+   "date": "2013-11-18",
+   "type": "priority",
+   "title": "Priority to US14/082,782"
+  },
+  {
+   "date": "2013-11-18",
+   "type": "reassignment",
+   "title": "Assigned to SPECIALIZED BICYCLE COMPONENTS, INC."
+  },
+  {
+   "date": "2014-10-27",
+   "type": "priority",
+   "title": "Priority to TW103137074A"
+  },
+  {
+   "date": "2014-11-05",
+   "type": "priority",
+   "title": "Priority to DE102014016377.6A"
+  },
+  {
+   "date": "2014-11-17",
+   "type": "priority",
+   "title": "Priority to FR1461061A"
+  },
+  {
+   "date": "2015-05-21",
+   "type": "publication",
+   "title": "Publication of US20150137477A1"
+  },
+  {
+   "date": "2016-06-28",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2016-06-28",
+   "type": "publication",
+   "title": "Publication of US9376156B2"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2033-12-22",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ]
+}

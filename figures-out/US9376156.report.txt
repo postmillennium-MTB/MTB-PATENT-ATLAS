@@ -1,0 +1,148 @@
+patent: US9376156
+source: https://patentimages.storage.googleapis.com/8c/1a/63/a8e85bce5dcb8b/US9376156.pdf
+pages: 8
+per-page extracted text length: {1: 2424, 2: 57, 3: 57, 4: 57, 5: 57, 6: 6968, 7: 7514, 8: 3543}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US009376156 B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Chamberlain
+(54) BICYCLE FRAME WITH ASSYMETRIC SEAT
+
+(56)
+
+Jun. 28, 2016
+
+References Cited
+
+SUPPORT
+
+U.S. PATENT DOCUMENTS
+
+(71) Applicant: Specialized Bicycle Components, Inc.,
+Morgan Hill, CA (US)
+(72) Inventor: Jason L. Chamberlain, Morgan Hill,
+CA (US)
+
+494,803 A
+5,121,937. A
+
+4, 1893 Cable
+6/1992 Law.will
+
+5,509,679 A
+5,658,001 A
+
+4/1996 Leitner
+8, 1997 Blanchard
+
+7,350,797 B2
+
+4/2008 Carroll
+
+5,957,473 A
+6,886,846 B2
+
+(73) Assignee: SPECIALIZED BICYCLE
+
+9, 1999 Law will
+5/2005 Carroll
+
+7,438,149 B2 * 10/2008 Ishida et al. .................. 180,227
+
+2003/0193163 A1* 10, 2003 Chamberlain et al. ........ 280/284
+
+COMPONENTS, INC., Morgan Hill,
+
+2005, 0046142 A1
+
+3/2005 Chamberlain ................ 280/284
+
+CA (US)
+
+2012fO235379 A1
+
+9, 2012 Trimble et al.
+
+k
+
+(*) Notice:
+
+US 9,376,156 B2
+
+(45) Date of Patent:
+
+Subject to any disclaimer, the term of this
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 34 days.
+
+.
+
+cited by examiner
+
+Primary Examiner — Jacob Knutson
+(74) Attorney, Agent, or Firm — Michael Best & Friedrich
+LLP
+
+(21) Appl. No.: 14/082,782
+
+(22) Filed:
+(65)
+
+(57)
+ABSTRACT
+A bicycle including front and rear wheels and a frame Sup
+ported by the front and rear wheels. The rear wheel defines a
+central plane of the bicycle. The frame includes a main frame
+
+Nov. 18, 2013
+Prior Publication Data
+
+US 2015/O 137477 A1
+
+May 21, 2015
+
+is offset from the central plane. The bicycle also includes a
+
+seat Supported by the seat Support, and a Suspension unit
+coupled between the rear frame and the main frame to inhibit
+
+(51) Int. Cl.
+B62K 3/02
+
+and a rear frame that is movable relative to the main frame.
+
+The main frame has a seat Support with an offset portion that
+
+(2006.01)
+
+(52) U.S. Cl.
+
+CPC ........................................ B62K 3/02 (2013.01)
+(58) Field of Classification Search
+
+relative movement between the rear frame and the main
+
+frame. The suspension unit is positioned with the offset por
+
+tion of the seat support laterally aligned with a first side of the
+Suspension unit, and a second side of the Suspension unit
+
+CPC ......................................................... B62K 3/O2
+
+opposite the first side is not laterally aligned with the seat
+
+USPC .................................. 280/275,283, 284, 285
+
+support.
+
+See application file for complete search history.
+
+20 Claims, 4 Drawing Sheets
+
+

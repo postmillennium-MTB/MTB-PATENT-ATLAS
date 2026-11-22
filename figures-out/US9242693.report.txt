@@ -1,0 +1,133 @@
+patent: US9242693
+source: https://patentimages.storage.googleapis.com/90/9e/e2/1f4362c620cec6/US9242693.pdf
+pages: 35
+per-page extracted text length: {1: 2075, 2: 69, 3: 66, 4: 71, 5: 70, 6: 67, 7: 67, 8: 58, 9: 75, 10: 58, 11: 67, 12: 118, 13: 28, 14: 73, 15: 59, 16: 59, 17: 173, 18: 80, 19: 66, 20: 59, 21: 101, 22: 69, 23: 69, 24: 68, 25: 28, 26: 69, 27: 59, 28: 7512, 29: 7652, 30: 6930, 31: 7971, 32: 7766, 33: 7790, 34: 7760, 35: 4750}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO9242693B2
+
+(12) United States Patent
+(54)
+
+(10) Patent No.:
+
+BICYCLE REAR SUSPENSION
+
+(56)
+
+References Cited
+
+6,170.845 B1*
+Inventor:
+
+(*) Notice:
+
+Darrell W. Voss, Vancouver, WA (US)
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+
+(21) Appl. No.: 13/840,754
+(22) Filed:
+(65)
+
+Prior Publication Data
+
+US 2014/02652O8 A1
+
+(51)
+
+(52)
+
+Sep. 18, 2014
+
+(2006.01)
+(2006.01)
+(2006.01)
+(2006.01)
+
+U.S. C.
+
+CPC ................. B62K 25/04 (2013.01); B62K 25/20
+
+(2013.01); B62K 25/28 (2013.01)
+(58)
+
+Field of Classification Search
+
+USPC .......................................... 280/284, 285, 286
+
+See application file for complete search history.
+
+1/2001 Tseng ........................... 280/284
+
+3/2002 Ellsworth
+
+7.556.276 B1* 7/2009 Dunlap ......................... 280/284
+2008/0238030 A1* 10/2008 Tseng .........
+... 280/284
+2011/0233892 A1* 9/2011 Domahidy ...
+... 280/284
+2012/O126506 A1*
+
+5, 2012 Zawistowski ................. 280/275
+
+FOREIGN PATENT DOCUMENTS
+2898.578 A1
+95298.38 A1
+2012O24697 A1
+
+9, 2007
+11, 1995
+2, 2012
+
+* cited by examiner
+Primary Examiner — Tony Winner
+(74) Attorney, Agent, or Firm — Lowe Graham Jones PLLC;
+Darren J. Jones
+
+(57)
+
+Int. C.
+
+B62K 25/10
+B62K 25/04
+B62K 25/20
+B62K 25/28
+
+6,361,059 B1
+
+FR
+WO
+WO
+
+Mar 15, 2013
+
+Jan. 26, 2016
+
+U.S. PATENT DOCUMENTS
+
+(71) Applicant: Darrell W. Voss, Vancouver, WA (US)
+(72)
+
+US 9.242,693 B2
+
+(45) Date of Patent:
+
+VOSS
+
+ABSTRACT
+
+The vehicle includes a frame member to be suspended rela
+tive to the ground. The Suspension of the invention includes
+an arm (such as a Swingarm), a slide link, and a control link.
+The arm having a first end and a second end; it extends
+between the frame generally at the first end and the ground
+engaging member generally at the second end. The slide link
+is coupled between the frame and the arm. The slide link is
+rotationally fixed to the arm to rotationally move therewith. It
+is pivotally secured to the frame. The control link is also
+coupled to the frame and to the arm.
+16 Claims, 26 Drawing Sheets
+
+

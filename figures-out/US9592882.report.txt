@@ -1,0 +1,128 @@
+patent: US9592882
+source: https://patentimages.storage.googleapis.com/8a/d4/ff/cd00b7d2f0cffd/US9592882.pdf
+pages: 21
+per-page extracted text length: {1: 2539, 2: 1003, 3: 57, 4: 133, 5: 58, 6: 105, 7: 0, 8: 185, 9: 0, 10: 0, 11: 62, 12: 6693, 13: 7618, 14: 7664, 15: 7339, 16: 6567, 17: 7521, 18: 7772, 19: 7774, 20: 7132, 21: 1939}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USO09592882B2
+
+(12) United States Patent
+
+(10) Patent No.:
+US 9,592,882 B2
+(45) Date of Patent:
+Mar. 14, 2017
+
+ButOra et al.
+(54) ELECTRONICALLY CONTROLLED
+
+(52) U.S. Cl.
+
+SUSPENSION SYSTEM, METHOD FOR
+
+CPC ................. B62K 25/20 (2013.01); B62J I/06
+
+CONTROLLING ASUSPENSON SYSTEM
+AND COMPUTER PROGRAM
+
+(71) Applicants: Befra Electronic, S.R.O, Horní Suchá
+(CZ); Gustav Magenwirth GmbH &
+Co. KG, Bad Urach (DE)
+(72) Inventors: Peter Butora, Bohumín (CZ); Jirgen
+Beier, Ulm (DE); Reiner Kinstle,
+Metzingen (DE); Florian Koller,
+Metzingen (DE); Christoph Kern, Weil
+der Stadt (DE)
+(73) Assignees: Befra Electronic, S.R.O (CZ); Gustav
+Magenwirth GmbH & Co. KG (DE)
+(*) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 0 days.
+(21) Appl. No.: 14/627,158
+(22) Filed:
+Feb. 20, 2015
+(65)
+
+Jul. 16, 2015
+
+Related U.S. Application Data
+(63) Continuation
+
+of
+
+application
+
+No.
+
+PCT/EP2013/067286, filed on Aug. 20, 2013.
+(30)
+Foreign Application Priority Data
+Aug. 21, 2012
+Aug. 24, 2012
+
+(DE) ........................ 10 2012 214 867
+(DE) ........................ 10 2012 215 062
+
+(51) Int. Cl.
+B62K 25/30
+B62K 25/20
+
+(2006.01)
+(2006.01)
+
+(Continued)
+
+CPC ..... B62K 19/36; B62J 1/06; B62J 1/10; B62J
+1 FO2
+
+See application file for complete search history.
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+7,254,516 B2 *
+
+8/2007 Case, Jr. ................ A63B 2400
+
+8,308, 124 B2
+
+11/2012 Hsu
+
+TO2/142
+
+(Continued)
+Primary Examiner — Anne Marie Boehler
+Assistant Examiner — Marlon A Arce
+
+(74) Attorney, Agent, or Firm — Mayback & Hoffman,
+P.A.; Gregory L. Mayback
+(57)
+
+Prior Publication Data
+
+US 2015/O1973O8 A1
+
+(2013.01); B62K 25/08 (2013.01); B62K 25/10
+(2013.01);
+(Continued)
+(58) Field of Classification Search
+
+ABSTRACT
+
+An electronically controlled Suspension system for a bicycle
+includes at least one spring element between first and second
+parts the bicycle, both parts being movably interconnected.
+At least one parameter of the spring element is modified. At
+least one actuator influences the spring element to modify
+the at least one parameter. An electronic module produces a
+control signal for the at least one actuator. A control device
+is influenced by the control signal produced by the electronic
+module. The control device is connected to at least one of the
+
+electronic module and the actuator through a radio signal. A
+corresponding method controls the Suspension system for
+the bicycle and a computer program executes the method.
+15 Claims, 9 Drawing Sheets
+
+

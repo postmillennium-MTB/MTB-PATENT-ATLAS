@@ -1,0 +1,147 @@
+patent: US8833785
+source: https://patentimages.storage.googleapis.com/b4/73/c8/a1d5c82c95a959/US8833785.pdf
+pages: 20
+per-page extracted text length: {1: 2657, 2: 875, 3: 58, 4: 58, 5: 58, 6: 58, 7: 58, 8: 58, 9: 58, 10: 58, 11: 58, 12: 77, 13: 59, 14: 59, 15: 60, 16: 7112, 17: 6857, 18: 7732, 19: 7713, 20: 3612}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US008833 785B2
+
+(12) United States Patent
+
+(10) Patent No.:
+(45) Date of Patent:
+
+Wagner
+
+Sep. 16, 2014
+
+USPC ............................ 280/279; 280/276; 180/219
+
+(54) CLAMPING SYSTEM FOR A VEHICLE FORK
+WITH A SUSPENSION SYSTEM
+
+US 8,833,785 B2
+
+(58) Field of Classification Search
+USPC ................................... 280/279, 276; 180/219
+
+(75) Inventor: Stéphane Wagner, Uxegney (FR)
+(73) Assignee: Eurl Stephane Wagner Mecanique, N
+de Gestion (FR)
+(*) Notice:
+
+(56)
+
+13/512,821
+
+(22) PCT Filed:
+
+Nov. 29, 2010
+
+(86). PCT No.:
+
+PCT/FR2010/052558
+
+S371 (c)(1),
+(2), (4) Date:
+
+May 30, 2012
+
+PCT Pub. Date: Jun. 9, 2011
+Prior Publication Data
+
+US 2012/O235378A1
+
+Sep. 20, 2012
+
+Foreign Application Priority Data
+
+Dec. 3, 2009
+
+(FR) ...................................... O958626
+
+(51) Int. Cl.
+B62K 2L/04
+B62K 25/08
+B62K2I/00
+B62K 2L/8
+
+4,565,384 A
+
+1/1986 Dehnisch
+
+4,705,285 A * 1 1/1987 Yoshida ........................ 280,279
+5,494,302 A * 2/1996 Farris et al. .
+280,276
+5,715,903 A * 2/1998 Summers et al.
+... 180,219
+6,241,391 B1
+6/2001 Hoose ............................. 384,49
+6,457,732 B2 * 10/2002 Ito et al. ..
+280,277
+6,488.300 B2 * 12/2002 Ito et al. ..
+280,276
+6,520,524 B1* 2/2003 Costa ............................ 280/276
+
+(Continued)
+FOREIGN PATENT DOCUMENTS
+
+(87) PCT Pub. No.: WO2011/067526
+(65)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 3 days.
+
+(21) Appl. No.:
+
+(30)
+
+See application file for complete search history.
+
+(2006.01)
+(2006.01)
+(2006.01)
+(2006.01)
+
+(52) U.S. Cl.
+CPC ................. B62K 21/18 (2013.01); B62K 25/08
+
+(2013.01); B62K 21/00 (2013.01); B62K 21/04
+(2013.01)
+
+BE
+CN
+
+512578 A
+20094.8858 Y
+
+2, 1954
+9, 2007
+
+(Continued)
+Primary Examiner — Kevin Hurley
+Assistant Examiner — Michael Stabley
+(74) Attorney, Agent, or Firm — Arent Fox LLP
+(57)
+
+ABSTRACT
+
+A clamping system for a vehicle fork with a suspension
+system features a lower triple clamp (24) and an upper Sup
+port (25), the lower triple clamp (24) having a lower plate
+(242) and a fork shaft (240) to be mounted in a way that
+enables it to pivot on the vehicle frame (23), the lower plate
+(242) having two lower housings (241a, 241b) to receive two
+shock absorbers (21a, 21b) set parallel to one another and in
+front of the fork shaft (240). The clamping system (2)
+includes fitting devices to assemble the upper support (25) on
+the fork shaft (240) and stiffening devices (26a, 26b) set apart
+from the fork shaft (240) to maintain the relative orientations
+of the lower triple clamp (24) and the upper support (25).
+19 Claims, 13 Drawing Sheets
+
+

@@ -1,0 +1,175 @@
+patent: US8931793
+source: https://patentimages.storage.googleapis.com/d1/49/96/9bdaeb4ffd6518/US8931793.pdf
+pages: 15
+per-page extracted text length: {1: 2697, 2: 694, 3: 57, 4: 60, 5: 95, 6: 57, 7: 87, 8: 66, 9: 65, 10: 6777, 11: 7468, 12: 7568, 13: 7108, 14: 7660, 15: 3413}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US00893 1793B2
+
+(12) United States Patent
+Klieber
+(54) FRAME ELEMENT OF A
+
+(10) Patent No.:
+(45) Date of Patent:
+
+(*) Notice:
+
+USPC ......... 280/283, 274, 275,276, 277,278, 280,
+
+See application file for complete search history.
+(56)
+
+Mar. 11, 2010
+
+(86). PCT No.:
+
+PCT/EP201 O/O53062
+
+S371 (c)(1),
+(2), (4) Date:
+
+Sep. 27, 2011
+
+(87) PCT Pub. No.: WO2010/103057
+PCT Pub. Date: Sep. 16, 2010
+(65)
+
+Prior Publication Data
+
+US 2012/OO91684 A1
+
+Apr. 19, 2012
+
+Foreign Application Priority Data
+
+Mar. 12, 2009
+
+(DE) ......................... 10 2009 O12765
+
+4,201,397 A
+
+5, 1980 Mtthias
+
+4,634,138 A
+5,125,678 A
+
+1/1987 Fryer et al.
+6/1992 Bogen
+5,417,445 A * 5/1995 Smart ........................... 280/275
+
+5,658,001 A
+
+8, 1997 Blanchard
+
+6,974,144 B2 * 12/2005 Horiuchi ....................... 280/276
+7,000.936 B2 * 2/2006 Schmider ................... 280/281.1
+
+(Continued)
+FOREIGN PATENT DOCUMENTS
+DE
+DE
+DE
+EP
+EP
+EP
+GB
+WO
+
+28 03565 A1
+3701 803 A1
+1962O 457 A1
+1504987 A2
+1743 829 A1
+1787 899 A1
+1062932
+WO99, 15396
+
+8, 1978
+8, 1988
+11, 1997
+2, 2005
+1, 2007
+5/2007
+3, 1967
+4f1999
+
+OTHER PUBLICATIONS
+
+International Search Report, dated Apr. 28, 2010, corresponding to
+PCT/EP2010/053062, 8 pages.
+International Preliminary Report of Patentability and Written Opin
+ion of corresponding PCT/EP2010/053062, dated Sep. 13, 2011, 13
+pageS.
+
+EPO Examination Report dated Aug. 30, 2013, issued in correspond
+ing EP application No. 10707911.3, listing cited references (9pages).
+
+Primary Examiner — Joseph M. Rocca
+
+(51) Int. Cl.
+B62K 9/00
+B62K 9/34
+B62K 25/28
+B62. 6/8
+B62K 9/30
+B62K 25/30
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+13/255,852
+
+(22) PCT Filed:
+
+(30)
+
+280/281. 1, 282, 284, 285, 286, 287,288,
+280/288.3; 180/227
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 147 days.
+
+(21) Appl. No.:
+
+Jan. 13, 2015
+
+(58) Field of Classification Search
+
+SUSPENSION-MOUNTED TWO-WHEELED
+VEHICLE FRAME FOR GUIDINGA CABLE
+
+(76) Inventor: Jochen Klieber, Tacherting (DE)
+
+US 8,931,793 B2
+
+(2006.01)
+(2006.01)
+(2006.01)
+(2006.01)
+(2006.01)
+(2006.01)
+
+(52) U.S. Cl.
+CPC. B62J 6/18 (2013.01); B62K 19/30 (2013.01);
+B62K 25/28 (2013.01); B62K 25/30 (2013.01)
+USPC ............ 280/283; 280/275; 280/284; 280/288
+
+Assistant Examiner — Marc A Scharich
+
+(74) Attorney, Agent, or Firm — Christie, Parker & Hale,
+LLP
+
+(57)
+
+ABSTRACT
+
+The invention relates to the guiding of lines, or cables, on a
+two-wheeled vehicle frame. The guiding is carried out with a
+guide device on a frame element on which an additional frame
+element is movably Supported in Such a way that the line
+essentially intersects the rotational axis of the bearing.
+12 Claims, 7 Drawing Sheets
+
+

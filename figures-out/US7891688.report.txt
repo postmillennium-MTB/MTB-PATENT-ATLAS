@@ -1,0 +1,117 @@
+patent: US7891688
+source: https://patentimages.storage.googleapis.com/37/07/be/8b4bbc1131cf7c/US7891688.pdf
+pages: 13
+per-page extracted text length: {1: 2371, 2: 57, 3: 57, 4: 57, 5: 57, 6: 85, 7: 114, 8: 7561, 9: 7288, 10: 7843, 11: 7957, 12: 6801, 13: 1780}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US00789 1688B2
+
+(12) United States Patent
+Chamberlain
+
+(10) Patent No.:
+
+(54) BICYCLE FRAME WITH ARTICULATING
+
+(75) Inventor: Jason L. Chamberlain, Morgan Hill,
+CA (US)
+(73) Assignee: Specialized Bicycle Components, Inc.,
+Morgan Hill, CA (US)
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 44 days.
+
+(65)
+
+Mar. 9, 2009
+
+2005/0253357 A1* 1 1/2005 Chang et al. ................ 280/283
+2006/01 19070 A1* 6/2006 Weagle ..........
+... 280/284
+2008.0054595 A1*
+
+3, 2008 Lu .........
+
+- - - - - - - - - -
+
+280/284
+
+2008/0067772 A1* 3/2008 Weagle ................ 280/124.134
+2009/0001685 A1
+1/2009 Talavasek et al. ........ 280/281.1
+2009/00725 12 A1* 3, 2009 Earle .........
+... 280/283
+2009,0261557 A1* 10, 2009 Beale et al. ................. 280/284
+
+Assistant Examiner Tashiana Adams
+
+Prior Publication Data
+
+US 2010/0225089 A1
+
+2003/0193163 A1* 10, 2003 Chamberlain et al. ....... 280/284
+2004/0061305 A1
+4/2004 Christini
+
+* cited by examiner
+Primary Examiner Joanne Silbermann
+
+(21) Appl. No.: 12/400,660
+(22) Filed:
+
+Feb. 22, 2011
+
+7,048,292 B2
+5/2006 Weagle
+7,140,628 B2 11/2006 Parkin
+7.377.535 B2 * 5/2008 Chamberlain ............... 280/284
+7,413,208 B2* 8/2008 Weng ......................... 280/284
+
+LINKAGE MOUNTING ARRANGEMENT
+
+(*) Notice:
+
+US 7,891,688 B2
+
+(45) Date of Patent:
+
+Sep. 9, 2010
+
+(74) Attorney, Agent, or Firm Knobbe, Martens, Olson &
+Bear, LLP
+(57)
+
+ABSTRACT
+
+(51) Int. Cl.
+B62K 3/00
+
+(2006.01)
+
+(52) U.S. Cl. .................................... 280/281.1: 280/284
+(58) Field of Classification Search ................. 280/284,
+280/281. 1, 124.134, 283
+See application file for complete search history.
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+5,628,524 A
+5, 1997 Klassen et al.
+5,957,473 A
+9, 1999 Law will
+6,843,494 B2
+1/2005 Lam
+
+A bicycle frame assembly includes an articulating linkage
+mounting arrangement that fixedly couples one or more lever
+arms to a rotatable axle. A preferred embodiment includes at
+least one lever arm, and preferably a pair of lever arms. The
+lever arm or arms are fixedly coupled to an axle by a fastener
+having a fastener axis that is eccentric to, or offset from, the
+axis of rotation of the axle. Accordingly, relative rotation of
+the leverarm and axle is prevented such that the axle and lever
+arm rotate together as a unit.
+20 Claims, 6 Drawing Sheets
+
+

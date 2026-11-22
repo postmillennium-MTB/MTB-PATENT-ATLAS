@@ -1,0 +1,131 @@
+patent: US6871867
+source: https://patentimages.storage.googleapis.com/3a/ca/29/27515e2f6bbb65/US6871867.pdf
+pages: 12
+per-page extracted text length: {1: 2463, 2: 57, 3: 64, 4: 57, 5: 57, 6: 65, 7: 57, 8: 75, 9: 7004, 10: 7222, 11: 7930, 12: 5977}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO6871867B2
+
+(12) United States Patent
+Parigian
+
+(10) Patent No.:
+
+US 6,871,867 B2
+
+(45) Date of Patent:
+
+(54) MULTI-LINKING, REAR SUSPENSION
+
+4,529,056. A
+
+*Mar. 29, 2005
+
+7/1985 Kreuz ........................ 180/227
+
+SYSTEM FOR TWO-WHEELED MOTOR
+
+4,574,909 A * 3/1986 Ribi .......
+
+VEHICLES
+
+5,259,637 A * 11/1993 Busby ........................ 280/284
+5,435,584. A * 7/1995 Buell ......................... 280/284
+
+(76) Inventor: Greg M. Parigian, 10446 Variel Ave.,
+Chatsworth, CA (US) 91311
+
+5,452.910 A * 9/1995 Harris ...........
+... 280/284
+6,056,307 A * 5/2000 Busby et al. ............... 280/284
+6,161,858 A * 12/2000 Tseng ............
+
+c:
+
+(*) Notice: Susly slight
+S.C. 154(b) by Oda
+a --
+
+6,598,893 B2 * 7/2003 Parigian ..................... 280/284
+
+2003/0038450 A1
+
+This patent is Subject to a terminal dis-
+
+* cited by examiner
+
+(21) Appl. No.: 10/414,631
+(22) Filed:
+Apr. 15, 2003
+
+... 280/281.1
+
+6,386,568 B1 * 5/2002 Tribotte ...................... 280/284
+
+y U dayS.
+
+claimer.
+
+... 180/227
+
+2/2003 Lam ........................... 280/284
+
+Primary Examiner Daniel G. DePumpo
+(74) Attorney, Agent, or Firm-Kelly Lowry & Kelly, LLP,
+Aaron T. Borrowman
+
+(65)
+
+Prior Publication Data
+US 2003/0193164 A1 Oct. 16, 2003
+
+Related U.S. Application Data
+(63) Continuation-in-part of application No. 10/050,315, filed on
+
+(57)
+
+ABSTRACT
+
+A rear suspension system for two-wheeled motor vehicles
+
+having a generally triangular configuration includes upper
+and lower pivot arm assemblies pivotally connected to a
+
+Jan. 15, 2002, now abandoned, which is a continuation-in-
+
+frame of the vehicle. A control arm is interconnected
+
+E. Eation No. 09/740,517, filed on Dec. 19, 2000,
+
+between the pivot arm assemblies. A rear wheel Supporting
+
+7
+
+unit, including upper and lower arm assemblies, is connect
+
+(51) Int. Cl.' .................................................. B62K 1100
+
+able to an axle of a rear wheel of the vehicle at a first end
+
+(52)
+-rr. 280/284; 180/227
+(58) Field of Search ................................. 180/219, 227;
+280/284, 285,275
+(56)
+References Cited
+
+thereof. The upper arm assembly of the Supporting unit is
+connected to the upper pivot arm assembly. The lower arm
+assembly of the Supporting unit is connected to the lower
+pivot arm assembly. A compressible Shock unit is provided
+to dampen movement of the System.
+
+U.S. PATENT DOCUMENTS
+
+4.322,088 A * 3/1982 Miyakoshi et al. ......... 280/284
+
+34
+
+15 Claims, 7 Drawing Sheets
+
+
