@@ -1,0 +1,247 @@
+patent: US6036213A
+source: https://patentimages.storage.googleapis.com/0b/62/93/6d724ed12f6c72/US6036213.pdf
+pages: 6
+per-page extracted text length: {1: 3499, 2: 1244, 3: 47, 4: 7204, 5: 7260, 6: 6743}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US006036213A
+
+United States Patent (19)
+
+11 Patent Number:
+
+6,036,213
+
+Busby
+
+(45) Date of Patent:
+
+Mar. 14, 2000
+
+54) BICYCLE WITH SHOCK ABSORBING REAR
+
+428442 12/1947 Italy ....................................... 280/285
+
+ASSEMBLY AND COMMON CHAIN STAY/
+
+540821
+
+SHOCK ABSORBER MOUNTING BRACKET
+
+5105.168 4/1995 Japan.
+
+75
+
+Inventor: James S. Busby, Costa Mesa, Calif.
+
+73
+
+Assignee: GT Bicycles, Inc., Santa Ana, Calif.
+
+434883
+
+3/1956 Italy ....................................... 280/285
+4/1965 Switzerland.
+
+24918 of 0000 United Kingdom ................... 280/284
+
+17336 7/1913 United Kingdom ...
+
+256
+
+3.
+
+A
+
+E. - - - - - - - - - - - - - - - - - - - - - 208/93
+
+21
+
+Appl. No.: 08/982,206
+
+2084456 9/1990 United Kingdom.
+PCT/GB92/
+
+22
+
+Filed:
+
+PCT/US93/
+
+OO39
+
+Dec. 1, 1997
+
+(51) Int. Cl." ..................................................... B62K 25/28
+52)
+
+U.S.
+
+C.
+
+- - -- - -- - -- - - - - - -- - -- --- -- - - - -- - -- --- -- - -- -- - -- --- -- - -- - - - - - ---
+
+58
+
+Field of Search ..................................... 280/275, 283,
+280/284, 285, 286, 288
+
+9/1992 WIPO.
+
+005O2 7/1993 WIPO.
+
+280/284
+
+OTHER
+
+PUBLICATIONS
+
+References Cited
+
+1992 Cannondale Spec-Suspension Mountain Bicycle
+S-Article-10 pp.
+Guide to Suspension & High Performance;(Get With It)
+
+U.S. PATENT DOCUMENTS
+
+“Suspension”; vol. 3, 1992; pp. 9, 13, 14, 30, 31, 36-45, 47,
+
+56)
+D.372,002
+
+... 208/44
+
+7/1996 Busby et al...
+
+53, 60, 69-, 85, 86, 92, 96, 98, 100, 108-112, 117 & 119.
+ss
+Schiwnn Buell”, Guide To Suspension, vol. 3, 1992, 4
+
+944,795 12/1909 Leet et al. .....
+
+... D12/111
+
+... 280/284
+
+66
+
+1,047,430 12/1912 Michaelson ...
+
+... 280/284
+
+pageS.
+
+3,833,242 9/1974 Thompson, Jr.
+
+... 280/281
+
+Suspension Mania Strikes Cycling-Mountain Bike Action/
+
+3,974,892 8/1976 Bolger ..................................... 1922
+
+4,828,781
+4,850,607
+
+5/1989 Duplessis et al. ...................... 264/250
+7/1989 Trimble .........
+280/281.1
+
+4,889,355 12/1989 Trimble .....
+
+280/281.1
+
+4,902,458
+
+2/1990 Trimble .....
+
+... 264/46.6
+
+4,986,949
+1/1991 Trimble ................................... 264/258
+5,158,733 10/1992 Trimble ................................... 264/258
+
+Feb. 1992, 3 pgs.
+s
+
+Li
+
+d
+
+(List continued on next page.)
+
+Primary Examiner Kevin Hurley
+
+Attorney, Agent, or Firm-Stetina Brunda Garred &
+Brucker
+
+5,215,322 6/1993 Enders ......
+5,269,551 12/1993 Martin et al. .....
+5,273.303 12/1993 Hornzee-Jones ..
+5,306,036 4/1994 Busby ...........
+
+... 280/231
+... 280/231
+280/283.3
+... 280/284
+
+5,354,085 10/1994 Gally .............
+
+... 280/285
+
+A bicycle comprising a main frame having a shock absorb
+
+"...,
+----
+
+ing
+rear assembly pivotally connected thereto. The rear
+assembly comprises a pair of chain stays, and a pair of
+
+2 :- /
+
+th
+
+N.
+st al
+sop et al. ...
+
+5,464,248 11/1995 Robinson et al. ................... 280/281.1
+FOREIGN PATENT DOCUMENTS
+
+57
+
+ABSTRACT
+
+155582 3/1954 Australia.
+356881. 10/1905 France.
+
+drop-outs which are attached to respective ones of the chain
+StayS. The rear assembly further comprises a pair of Swin
+garms which are attached to respective ones of the drop
+outs, and a shock mount pivotally connected to and extend
+ing between the Swingarms and the main frame. Pivotally
+
+.
+
+o.
+
+connected to and extending between the shock mount and
+
+3033294
+
+4/1981
+
+an
+GNany - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+421518 of 1947 Italy.
+
+423515 of 1947 Italy.
+
+soss
+
+the main frame is a shock absorber of the rear assembly.
+
+5 Claims, 1 Drawing Sheet
+
+
