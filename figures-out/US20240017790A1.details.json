@@ -1,0 +1,83 @@
+{
+ "number": "US20240017790A1",
+ "title": "Rear suspension for two-wheeled vehicle",
+ "inventors": [
+  "Colin Ryan"
+ ],
+ "assignee_original": [
+  "LTP SPORTS GROUP Inc",
+  "David Earle",
+  "Noel Buckley",
+  "Brian David Berthold",
+  "Specialized Bicycle Components, Inc.",
+  "Noel Buckley",
+  "David Earle",
+  "Brian David Berthold",
+  "Specialized Bicycle Components, Inc."
+ ],
+ "assignee_current": [
+  "LTP SPORTS GROUP Inc"
+ ],
+ "application": "US18/340,237",
+ "priority_date": "2022-07-18",
+ "filing_date": "2023-06-23",
+ "publication_date": "2024-01-18",
+ "grant_date": "",
+ "status": "Pending",
+ "expiry_events": [],
+ "abstract": "A bicycle rear suspension based on a four bar configuration comprises an upper connecting member, a rear axle floating member, a lower connecting member, an upper shock actuation member, a pushrod member, and a damper member. A pivotable coupling couples a first location on the upper shock actuation member to a location on the front triangle, another pivotable coupling couples a second location on the upper shock actuation member to a first location on the pushrod member, and another pivotable coupling couples a second location on the pushrod member to a location on the lower connecting link member. The upper shock actuation member is pivotably coupled to the damper member. The upper shock actuation member and the pushrod member and the geometries of their respective pivotable couplings allow the leverage curve for the suspension to be defined independently of their kinematic traits, thereby providing improved rider feel and/or performance.",
+ "family": [
+  "US20240017790A1"
+ ],
+ "cites": [
+  {
+   "pn": "US20100059965A1",
+   "title": "Bicycle suspension system employing highly predictable pedalling characteristics"
+  },
+  {
+   "pn": "US20140217697A1",
+   "title": "Rear suspension system for bicycles"
+  },
+  {
+   "pn": "US20150001829A1",
+   "title": "Suspension for Mountain Bicycles"
+  },
+  {
+   "pn": "US20190300096A1",
+   "title": "Bicycle rear suspension"
+  }
+ ],
+ "cited_by": [],
+ "events": [
+  {
+   "date": "2023-06-23",
+   "type": "filed",
+   "title": "Application filed by LTP SPORTS GROUP Inc"
+  },
+  {
+   "date": "2023-06-23",
+   "type": "priority",
+   "title": "Priority to US18/340,237"
+  },
+  {
+   "date": "2023-06-23",
+   "type": "reassignment",
+   "title": "Assigned to LTP SPORTS GROUP INC."
+  },
+  {
+   "date": "2024-01-18",
+   "type": "publication",
+   "title": "Publication of US20240017790A1"
+  },
+  {
+   "date": "2025-12-19",
+   "type": "reassignment",
+   "title": "Assigned to FGI WORLDWIDE LLC AS AGENT"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Pending"
+  }
+ ]
+}

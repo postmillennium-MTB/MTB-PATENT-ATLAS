@@ -1,0 +1,121 @@
+{
+ "number": "US20240059369A1",
+ "title": "Two-wheeled vehicle having rear suspension with adjustable leverage curve progression",
+ "inventors": [
+  "Colin Ryan"
+ ],
+ "assignee_original": [
+  "LTP SPORTS GROUP Inc",
+  "Pole Bicycle Company Oy",
+  "Orbea, S.Coop.",
+  "Yung-Feng Hso",
+  "Dagg",
+  "Specialized Bicycle Components, Inc.",
+  "Trek Bicycle Corporation",
+  "Industries Rad Inc.",
+  "668598 B.C. Ltd.",
+  "Grammer Ag",
+  "Specialized Bicycle Components, Inc.",
+  "Yung-Feng Hso",
+  "668598 B.C. Ltd.",
+  "Dagg",
+  "Specialized Bicycle Components, Inc.",
+  "Trek Bicycle Corporation",
+  "Industries Rad Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Grammer Ag",
+  "Pole Bicycle Company Oy",
+  "Orbea, S.Coop."
+ ],
+ "assignee_current": [
+  "LTP SPORTS GROUP Inc"
+ ],
+ "application": "US18/340,251",
+ "priority_date": "2022-08-19",
+ "filing_date": "2023-06-23",
+ "publication_date": "2024-02-22",
+ "grant_date": "",
+ "status": "Pending",
+ "expiry_events": [],
+ "abstract": "A leverage curve progression adjustment assembly for a rear suspension of a two wheeled vehicle, such as a mountain bicycle, adjusts the rate of change (slope/progression) of the leverage curve for the vehicle's suspension linkage while maintaining the same leverage ratio at the suspension's fully extended position. The leverage curve progression is adjusted by translating the first and second mounting locations of a spring/damper member along an axis of the spring/damper member using mounting hardware segments with spring/damper mounting holes positionable at multiple locations, such as flip chips with offset mounting holes, and/or mounting plates with mounting holes located at different locations.",
+ "family": [
+  "US20240059369A1"
+ ],
+ "cites": [
+  {
+   "pn": "US6877591B1",
+   "title": "Crank of a shock absorber for a bicycle"
+  },
+  {
+   "pn": "US7854440B2",
+   "title": "Bicycle adapted to different forms of cycling"
+  },
+  {
+   "pn": "US8439383B2",
+   "title": "Bicycle shock with extension arms"
+  },
+  {
+   "pn": "US8851498B2",
+   "title": "Adjustable geometry bicycle rear wheel suspension system"
+  },
+  {
+   "pn": "US8931794B2",
+   "title": "Bicycle frame with adjustable geometry"
+  },
+  {
+   "pn": "US10363988B2",
+   "title": "Rear suspension system for bicycles"
+  },
+  {
+   "pn": "US20200124131A1",
+   "title": "Vehicle seat element for a vehicle seat with a residual spring travel adjustment device"
+  },
+  {
+   "pn": "US10850799B2",
+   "title": "Adjustable bicycle suspension"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US20240308620A1",
+   "title": "Bicycle suspension arrangement"
+  },
+  {
+   "pn": "US20240326950A1",
+   "title": "System and method for modifying the geometry of a bicycle"
+  }
+ ],
+ "events": [
+  {
+   "date": "2023-06-23",
+   "type": "filed",
+   "title": "Application filed by LTP SPORTS GROUP Inc"
+  },
+  {
+   "date": "2023-06-23",
+   "type": "priority",
+   "title": "Priority to US18/340,251"
+  },
+  {
+   "date": "2023-06-23",
+   "type": "reassignment",
+   "title": "Assigned to LTP SPORTS GROUP INC."
+  },
+  {
+   "date": "2024-02-22",
+   "type": "publication",
+   "title": "Publication of US20240059369A1"
+  },
+  {
+   "date": "2025-12-19",
+   "type": "reassignment",
+   "title": "Assigned to FGI WORLDWIDE LLC AS AGENT"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Pending"
+  }
+ ]
+}
