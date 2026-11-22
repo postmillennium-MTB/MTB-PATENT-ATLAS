@@ -556,6 +556,12 @@ const MIN_EXPECTED_CARDS = 1; // any of these terms returning 0 is itself suspic
     });
     await tp('touchStart', [[t2.x, t2.y]]); await p.waitForTimeout(50); await tp('touchEnd', []); await p.waitForTimeout(200);
     const tapSel = await p.evaluate(() => !!CITE.sel);
+    /* A ghost finger (a pointerup that never arrived after a pinch) must not block the next tap. */
+    await p.evaluate(() => { CITE.sel = null; CITE.pts.set(999, [10, 10]); CITE.pinch = 40; citeSelect(null); });
+    await tp('touchStart', [[t2.x, t2.y]]); await p.waitForTimeout(50); await tp('touchEnd', []); await p.waitForTimeout(200);
+    const ghostSel = await p.evaluate(() => !!CITE.sel);
+    console.log(`constellation tap with a ghost finger selects a dot: ${ghostSel}`);
+    if (!ghostSel) { console.error('::error::A lost pointerup left the constellation ignoring taps.'); process.exitCode = 1; }
     console.log(`constellation tap after a drag selects a dot: ${tapSel}`);
     if (!tapSel) { console.error('::error::A tap on a constellation dot after a drag did not select it.'); process.exitCode = 1; }
     console.log(`constellation touch: finger 15px off a dot pulls=${got.pull}, errors: ${JSON.stringify(errs)}`);

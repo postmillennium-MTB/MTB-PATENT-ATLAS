@@ -5655,6 +5655,8 @@ function renderCite(){
   cv.tabIndex=0;
   cv.onpointerdown=e=>{
     try{ cv.setPointerCapture(e.pointerId); }catch(_){}
+    /* The first finger down means no other finger is down. A pointerup that never arrived (a pinch on a phone can lose one) would leave a ghost finger in pts, so every later tap looked like the start of a pinch and selected nothing until a reload. */
+    if(e.isPrimary){ pts.clear(); CITE.pinch=0; CITE.pmx=null; }
     const [x,y]=pos(e); pts.set(e.pointerId,[x,y]); citeStopSpin(); drag.down=true;
     if(pts.size===2){ const [a,b]=[...pts.values()]; CITE.pinch=Math.hypot(a[0]-b[0],a[1]-b[1]); CITE.pmx=(a[0]+b[0])/2; CITE.pmy=(a[1]+b[1])/2; if(drag.node) drag.node.held=false; drag.node=null; drag.pan=false; drag.pull=false; drag.moved=true; return; }   // a second finger: let go of a dot being pulled
     drag.node=hit(x,y,e.pointerType==="touch"?CITE_TOUCH_HALO:10);
@@ -5690,6 +5692,8 @@ function renderCite(){
     else if(had===2){ const r=[...pts.values()][0]; if(r){ drag.px=r[0]; drag.py=r[1]; } }          // the finger left behind carries on turning from where it is
     if(!pts.size) drag.down=false; };
   cv.onpointerup=end; cv.onpointercancel=end;
+  const noTouches=e=>{ if(e.touches&&e.touches.length===0&&pts.size){ pts.clear(); CITE.pinch=0; CITE.pmx=null; drag.down=false; drag.pull=false; if(drag.node) drag.node.held=false; drag.node=null; } };   // every finger is up: forget any finger whose pointerup was lost
+  cv.addEventListener("touchend",noTouches,{passive:true}); cv.addEventListener("touchcancel",noTouches,{passive:true});
   cv.onpointerleave=()=>{ CITE.hover=null; showTip(null); citeDraw(); };
   cv.addEventListener("wheel",e=>{ e.preventDefault(); const [x,y]=pos(e); citeZoomAt(x,y,Math.exp(-e.deltaY*0.0015)); },{passive:false});
   cv.onkeydown=e=>{                                       // keyboard: arrows turn, + and - zoom
