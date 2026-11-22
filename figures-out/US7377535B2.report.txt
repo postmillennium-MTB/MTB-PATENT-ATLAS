@@ -1,0 +1,154 @@
+patent: US7377535B2
+source: https://patentimages.storage.googleapis.com/64/07/11/ea2aaf5570898e/US7377535.pdf
+pages: 28
+per-page extracted text length: {1: 3047, 2: 57, 3: 57, 4: 57, 5: 57, 6: 60, 7: 60, 8: 66, 9: 63, 10: 57, 11: 61, 12: 119, 13: 106, 14: 75, 15: 58, 16: 61, 17: 64, 18: 6888, 19: 6864, 20: 7730, 21: 7575, 22: 7585, 23: 7722, 24: 7633, 25: 7608, 26: 6753, 27: 6396, 28: 1678}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO7377535B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Chamberlain
+(54) BICYCLE FRAME
+
+May 27, 2008
+
+6,854,753 B2 * 2/2005 Turner ........................ 280/284
+6,880,847 B2 * 4/2005 Chamberlain et al. ...... 280/284
+
+(75) Inventor: Jason L. Chamberlain, Morgan Hill,
+CA (US)
+(73) Assignee: Specialized Bicycle Components, Inc.,
+Morgan Hill, CA (US)
+
+(*) Notice:
+
+US 7,377,535 B2
+
+(45) Date of Patent:
+
+Subject to any disclaimer, the term of this
+
+FOREIGN PATENT DOCUMENTS
+
+FR
+
+245O145 A
+
+GB
+
+500909. A
+
+3, 1979
+1, 1938
+
+GB
+
+513749 A
+
+4, 1938
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 137 days.
+OTHER PUBLICATIONS
+
+(21) Appl. No.: 10/983,421
+
+(22) Filed:
+
+M
+
+Nov. 8, 2004
+
+(65)
+
+Prior Publication Data
+
+US 2005/OO46142 A1
+
+Mar. 3, 2005
+
+Pending U.S. Patent Application Specification in 21 pages, Inven
+tors Jason L. Chamberlain and Brandon Dale Sloan, U.S. Appl. No.
+10/656,922, filed Sep. 4, 2003.
+Ellsworth Internet Materials, http://www.ellsworthbikes.com/bikes/
+id/index.cfm dated Nov. 3, 2004 in 4 pages.
+Patrick Brady, Asphalt Magazine, vol. One, No. 4: 78-81, “Torch
+bearers: Kirk Frameworks.’
+
+Related U.S. Application Data
+
+(60) Provisional application No. 60/623,615, filed on Oct.
+29, 2004.
+(51) Int. Cl.
+
+English translation of Patent No. FR2450145A document.
+
+* cited by examiner
+Primary Examiner Lesley D. Morris
+Assistant Examiner Marlon Arce-Diaz
+
+B62K 19/02
+
+(2006.01)
+
+(74) Attorney, Agent, or Firm Knobbe, Martens, Olson &
+
+B62K 9/30
+
+(2006.01)
+
+Bear, LLP
+
+(52) U.S. Cl. ................... 280/284; 280/259; 280/281.1;
+
+280/283; 280/249; 280/274; 280/275
+
+(57)
+
+ABSTRACT
+
+(58) Field of Classification Search ................ 280/249,
+
+See appl1cauon
+licati inIlle Ior
+E.
+E. E. 275
+complete searcn n1story.
+(56)
+
+References Cited
+U.S. PATENT DOCUMENTS
+
+3,889,975 A * 6/1975 Falconi.................... 280/281.1
+4,437,679 A * 3/1984 Campagnolo ...
+... 280/281.1
+5,435,584. A * 7/1995 Buell ......................... 280/284
+5,628,524. A * 5/1997 Klassen et al. ............. 280/284
+5,725.227 A * 3/1998 Mayer ........................ 280/284
+5,842,711 A * 12/1998 Legerot ..........
+... 280/281.1
+5,979,924 A * 11/1999 D’Aluisio et al. .......... 280/261
+6,099,010 A * 8/2000 Busby ........................ 280/284
+6,742,796 B2 * 6/2004 Ho et al. ................. 280/281.1
+
+A bicycle frame assembly including a down tube and a
+
+monolithic down tube support. The down tube support
+
+preferably defines a pocket configured to receive an end
+portion of the down tube such that the tube support overlaps
+at least a portion of a side surface of the end portion of the
+down tube. In one embodiment, a weld beadjoins both of the
+tube support and the down tube. Preferably, the down tube
+Support also defines an opening configured to receive and
+Support a pedal crank assembly relative to the bicycle frame.
+Furthermore, preferably the down tube support also includes
+a pivot mount portion configured to rotatably Support a
+sub-frame of the frame assembly or a rear shock absorber.
+
+43 Claims, 16 Drawing Sheets
+
+

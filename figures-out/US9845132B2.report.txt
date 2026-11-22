@@ -1,0 +1,224 @@
+patent: US9845132B2
+source: https://patentimages.storage.googleapis.com/96/21/21/d1465b7e167a3a/US9845132.pdf
+pages: 19
+per-page extracted text length: {1: 2990, 2: 163, 3: 104, 4: 162, 5: 282, 6: 942, 7: 847, 8: 640, 9: 211, 10: 110, 11: 399, 12: 357, 13: 6998, 14: 7213, 15: 7944, 16: 7609, 17: 7599, 18: 7195, 19: 5910}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+COMMUNICATION DEMA MA MAHT TO T HE
+US009845132B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+O 'Connor
+
+US 9 ,845 , 132 B2
+
+(45 ) Date of Patent:
+References Cited
+
+(56 )
+
+( 54 ) MOUNTAIN BICYCLE WITH REAR
+SUSPENSION HAVING NEUTRAL BRAKING
+
+Dec . 19 , 2017
+
+U . S . PATENT DOCUMENTS
+
+TRAJECTORY
+
+5 ,462 , 302 A
+5 , 474 ,318 A
+
+(71) Applicant: INDUSTRIES RAD INC . (05011510 ) ,
+Saint-Georges -de -Beauce (CA )
+(72) Inventor : D 'Arcy O 'Connor , Burnaby (CA )
+
+10 / 1995 Leitner
+12 / 1995 Castellano
+
+5 ,509 ,679 A
+
+4 / 1996 Leitner
+
+5 ,678, 837 A
+10 / 1997 Leitner
+5 ,899 ,480 A
+5 / 1999 Leitner
+5 ,957, 473 A
+9 / 1999 Lawwill
+6 ,843 ,494 B2 * 1/ 2005 Lam .... ............ B62K 25 /286
+
+(73 ) Assignee : INDUSTRIES RAD INC .,
+
+Saint-Georges-de -Beauce (CA )
+( * ) Notice: Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U . S .C . 154 (b ) by 70 days.
+(21) Appl. No.: 14 /736 , 962
+( 22 ) Filed : Jun . 11, 2015
+Prior Publication Data
+(65 )
+
+280 /284
+
+7 ,828 ,314 B2 * 11/2010 Weagle
+
+B60G 5 /00
+
+280 /284
+9 /201
+2015) Claro
+Claro . . . . . . . . . . . . . . . . . . . B62K 25 /286
+B62K 25 / 30
+9 /2006 O ' Connor . . . . . .
+280 / 284
+
+8 ,366 , 131 B2
+
+2/ 2013 O 'Connor
+
+9 , 145, 185 B11 *
+
+2006 /0197306 A1 *
+
+2008/ 0067772 A1* 3/2008 Weagle ............... B62K 25 / 286
+
+280 / 124 . 134
+
+(Continued )
+Primary Examiner — Jacob Knutson
+(74) Attorney, Agent, or Firm — Norton Rose Fulbright
+Canada LLP
+
+US 2015/0360743 A1 Dec. 17, 2015
+
+(57)
+
+ABSTRACT
+
+A rear wheel suspension system pivotably attached to a
+
+Related U .S . Application Data
+
+bicycle . The suspension system has an upper link attached to
+
+(60 ) Provisional application No. 62/ 010 ,527, filed on Jun .
+
+attached to the upper link at a second pivot point. A lower
+
+a main frame at a first pivot point, and a rear stay member
+
+link is attached to the main frame at a third pivot point, and
+
+11 , 2014 .
+
+is pivotably attached to the rear stay member at a fourth
+
+(51 ) Int . Ci.
+B62K 25 /26
+
+pivot point. A shock absorber is pivotably connected to the
+
+(2006 .01)
+( 2006 .01)
+
+upper link and to the main frame. An instantaneous center of
+
+CPC ....... B62K 25/286 (2013.01); Y1OT 29/49623
+
+displaces along a trajectory from behind the bottom bracket,
+
+B62K 25 / 28
+
+rotation (ICR ) is defined where an upper axis extending
+through the first and second pivots intersects a lower axis
+
+(52 ) U .S . CI.
+
+extending through the third and fourth pivots . The ICR
+
+(2015 .01 )
+
+through an inflection point at which the upper axis and the
+lower axis are parallel, to in front of the bottom bracket, as
+
+( 58 ) Field of Classification Search
+???
+..... B62K 25 /286
+USPC ................. ................ 280 /281. 1, 283 , 284
+See application file for complete search history .
+
+the shock absorber compresses .
+
+17 Claims, 10 Drawing Sheets
+
+et
+.
+
+..
+
+AV
+put
+e
+
+46
+
+*
+
+A
+
+**
+*
+
+IKEA
+W
+
+-
+
+hew
+--- --50
+
+35
+
+***
+
+W
+.
+
+dit
+
+---
+
+WH
+
+shndweit
+44
+
+in
+
+de
+
+.
+
+Ayyy
+.
+
+*
+
+.
+
+dur
+
+Luty
+-
+
+w
+
+the
+
+are
+
+

@@ -1,0 +1,206 @@
+{
+ "number": "US8075009B2",
+ "title": "Suspension bicycle derailleur link",
+ "inventors": [
+  "Chris Cocalis",
+  "Kevin Tisue"
+ ],
+ "assignee_original": [
+  "Individual",
+  "Mark Antony Higgon",
+  "Specialized Bicycle Components, Inc.",
+  "株式会社岛野",
+  "A-Pro Tech Co., Ltd.",
+  "Shimano Inc.",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Brent Neilson",
+  "Yeti Cycling, Llc",
+  "Yeti Cyclying, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Christopher Hudec",
+  "Christopher Hudec",
+  "Canyon Bicycles Gmbh",
+  "Rocky Mountain Bicycles",
+  "Specialized Bicycle Components, Inc.",
+  "Atb Sales Limited",
+  "Rocky Mountain Bicycles",
+  "Atb Sales Limited",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Yeti Cycling, Llc",
+  "Mark Antony Higgon",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cyclying, Llc",
+  "Specialized Bicycle Components, Inc.",
+  "株式会社岛野",
+  "株式会社岛野",
+  "Shimano Inc.",
+  "島野股份有限公司",
+  "Shimano Inc.",
+  "Brent Neilson",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "A-Pro Tech Co., Ltd.",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc"
+ ],
+ "assignee_current": [
+  "Individual"
+ ],
+ "application": "US12/561,214",
+ "priority_date": "2008-09-17",
+ "filing_date": "2009-09-16",
+ "publication_date": "2011-12-13",
+ "grant_date": "2011-12-13",
+ "status": "Expired - Fee Related",
+ "expiry_events": [
+  {
+   "date": "2030-01-22",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "Bicycle derailleur mounting apparatus for use with a suspension bicycle including a front triangle and a rear triangle coupled to allow limited relative pivotal movement or travel therebetween during operation. The apparatus includes a derailleur link having a derailleur mounted thereon. Mounting structure mounts the derailleur link relative to one of the front triangle and the rear triangle to move independently of the front triangle and the rear triangle during travel. The independent movement is driven as a function of travel position of the front triangle and the rear triangle. The mounting structure is designed to position the derailleur to maintain shifting performance, to maintain chain retention, and to maintain good front derailleur to chainstay clearance, at desired points along the travel.",
+ "family": [
+  "US20100127473A1",
+  "US8075009B2"
+ ],
+ "cites": [
+  {
+   "pn": "US6843494B2",
+   "title": "Rear suspension system for two-wheeled vehicles, particularly bicycles"
+  },
+  {
+   "pn": "US6880847B2",
+   "title": "Bicycle rear suspension"
+  },
+  {
+   "pn": "US6969081B2",
+   "title": "Bicycle rear suspension"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US20110187078A1",
+   "title": "Rear suspension unit for after market use in folding bikes"
+  },
+  {
+   "pn": "US8770608B1",
+   "title": "Bicycle front derailleur mount"
+  },
+  {
+   "pn": "CN105691545A",
+   "title": "Bicycle Front Derailleur with Mounting Structure and Bicycle Frame with Front Derailleur Mounting Structure"
+  },
+  {
+   "pn": "US20180265164A1",
+   "title": "Bottom bracket device and a bicycle frame with the same"
+  },
+  {
+   "pn": "US10086905B2",
+   "title": "Bicycle front derailleur with mounting bracket"
+  },
+  {
+   "pn": "US10293881B2",
+   "title": "Rear suspension system for a bicycle"
+  },
+  {
+   "pn": "US10343742B2",
+   "title": "Link suspension system"
+  },
+  {
+   "pn": "US10377442B2",
+   "title": "Suspension for a bicycle"
+  },
+  {
+   "pn": "US20200247500A1",
+   "title": "Multi-body vehicle suspension linkage"
+  },
+  {
+   "pn": "US10766563B2",
+   "title": "Rail suspension with integral shock and dampening mechanism"
+  },
+  {
+   "pn": "US10822048B2",
+   "title": "Reciprocating rail movement suspension system"
+  },
+  {
+   "pn": "US10926830B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US11173983B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US12145684B2",
+   "title": "Constrained multiple instantaneous velocity center linkage assembly for vehicle suspension"
+  },
+  {
+   "pn": "US12384484B2",
+   "title": "Integrated motor mount and suspension pivot"
+  },
+  {
+   "pn": "US12522316B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US12617488B2",
+   "title": "Two-wheeled vehicle with configurable idler"
+  }
+ ],
+ "events": [
+  {
+   "date": "2009-09-16",
+   "type": "filed",
+   "title": "Application filed by Individual"
+  },
+  {
+   "date": "2009-09-16",
+   "type": "priority",
+   "title": "Priority to US12/561,214"
+  },
+  {
+   "date": "2010-05-27",
+   "type": "publication",
+   "title": "Publication of US20100127473A1"
+  },
+  {
+   "date": "2011-12-13",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2011-12-13",
+   "type": "publication",
+   "title": "Publication of US8075009B2"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Expired - Fee Related"
+  },
+  {
+   "date": "2030-01-22",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ]
+}

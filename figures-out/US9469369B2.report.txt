@@ -1,0 +1,159 @@
+patent: US9469369B2
+source: https://patentimages.storage.googleapis.com/fb/e8/46/26e93a54e29df5/US9469369.pdf
+pages: 17
+per-page extracted text length: {1: 2350, 2: 3147, 3: 57, 4: 68, 5: 57, 6: 57, 7: 66, 8: 57, 9: 57, 10: 57, 11: 57, 12: 7196, 13: 7641, 14: 7672, 15: 6992, 16: 7709, 17: 3426}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USOO946.9369B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Thoma
+(54) VEHICLE FRAME
+
+See application file for complete search history.
+
+(56)
+
+References Cited
+
+(73) Assignee: CANYON BICYCLES GMBH,
+Koblenz (DE)
+
+(*) Notice:
+
+U.S. PATENT DOCUMENTS
+2,283,671 A *
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 34 days.
+
+(21) Appl. No.:
+
+14/234,859
+
+(22) PCT Filed:
+
+Aug. 6, 2012
+
+(86). PCT No.:
+
+PCT/EP2012/065.353
+
+4,046,396 A
+
+DE
+
+DE
+
+tal. ................. 280/284
+
+3O33294 A1
+
+9116838 U1
+
+4f1981
+
+3/1994
+
+(Continued)
+
+S 371 (c)(1),
+
+OTHER PUBLICATIONS
+International Search Report dated Sep. 14, 2012 for PCT/EP2012/
+
+(87) PCT Pub. No.: WO2013/029928
+PCT Pub. Date: Mar. 7, 2013
+
+O65353.
+
+(Continued)
+
+Prior Publication Data
+
+US 2014/0159338 A1
+
+5/1942 Finl
+
+9, 1977 E. A.
+(Continued)
+
+FOREIGN PATENT DOCUMENTS
+
+(2), (4) Date: Jan. 24, 2014
+
+(65)
+
+Oct. 18, 2016
+
+USPC ......................................... 280/283, 284, 285
+
+(75) Inventor: Vincenz Thoma, Koblenz (DE)
+
+(30)
+
+US 9,469,369 B2
+
+(45) Date of Patent:
+
+Jun. 12, 2014
+
+Foreign Application Priority Data
+
+Primary Examiner — Joseph Rocca
+
+Assistant
+Examiner
+Conan
+(74) Attorney,
+Agent,- or
+FirmDuda
+— Ohlandt, Greeley,
+Ruggiero & Perle, LLP
+
+Aug. 30, 2011 (DE) .................... 20 2011 104974 U
+
+(57)
+
+(51) Int. Cl.
+B62K L/00
+B62K 25/2
+
+A vehicle frame, in particular a mountain bike frame or a
+trekking bicycle frame, comprises main frame element. A
+rear frame is pivotably connected with the main frame
+element. A damping element is provided between the rear
+
+(2006.01)
+(2006.01)
+(Continued)
+
+ABSTRACT
+
+frame and the main frame element. A first connection point
+
+(52) U.S. Cl.
+CPC ............... B62K 25/12 (2013.01); B62K 25/28
+(2013.01); B62K 25/286 (2013.01); B62K
+2025/048 (2013.01)
+(58) Field of Classification Search
+CPC ...... B62K 19/18: B62K 19/30, B62K 19/34:
+
+of the damper element is connected with the rear frame and
+a second connection point of the damping element is con
+nected with the main frame element. For the purpose of
+changing the frame characteristics, a displacing element is
+provided for the displacement of the first connection point.
+The locking of the displacing element is done with the help
+of an actuator element.
+
+B62K 19/36; B62K 25/02: B62K 25/04;
+B62K 2201/02
+
+18 Claims, 9 Drawing Sheets
+
+

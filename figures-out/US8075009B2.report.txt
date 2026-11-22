@@ -1,0 +1,103 @@
+patent: US8075009B2
+source: https://patentimages.storage.googleapis.com/e3/b3/49/831fdfd3e632b0/US8075009.pdf
+pages: 17
+per-page extracted text length: {1: 2149, 2: 58, 3: 58, 4: 65, 5: 58, 6: 58, 7: 58, 8: 137, 9: 74, 10: 58, 11: 59, 12: 59, 13: 59, 14: 6700, 15: 7881, 16: 7709, 17: 1339}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+USO08075009B2
+
+(12) United States Patent
+Cocalis et al.
+(54)
+
+SUSPENSION BICYCLE DERALLEUR LINK
+
+(10) Patent No.:
+(45) Date of Patent:
+(56)
+
+Subject to any disclaimer, the term of this
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 128 days.
+
+(21) Appl. No.: 12/561,214
+(22) Filed:
+
+Sep. 16, 2009
+
+(65)
+
+May 27, 2010
+
+Related U.S. Application Data
+(60) Provisional application No. 61/097.623, filed on Sep.
+17, 2008.
+
+(51)
+
+Int. C.
+
+(52)
+(58)
+
+U.S. Cl. ....................................................... 280/284
+Field of Classification Search .................. 280/257,
+
+B62K 25/28
+
+(2006.01)
+
+280/260,277,284, 285, 286, 283
+
+See application file for complete search history.
+
+References Cited
+6,843,494 B2
+1/2005 Lam .............................. 280/284
+6,880,847 B2 * 4/2005 Chamberlain et al. ........ 280/284
+
+6,969,081 B2 * 1 1/2005 Whyte .......................... 280/284
+
+7,059,620 B2 *
+
+6/2006 Chamberlain et al. ........ 280/284
+
+* cited by examiner
+Primary Examiner — Tony H. Winner
+(74) Attorney, Agent, or Firm — Parsons & Goltry; Robert
+A. Parsons: Michael W. Goltry
+(57)
+
+Prior Publication Data
+
+US 2010/O127473 A1
+
+Dec. 13, 2011
+
+U.S. PATENT DOCUMENTS
+
+(76) Inventors: Chris Cocalis, Phoenix, AZ (US); Kevin
+Tisue, Phoenix, AZ (US)
+(*) Notice:
+
+US 8,075,009 B2
+
+ABSTRACT
+
+Bicycle derailleur mounting apparatus for use with a Suspen
+sion bicycle including a front triangle and a rear triangle
+coupled to allow limited relative pivotal movement or travel
+therebetween during operation. The apparatus includes a
+derailleur link having a derailleur mounted thereon. Mount
+ing structure mounts the derailleur link relative to one of the
+front triangle and the rear triangle to move independently of
+the front triangle and the rear triangle during travel. The
+independent movement is driven as a function of travel posi
+tion of the front triangle and the rear triangle. The mounting
+structure is designed to position the derailleur to maintain
+shifting performance, to maintain chain retention, and to
+maintain good front derailleur to chainstay clearance, at
+desired points along the travel.
+10 Claims, 12 Drawing Sheets
+
+

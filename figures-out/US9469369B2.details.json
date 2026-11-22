@@ -1,0 +1,566 @@
+{
+ "number": "US9469369B2",
+ "title": "Vehicle frame",
+ "inventors": [
+  "Vincenz Thoma"
+ ],
+ "assignee_original": [
+  "Canyon Bicycles GmbH",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cyclying, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Trek Bicycle Corporation",
+  "Upturn Studio Spølka Z Organiczona Odpowiedzialnoscia",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Christopher Hudec",
+  "Litecycle, Inc.",
+  "Amaranti, Llc",
+  "Andrea Pedretti",
+  "Andrea Pedretti",
+  "Litecycle, Inc.",
+  "Finlay Albert Daley",
+  "James Michael Morrison Taylor",
+  "Alberto Martorellas Barcelona Pous Quilez",
+  "Bridgestone Cycle Co., Ltd.",
+  "Schwinn Bicycle Company",
+  "Schwinn Bicycle Company",
+  "Gally, Otto, 82490 Farchant",
+  "Miyata Industry Co., Ltd.",
+  "Batavus B.V.",
+  "Rockshox, Inc.",
+  "Outland Design Technologies, Inc.",
+  "Zedler, Dirk, Dipl.-Ing., 71634 Ludwigsburg",
+  "Outland Design Techologies, Inc.",
+  "Gt Bicycles, Inc.",
+  "Philippe Michel",
+  "Kettler Heinz Gmbh",
+  "Dr. Ing. H.C.F. Porsche Ag",
+  "Sinclair; Christopher Jeffery",
+  "Merida Industry Co., Ltd.",
+  "Andreas Horeld",
+  "Atb Sales Ltd",
+  "Holt Laurence James",
+  "Duhane Lam",
+  "Fusion Bikes GmbH, 63110 Rodgau",
+  "Denis Assier",
+  "William A. Gentile",
+  "Derby Cycle Werke Gmbh",
+  "Yung-Feng Hso",
+  "Stephan Albrecht",
+  "Cycles Lapierre",
+  "Santa Cruz Bicycles, Inc.",
+  "Cannondale Corporation",
+  "Mcandrews Mike",
+  "Santa Cruz Bicycles, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Orbea, S. Coop. Ltda., Mallabia",
+  "Shimano Inc",
+  "Merida Industry Co., Ltd.",
+  "James Colegrove",
+  "Simon I",
+  "O'connor D Arcy",
+  "Currie Christopher S",
+  "David Earle",
+  "Jose Gonzalez",
+  "Giant Manufacturing Co., Ltd.",
+  "Kona Usa, Inc.",
+  "Split Pivot, Inc.",
+  "Chris Cocalis",
+  "O'connor D Arcy",
+  "Kris Devin Peterson",
+  "Specialized Bicycle Components, Inc., Morgan Hill",
+  "Mario Galasso",
+  "Mario Galasso",
+  "David Earle",
+  "Specialized Bicycle Components, Inc.",
+  "Kinesis Industry Co., Ltd.",
+  "Edward Alsop",
+  "Shimano Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "A-Pro Tech Co., Ltd.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Brian David Berthold",
+  "Yeti Cycling, Llc",
+  "Sram, Llc",
+  "Renault Sport Technologie Soc",
+  "David Weagle",
+  "Finlay Albert Daley",
+  "James Michael Morrison Taylor",
+  "Alberto Martorellas Barcelona Pous Quilez",
+  "Gally, Otto, 82490 Farchant",
+  "Schwinn Bicycle Company",
+  "Schwinn Bicycle Company",
+  "Bridgestone Cycle Co., Ltd.",
+  "Miyata Industry Co., Ltd.",
+  "Batavus B.V.",
+  "Rockshox, Inc.",
+  "Outland Design Techologies, Inc.",
+  "Outland Design Technologies, Inc.",
+  "Santa Cruz Bicycles, Inc.",
+  "Gt Bicycles, Inc.",
+  "Philippe Michel",
+  "Zedler, Dirk, Dipl.-Ing., 71634 Ludwigsburg",
+  "Dr. Ing. H.C.F. Porsche Ag",
+  "Kettler Heinz Gmbh",
+  "Sinclair; Christopher Jeffery",
+  "Specialized Bicycle Components, Inc.",
+  "Merida Industry Co., Ltd.",
+  "Andreas Horeld",
+  "Stephan Albrecht",
+  "Atb Sales Ltd",
+  "Cannondale Corporation",
+  "Holt Laurence James",
+  "Denis Assier",
+  "Duhane Lam",
+  "Derby Cycle Werke Gmbh",
+  "Fusion Bikes Gmbh",
+  "Fusion Bikes GmbH, 63110 Rodgau",
+  "William A. Gentile",
+  "Orbea, S. Coop. Ltda., Mallabia",
+  "Yung-Feng Hso",
+  "Cycles Lapierre",
+  "Mcandrews Mike",
+  "Santa Cruz Bicycles, Inc.",
+  "Split Pivot, Inc.",
+  "Shimano Inc",
+  "Merida Industry Co., Ltd.",
+  "James Colegrove",
+  "Simon I",
+  "O'connor D Arcy",
+  "Currie Christopher S",
+  "David Earle",
+  "Giant Manufacturing Co., Ltd.",
+  "Jose Gonzalez",
+  "Kona Usa, Inc.",
+  "Kona Usa, Inc.",
+  "Chris Cocalis",
+  "O'connor D Arcy",
+  "Specialized Bicycle Components, Inc., Morgan Hill",
+  "Mario Galasso",
+  "Kris Devin Peterson",
+  "Mario Galasso",
+  "Specialized Bicycle Components, Inc.",
+  "David Earle",
+  "Specialized Bicycle Components, Inc.",
+  "Yeti Cycling, Llc",
+  "Kinesis Industry Co., Ltd.",
+  "Shimano Inc.",
+  "Edward Alsop",
+  "Specialized Bicycle Components, Inc.",
+  "Brian David Berthold",
+  "A-Pro Tech Co., Ltd.",
+  "Specialized Bicycle Components, Inc.",
+  "Sram, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cyclying, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Trek Bicycle Corporation",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Upturn Studio Spølka Z Organiczona Odpowiedzialnoscia",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc"
+ ],
+ "assignee_current": [
+  "Canyon Bicycles GmbH"
+ ],
+ "application": "US14/234,859",
+ "priority_date": "2011-08-30",
+ "filing_date": "2012-08-06",
+ "publication_date": "2016-10-18",
+ "grant_date": "2016-10-18",
+ "status": "Active",
+ "expiry_events": [
+  {
+   "date": "2032-09-09",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "A vehicle frame, in particular a mountain bike frame or a trekking bicycle frame, comprises main frame element. A rear frame is pivotably connected with the main frame element. A damping element is provided between the rear frame and the main frame element. A first connection point of the damper element is connected with the rear frame and a second connection point of the damping element is connected with the main frame element. For the purpose of changing the frame characteristics, a displacing element is provided for the displacement of the first connection point. The locking of the displacing element is done with the help of an actuator element.",
+ "family": [
+  "CN103748002A",
+  "CN103748002B",
+  "DE202011104974U1",
+  "EP2603418A1",
+  "EP2603418B1",
+  "EP2719614A1",
+  "ES2452545T3",
+  "TW201318913A",
+  "TWI542503B",
+  "US20140159338A1",
+  "US9469369B2",
+  "WO2013029928A1"
+ ],
+ "cites": [
+  {
+   "pn": "US2283671A",
+   "title": "Spring suspension device for cycles and motorcycles"
+  },
+  {
+   "pn": "US4046396A",
+   "title": "Heavy duty dirt bicycle and frame therefor"
+  },
+  {
+   "pn": "DE3033294A1",
+   "title": "BICYCLE"
+  },
+  {
+   "pn": "EP0538012A1",
+   "title": "Bicycle frame assembly"
+  },
+  {
+   "pn": "US5205572A",
+   "title": "Cycle rear suspension system"
+  },
+  {
+   "pn": "US5226674A",
+   "title": "Cycle rear suspension system"
+  },
+  {
+   "pn": "DE9116838U1",
+   "title": "Suspension bike"
+  },
+  {
+   "pn": "US5335929A",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "EP0668209A1",
+   "title": "Bicycle frame of adjustable geometry"
+  },
+  {
+   "pn": "US5452910A",
+   "title": "Rear wheel suspension for a bicycle and bicycle equipped therewith"
+  },
+  {
+   "pn": "US5553881A",
+   "title": "Bicycle rear suspension system"
+  },
+  {
+   "pn": "DE29614967U1",
+   "title": "Adjustment device for the suspension adjustment of bicycles"
+  },
+  {
+   "pn": "US5628524A",
+   "title": "Bicycle wheel travel path for selectively applying chainstay lengthening effect and apparatus for providing same"
+  },
+  {
+   "pn": "US5649693A",
+   "title": "Position sensitive friction damper"
+  },
+  {
+   "pn": "WO1997043166A1",
+   "title": "Single-piece bicycle frame with rear suspension and swivel arm"
+  },
+  {
+   "pn": "DE19844430A1",
+   "title": "Bicycle frame has lower connecting point of shock absorber adjustable along rear wheel swinging arm by means of slide block which is in contact with bearing plate"
+  },
+  {
+   "pn": "US6086080A",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US6131934A",
+   "title": "Bicycle rear suspension system"
+  },
+  {
+   "pn": "US6161858A",
+   "title": "Mountain bike frame"
+  },
+  {
+   "pn": "DE19959795A1",
+   "title": "Bicycle frame suspension has spring dampers for the pedal bearing and the rear wheel rocker to give a wide range of adjustments without affecting the pedaling action"
+  },
+  {
+   "pn": "GB2360497A",
+   "title": "Bicycle frame and rear suspension assembly"
+  },
+  {
+   "pn": "US20020117830A1",
+   "title": "Automatic suspension lockout for bicycles"
+  },
+  {
+   "pn": "US20030038450A1",
+   "title": "Rear suspension system for two-wheeled vehicles, particularly bicycles"
+  },
+  {
+   "pn": "DE20217875U1",
+   "title": "bicycle frame"
+  },
+  {
+   "pn": "US20030160421A1",
+   "title": "Two-wheeled vehicle with rear suspension"
+  },
+  {
+   "pn": "US6783142B1",
+   "title": "Momentum imparting bicycle suspension apparatus"
+  },
+  {
+   "pn": "US6840528B2",
+   "title": "Two wheeler frame, in particular a bicycle frame"
+  },
+  {
+   "pn": "US6877591B1",
+   "title": "Crank of a shock absorber for a bicycle"
+  },
+  {
+   "pn": "DE10066061B4",
+   "title": "Bicycle with height adjustment of front and rear wheel suspensions has respective double-acting piston and cylinder units with first and second cylinder chamber interconnected by corresponding pressure medium pipe"
+  },
+  {
+   "pn": "US20060061059A1",
+   "title": "Rear suspension of a two-wheel vehicle or the like"
+  },
+  {
+   "pn": "USRE39159E1",
+   "title": "Bicycle wheel travel path for selectively applying chainstay lengthening effect and apparatus for providing same"
+  },
+  {
+   "pn": "US7140628B2",
+   "title": "Living hinge member and suspension"
+  },
+  {
+   "pn": "US20070096426A1",
+   "title": "Integrated bicycle shifting and suspension system"
+  },
+  {
+   "pn": "US20070108725A1",
+   "title": "Bicycle rear wheel suspension system with controlled variable shock rate"
+  },
+  {
+   "pn": "US20080007027A1",
+   "title": "Bicycle damping enhancement system"
+  },
+  {
+   "pn": "DE60315903T2",
+   "title": "REAR SUSPENSION FOR BICYCLE"
+  },
+  {
+   "pn": "JP2008201364A",
+   "title": "Rear wheel suspension device for bicycle"
+  },
+  {
+   "pn": "EP1975055A1",
+   "title": "Bicycle frame"
+  },
+  {
+   "pn": "US20080252040A1",
+   "title": "Bicycle rear wheel suspension system"
+  },
+  {
+   "pn": "US20080277900A1",
+   "title": "Bicycle with a common pivot shock absorber"
+  },
+  {
+   "pn": "US20080303242A1",
+   "title": "Bicycle rear suspension system"
+  },
+  {
+   "pn": "US20090001686A1",
+   "title": "Rear wheel suspension system for a two-wheeled vehicle"
+  },
+  {
+   "pn": "US20090072512A1",
+   "title": "Bicycle rear suspension system"
+  },
+  {
+   "pn": "US20090267316A1",
+   "title": "Bicycle shock assemblies"
+  },
+  {
+   "pn": "US20090267317A1",
+   "title": "Shock absorbing frame for a bicycle"
+  },
+  {
+   "pn": "US20090315296A1",
+   "title": "Suspension for mountain bicycles"
+  },
+  {
+   "pn": "US7717212B2",
+   "title": "Vehicle suspension systems for seperated acceleration responses"
+  },
+  {
+   "pn": "US20100127473A1",
+   "title": "Suspension bicycle derailleur link"
+  },
+  {
+   "pn": "US20100156066A1",
+   "title": "Mountain bicycle having improved frame geometry"
+  },
+  {
+   "pn": "US20100264623A1",
+   "title": "Dual-lever compression suspension system"
+  },
+  {
+   "pn": "DE102010010317A1",
+   "title": "Bicycle frame with articulated linkage mounting arrangement"
+  },
+  {
+   "pn": "US20100276906A1",
+   "title": "Suspension system for a vehicle"
+  },
+  {
+   "pn": "US20110202236A1",
+   "title": "Methods and apparatus for suspension adjustment"
+  },
+  {
+   "pn": "US20110227312A1",
+   "title": "Bicycle rear suspension system"
+  },
+  {
+   "pn": "US20110278818A1",
+   "title": "Rear axle system for bicycle"
+  },
+  {
+   "pn": "US20120228850A1",
+   "title": "Rear suspension system for bicycles"
+  },
+  {
+   "pn": "US20130093160A1",
+   "title": "Adjustable Geometry Bicycle Rear Wheel Suspension System"
+  },
+  {
+   "pn": "US8458080B2",
+   "title": "Bicycle suspension control apparatus"
+  },
+  {
+   "pn": "US20130147152A1",
+   "title": "Bicycle assembly with bottom bracket shell"
+  },
+  {
+   "pn": "US20130214508A1",
+   "title": "Shock-absorbing bicycle frame having two flexible members"
+  },
+  {
+   "pn": "US20140015220A1",
+   "title": "Bicycle shock with extension arms"
+  },
+  {
+   "pn": "US20140117643A1",
+   "title": "Bicycle frame with integrated tool storage"
+  },
+  {
+   "pn": "US20150001829A1",
+   "title": "Suspension for Mountain Bicycles"
+  },
+  {
+   "pn": "US20150069735A1",
+   "title": "Reciprocating rail movement suspension system"
+  },
+  {
+   "pn": "US8998231B2",
+   "title": "Bicycle suspension system"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US10293881B2",
+   "title": "Rear suspension system for a bicycle"
+  },
+  {
+   "pn": "US10343742B2",
+   "title": "Link suspension system"
+  },
+  {
+   "pn": "US20200247500A1",
+   "title": "Multi-body vehicle suspension linkage"
+  },
+  {
+   "pn": "US10766563B2",
+   "title": "Rail suspension with integral shock and dampening mechanism"
+  },
+  {
+   "pn": "US10822048B2",
+   "title": "Reciprocating rail movement suspension system"
+  },
+  {
+   "pn": "US10926830B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US11173983B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US11242110B2",
+   "title": "Bicycle frame with inline shock assembly"
+  },
+  {
+   "pn": "US20230271665A1",
+   "title": "Variable-geometry bicycle frame and method for dynamic changes to the geometry of a bicycle frame"
+  },
+  {
+   "pn": "US12145684B2",
+   "title": "Constrained multiple instantaneous velocity center linkage assembly for vehicle suspension"
+  },
+  {
+   "pn": "US12384484B2",
+   "title": "Integrated motor mount and suspension pivot"
+  },
+  {
+   "pn": "US12522316B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US12617488B2",
+   "title": "Two-wheeled vehicle with configurable idler"
+  }
+ ],
+ "events": [
+  {
+   "date": "2012-08-06",
+   "type": "filed",
+   "title": "Application filed by Canyon Bicycles GmbH"
+  },
+  {
+   "date": "2014-01-24",
+   "type": "reassignment",
+   "title": "Assigned to CANYON BICYCLES GMBH"
+  },
+  {
+   "date": "2014-06-12",
+   "type": "publication",
+   "title": "Publication of US20140159338A1"
+  },
+  {
+   "date": "2016-10-18",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2016-10-18",
+   "type": "publication",
+   "title": "Publication of US9469369B2"
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2032-09-09",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ]
+}

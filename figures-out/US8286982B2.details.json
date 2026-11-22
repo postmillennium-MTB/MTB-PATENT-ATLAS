@@ -1,0 +1,566 @@
+{
+ "number": "US8286982B2",
+ "title": "Bicycle suspension system",
+ "inventors": [
+  "Pierre-Geoffroy Plantet",
+  "Emmanuel Antonot",
+  "Remy Gribaudo"
+ ],
+ "assignee_original": [
+  "Individual",
+  "Mario Galasso",
+  "Shimano Inc.",
+  "Sram, Llc",
+  "Wayne Lumpkin",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Giant Manufacturing Co. Ltd",
+  "Giant Manufacturing Co. Ltd",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Yeti Cycling, Llc",
+  "Fox Factory, Inc.",
+  "Yeti Cycling, Llc",
+  "Sram, Llc",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Shimano Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Yeti Cyclying, Llc",
+  "Fox Factory, Inc.",
+  "Yeti Cycling, Llc",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Yeti Cycling, Llc",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Yeti Cycling, Llc",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Yeti Cycling, Llc",
+  "Fox Factory, Inc.",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Fox Factory, Inc.",
+  "Yeti Cycling, Llc",
+  "Shimano Inc.",
+  "Yeti Cycling, Llc",
+  "Fox Factory, Inc.",
+  "斯马特脚踏车制造公司",
+  "Sram, Llc",
+  "Amaranti, Llc",
+  "Litecycle, Inc.",
+  "Cycles Lapierre",
+  "本田技研工業株式会社",
+  "Orbea S Coop",
+  "Sram, Llc",
+  "Pole Bicycle Company Oy",
+  "Litecycle, Inc.",
+  "SR SUNTOUR EUROPE GmbH",
+  "Outback Bicycles, Inc.",
+  "Cannondale Corporation",
+  "Bohn; David D.",
+  "Shimano Inc.",
+  "Honda Motor Co., Ltd.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Ellsworth Anthony S",
+  "Shimano Inc., Sakai City",
+  "Kamm, Thomas, Dipl.-Wirtsch.-Ing. (FH)",
+  "Cycles Lapierre Soc Par Action",
+  "Cycling Sports Group, Inc.",
+  "Bohn; David D.",
+  "Cannondale Corporation",
+  "Outback Bicycles, Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Fox Factory, Inc.",
+  "Honda Motor Co., Ltd.",
+  "Yeti Cycling, Llc",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factoory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Mario Galasso",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Yeti Cyclying, Llc",
+  "Sram, Llc",
+  "Giant Manufacturing Co. Ltd",
+  "Shimano Inc.",
+  "Wayne Lumpkin",
+  "Wayne Lumpkin",
+  "Wayne Lumpkin",
+  "Giant Manufacturing Co. Ltd",
+  "Fox Factory, Inc.",
+  "Fox Factory, Inc.",
+  "Sram, Llc",
+  "Sram, Llc",
+  "Sram, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Shimano Inc.",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Specialized Bicycle Components, Inc.",
+  "Yeti Cycling, Llc",
+  "Shimano Inc.",
+  "Yeti Cycling, Llc",
+  "Shimano Inc.",
+  "Shimano Inc.",
+  "Yeti Cycling, Llc",
+  "Yeti Cycling, Llc",
+  "Shimano Inc."
+ ],
+ "assignee_current": [
+  "Accell Suisse AG"
+ ],
+ "application": "US12/936,198",
+ "priority_date": "2008-04-02",
+ "filing_date": "2009-04-02",
+ "publication_date": "2012-10-16",
+ "grant_date": "2012-10-16",
+ "status": "Active",
+ "expiry_events": [
+  {
+   "date": "2029-07-05",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ],
+ "abstract": "The present invention relates to a suspension system for a bicycle of the type that comprises: a frame ( 1 ); a front fork ( 6 ) comprising a front damper ( 8 ); a swing arm ( 16 ) hinged to the frame ( 1 ) and a rear damper ( 25 ); and at least one shock sensor ( 30 ), said sensor ( 30 ) being connected to a monitoring unit ( 28 ) controlling the front damper ( 8 ) and/or rear damper ( 25 ) on the basis of the signal sent by said sensor ( 30 ); said system is noteworthy in that the front damper ( 8 ) and/or rear damper ( 25 ) is a variable-compression damper that has at least three positions, an open position in which compression is greatest, a closed position in which compression is zero, and a so-called medium position; and in that it has, as a minimum, means for detecting pedaling called pedaling sensors ( 29 ) connected to the monitoring unit ( 28 ) which, when pedaling is not detected by the pedaling sensor ( 29 ), sets the damper ( 8, 25 ) compression command to the open position and, when pedaling is detected by the pedaling sensor ( 29 ), sets the damper ( 8, 25 ) compression command to one of its three positions, open, closed or medium, on the basis of the shock detection",
+ "family": [
+  "AU2009232034A1",
+  "AU2009232034B2",
+  "CA2723249A1",
+  "CA2723249C",
+  "EP2271544A1",
+  "EP2271544B1",
+  "ES2388992T3",
+  "FR2929588A1",
+  "FR2929588B1",
+  "US20110095507A1",
+  "US8286982B2",
+  "WO2009121936A1"
+ ],
+ "cites": [
+  {
+   "pn": "US5921572A",
+   "title": "Continuously compensating bicycle suspension system"
+  },
+  {
+   "pn": "US5971116A",
+   "title": "Electronic suspension system for a wheeled vehicle"
+  },
+  {
+   "pn": "US6050583A",
+   "title": "Electronically controlled bicycle suspension apparatus"
+  },
+  {
+   "pn": "US20030132601A1",
+   "title": "Bicycle suspension"
+  },
+  {
+   "pn": "US20070051551A1",
+   "title": "Impact detection sensor attachment structure for motorcycle"
+  },
+  {
+   "pn": "US7484603B2",
+   "title": "Shock absorber with electronic control"
+  }
+ ],
+ "cited_by": [
+  {
+   "pn": "US20110202236A1",
+   "title": "Methods and apparatus for suspension adjustment"
+  },
+  {
+   "pn": "DE202014009400U1",
+   "title": "Bicycle suspension control device"
+  },
+  {
+   "pn": "US8998231B2",
+   "title": "Bicycle suspension system"
+  },
+  {
+   "pn": "US9156521B2",
+   "title": "Bicycle frame rear suspension with flexing frame segment"
+  },
+  {
+   "pn": "US9186949B2",
+   "title": "Methods and apparatus for suspension adjustment"
+  },
+  {
+   "pn": "US9422018B2",
+   "title": "Seat post"
+  },
+  {
+   "pn": "US9540067B2",
+   "title": "Automatic shock absorber system for a bicycle"
+  },
+  {
+   "pn": "US9676441B2",
+   "title": "Automatic shock absorber system for bicycle"
+  },
+  {
+   "pn": "US9682604B2",
+   "title": "Methods and apparatus for selective spring pre-load adjustment"
+  },
+  {
+   "pn": "US10040329B2",
+   "title": "Method and apparatus for an adjustable damper"
+  },
+  {
+   "pn": "US10047817B2",
+   "title": "Method and apparatus for an adjustable damper"
+  },
+  {
+   "pn": "US10060499B2",
+   "title": "Method and apparatus for an adjustable damper"
+  },
+  {
+   "pn": "US10072724B2",
+   "title": "Methods and apparatus for suspension lock out and signal generation"
+  },
+  {
+   "pn": "US10086670B2",
+   "title": "Methods and apparatus for suspension set up"
+  },
+  {
+   "pn": "US10086892B2",
+   "title": "Lever assembly for positive lock adjustable seat post"
+  },
+  {
+   "pn": "US10094443B2",
+   "title": "Bypass for a suspension damper"
+  },
+  {
+   "pn": "US10160511B2",
+   "title": "Method and apparatus for an adjustable damper"
+  },
+  {
+   "pn": "US10293881B2",
+   "title": "Rear suspension system for a bicycle"
+  },
+  {
+   "pn": "US10330171B2",
+   "title": "Method and apparatus for an adjustable damper"
+  },
+  {
+   "pn": "US10343742B2",
+   "title": "Link suspension system"
+  },
+  {
+   "pn": "US10358180B2",
+   "title": "Adjustable seatpost"
+  },
+  {
+   "pn": "US10400847B2",
+   "title": "Compression isolator for a suspension damper"
+  },
+  {
+   "pn": "US10406883B2",
+   "title": "Methods and apparatus for controlling a fluid damper"
+  },
+  {
+   "pn": "US10415662B2",
+   "title": "Remotely operated bypass for a suspension damper"
+  },
+  {
+   "pn": "US10443671B2",
+   "title": "Remotely operated bypass for a suspension damper"
+  },
+  {
+   "pn": "US10493975B2",
+   "title": "Bicycle electric system"
+  },
+  {
+   "pn": "US10537790B2",
+   "title": "Methods and apparatus for virtual competition"
+  },
+  {
+   "pn": "US10677309B2",
+   "title": "Methods and apparatus for position sensitive suspension damping"
+  },
+  {
+   "pn": "US10697514B2",
+   "title": "Remotely operated bypass for a suspension damper"
+  },
+  {
+   "pn": "US10731724B2",
+   "title": "Suspension system"
+  },
+  {
+   "pn": "US10737546B2",
+   "title": "Electronic compression and rebound control"
+  },
+  {
+   "pn": "US10766563B2",
+   "title": "Rail suspension with integral shock and dampening mechanism"
+  },
+  {
+   "pn": "US10821795B2",
+   "title": "Method and apparatus for an adjustable damper"
+  },
+  {
+   "pn": "US10822048B2",
+   "title": "Reciprocating rail movement suspension system"
+  },
+  {
+   "pn": "US10850798B2",
+   "title": "Bicycle rear suspension"
+  },
+  {
+   "pn": "US10850796B2",
+   "title": "Bicycle rear suspension"
+  },
+  {
+   "pn": "US10926830B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US11040750B2",
+   "title": "Detection device and control system"
+  },
+  {
+   "pn": "DE102020100276A1",
+   "title": "SUSPENSION CONTROL SYSTEM FOR THE SUSPENSION OF A HUMAN DRIVEN VEHICLE"
+  },
+  {
+   "pn": "US11130545B2",
+   "title": "Bicycle control device and bicycle suspension system including bicycle control device"
+  },
+  {
+   "pn": "US11130548B2",
+   "title": "Human-powered vehicle control device"
+  },
+  {
+   "pn": "US11173983B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US11279199B2",
+   "title": "Suspension damper with by-pass valves"
+  },
+  {
+   "pn": "US11299233B2",
+   "title": "Method and apparatus for an adjustable damper"
+  },
+  {
+   "pn": "US11306798B2",
+   "title": "Position sensitive suspension damping with an active valve"
+  },
+  {
+   "pn": "US11498641B2",
+   "title": "Human-powered vehicle control device, suspension system, and human-powered vehicle"
+  },
+  {
+   "pn": "US11912363B2",
+   "title": "Control device for telescopic apparatus"
+  },
+  {
+   "pn": "US12077241B2",
+   "title": "Multi-body vehicle suspension linkage"
+  },
+  {
+   "pn": "US12122205B2",
+   "title": "Active valve for an internal bypass"
+  },
+  {
+   "pn": "US12145684B2",
+   "title": "Constrained multiple instantaneous velocity center linkage assembly for vehicle suspension"
+  },
+  {
+   "pn": "US12384484B2",
+   "title": "Integrated motor mount and suspension pivot"
+  },
+  {
+   "pn": "US12491961B2",
+   "title": "Seat post"
+  },
+  {
+   "pn": "US12522316B2",
+   "title": "Vehicle suspension linkage"
+  },
+  {
+   "pn": "US12545363B2",
+   "title": "Bicycle component"
+  },
+  {
+   "pn": "US12617488B2",
+   "title": "Two-wheeled vehicle with configurable idler"
+  },
+  {
+   "pn": "US12698818B2",
+   "title": "Suspension damper with remotely-operable valve"
+  }
+ ],
+ "events": [
+  {
+   "date": "",
+   "type": "litigation",
+   "title": "First worldwide family litigation filed"
+  },
+  {
+   "date": "2009-04-02",
+   "type": "filed",
+   "title": "Application filed by Individual"
+  },
+  {
+   "date": "2011-01-13",
+   "type": "reassignment",
+   "title": "Assigned to CYCLES LAPIERRE"
+  },
+  {
+   "date": "2011-04-28",
+   "type": "publication",
+   "title": "Publication of US20110095507A1"
+  },
+  {
+   "date": "2012-10-16",
+   "type": "granted",
+   "title": "Application granted"
+  },
+  {
+   "date": "2012-10-16",
+   "type": "publication",
+   "title": "Publication of US8286982B2"
+  },
+  {
+   "date": "2016-01-26",
+   "type": "reassignment",
+   "title": "Assigned to ACCELL SUISSE A.G."
+  },
+  {
+   "date": "",
+   "type": "legal-status",
+   "title": "Active"
+  },
+  {
+   "date": "2029-07-05",
+   "type": "legal-status",
+   "title": "Adjusted expiration"
+  }
+ ]
+}

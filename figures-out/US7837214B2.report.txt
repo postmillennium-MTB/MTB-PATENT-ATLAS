@@ -1,0 +1,141 @@
+patent: US7837214B2
+source: https://patentimages.storage.googleapis.com/2d/b8/68/491ccd1290a0c8/US7837214.pdf
+pages: 4
+per-page extracted text length: {1: 2357, 2: 43, 3: 7082, 4: 4176}
+
+=== FRONT PAGE TEXT (primary source -- check the entry against this) ===
+US007837214B2
+
+(12) United States Patent
+
+(10) Patent No.:
+
+Trib0tte
+(54) REAR FORK FOR BICYCLE
+
+(56)
+
+(76) Inventor: Pascal Tribotte, 64, rue de Montreuil,
+(*) Notice:
+
+US 7,837.214 B2
+
+(45) Date of Patent:
+
+Nov. 23, 2010
+
+References Cited
+
+U.S. PATENT DOCUMENTS
+
+Versailles (FR) 78000
+
+5,282,517 A
+2f1994 Prince
+5,901.974. A * 5/1999 Busby et al. ................ 280/284
+
+Subject to any disclaimer, the term of this
+
+6,056,307 A
+
+patent is extended or adjusted under 35
+U.S.C. 154(b) by 359 days.
+
+6,244,610 Bl
+
+5/2000 Busby et al.
+
+6/2001 Kramer-Massow
+
+6,488.301 B2 * 12/2002 Klassen et al. ........ ... 280/284
+2004/0145149 A1*
+2006/007 1444 A1*
+
+7/2004 Ellsworth et al. ..... ... 280/284
+4/2006 Griffiths ..................... 280/283
+
+(21) Appl. No.:
+
+11/814,332
+
+(22) PCT Filed:
+
+Jan. 19, 2006
+
+(86). PCT No.:
+
+PCT/FR2006/OSOO25
+
+* cited by examiner
+Primary Examiner Tony H. Winner
+
+May 29, 2008
+
+Assistant Examiner Marc A Scharich
+
+FOREIGN PATENT DOCUMENTS
+
+S371 (c)(1),
+(2), (4) Date:
+
+(87) PCT Pub. No.: WO2006/077346
+PCT Pub. Date: Jul. 27, 2006
+(65)
+
+Prior Publication Data
+
+US 2008/O258425A1
+
+(30)
+
+Oct. 23, 2008
+
+Foreign Application Priority Data
+
+Jan. 19, 2005
+
+(FR) ................................... O5 5O155
+
+(51) Int. Cl.
+B62K 9/00
+B62K 25/00
+
+(2006.01)
+(2006.01)
+
+(52) U.S. Cl. ....................................... 280/284; 280/283
+(58) Field of Classification Search ................. 280/275,
+280/283, 284, 285; 180/227
+See application file for complete search history.
+
+FR
+
+2 762 572
+
+10, 1998
+
+(74) Attorney, Agent, or Firm Oblon, Spivak, McClelland,
+Maier & Neustadt, L.L.P.
+(57)
+
+ABSTRACT
+
+A rear fork for a bicycle, including a brake caliper Support,
+mounted in rotation about the axle of the rear wheel and a hub
+
+carrier, fixed to the wheel axle, including a lower arm con
+nected at a first end to the hub carrierandata second end to the
+
+frame of the bicycle, and an upper arm, extending from the
+hub carrier to the frame. A connector link is arranged between
+the brake caliper and the lower arm, and the distance between
+the point of connection of the connector link on the lower arm
+and the connection of the lower arm to the hub carrier is at
+
+least equal to a third of the distance between the connection of
+the lower arm to the hub carrier and the connection of the
+lower arm to the frame.
+
+8 Claims, 1 Drawing Sheet
+
+
