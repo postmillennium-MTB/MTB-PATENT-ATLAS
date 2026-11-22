@@ -353,7 +353,7 @@ header::before{
 .cm-hero-btn{margin-top:6px;border:0;background:var(--primary);color:#fff;font-weight:700;font-size:15px;font-family:var(--font-display);border-radius:10px;padding:0 16px;min-height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
 .cm-hero-btn:hover{filter:brightness(1.1)}
 .cm-hero-btn:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
-@media(min-width:640px){.cm-hero{min-height:280px;justify-content:center}.cm-hero canvas{position:absolute;inset:0;height:100%;order:0;z-index:0}.cm-hero-in{padding:8px 0}}
+@media(min-width:640px){.cm-hero-h{white-space:nowrap}.cm-hero{min-height:280px;justify-content:center}.cm-hero canvas{position:absolute;inset:0;height:100%;order:0;z-index:0}.cm-hero-in{padding:8px 0}}
 @media(prefers-reduced-motion:reduce){.cm-hero canvas{transition:none}}
 /* "See it in the constellation": the pill at the foot of a card's text that has a dot on the map. */
 .cm-see{display:inline-flex;align-items:center;gap:7px;margin:12px 0 2px;padding:7px 13px 7px 10px;border-radius:999px;border:1px solid var(--card-border);background:var(--surface);color:var(--ink);font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.03em;cursor:pointer;min-height:34px}
@@ -5786,7 +5786,7 @@ const CMH_DRIFT = 0.1;              // radians per second
 const CMH_FRAME_MS = 33;            // ~30 fps: plenty for a slow drift, kind to phone batteries
 const CMH_NODE_SCALE = 0.3;         // hero dots are drawn this fraction of the tab's size
 const CMH_BUCKETS = 3;              // depth bands for links, each stroked in one path
-const CMH = { ink:"#445", raf:0, timer:0, cv:null, io:null, visible:true, yaw:0.5, pitch:0.3, t0:0, last:0, W:0, H:0, k:1, cam:600, R:0, run:0 };
+const CMH = { sec:0, ink:"#445", raf:0, timer:0, cv:null, io:null, visible:true, yaw:0.5, pitch:0.3, t0:0, last:0, W:0, H:0, k:1, cam:600, R:0, run:0 };
 function cmhStop(){ if(CMH.raf) cancelAnimationFrame(CMH.raf); if(CMH.timer) clearTimeout(CMH.timer); if(CMH.io) CMH.io.disconnect(); CMH.raf=CMH.timer=0; CMH.io=null; CMH.run++; }
 function constellationHeroHTML(){
   citeBuild();
@@ -5825,7 +5825,7 @@ function constellationHeroStart(){
     CITE.mode="web"; CITE.laidOut=false; citeSeed(); CITE.alpha=1; slice(0);
   };
   CMH.timer=setTimeout(begin,60);                          // after the first paint
-  if(window.ResizeObserver){ const ro=new ResizeObserver(()=>{ if(!alive()){ ro.disconnect(); return; } cmhMeasure(); if(hero.classList.contains("ready")&&!CMH.raf) cmhDraw(CMH.last); }); ro.observe(hero); }
+  if(window.ResizeObserver){ const ro=new ResizeObserver(()=>{ if(!alive()){ ro.disconnect(); return; } cmhMeasure(); if(hero.classList.contains("ready")) cmhDraw(CMH.sec); }); ro.observe(hero); }
 }
 function cmhMeasure(){
   const cv=CMH.cv; if(!cv||!cv.isConnected) return;
@@ -5849,10 +5849,11 @@ function cmhLoop(){
   };
   CMH.raf=requestAnimationFrame(step);
 }
-new MutationObserver(()=>{ if(CMH.cv&&CMH.cv.isConnected&&CMH.W){ cmhMeasure(); if(!CMH.raf) cmhDraw(CMH.last); } }).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+new MutationObserver(()=>{ if(CMH.cv&&CMH.cv.isConnected&&CMH.W){ cmhMeasure(); cmhDraw(CMH.sec); } }).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 document.addEventListener("visibilitychange",()=>{ if(!document.hidden && CMH.cv && CMH.cv.isConnected && CMH.visible && !CMH.raf && CMH.io) cmhLoop(); });
 function cmhDraw(sec){
   const cv=CMH.cv; if(!cv||!CMH.W) return;
+  CMH.sec=sec;
   const ctx=cv.getContext("2d"), W=CMH.W, H=CMH.H, dpr=cv.width/W, wide=W>=640;
   ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H);
   const yaw=CMH.yaw+sec*CMH_DRIFT, pitch=CMH.pitch+Math.sin(sec*0.21)*0.12;
