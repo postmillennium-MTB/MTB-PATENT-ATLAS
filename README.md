@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 555 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 563 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
 🔗 **Live:** [postmillennium-mtb.github.io/MTB-PATENT-ATLAS](https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/)
 📁 **Repo:** [github.com/postmillennium-MTB/MTB-PATENT-ATLAS](https://github.com/postmillennium-MTB/MTB-PATENT-ATLAS)
@@ -14,10 +14,10 @@ An interactive timeline of mountain bike intellectual property: 555 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 555 |
+| **Total entries** | 563 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 225 |
-| **Expired patents** | 255 |
+| **Active patents** | 232 |
+| **Expired patents** | 256 |
 | **Pending applications** | 47 |
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
@@ -25,7 +25,7 @@ An interactive timeline of mountain bike intellectual property: 555 patents and 
 | **Brands** | 234 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 481 |
+| **Verified entries** | 489 |
 | **Medium confidence** | 39 |
 | **Draft / in progress** | 35 |
 
@@ -1068,3 +1068,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - Removed the "Explore the map" button from the landing Constellation hero; the whole hero still opens the map (tap or Enter/Space, focus ring for keyboards).
 - Micro Spline card (US 11,578,761): removed the claim that the patent describes Micro Spline fitting two hub standards. Claims 1 and 21 and the description support only a cassette spline that engages two different, unnamed hub splines; the patent never names Micro Spline or HG. Hook, summary and "why it matters" rewritten in EN and FR.
 - Micro Spline card (US 11,578,761) rebuilt as one Shimano Micro Spline portfolio card (conf v, 9 members in nums[]: 11,578,761 lead; 11,642,913; 11,059,541 with continuations 11,097,807 and 12,286,194; 11,179,967; 11,332,213; 11,220,309; 11,845,513). Each number, title, date and claim read on Google Patents; none of the patent texts uses the brand name; no claim recites 23 splines. y = 2017 (earliest filing), exp 2040 (lead, PTA). Added Fig. 3 (the hub). The retail "does not fit HG or XD" line is market fact, not from a patent. Members seen on Google Patents but not added: US 11,772,741, 10,946,931, 12,286,195 (granted-looking, not opened); US 10,293,639 (divisional of Ser. No. 14/873,141, filed Oct. 1, 2015; the description Jon pasted covers a ratchet and sliding member, not the spline count; not added).
+- Cited-often batch 3 (8 cards, conf v, facts and claims read on Google Patents): Klieber cable guide US 8,931,793 + EP 2,406,122 B1; Magura/Befra wireless seat post US 9,592,882 + 10,259,520 + EP 2,888,157 B2 (claim 1 of the lead is a seat post, the division claims the suspension; exp 2033 from the PCT date, not the US filing); Wagner fork clamping US 8,833,785 (lapsed for unpaid fees Oct. 22, 2018, term would have run to 2030); Specialized US 7,891,688 and US 9,376,156; Voss US 9,242,693 + 10,457,348 + EP 2,969,726 B1; Specialized flexing seat post family US 10,919,592 + 11,851,125 + 12,351,263 (headline = the parent; exp 2038 from the April 2018 filing, not the 2023 continuation date); Hu one-piece connector US 9,056,647. Gaps: motorcycle-only items US 7,677,347 and US 6,871,867 not carded (asked Jon); Fox inertia-valve family still held; US 7,938,425's sibling and other CSV rows already covered by batches 1-2 were skipped.
