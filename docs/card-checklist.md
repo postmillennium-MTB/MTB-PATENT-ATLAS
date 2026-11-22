@@ -80,6 +80,11 @@ broken, so you don't have to police them by eye.
 - [ ] Family drawings: continuations share the parent's drawings, so each
       figure goes on once. Keep the file named for the document it came from
       and caption it "Fig. N from US x,xxx,xxx".
+- [ ] **Look at every new drawing before wiring it in.** A figure lying on its
+      side, or a printed header ("Patented…", "Sheet 1 of 3") running up or
+      down the edge, means the sheet came sideways. Fix it with
+      `python3 tools/rotate_picture.py pictures/<file>` (90° clockwise; `--ccw`
+      or `--180` if needed; rebuilds the thumbnail), then look again.
 - [ ] `imgs[]` order: the most recognisable figure first (it becomes the
       thumbnail everywhere). Each has `alt` (what is drawn, with its reference
       numerals) and `caption`, both languages.
