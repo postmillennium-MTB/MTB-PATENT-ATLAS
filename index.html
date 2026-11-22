@@ -340,6 +340,25 @@ header::before{
 .lw-cap .st-dot{margin-right:0}
 /* A phone tile is ~100px wide: the brand gets its own line, dot and year sit under it. */
 @media(max-width:639px){.lw-cap{flex-wrap:wrap;row-gap:2px}.lw-brand{flex:1 1 100%;order:-1}.lw-yr{margin-left:auto}}
+/* Patent Constellation hero: a live, slowly drifting preview at the top of the landing (see CONSTELLATION HERO in the script). No box: the dots are drawn straight on the page, so it follows the theme. On a phone the headline sits above the map; from 640px the map fills the band behind the headline's right side. */
+.cm-hero{position:relative;isolation:isolate;margin:0 0 14px;display:flex;flex-direction:column;cursor:pointer}
+.cm-hero canvas{position:relative;display:block;order:2;width:100%;height:230px;opacity:0;transition:opacity .9s ease}
+.cm-hero.ready canvas{opacity:1}
+.cm-hero-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:4px 0 0;max-width:430px}
+.cm-hero-k{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:6px}
+.cm-hero-k svg{width:15px;height:15px;color:var(--primary)}
+.cm-hero-h{font-family:var(--font-display);font-weight:800;font-size:clamp(28px,7vw,44px);line-height:1.02;margin:0;color:var(--ink)}
+.cm-hero-sub{margin:0;font-size:15px;line-height:1.4;color:var(--ink-soft);max-width:380px}
+.cm-hero-btn{margin-top:6px;border:0;background:var(--primary);color:#fff;font-weight:700;font-size:15px;font-family:var(--font-display);border-radius:10px;padding:0 16px;min-height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.cm-hero-btn:hover{filter:brightness(1.1)}
+.cm-hero-btn:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+@media(min-width:640px){.cm-hero{min-height:280px;justify-content:center}.cm-hero canvas{position:absolute;inset:0;height:100%;order:0;z-index:0}.cm-hero-in{padding:8px 0}}
+@media(prefers-reduced-motion:reduce){.cm-hero canvas{transition:none}}
+/* "See it in the constellation": the pill at the foot of a card's text that has a dot on the map. */
+.cm-see{display:inline-flex;align-items:center;gap:7px;margin:12px 0 2px;padding:7px 13px 7px 10px;border-radius:999px;border:1px solid var(--card-border);background:var(--surface);color:var(--ink);font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.03em;cursor:pointer;min-height:34px}
+.cm-see svg{width:16px;height:16px;color:var(--primary);flex:0 0 auto}
+.cm-see:hover{border-color:var(--primary);color:var(--primary)}
+.cm-see:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 /* Hero search */
 .home-hero{margin:0 0 20px}
 .home-kicker{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
@@ -3310,6 +3329,10 @@ const T = {
     fightsTitle:"Patent Fights",
     fightsIntro:"The lawsuits are where the drama lives. These are the major disputes in the atlas — who fought, what over, and how it ended. Tap any patent to jump to its full card.",
     tabCite:"Patent Constellation",
+    cmapHeroKicker:"Patent Constellation", cmapHeroTitle:"Who built on whom",
+    cmapHeroSub:(n,m)=>`${n} cards joined by ${m} citations. Every dot is a patent; every line is one patent pointing back at another.`,
+    cmapHeroBtn:"Explore the map", cmapHeroAria:"Open the Patent Constellation",
+    cmapSeeIt:"See it in the constellation", cmapSeeItAria:"Open the Patent Constellation, centred on this patent",
     cmapTitle:"Patent Constellation",
     cmapIntro:"Every dot is a card in the atlas. A line joins two cards when a patent on one cites a patent on the other, as listed on Google Patents. Bigger dots are cited by more cards. Drag to turn the map in 3D.",
     cmapStatCards:"connected cards", cmapStatLinks:"citation links", cmapStatRead:"patent numbers read", cmapStatReadN:(a,b)=>`${a} of ${b}`,
@@ -3521,6 +3544,10 @@ const T = {
     fightsTitle:"Batailles de brevets",
     fightsIntro:"Les procès sont là où se joue le vrai drame. Voici les principaux litiges de l'atlas — qui s'est affronté, à quel sujet, et comment ça s'est terminé. Touchez un brevet pour aller à sa fiche complète.",
     tabCite:"Constellation de brevets",
+    cmapHeroKicker:"Constellation de brevets", cmapHeroTitle:"Qui s'est appuyé sur qui",
+    cmapHeroSub:(n,m)=>`${n} fiches reliées par ${m} citations. Chaque point est un brevet ; chaque trait est un brevet qui en cite un autre.`,
+    cmapHeroBtn:"Explorer la carte", cmapHeroAria:"Ouvrir la Constellation de brevets",
+    cmapSeeIt:"Voir dans la constellation", cmapSeeItAria:"Ouvrir la Constellation de brevets, centrée sur ce brevet",
     cmapTitle:"Constellation de brevets",
     cmapIntro:"Chaque point est une fiche de l'atlas. Un trait relie deux fiches lorsqu'un brevet de l'une cite un brevet de l'autre, d'après Google Patents. Plus un point est gros, plus il est cité par d'autres fiches. Glissez pour faire tourner la carte en 3D.",
     cmapStatCards:"fiches reliées", cmapStatLinks:"liens de citation", cmapStatRead:"numéros de brevet lus", cmapStatReadN:(a,b)=>`${a} sur ${b}`,
@@ -4864,6 +4891,7 @@ function cardHTML(d,eraKey){
       ${gp}
       ${coLink}${wgLink}
       ${tourNoteHTML(d)}
+      ${citeHasCard(d)?`<button type="button" class="cm-see" data-cm-see="${ref}" aria-label="${t("cmapSeeItAria")}">${ICON_GRAPH_STAR}<span>${t("cmapSeeIt")}</span></button>`:""}
       <div class="card-nav">
         <button type="button" class="cn-btn cn-prev" aria-label="${t("cardPrevAria")}">${ICON_CHEVRON_LEFT}${t("cardPrev")}</button>
         <span class="cn-pos" aria-live="polite"></span>
@@ -5359,7 +5387,7 @@ function citeCenter(){                                    // put the middle of t
 function citeLayout(){
   citeSeed(); CITE.alpha=1;
   for(let i=0;i<CITE_PRE_TICKS;i++) citeTick();
-  citeCenter(); CITE.laidOut=true; citeFit(true); citeRun();
+  citeCenter(); CITE.laidOut=true; citeFit(true); citeRun(); citeApplyFocus();
 }
 function citeRun(){
   if(CITE.raf) return;
@@ -5537,6 +5565,7 @@ function citeSelect(n){
   const p=document.getElementById("cmPanel"); if(p) p.innerHTML=citePanelHTML();
   citeSelChip();
   citeDraw();
+  syncHash();
 }
 /* The details panel sits under the map, so a small chip over the map names the selection and jumps to it. */
 function citeSelChip(){
@@ -5599,7 +5628,7 @@ function renderCite(){
   if(CITE.ro) CITE.ro.disconnect();
   CITE.ro=new ResizeObserver(()=>{ const had=CITE.W; size(); if(!CITE.laidOut) citeLayout(); else { if(!had) citeFit(); citeDraw(); } });
   CITE.ro.observe(stage);
-  size(); if(CITE.W){ if(!CITE.laidOut) citeLayout(); else { citeDraw(); citeRun(); } }
+  size(); if(CITE.W){ if(!CITE.laidOut) citeLayout(); else { if(CITE.needFit){ citeFit(true); CITE.needFit=false; } citeDraw(); citeRun(); citeApplyFocus(); } }
 
   const hit=(px,py,halo=10)=>{ citeProject(); let best=null,bs=1e9;
     for(const n of citeNodes()){ const d=Math.hypot(n.sx-px,n.sy-py)-citeRad(n); if(d>=halo) continue;   // 10px halo for a mouse, 24px for a finger: the target is bigger than the dot
@@ -5694,6 +5723,166 @@ function renderCite(){
 }
 /* A theme switch repaints the canvas with the new tokens. */
 new MutationObserver(()=>{ if(activeTab==="cite"){ citeTheme(); citeDraw(); } }).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+
+/* ======== CONSTELLATION ENTRY POINTS ========
+   Two ways in besides the tab: the hero band on the landing (CONSTELLATION
+   HERO, below) and the "See it in the constellation" pill on every card that
+   has a dot. openConstellation(ref) switches to the tab; with a ref it
+   selects that card's dot, turns the cloud to face it and zooms in.
+   #tab=cite&sel=<ref> does the same from a link. */
+const CITE_FLY_MS = 900;            // the turn-and-zoom to a chosen dot
+const CITE_FLY_ZOOM = 1.35;          // zoom reached, relative to the fitted view
+const CITE_FLY_MAX_K = 3;           // never closer than this, even on a tiny map
+let citeRefSet=null;
+function citeHasCard(d){
+  if(!citeRefSet) citeRefSet=new Set(CITE_MAP.nodes.map(r=>REF_ALIASES[r]||r));
+  return citeRefSet.has(cardRef(d));
+}
+function openConstellation(ref){
+  citeBuild();
+  const n=ref&&CITE.N.find(x=>x.ref===ref);
+  CITE.focusRef=n?ref:null; CITE.q=""; CITE.sel=null;
+  CITE.cats=new Set(Object.keys(CATS));
+  if(CITE.mode!=="web"){ CITE.mode="web"; CITE.laidOut=false; }
+  activeTab="cite"; listTheme=null; renderTabs(); render();
+  requestAnimationFrame(()=>{ const st=document.getElementById("cmStage"), h=document.getElementById("cmH"); const el=n?st:(h||st); if(el) el.scrollIntoView({block:"start"}); });
+}
+function citeApplyFocus(){
+  const ref=CITE.focusRef; if(!ref||!CITE.laidOut||!CITE.W) return;
+  CITE.focusRef=null;
+  const n=CITE.N.find(x=>x.ref===ref); if(!n) return;
+  citeSelect(n); citeFlyTo(n);
+}
+/* Turn the cloud so n sits on the view axis, nearest the camera, and zoom in on it. */
+function citeFlyTo(n){
+  const yaw1=Math.atan2(n.x,-n.z), z1=-n.x*Math.sin(yaw1)+n.z*Math.cos(yaw1);
+  const pitch1=Math.max(-1.2,Math.min(1.2,Math.atan(n.y_/(z1||-1))));
+  let dy=(yaw1-CITE.yaw)%(2*Math.PI); if(dy>Math.PI) dy-=2*Math.PI; if(dy<-Math.PI) dy+=2*Math.PI;
+  const y0=CITE.yaw, p0=CITE.pitch, k0=CITE.k, k1=Math.min(CITE_FLY_MAX_K,Math.max(k0,CITE.k*CITE_FLY_ZOOM));
+  CITE.tx=CITE.W/2; CITE.ty=CITE.H/2; CITE.spin=false;
+  const sp=document.getElementById("cmSpin"); if(sp) sp.setAttribute("aria-pressed","false");
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){ CITE.yaw=y0+dy; CITE.pitch=pitch1; CITE.k=k1; citeDraw(); return; }
+  const t0=performance.now();
+  const step=now=>{
+    if(activeTab!=="cite") return;
+    const u=Math.min(1,(now-t0)/CITE_FLY_MS), e=u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;
+    CITE.yaw=y0+dy*e; CITE.pitch=p0+(pitch1-p0)*e; CITE.k=k0+(k1-k0)*e; CITE.tx=CITE.W/2; CITE.ty=CITE.H/2;
+    citeDraw(); if(u<1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+/* ======== CONSTELLATION HERO ========
+   The band at the top of the landing: the same dots and links as the tab,
+   drifting slowly behind a headline and an "Explore the map" button. It
+   shares the tab's layout (positions are laid out once, in small slices after
+   the first paint so a phone never stalls) but has its own camera, so
+   nothing the reader does on the tab moves it. It draws only while on screen
+   and on the landing; with reduced motion it draws one still frame. Tapping
+   anywhere on the band opens the tab. */
+const CMH_SLICE_TICKS = 40;         // layout steps per slice (CITE_PRE_TICKS in all)
+const CMH_DRIFT = 0.1;              // radians per second
+const CMH_FRAME_MS = 33;            // ~30 fps: plenty for a slow drift, kind to phone batteries
+const CMH_NODE_SCALE = 0.3;         // hero dots are drawn this fraction of the tab's size
+const CMH_BUCKETS = 3;              // depth bands for links, each stroked in one path
+const CMH = { ink:"#445", raf:0, timer:0, cv:null, io:null, visible:true, yaw:0.5, pitch:0.3, t0:0, last:0, W:0, H:0, k:1, cam:600, R:0, run:0 };
+function cmhStop(){ if(CMH.raf) cancelAnimationFrame(CMH.raf); if(CMH.timer) clearTimeout(CMH.timer); if(CMH.io) CMH.io.disconnect(); CMH.raf=CMH.timer=0; CMH.io=null; CMH.run++; }
+function constellationHeroHTML(){
+  citeBuild();
+  return `<section class="cm-hero" id="cmHero" role="group" aria-label="${citeEsc(t("cmapHeroAria"))}">
+    <canvas id="cmHeroCv" aria-hidden="true"></canvas>
+    <div class="cm-hero-in">
+      <div class="cm-hero-k">${ICON_GRAPH_STAR}${t("cmapHeroKicker")}</div>
+      <h2 class="cm-hero-h">${t("cmapHeroTitle")}</h2>
+      <p class="cm-hero-sub">${t("cmapHeroSub",CITE.N.length,CITE.E.length)}</p>
+      <button type="button" class="cm-hero-btn" id="cmHeroBtn">${t("cmapHeroBtn")} →</button>
+    </div>
+  </section>`;
+}
+/* Called by renderStats once the landing is in the page. */
+function constellationHeroStart(){
+  cmhStop();
+  const hero=document.getElementById("cmHero"), cv=document.getElementById("cmHeroCv"); if(!hero||!cv) return;
+  hero.onclick=()=>openConstellation(null);
+  CMH.cv=cv; const run=CMH.run;
+  const alive=()=>CMH.run===run && cv.isConnected;
+  const finish=()=>{
+    if(!alive()) return;
+    CITE.laidOut=true; CITE.needFit=true; CITE.alpha=Math.min(CITE.alpha,0.5);
+    cmhMeasure(); hero.classList.add("ready");
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){ cmhDraw(0); return; }
+    CMH.io=new IntersectionObserver(es=>{ CMH.visible=es[0].isIntersecting; if(CMH.visible&&!CMH.raf) cmhLoop(); });
+    CMH.io.observe(hero); CMH.t0=0; cmhLoop();
+  };
+  const slice=done=>{
+    if(!alive()) return;
+    for(let i=0;i<CMH_SLICE_TICKS;i++) citeTick();
+    if(done+CMH_SLICE_TICKS<CITE_PRE_TICKS) CMH.timer=setTimeout(()=>slice(done+CMH_SLICE_TICKS),0);
+    else { citeCenter(); finish(); }
+  };
+  const begin=()=>{
+    if(!alive()) return;
+    if(CITE.laidOut && CITE.mode==="web" && !CITE.needFit && CITE.built){ finish(); return; }   // the tab already laid it out
+    CITE.mode="web"; CITE.laidOut=false; citeSeed(); CITE.alpha=1; slice(0);
+  };
+  CMH.timer=setTimeout(begin,60);                          // after the first paint
+  if(window.ResizeObserver){ const ro=new ResizeObserver(()=>{ if(!alive()){ ro.disconnect(); return; } cmhMeasure(); if(hero.classList.contains("ready")&&!CMH.raf) cmhDraw(CMH.last); }); ro.observe(hero); }
+}
+function cmhMeasure(){
+  const cv=CMH.cv; if(!cv||!cv.isConnected) return;
+  const r=cv.getBoundingClientRect(), dpr=Math.min(window.devicePixelRatio||1,2);
+  CMH.W=r.width; CMH.H=r.height; cv.width=Math.round(r.width*dpr); cv.height=Math.round(r.height*dpr);
+  CMH.ink=getComputedStyle(document.documentElement).getPropertyValue("--ink-soft").trim()||CMH.ink;
+  const rad=CITE.N.map(n=>Math.sqrt(n.x*n.x+n.y_*n.y_+n.z*n.z)+n.r).sort((a,b)=>a-b);
+  const R=rad[rad.length-1]; CMH.R=R; CMH.cam=Math.max(R*CITE_CAM_FACTOR,300);
+  const r95=rad[Math.floor(rad.length*CITE_FIT_QUANTILE)], near=CMH.cam/(CMH.cam-r95);
+  CMH.k=(Math.min(CMH.W,CMH.H)/2-6)/(r95*near)*1.08;
+}
+function cmhLoop(){
+  if(CMH.raf) return;
+  const step=ts=>{
+    CMH.raf=0;
+    if(!CMH.cv||!CMH.cv.isConnected||activeTab!=="stats"){ cmhStop(); return; }
+    if(!CMH.visible||document.hidden){ return; }          // the observer / visibilitychange restart it
+    if(!CMH.t0) CMH.t0=ts;
+    if(ts-CMH.last>=CMH_FRAME_MS){ CMH.last=ts; cmhDraw((ts-CMH.t0)/1000); }
+    CMH.raf=requestAnimationFrame(step);
+  };
+  CMH.raf=requestAnimationFrame(step);
+}
+new MutationObserver(()=>{ if(CMH.cv&&CMH.cv.isConnected&&CMH.W){ cmhMeasure(); if(!CMH.raf) cmhDraw(CMH.last); } }).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+document.addEventListener("visibilitychange",()=>{ if(!document.hidden && CMH.cv && CMH.cv.isConnected && CMH.visible && !CMH.raf && CMH.io) cmhLoop(); });
+function cmhDraw(sec){
+  const cv=CMH.cv; if(!cv||!CMH.W) return;
+  const ctx=cv.getContext("2d"), W=CMH.W, H=CMH.H, dpr=cv.width/W, wide=W>=640;
+  ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H);
+  const yaw=CMH.yaw+sec*CMH_DRIFT, pitch=CMH.pitch+Math.sin(sec*0.21)*0.12;
+  const cy=Math.cos(yaw), sy=Math.sin(yaw), cp=Math.cos(pitch), sp=Math.sin(pitch);
+  const ox=W*(wide?0.72:0.5), oy=H*0.5, k=CMH.k*(wide?1.5:1.25), cam=CMH.cam, N=CITE.N;
+  let zmin=1e9,zmax=-1e9;
+  for(const n of N){
+    const x1=n.x*cy+n.z*sy, z1=-n.x*sy+n.z*cy, y2=n.y_*cp-z1*sp, z2=n.y_*sp+z1*cp, s=cam/(cam+z2);
+    n.hx=ox+x1*k*s; n.hy=oy+y2*k*s; n.hz=z2; n.hs=s;
+    if(z2<zmin) zmin=z2; if(z2>zmax) zmax=z2;
+  }
+  const span=(zmax-zmin)||1, near=n=>(zmax-n.hz)/span;          // 1 = nearest
+  ctx.lineWidth=1;
+  const buckets=Array.from({length:CMH_BUCKETS},()=>new Path2D());
+  for(const e of CITE.E){
+    const nr=(near(e.s)+near(e.d))/2, b=Math.min(CMH_BUCKETS-1,Math.floor(nr*CMH_BUCKETS));
+    buckets[b].moveTo(e.s.hx,e.s.hy); buckets[b].lineTo(e.d.hx,e.d.hy);
+  }
+  ctx.strokeStyle=CMH.ink; for(let b=0;b<CMH_BUCKETS;b++){ ctx.globalAlpha=0.12+0.14*b; ctx.stroke(buckets[b]); } ctx.globalAlpha=1;
+  const order=N.slice().sort((a,b)=>b.hz-a.hz);                   // farthest first
+  for(const n of order){
+    const nr=near(n), tw=0.85+0.15*Math.sin(sec*1.3+n.i*1.7), r=Math.max(1.1,n.r*CMH_NODE_SCALE*n.hs*(wide?1:0.9));
+    const col=CAT_COLORS[n.cat]||"#898781";
+    ctx.globalAlpha=(0.35+0.65*nr)*tw;
+    if(n.cin>=5){ ctx.globalAlpha*=0.16; ctx.fillStyle=col; ctx.beginPath(); ctx.arc(n.hx,n.hy,r*2.1,0,6.2832); ctx.fill(); ctx.globalAlpha=(0.35+0.65*nr)*tw; }
+    ctx.fillStyle=col; ctx.beginPath(); ctx.arc(n.hx,n.hy,r,0,6.2832); ctx.fill();
+  }
+  ctx.globalAlpha=1;
+}
 
 function renderFights(){
   const tl=$("#timeline");
@@ -6865,6 +7054,7 @@ function renderStats(){
       <button type="button" class="rh-arrow" id="rhNext" aria-label="${t('scrollRight')}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>
     </div>` : "";
   tl.innerHTML=`<div class="stats-wrap">
+    ${constellationHeroHTML()}
     ${patentOfTheDayHTML()}
     ${landingWallHTML()}
     <section class="home-sec">
@@ -6963,6 +7153,7 @@ function renderStats(){
   tl.querySelectorAll("[data-go-st]").forEach(b=>{ b.onclick=()=>followGo({st:b.dataset.goSt}); });
   tl.querySelectorAll("[data-go-tab]").forEach(b=>{ b.onclick=()=>followGo({tab:b.dataset.goTab}); });
   tl.querySelectorAll("[data-go-who]").forEach(b=>{ b.onclick=()=>followGo({who:decodeURIComponent(b.dataset.goWho)}); });
+  constellationHeroStart();
   const homeForm=$("#homeSearch"), homeInp=$("#homeSearchInput"), homeMatch=$("#homeMatch");
   if(homeForm){
     homeForm.onsubmit=e=>{ e.preventDefault(); runHomeSearch(homeInp.value); };
@@ -7273,6 +7464,7 @@ function render(){
       }
     };
   });
+  tl.querySelectorAll(".cm-see").forEach(b=>{ b.onclick=e=>{ e.stopPropagation(); openConstellation(b.dataset.cmSee); }; });
   tl.querySelectorAll(".card-cite-btn").forEach(b=>{
     b.onclick=async(e)=>{
       e.stopPropagation();
@@ -7432,6 +7624,7 @@ function syncHash(){
   if(lt) p.set("start",lt.key);
   if(openRef && activeTab!=="stats" && activeTab!=="fights" && activeTab!=="match" && activeTab!=="cite") p.set("p",openRef);
   if(activeTab==="match" && MG.mode!==MATCH_MODES[0].key) p.set("mode",MG.mode); // a Match game other than Pairs
+  try{ if(activeTab==="cite" && CITE.sel && CITE.sel.kind==="card") p.set("sel",CITE.sel.ref); }catch(_){} // #tab=cite&sel=<ref>: the map opens centred on that card
   const s=p.toString();
   try{
     history.replaceState(history.state,"", s?("#"+s):location.pathname+location.search);
@@ -7461,6 +7654,7 @@ function initFromHash(){
      they pointed at the Category tab -- open those there, not on the home view. */
   else if(!tab && (HASH_SETS.some(k=>p.get(k)) || hashQuery)) activeTab="cat";
   pendingCardRef=p.get("p");
+  if(tab==="cite" && p.get("sel")) CITE.focusRef=REF_ALIASES[p.get("sel")]||p.get("sel");
   if(tourDef){
     if(!tab) activeTab="all";
     if(!pendingCardRef && tourStops(tourDef)[0]) pendingCardRef=cardRef(tourStops(tourDef)[0].d);
