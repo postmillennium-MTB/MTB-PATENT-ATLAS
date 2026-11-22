@@ -345,14 +345,15 @@ header::before{
 .cm-hero canvas{position:relative;display:block;order:2;width:100%;height:230px;opacity:0;transition:opacity .9s ease}
 .cm-hero.ready canvas{opacity:1}
 .cm-hero-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:4px 0 0;max-width:430px}
+.cm-hero-h svg{width:.7em;height:.7em;color:var(--primary);flex:0 0 auto}
 .cm-hero-k{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:6px}
 .cm-hero-k svg{width:15px;height:15px;color:var(--primary)}
-.cm-hero-h{font-family:var(--font-display);font-weight:800;font-size:clamp(28px,7vw,44px);line-height:1.02;margin:0;color:var(--ink)}
+.cm-hero-h{display:flex;align-items:center;gap:.35em;font-family:var(--font-display);font-weight:800;font-size:clamp(28px,7vw,44px);line-height:1.02;margin:0;color:var(--ink)}
 .cm-hero-sub{margin:0;font-size:15px;line-height:1.4;color:var(--ink-soft);max-width:380px}
 .cm-hero-btn{margin-top:6px;border:0;background:var(--primary);color:#fff;font-weight:700;font-size:15px;font-family:var(--font-display);border-radius:10px;padding:0 16px;min-height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
 .cm-hero-btn:hover{filter:brightness(1.1)}
 .cm-hero-btn:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
-@media(min-width:640px){.cm-hero{min-height:280px;justify-content:center}.cm-hero canvas{position:absolute;inset:0;height:100%;order:0;z-index:0}.cm-hero-in{padding:8px 0}}
+@media(min-width:640px){.cm-hero-h{white-space:nowrap}.cm-hero{min-height:280px;justify-content:center}.cm-hero canvas{position:absolute;inset:0;height:100%;order:0;z-index:0}.cm-hero-in{padding:8px 0}}
 @media(prefers-reduced-motion:reduce){.cm-hero canvas{transition:none}}
 /* "See it in the constellation": the pill at the foot of a card's text that has a dot on the map. */
 .cm-see{display:inline-flex;align-items:center;gap:7px;margin:12px 0 2px;padding:7px 13px 7px 10px;border-radius:999px;border:1px solid var(--card-border);background:var(--surface);color:var(--ink);font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.03em;cursor:pointer;min-height:34px}
@@ -5524,8 +5525,17 @@ function citeDraw(){
   ctx.font=`600 12.5px ${C.font}`; ctx.textBaseline="middle"; ctx.textAlign="left";
   const boxes=[];
   for(const n of want){
-    const s=citeLabel(n), tw=ctx.measureText(s).width, rr=citeRad(n); let x=n.sx+rr+5, y=n.sy;
-    if(x+tw>W-4) x=n.sx-rr-5-tw;
+    let s=citeLabel(n), tw=ctx.measureText(s).width; const rr=citeRad(n); let x=n.sx+rr+5, y=n.sy;
+    const fit=room=>{ while(tw>room&&s.length>6){ s=s.slice(0,-2); tw=ctx.measureText(s+"…").width; if(tw<=room) s+="…"; } };   // shorten a name to the room there is
+    const right=W-4-x, left=n.sx-rr-5-4;                  // room beside the dot on each side
+    if(tw>right){
+      if(left>=right){ if(tw>left) fit(left); x=n.sx-rr-5-tw; } else fit(right);
+    }
+    if(n===sel && x<4){                                   // the chosen dot always shows its name, even on a narrow phone: set above (or below) the dot, kept on screen
+      s=citeLabel(n); tw=ctx.measureText(s).width; fit(W-12);
+      x=Math.max(4,Math.min(W-4-tw,n.sx-tw/2)); y=n.sy-rr-12; if(y<10) y=n.sy+rr+12;
+    }
+    if(n===sel) y=Math.max(10,Math.min(H-10,y));
     if(x<2||y<8||y>H-8) continue;
     const b=[x-2,y-8,x+tw+2,y+8];
     if(n!==sel && boxes.some(o=>b[0]<o[2]&&b[2]>o[0]&&b[1]<o[3]&&b[3]>o[1])) continue;   // skip a label that would cover one already drawn
@@ -5785,16 +5795,14 @@ const CMH_DRIFT = 0.1;              // radians per second
 const CMH_FRAME_MS = 33;            // ~30 fps: plenty for a slow drift, kind to phone batteries
 const CMH_NODE_SCALE = 0.3;         // hero dots are drawn this fraction of the tab's size
 const CMH_BUCKETS = 3;              // depth bands for links, each stroked in one path
-const CMH = { ink:"#445", raf:0, timer:0, cv:null, io:null, visible:true, yaw:0.5, pitch:0.3, t0:0, last:0, W:0, H:0, k:1, cam:600, R:0, run:0 };
+const CMH = { sec:0, ink:"#445", raf:0, timer:0, cv:null, io:null, visible:true, yaw:0.5, pitch:0.3, t0:0, last:0, W:0, H:0, k:1, cam:600, R:0, run:0 };
 function cmhStop(){ if(CMH.raf) cancelAnimationFrame(CMH.raf); if(CMH.timer) clearTimeout(CMH.timer); if(CMH.io) CMH.io.disconnect(); CMH.raf=CMH.timer=0; CMH.io=null; CMH.run++; }
 function constellationHeroHTML(){
   citeBuild();
   return `<section class="cm-hero" id="cmHero" role="group" aria-label="${citeEsc(t("cmapHeroAria"))}">
     <canvas id="cmHeroCv" aria-hidden="true"></canvas>
     <div class="cm-hero-in">
-      <div class="cm-hero-k">${ICON_GRAPH_STAR}${t("cmapHeroKicker")}</div>
-      <h2 class="cm-hero-h">${t("cmapHeroTitle")}</h2>
-      <p class="cm-hero-sub">${t("cmapHeroSub",CITE.N.length,CITE.E.length)}</p>
+      <h2 class="cm-hero-h">${ICON_GRAPH_STAR}${t("cmapHeroKicker")}</h2>
       <button type="button" class="cm-hero-btn" id="cmHeroBtn">${t("cmapHeroBtn")} →</button>
     </div>
   </section>`;
@@ -5826,7 +5834,7 @@ function constellationHeroStart(){
     CITE.mode="web"; CITE.laidOut=false; citeSeed(); CITE.alpha=1; slice(0);
   };
   CMH.timer=setTimeout(begin,60);                          // after the first paint
-  if(window.ResizeObserver){ const ro=new ResizeObserver(()=>{ if(!alive()){ ro.disconnect(); return; } cmhMeasure(); if(hero.classList.contains("ready")&&!CMH.raf) cmhDraw(CMH.last); }); ro.observe(hero); }
+  if(window.ResizeObserver){ const ro=new ResizeObserver(()=>{ if(!alive()){ ro.disconnect(); return; } cmhMeasure(); if(hero.classList.contains("ready")) cmhDraw(CMH.sec); }); ro.observe(hero); }
 }
 function cmhMeasure(){
   const cv=CMH.cv; if(!cv||!cv.isConnected) return;
@@ -5850,10 +5858,11 @@ function cmhLoop(){
   };
   CMH.raf=requestAnimationFrame(step);
 }
-new MutationObserver(()=>{ if(CMH.cv&&CMH.cv.isConnected&&CMH.W){ cmhMeasure(); if(!CMH.raf) cmhDraw(CMH.last); } }).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+new MutationObserver(()=>{ if(CMH.cv&&CMH.cv.isConnected&&CMH.W){ cmhMeasure(); cmhDraw(CMH.sec); } }).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 document.addEventListener("visibilitychange",()=>{ if(!document.hidden && CMH.cv && CMH.cv.isConnected && CMH.visible && !CMH.raf && CMH.io) cmhLoop(); });
 function cmhDraw(sec){
   const cv=CMH.cv; if(!cv||!CMH.W) return;
+  CMH.sec=sec;
   const ctx=cv.getContext("2d"), W=CMH.W, H=CMH.H, dpr=cv.width/W, wide=W>=640;
   ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H);
   const yaw=CMH.yaw+sec*CMH_DRIFT, pitch=CMH.pitch+Math.sin(sec*0.21)*0.12;
