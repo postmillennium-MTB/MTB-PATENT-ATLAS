@@ -2,7 +2,8 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 588 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 595 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 591 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 564 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 563 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 
@@ -16,10 +17,14 @@ An interactive timeline of mountain bike intellectual property: 563 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 588 |
+| **Total entries** | 595 |
+| **Year range** | 1869 – 2026 |
+| **Active patents** | 241 |
+| **Expired patents** | 279 |
+| **Total entries** | 591 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 240 |
-| **Expired patents** | 273 |
+| **Expired patents** | 276 |
 | **Total entries** | 564 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 229 |
@@ -35,7 +40,8 @@ An interactive timeline of mountain bike intellectual property: 563 patents and 
 | **Brands** | 237 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 514 |
+| **Verified entries** | 521 |
+| **Verified entries** | 517 |
 | **Verified entries** | 490 |
 | **Verified entries** | 489 |
 | **Medium confidence** | 39 |
@@ -1085,3 +1091,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - Cited-often batch 2 (9 cards, conf v, facts read on Google Patents or the EP front pages): Specialized US 7,377,535; Specialized rear shock with extension arms US 7,938,425 + 7,963,541; Specialized/Talavasek US 8,439,383; O'Connor US 9,845,132; Canyon US 9,469,369 + EP 2,603,418 B1; Renault Sport/Tribotte US 7,837,214 + EP 1,883,574 B1; Lapierre/Plantet US 8,286,982 + EP 2,271,544 B1; Cocalis derailleur link US 8,075,009; Felt EP 1,819,583 B1. Gaps: the Fox inertia-valve family (US 7,766,135 and its 2001-priority continuations) is a large family held for a separate batch; abandoned application US 2006/0231360 and Specialized WO 2008/130336 (ceased, no US counterpart found) not carded.
 - Cited-often batch 3 (8 cards, conf v, facts and claims read on Google Patents): Klieber cable guide US 8,931,793 + EP 2,406,122 B1; Magura/Befra wireless seat post US 9,592,882 + 10,259,520 + EP 2,888,157 B2 (claim 1 of the lead is a seat post, the division claims the suspension; exp 2033 from the PCT date, not the US filing); Wagner fork clamping US 8,833,785 (lapsed for unpaid fees Oct. 22, 2018, term would have run to 2030); Specialized US 7,891,688 and US 9,376,156; Voss US 9,242,693 + 10,457,348 + EP 2,969,726 B1; Specialized flexing seat post family US 10,919,592 + 11,851,125 + 12,351,263 (headline = the parent; exp 2038 from the April 2018 filing, not the 2023 continuation date); Hu one-piece connector US 9,056,647. Gaps: motorcycle-only items US 7,677,347 and US 6,871,867 not carded (asked Jon); Fox inertia-valve family still held; US 7,938,425's sibling and other CSV rows already covered by batches 1-2 were skipped.
 - Cited-often batch 4 (4 cards, conf v, facts and claims read on Google Patents; motorcycle suspension is in scope per Jon): Fox inertia-valve family US 6,581,948 + 9 continuations (6,604,751; 7,128,192; 7,273,137; 7,766,135; 8,297,417; 8,770,360; 9,657,804; 10,316,924; 11,346,422; headline = the oldest, filed Jan. 9, 2002, all terms counted from that date, exp 2022; 7,766,135 lapsed Aug. 2022); Brawn air shock US 7,677,347; Parigian multi-link US 6,871,867 + 7,086,658 (exp 2020 from the Dec. 19, 2000 ancestor; 6,871,867 lapsed 2013; CIP US 11/461,523 abandoned, not carded); Honda pull-shock US 7,131,511 + JP 4,368,403 B2 (lapsed 2014, term to 2025). Gaps: WO 2003/021129 is the PCT of the Fox family (not added to nums[]); Fox members' PTA not individually verified, term ends read from Google Patents.
+- Cited-often batch 5 (7 cards, conf v, facts and claims read on Google Patents): Specialized dual-valve inertia shock US 8,960,389 (active, expiry Dec. 17, 2031); Answer Products multi-travel fork US 6,343,807 (lapsed for unpaid fees Feb. 5, 2014); Votec gas-spring suspension device US 6,592,108; K2 lock-out shock US 6,382,370 (lapsed May 7, 2014); Schober suspension US 6,783,142; Fox damping adjuster US 6,360,857; Fox pressure-sensitive compression damper family US 7,374,028 + 9,103,401 + 10,352,392 + 11,293,515 (term from the Sept. 12, 2003 parent, exp 2023). Gaps: DT Swiss US 2002/0175035 has no granted number found, so it is not carded; Specialized US 8,336,683 and 8,276,719 ("Bicycle damper" family) are named on the US 8,960,389 card but not carded.
