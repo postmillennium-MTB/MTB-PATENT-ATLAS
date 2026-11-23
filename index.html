@@ -21,11 +21,11 @@
 <meta name="twitter:description" content="An interactive timeline of 606 mountain bike patents and applications, 1869 to present — rear suspension, forks, drivetrain, wheels, and the industry's biggest patent fights.">
 <meta name="twitter:image" content="https://postmillennium-mtb.github.io/MTB-PATENT-ATLAS/social-preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Nunito:wght@600;700&family=Bitter:wght@500;600;700&family=Anton&family=IBM+Plex+Mono:wght@600;700&family=Special+Elite&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Nunito:wght@600;700&family=Bitter:wght@500;600;700&family=Anton&family=IBM+Plex+Mono:wght@600;700&family=Special+Elite&display=swap" rel="stylesheet">
 <style>
 :root{
   --radius:10px;
-  --font-display:'Barlow Condensed',system-ui,sans-serif;
+  --font-display:'Barlow',system-ui,sans-serif;
   --font-body:'Barlow',system-ui,sans-serif;
   --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
   --ui-weight:600; /* weight for small display-font UI text (tabs, sub-heads); a theme overrides this when its display font reads heavy at small sizes */
@@ -43,7 +43,7 @@
   --bg:#EEF3EC; --surface:#FFFFFF; --ink:#16261C; --ink-soft:#4b5f53;
   --spine:#4F7A5E; --primary:#2D6A4F; --accent:#8AB17D; --deep:#1B4332;
   --chip-bg:#E3ECE4; --card-border:#D8E2D9; --card-edge:#C2D0C5;
-  --st-active:#2D6A4F; --st-expired:#7d8a80; --st-pending:#A9762B; --st-lit:#B5532A;
+  --st-active:#2D6A4F; --st-expired:#656F67; --st-pending:#8F6424; --st-lit:#B5532A;
   --lit-solid:1;
   --radius:14px; --spine-w:3px; --spine-radius:3px; --card-accent-w:0px; --dot-radius:50%;
   --head-weight:700; --head-spacing:.01em; --head-transform:uppercase;
@@ -57,7 +57,7 @@
   --bg:#EFE7D6; --surface:#FBF6EC; --ink:#33291C; --ink-soft:#6E6259;
   --spine:#8C6B43; --primary:#6E5C49; --accent:#C19A6B; --deep:#3D3122;
   --chip-bg:#E6D9C2; --card-border:#D2C2A4; --card-edge:#C2AF8B;
-  --st-active:#5C7148; --st-expired:#8C8377; --st-pending:#A9762B; --st-lit:#9C4A2F;
+  --st-active:#5C7148; --st-expired:#6D665C; --st-pending:#885F22; --st-lit:#9C4A2F;
   --lit-solid:1;
   --radius:3px; --spine-w:2px; --spine-radius:0; --card-accent-w:0px; --dot-radius:0;
   --head-weight:700; --head-spacing:.04em; --head-transform:none;
@@ -76,7 +76,7 @@
   --bg:#F2F2F2; --surface:#FFFFFF; --ink:#161616; --ink-soft:#555;
   --spine:#C5050C; --primary:#C5050C; --accent:#161616; --deep:#161616;
   --chip-bg:#EDEDED; --card-border:#161616;
-  --st-active:#1f7a33; --st-expired:#9a9a9a; --st-pending:#C77800; --st-lit:#C5050C;
+  --st-active:#1f7a33; --st-expired:#6D6D6D; --st-pending:#9D5E00; --st-lit:#C5050C;
   --lit-solid:0;
   --radius:0px; --spine-w:4px; --spine-radius:0; --card-accent-w:5px; --dot-radius:0;
   --head-weight:400; --head-spacing:0; --head-transform:uppercase;
@@ -96,7 +96,7 @@
   --bg:#EDF0F5; --surface:#FFFFFF; --ink:#0B162A; --ink-soft:#4a566b;
   --spine:#C83803; --primary:#13294B; --accent:#C83803; --deep:#0B162A;
   --chip-bg:#E0E6F0; --card-border:#C3CCDC; --card-edge:#AEB9CC;
-  --st-active:#1f7a33; --st-expired:#8a8f99; --st-pending:#C83803; --st-lit:#A52A1A;
+  --st-active:#1f7a33; --st-expired:#686C74; --st-pending:#C83803; --st-lit:#A52A1A;
   --lit-solid:1;
   --radius:6px; --spine-w:2px; --spine-radius:0; --card-accent-w:0px; --dot-radius:50%;
   --head-weight:600; --head-spacing:.06em; --head-transform:uppercase;
@@ -138,7 +138,18 @@ header::before{
 .hright{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
 .pmr-home{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.85;text-decoration:none;border:1.5px solid rgba(255,255,255,.45);border-radius:6px;padding:3px 10px;white-space:nowrap;transition:opacity .15s,border-color .15s}
 .pmr-home:hover{opacity:1;border-color:#fff}
+/* Skip link: first Tab stop, hidden until focused. */
+.skip-link{position:absolute;left:8px;top:-60px;z-index:1000;background:var(--surface);color:var(--ink);font-weight:600;padding:10px 14px;border-radius:var(--radius);box-shadow:var(--card-shadow);text-decoration:none}
+.skip-link:focus{top:8px}
+#timeline:focus{outline:none} /* skip-link target: no ring around the whole page */
 .pmr-home:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* One visible keyboard-focus ring for everything (WCAG 2.4.7). --focus is the
+   ring colour; the header, which is dark in every theme, switches it to white.
+   Components with their own :focus-visible rule keep it (more specific). */
+:root{--focus:var(--primary)}
+header{--focus:#fff}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.home-search:focus-within{outline:3px solid var(--focus);outline-offset:2px}
 /* ---------- fmeta action buttons (surprise / share) ---------- */
 .fmeta-actions{display:flex;gap:6px;align-items:center}
 .mini-btn{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.04em;background:var(--surface);border:1px solid var(--card-border);color:var(--ink);border-radius:999px;padding:3px 9px;min-height:26px;white-space:nowrap;transition:border-color .15s,background .15s}
@@ -232,7 +243,10 @@ header::before{
 .share-panel{position:absolute;top:calc(100% + 6px);right:0;z-index:40;display:flex;flex-direction:column;gap:2px;min-width:180px;background:var(--surface);border:1px solid var(--card-border);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.16);padding:6px;animation:sharePop .12s ease}
 @keyframes sharePop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 .share-opt{display:flex;align-items:center;gap:8px;width:100%;background:none;border:none;border-radius:6px;padding:7px 9px;font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--ink);text-align:left;white-space:nowrap;cursor:pointer;transition:background .12s}
-.share-opt:hover,.share-opt:focus-visible{background:color-mix(in srgb, var(--primary) 12%, transparent);outline:none}
+/* Fixed icon column so the four labels line up; Facebook and Reddit are text only. */
+.share-opt .so-ico{flex:0 0 16px;width:16px;display:inline-flex;align-items:center;justify-content:center}
+.share-opt .so-ico svg{width:14px;height:14px}
+.share-opt:hover,.share-opt:focus-visible{background:color-mix(in srgb, var(--primary) 12%, transparent)}
 @media(prefers-reduced-motion:reduce){.share-panel{animation:none}}
 /* ---------- Going free soon ---------- */
 .pill.soon{background:transparent;color:var(--st-pending);border:1.5px solid var(--st-pending)}
@@ -257,12 +271,12 @@ header::before{
 .rh-head .home-sec-h{margin:0}
 .rh-nav{display:flex;gap:6px;flex:none}
 .rh-arrow{width:30px;height:30px;border-radius:50%;border:1px solid var(--card-border);background:var(--surface);color:var(--primary);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.14);opacity:.85;transition:opacity .15s,border-color .15s}
-.rh-arrow:hover,.rh-arrow:focus-visible{opacity:1;border-color:var(--primary);outline:none}
+.rh-arrow:hover,.rh-arrow:focus-visible{opacity:1;border-color:var(--primary)}
 .rh-arrow:disabled{opacity:.3;cursor:default}
 .rh-arrow svg{width:16px;height:16px;pointer-events:none}
 .rh-row{display:grid;grid-auto-flow:column;grid-auto-columns:70%;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding:2px 2px 6px;scrollbar-width:thin}
 .rh-card{scroll-snap-align:start;display:flex;flex-direction:column;text-align:left;background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);overflow:hidden;padding:0;cursor:pointer;color:inherit;font:inherit;transition:border-color .15s,transform .15s}
-.rh-card:hover,.rh-card:focus-visible{border-color:var(--primary);transform:translateY(-2px);outline:none}
+.rh-card:hover,.rh-card:focus-visible{border-color:var(--primary);transform:translateY(-2px)}
 /* Compact hole: a strip of three drawings (rhStripSrcs()) instead of one big
    picture, then year, title and a two-line blurb. */
 .rh-strip{display:grid;grid-template-columns:repeat(3,1fr);background:var(--thumb-bg);border-bottom:1px solid var(--card-border)}
@@ -313,11 +327,11 @@ header::before{
 .lw-chip.lw-two{padding:4px 14px;line-height:1.1}
 .lw-chip .lw-l1,.lw-chip .lw-l2{display:block}
 .lw-chip .lw-l2{font-size:12px;font-weight:500;opacity:.85}
-.lw-chip:hover,.lw-chip:focus-visible{border-color:var(--primary);outline:none}
+.lw-chip:hover,.lw-chip:focus-visible{border-color:var(--primary)}
 .lw-chip[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}
 .lw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .lw-tile{display:flex;flex-direction:column;padding:0;margin:0;background:var(--surface);border:1px solid var(--card-edge);border-radius:var(--radius);overflow:hidden;cursor:pointer;font:inherit;color:inherit;text-align:left;transition:border-color var(--motion) var(--ease),transform var(--motion) var(--ease)}
-.lw-tile:hover,.lw-tile:focus-visible{border-color:var(--primary);transform:translateY(-2px);outline:none}
+.lw-tile:hover,.lw-tile:focus-visible{border-color:var(--primary);transform:translateY(-2px)}
 .lw-tile:nth-child(n+7){display:none}
 .lw-pic{position:relative;display:block;aspect-ratio:var(--tile-ratio);overflow:hidden;background:var(--thumb-bg);border-bottom:1px solid var(--card-border)}
 /* Absolutely placed so a tall drawing can't stretch its tile past the
@@ -371,7 +385,7 @@ header::before{
 .home-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;align-items:center}
 .home-lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-right:2px}
 .home-chip{border:1px solid var(--card-border);background:var(--surface);border-radius:999px;padding:7px 12px;min-height:40px;font:inherit;font-size:14px;color:var(--ink);display:inline-flex;gap:6px;align-items:center;cursor:pointer}
-.home-chip:hover,.home-chip:focus-visible{border-color:var(--primary);outline:none}
+.home-chip:hover,.home-chip:focus-visible{border-color:var(--primary)}
 /* The rotating chip: primary-tinted border so it reads as the "changing" one. */
 .rot-chip{border-color:var(--primary);border-style:dashed;justify-content:center}
 .rot-inner{display:inline-flex;gap:6px;align-items:center;transition:opacity .3s ease}
@@ -381,7 +395,7 @@ header::before{
 .invite-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 26px}
 @media(min-width:640px){.invite-grid{grid-template-columns:repeat(4,1fr)}}
 .invite{background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:14px;display:flex;flex-direction:column;gap:4px;text-align:left;font:inherit;color:inherit;cursor:pointer;transition:border-color .15s}
-.invite:hover,.invite:focus-visible{border-color:var(--primary);outline:none}
+.invite:hover,.invite:focus-visible{border-color:var(--primary)}
 .invite .n{font-family:var(--font-display);font-weight:800;font-size:32px;color:var(--primary);line-height:1}
 .invite .q{font-size:14px;font-weight:600;line-height:1.3}
 .invite .go{margin-top:auto;padding-top:6px;font-size:13px;color:var(--primary);font-weight:700}
@@ -450,10 +464,10 @@ header::before{
    segments the litigation chart still uses. */
 button.stats-seg{display:block;padding:0;border-top:0;border-left:0;border-right:0;margin:0;cursor:pointer;font:inherit}
 button.stats-seg:first-child{border-bottom:0}
-button.stats-seg:hover,button.stats-seg:focus-visible{filter:brightness(1.15);outline:none}
+button.stats-seg:hover,button.stats-seg:focus-visible{filter:brightness(1.15)}
 button.stats-seg:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
 .stats-timeline-labels{display:flex;gap:3px;margin-top:4px}
-.stats-timeline-labels span{flex:1;min-width:5px;text-align:center;font-family:var(--font-mono);font-size:10px;color:var(--ink-soft);white-space:nowrap}
+.stats-timeline-labels span{flex:1;min-width:5px;text-align:center;font-family:var(--font-mono);font-size:11px;color:var(--ink-soft);white-space:nowrap}
 .timeline-legend{margin-top:10px}
 .soon-list{list-style:none;margin-top:4px}
 .soon-list li{background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:9px 12px;margin-bottom:6px;font-size:13.5px;display:flex;gap:10px;align-items:baseline;cursor:pointer;transition:border-color .15s}
@@ -465,7 +479,7 @@ button.stats-seg:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
 @media(min-width:760px){.stats-wrap>.potd .potd-card{max-width:760px}}
 .potd-date{font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--ink-soft);text-transform:none;letter-spacing:0;margin-left:6px}
 .potd-card{display:flex;gap:12px;width:100%;text-align:left;background:var(--surface);border:1px solid var(--card-border);border-radius:var(--radius);padding:10px;cursor:pointer;color:inherit;font:inherit;transition:border-color .15s}
-.potd-card:hover,.potd-card:focus-visible{border-color:var(--primary);outline:none}
+.potd-card:hover,.potd-card:focus-visible{border-color:var(--primary)}
 .potd-img{flex:0 0 96px;height:96px;border-radius:6px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center}
 .potd-img img{max-width:100%;max-height:100%;object-fit:contain;display:block}
 .potd-body{display:flex;flex-direction:column;gap:4px;min-width:0}
@@ -476,7 +490,7 @@ button.stats-seg:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
 .wn-list li{display:flex;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--card-border);font-size:13.5px;line-height:1.4}
 .wn-list time{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--primary);flex:0 0 52px}
 .wn-go{background:none;border:none;padding:0;margin-left:4px;font:inherit;font-weight:700;color:var(--primary);cursor:pointer;white-space:nowrap}
-.wn-go:hover,.wn-go:focus-visible{text-decoration:underline;outline:none}
+.wn-go:hover,.wn-go:focus-visible{text-decoration:underline}
 /* Standard lines by card type (stdNotesHTML): one plain-language reminder of
    what this kind of record does and does not mean. Quiet on purpose: it sits
    under the facts, not above them. */
@@ -489,15 +503,17 @@ button.stats-seg:focus-visible{box-shadow:inset 0 0 0 2px var(--ink)}
 .clever b{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-right:4px}
 .stats-note{font-size:12px;color:var(--ink-soft);margin-top:14px}
 @media(max-width:480px){.hbar-row{grid-template-columns:110px 1fr 30px;font-size:12px}
-  .stats-timeline{height:90px;gap:2px} .stats-timeline-labels{gap:2px} .stats-timeline-labels span{font-size:9px}
+  .stats-timeline{height:90px;gap:2px} .stats-timeline-labels{gap:2px} .stats-timeline-labels span{font-size:11px}
   /* The litigation chart's dense labels (every 5-year bucket, not just
      every 10th) run one label short at this width even after the rule
      above -- an extra size/spacing squeeze just for that chart's ~11
      labels rather than the ~4-6 the category chart above it thins down
      to. Checked down to a 320px viewport (an iframe embed can end up
      narrower than the visitor's own screen) with no overlap. */
-  .stats-timeline-labels.dense-labels{gap:1px}
-  .stats-timeline-labels.dense-labels span{font-size:7.5px;letter-spacing:-.03em}}
+  /* Phones: labels stay at 11px and only the decades show (1980, 1990 ...);
+     the hidden ones keep their slot so each label stays under its column. */
+  .stats-timeline-labels.dense-labels{gap:2px}
+  .stats-timeline-labels.dense-labels span:nth-child(odd){visibility:hidden}}
 h1{font-family:var(--font-display);font-weight:var(--head-weight);font-size:clamp(30px,6vw,46px);line-height:1.02;letter-spacing:var(--head-spacing);text-transform:var(--head-transform);margin-top:14px}
 /* Every theme uses the typewriter face for the title (first the WMBC look,
    now all four at Jon's request), like a patent filing. Special Elite has one
@@ -516,7 +532,7 @@ h1{font-family:'Special Elite','Courier New',monospace;font-weight:400;letter-sp
 .swatch.on{border-color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.35)}
 .swatch:focus-visible{outline:2px solid #fff;outline-offset:2px}
 /* Swatch is small; this invisible halo keeps the tap target finger-sized. */
-.swatch::after{content:"";position:absolute;inset:-8px -3px}
+.swatch::after{content:"";position:absolute;inset:-8px -4px}
 .sw-wmbc{background:linear-gradient(135deg,#2D6A4F 55%,#8AB17D 55%)}
 .sw-comba{background:linear-gradient(135deg,#6E5C49 50%,#C19A6B 50%)}
 .sw-camba{background:linear-gradient(135deg,#C5050C 50%,#161616 50%)}
@@ -531,6 +547,12 @@ h1{font-family:'Special Elite','Courier New',monospace;font-weight:400;letter-sp
 .langbtn{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.04em;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.45);color:#fff;border-radius:5px;padding:1px 6px;min-height:18px;min-width:26px;cursor:pointer;transition:background .15s,border-color .15s}
 .langbtn.on{background:#fff;border-color:#fff;color:var(--deep)}
 .langbtn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* Invisible halos so EN/FR, the timeline toggles and What's new "Go" links are
+   at least 24px tall to a finger (WCAG 2.5.8) without changing their look. */
+.langbtn,.step-btn,.wn-go{position:relative}
+.langbtn::after{content:"";position:absolute;inset:-5px -2px}
+.step-btn::after{content:"";position:absolute;inset:-4px 0}
+.wn-go::after{content:"";position:absolute;inset:-6px -4px}
 /* ---------- Machine-translation disclaimer banner ----------
    Shown only while state.lang!=="en". The 425-entry data block is AI-
    translated and not yet reviewed by a French speaker — this stays visible
@@ -580,7 +602,7 @@ h1{font-family:'Special Elite','Courier New',monospace;font-weight:400;letter-sp
 /* ---------- Search (NEW) ---------- */
 .search-row{border-bottom:1px solid var(--card-border);padding:6px 0 5px;background:var(--bg)}
 .search-wrap{max-width:880px;margin:0 auto;padding:0 16px}
-.search-inp{width:100%;background:var(--surface);border:1.5px solid var(--card-border);border-radius:999px;padding:8px 14px 8px 36px;font-size:13px;font-family:var(--font-body);color:var(--ink);outline:none;transition:border-color .15s;min-height:38px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 10h4'/%3E%3Cpath d='M19 7V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3'/%3E%3Cpath d='M20 21a2 2 0 0 0 2-2v-3.851c0-1.39-2-2.962-2-4.829V8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2z'/%3E%3Cpath d='M 22 16 L 2 16'/%3E%3Cpath d='M4 21a2 2 0 0 1-2-2v-3.851c0-1.39 2-2.962 2-4.829V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2z'/%3E%3Cpath d='M9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:14px 50%}
+.search-inp{width:100%;background:var(--surface);border:1.5px solid var(--card-border);border-radius:999px;padding:8px 14px 8px 36px;font-size:13px;font-family:var(--font-body);color:var(--ink);transition:border-color .15s;min-height:38px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 10h4'/%3E%3Cpath d='M19 7V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3'/%3E%3Cpath d='M20 21a2 2 0 0 0 2-2v-3.851c0-1.39-2-2.962-2-4.829V8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2z'/%3E%3Cpath d='M 22 16 L 2 16'/%3E%3Cpath d='M4 21a2 2 0 0 1-2-2v-3.851c0-1.39 2-2.962 2-4.829V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2z'/%3E%3Cpath d='M9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:14px 50%}
 .search-inp:focus{border-color:var(--primary)}
 .search-inp::placeholder{color:var(--ink-soft);opacity:.7}
 .search-inp::-webkit-search-cancel-button{cursor:pointer}
@@ -614,7 +636,7 @@ h1{font-family:'Special Elite','Courier New',monospace;font-weight:400;letter-sp
 .link-notice-x{flex:none;min-width:32px;min-height:32px;border:0;background:none;color:var(--ink-soft);font:inherit;cursor:pointer;border-radius:var(--pill-radius)}
 .link-notice-x:hover,.link-notice-x:focus-visible{color:var(--primary);outline:2px solid var(--primary)}
 .where-clear{display:inline-flex;align-items:center;gap:4px;min-height:32px;padding:4px 12px;border:1px solid var(--primary);border-radius:var(--pill-radius);background:none;color:var(--primary);font:inherit;font-size:12px;font-weight:600;cursor:pointer;transition:background var(--motion) var(--ease),color var(--motion) var(--ease)}
-.where-clear:hover,.where-clear:focus-visible{background:var(--primary);color:#fff;outline:none}
+.where-clear:hover,.where-clear:focus-visible{background:var(--primary);color:#fff}
 .clearbtn{background:none;border:none;color:var(--primary);font-size:12px;font-weight:600;text-decoration:underline;padding:4px}
 /* ---------- Filter tabs ---------- */
 .tab-row{max-width:880px;margin:0 auto;display:flex;gap:5px;overflow-x:auto;padding:3px 16px;scrollbar-width:none}
@@ -711,8 +733,8 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .pill.litigated{background:var(--st-lit)}
 [data-theme="camba"] .pill.litigated{background:#fff;color:var(--st-lit);border:1.5px solid var(--st-lit)}
 .pill.badge{background:transparent;color:var(--primary);border:1px solid var(--primary)}
-.conf{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.05em;color:var(--st-pending);margin-top:5px}
-.conf.low{color:var(--st-lit)}
+.conf{display:inline-block;font-family:var(--font-body);font-size:12px;font-weight:600;line-height:1.3;color:var(--ink);background:color-mix(in srgb,var(--st-pending) 14%,var(--surface));border:1px solid var(--st-pending);border-radius:var(--pill-radius,999px);padding:2px 8px;margin-top:6px}
+.conf.low{background:color-mix(in srgb,var(--st-lit) 14%,var(--surface));border-color:var(--st-lit)}
 .caret{flex:0 0 auto;color:var(--ink-soft);font-size:12px;margin-top:4px;transition:transform .15s}
 .card.open .caret{transform:rotate(180deg)}
 /* Phone layout: the year pill, jurisdiction tag and caret share a short top
@@ -735,12 +757,13 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .tour-intro{margin:0 0 12px;color:var(--ink-soft);max-width:60ch}
 .card-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding-top:10px;border-top:1px dashed var(--card-border)}
 .cn-btn{display:inline-flex;align-items:center;gap:4px;min-height:40px;padding:0 14px;border:1px solid var(--card-border);border-radius:var(--pill-radius,999px);background:var(--surface);color:var(--primary);font:inherit;font-size:var(--fs-meta);font-weight:600;cursor:pointer;transition:border-color var(--motion,180ms) var(--ease,ease)}
-.cn-btn:hover,.cn-btn:focus-visible{border-color:var(--primary);outline:none}
+.cn-btn:hover,.cn-btn:focus-visible{border-color:var(--primary)}
 .cn-btn:disabled{opacity:.35;cursor:default;border-color:var(--card-border)}
 .cn-btn svg{width:16px;height:16px}
 .cn-pos{font-family:var(--font-mono);font-size:var(--fs-label);color:var(--ink-soft)}
-.cbody p{font-size:14px;margin-top:10px}
-.cbody .why{font-size:13.5px;color:var(--ink-soft);font-style:italic}
+/* Card reading text: 16px (15px on phones) at ~68 characters a line. */
+.cbody p{font-size:16px;line-height:1.6;margin-top:10px;max-width:68ch}
+.cbody .why{font-size:16px;color:var(--ink-soft);font-style:italic}
 .card-xref{color:var(--primary);font-weight:600;text-decoration:underline;text-underline-offset:2px}
 .pull-quote{display:block;margin:10px 0;font-size:18px;line-height:1.35;font-style:italic;color:var(--ink)}
 .pull-quote .attr{display:block;margin-top:4px;font-size:13px;font-style:normal;color:var(--ink-soft)}
@@ -848,7 +871,7 @@ main{max-width:880px;margin:0 auto;padding:18px 16px 60px}
 .wg-track{position:relative;height:26px;background:
   repeating-linear-gradient(to right,transparent 0,transparent calc(var(--wg-tick) - 1px),var(--card-border) calc(var(--wg-tick) - 1px),var(--card-border) var(--wg-tick))}
 .wg-bar{position:absolute;top:2px;height:22px;border:0;border-radius:4px;padding:0 6px;cursor:pointer;font-family:var(--font-mono);font-size:10px;color:#fff;white-space:nowrap;overflow:hidden;text-align:center;box-sizing:border-box}
-.wg-bar:hover,.wg-bar:focus-visible{filter:brightness(1.15);outline:none;box-shadow:0 0 0 2px var(--ink)}
+.wg-bar:hover,.wg-bar:focus-visible{filter:brightness(1.15);box-shadow:0 0 0 2px var(--ink)}
 .wg-bar.open{border-radius:4px 0 0 4px}
 /* A bar too short to hold its own "2009–2011" label shows it just to the right instead. */
 .wg-out{position:absolute;top:2px;height:22px;line-height:22px;font-family:var(--font-mono);font-size:10px;color:var(--ink);white-space:nowrap;pointer-events:none}
@@ -1019,7 +1042,7 @@ footer .hwrap p{opacity:.8;max-width:640px}
    pointer events, and it inherits the footer's currentColor/opacity via
    fill="none" stroke="currentColor" rather than hardcoding a color. */
 .footer-squirrel{display:block;width:18px;height:18px;margin:0 0 2px;opacity:.8;pointer-events:none}
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
 @media(min-width:640px){
   .chead{padding:14px 18px}
   .chead{flex-wrap:nowrap}
@@ -1035,7 +1058,7 @@ html,body{overflow-x:hidden;max-width:100%}
 @media(max-width:480px){
   :root{--fs-title:14px;--fs-meta:12px;--tile-pad:8px}
   h1{font-size:26px}
-  .cbody p,.why{font-size:13.5px}
+  .cbody p,.why{font-size:15px}
   .meta{gap:10px}
   .gp,.gp-secondary{font-size:12.5px}
   .bars{height:44px;gap:2px}
@@ -1294,6 +1317,7 @@ footer a{color:inherit;text-decoration:underline}
 .pmr-license a::after{content:"";position:absolute;left:-6px;right:-6px;top:-10px;bottom:-10px}</style>
 </head>
 <body>
+<a class="skip-link" href="#timeline" data-i18n="skipToAtlas">Skip to the Atlas</a>
 
 <header>
   <div class="hwrap">
@@ -1383,10 +1407,10 @@ footer a{color:inherit;text-decoration:underline}
       <details class="share-menu" id="shareMenu">
         <summary class="mini-btn" data-i18n-title="shareTip" title="Share this view"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link icon-inline" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span data-i18n="shareBtn">Share</span></summary>
         <div class="share-panel" role="menu">
-          <button class="share-opt" data-share="copy" role="menuitem" data-i18n="copyLink">📋 Copy link</button>
-          <button class="share-opt" data-share="x" role="menuitem" data-i18n="shareX">𝕏 Share on X</button>
-          <button class="share-opt" data-share="facebook" role="menuitem" data-i18n="shareFacebook">📘 Share on Facebook</button>
-          <button class="share-opt" data-share="reddit" role="menuitem" data-i18n="shareReddit">👽 Share on Reddit</button>
+          <button class="share-opt" data-share="copy" role="menuitem"><span class="so-ico" data-icon="link" aria-hidden="true"></span><span class="so-lbl" data-i18n="copyLink">Copy link</span></button>
+          <button class="share-opt" data-share="x" role="menuitem"><span class="so-ico" aria-hidden="true">𝕏</span><span class="so-lbl" data-i18n="shareX">Share on X</span></button>
+          <button class="share-opt" data-share="facebook" role="menuitem"><span class="so-ico" aria-hidden="true"></span><span class="so-lbl" data-i18n="shareFacebook">Share on Facebook</span></button>
+          <button class="share-opt" data-share="reddit" role="menuitem"><span class="so-ico" aria-hidden="true"></span><span class="so-lbl" data-i18n="shareReddit">Share on Reddit</span></button>
         </div>
       </details>
     </span>
@@ -1394,7 +1418,7 @@ footer a{color:inherit;text-decoration:underline}
 </div>
 
 <div class="link-notice" id="linkNotice" role="status" hidden><span id="linkNoticeText"></span><button type="button" class="link-notice-x" id="linkNoticeClose" data-i18n-aria-label="linkNoticeClose" aria-label="Dismiss"><span aria-hidden="true">✕</span></button></div>
-<main id="timeline"></main>
+<main id="timeline" tabindex="-1"></main>
 
 <!-- Colorado MTB Innovation panel -->
 <div id="coOverlay" class="co-overlay" hidden></div>
@@ -3291,6 +3315,8 @@ const ICON_HOURGLASS = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" h
 const ICON_HOURGLASS_COG = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-hourglass-cog icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m14.305 19.53.923-.382\"/><path d=\"m15.228 16.852-.923-.383\"/><path d=\"m16.852 15.228-.383-.923\"/><path d=\"m16.852 20.772-.383.924\"/><path d=\"M17 2v4.172a2 2 0 0 1-.586 1.414l-8.828 8.828A2 2 0 0 0 7 17.828V22\"/><path d=\"m19.148 15.228.383-.923\"/><path d=\"m19.53 21.696-.382-.924\"/><path d=\"m20.772 16.852.924-.383\"/><path d=\"m20.772 19.148.924.383\"/><path d=\"M5 22h6.159\"/><path d=\"M5 2h14\"/><path d=\"M7 2v4.172a2 2 0 0 0 .586 1.414l5.188 5.188\"/><circle cx=\"18\" cy=\"18\" r=\"3\"/></svg>";
 const ICON_DICE = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-dices icon-inline\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"12\" height=\"12\" x=\"2\" y=\"10\" rx=\"2\" ry=\"2\"/><path d=\"m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6\"/><path d=\"M6 18h.01\"/><path d=\"M10 14h.01\"/><path d=\"M15 6h.01\"/><path d=\"M18 9h.01\"/></svg>";
 const ICON_LINK = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-link icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"/><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"/></svg>";
+/* Share menu "Copy link" icon (the label beside it is translated separately). */
+document.querySelectorAll('.so-ico[data-icon="link"]').forEach(el=>{ el.innerHTML=ICON_LINK; });
 /* Sort-toggle button icon (fmeta-actions row) — swaps between these two
    depending on current sort direction, see the sortBtn click handler. */
 const ICON_CLOCK_ARROW_UP = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-clock-arrow-up icon-inline\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 6v6l1.56.78\"/><path d=\"M13.227 21.925a10 10 0 1 1 8.767-9.588\"/><path d=\"m14 18 4-4 4 4\"/><path d=\"M18 22v-8\"/></svg>";
@@ -3338,7 +3364,7 @@ const T = {
     viewGridTip:"Grid of drawings", viewPlateTip:"List with a small drawing beside each entry",
     viewTintTip:"List with a large drawing on a category-colored panel", viewTextTip:"List without images",
     shareBtn:"Share", shareTip:"Share this view",
-    copyLink:"📋 Copy link", shareX:"𝕏 Share on X", shareFacebook:"📘 Share on Facebook", shareReddit:"👽 Share on Reddit",
+    copyLink:"Copy link", shareX:"Share on X", shareFacebook:"Share on Facebook", shareReddit:"Share on Reddit", skipToAtlas:"Skip to the Atlas",
     copiedConfirm:"✓ Copied", copyLinkShown:"Copy the link shown",
     shareText:"MTB Patent Atlas — 606 mountain bike patents and applications, 1869 to present.",
     clearFilters:"Clear filters", linkMissingSearch:"That link points to an entry that has moved or been renamed. These are the closest matches.", linkMissingHome:"That link points to an entry that has moved or been renamed, so here is the Atlas home.", linkNoticeClose:"Dismiss", searchBest:"Best matches", searchRest:"Also mentioned", backToTheme:name=>`Back to ${name}`, tourKicker:n=>`Tour · ${n} stops`, tourGo:"Take the tour →", tourNextStop:"Next stop:", tourEnd:"Last stop on this tour.", tourBack:"Back to the rabbit holes",
@@ -3553,7 +3579,7 @@ const T = {
     viewGridTip:"Grille de dessins", viewPlateTip:"Liste avec un petit dessin à côté de chaque entrée",
     viewTintTip:"Liste avec un grand dessin sur un panneau teinté selon la catégorie", viewTextTip:"Liste sans images",
     shareBtn:"Partager", shareTip:"Partager cette vue",
-    copyLink:"📋 Copier le lien", shareX:"𝕏 Partager sur X", shareFacebook:"📘 Partager sur Facebook", shareReddit:"👽 Partager sur Reddit",
+    copyLink:"Copier le lien", shareX:"Partager sur X", shareFacebook:"Partager sur Facebook", shareReddit:"Partager sur Reddit", skipToAtlas:"Aller à l'Atlas",
     copiedConfirm:"✓ Copié", copyLinkShown:"Copier le lien affiché",
     shareText:"MTB Patent Atlas — 606 brevets et demandes de brevets liés au VTT, de 1869 à aujourd'hui.",
     clearFilters:"Effacer les filtres", linkMissingSearch:"Ce lien mène à une fiche déplacée ou renommée. Voici les résultats les plus proches.", linkMissingHome:"Ce lien mène à une fiche déplacée ou renommée : voici l'accueil de l'Atlas.", linkNoticeClose:"Fermer", searchBest:"Meilleurs résultats", searchRest:"Également mentionné", backToTheme:name=>`Retour au thème « ${name} »`, tourKicker:n=>`Parcours · ${n} étapes`, tourGo:"Suivre le parcours →", tourNextStop:"Étape suivante :", tourEnd:"Dernière étape de ce parcours.", tourBack:"Retour aux pistes",
@@ -8091,9 +8117,9 @@ function buildExportCSV(){
       const shareUrl=SHARE_BASE_URL+location.hash;
       if(btn.dataset.share==="copy"){
         const ok=await copyToClipboard(shareUrl);
-        const old=btn.textContent;
-        btn.textContent=ok?t("copiedConfirm"):t("copyLinkShown");
-        setTimeout(()=>{ btn.textContent=old; },ANIMATION_CLEANUP_MS);
+        const lbl=btn.querySelector(".so-lbl")||btn;
+        lbl.textContent=ok?t("copiedConfirm"):t("copyLinkShown");
+        setTimeout(()=>{ lbl.textContent=t("copyLink"); },ANIMATION_CLEANUP_MS);
         setTimeout(()=>{ menu.open=false; },ANIMATION_CLEANUP_MS);
         return;
       }
