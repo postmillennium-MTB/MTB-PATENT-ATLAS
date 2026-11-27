@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 606 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 613 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 591 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 564 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 563 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
@@ -17,10 +17,10 @@ An interactive timeline of mountain bike intellectual property: 563 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 606 |
+| **Total entries** | 613 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 251 |
-| **Expired patents** | 280 |
+| **Active patents** | 252 |
+| **Expired patents** | 286 |
 | **Total entries** | 591 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 240 |
@@ -37,10 +37,10 @@ An interactive timeline of mountain bike intellectual property: 563 patents and 
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 237 |
+| **Brands** | 240 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 532 |
+| **Verified entries** | 539 |
 | **Verified entries** | 517 |
 | **Verified entries** | 490 |
 | **Verified entries** | 489 |
@@ -1101,3 +1101,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - 2026-11-24: The page title "MTB Patent Atlas" keeps the typewriter face (Special Elite, Apache 2.0, licence in `/SpecialElite`) in all four themes; only its 16 letters are embedded as a tiny woff2. Everything else is Anta.
 - 2026-11-24: Title font fix: the embedded Special Elite subset now carries the capitals as well as lower case (the title is uppercased by CSS in WMBC, CAMBA and CAMBR, so E, N, L and S had fallen back to Anta). No card data changed.
 - 2026-11-25: US 6,406,048 (Castellano) "why it matters" now covers his Ibis bikes: Szazbo (1995, Sweet Spot), BowTi (1997), SilkTi, Ripley, each credit taken from Ibis's own history page 16 to 18 on John Castellano (ibiscycles.com). Patent dates, inventor and term were already verified on the card. Tier unchanged (v). Ripley and SilkTi years are not given by Ibis, so none are stated.
+- 2026-11-27: Queue batch 1 (7 cards, 606 → 613): Girard / Composites Liken two-degree-of-freedom leaf-spring rear suspension (US 6,450,520 + EP 0,988,215 B1), Merida two-link floating rear triangle (US 6,161,858), Carroll bell-crank rear suspension (US 6,886,846 + 7,350,797), Storck rocker-driven high-pivot frame (US 6,293,574 + EP 0,912,391 B1), Park Tool single-beam folding multi-tool (US 6,880,435 + RE 44,675), Suzuki unit-swing scooter engine mount (EP 0,937,636 B1 + JP 3,422,244 B2), Gocycle cantilever belt-drive stay (US 12,280,849 + EP 4,010,240 B1). All tier v; facts and claims from Google Patents and the patent PDFs. New brands: Storck, Suzuki, Gocycle. Suzuki EP national lapse dates are not on the record, so the card gives January 9, 2019 as the latest end.
