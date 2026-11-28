@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 648 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 655 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 591 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 564 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 563 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
@@ -17,10 +17,10 @@ An interactive timeline of mountain bike intellectual property: 563 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 648 |
+| **Total entries** | 655 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 262 |
-| **Expired patents** | 311 |
+| **Expired patents** | 318 |
 | **Total entries** | 591 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 240 |
@@ -40,7 +40,7 @@ An interactive timeline of mountain bike intellectual property: 563 patents and 
 | **Brands** | 241 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 574 |
+| **Verified entries** | 581 |
 | **Verified entries** | 517 |
 | **Verified entries** | 490 |
 | **Verified entries** | 489 |
@@ -1107,3 +1107,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - 2026-11-28: Queue batch 4 (7 cards, 627 → 634): Hso rocker link with eccentric shock-angle adjuster (US 6,877,591), Specialized shock extension yoke (US 8,006,993 + 8,459,680), Fusion see-saw rocker rear suspension (US 6,845,998), Klein swing arm carrying the bottom bracket on a rigid channel (US 5,826,899), Felt Equilink tie-link suspension (US 7,066,481), Guenther seat stay pivoting on the chain stay (US 6,199,886), Huang linked chain-stay unit carrying the bottom bracket (US 7,658,394). All tier v; facts and claims from Google Patents and the patent PDFs. New brand: Fusion. Hso, Guenther and Huang are individual inventors with no brand tag. Huang's exact lapse date is not on the record (2018).
 - 2026-11-28: Queue batch 5 (7 cards, 634 → 641): Fox position-sensitive shock with one-way bypass (US 6,296,092 + 6,415,895), RockShox tool-free preload spacer and hydraulic lockout (US 6,217,049), Porsche dropped top tube with junction plate (US 6,086,080 + EP 0,832,813 B1), Dunlap swing-arm chassis with low tangent link (US 7,556,276), A-Pro Tech crossing flex plates (US 8,585,070), Campagnolo motorised front derailleur on a tilting mount (US 9,676,446 + JP 6,338,886 B2), Wuthrich single pivot with swinging chain unit (US 8,434,776 + EP 2,420,435 B1). All tier v; facts and claims from Google Patents and the patent PDFs. Skipped as off-topic: FAST snowmobile suspension US 6,237,706 and Fox truck-cab remote bypass US 10,697,514.
 - 2026-11-28: Queue batch 6 (7 cards, 641 → 648): Eitel monocoque motorcycle chassis with paired leading and trailing arms (US 6,263,994), Huskey chainring guide with rollers and side rims (US 5,725,450), Patterson two-way hydraulic shifting (US 6,012,999 + CIP 6,042,495), Shimano rear suspension pivoting on the crank axle (US 5,997,022 + EP 0,888,959 B1), Shimano low-profile rear derailleur (US 8,277,346 + CIP 8,012,052), WickWerks six-link front derailleur (US 8,303,443), SRAM electronic dropper with pressure-balanced valve (US 10,358,180 + 10,807,667 + EP 3,653,479 B1). All tier v; facts and claims from Google Patents and the patent PDFs. The citation-map CSV lists Huskey's patent under the assignee "Joshua Paris"; Google Patents names Theodore A. Huskey as the inventor, and the card follows that.
+- 2026-11-28: Queue batch 7 (7 cards, 648 → 655): Shimano concave flat pedal with grip sheets (US 6,647,826), Shimano one-lever toggle front derailleur (US 6,629,903), White linear rear derailleur on fixed guide rods (US 5,688,200), ITRI front derailleur with an increasing-radius cable cam (US 5,816,966), Shimano front derailleur with a lever and connecting link (US 7,914,407), Shimano rear derailleur with a cage-driven chain guard (US 7,722,488), Shimano rear derailleur with a free guide arm and separate tension arm (US 7,104,908). All tier v from the Google Patents records and patent PDFs; most-cited uncarded 1996+ grants on the citation map (25 to 47 citing patents). Family members named in text only: JP 3,572,269 B2 and EP 1,147,978 (6,629,903), WO 98/06963 and EP 0,854,989 A1 (5,688,200), EP 1,902,937 A2 (7,722,488), JP 4,039,939 B2 (7,104,908).
