@@ -462,6 +462,23 @@ console.log('\ncard thumbnails (informational, not blocking):',
 if (noThumb.length) console.log('  missing (' + noThumb.length + '), run python3 tools/make_thumbs.py:', noThumb.join(', '));
 if (orphanThumbs.length) console.log('  no longer used (' + orphanThumbs.length + '):', orphanThumbs.join(', '));
 
+/* "What's new" must keep up with new cards (Jon, 2026-11-28: seven batches
+   of cards shipped without a WHATS_NEW line and the live strip stayed a week
+   old). The newest README "Recent updates" bullet that adds cards ("N cards",
+   "new card") must not be newer than the newest WHATS_NEW date. Hard failure. */
+{
+  const readme = fs.readFileSync(path.join(repoRoot, 'README.md'), 'utf8');
+  const cardBullets = [...readme.matchAll(/^- (\d{4}-\d{2}-\d{2}):([^\n]*)/gm)]
+    .filter(m => /\b\d+ cards\b|\bnew cards?\b|\(\d+ cards?,/i.test(m[2])).map(m => m[1]);
+  const wnBlock = (html.match(/const WHATS_NEW = \[([\s\S]*?)\n\];/) || [])[1] || '';
+  const wnDates = [...wnBlock.matchAll(/date:"(\d{4}-\d{2}-\d{2})"/g)].map(m => m[1]);
+  const newestCards = cardBullets.sort().pop(), newestWN = wnDates.sort().pop();
+  if (newestCards && newestWN && newestCards > newestWN) {
+    console.error(`::error::README adds cards on ${newestCards} but the newest WHATS_NEW line is ${newestWN}: add a WHATS_NEW line (date, {en,fr}, go: a new card) at the top of the array.`);
+    hardFailures.push('whats-new behind README');
+  } else console.log(`\nwhat's new: newest line ${newestWN}, newest card bullet ${newestCards || 'none'}`);
+}
+
 if (hardFailures.length) {
   console.error(`\n::error::${hardFailures.length} schema-integrity issue(s) found -- see list above.`);
   process.exit(1);
