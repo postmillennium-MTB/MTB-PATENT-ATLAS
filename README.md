@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 627 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 634 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 591 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 564 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 563 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
@@ -17,10 +17,10 @@ An interactive timeline of mountain bike intellectual property: 563 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 627 |
+| **Total entries** | 634 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 258 |
-| **Expired patents** | 294 |
+| **Active patents** | 259 |
+| **Expired patents** | 300 |
 | **Total entries** | 591 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 240 |
@@ -37,10 +37,10 @@ An interactive timeline of mountain bike intellectual property: 563 patents and 
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 240 |
+| **Brands** | 241 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 553 |
+| **Verified entries** | 560 |
 | **Verified entries** | 517 |
 | **Verified entries** | 490 |
 | **Verified entries** | 489 |
@@ -1104,3 +1104,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - 2026-11-27: Queue batch 1 (7 cards, 606 → 613): Girard / Composites Liken two-degree-of-freedom leaf-spring rear suspension (US 6,450,520 + EP 0,988,215 B1), Merida two-link floating rear triangle (US 6,161,858), Carroll bell-crank rear suspension (US 6,886,846 + 7,350,797), Storck rocker-driven high-pivot frame (US 6,293,574 + EP 0,912,391 B1), Park Tool single-beam folding multi-tool (US 6,880,435 + RE 44,675), Suzuki unit-swing scooter engine mount (EP 0,937,636 B1 + JP 3,422,244 B2), Gocycle cantilever belt-drive stay (US 12,280,849 + EP 4,010,240 B1). All tier v; facts and claims from Google Patents and the patent PDFs. New brands: Storck, Suzuki, Gocycle. Suzuki EP national lapse dates are not on the record, so the card gives January 9, 2019 as the latest end.
 - 2026-11-27: Queue batch 2 (7 cards, 613 → 620): Rocky Mountain four-bar with the instant centre below the chain line (US 7,635,141), Trek coupled eccentric-pivot adjustable geometry (US 8,851,498), Merida twin-shock linkage frame (US 7,494,146), Specialized gusset tube with recessed shock mount (US 7,954,837 + DE 10 2010 025 694 B4), Decathlon two-link suspension tracking the chain line (US 8,348,295 + EP 1,953,078 B1), Lapierre instant centre on the upper chain strand (US 8,857,842 + EP 1,996,450 B1), Shimano one-lever control for derailleurs and rear shock (US 9,499,234). All tier v; facts and claims from Google Patents and the patent PDFs. Rocky Mountain's EP 2,000,398 is a published application only.
 - 2026-11-28: Queue batch 3 (7 cards, 620 → 627): Fox virtual competition (US 9,108,098 + 6 US continuations/divisionals + EP 3,216,495 B1), Fox clamp-and-scale spring preload adjuster (US 9,140,325 + 4 continuations), Fox terrain-sensing suspension setup advisor (US 10,036,443 + 11,619,278 + 12,163,569), Answer Products fork lockout with blow-off piston (US 6,120,049), RockShox inertia-valve fork damper (US 6,105,987), SRAM fork travel adjuster (US 7,870,936), WickWerks ring-shaped front derailleur chain guide (US 6,454,671 + CIPs 7,025,698 and 7,951,028). All tier v; facts and claims from Google Patents and the patent PDFs. The three Fox cards form one continuation-in-part chain but claim different inventions, so they are separate cards. Fox's separate sag-sensing chain (US 8,936,139 → 11,655,873) is not carded. US 7,951,028 shows an adjusted expiration (November 9, 2022) earlier than its recorded fee lapse (2023); the card gives both.
+- 2026-11-28: Queue batch 4 (7 cards, 627 → 634): Hso rocker link with eccentric shock-angle adjuster (US 6,877,591), Specialized shock extension yoke (US 8,006,993 + 8,459,680), Fusion see-saw rocker rear suspension (US 6,845,998), Klein swing arm carrying the bottom bracket on a rigid channel (US 5,826,899), Felt Equilink tie-link suspension (US 7,066,481), Guenther seat stay pivoting on the chain stay (US 6,199,886), Huang linked chain-stay unit carrying the bottom bracket (US 7,658,394). All tier v; facts and claims from Google Patents and the patent PDFs. New brand: Fusion. Hso, Guenther and Huang are individual inventors with no brand tag. Huang's exact lapse date is not on the record (2018).
