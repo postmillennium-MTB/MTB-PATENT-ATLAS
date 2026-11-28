@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 676 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 685 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 591 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 564 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 563 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
@@ -17,9 +17,9 @@ An interactive timeline of mountain bike intellectual property: 563 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 676 |
+| **Total entries** | 685 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 272 |
+| **Active patents** | 281 |
 | **Expired patents** | 329 |
 | **Total entries** | 591 |
 | **Year range** | 1869 – 2026 |
@@ -37,10 +37,10 @@ An interactive timeline of mountain bike intellectual property: 563 patents and 
 | **Confirmed no patent** | 12 |
 | **Litigated entries** | 31 |
 | **Patent Fights (named rivalries)** | 9 |
-| **Brands** | 241 |
+| **Brands** | 243 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 602 |
+| **Verified entries** | 611 |
 | **Verified entries** | 517 |
 | **Verified entries** | 490 |
 | **Verified entries** | 489 |
@@ -1111,3 +1111,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - 2026-11-28: Queue batch 8 (7 cards, 655 → 662): Shimano rear derailleur cage-position adjuster (US 6,902,504), Shimano low-profile rear derailleur with a chain space in its base (US 8,025,598 + division 8,007,383), Shimano front derailleur with its spring around the upper cage pivot (US 8,932,162), SRAM yaw front derailleur (US 8,678,962 + division 9,493,212 + CIP 9,284,017), WickWerks single-pivot front derailleur (US 9,919,765), Wen-Pin Chang suspension frame moving crank and rear axle together (US 6,955,373), Campagnolo electronic derailleur actuator with a breakaway nut (US 9,102,379 + continuation 9,580,145). All tier v from Google Patents records and PDFs; the SRAM division and CIP and the Campagnolo continuation are listed from the parent's family record only. Skipped for review: Fox US 11,306,798 (large 2008 CIP family; claim covers bottom-out control).
 - 2026-11-28: Queue batch 9 (7 cards, 662 → 669): Shimano sprocket with mud-relief recesses (US 6,013,001), Outback Bicycles electronic rear suspension (US 5,921,572), Shimano front derailleur with the cable stop on its base (US 9,457,871), Shimano motorized front derailleur with a dip-then-rise actuation ratio (US 9,127,766), Campagnolo rear derailleur for closer small-cog spacing (US 9,637,199), Campagnolo electronic rear derailleur with radial movement (US 9,758,217 + continuation 10,668,983), Renault Sport anti-squat rear suspension (US 6,386,568). All tier v. Skipped for review: Answer US 6,505,719 (CIP of US 6,241,060, needs a headline decision) and Zusy US 9,598,131 (articulated two-wheeler, scope). Also: "What's new" lines added for queue batches 1 to 9 (they shipped without one, so the strip stopped at November 22), the card process now requires one for every PR that adds cards, and `verify_data.js` fails when a README card bullet is newer than the newest "What's new" line.
 - 2026-11-28: Queue batch 10 (7 cards, 669 → 676): Fox air shock with an external air can over the damper (US 6,311,962), GT flex joint replacing a rear pivot (US 5,797,613 + CIPs 5,865,456, 5,947,499, 6,092,823), Giant shock sharing the lower-link pivot (US 7,806,422), Giant frame with a torsion member at the chainstay pivot (US 6,793,230), Shimano wide-narrow cassette sprocket (US 10,378,637 + division 10,927,940), Speedplay off-road pedal and cleat with hard non-metal wear surfaces (US 9,499,231 + CIP 9,511,817), Madsen rear suspension defined by its instant center (US 10,745,078 + CIP 10,933,941). All tier v from Google Patents records and PDFs; the CIP and division members are listed from the parent's family record only. The cited-often list of uncarded 1996+ grants is now nearly exhausted; what remains is on hold (Yeti 12,145,684, 12,077,241, 10,766,563), needs review (Fox 11,306,798, Answer 6,505,719, Zusy 9,598,131, Trvstper 10,518,839) or off-topic.
+- 2026-11-28: Onewheel and Hyundai (9 cards, 676 → 685): Future Motion US 9,101,817 (self-stabilizing skateboard, + 9,400,505), 9,962,597 (shock suspension, + 10,272,319), 10,010,784 (four-bar suspension, + 10,343,050/051), 11,123,629 (transverse shock, + 11,484,776/12,005,340/12,324,978), 11,273,364 (rider-detection footpad, + 11,590,409), 11,299,059 (charger-ID port, + 12,246,613), 11,890,528 (concave side rails), 12,187,373 (T-slot foot stops); Hyundai US 8,727,057 (three-wheeled car rear suspension). All verified on Google Patents, all active. Off-topic for MTB strictly; added at Jon's request.
