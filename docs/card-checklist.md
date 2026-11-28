@@ -98,5 +98,7 @@ broken, so you don't have to police them by eye.
 - [ ] `node tools/sync_counts.js` (all hand-written counts) **(checked)**
 - [ ] `node tools/verify_data.js` and `node tools/smoke_test.js`
 - [ ] README "Recent updates" bullet: what was added, tier, any gap.
-      `WHATS_NEW` line if readers would notice.
+      `WHATS_NEW` line for every PR that adds cards (top of the array, date
+      it goes live, `{en,fr}`, `go` = a new card); `verify_data.js` fails
+      without it. Other changes: a line if readers would notice.
 - [ ] PR, not a push to `main`; Jon merges.

@@ -93,7 +93,7 @@ function checkOrDie(cards, allowDupNum) {
 }
 const NEXT = `next: node tools/sync_counts.js && node tools/verify_data.js
       new drawings: python3 tools/make_thumbs.py pictures/<file>
-      before the PR: node tools/smoke_test.js; add a README "Recent updates" bullet and a WHATS_NEW line if readers would notice`;
+      before the PR: node tools/smoke_test.js; add a README "Recent updates" bullet and a WHATS_NEW line (required when cards are added)`;
 
 const TEMPLATE = {
   y: 2020, g: 2022,

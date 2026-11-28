@@ -2,7 +2,7 @@
 
 **Mountain bike invention from 1869 to today — who patented it, who fought over it, and when it became free for everyone to use.**
 
-An interactive timeline of mountain bike intellectual property: 662 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
+An interactive timeline of mountain bike intellectual property: 669 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 591 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 564 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
 An interactive timeline of mountain bike intellectual property: 563 patents and applications spanning 1869 to 2026, organized into nine categories, with dedicated views for the industry's major litigation, a live stats dashboard, four distinct visual themes, and zero build tooling required. A single HTML file that opens in any browser.
@@ -17,10 +17,10 @@ An interactive timeline of mountain bike intellectual property: 563 patents and 
 
 | | |
 |---|---|
-| **Total entries** | 662 |
+| **Total entries** | 669 |
 | **Year range** | 1869 – 2026 |
-| **Active patents** | 265 |
-| **Expired patents** | 322 |
+| **Active patents** | 269 |
+| **Expired patents** | 325 |
 | **Total entries** | 591 |
 | **Year range** | 1869 – 2026 |
 | **Active patents** | 240 |
@@ -40,7 +40,7 @@ An interactive timeline of mountain bike intellectual property: 563 patents and 
 | **Brands** | 241 |
 | **Named inventors** | 79 |
 | **Non-US jurisdictions** | 15 (AU, BE, CN, DE, EP, ES, EU, FR, GB, IT, NZ, PL, SE, TW, WO) |
-| **Verified entries** | 588 |
+| **Verified entries** | 595 |
 | **Verified entries** | 517 |
 | **Verified entries** | 490 |
 | **Verified entries** | 489 |
@@ -1109,3 +1109,4 @@ Facts, figures and quotations taken from third-party studies and sources remain 
 - 2026-11-28: Queue batch 6 (7 cards, 641 → 648): Eitel monocoque motorcycle chassis with paired leading and trailing arms (US 6,263,994), Huskey chainring guide with rollers and side rims (US 5,725,450), Patterson two-way hydraulic shifting (US 6,012,999 + CIP 6,042,495), Shimano rear suspension pivoting on the crank axle (US 5,997,022 + EP 0,888,959 B1), Shimano low-profile rear derailleur (US 8,277,346 + CIP 8,012,052), WickWerks six-link front derailleur (US 8,303,443), SRAM electronic dropper with pressure-balanced valve (US 10,358,180 + 10,807,667 + EP 3,653,479 B1). All tier v; facts and claims from Google Patents and the patent PDFs. The citation-map CSV lists Huskey's patent under the assignee "Joshua Paris"; Google Patents names Theodore A. Huskey as the inventor, and the card follows that.
 - 2026-11-28: Queue batch 7 (7 cards, 648 → 655): Shimano concave flat pedal with grip sheets (US 6,647,826), Shimano one-lever toggle front derailleur (US 6,629,903), White linear rear derailleur on fixed guide rods (US 5,688,200), ITRI front derailleur with an increasing-radius cable cam (US 5,816,966), Shimano front derailleur with a lever and connecting link (US 7,914,407), Shimano rear derailleur with a cage-driven chain guard (US 7,722,488), Shimano rear derailleur with a free guide arm and separate tension arm (US 7,104,908). All tier v from the Google Patents records and patent PDFs; most-cited uncarded 1996+ grants on the citation map (25 to 47 citing patents). Family members named in text only: JP 3,572,269 B2 and EP 1,147,978 (6,629,903), WO 98/06963 and EP 0,854,989 A1 (5,688,200), EP 1,902,937 A2 (7,722,488), JP 4,039,939 B2 (7,104,908).
 - 2026-11-28: Queue batch 8 (7 cards, 655 → 662): Shimano rear derailleur cage-position adjuster (US 6,902,504), Shimano low-profile rear derailleur with a chain space in its base (US 8,025,598 + division 8,007,383), Shimano front derailleur with its spring around the upper cage pivot (US 8,932,162), SRAM yaw front derailleur (US 8,678,962 + division 9,493,212 + CIP 9,284,017), WickWerks single-pivot front derailleur (US 9,919,765), Wen-Pin Chang suspension frame moving crank and rear axle together (US 6,955,373), Campagnolo electronic derailleur actuator with a breakaway nut (US 9,102,379 + continuation 9,580,145). All tier v from Google Patents records and PDFs; the SRAM division and CIP and the Campagnolo continuation are listed from the parent's family record only. Skipped for review: Fox US 11,306,798 (large 2008 CIP family; claim covers bottom-out control).
+- 2026-11-28: Queue batch 9 (7 cards, 662 → 669): Shimano sprocket with mud-relief recesses (US 6,013,001), Outback Bicycles electronic rear suspension (US 5,921,572), Shimano front derailleur with the cable stop on its base (US 9,457,871), Shimano motorized front derailleur with a dip-then-rise actuation ratio (US 9,127,766), Campagnolo rear derailleur for closer small-cog spacing (US 9,637,199), Campagnolo electronic rear derailleur with radial movement (US 9,758,217 + continuation 10,668,983), Renault Sport anti-squat rear suspension (US 6,386,568). All tier v. Skipped for review: Answer US 6,505,719 (CIP of US 6,241,060, needs a headline decision) and Zusy US 9,598,131 (articulated two-wheeler, scope). Also: "What's new" lines added for queue batches 1 to 9 (they shipped without one, so the strip stopped at November 22), the card process now requires one for every PR that adds cards, and `verify_data.js` fails when a README card bullet is newer than the newest "What's new" line.

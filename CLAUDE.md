@@ -88,8 +88,11 @@ batch* in `docs/reference.md`: present up to 10 candidates first, wait for his p
 6. `node tools/sync_counts.js` (updates all 11 hand-written counts in README
    and index.html), then `node tools/verify_data.js` and
    `node tools/smoke_test.js` (`cd tools && npm install` once).
-7. README "Recent updates": append one bullet (what, tier, any gap). Add a
-   `WHATS_NEW` line if readers would notice. Open the PR.
+7. README "Recent updates": append one bullet (what, tier, any gap). Every
+   PR that adds cards also adds a `WHATS_NEW` line at the top of that array
+   (date = the day it goes live, `{en,fr}`, `go` = one new card's ref);
+   `verify_data.js` fails if a README card bullet is newer than the newest
+   `WHATS_NEW` date. Open the PR.
 8. After merge, GitHub opens follow-up PRs by itself: thumbnails
    (`thumbs.yml`), card link pages (`card-pages.yml`) and the citation map
    (`citation-map.yml`). Nothing to rebuild by hand.
